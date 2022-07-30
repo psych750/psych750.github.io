@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Some python essentials to get you started X &#8212; Programming for...</title>
+    <title>Python essentials to get you started &#8212; Programming for...</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,6 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Review of fundamentals A" href="review_of_fundamentals_a.html" />
+    <link rel="prev" title="Basic Linux commands" href="Shell_reference.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -106,10 +108,64 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  References
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference external" href="https://example.com">
-   Example website
+  <a class="reference internal" href="Python_reference.html">
+   Python reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Shell_reference.html">
+   Basic Linux commands
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Python essentials to get you started
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="review_of_fundamentals_a.html">
+   Review of fundamentals A
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="review_of_fundamentals_b.html">
+   Review of fundamentals B
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Self study guides
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise1-square.html">
+   A square
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Exercises
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise2-names.html">
+   A name
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hiding.html">
+   Hiding
   </a>
  </li>
 </ul>
@@ -306,7 +362,7 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Some python essentials to get you started X
+   Python essentials to get you started
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -315,14 +371,14 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-for-loop-along-a-list">
-     A
+    <a class="reference internal nav-link" href="#iterating-through-a-list-using-a-for-loop">
+     Iterating through a list using a
      <code class="docutils literal notranslate">
       <span class="pre">
        for
       </span>
      </code>
-     loop along a list
+     loop
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
@@ -376,7 +432,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Some python essentials to get you started X</h1>
+                <h1>Python essentials to get you started</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -388,7 +444,7 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Some python essentials to get you started X
+   Python essentials to get you started
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -397,14 +453,14 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-for-loop-along-a-list">
-     A
+    <a class="reference internal nav-link" href="#iterating-through-a-list-using-a-for-loop">
+     Iterating through a list using a
      <code class="docutils literal notranslate">
       <span class="pre">
        for
       </span>
      </code>
-     loop along a list
+     loop
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
@@ -459,16 +515,35 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="some-python-essentials-to-get-you-started-x">
-<h1>Some python essentials to get you started X<a class="headerlink" href="#some-python-essentials-to-get-you-started-x" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="python-essentials-to-get-you-started">
+<h1>Python essentials to get you started<a class="headerlink" href="#python-essentials-to-get-you-started" title="Permalink to this headline">#</a></h1>
 <section id="assigning-a-variable-and-printing-its-value">
 <h2>Assigning a variable and printing its value<a class="headerlink" href="#assigning-a-variable-and-printing-its-value" title="Permalink to this headline">#</a></h2>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">my_string</span> <span class="o">=</span> <span class="s2">&quot;I am a string&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_string</span> <span class="o">=</span> <span class="s2">&quot;I am a string&quot;</span>
 <span class="n">my_num</span> <span class="o">=</span> <span class="mi">5</span>
 
-<span class="nb">print</span> <span class="n">my_string</span><span class="p">,</span> <span class="s2">&quot;and I&#39;m a&quot;</span><span class="p">,</span> <span class="n">my_num</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">my_string</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">my_num</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello world&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_string</span><span class="p">,</span> <span class="s2">&quot;and I&#39;m a&quot;</span><span class="p">,</span> <span class="n">my_num</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;str&#39;&gt;
+&lt;class &#39;int&#39;&gt;
+Hello world
+I am a string and I&#39;m a 5
+</pre></div>
+</div>
+</div>
+</div>
+<p>Or for a more compact printing when you need to intermix fixed strings and variables:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">my_string</span><span class="si">}</span><span class="s2"> and I&#39;m a </span><span class="si">{</span><span class="n">my_num</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -478,12 +553,19 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</section>
-<section id="a-for-loop-along-a-list">
-<h2>A <code class="docutils literal notranslate"><span class="pre">for</span></code> loop along a list<a class="headerlink" href="#a-for-loop-along-a-list" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="iterating-through-a-list-using-a-for-loop">
+<h2>Iterating through a list using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop<a class="headerlink" href="#iterating-through-a-list-using-a-for-loop" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
     <span class="nb">print</span> <span class="n">num</span>
 </pre></div>
@@ -505,13 +587,22 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<section id="another-for-loop">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+What happened here?<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">As the first line shows, <code class="docutils literal notranslate"><span class="pre">range()</span></code> generated a list of numbers in the specified range. Then <code class="docutils literal notranslate"><span class="pre">for</span></code> iterated through those numbers.```</p>
+</div>
+</details><section id="another-for-loop">
 <h3>Another <code class="docutils literal notranslate"><span class="pre">for</span></code> loop<a class="headerlink" href="#another-for-loop" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">animals</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;pig&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">animals</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;pig&#39;</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">animal</span> <span class="ow">in</span> <span class="n">animals</span><span class="p">:</span>
-    <span class="nb">print</span> <span class="n">item</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">animal</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -529,10 +620,10 @@ pig
 <h2>A few simple conditionals (<code class="docutils literal notranslate"><span class="pre">if</span></code> statements)<a class="headerlink" href="#a-few-simple-conditionals-if-statements" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">my_num</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
-    <span class="nb">print</span> <span class="s2">&quot;it&#39;s a 5!&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">my_num</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;it&#39;s a 5!&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span> <span class="s2">&quot;it&#39;s not a 5!&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;it&#39;s not a 5!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -544,10 +635,10 @@ pig
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="mi">5</span><span class="o">&lt;</span><span class="mi">2</span><span class="p">:</span>
-    <span class="nb">print</span> <span class="s1">&#39;yes indeed&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="mi">5</span><span class="o">&lt;</span><span class="mi">2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;yes indeed&#39;</span><span class="p">)</span>
 <span class="k">elif</span> <span class="mi">10</span><span class="o">&lt;</span><span class="mi">2</span><span class="p">:</span>
-    <span class="nb">print</span> <span class="s1">&#39;this is true too!&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;this is true too!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -555,7 +646,7 @@ pig
 <p>Predict what each of these statements will return. Then check.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="s1">&#39;s&#39;</span><span class="o">==</span><span class="kc">True</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;s&#39;</span><span class="o">==</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -567,7 +658,7 @@ pig
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="mi">1</span><span class="o">==</span><span class="kc">True</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="o">==</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -579,7 +670,7 @@ pig
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="mi">0</span><span class="o">==</span><span class="kc">True</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="mi">0</span><span class="o">==</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -591,7 +682,7 @@ pig
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="kc">True</span><span class="o">==</span><span class="kc">False</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="kc">True</span><span class="o">==</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -603,7 +694,7 @@ pig
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="kc">True</span> <span class="ow">or</span> <span class="kc">False</span><span class="p">)</span><span class="o">==</span><span class="kc">True</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">((</span><span class="kc">True</span> <span class="ow">or</span> <span class="kc">False</span><span class="p">)</span><span class="o">==</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -615,15 +706,12 @@ pig
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="nb">print</span><span class="o">==</span><span class="kc">True</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="nb">print</span><span class="o">==</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-10-4540373c5b89&gt;&quot;</span><span class="gt">, line </span><span class="mi">1</span>
-    <span class="nb">print</span> <span class="nb">print</span><span class="o">==</span><span class="kc">True</span>
-              <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
 </pre></div>
 </div>
 </div>
@@ -633,19 +721,19 @@ pig
 <h2>A <code class="docutils literal notranslate"><span class="pre">while</span></code> loop<a class="headerlink" href="#a-while-loop" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">another_num</span><span class="o">=</span><span class="mi">5</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">another_num</span><span class="o">=</span><span class="mi">5</span>
 <span class="k">while</span> <span class="n">another_num</span> <span class="o">&lt;=</span> <span class="mi">5</span> <span class="ow">and</span> <span class="n">another_num</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span> <span class="s2">&quot;I&#39;m a &quot;</span><span class="p">,</span> <span class="n">another_num</span><span class="p">,</span> <span class="s2">&quot;and I&#39;m less than or equal to 5!&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;I&#39;m a </span><span class="si">{</span><span class="n">another_num</span><span class="si">}</span><span class="s2"> and I&#39;m less than or equal to 5!&quot;</span><span class="p">)</span>
     <span class="n">another_num</span> <span class="o">-=</span> <span class="mi">1</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I&#39;m a  5 and I&#39;m less than or equal to 5!
-I&#39;m a  4 and I&#39;m less than or equal to 5!
-I&#39;m a  3 and I&#39;m less than or equal to 5!
-I&#39;m a  2 and I&#39;m less than or equal to 5!
-I&#39;m a  1 and I&#39;m less than or equal to 5!
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I&#39;m a 5 and I&#39;m less than or equal to 5!
+I&#39;m a 4 and I&#39;m less than or equal to 5!
+I&#39;m a 3 and I&#39;m less than or equal to 5!
+I&#39;m a 2 and I&#39;m less than or equal to 5!
+I&#39;m a 1 and I&#39;m less than or equal to 5!
 </pre></div>
 </div>
 </div>
@@ -655,8 +743,8 @@ I&#39;m a  1 and I&#39;m less than or equal to 5!
 <section class="tex2jax_ignore mathjax_ignore" id="now-for-a-couple-exercises">
 <h1>Now for a couple exercises<a class="headerlink" href="#now-for-a-couple-exercises" title="Permalink to this headline">#</a></h1>
 <ol>
-<li><p>Use a for loop that prints out the numbers 0 through 5</p></li>
-<li><p>Use a for loop to print out the numbers 2 through 8. Now do another one to print 9 through 0 (i.e., backwards)</p>
+<li><p>Write a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to print out the numbers 0 through 5</p></li>
+<li><p>Write a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to print out the numbers 2 through 8. Now do another one to print 9 through 0 (i.e., backwards)</p>
  <div class="alert alert-block alert-info">
  Use help(range) to see some other things you can do with the range function</div>
 </li>
@@ -679,7 +767,7 @@ If you're writing your program in the Python Shell or in a Jupyter Notebook, Pyt
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">,</span><span class="s1">&#39;three&#39;</span><span class="p">,</span><span class="s1">&#39;four&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">,</span><span class="s1">&#39;three&#39;</span><span class="p">,</span><span class="s1">&#39;four&#39;</span><span class="p">]</span>
 
 <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
     <span class="nb">print</span> <span class="n">number</span><span class="p">,</span>
@@ -708,13 +796,13 @@ If you're writing your program in the Python Shell or in a Jupyter Notebook, Pyt
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python2",
+            kernelName: "python3",
             path: "./notebooks"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python2'</script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -723,6 +811,20 @@ If you're writing your program in the Python Shell or in a Jupyter Notebook, Pyt
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Shell_reference.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Basic Linux commands</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="review_of_fundamentals_a.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Review of fundamentals A</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>
