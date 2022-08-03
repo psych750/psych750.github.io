@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Now let’s write some code! &#8212; Psych 750</title>
+    <title>Let’s warm up them neurons &#8212; Psych 750</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -116,7 +116,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="programming_environment_osx.html">
-   Programming Environment: MacOS
+   Programming Environment for MacOS
   </a>
  </li>
  <li class="toctree-l1">
@@ -314,7 +314,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Now let’s write some code!</h1>
+                <h1>Let’s warm up them neurons</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -326,23 +326,24 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="now-let-s-write-some-code">
-<h1>Now let’s write some code!<a class="headerlink" href="#now-let-s-write-some-code" title="Permalink to this headline">#</a></h1>
-<ol>
+  <section class="tex2jax_ignore mathjax_ignore" id="let-s-warm-up-them-neurons">
+<h1>Let’s warm up them neurons<a class="headerlink" href="#let-s-warm-up-them-neurons" title="Permalink to this headline">#</a></h1>
+<ol class="simple">
 <li><p>Write a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to print out the numbers 0 through 5</p></li>
-<li><p>Write a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to print out the numbers 2 through 8. Now do another one to print 9 through 0 (i.e., backwards)</p>
- <div class="alert alert-block alert-info">
- Use help(range) to see some other things you can do with the range function</div>
-</li>
+<li><p>Write a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to print out the numbers 2 through 8. Now do another one to print 9 through 0 (i.e., backwards)</p></li>
+</ol>
+<div class="highlight-tip notranslate"><div class="highlight"><pre><span></span>Use help(range) to see some other things you can do with the range function
+</pre></div>
+</div>
+<ol class="simple">
 <li><p>Given the list [‘one’, ‘two’,’three’,’four’], write code that will print: ‘one and a two and a three and a four’</p></li>
 <li><p>Write a bit of code using for loop(s) that print out the following sequence:</p></li>
 </ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span>
-<span class="mi">01</span>
-<span class="mi">012</span>
-<span class="mi">0123</span>
-<span class="mi">01234</span>
-<span class="mi">012345</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span>
+<span class="mi">12</span>
+<span class="mi">123</span>
+<span class="mi">1234</span>
+<span class="mi">12345</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -353,6 +354,22 @@ title="Print to PDF"
 <p class="admonition-title">Warning</p>
 <p>If you’re writing your program in the Python Shell or in a Jupyter Notebook, Python will automatically append a newline to anything you print. To keep it from doing that end the print statement with a comman, e.g., <code class="docutils literal notranslate"><span class="pre">print</span> <span class="pre">i,</span></code>. If you’re writing the code in a text editor and executing using <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">filename.py</span></code>, you can keep using <code class="docutils literal notranslate"><span class="pre">print</span></code> in the normal way.</p>
 </div>
+<ol class="simple">
+<li><p>If you’ve done some coding before, the last one is probably quite easy. Here’s one that’s slightly more challenging. Write some code that uses a variable <code class="docutils literal notranslate"><span class="pre">row</span></code> to print the following pattern.
+If <code class="docutils literal notranslate"><span class="pre">rows</span></code> is <code class="docutils literal notranslate"><span class="pre">1</span></code>, then the following pattern should be printed:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">o</span>
+</pre></div>
+</div>
+<p>If <code class="docutils literal notranslate"><span class="pre">rows</span></code> is <code class="docutils literal notranslate"><span class="pre">5</span></code>, then the following pattern should be printed.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>     <span class="n">o</span>
+    <span class="n">ooo</span>
+   <span class="n">ooooo</span>
+  <span class="n">ooooooo</span>
+ <span class="n">ooooooooo</span>
+</pre></div>
+</div>
+<p>If it doesn’t look like a pyramid, you’re not doing it right ;)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">,</span><span class="s1">&#39;three&#39;</span><span class="p">,</span><span class="s1">&#39;four&#39;</span><span class="p">]</span>
