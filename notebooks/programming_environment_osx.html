@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Programming Environment: MacOS &#8212; Psych 750</title>
+    <title>Programming Environment for MacOS &#8212; Psych 750</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -116,7 +116,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Programming Environment: MacOS
+   Programming Environment for MacOS
   </a>
  </li>
  <li class="toctree-l1">
@@ -326,7 +326,7 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Programming Environment: MacOS
+   Programming Environment for MacOS
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -369,6 +369,18 @@ title="Print to PDF"
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#create-a-shortcut-to-sublime-text">
      Create a shortcut to Sublime Text
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-r-rstudio-desktop">
+   Install R &amp; RStudio Desktop
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-a-few-r-packages">
+     Install a few R packages
     </a>
    </li>
   </ul>
@@ -382,7 +394,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Programming Environment: MacOS</h1>
+                <h1>Programming Environment for MacOS</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -394,7 +406,7 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Programming Environment: MacOS
+   Programming Environment for MacOS
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -437,6 +449,18 @@ title="Print to PDF"
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#create-a-shortcut-to-sublime-text">
      Create a shortcut to Sublime Text
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-r-rstudio-desktop">
+   Install R &amp; RStudio Desktop
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-a-few-r-packages">
+     Install a few R packages
     </a>
    </li>
   </ul>
@@ -451,8 +475,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="programming-environment-macos">
-<h1>Programming Environment: MacOS<a class="headerlink" href="#programming-environment-macos" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="programming-environment-for-macos">
+<h1>Programming Environment for MacOS<a class="headerlink" href="#programming-environment-for-macos" title="Permalink to this headline">#</a></h1>
 <p>Python is installed by default on Macs, but we will <em><strong>not</strong></em> be using the standard install. Instead we will be using the Anaconda environment which allows for easy installation of packages into a virtual environment which helps to eliminate software conflicts.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="install-git">
@@ -490,19 +514,12 @@ Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install jupyter jupyterlab
 conda install pyaudio
-pip install PyQt5
+pip install psychopy
 </pre></div>
 </div>
-<p>There are currently some issues with installing Psychopy from the package repository, so we’ll clone the github repository and then install from it locally.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/psychopy/psychopy
-<span class="nb">cd</span> psychopy
-pip install -e .
-</pre></div>
-</div>
-<p>(You can then delete the cloned repository)</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>If you have install errors, make note of the precise error and post it to the #installation_problems Slack channel.</p>
+<p>If you run into any install errors, please make note of the precise errors and post them to the #installation_problems Slack channel.</p>
 </div>
 </section>
 <section id="test-psychopy">
@@ -527,8 +544,8 @@ pip install -e .
 <p>When you hit enter after the second line, you should see a small green window appear. There may me some warnings displayed… You can safely ignore them.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Click on the terminal and enter <code class="docutils literal notranslate"><span class="pre">exit()</span></code> to quit
-(you won’t be able to close the window like a regular Mac window)</p>
+<p>You won’t be able to close the window like a regular Mac window.
+Click on the terminal and enter <code class="docutils literal notranslate"><span class="pre">exit()</span></code> to quit the session and close the window.</p>
 </div>
 <ul class="simple">
 <li><p>Finally let’s test whether Psychopy can open pop-up boxes without issues</p></li>
@@ -544,10 +561,10 @@ pip install -e .
 </pre></div>
 </div>
 <p>And lastly, execute it like so:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">popupError</span><span class="p">(</span><span class="s1">&#39;pop up test!&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">popupError</span><span class="p">(</span><span class="s1">&#39;Pop up test!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>If you saw a little pop-up window, all’s good.</p>
+<p>If you saw a little pop-up window, all’s good. If it doesn’t immediately appear, check that it’s not behind your active window.</p>
 </section>
 <section id="configure-a-few-psychopy-settings">
 <h2>Configure a few Psychopy settings<a class="headerlink" href="#configure-a-few-psychopy-settings" title="Permalink to this headline">#</a></h2>
@@ -585,6 +602,18 @@ so “/Applications/Sublime Text.app” becomes “/Applications/Sublime\ Text.a
 </div>
 </section>
 </section>
+<section class="tex2jax_ignore mathjax_ignore" id="install-r-rstudio-desktop">
+<h1>Install R &amp; RStudio Desktop<a class="headerlink" href="#install-r-rstudio-desktop" title="Permalink to this headline">#</a></h1>
+<p>Next install R and RSudio Desktop by following the instructions <a class="reference external" href="https://www.rstudio.com/products/rstudio/download/#download">here</a>.</p>
+<section id="install-a-few-r-packages">
+<h2>Install a few R packages<a class="headerlink" href="#install-a-few-r-packages" title="Permalink to this headline">#</a></h2>
+<p>Once R and RStudio are installed, make sure you can open up RStudio successfully and then install these packages (we may include some additional ones later).</p>
+<p>At the RStudio prompt, type</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;tidyverse&quot;</span><span class="p">,</span> <span class="s">&quot;ggplot2&quot;</span><span class="p">,</span> <span class="s">&quot;lme4&quot;</span><span class="p">,</span> <span class="s">&quot;psych&quot;</span><span class="p">,</span> <span class="s">&quot;psychTools&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -611,23 +640,6 @@ so “/Applications/Sublime Text.app” becomes “/Applications/Sublime\ Text.a
             </main>
             <footer class="footer-article noprint">
                 
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../index.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Psych 750: Programming for Behavioral Data Science</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="programming_environment_windows.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Programming Environment: Windows 10</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
             </footer>
         </div>
     </div>
