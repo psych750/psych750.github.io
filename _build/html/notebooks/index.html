@@ -1,0 +1,523 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Programming and Automation Techniques for Psychologists &#8212; Psych 750</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/book.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://psych750.github.io/notebooks/index.html" />
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/favicon.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Psych 750</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search..." aria-label="Search..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Installation instructions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="programming_environment_osx.html">
+   Programming Environment: MacOS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="programming_environment_windows.html">
+   Programming Environment: Windows 10
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  References
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Python_reference.html">
+   Python reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Shell_reference.html">
+   Basic Linux commands
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_basics.html">
+   Python basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="review_of_fundamentals_a.html">
+   Review of fundamentals A
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="review_of_fundamentals_b.html">
+   Review of fundamentals B
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Self study guides
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise1-square.html">
+   A square
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  In class exercises
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="in_class_exercise_1.html">
+   Getting comfortable
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  At home exercises
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise2-names.html">
+   A name
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/notebooks/index.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-program">
+   Why Program?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#class-philosophy">
+   Class philosophy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-now">
+   What now?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#schedule">
+   Schedule
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#feedback">
+   Feedback
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#about">
+   About
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Programming and Automation Techniques for Psychologists</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-program">
+   Why Program?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#class-philosophy">
+   Class philosophy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-now">
+   What now?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#schedule">
+   Schedule
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#feedback">
+   Feedback
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#about">
+   About
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <h1>Table of Contents<span class="tocSkip"></span></h1>
+<div class="toc" style="margin-top: 1em;"><ul class="toc-item"><li><span><a href="#Programming-and-Automation-Techniques-for-Psychologists" data-toc-modified-id="Programming-and-Automation-Techniques-for-Psychologists-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Programming and Automation Techniques for Psychologists</a></span><ul class="toc-item"><li><span><a href="#Why-Program?" data-toc-modified-id="Why-Program?-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Why Program?</a></span></li><li><span><a href="#Class-philosophy" data-toc-modified-id="Class-philosophy-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Class philosophy</a></span></li><li><span><a href="#What-now?" data-toc-modified-id="What-now?-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>What now?</a></span></li><li><span><a href="#Schedule" data-toc-modified-id="Schedule-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Schedule</a></span></li><li><span><a href="#Feedback" data-toc-modified-id="Feedback-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Feedback</a></span></li><li><span><a href="#About" data-toc-modified-id="About-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>About</a></span></li></ul></li></ul></div><section class="tex2jax_ignore mathjax_ignore" id="programming-and-automation-techniques-for-psychologists">
+<h1>Programming and Automation Techniques for Psychologists<a class="headerlink" href="#programming-and-automation-techniques-for-psychologists" title="Permalink to this headline">#</a></h1>
+<hr class="docutils" />
+<p>Welcome! Our mission is to teach you how to stop relying on point-and-click experiment packages and program your own experiments, script common tasks, organize your data, and in the process, become a better scientist.</p>
+<p>In Spring, 2018 we will be meeting on Thursdays 9:00am-11:30am in Psych 634. The class is taught by Prof. Gary Lupyan (<a class="reference external" href="http://sapir.psych.wisc.edu">lab page</a>), (lupyan <em>at</em> wisc dot edu).</p>
+<section id="why-program">
+<h2>Why Program?<a class="headerlink" href="#why-program" title="Permalink to this headline">#</a></h2>
+<hr class="docutils" />
+<p>Knowing how to program and how to automate common tasks will make your life (or at least your academic life) better. Much better. A programmatic approach will allow you to create experiments in hours that would take days or weeks of fiddling in point-and-click packages like Eprime. Programming your experiments will give you complete control overy every aspect of the procedure. You will never again need to worry about whether you can implement your experiment <em>in</em> some program. If you can think it, you can program it.  A globally programmatic approach to behavioral research will also mean that you will never have to shuffle lists in Excel to create the proper counterbalancing or randomize things. You will never have to copy and paste data files, or <code class="docutils literal notranslate"><span class="pre">gasp</span></code> manually code people’s (objective) responses. Changing the size of 1000 images or measuring the onset latency of a voice response becomes as simple as executing a little program, which at the end of the class, you will be able to write from scratch.</p>
+<p>At the end of the class you’ll be comfortable with creating full-blown experiments using Python and Psychopy. You will learn how to design experiments in a programmatic way (no pointing, no clicking) and be amazed with your increase in efficiency. In addition to coding experiments, by the end of the class you’ll be on your way to doing all sorts of fancy schmancy things in Python and command-line tools (e.g., data massaging of all sorts, (basic) corpus linguistics, automatic image and audio processing, and collecting some data online. The world will be your oyster.  Mmm, oysters.</p>
+</section>
+<section id="class-philosophy">
+<h2>Class philosophy<a class="headerlink" href="#class-philosophy" title="Permalink to this headline">#</a></h2>
+<hr class="docutils" />
+<p>Programming, as taught by computer scientists, emphasizes lots of theory (pointers, O-notation, garbage collection) and relatively abstract problem solving (e.g., implementing sort algorithms, navigating trees, recursive functions). Although this is an excelelnt way to gain a deep understanding of computer science, we are betting that it is not the best way to teach applied programming skills in a short amount of time to non computer-scientists. In this class we’ll be taking a more applied approach. Every exercise we do will introduce students to a skill relevant to solving problems commonly encountered in behavioral research. We’ll learn some theory along the way, but the focus will be on practical how-to solutions. If you’ve never programmed before, you’re in for an initially steep learning curve, but it will flatten out quickly, and your mind will be blown at what you are able to accomplish. If your only experience with programming came from data-analysis environments like R or environments specially created for scientific computing like MATLAB, you will appreciate the power and elegance of Python. If you have some experience programming in languages like Java and C, you will find the transition to Python itself quite easy, and will learn a lot about how to make efficient use of Python and various open-source tools for quickly moving from an experiment idea to analyzable data.</p>
+</section>
+<section id="what-now">
+<h2>What now?<a class="headerlink" href="#what-now" title="Permalink to this headline">#</a></h2>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>Begin by following the <em>download and install</em> instructions above to set up your Python environment.</p></li>
+<li><p>If you are in the class, make sure you’ve joined the Github repository, installed Slack, and joined the class channel (check for invite in your mailbox or email me if you don’t see one). For those using this site as a tutorial: I have taken down the posted solutions in preparation for the Spring semester, but if you need a solution (or any code that’s not posted), please email me (lupyan <em>at</em> wisc dot edu).</p></li>
+<li><p>Watch the <a class="reference external" href="https://www.youtube.com/watch?v=j2jhv29PIoM&amp;feature=youtu.be"><em>What is Python and how do I run it screencast</em></a></p></li>
+</ul>
+<p>The GitHub repository for the Jupyter Notebooks and scripts that generate these pages is <a class="reference external" href="https://github.com/lupyanlab/programming_for_psychologists">here</a>.</p>
+</section>
+<section id="schedule">
+<h2>Schedule<a class="headerlink" href="#schedule" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">IFrame</span>
+<span class="n">IFrame</span><span class="p">(</span><span class="s1">&#39;week_by_week_schedule/index.html&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">750</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="700"
+    height="750"
+    src="week_by_week_schedule/index.html"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+</section>
+<section id="feedback">
+<h2>Feedback<a class="headerlink" href="#feedback" title="Permalink to this headline">#</a></h2>
+<hr class="docutils" />
+<p>If you are currently enrolled in the class, please use the Slack channel. If you are browsing these resources and have a comment/question, please email: lupyan at wisc dot edu.</p>
+</section>
+<section id="about">
+<h2>About<a class="headerlink" href="#about" title="Permalink to this headline">#</a></h2>
+<hr class="docutils" />
+<p>Gary Lupyan is an Associate Professor of Psychology at University of Wisconsin-Madison. See the <a class="reference external" href="http://sapir.psych.wisc.edu">lab webpage</a> for info on research and lab openings.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python2",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python2'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Gary Lupyan<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

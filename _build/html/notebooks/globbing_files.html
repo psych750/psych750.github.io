@@ -1,0 +1,452 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Getting filenames &#8212; Psych 750</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/book.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://psych750.github.io/notebooks/globbing_files.html" />
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/favicon.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Psych 750</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search..." aria-label="Search..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Installation instructions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="programming_environment_osx.html">
+   Programming Environment: MacOS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="programming_environment_windows.html">
+   Programming Environment: Windows 10
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  References
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Python_reference.html">
+   Python reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Shell_reference.html">
+   Basic Linux commands
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_basics.html">
+   Python basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="review_of_fundamentals_a.html">
+   Review of fundamentals A
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="review_of_fundamentals_b.html">
+   Review of fundamentals B
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Self study guides
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise1-square.html">
+   A square
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  In class exercises
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="in_class_exercise_1.html">
+   Getting comfortable
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  At home exercises
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise2-names.html">
+   A name
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/notebooks/globbing_files.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Getting filenames</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="getting-filenames">
+<h1>Getting filenames<a class="headerlink" href="#getting-filenames" title="Permalink to this headline">#</a></h1>
+<p>I have advocated for preloading your stimuli at experiment start-time by grabbing all the files in a directoryt that match your criteria (e.g., all the png files) and loading them into memory. The <code class="docutils literal notranslate"><span class="pre">loadFiles()</span></code> function</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">special_stims</span> <span class="o">=</span> <span class="p">[</span><span class="n">stim</span> <span class="k">for</span> <span class="n">stim</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;special_stims.txt&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A bit on managing paths in Python. For more info, see <code class="docutils literal notranslate"><span class="pre">help(os.path)</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="c1">#current working directory</span>
+<span class="nb">print</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="s1">&#39;stimuli/visual/&#39;</span><span class="p">)</span> <span class="c1">#creating a longer path</span>
+<span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="s1">&#39;stimuli/visual/&#39;</span><span class="p">))</span> <span class="c1">#checking if a path exists</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory
+/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Getting all the files in a directory</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">allFiles</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="s1">&#39;stimuli/visual/*&#39;</span><span class="p">))</span>
+<span class="nb">print</span> <span class="n">allFiles</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/bicycle_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/scale_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/skull_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/iron_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/flag_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/robot_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/snail_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/palm_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/strainer_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/knife_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/chips_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/glasses_eye_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/plate_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/chocolate_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/drum_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/lobster_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/pen_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/sponge_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/watch_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/tube_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/bottleopener_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/cricket_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/laptop_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/desk_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/chisel_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/owl_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/toe_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/ball_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/fireplace_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/starfish_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/trunk_elephant_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/bicycle_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/scale_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/skull_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/iron_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/flag_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/robot_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/snail_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/strainer_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/palm_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/glasses_eye_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/chips_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/knife_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/plate_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/chocolate_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/pen_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/sponge_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/drum_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/lobster_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/tube_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/watch_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/bottleopener_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/cricket_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/laptop_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/desk_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/chisel_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/owl_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/toe_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/ball_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/fireplace_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/starfish_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/trunk_elephant_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/swan_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/cone_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/lamp_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/toaster_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/camera_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/globe_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/tent_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/nest_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/skates_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/bear_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/bowl_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/piano_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/glasses_drink_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/glove_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/cooler_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/fan_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/brick_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/deer_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/razor_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/books_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/eggs_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/helmet_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/plane_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/flour_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/cone_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/swan_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/lamp_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/toaster_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/camera_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/globe_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/tent_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/skates_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/nest_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/bowl_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/bear_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/piano_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/glasses_drink_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/fan_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/cooler_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/glove_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/deer_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/brick_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/razor_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/books_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/eggs_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/helmet_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/plane_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/flour_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/pizza_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/tee_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/case_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/corkscrew_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/pacifier_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/bed_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/bread_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/tray_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/leaf_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/bracelet_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/balloon_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/cage_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/palmB_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/hanger_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/canoe_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/kettle_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/beer_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/tree_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/shell_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/flower_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/accordion_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/highchair_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/cake_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/trophy_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/pizza_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/tee_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/case_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/corkscrew_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/pacifier_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/bed_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/bread_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/tray_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/leaf_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/bracelet_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/balloon_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/cage_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/palmB_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/canoe_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/hanger_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/kettle_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/tree_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/beer_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/shell_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/flower_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/accordion_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/highchair_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/trophy_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/cake_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/tape_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/olive_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/tire_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/ship_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/tractor_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/basket_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/pill_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/key_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/phone_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/microphone_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/pliers_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/box_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/pear_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/tea_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/cactus_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/money_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/fridge_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/perfume_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/frame_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/ring_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/tire_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/olive_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/tape_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/tractor_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/ship_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/basket_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/cricketB.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/pill_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/key_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/microphone_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/phone_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/pliers_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/box_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/pear_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/cactus_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/tea_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/money_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/fridge_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/perfume_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/frame_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/ring_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/hair_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/sink_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/cat_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/arch_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/soap_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/rug_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/pipe_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/match_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/sushi_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/cheese_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/rhino_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/pillow_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/tv_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/Icecream_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/seal_obj_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/rope_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/ladder_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/pie_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/belt_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/root_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/hair_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/sink_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/cat_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/arch_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/rug_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/soap_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/match_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/pipe_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/sushi_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/cheese_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/rhino_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/pillow_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/tv_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/icecream_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/rope_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/seal_obj_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/ladder_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/belt_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/pie_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/root_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/foot_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/sock_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/rock_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/fox_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/rake_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/crib_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/car_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/trunk_car_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/crown_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/whale_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/sword_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/coffin_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/cane_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/bird_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/feather_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/wheelchair_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/axe_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/shirt_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/rock_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/sock_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/foot_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/fox_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/rake_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/car_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/crib_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/trunk_car_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/crown_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/whale_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/sword_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/coffin_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/bird_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/cane_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/feather_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/axe_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/wheelchair_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/shirt_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/muffin_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/corset_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/lantern_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/camel_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/barrel_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/mug_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/horse_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/meat_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/bell_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/bagel_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/grapes_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/anchor_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/game_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/cabinet_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/bunny_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/mouse_comp_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/horn_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/log_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/scroll_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/shoe_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/seal_animal_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/bow_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/headphones_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/tap_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/tongs_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/muffin_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/corset_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/lantern_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/camel_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/barrel_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/mug_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/meat_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/cricketB_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/horse_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/bell_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/bagel_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/grapes_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/anchor_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/cabinet_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/game_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/bunny_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/mouse_comp_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/log_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/scroll_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/horn_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/shoe_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/seal_animal_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/bow_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/headphones_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/tongs_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/tap_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/remote_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/chair_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/mouse_squeak_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/peppers_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/spoon_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/doll_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/hat_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/oven_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/plant_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/knocker_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/wheelbarrow_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/quilt_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/train_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/microscope_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/clock_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/bat_sport_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/calculator_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/bomb_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/comb_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/guitar_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/gift_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/bat_animal_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/candy_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/dinosaur_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/cow_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/remote_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/mouse_squeak_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/chair_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/peppers_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/spoon_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/doll_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/hat_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/oven_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/plant_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/wheelbarrow_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/quilt_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/train_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/knocker_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/microscope_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/clock_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/bat_sport_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/calculator_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/comb_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/bomb_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/guitar_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/bat_animal_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/gift_2.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/candy_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/cow_1.png&#39;, &#39;/Users/glupyan/gitRepos/programming_for_psychologists/projects/project1/memory/stimuli/visual/dinosaur_2.png&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now let’s get just the filename part of the path</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">just_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">file</span><span class="p">)</span> <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">allFiles</span><span class="p">]</span>
+<span class="nb">print</span> <span class="n">just_names</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;bicycle_2.png&#39;, &#39;scale_1.png&#39;, &#39;skull_1.png&#39;, &#39;iron_1.png&#39;, &#39;flag_2.png&#39;, &#39;robot_2.png&#39;, &#39;snail_2.png&#39;, &#39;palm_2.png&#39;, &#39;strainer_1.png&#39;, &#39;knife_2.png&#39;, &#39;chips_2.png&#39;, &#39;glasses_eye_2.png&#39;, &#39;plate_1.png&#39;, &#39;chocolate_1.png&#39;, &#39;drum_1.png&#39;, &#39;lobster_2.png&#39;, &#39;pen_2.png&#39;, &#39;sponge_2.png&#39;, &#39;watch_2.png&#39;, &#39;tube_1.png&#39;, &#39;bottleopener_2.png&#39;, &#39;cricket_1.png&#39;, &#39;laptop_2.png&#39;, &#39;desk_2.png&#39;, &#39;chisel_2.png&#39;, &#39;owl_2.png&#39;, &#39;toe_1.png&#39;, &#39;ball_1.png&#39;, &#39;fireplace_1.png&#39;, &#39;starfish_1.png&#39;, &#39;trunk_elephant_1.png&#39;, &#39;bicycle_1.png&#39;, &#39;scale_2.png&#39;, &#39;skull_2.png&#39;, &#39;iron_2.png&#39;, &#39;flag_1.png&#39;, &#39;robot_1.png&#39;, &#39;snail_1.png&#39;, &#39;strainer_2.png&#39;, &#39;palm_1.png&#39;, &#39;glasses_eye_1.png&#39;, &#39;chips_1.png&#39;, &#39;knife_1.png&#39;, &#39;plate_2.png&#39;, &#39;chocolate_2.png&#39;, &#39;pen_1.png&#39;, &#39;sponge_1.png&#39;, &#39;drum_2.png&#39;, &#39;lobster_1.png&#39;, &#39;tube_2.png&#39;, &#39;watch_1.png&#39;, &#39;bottleopener_1.png&#39;, &#39;cricket_2.png&#39;, &#39;laptop_1.png&#39;, &#39;desk_1.png&#39;, &#39;chisel_1.png&#39;, &#39;owl_1.png&#39;, &#39;toe_2.png&#39;, &#39;ball_2.png&#39;, &#39;fireplace_2.png&#39;, &#39;starfish_2.png&#39;, &#39;trunk_elephant_2.png&#39;, &#39;swan_1.png&#39;, &#39;cone_1.png&#39;, &#39;lamp_1.png&#39;, &#39;toaster_1.png&#39;, &#39;camera_1.png&#39;, &#39;globe_2.png&#39;, &#39;tent_1.png&#39;, &#39;nest_2.png&#39;, &#39;skates_1.png&#39;, &#39;bear_2.png&#39;, &#39;bowl_1.png&#39;, &#39;piano_2.png&#39;, &#39;glasses_drink_1.png&#39;, &#39;glove_2.png&#39;, &#39;cooler_2.png&#39;, &#39;fan_1.png&#39;, &#39;brick_2.png&#39;, &#39;deer_2.png&#39;, &#39;razor_1.png&#39;, &#39;books_2.png&#39;, &#39;eggs_2.png&#39;, &#39;helmet_1.png&#39;, &#39;plane_2.png&#39;, &#39;flour_1.png&#39;, &#39;cone_2.png&#39;, &#39;swan_2.png&#39;, &#39;lamp_2.png&#39;, &#39;toaster_2.png&#39;, &#39;camera_2.png&#39;, &#39;globe_1.png&#39;, &#39;tent_2.png&#39;, &#39;skates_2.png&#39;, &#39;nest_1.png&#39;, &#39;bowl_2.png&#39;, &#39;bear_1.png&#39;, &#39;piano_1.png&#39;, &#39;glasses_drink_2.png&#39;, &#39;fan_2.png&#39;, &#39;cooler_1.png&#39;, &#39;glove_1.png&#39;, &#39;deer_1.png&#39;, &#39;brick_1.png&#39;, &#39;razor_2.png&#39;, &#39;books_1.png&#39;, &#39;eggs_1.png&#39;, &#39;helmet_2.png&#39;, &#39;plane_1.png&#39;, &#39;flour_2.png&#39;, &#39;pizza_2.png&#39;, &#39;tee_2.png&#39;, &#39;case_2.png&#39;, &#39;corkscrew_2.png&#39;, &#39;pacifier_2.png&#39;, &#39;bed_2.png&#39;, &#39;bread_2.png&#39;, &#39;tray_1.png&#39;, &#39;leaf_1.png&#39;, &#39;bracelet_1.png&#39;, &#39;balloon_1.png&#39;, &#39;cage_2.png&#39;, &#39;palmB_1.png&#39;, &#39;hanger_2.png&#39;, &#39;canoe_1.png&#39;, &#39;kettle_2.png&#39;, &#39;beer_2.png&#39;, &#39;tree_2.png&#39;, &#39;shell_1.png&#39;, &#39;flower_1.png&#39;, &#39;accordion_1.png&#39;, &#39;highchair_2.png&#39;, &#39;cake_2.png&#39;, &#39;trophy_1.png&#39;, &#39;pizza_1.png&#39;, &#39;tee_1.png&#39;, &#39;case_1.png&#39;, &#39;corkscrew_1.png&#39;, &#39;pacifier_1.png&#39;, &#39;bed_1.png&#39;, &#39;bread_1.png&#39;, &#39;tray_2.png&#39;, &#39;leaf_2.png&#39;, &#39;bracelet_2.png&#39;, &#39;balloon_2.png&#39;, &#39;cage_1.png&#39;, &#39;palmB_2.png&#39;, &#39;canoe_2.png&#39;, &#39;hanger_1.png&#39;, &#39;kettle_1.png&#39;, &#39;tree_1.png&#39;, &#39;beer_1.png&#39;, &#39;shell_2.png&#39;, &#39;flower_2.png&#39;, &#39;accordion_2.png&#39;, &#39;highchair_1.png&#39;, &#39;trophy_2.png&#39;, &#39;cake_1.png&#39;, &#39;tape_1.png&#39;, &#39;olive_1.png&#39;, &#39;tire_2.png&#39;, &#39;ship_1.png&#39;, &#39;tractor_1.png&#39;, &#39;basket_2.png&#39;, &#39;pill_1.png&#39;, &#39;key_1.png&#39;, &#39;phone_1.png&#39;, &#39;microphone_2.png&#39;, &#39;pliers_1.png&#39;, &#39;box_2.png&#39;, &#39;pear_2.png&#39;, &#39;tea_1.png&#39;, &#39;cactus_2.png&#39;, &#39;money_2.png&#39;, &#39;fridge_2.png&#39;, &#39;perfume_1.png&#39;, &#39;frame_1.png&#39;, &#39;ring_1.png&#39;, &#39;tire_1.png&#39;, &#39;olive_2.png&#39;, &#39;tape_2.png&#39;, &#39;tractor_2.png&#39;, &#39;ship_2.png&#39;, &#39;basket_1.png&#39;, &#39;cricketB.png&#39;, &#39;pill_2.png&#39;, &#39;key_2.png&#39;, &#39;microphone_1.png&#39;, &#39;phone_2.png&#39;, &#39;pliers_2.png&#39;, &#39;box_1.png&#39;, &#39;pear_1.png&#39;, &#39;cactus_1.png&#39;, &#39;tea_2.png&#39;, &#39;money_1.png&#39;, &#39;fridge_1.png&#39;, &#39;perfume_2.png&#39;, &#39;frame_2.png&#39;, &#39;ring_2.png&#39;, &#39;hair_1.png&#39;, &#39;sink_2.png&#39;, &#39;cat_1.png&#39;, &#39;arch_1.png&#39;, &#39;soap_2.png&#39;, &#39;rug_1.png&#39;, &#39;pipe_2.png&#39;, &#39;match_1.png&#39;, &#39;sushi_2.png&#39;, &#39;cheese_2.png&#39;, &#39;rhino_2.png&#39;, &#39;pillow_1.png&#39;, &#39;tv_1.png&#39;, &#39;Icecream_2.png&#39;, &#39;seal_obj_1.png&#39;, &#39;rope_1.png&#39;, &#39;ladder_1.png&#39;, &#39;pie_2.png&#39;, &#39;belt_1.png&#39;, &#39;root_2.png&#39;, &#39;hair_2.png&#39;, &#39;sink_1.png&#39;, &#39;cat_2.png&#39;, &#39;arch_2.png&#39;, &#39;rug_2.png&#39;, &#39;soap_1.png&#39;, &#39;match_2.png&#39;, &#39;pipe_1.png&#39;, &#39;sushi_1.png&#39;, &#39;cheese_1.png&#39;, &#39;rhino_1.png&#39;, &#39;pillow_2.png&#39;, &#39;tv_2.png&#39;, &#39;icecream_1.png&#39;, &#39;rope_2.png&#39;, &#39;seal_obj_2.png&#39;, &#39;ladder_2.png&#39;, &#39;belt_2.png&#39;, &#39;pie_1.png&#39;, &#39;root_1.png&#39;, &#39;foot_2.png&#39;, &#39;sock_1.png&#39;, &#39;rock_1.png&#39;, &#39;fox_2.png&#39;, &#39;rake_1.png&#39;, &#39;crib_2.png&#39;, &#39;car_1.png&#39;, &#39;trunk_car_2.png&#39;, &#39;crown_2.png&#39;, &#39;whale_2.png&#39;, &#39;sword_1.png&#39;, &#39;coffin_1.png&#39;, &#39;cane_1.png&#39;, &#39;bird_2.png&#39;, &#39;feather_1.png&#39;, &#39;wheelchair_2.png&#39;, &#39;axe_1.png&#39;, &#39;shirt_2.png&#39;, &#39;rock_2.png&#39;, &#39;sock_2.png&#39;, &#39;foot_1.png&#39;, &#39;fox_1.png&#39;, &#39;rake_2.png&#39;, &#39;car_2.png&#39;, &#39;crib_1.png&#39;, &#39;trunk_car_1.png&#39;, &#39;crown_1.png&#39;, &#39;whale_1.png&#39;, &#39;sword_2.png&#39;, &#39;coffin_2.png&#39;, &#39;bird_1.png&#39;, &#39;cane_2.png&#39;, &#39;feather_2.png&#39;, &#39;axe_2.png&#39;, &#39;wheelchair_1.png&#39;, &#39;shirt_1.png&#39;, &#39;muffin_1.png&#39;, &#39;corset_2.png&#39;, &#39;lantern_1.png&#39;, &#39;camel_2.png&#39;, &#39;barrel_2.png&#39;, &#39;mug_1.png&#39;, &#39;horse_1.png&#39;, &#39;meat_2.png&#39;, &#39;bell_1.png&#39;, &#39;bagel_2.png&#39;, &#39;grapes_2.png&#39;, &#39;anchor_2.png&#39;, &#39;game_2.png&#39;, &#39;cabinet_1.png&#39;, &#39;bunny_1.png&#39;, &#39;mouse_comp_1.png&#39;, &#39;horn_2.png&#39;, &#39;log_1.png&#39;, &#39;scroll_2.png&#39;, &#39;shoe_2.png&#39;, &#39;seal_animal_2.png&#39;, &#39;bow_1.png&#39;, &#39;headphones_1.png&#39;, &#39;tap_2.png&#39;, &#39;tongs_1.png&#39;, &#39;muffin_2.png&#39;, &#39;corset_1.png&#39;, &#39;lantern_2.png&#39;, &#39;camel_1.png&#39;, &#39;barrel_1.png&#39;, &#39;mug_2.png&#39;, &#39;meat_1.png&#39;, &#39;cricketB_2.png&#39;, &#39;horse_2.png&#39;, &#39;bell_2.png&#39;, &#39;bagel_1.png&#39;, &#39;grapes_1.png&#39;, &#39;anchor_1.png&#39;, &#39;cabinet_2.png&#39;, &#39;game_1.png&#39;, &#39;bunny_2.png&#39;, &#39;mouse_comp_2.png&#39;, &#39;log_2.png&#39;, &#39;scroll_1.png&#39;, &#39;horn_1.png&#39;, &#39;shoe_1.png&#39;, &#39;seal_animal_1.png&#39;, &#39;bow_2.png&#39;, &#39;headphones_2.png&#39;, &#39;tongs_2.png&#39;, &#39;tap_1.png&#39;, &#39;remote_2.png&#39;, &#39;chair_2.png&#39;, &#39;mouse_squeak_1.png&#39;, &#39;peppers_1.png&#39;, &#39;spoon_1.png&#39;, &#39;doll_1.png&#39;, &#39;hat_2.png&#39;, &#39;oven_2.png&#39;, &#39;plant_1.png&#39;, &#39;knocker_1.png&#39;, &#39;wheelbarrow_2.png&#39;, &#39;quilt_1.png&#39;, &#39;train_1.png&#39;, &#39;microscope_2.png&#39;, &#39;clock_1.png&#39;, &#39;bat_sport_2.png&#39;, &#39;calculator_1.png&#39;, &#39;bomb_2.png&#39;, &#39;comb_2.png&#39;, &#39;guitar_1.png&#39;, &#39;gift_1.png&#39;, &#39;bat_animal_1.png&#39;, &#39;candy_2.png&#39;, &#39;dinosaur_1.png&#39;, &#39;cow_2.png&#39;, &#39;remote_1.png&#39;, &#39;mouse_squeak_2.png&#39;, &#39;chair_1.png&#39;, &#39;peppers_2.png&#39;, &#39;spoon_2.png&#39;, &#39;doll_2.png&#39;, &#39;hat_1.png&#39;, &#39;oven_1.png&#39;, &#39;plant_2.png&#39;, &#39;wheelbarrow_1.png&#39;, &#39;quilt_2.png&#39;, &#39;train_2.png&#39;, &#39;knocker_2.png&#39;, &#39;microscope_1.png&#39;, &#39;clock_2.png&#39;, &#39;bat_sport_1.png&#39;, &#39;calculator_2.png&#39;, &#39;comb_1.png&#39;, &#39;bomb_1.png&#39;, &#39;guitar_2.png&#39;, &#39;bat_animal_2.png&#39;, &#39;gift_2.png&#39;, &#39;candy_1.png&#39;, &#39;cow_1.png&#39;, &#39;dinosaur_2.png&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now let’s get just the category name.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="c1">#go for it!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now figure out which of these files don’t occur in special_stims and so are just regular stims.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python2",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python2'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Gary Lupyan<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

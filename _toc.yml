@@ -1,0 +1,38 @@
+format: jb-book
+root: index
+title: Psych 750
+options:
+  numbered: true
+parts:
+  - caption: Installation instructions
+    chapters:
+    - file: notebooks/programming_environment_osx.ipynb
+      title: Instructions for MacOS
+    - file: notebooks/programming_environment_windows.ipynb
+      title: Instructions for Windows
+  - caption: References
+    chapters:
+    - file: notebooks/Python_reference
+      title: Python reference
+    - file: notebooks/Shell_reference
+      title: Shell reference
+    - file: notebooks/python_basics.ipynb
+      title: Python basics
+    - file: notebooks/review_of_fundamentals_a.ipynb
+      title: Review of fundamentals A
+    - file: notebooks/review_of_fundamentals_b.ipynb
+      title: Review of fundamentals B
+  - caption: Self study guides
+    chapters:
+    - file: notebooks/Exercise1-square
+      title: A square
+  - caption: In class exercises
+    chapters:
+    - file: notebooks/in_class_exercise_1.ipynb
+      title: Getting comfortable
+  - caption: At home exercises
+    chapters:
+    - file: notebooks/Exercise2-names.ipynb
+      title: A name
+
+
