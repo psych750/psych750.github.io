@@ -55,8 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Exercise 2: Display some text, take in responses, read from a file" href="Exercise2-names.html" />
-    <link rel="prev" title="Exercise 1: Make a square and play with it" href="Exercise1-square.html" />
+    <link rel="prev" title="Make a square and play with it" href="Exercise1-square.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -132,64 +131,45 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="Shell_reference.html">
+   Basic Linux commands
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="Python_reference.html">
    Python reference
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Shell_reference.html">
-   Basic Linux commands
+  <a class="reference internal" href="Psychopy_reference.html">
+   PsychoPy reference
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ImageMagick.html">
+   ImageMagick/GraphicsMagick reference
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 1
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="python_basics.html">
    Python basics
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="review_of_fundamentals_a.html">
-   Review of fundamentals A
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="review_of_fundamentals_b.html">
-   Review of fundamentals B
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Self study guides
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
   <a class="reference internal" href="Exercise1-square.html">
-   A square
+   Trying out PsychoPy
   </a>
  </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  In class exercises
- </span>
-</p>
-<ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Getting comfortable
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  At home exercises
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="Exercise2-names.html">
-   A name
+   The first thinking exercise
   </a>
  </li>
 </ul>
@@ -328,6 +308,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="let-s-warm-up-them-neurons">
 <h1>Let’s warm up them neurons<a class="headerlink" href="#let-s-warm-up-them-neurons" title="Permalink to this headline">#</a></h1>
+<p>Now that we’ve gotten your environment all set up, let’s switch gears and do some actual coding.</p>
 <ol class="simple">
 <li><p>Write a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to print out the numbers 0 through 5</p></li>
 <li><p>Write a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to print out the numbers 2 through 8. Now do another one to print 9 through 0 (i.e., backwards)</p></li>
@@ -352,16 +333,16 @@ title="Print to PDF"
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>If you’re writing your program in the Python Shell or in a Jupyter Notebook, Python will automatically append a newline to anything you print. To keep it from doing that end the print statement with a comman, e.g., <code class="docutils literal notranslate"><span class="pre">print</span> <span class="pre">i,</span></code>. If you’re writing the code in a text editor and executing using <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">filename.py</span></code>, you can keep using <code class="docutils literal notranslate"><span class="pre">print</span></code> in the normal way.</p>
+<p>If you’re writing your program in the Python Shell or in a Jupyter Notebook, Python will automatically append a newline to anything you print. To keep it from doing that end the print statement with a comma, e.g., <code class="docutils literal notranslate"><span class="pre">print</span> <span class="pre">i,</span></code>. If you’re writing the code in a text editor and executing using <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">filename.py</span></code>, you won’t get a newline. If you want one, add <code class="docutils literal notranslate"><span class="pre">\n</span></code> to the end of your string.</p>
 </div>
 <ol class="simple">
-<li><p>If you’ve done some coding before, the last one is probably quite easy. Here’s one that’s slightly more challenging. Write some code that uses a variable <code class="docutils literal notranslate"><span class="pre">row</span></code> to print the following pattern.
-If <code class="docutils literal notranslate"><span class="pre">rows</span></code> is <code class="docutils literal notranslate"><span class="pre">1</span></code>, then the following pattern should be printed:</p></li>
+<li><p>If you’ve done any coding before, the last one was probably quite easy. Here’s one that’s slightly more challenging. Write some code that uses a variable <code class="docutils literal notranslate"><span class="pre">rows</span></code> to print the following pattern.
+If <code class="docutils literal notranslate"><span class="pre">row==1</span></code>, then the following pattern should be printed:</p></li>
 </ol>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">o</span>
 </pre></div>
 </div>
-<p>If <code class="docutils literal notranslate"><span class="pre">rows</span></code> is <code class="docutils literal notranslate"><span class="pre">5</span></code>, then the following pattern should be printed.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">rows==5</span></code>, then the following pattern should be printed.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>     <span class="n">o</span>
     <span class="n">ooo</span>
    <span class="n">ooooo</span>
@@ -370,23 +351,6 @@ If <code class="docutils literal notranslate"><span class="pre">rows</span></cod
 </pre></div>
 </div>
 <p>If it doesn’t look like a pyramid, you’re not doing it right ;)</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">,</span><span class="s1">&#39;three&#39;</span><span class="p">,</span><span class="s1">&#39;four&#39;</span><span class="p">]</span>
-
-<span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
-    <span class="nb">print</span> <span class="n">number</span><span class="p">,</span>
-    <span class="k">if</span> <span class="n">number</span> <span class="o">!=</span> <span class="s2">&quot;four&quot;</span><span class="p">:</span>
-        <span class="nb">print</span> <span class="s2">&quot;and a&quot;</span><span class="p">,</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>one and a two and a three and a four
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 
     <script type="text/x-thebe-config">
