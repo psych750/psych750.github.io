@@ -55,6 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Variables, Strings, and Numbers" href="var_string_num.html" />
+    <link rel="prev" title="Psychopy reference" href="Psychopy_reference.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -119,7 +121,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="programming_environment_windows.html">
-   Programming Environment: Windows 10
+   Programming Environment for Windows
   </a>
  </li>
 </ul>
@@ -128,66 +130,109 @@ const thebe_selector_output = ".output, .cell_output"
   References
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="Python_reference.html">
-   Python reference
-  </a>
- </li>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Shell_reference.html">
    Basic Linux commands
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="Python_reference.html">
+   Python reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Psychopy_reference.html">
+   PsychoPy reference
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   ImageMagick/GraphicsMagick reference
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Self Study Guides
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="var_string_num.html">
+   Variables, Strings, and Numbers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="list_basics.html">
+   Lists - the basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="if_statements.html">
+   If Statements
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="review_of_fundamentals_a.html">
+   Review of Fundamentals A
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dictionaries.html">
+   Dictionaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="trial_generation.html">
+   Randomization and Iteration
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="list_comprehension.html">
+   List Comprehension
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://docs.python.org/3.7/tutorial/errors.html">
+   Handling Exceptions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="classes.html">
+   Classes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="review_of_fundamentals_b.html">
+   Review of Fundamentals B
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regexp.html">
+   Regular Expressions
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 1
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
   <a class="reference internal" href="python_basics.html">
    Python basics
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="review_of_fundamentals_a.html">
-   Review of fundamentals A
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="review_of_fundamentals_b.html">
-   Review of fundamentals B
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Self study guides
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
   <a class="reference internal" href="Exercise1-square.html">
-   A square
+   Trying out PsychoPy
   </a>
  </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  In class exercises
- </span>
-</p>
-<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="in_class_exercise_1.html">
-   Getting comfortable
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  At home exercises
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="Exercise2-names.html">
-   A name
+   The first thinking exercise
   </a>
  </li>
 </ul>
@@ -505,24 +550,25 @@ title="Print to PDF"
                 
               <div>
                 
-  <h1>Table of Contents<span class="tocSkip"></span></h1>
-<div class="toc" style="margin-top: 1em;"><ul class="toc-item"><li><span><a href="#ImageMagick-basics" data-toc-modified-id="ImageMagick-basics-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>ImageMagick basics</a></span><ul class="toc-item"><li><span><a href="#ImageMagick-Documentation" data-toc-modified-id="ImageMagick-Documentation-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>ImageMagick Documentation</a></span></li><li><span><a href="#ImageMagick-options" data-toc-modified-id="ImageMagick-options-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>ImageMagick options</a></span><ul class="toc-item"><li><span><a href="#Resizing-images" data-toc-modified-id="Resizing-images-1.2.1"><span class="toc-item-num">1.2.1&nbsp;&nbsp;</span>Resizing images</a></span></li><li><span><a href="#Converting-images-from-one-format-to-another" data-toc-modified-id="Converting-images-from-one-format-to-another-1.2.2"><span class="toc-item-num">1.2.2&nbsp;&nbsp;</span>Converting images from one format to another</a></span></li><li><span><a href="#Trimming-borders" data-toc-modified-id="Trimming-borders-1.2.3"><span class="toc-item-num">1.2.3&nbsp;&nbsp;</span>Trimming borders</a></span></li><li><span><a href="#Overlaying-images" data-toc-modified-id="Overlaying-images-1.2.4"><span class="toc-item-num">1.2.4&nbsp;&nbsp;</span>Overlaying images</a></span></li><li><span><a href="#Combining-two-images" data-toc-modified-id="Combining-two-images-1.2.5"><span class="toc-item-num">1.2.5&nbsp;&nbsp;</span>Combining two images</a></span></li><li><span><a href="#Borders" data-toc-modified-id="Borders-1.2.6"><span class="toc-item-num">1.2.6&nbsp;&nbsp;</span>Borders</a></span></li><li><span><a href="#Cropping" data-toc-modified-id="Cropping-1.2.7"><span class="toc-item-num">1.2.7&nbsp;&nbsp;</span>Cropping</a></span></li><li><span><a href="#Shaving" data-toc-modified-id="Shaving-1.2.8"><span class="toc-item-num">1.2.8&nbsp;&nbsp;</span>Shaving</a></span></li><li><span><a href="#Masking-portions-of-an-image" data-toc-modified-id="Masking-portions-of-an-image-1.2.9"><span class="toc-item-num">1.2.9&nbsp;&nbsp;</span>Masking portions of an image</a></span></li><li><span><a href="#Animating-a-series-of-images" data-toc-modified-id="Animating-a-series-of-images-1.2.10"><span class="toc-item-num">1.2.10&nbsp;&nbsp;</span>Animating a series of images</a></span></li><li><span><a href="#Making-an-image-montage" data-toc-modified-id="Making-an-image-montage-1.2.11"><span class="toc-item-num">1.2.11&nbsp;&nbsp;</span>Making an image montage</a></span></li><li><span><a href="#Cutting-up-a-montage-of-images" data-toc-modified-id="Cutting-up-a-montage-of-images-1.2.12"><span class="toc-item-num">1.2.12&nbsp;&nbsp;</span>Cutting up a montage of images</a></span></li><li><span><a href="#Face-Mask-Example" data-toc-modified-id="Face-Mask-Example-1.2.13"><span class="toc-item-num">1.2.13&nbsp;&nbsp;</span>Face Mask Example</a></span></li></ul></li></ul></li></ul></div><section class="tex2jax_ignore mathjax_ignore" id="imagemagick-basics">
+  <section class="tex2jax_ignore mathjax_ignore" id="imagemagick-basics">
 <h1>ImageMagick basics<a class="headerlink" href="#imagemagick-basics" title="Permalink to this headline">#</a></h1>
 <section id="imagemagick-documentation">
 <h2>ImageMagick Documentation<a class="headerlink" href="#imagemagick-documentation" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="http://www.imagemagick.org/Usage/basics/">Basics</a></p>
 <p><a class="reference external" href="http://www.imagemagick.org/Usage/">Examples</a></p>
-<p><a class="reference external" href="http://www.imagemagick.org/Usage/annotating/">Examples of adding text to
-images.</a> <em>Note: This
-requires the ghostscript library which may not be installed on your
-machine.</em></p>
+<p><a class="reference external" href="http://www.imagemagick.org/Usage/annotating/">Examples of adding text to images.</a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Adding text requires the ghostscript library which may not be installed on your
+machine.* Google for installation instructions.</p>
+</div>
 </section>
 <section id="imagemagick-options">
 <h2>ImageMagick options<a class="headerlink" href="#imagemagick-options" title="Permalink to this headline">#</a></h2>
 <p>To get a list of available options or settings use</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">identify</span> <span class="o">-</span><span class="nb">list</span> <span class="nb">list</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">identify</span> <span class="o">-</span><span class="nb">list</span> <span class="nb">list</span>
 </pre></div>
 </div>
 </div>
@@ -834,13 +880,13 @@ images and mask out everything but the face.</p>
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python2",
+            kernelName: "python3",
             path: "./notebooks"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python2'</script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               

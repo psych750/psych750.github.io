@@ -1,19 +1,16 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# <h1>Table of Contents<span class="tocSkip"></span></h1>
-# <div class="toc" style="margin-top: 1em;"><ul class="toc-item"><li><span><a href="#If-Statements" data-toc-modified-id="If-Statements-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>If Statements</a></span></li><li><span><a href="#What-is-an-if-statement?" data-toc-modified-id="What-is-an-if-statement?-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>What is an <em>if</em> statement?</a></span><ul class="toc-item"><li><span><a href="#Example" data-toc-modified-id="Example-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Example</a></span><ul class="toc-item"><li><ul class="toc-item"><li><span><a href="#What-happens-in-this-program?" data-toc-modified-id="What-happens-in-this-program?-2.1.0.1"><span class="toc-item-num">2.1.0.1&nbsp;&nbsp;</span>What happens in this program?</a></span></li></ul></li></ul></li></ul></li><li><span><a href="#Logical-Tests" data-toc-modified-id="Logical-Tests-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Logical Tests</a></span><ul class="toc-item"><li><ul class="toc-item"><li><span><a href="#Whitespace" data-toc-modified-id="Whitespace-3.0.1"><span class="toc-item-num">3.0.1&nbsp;&nbsp;</span>Whitespace</a></span></li></ul></li><li><span><a href="#Equality" data-toc-modified-id="Equality-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Equality</a></span></li><li><span><a href="#Inequality" data-toc-modified-id="Inequality-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Inequality</a></span></li><li><span><a href="#Other-Inequalities" data-toc-modified-id="Other-Inequalities-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>Other Inequalities</a></span><ul class="toc-item"><li><span><a href="#greater-than" data-toc-modified-id="greater-than-3.3.1"><span class="toc-item-num">3.3.1&nbsp;&nbsp;</span>greater than</a></span></li><li><span><a href="#greater-than-or-equal-to" data-toc-modified-id="greater-than-or-equal-to-3.3.2"><span class="toc-item-num">3.3.2&nbsp;&nbsp;</span>greater than or equal to</a></span></li><li><span><a href="#less-than" data-toc-modified-id="less-than-3.3.3"><span class="toc-item-num">3.3.3&nbsp;&nbsp;</span>less than</a></span></li><li><span><a href="#less-than-or-equal-to" data-toc-modified-id="less-than-or-equal-to-3.3.4"><span class="toc-item-num">3.3.4&nbsp;&nbsp;</span>less than or equal to</a></span></li></ul></li><li><span><a href="#Checking-if-an-item-is-in-a-list" data-toc-modified-id="Checking-if-an-item-is-in-a-list-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>Checking if an item is <strong>in</strong> a list</a></span></li></ul></li><li><span><a href="#The-if-elif...else-chain" data-toc-modified-id="The-if-elif...else-chain-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>The if-elif...else chain</a></span><ul class="toc-item"><li><span><a href="#Simple-if-statements" data-toc-modified-id="Simple-if-statements-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Simple if statements</a></span></li><li><span><a href="#if-else-statements" data-toc-modified-id="if-else-statements-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>if-else statements</a></span></li><li><span><a href="#if-elif...else-chains" data-toc-modified-id="if-elif...else-chains-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>if-elif...else chains</a></span></li></ul></li><li><span><a href="#More-than-one-passing-test" data-toc-modified-id="More-than-one-passing-test-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>More than one passing test</a></span></li><li><span><a href="#True-and-False-values" data-toc-modified-id="True-and-False-values-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>True and False values</a></span></li></ul></div>
-
-# If Statements
-# ===
+# # If Statements
+# 
 # By allowing you to respond selectively to different situations and conditions, if statements open up whole new possibilities for your programs. In this section, you will learn how to test for certain conditions, and then respond in appropriate ways to those conditions.
 
-# What is an *if* statement?
-# ===
+# ## What is an *if* statement?
+# 
 # An *if* statement tests for a condition, and then responds to that condition. If the condition is true, then whatever action is listed next gets carried out. You can test for multiple conditions at the same time, and respond appropriately to each condition.
 # 
-# Example
-# ---
+# ### Example
+# 
 # Here is an example that shows a number of the desserts I like. It lists those desserts, but lets you know which one is my favorite.
 
 # In[3]:
@@ -43,10 +40,8 @@ for dessert in desserts:
 #     
 # You can test as many conditions as you want in an if statement, as you will see in a little bit.
 
-# [top](#)
-
-# Logical Tests
-# ===
+# ### Logical Tests
+# 
 # Every if statement evaluates to *True* or *False*. *True* and *False* are Python keywords, which have special meanings attached to them. You can test for the following conditions in your if statements:
 # 
 # - [equality](#equality) (==)
@@ -61,13 +56,13 @@ for dessert in desserts:
 # ### Whitespace
 # There is a [section of PEP 8](http://www.python.org/dev/peps/pep-0008/#other-recommendations) that tells us it's a good idea to put a single space on either side of all of these comparison operators. If you're not sure what this means, just follow the style of the examples you see below.
 
-# Equality
-# ---
+# ### Equality
+# 
 # Two items are *equal* if they have the same value. You can test for equality between numbers, strings, and a number of other objects which you will learn about later. Some of these results may be surprising, so take a careful look at the examples below.
 # 
-# In Python, as in many programming languages, two equals signs tests for equality.
+# In Python, as in many programming languages, two equal signs tests for equality.
 # 
-# **Watch out!** Be careful of accidentally using one equals sign, which can really throw things off because that one equals sign actually sets your item to the value you are testing for!
+# **Watch out!** Be careful of accidentally using one equal sign, which can really throw things off because that one equal sign actually sets your item to the value you are testing for!
 
 # In[3]:
 
@@ -85,6 +80,18 @@ for dessert in desserts:
 
 
 5 == 5.0
+
+
+# In[1]:
+
+
+1/3 == 1/3
+
+
+# In[2]:
+
+
+1/3 == .333333
 
 
 # In[8]:
@@ -117,11 +124,9 @@ for dessert in desserts:
 '5' == str(5)
 
 
-# [top](#)
-
-# Inequality
-# ---
-# Two items are *inequal* if they do not have the same value. In Python, we test for inequality using the exclamation point and one equals sign.
+# ### Inequality
+# 
+# If two items don't have the same value, they are not equal, or erm inequal. In Python, we test for inequality using `!=`.
 # 
 # Sometimes you want to test for equality and if that fails, assume inequality. Sometimes it makes more sense to test for inequality directly.
 
@@ -143,11 +148,7 @@ for dessert in desserts:
 'Eric' != 'eric'
 
 
-# [top](#)
-
-# Other Inequalities
-# ---
-# ### greater than
+# #### Greater than
 
 # In[16]:
 
@@ -155,7 +156,7 @@ for dessert in desserts:
 5 > 3
 
 
-# ### greater than or equal to
+# #### Greater than or equal to
 
 # In[19]:
 
@@ -169,7 +170,7 @@ for dessert in desserts:
 3 >= 3
 
 
-# ### less than
+# #### Less than
 
 # In[21]:
 
@@ -177,7 +178,7 @@ for dessert in desserts:
 3 < 5
 
 
-# ### less than or equal to
+# #### Less than or equal to
 
 # In[22]:
 
@@ -191,20 +192,18 @@ for dessert in desserts:
 3 <= 3
 
 
-# [top](#)
+# ### Checking if an item is **in** a list
+# 
+# There is an easy way to check if an item is in a list. Just use `in`.
 
-# Checking if an item is **in** a list
-# ---
-# You can check if an item is in a list using the **in** keyword.
-
-# In[25]:
+# In[6]:
 
 
 vowels = ['a', 'e', 'i', 'o', 'u']
 'a' in vowels
 
 
-# In[26]:
+# In[7]:
 
 
 vowels = ['a', 'e', 'i', 'o', 'u']
@@ -213,21 +212,19 @@ vowels = ['a', 'e', 'i', 'o', 'u']
 
 # You can check if an item is *not* in a list using `not in`
 
-# In[4]:
+# In[8]:
 
 
 vowels = ['a', 'e', 'i', 'o', 'u']
 'm' not in vowels
 
 
-# [top](#)
-
-# The if-elif...else chain
-# ===
+# ## The if-elif...else chain
+# 
 # You can test whatever series of conditions you want to, and you can test your conditions in any combination you want.
 
-# Simple if statements
-# ---
+# ### Simple if statements
+# 
 # The simplest test has a single **if** statement, and a single statement to execute if the condition is **True**.
 
 # In[27]:
@@ -252,8 +249,8 @@ if len(dogs) > 3:
 
 # Notice that there are no errors. The condition `len(dogs) > 3` evaluates to False, and the program moves on to any lines after the **if** block.
 
-# if-else statements
-# ---
+# ### if-else statements
+# 
 # Many times you will want to respond in two possible ways to a test. If the test evaluates to **True**, you will want to do one thing. If the test evaluates to **False**, you will want to do something else. The **if-else** structure lets you do that easily. Here's what it looks like:
 
 # In[30]:
@@ -282,8 +279,8 @@ else:
 
 # The test evaluated to **False**, so only the statement under `else` is run.
 
-# if-elif...else chains
-# ---
+# ### if-elif...else chains
+# 
 # Many times, you will want to test a series of conditions, rather than just an either-or situation. You can do this with a series of if-elif-else statements
 # 
 # There is no limit to how many conditions you can test. You always need one if statement to start the chain, and you can never have more than one else statement. But you can have as many elif statements as you want.
@@ -380,8 +377,6 @@ else:
 
 # As you can see, the if-elif-else chain lets you respond in very specific ways to any given situation.
 
-# [top](#)
-
 # More than one passing test
 # ===
 # In all of the examples we have seen so far, only one test can pass. As soon as the first test passes, the rest of the tests are ignored. This is really good, because it allows our code to run more efficiently. Many times only one condition can be true, so testing every condition after one passes would be meaningless.
@@ -422,24 +417,22 @@ elif 'monty' in dogs:
 
 # Of course, this could be written much more cleanly using lists and for loops. See if you can follow this code.
 
-# In[1]:
+# In[5]:
 
 
-dogs_we_know = ['willie', 'hootz', 'peso', 'monty', 'juno', 'turkey']
+dogs_we_know = ['willie', 'peso', 'turkey', 'monty', 'juno', 'hootz']
 dogs_present = ['willie', 'hootz']
 
 # Go through all the dogs that are present, and greet the dogs we know.
 for dog in dogs_present:
     if dog in dogs_we_know:
-        print "Hello", dog.title()
+        print("Hello", dog.title())
 
 
-# This is the kind of code you should be aiming to write. It is fine to come up with code that is less efficient at first. When you notice yourself writing the same kind of code repeatedly in one program, look to see if you can use a loop or a function to make your code more efficient.
+# The above is the kind of code you should be aiming to write. It's totally fine to initially have code that is less efficient at first. When you notice yourself having a lot of repetition in your code, look to see if you can use a loop or a function to make your code more readable compact (which will also generally make it more efficient).
 
-# [top](#)
-
-# True and False values
-# ===
+# ### True and False values
+# 
 # Every value can be evaluated as True or False. The general rule is that any non-zero or non-empty value will evaluate to True. If you are ever unsure, you can open a Python terminal and write two lines to find out if the value you are considering is True or False. Take a look at the following examples, keep them in mind, and test any value you are curious about. I am using a slightly longer test just to make sure something gets printed each time.
 
 # In[60]:
@@ -460,7 +453,7 @@ else:
     print("This evaluates to False.")
 
 
-# In[62]:
+# In[15]:
 
 
 # Arbitrary non-zero numbers evaluate to True.
@@ -470,7 +463,7 @@ else:
     print("This evaluates to False.")
 
 
-# In[63]:
+# In[14]:
 
 
 # Negative numbers are not zero, so they evaluate to True.
@@ -480,7 +473,7 @@ else:
     print("This evaluates to False.")
 
 
-# In[64]:
+# In[13]:
 
 
 # An empty string evaluates to False.
@@ -490,7 +483,7 @@ else:
     print("This evaluates to False.")
 
 
-# In[66]:
+# In[12]:
 
 
 # Any other string, including a space, evaluates to True.
@@ -500,7 +493,7 @@ else:
     print("This evaluates to False.")
 
 
-# In[67]:
+# In[11]:
 
 
 # Any other string, including a space, evaluates to True.
@@ -510,7 +503,7 @@ else:
     print("This evaluates to False.")
 
 
-# In[68]:
+# In[9]:
 
 
 # None is a special object in Python. It evaluates to False.
@@ -519,5 +512,3 @@ if None:
 else:
     print("This evaluates to False.")
 
-
-# [top](#)

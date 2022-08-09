@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Programming Environment: Windows 10" href="programming_environment_windows.html" />
+    <link rel="next" title="Programming Environment for Windows" href="programming_environment_windows.html" />
     <link rel="prev" title="Psych 750: Programming for Behavioral Data Science" href="../index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -121,7 +121,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="programming_environment_windows.html">
-   Programming Environment: Windows 10
+   Programming Environment for Windows
   </a>
  </li>
 </ul>
@@ -132,64 +132,45 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="Shell_reference.html">
+   Basic Linux commands
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="Python_reference.html">
    Python reference
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Shell_reference.html">
-   Basic Linux commands
+  <a class="reference internal" href="Psychopy_reference.html">
+   PsychoPy reference
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ImageMagick.html">
+   ImageMagick/GraphicsMagick reference
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 1
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="python_basics.html">
    Python basics
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="review_of_fundamentals_a.html">
-   Review of fundamentals A
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="review_of_fundamentals_b.html">
-   Review of fundamentals B
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Self study guides
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
   <a class="reference internal" href="Exercise1-square.html">
-   A square
+   Trying out PsychoPy
   </a>
  </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  In class exercises
- </span>
-</p>
-<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="in_class_exercise_1.html">
-   Getting comfortable
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  At home exercises
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="Exercise2-names.html">
-   A name
+   The first thinking exercise
   </a>
  </li>
 </ul>
@@ -340,6 +321,23 @@ title="Print to PDF"
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#intel-cpu-instructions">
+     Intel CPU Instructions
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mac-cpu-instructions">
+     Mac CPU Instructions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-virtual-environment">
+   Create Virtual Environment
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#test-the-anaconda-python-install">
      Test the Anaconda Python install
     </a>
@@ -420,6 +418,23 @@ title="Print to PDF"
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#intel-cpu-instructions">
+     Intel CPU Instructions
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mac-cpu-instructions">
+     Mac CPU Instructions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-virtual-environment">
+   Create Virtual Environment
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#test-the-anaconda-python-install">
      Test the Anaconda Python install
     </a>
@@ -482,14 +497,34 @@ title="Print to PDF"
 <section class="tex2jax_ignore mathjax_ignore" id="install-git">
 <h1>Install git<a class="headerlink" href="#install-git" title="Permalink to this headline">#</a></h1>
 <p><a class="reference external" href="https://sourceforge.net/projects/git-osx-installer/files/">Download and install</a> the latest version of <code class="docutils literal notranslate"><span class="pre">git</span></code></p>
-<p>Test it by typing `git –version`` at the command prompt.</p>
+<p>Test it by typing
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">--version</span></code>
+at the command prompt.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="install-the-anaconda-distribution-of-python">
 <h1>Install the Anaconda Distribution of Python<a class="headerlink" href="#install-the-anaconda-distribution-of-python" title="Permalink to this headline">#</a></h1>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>The instructions are slightly different if you are using an Intel Mac or a newer M1/M2 (aka “Apple Silicon”) Mac. If you’re not sure Click on the Apple icon on the top left corner and select <code class="docutils literal notranslate"><span class="pre">About</span> <span class="pre">this</span> <span class="pre">Mac</span></code>. If it says Intel XXX, then follow the Intel CPU instructions. If it says Apple M1 or similar, follow the Mac CPU instructions.</p>
+</div>
+<section id="intel-cpu-instructions">
+<h2>Intel CPU Instructions<a class="headerlink" href="#intel-cpu-instructions" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Download and Install the <strong>Python 3.8 64 bit</strong> <a class="reference external" href="https://conda.io/miniconda.html">Miniconda installer</a>. If you are asked whether you want the installer to prepend Anaconda to your PATH, respond <em><strong>yes</strong></em>.</p></li>
-<li><p>Next let’s create a virtual environment for this course. At the command prompt type</p></li>
 </ul>
+</section>
+<section id="mac-cpu-instructions">
+<h2>Mac CPU Instructions<a class="headerlink" href="#mac-cpu-instructions" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Open up your <code class="docutils literal notranslate"><span class="pre">Finder</span></code> and click on <code class="docutils literal notranslate"><span class="pre">Applications</span></code>. Then navigate to <code class="docutils literal notranslate"><span class="pre">Utilities</span></code> folder and right click on the <code class="docutils literal notranslate"><span class="pre">Terminal</span></code> and select Duplicate. Rename the duplicate to <code class="docutils literal notranslate"><span class="pre">Rosetta-Terminal</span></code>. Then right click on the <code class="docutils literal notranslate"><span class="pre">Rosetta-Terminal</span></code> and select <code class="docutils literal notranslate"><span class="pre">Get</span> <span class="pre">Info</span></code>. Check the <code class="docutils literal notranslate"><span class="pre">Open</span> <span class="pre">with</span> <span class="pre">Rosetta</span></code> option.</p></li>
+<li><p>Download and Install the <strong>Python 3.8 64 bit</strong> <a class="reference external" href="https://conda.io/miniconda.html">Miniconda installer</a>. Make sure to select the <code class="docutils literal notranslate"><span class="pre">macOS</span> <span class="pre">Intel</span> <span class="pre">x86</span> <span class="pre">64-bit</span></code> version. The <code class="docutils literal notranslate"><span class="pre">pkg</span></code> file is more user friendly and installs like any other programs. If you are asked whether you want the installer to prepend Anaconda to your PATH, respond <em><strong>yes</strong></em>.</p></li>
+<li><p>From now on, use the <code class="docutils literal notranslate"><span class="pre">Rosetta-Terminal</span></code> instead of the original <code class="docutils literal notranslate"><span class="pre">Terminal</span></code>.</p></li>
+</ul>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="create-virtual-environment">
+<h1>Create Virtual Environment<a class="headerlink" href="#create-virtual-environment" title="Permalink to this headline">#</a></h1>
+<p>Next let’s create a virtual environment for this course. At the command prompt type</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda create -n psych750 <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.8 pip
 </pre></div>
 </div>
@@ -499,7 +534,7 @@ title="Print to PDF"
 </div>
 <section id="test-the-anaconda-python-install">
 <h2>Test the Anaconda Python install<a class="headerlink" href="#test-the-anaconda-python-install" title="Permalink to this headline">#</a></h2>
-<p>Activate your environment using <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span></code> and then type <code class="docutils literal notranslate"><span class="pre">python</span></code> to start the Python interpreter</p>
+<p>Activate your environment using <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">psych750</span></code> and then type <code class="docutils literal notranslate"><span class="pre">python</span></code> to start the Python interpreter</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python 
 Python <span class="m">3</span>.8.13 <span class="o">(</span>default, Mar <span class="m">28</span> <span class="m">2022</span>, <span class="m">06</span>:16:26<span class="o">)</span>
 <span class="o">[</span>Clang <span class="m">12</span>.0.0 <span class="o">]</span> :: Anaconda, Inc. on darwin

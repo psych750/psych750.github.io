@@ -21,18 +21,15 @@
 # [Python Visualizer](http://pythontutor.com/visualize.html)
 # :    The Python Visualizer may be helpful if you are having trouble conceptualizing how python exectures some bit of code.
 # 
-# [UC Berkeley Python Course](http://intro-prog-bioinfo-2009.wikispaces.com/)
-# :    Here is a python course taught by Lenny Teytelman at UC-Berkeley.
-# 
 # [NumPy for Matlab users](http://mathesaurus.sourceforge.net/matlab-numpy.html)
-# :    If you're a Matlab user transitioning to Python, this is the page for you.
+# :    If you're a Matlab user transitioning to Python, this page may be helpful.
 
 # ## Quick references
 # 
 # -   Lists and list comprehension:
 #     <http://docs.python.org/tutorial/datastructures.html#more-on-lists>
 # -   Useful functions for Python dictionaries:
-#     <http://docs.python.org/release/2.5.2/lib/typesmapping.html>
+#     <https://docs.python.org/3.7/library/stdtypes.html>
 # -   Writing/reading files:
 #     <http://docs.python.org/tutorial/inputoutput.html#reading-and-writing-files>
 # -   Sorting lists and dictionaries - nice tips for how to sort by a
@@ -79,7 +76,7 @@ string.ascii_letters
 
 # ### To find out the version of the library you've imported:
 
-# In[3]:
+# In[1]:
 
 
 import nltk
@@ -88,7 +85,7 @@ nltk.__version__
 
 # ### To find out the location of the source files that are being loaded when you import a library:
 
-# In[4]:
+# In[2]:
 
 
 import nltk
@@ -99,7 +96,7 @@ nltk.__file__
 # 
 # Supposed you have a list called shoppingList:
 
-# In[5]:
+# In[4]:
 
 
 shoppingList =  ['apples', 'oranges', 'screwdriver']
@@ -108,7 +105,7 @@ shoppingList =  ['apples', 'oranges', 'screwdriver']
 # And you want to determine if this list contains some item, say,
 # 'apples'. The easiest way to do it is to use `in`.
 
-# In[6]:
+# In[5]:
 
 
 if 'apples' in shoppingList:
@@ -119,7 +116,7 @@ if 'apples' in shoppingList:
 # you want to to determine if a string variable called shoppingList
 # contains the word 'apples' in it.
 
-# In[7]:
+# In[6]:
 
 
 shoppingString =  'apples, oranges, screwdriver'
@@ -127,7 +124,7 @@ shoppingString =  'apples, oranges, screwdriver'
 
 # Turns out `in` works here as well:
 
-# In[8]:
+# In[7]:
 
 
 if 'apples' in shoppingString:
@@ -153,6 +150,10 @@ if 'apples' in shoppingString:
 
 'apples' in shoppingString
 
+
+# ```{tip}
+# If you want to search a string more flexibly, you can use for parts of a string, you can use [String.find](https://www.geeksforgeeks.org/python-string-find/) and regular expressions which we'll cover later in the term.
+# ```
 
 # but not for shoppingList
 
@@ -206,7 +207,7 @@ if 'apples' in shoppingString:
 # This
 # 
 # ```python
-# print [letter for letter in 'abracadabra']
+# print([letter for letter in 'abracadabra'])
 # ```
 # 
 # is better than this
@@ -330,7 +331,7 @@ list1
 # 
 # Say you have a list and you want to know whether it has sequential elements (e.g., 3,4). Why would you care? Suppose you want to intersperse catch trials throughout your experiment, but you don't want to have two catch trials in a row. How to ensure this?
 
-# In[2]:
+# In[12]:
 
 
 import random
@@ -345,7 +346,7 @@ def has_sequential(lst):
 repeatTrials = random.sample(range(180),20)
 while has_sequential(repeatTrials):
     repeatTrials = random.sample(range(180),20)
-print sorted(repeatTrials)
+print(sorted(repeatTrials))
 
 
 # ### Shuffle a list slice in place
@@ -365,9 +366,9 @@ def shuffle_slice(a, start, stop):
         index1 += 1
 
 a = range(10)
-print a
+print(a)
 shuffle_slice(a,0,4)
-print a
+print(a)
 
 
 # ### Use sets
@@ -460,42 +461,15 @@ spam2 = '3'
 spam == spam2
 
 
-# Because a bare numeral like 3 defaults to an integer, you can get
-# unexpected behavior:
-
-# In[32]:
-
-
-spam/2
-
-
-# Which can be remedied by forcibly converting the variable to a floating
-# point number.
-
-# In[33]:
-
-
-spam=3.0
-spam/2
-
-
-# Alternatively,
-
-# In[34]:
-
-
-spam=3
-float(spam)/2
-
-
-# If you\'re not sure what type something is, use the `type()` function to
-# check.
+# ```{tip}
+# If you're not sure what type something is, use the `type()` function to check.
+# ```
 
 # ### Reference, mutability, and copying
 # 
 # Have a look at this:
 
-# In[35]:
+# In[8]:
 
 
 egg = 'green'
@@ -503,7 +477,7 @@ ham = egg
 ham
 
 
-# In[36]:
+# In[9]:
 
 
 egg = 'yellow'
@@ -512,7 +486,7 @@ ham
 
 # Easy enough. Now have a look here:
 
-# In[37]:
+# In[10]:
 
 
 egg = ['green']
@@ -520,7 +494,7 @@ ham = egg
 ham
 
 
-# In[38]:
+# In[11]:
 
 
 egg[0] = 'yellow'
@@ -528,8 +502,7 @@ ham
 
 
 # What do you think is happening here? That's right, ham points to the
-# egg list, not to the content inside. When you change the content within
-# egg, you've changed ham.
+# egg list, not to the content inside. When you change the content of the `egg` list, you've changed the value of the `ham` variable.
 
 # ### Writing to a file, safely
 
@@ -583,7 +556,7 @@ ham
 # 
 # Here's a function that implements an infinite list of odd numbers.
 
-# In[39]:
+# In[16]:
 
 
 def oddNum(start):
@@ -597,21 +570,22 @@ def oddNum(start):
 # Here's one way to use it:\
 # Get 30 odd numbers starting at 1
 
-# In[40]:
+# In[21]:
 
 
 someOddNums = oddNum(1) #start it at 1
-for i in range (30):
-    print(someOddNums.next())
+print(someOddNums)
+for i in range(30):
+    print(next(someOddNums))
 
 
 # Here's another way using list comprehension:
 
-# In[41]:
+# In[23]:
 
 
 moreOddNums = oddNum(1) #start it at 1
-[moreOddNums.next() for i in range(30)]
+[next(moreOddNums) for i in range(30)]
 
 
 # Here's a generator function for implementing a circular list. If you
@@ -621,7 +595,7 @@ moreOddNums = oddNum(1) #start it at 1
 # in, e.g., `circularList(['a','b','c'])` will create a circular
 # list from `['a','b','c']`)
 
-# In[42]:
+# In[26]:
 
 
 def circularList(lst):
@@ -636,38 +610,38 @@ def circularList(lst):
 # To use it, create a new generator by assigning it to a variable:
 
 # ```python
-# myGenerator = circularList(lst)
+# myGenerator = circularList(lst)
 # ```
 
-# where lst is the list you'd like to iterate through continuously.
+# where `lst` is the list you'd like to iterate through continuously.
 # Notice the conditional in the first line of the circularList function.
 # This allows the function to take in either a list or an integer. In the
 # latter case, the function constructs a new list of that length, e.g.,
 # circularList(3) will iterate through the list [0,1,2] ad infinitum:
 
-# In[43]:
+# In[30]:
 
 
 myGenerator = circularList([0,1,2])
-myGenerator.next()
+next(myGenerator)
 
 
-# In[44]:
+# In[31]:
 
 
-myGenerator.next()
+next(myGenerator)
 
 
-# In[45]:
+# In[32]:
 
 
-myGenerator.next()
+next(myGenerator)
 
 
-# In[46]:
+# In[33]:
 
 
-myGenerator.next()
+next(myGenerator)
 
 
 # See what happens if you make a generator using a character string, e.g.,
@@ -681,7 +655,7 @@ myGenerator.next()
 # that each time you run it with the same seed, you\'ll get the same
 # sequence of randomizations.
 
-# In[47]:
+# In[34]:
 
 
 import random
@@ -700,14 +674,14 @@ def randomizingCircularList(lst,seed):
 newCircle = randomizingCircularList(['a','b','c'], 10)
 
 for i in range(10):
-    print(newCircle.next())
+    print(next(newCircle))
 
 
 # ### Simple classes
 # 
 # Here is a simple counter class:
 
-# In[48]:
+# In[35]:
 
 
 class Counter:
@@ -728,7 +702,7 @@ class Counter:
 
 # Here\'s another simple class:
 
-# In[49]:
+# In[36]:
 
 
 class BankAccount():
@@ -745,7 +719,7 @@ class BankAccount():
 # Creating an instance of a BankAccount class and manipulatig the balance
 # is as simple as:
 
-# In[50]:
+# In[37]:
 
 
 my_account = BankAccount(15)

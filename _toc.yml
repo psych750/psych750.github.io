@@ -6,33 +6,49 @@ options:
 parts:
   - caption: Installation instructions
     chapters:
-    - file: notebooks/programming_environment_osx.ipynb
+    - file: notebooks/programming_environment_osx
       title: Instructions for MacOS
-    - file: notebooks/programming_environment_windows.ipynb
+    - file: notebooks/programming_environment_windows
       title: Instructions for Windows
   - caption: References
     chapters:
-    - file: notebooks/Python_reference
-      title: Python reference
     - file: notebooks/Shell_reference
       title: Shell reference
-    - file: notebooks/python_basics.ipynb
-      title: Python basics
-    - file: notebooks/review_of_fundamentals_a.ipynb
-      title: Review of fundamentals A
-    - file: notebooks/review_of_fundamentals_b.ipynb
-      title: Review of fundamentals B
-  - caption: Self study guides
+    - file: notebooks/Python_reference
+      title: Python reference
+    - file: notebooks/Psychopy_reference
+      title: PsychoPy reference
+    - file: notebooks/ImageMagick
+      title: ImageMagick/GraphicsMagick reference
+  - caption: Self Study Guides
     chapters:
+    - file: notebooks/var_string_num
+      title: Variables, strings, and numbers
+    - file: notebooks/list_basics
+      title: List basics
+    - file: notebooks/if_statements
+      title: If statements
+    - file: notebooks/review_of_fundamentals_a
+      title: Review of Fundamentals A
+    - file: notebooks/dictionaries
+      title: Dictionaries
+    - file: notebooks/trial_generation
+      title: Randomization and Iteration
+    - file: notebooks/list_comprehension
+      title: List Comprehension
+    - url: https://docs.python.org/3.7/tutorial/errors.html
+      title: Handling Exceptions
+    - file: notebooks/classes
+      title: Object Oriented Programming
+    - file: notebooks/review_of_fundamentals_b
+      title: Review of Fundamentals B
+    - file: notebooks/regexp.ipynb
+      title: Regular Expressions
+  - caption: Week 1
+    chapters:
+    - file: notebooks/python_basics
+      title: Python basics 
     - file: notebooks/Exercise1-square
-      title: A square
-  - caption: In class exercises
-    chapters:
-    - file: notebooks/in_class_exercise_1.ipynb
-      title: Getting comfortable
-  - caption: At home exercises
-    chapters:
-    - file: notebooks/Exercise2-names.ipynb
-      title: A name
-
-
+      title: Trying out PsychoPy
+    - file: notebooks/in_class_exercise_1
+      title: The first thinking exercise

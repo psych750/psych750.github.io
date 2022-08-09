@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Exercise 1: Make a square and play with it &#8212; Psych 750</title>
+    <title>Make a square and play with it &#8212; Psych 750</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Now let’s write some code!" href="in_class_exercise_1.html" />
-    <link rel="prev" title="Review of fundamentals B" href="review_of_fundamentals_b.html" />
+    <link rel="next" title="Let’s warm up them neurons" href="in_class_exercise_1.html" />
+    <link rel="prev" title="Python essentials to get you started" href="python_basics.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -116,12 +116,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="programming_environment_osx.html">
-   Programming Environment: MacOS
+   Programming Environment for MacOS
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="programming_environment_windows.html">
-   Programming Environment: Windows 10
+   Programming Environment for Windows
   </a>
  </li>
 </ul>
@@ -132,64 +132,102 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="Python_reference.html">
-   Python reference
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="Shell_reference.html">
    Basic Linux commands
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="python_basics.html">
-   Python basics
+  <a class="reference internal" href="Python_reference.html">
+   Python reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Psychopy_reference.html">
+   PsychoPy reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ImageMagick.html">
+   ImageMagick/GraphicsMagick reference
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Self Study Guides
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="var_string_num.html">
+   Variables, Strings, and Numbers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="if_statements.html">
+   If Statements
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="review_of_fundamentals_a.html">
-   Review of fundamentals A
+   Review of Fundamentals A
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dictionaries.html">
+   Dictionaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="trial_generation.html">
+   Randomization and Iteration
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="list_comprehension.html">
+   List Comprehension
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://docs.python.org/3.7/tutorial/errors.html">
+   Handling Exceptions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="classes.html">
+   Classes
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="review_of_fundamentals_b.html">
-   Review of fundamentals B
+   Review of Fundamentals B
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regexp.html">
+   Regular Expressions
   </a>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Self study guides
+  Week 1
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_basics.html">
+   Python basics
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   A square
+   Trying out PsychoPy
   </a>
  </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  In class exercises
- </span>
-</p>
-<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="in_class_exercise_1.html">
-   Getting comfortable
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  At home exercises
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="Exercise2-names.html">
-   A name
+   The first thinking exercise
   </a>
  </li>
 </ul>
@@ -325,8 +363,8 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#go-through-each-line-and-understand-what-it-does-then">
-   Go through each line and understand what it does. Then…
+  <a class="reference internal nav-link" href="#go-through-each-line-and-understand-what-it-does">
+   Go through each line and understand what it does.
   </a>
  </li>
 </ul>
@@ -338,7 +376,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Exercise 1: Make a square and play with it</h1>
+                <h1>Make a square and play with it</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -349,8 +387,8 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#go-through-each-line-and-understand-what-it-does-then">
-   Go through each line and understand what it does. Then…
+  <a class="reference internal nav-link" href="#go-through-each-line-and-understand-what-it-does">
+   Go through each line and understand what it does.
   </a>
  </li>
 </ul>
@@ -363,73 +401,65 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="exercise-1-make-a-square-and-play-with-it">
-<h1>Exercise 1: Make a square and play with it<a class="headerlink" href="#exercise-1-make-a-square-and-play-with-it" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="make-a-square-and-play-with-it">
+<h1>Make a square and play with it<a class="headerlink" href="#make-a-square-and-play-with-it" title="Permalink to this headline">#</a></h1>
 <p>The following bit of code will show a blue square for 500 ms and then exit out of the program.</p>
-<div class="cell docutils container">
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">from</span> <span class="nn">psychopy</span> <span class="kn">import</span> <span class="n">visual</span><span class="p">,</span><span class="n">event</span><span class="p">,</span><span class="n">core</span>
- 
-<span class="n">win</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Window</span><span class="p">([</span><span class="mi">400</span><span class="p">,</span><span class="mi">400</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s1">&#39;pix&#39;</span><span class="p">)</span> <span class="c1">#open a window</span>
-<span class="n">square</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="n">win</span><span class="p">,</span><span class="n">lineColor</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span><span class="n">fillColor</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">])</span> <span class="c1">#make a blue square</span>
-<span class="n">square</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span> <span class="c1">#draw the square to the buffer</span>
-<span class="n">win</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span> <span class="c1">#make the buffer visible</span>
-<span class="n">core</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mf">.5</span><span class="p">)</span> <span class="c1">#pause for 500 ms (half a second)</span>
-<span class="n">win</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1">#close the window -- don&#39;t need this if you&#39;re running this as a separate file</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.2120 	WARNING 	Monitor specification not found. Creating a temporary one...
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">An</span> <span class="n">exception</span> <span class="n">has</span> <span class="n">occurred</span><span class="p">,</span> <span class="n">use</span> <span class="o">%</span><span class="k">tb</span> to see the full traceback.
+<span class="kn">from</span> <span class="nn">psychopy</span> <span class="kn">import</span> <span class="n">visual</span><span class="p">,</span><span class="n">event</span><span class="p">,</span><span class="n">core</span> <span class="c1"># import the bits of PsychoPy we&#39;ll need for these exercises</span>
 
-<span class="ne">SystemExit</span>
+<span class="n">win</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Window</span><span class="p">([</span><span class="mi">400</span><span class="p">,</span><span class="mi">400</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s1">&#39;pix&#39;</span><span class="p">)</span> <span class="c1">#open a window</span>
+<span class="n">square</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="n">win</span><span class="p">,</span><span class="n">lineColor</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span><span class="n">fillColor</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">])</span> <span class="c1">#create a Rectangle type object with certain parameters</span>
+<span class="n">square</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span> <span class="c1">#draw the square to the screen buffer</span>
+<span class="n">win</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span> <span class="c1">#make the buffer visible, i.e., show what&#39;s been drawn to it</span>
+<span class="n">core</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mf">.5</span><span class="p">)</span> <span class="c1">#pause for half a second (i.e., 500 ms)</span>
+<span class="n">win</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1">#close the window -- don&#39;t need this if you&#39;re running this as a separate file</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span> <span class="c1">#quit out of the program -- don&#39;t need this if you&#39;re running this as a separate file</span>
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/glupyan/anaconda2/lib/python2.7/site-packages/IPython/core/interactiveshell.py:2889: UserWarning: To exit: use &#39;exit&#39;, &#39;quit&#39;, or Ctrl-D.
-  warn(&quot;To exit: use &#39;exit&#39;, &#39;quit&#39;, or Ctrl-D.&quot;, stacklevel=1)
-</pre></div>
 </div>
 </div>
-</div>
-<section id="go-through-each-line-and-understand-what-it-does-then">
-<h2>Go through each line and understand what it does. Then…<a class="headerlink" href="#go-through-each-line-and-understand-what-it-does-then" title="Permalink to this headline">#</a></h2>
+<section id="go-through-each-line-and-understand-what-it-does">
+<h2>Go through each line and understand what it does.<a class="headerlink" href="#go-through-each-line-and-understand-what-it-does" title="Permalink to this headline">#</a></h2>
+<p>…then spend the next 15 mins working through these (you’ll finish the rest on your own at home)</p>
 <ol>
 <li><p>Make the square red instead of blue</p></li>
 <li><p>Make the square appear for 1.5 secs.</p></li>
-<li><p>Show a red square for 1 s, then switch it to blue and show it for 1 s</p></li>
-<li><p>Make the square appear for 1.5 secs, then show a blank screen for 1 sec, then flash the square 3 times for 30 ms each.</p></li>
+<li><p>Show a red square for 1 second, then switch it to blue and show it for 1 second</p></li>
+<li><p>Make the square appear for 1.5 secs, then show a blank screen for 1 sec, then flash the square 3 times for 30 ms (i.e., .03 seconds) each.</p></li>
 <li><p>Show the following sequence: blue, red, blue, red, blue, red (with each square appearing for 1 s with a 50 ms blank screen in the middle).</p></li>
 <li><p>Show a red square for 1 s then change its orientation by 45-deg</p>
- <div class="alert alert-block alert-info">
- To change the orientation by a certain degree-value use square.setOri(value) where `value` is the new orientation.
- </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To change the orientation by a certain degree-value use square.setOri(value) where <code class="docutils literal notranslate"><span class="pre">value</span></code> is the new orientation.</p>
+</div>
 </li>
 <li><p>Now make a square rotate continuously, one full revolution (360 degrees) per second</p>
- <div class="alert alert-block alert-info">
- To increase orientation use `square.ori += value` where `value` is the value by which to increase the
- orientation.
- </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To increase orientation use <code class="docutils literal notranslate"><span class="pre">square.ori</span> <span class="pre">+=</span> <span class="pre">value</span></code> where <code class="docutils literal notranslate"><span class="pre">value</span></code> is the value by which to increase the
+orientation.</p>
+</div>
 </li>
 <li><p>Make a rotating square stop rotating when you press the ‘s’ key</p>
- <div class="alert alert-block alert-info">
- To accept keyboard input you'll want to check it event.getKeys(['s']) is True. 
- </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To accept keyboard input you’ll want to check if event.getKeys([‘s’]) is True.</p>
+</div>
 </li>
 <li><p>Make a square stop rotating when you press ‘s’ and then start rotating again when you press ‘r’</p></li>
 <li><p>Display a blue square and increase its width (making it a rectangle) by 10 pixels whenever the user presses the left-arrow key. Decrease the width by 10 pixels when the user presses the right-arrow key</p>
- <div class="alert alert-block alert-info">
- The key codes for right and left arrows in PsychoPy are simply 'right' and 'left'
- </div>
- <div class="alert alert-block alert-info">
- To change the width use `square.size += [x,y]` where `x` and `y` are the values by which you want to change the 
- size
- </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The key codes for right and left arrows in PsychoPy are simply ‘right’ and ‘left’</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To change the width use <code class="docutils literal notranslate"><span class="pre">square.size</span> <span class="pre">+=</span> <span class="pre">[x,y]</span></code> where <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> are the values by which you want to change the
+size</p>
+</div>
 </li>
 <li><p>Make the rectangle decrease/increase its width by 10% of its current width with each keypress instead of 10 pixels</p></li>
 <li><p>Show <em>two</em> rotating squares simultaneously, one left of center rotating clockwise, the other right of center, rotating counterclockwise</p></li>

@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# <h1>Table of Contents<span class="tocSkip"></span></h1>
-# <div class="toc" style="margin-top: 1em;"><ul class="toc-item"><li><span><a href="#Regular-expressions" data-toc-modified-id="Regular-expressions-1">Regular expressions</a></span><ul class="toc-item"><li><span><a href="#Use-as-a-filter" data-toc-modified-id="Use-as-a-filter-1.1">Use as a filter</a></span></li><li><span><a href="#Use-in-place-of-conditionals" data-toc-modified-id="Use-in-place-of-conditionals-1.2">Use in place of conditionals</a></span></li><li><span><a href="#Search-and-replace" data-toc-modified-id="Search-and-replace-1.3">Search and replace</a></span></li><li><span><a href="#Renaming-files" data-toc-modified-id="Renaming-files-1.4">Renaming files</a></span></li></ul></li></ul></div>
-
 # # Regular expressions
 # 
 # Regular expressions are an immensely powerful tool built into most modern computer languages. They are a type of formal grammar that allow you to match strings that match or mismatch a particular rule. [http://www.rexegg.com/regex-uses.html](Common uses) include checking if user input conforms to a desired pattern (e.g., 3 numbers followed by two numbers, followed by 3 numbers), do all sorts of complicated search-replace operations both in text-files and, e.g., renaming files.
@@ -281,7 +278,7 @@ emailRegExGrouped.findall('g.lupyan@gmail.com lupyan@wisc.edu')
 # `\n`
 # To get rid of multiple newlines that the first search/replace may have created.
 
-# ## Renaming files
+# ## Bath file renaming
 
-# Use the same logic to rename files. You can do this in python or by using GUI programs like [NameChanger](https://mrrsoftware.com/namechanger/) (Mac), or [Bulk Rename](http://www.bulkrenameutility.co.uk/Main_Intro.php) (PC). These programs allow you to do batch renaming of files using simple search/replace (e.g., replace `_` with `-` or through search/replace augmented by regular expressions.
+# You can use what you've learned about regular expressions for manipulating not just actual text, but text used in file names. You can do this in straight-up Python using the `os` library, or by using GUI programs like [NameChanger](https://mrrsoftware.com/namechanger/) (Mac),  or [Bulk Rename](http://www.bulkrenameutility.co.uk/Main_Intro.php) (PC). These programs allow you to do batch renaming of files using simple search/replace (e.g., replace `_` with `-` as well as by using regular expressions for more complex changes!
 # 

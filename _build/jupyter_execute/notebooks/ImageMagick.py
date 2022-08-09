@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# <h1>Table of Contents<span class="tocSkip"></span></h1>
-# <div class="toc" style="margin-top: 1em;"><ul class="toc-item"><li><span><a href="#ImageMagick-basics" data-toc-modified-id="ImageMagick-basics-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>ImageMagick basics</a></span><ul class="toc-item"><li><span><a href="#ImageMagick-Documentation" data-toc-modified-id="ImageMagick-Documentation-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>ImageMagick Documentation</a></span></li><li><span><a href="#ImageMagick-options" data-toc-modified-id="ImageMagick-options-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>ImageMagick options</a></span><ul class="toc-item"><li><span><a href="#Resizing-images" data-toc-modified-id="Resizing-images-1.2.1"><span class="toc-item-num">1.2.1&nbsp;&nbsp;</span>Resizing images</a></span></li><li><span><a href="#Converting-images-from-one-format-to-another" data-toc-modified-id="Converting-images-from-one-format-to-another-1.2.2"><span class="toc-item-num">1.2.2&nbsp;&nbsp;</span>Converting images from one format to another</a></span></li><li><span><a href="#Trimming-borders" data-toc-modified-id="Trimming-borders-1.2.3"><span class="toc-item-num">1.2.3&nbsp;&nbsp;</span>Trimming borders</a></span></li><li><span><a href="#Overlaying-images" data-toc-modified-id="Overlaying-images-1.2.4"><span class="toc-item-num">1.2.4&nbsp;&nbsp;</span>Overlaying images</a></span></li><li><span><a href="#Combining-two-images" data-toc-modified-id="Combining-two-images-1.2.5"><span class="toc-item-num">1.2.5&nbsp;&nbsp;</span>Combining two images</a></span></li><li><span><a href="#Borders" data-toc-modified-id="Borders-1.2.6"><span class="toc-item-num">1.2.6&nbsp;&nbsp;</span>Borders</a></span></li><li><span><a href="#Cropping" data-toc-modified-id="Cropping-1.2.7"><span class="toc-item-num">1.2.7&nbsp;&nbsp;</span>Cropping</a></span></li><li><span><a href="#Shaving" data-toc-modified-id="Shaving-1.2.8"><span class="toc-item-num">1.2.8&nbsp;&nbsp;</span>Shaving</a></span></li><li><span><a href="#Masking-portions-of-an-image" data-toc-modified-id="Masking-portions-of-an-image-1.2.9"><span class="toc-item-num">1.2.9&nbsp;&nbsp;</span>Masking portions of an image</a></span></li><li><span><a href="#Animating-a-series-of-images" data-toc-modified-id="Animating-a-series-of-images-1.2.10"><span class="toc-item-num">1.2.10&nbsp;&nbsp;</span>Animating a series of images</a></span></li><li><span><a href="#Making-an-image-montage" data-toc-modified-id="Making-an-image-montage-1.2.11"><span class="toc-item-num">1.2.11&nbsp;&nbsp;</span>Making an image montage</a></span></li><li><span><a href="#Cutting-up-a-montage-of-images" data-toc-modified-id="Cutting-up-a-montage-of-images-1.2.12"><span class="toc-item-num">1.2.12&nbsp;&nbsp;</span>Cutting up a montage of images</a></span></li><li><span><a href="#Face-Mask-Example" data-toc-modified-id="Face-Mask-Example-1.2.13"><span class="toc-item-num">1.2.13&nbsp;&nbsp;</span>Face Mask Example</a></span></li></ul></li></ul></li></ul></div>
-
 # # ImageMagick basics
 # 
 # ## ImageMagick Documentation
@@ -12,10 +9,12 @@
 # 
 # [Examples](http://www.imagemagick.org/Usage/)
 # 
-# [Examples of adding text to
-# images.](http://www.imagemagick.org/Usage/annotating/) *Note: This
-# requires the ghostscript library which may not be installed on your
-# machine.*
+# [Examples of adding text to images.](http://www.imagemagick.org/Usage/annotating/) 
+# 
+# ```{note}
+# Adding text requires the ghostscript library which may not be installed on your
+# machine.* Google for installation instructions.
+# ```
 
 # ## ImageMagick options
 # 
@@ -300,9 +299,3 @@ identify -list list
 # ```bash
 # convert -size 128x156 xc:black -fill white -draw "ellipse 64.5,91 37,53.5 0,360" draw_ellipse.png
 # ```
-
-# In[ ]:
-
-
-
-
