@@ -792,8 +792,8 @@ title="Print to PDF"
                 <span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;a named index in a dictionary&#39;</span><span class="p">,</span>
                 <span class="p">}</span>
 
-<span class="nb">print</span> <span class="s2">&quot;A list is&quot;</span><span class="p">,</span> <span class="n">python_words</span><span class="p">[</span><span class="s1">&#39;list&#39;</span><span class="p">]</span>
-<span class="nb">print</span> <span class="s2">&quot;A dictionary is&quot;</span><span class="p">,</span> <span class="n">python_words</span><span class="p">[</span><span class="s1">&#39;dictionary&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;A list is </span><span class="si">{</span><span class="n">python_words</span><span class="p">[</span><span class="s1">&#39;list&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;A dictionary is </span><span class="si">{</span><span class="n">python_words</span><span class="p">[</span><span class="s1">&#39;dictionary&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -814,14 +814,14 @@ A dictionary is a collection of key-value pairs.
 
 <span class="c1"># Print out the items in the dictionary.</span>
 <span class="k">for</span> <span class="n">word</span><span class="p">,</span> <span class="n">meaning</span> <span class="ow">in</span> <span class="n">python_words</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="nb">print</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="n">word</span><span class="p">,</span> <span class="s2">&quot;is&quot;</span><span class="p">,</span> <span class="n">meaning</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;A </span><span class="si">{</span><span class="n">word</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">meaning</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A list is a collection of values that are not connected, but have an order.
-A key is a named index in a dictionary
 A dictionary is a collection of key-value pairs.
+A key is a named index in a dictionary
 </pre></div>
 </div>
 </div>
@@ -829,8 +829,8 @@ A dictionary is a collection of key-value pairs.
 <p>If we had 100 terms in our dictionary, we would still be able to print them out with just these two lines of code.</p>
 <p>The only tricky part about using <code class="docutils literal notranslate"><span class="pre">for</span></code> loops with dictionaries is figuring out what to call those first two variables. The general syntax for this <code class="docutils literal notranslate"><span class="pre">for</span></code> loop is:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">dictionary_name</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="nb">print</span> <span class="n">key</span> <span class="c1"># The key is stored in whatever you called the first variable.</span>
-    <span class="nb">print</span> <span class="n">value</span> <span class="c1"># The value associated with that key is stored in your second variable.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="c1"># The key is stored in whatever you called the first variable.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="c1"># The value associated with that key is stored in your second variable.</span>
 </pre></div>
 </div>
 </section>
@@ -854,28 +854,27 @@ A dictionary is a collection of key-value pairs.
 
 <span class="c1"># Print out the items in the dictionary.</span>
 <span class="k">for</span> <span class="n">word</span><span class="p">,</span> <span class="n">meaning</span> <span class="ow">in</span> <span class="n">python_words</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="nb">print</span> <span class="s2">&quot;Word is&quot;</span><span class="p">,</span> <span class="n">word</span>
-    <span class="nb">print</span> <span class="s2">&quot;Meaning:&quot;</span><span class="p">,</span> <span class="n">meaning</span>
-    <span class="nb">print</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Word is </span><span class="si">{</span><span class="n">word</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Meaning </span><span class="si">{</span><span class="n">meaning</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Word is list
-Meaning: a collection of values that are not connected, but have an order.
-
-
-Word is key
-Meaning: a named index in a dictionary
+Meaning a collection of values that are not connected, but have an order.
 
 
 Word is dictionary
-Meaning: a collection of key-value pairs.
+Meaning a collection of key-value pairs.
+
+
+Word is key
+Meaning a named index in a dictionary
 </pre></div>
 </div>
 </div>
 </div>
-<p><span class="xref myst">top</span></p>
 </section>
 <section id="modifying-values-in-a-dictionary">
 <h2>Modifying values in a dictionary<a class="headerlink" href="#modifying-values-in-a-dictionary" title="Permalink to this headline">#</a></h2>
@@ -887,12 +886,12 @@ Meaning: a collection of key-value pairs.
                 <span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;a named index in a dictionary&#39;</span><span class="p">,</span>
                 <span class="p">}</span>
 
-<span class="nb">print</span> <span class="n">python_words</span><span class="p">[</span><span class="s1">&#39;dictionary&#39;</span><span class="p">]</span> <span class="c1">#the original definition</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">python_words</span><span class="p">[</span><span class="s1">&#39;dictionary&#39;</span><span class="p">])</span> <span class="c1">#the original definition</span>
     
 <span class="c1"># Clarify one of the meanings.</span>
 <span class="n">python_words</span><span class="p">[</span><span class="s1">&#39;dictionary&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;a collection of key-value pairs. Each key can be used to access its corresponding value.&#39;</span>
 
-<span class="nb">print</span> <span class="n">python_words</span><span class="p">[</span><span class="s1">&#39;dictionary&#39;</span><span class="p">]</span> <span class="c1">#the clarified definition</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">python_words</span><span class="p">[</span><span class="s1">&#39;dictionary&#39;</span><span class="p">])</span> <span class="c1">#the clarified definition</span>
 </pre></div>
 </div>
 </div>
@@ -903,7 +902,6 @@ A collection of key-value pairs. Each key can be used to access its correspondin
 </div>
 </div>
 </div>
-<p><span class="xref myst">top</span></p>
 </section>
 <section id="removing-key-value-pairs">
 <h2>Removing key-value pairs<a class="headerlink" href="#removing-key-value-pairs" title="Permalink to this headline">#</a></h2>
@@ -916,37 +914,37 @@ A collection of key-value pairs. Each key can be used to access its correspondin
                 <span class="p">}</span>
 
 <span class="c1"># Show the current set of words and meanings.</span>
-<span class="nb">print</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">These are some Python words I know:&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">These are some Python words I know:&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">word</span><span class="p">,</span> <span class="n">meaning</span> <span class="ow">in</span> <span class="n">python_words</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="nb">print</span> <span class="s2">&quot;Word&quot;</span><span class="p">,</span> <span class="n">word</span>
-    <span class="nb">print</span> <span class="s2">&quot;Meaning&quot;</span><span class="p">,</span> <span class="n">meaning</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Word: </span><span class="si">{</span><span class="n">word</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Meaning: </span><span class="si">{</span><span class="n">meaning</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     
 <span class="c1"># Remove the word &#39;list&#39; and its meaning.</span>
 <span class="k">del</span> <span class="n">python_words</span><span class="p">[</span><span class="s1">&#39;list&#39;</span><span class="p">]</span>
 
 <span class="c1"># Show the current set of words and meanings.</span>
-<span class="nb">print</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">These are the Python words I know:&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">These are the Python words I know:&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">word</span><span class="p">,</span> <span class="n">meaning</span> <span class="ow">in</span> <span class="n">python_words</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="nb">print</span> <span class="s2">&quot;Word&quot;</span><span class="p">,</span> <span class="n">word</span>
-    <span class="nb">print</span> <span class="s2">&quot;Meaning&quot;</span><span class="p">,</span> <span class="n">meaning</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Word: </span><span class="si">{</span><span class="n">word</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Meaning: </span><span class="si">{</span><span class="n">meaning</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>These are some Python words I know:
-Word list
-Meaning a collection of values that are not connected, but have an order.
-Word key
-Meaning a named index in a dictionary
-Word dictionary
-Meaning a collection of key-value pairs.
+Word: list
+Meaning: a collection of values that are not connected, but have an order.
+Word: dictionary
+Meaning: a collection of key-value pairs.
+Word: key
+Meaning: a named index in a dictionary
 
 
 These are the Python words I know:
-Word key
-Meaning a named index in a dictionary
-Word dictionary
-Meaning a collection of key-value pairs.
+Word: dictionary
+Meaning: a collection of key-value pairs.
+Word: key
+Meaning: a named index in a dictionary
 </pre></div>
 </div>
 </div>
@@ -957,9 +955,9 @@ Meaning a collection of key-value pairs.
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">show_words_meanings</span><span class="p">(</span><span class="n">python_words</span><span class="p">):</span>
     <span class="c1"># This function takes in a dictionary of python words and meanings,</span>
     <span class="c1">#  and prints out each word with its meaning.</span>
-    <span class="nb">print</span> <span class="s2">&quot;These are the Python words I know:&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;These are the Python words I know:&quot;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">word</span><span class="p">,</span> <span class="n">meaning</span> <span class="ow">in</span> <span class="n">python_words</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-        <span class="nb">print</span> <span class="s2">&quot;Word&quot;</span><span class="p">,</span> <span class="n">word</span><span class="p">,</span> <span class="n">meaning</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Word </span><span class="si">{</span><span class="n">word</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">meaning</span><span class="si">}</span><span class="s2"> </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         
 
 <span class="n">python_words</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;list&#39;</span><span class="p">:</span> <span class="s1">&#39;a collection of values that are not connected, but have an order.&#39;</span><span class="p">,</span>
@@ -980,14 +978,14 @@ Meaning a collection of key-value pairs.
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>These are the Python words I know:
 Word list a collection of values that are not connected, but have an order. 
 
-Word key a named index in a dictionary 
-
 Word dictionary a collection of key-value pairs. 
+
+Word key a named index in a dictionary 
 
 These are the Python words I know:
-Word key a named index in a dictionary 
-
 Word dictionary a collection of key-value pairs. 
+
+Word key a named index in a dictionary 
 </pre></div>
 </div>
 </div>
@@ -1012,7 +1010,7 @@ Word dictionary a collection of key-value pairs.
 <span class="k">del</span> <span class="n">python_words</span><span class="p">[</span><span class="s1">&#39;lisst&#39;</span><span class="p">]</span>
 
 <span class="c1"># Print the dictionary, to show that the key has changed.</span>
-<span class="nb">print</span> <span class="n">python_words</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">python_words</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1022,7 +1020,6 @@ Word dictionary a collection of key-value pairs.
 </div>
 </div>
 </div>
-<p><span class="xref myst">top</span></p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="looping-through-a-dictionary">
@@ -1044,18 +1041,18 @@ Word dictionary a collection of key-value pairs.
     <span class="p">}</span>
 
 <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">my_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="nb">print</span> <span class="s2">&quot;Key&quot;</span><span class="p">,</span> <span class="n">key</span>
-    <span class="nb">print</span> <span class="s2">&quot;Value&quot;</span><span class="p">,</span> <span class="n">value</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Key: </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Value: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Key key_1
-Value value_1
-Key key_3
-Value value_3
-Key key_2
-Value value_2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Key: key_1
+Value: value_1
+Key: key_2
+Value: value_2
+Key: key_3
+Value: value_3
 </pre></div>
 </div>
 </div>
@@ -1068,12 +1065,12 @@ Value value_2
     <span class="s1">&#39;key_3&#39;</span><span class="p">:</span> <span class="s1">&#39;value_3&#39;</span><span class="p">,</span>
     <span class="p">}</span>
 
-<span class="nb">print</span> <span class="n">my_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_dict</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;key_1&#39;, &#39;value_1&#39;), (&#39;key_3&#39;, &#39;value_3&#39;), (&#39;key_2&#39;, &#39;value_2&#39;)]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_items([(&#39;key_1&#39;, &#39;value_1&#39;), (&#39;key_2&#39;, &#39;value_2&#39;), (&#39;key_3&#39;, &#39;value_3&#39;)])
 </pre></div>
 </div>
 </div>
@@ -1088,25 +1085,24 @@ Value value_2
                 <span class="p">}</span>
 
 <span class="k">for</span> <span class="n">word</span><span class="p">,</span> <span class="n">meaning</span> <span class="ow">in</span> <span class="n">python_words</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="nb">print</span> <span class="s2">&quot;Word&quot;</span><span class="p">,</span> <span class="n">word</span>
-    <span class="nb">print</span> <span class="s2">&quot;Meaning&quot;</span><span class="p">,</span> <span class="n">meaning</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Word: </span><span class="si">{</span><span class="n">word</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Meaning: </span><span class="si">{</span><span class="n">meaning</span><span class="si">}</span><span class="s2"> </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Word function
-Meaning A named set of instructions that defines a set of actions in Python. 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Word: list
+Meaning: A collection of values that are not connected, but have an order. 
 
-Word list
-Meaning A collection of values that are not connected, but have an order. 
+Word: dictionary
+Meaning: A collection of key-value pairs. 
 
-Word dictionary
-Meaning A collection of key-value pairs. 
+Word: function
+Meaning: A named set of instructions that defines a set of actions in Python. 
 </pre></div>
 </div>
 </div>
 </div>
-<p><span class="xref myst">top</span></p>
 </section>
 <section id="looping-through-all-keys-in-a-dictionary">
 <h2>Looping through all keys in a dictionary<a class="headerlink" href="#looping-through-all-keys-in-a-dictionary" title="Permalink to this headline">#</a></h2>
@@ -1119,14 +1115,14 @@ Meaning A collection of key-value pairs.
     <span class="p">}</span>
 
 <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">my_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-    <span class="nb">print</span> <span class="s2">&quot;Key&quot;</span><span class="p">,</span> <span class="n">key</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Key: </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Key key_1
-Key key_3
-Key key_2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Key: key_1
+Key: key_2
+Key: key_3
 </pre></div>
 </div>
 </div>
@@ -1140,14 +1136,14 @@ Key key_2
     <span class="p">}</span>
 
 <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">my_dict</span><span class="p">:</span>
-    <span class="nb">print</span> <span class="s2">&quot;Key&quot;</span><span class="p">,</span> <span class="n">key</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Key: </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Key key_1
-Key key_3
-Key key_2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Key: key_1
+Key: key_2
+Key: key_3
 </pre></div>
 </div>
 </div>
@@ -1156,23 +1152,23 @@ Key key_2
 <p>You can pull out the value of any key that you are interested in within your loop, using the standard notation for accessing a dictionary value from a key:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;key_1&#39;</span><span class="p">:</span> <span class="s1">&#39;value_1&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;key_2&#39;</span><span class="p">:</span> <span class="s1">&#39;value_2&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;key_3&#39;</span><span class="p">:</span> <span class="s1">&#39;value_3&#39;</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;key_1&#39;</span><span class="p">:</span> <span class="s1">&#39;ham&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;key_2&#39;</span><span class="p">:</span> <span class="s1">&#39;spam&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;key_3&#39;</span><span class="p">:</span> <span class="s1">&#39;pam&#39;</span><span class="p">,</span>
     <span class="p">}</span>
 
 <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">my_dict</span><span class="p">:</span>
-    <span class="nb">print</span> <span class="s1">&#39;Key: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">key</span> 
-    <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s1">&#39;key_2&#39;</span><span class="p">:</span>
-        <span class="nb">print</span> <span class="s2">&quot;  The value for key_2 is </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="n">my_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Current key is: </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> 
+    <span class="k">if</span> <span class="n">my_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;spam&#39;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Got it! The value for </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">my_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Key: key_1
-Key: key_3
-Key: key_2
-  The value for key_2 is value_2.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Current key is: key_1
+Current key is: key_2
+  Got it! The value for key_2 is spam
+Current key is: key_3
 </pre></div>
 </div>
 </div>
@@ -1186,22 +1182,21 @@ Key: key_2
                 <span class="p">}</span>
 
 <span class="c1"># Show the words that are currently in the dictionary.</span>
-<span class="nb">print</span> <span class="s2">&quot;The following Python words have been defined:&quot;</span>
-<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">python_words</span><span class="p">:</span>
-    <span class="nb">print</span> <span class="s2">&quot; -&quot;</span><span class="p">,</span> <span class="n">word</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The following Python words have been defined:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">python_words</span><span class="p">:</span> <span class="c1"># remember, the default behavios is to iterate through the keys.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; -  </span><span class="si">{</span><span class="n">word</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following Python words have been defined:
- - function
- - list
- - dictionary
+ -  list
+ -  dictionary
+ -  function
 </pre></div>
 </div>
 </div>
 </div>
-<p><span class="xref myst">top</span></p>
 </section>
 <section id="looping-through-all-values-in-a-dictionary">
 <h2>Looping through all values in a dictionary<a class="headerlink" href="#looping-through-all-values-in-a-dictionary" title="Permalink to this headline">#</a></h2>
@@ -1214,21 +1209,22 @@ Key: key_2
     <span class="p">}</span>
 
 <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">my_dict</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
-    <span class="nb">print</span> <span class="s1">&#39;Value:&#39;</span><span class="p">,</span> <span class="n">value</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Current value is </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Value: value_1
-Value: value_3
-Value: value_2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Value value_1
+Value value_2
+Value value_3
 </pre></div>
 </div>
 </div>
 </div>
-<div class="alert alert-block alert-info">
-All keys in a dictionary must be unique. If you try to create an entry in a dictionary with a key that already exists, you will just overwrite the previous key. Values need not be unique. What this means it that when you iterate through keys, you are assured that each element is unique. If you iterate over the values, as in the example above, there are no assurance about uniqueness. 
-</div><p><span class="xref myst">top</span></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All keys in a dictionary must be unique. If you try to create an entry in a dictionary with a key that already exists, you will just overwrite the previous key. Values need not be unique. What this means it that when you iterate through keys, you are assured that each element is unique. If you iterate over the values, as in the example above, there are no assurance about uniqueness.</p>
+</div>
 </section>
 <section id="looping-through-a-dictionary-in-order-by-keys">
 <h2>Looping through a dictionary in order by keys<a class="headerlink" href="#looping-through-a-dictionary-in-order-by-keys" title="Permalink to this headline">#</a></h2>
@@ -1275,9 +1271,11 @@ list
 </div>
 </div>
 <p>In this example, the keys have been put into alphabetical order in the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop only; Python has not changed the way the dictionary is stored at all. So the next time the dictionary is accessed, the keys could be returned in any order. There is no way to permanently specify an order for the items in an ordinary dictionary, but if you want to do this you can use the <a class="reference external" href="http://docs.python.org/3.3/library/collections.html#ordereddict-objects">OrderedDict</a> structure.</p>
-<div class="alert alert-block alert-info">
-To sort in reverse order, give sorted() `reverse=True` as an argument 
-</div></section>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To sort in reverse order, give sorted() <code class="docutils literal notranslate"><span class="pre">reverse=True</span></code> as an argument</p>
+</div>
+</section>
 <section id="looping-through-a-dictionary-in-order-by-values">
 <h2>Looping through a dictionary in order by values<a class="headerlink" href="#looping-through-a-dictionary-in-order-by-values" title="Permalink to this headline">#</a></h2>
 <p>Dictionaries are generally accessed by their keys. Sometimes, however, we need to do something like find the largest value or sort its values in a particular order.</p>
@@ -1330,7 +1328,7 @@ To sort in reverse order, give sorted() `reverse=True` as an argument
 <span class="k">for</span> <span class="n">key</span><span class="p">,</span><span class="n">value</span> <span class="ow">in</span> <span class="n">sorted_representation</span><span class="p">:</span>
     <span class="n">temp</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">value</span><span class="p">,</span><span class="n">key</span><span class="p">))</span>
 <span class="n">sorted_representation</span> <span class="o">=</span> <span class="n">temp</span>
-<span class="nb">print</span> <span class="n">sorted_representation</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sorted_representation</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1363,23 +1361,25 @@ To sort in reverse order, give sorted() `reverse=True` as an argument
  <span class="s1">&#39;body&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
  <span class="s1">&#39;corks&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">}</span>
 
-<span class="nb">print</span> <span class="s2">&quot;Increasing order:&quot;</span><span class="p">,</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">dict_for_sorting</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="n">operator</span><span class="o">.</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
-<span class="nb">print</span>
-<span class="nb">print</span> <span class="s2">&quot;Decreasing order:&quot;</span><span class="p">,</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">dict_for_sorting</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="n">operator</span><span class="o">.</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Increasing order: </span><span class="si">{</span><span class="nb">sorted</span><span class="p">(</span><span class="n">dict_for_sorting</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="n">operator</span><span class="o">.</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Decreasing order: </span><span class="si">{</span><span class="nb">sorted</span><span class="p">(</span><span class="n">dict_for_sorting</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="n">operator</span><span class="o">.</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Increasing order: [(&#39;a&#39;, 1), (&#39;To&#39;, 2), (&#39;and&#39;, 3), (&#39;body&#39;, 4), (&#39;air.&#39;, 4), (&#39;corks&#39;, 5), (&#39;Winter&#39;, 6), (&#39;Figure&#39;, 6), (&#39;Skiing&#39;, 6), (&#39;Skating.&#39;, 8), (&#39;Olympics&#39;, 8), (&#39;Freestyle&#39;, 9), (&#39;Snowboarding&#39;, 12), (&#39;Pyeongchang,&#39;, 12)]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Increasing order: [(&#39;a&#39;, 1), (&#39;To&#39;, 2), (&#39;and&#39;, 3), (&#39;air.&#39;, 4), (&#39;body&#39;, 4), (&#39;corks&#39;, 5), (&#39;Figure&#39;, 6), (&#39;Skiing&#39;, 6), (&#39;Winter&#39;, 6), (&#39;Olympics&#39;, 8), (&#39;Skating.&#39;, 8), (&#39;Freestyle&#39;, 9), (&#39;Pyeongchang,&#39;, 12), (&#39;Snowboarding&#39;, 12)]
 
-Decreasing order: [(&#39;Snowboarding&#39;, 12), (&#39;Pyeongchang,&#39;, 12), (&#39;Freestyle&#39;, 9), (&#39;Skating.&#39;, 8), (&#39;Olympics&#39;, 8), (&#39;Winter&#39;, 6), (&#39;Figure&#39;, 6), (&#39;Skiing&#39;, 6), (&#39;corks&#39;, 5), (&#39;body&#39;, 4), (&#39;air.&#39;, 4), (&#39;and&#39;, 3), (&#39;To&#39;, 2), (&#39;a&#39;, 1)]
+
+Decreasing order: [(&#39;Pyeongchang,&#39;, 12), (&#39;Snowboarding&#39;, 12), (&#39;Freestyle&#39;, 9), (&#39;Olympics&#39;, 8), (&#39;Skating.&#39;, 8), (&#39;Figure&#39;, 6), (&#39;Skiing&#39;, 6), (&#39;Winter&#39;, 6), (&#39;corks&#39;, 5), (&#39;air.&#39;, 4), (&#39;body&#39;, 4), (&#39;and&#39;, 3), (&#39;To&#39;, 2), (&#39;a&#39;, 1)]
 </pre></div>
 </div>
 </div>
 </div>
-<div class="alert alert-block alert-info">
-What does setting key to key=operator.itemgetter(0) do?
-</div><p><span class="xref myst">top</span></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Try setting key <code class="docutils literal notranslate"><span class="pre">operator.itemgetter(0)</span></code>. What does this do?</p>
+</div>
 </section>
 </section>
 </section>
@@ -1399,14 +1399,14 @@ What does setting key to key=operator.itemgetter(0) do?
                     <span class="p">}</span>
 
 <span class="c1"># Display each person&#39;s favorite numbers.</span>
-<span class="nb">print</span> <span class="s2">&quot;Eric&#39;s favorite numbers are:&quot;</span>
-<span class="nb">print</span> <span class="n">favorite_numbers</span><span class="p">[</span><span class="s1">&#39;eric&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Eric&#39;s favorite numbers are:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">favorite_numbers</span><span class="p">[</span><span class="s1">&#39;eric&#39;</span><span class="p">])</span>
 
-<span class="nb">print</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Ever&#39;s favorite numbers are:&quot;</span>
-<span class="nb">print</span> <span class="n">favorite_numbers</span><span class="p">[</span><span class="s1">&#39;ever&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Ever&#39;s favorite numbers are:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">favorite_numbers</span><span class="p">[</span><span class="s1">&#39;ever&#39;</span><span class="p">])</span>
 
-<span class="nb">print</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Willie&#39;s favorite numbers are:&quot;</span>
-<span class="nb">print</span> <span class="n">favorite_numbers</span><span class="p">[</span><span class="s1">&#39;willie&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Willie&#39;s favorite numbers are:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">favorite_numbers</span><span class="p">[</span><span class="s1">&#39;willie&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1434,18 +1434,18 @@ Willie&#39;s favorite numbers are:
 
 <span class="c1"># Display each person&#39;s favorite numbers.</span>
 <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">favorite_numbers</span><span class="p">:</span>
-    <span class="nb">print</span> <span class="n">name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="o">+</span><span class="s2">&quot;&#39;s&quot;</span><span class="o">+</span> <span class="s2">&quot; favorite numbers are:&quot;</span>
-    <span class="nb">print</span> <span class="n">favorite_numbers</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>  
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2">&#39;s favorite numbers are:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">favorite_numbers</span><span class="p">[</span><span class="n">name</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Willie&#39;s favorite numbers are:
-[5, 35, 120]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Eric&#39;s favorite numbers are:
+[3, 11, 19, 23, 42]
 Ever&#39;s favorite numbers are:
 [2, 4, 5]
-Eric&#39;s favorite numbers are:
-[3, 11, 19, 23, 42]
+Willie&#39;s favorite numbers are:
+[5, 35, 120]
 </pre></div>
 </div>
 </div>
@@ -1462,29 +1462,28 @@ Eric&#39;s favorite numbers are:
 
 <span class="c1"># Display each person&#39;s favorite numbers.</span>
 <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">favorite_numbers</span><span class="p">:</span>
-    <span class="nb">print</span> <span class="n">name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="o">+</span><span class="s2">&quot;&#39;s favorite numbers are:&quot;</span>
-    <span class="c1"># Each value is itself a list, so we need another for loop</span>
-    <span class="c1">#  to work with the list.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2">&#39;s favorite numbers are:&quot;</span><span class="p">)</span>
+    <span class="c1"># Each value is itself a list, so we need another for loop to unroll each list</span>
     <span class="k">for</span> <span class="n">favorite_number</span> <span class="ow">in</span> <span class="n">favorite_numbers</span><span class="p">[</span><span class="n">name</span><span class="p">]:</span>
-        <span class="nb">print</span> <span class="n">favorite_number</span>        
+        <span class="nb">print</span><span class="p">(</span><span class="n">favorite_number</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Willie&#39;s favorite numbers are:
-5
-35
-120
-Ever&#39;s favorite numbers are:
-2
-4
-5
-Eric&#39;s favorite numbers are:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Eric&#39;s favorite numbers are:
 3
 11
 19
 23
 42
+Ever&#39;s favorite numbers are:
+2
+4
+5
+Willie&#39;s favorite numbers are:
+5
+35
+120
 </pre></div>
 </div>
 </div>
@@ -1500,32 +1499,31 @@ Eric&#39;s favorite numbers are:
 
 <span class="c1"># Display each person&#39;s favorite numbers.</span>
 <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">favorite_numbers</span><span class="p">:</span>
-    <span class="nb">print</span> <span class="n">name</span><span class="o">.</span><span class="n">title</span><span class="p">(),</span><span class="s2">&quot;&#39;s favorite numbers are:&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2">&#39;s favorite numbers are:&quot;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">favorite_number</span> <span class="ow">in</span> <span class="n">favorite_numbers</span><span class="p">[</span><span class="n">name</span><span class="p">]:</span>
-        <span class="nb">print</span> <span class="n">favorite_number</span>        
+        <span class="nb">print</span><span class="p">(</span><span class="n">favorite_number</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Willie &#39;s favorite numbers are:
-5
-35
-120
-Ever &#39;s favorite numbers are:
-2
-4
-5
-Eric &#39;s favorite numbers are:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Eric&#39;s favorite numbers are:
 3
 11
 19
 23
 42
+Ever&#39;s favorite numbers are:
+2
+4
+5
+Willie&#39;s favorite numbers are:
+5
+35
+120
 </pre></div>
 </div>
 </div>
 </div>
-<p><span class="xref myst">top</span></p>
 </section>
 <section id="dictionaries-in-a-dictionary">
 <h2>Dictionaries in a dictionary<a class="headerlink" href="#dictionaries-in-a-dictionary" title="Permalink to this headline">#</a></h2>
@@ -1542,40 +1540,42 @@ Eric &#39;s favorite numbers are:
         <span class="p">}</span>
 
 <span class="c1"># Let&#39;s show all the information for each pet.</span>
-<span class="nb">print</span> <span class="s2">&quot;Here is what I know about Willie:&quot;</span>
-<span class="nb">print</span> <span class="s2">&quot;kind:&quot;</span><span class="p">,</span> <span class="n">pets</span><span class="p">[</span><span class="s1">&#39;willie&#39;</span><span class="p">][</span><span class="s1">&#39;kind&#39;</span><span class="p">]</span>
-<span class="nb">print</span> <span class="s2">&quot;owner:&quot;</span><span class="p">,</span> <span class="n">pets</span><span class="p">[</span><span class="s1">&#39;willie&#39;</span><span class="p">][</span><span class="s1">&#39;owner&#39;</span><span class="p">]</span>
-<span class="nb">print</span> <span class="s2">&quot;vaccinated:&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">pets</span><span class="p">[</span><span class="s1">&#39;willie&#39;</span><span class="p">][</span><span class="s1">&#39;vaccinated&#39;</span><span class="p">])</span>
-<span class="nb">print</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Here is what I know about Willie:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;kind: </span><span class="si">{</span><span class="n">pets</span><span class="p">[</span><span class="s1">&#39;willie&#39;</span><span class="p">][</span><span class="s1">&#39;kind&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;owner: </span><span class="si">{</span><span class="n">pets</span><span class="p">[</span><span class="s1">&#39;willie&#39;</span><span class="p">][</span><span class="s1">&#39;kind&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;vaccinated: </span><span class="si">{</span><span class="n">pets</span><span class="p">[</span><span class="s1">&#39;willie&#39;</span><span class="p">][</span><span class="s1">&#39;vaccinated&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 
-<span class="nb">print</span> <span class="s2">&quot;Here is what I know about Walter:&quot;</span>
-<span class="nb">print</span> <span class="s2">&quot;kind:&quot;</span><span class="p">,</span> <span class="n">pets</span><span class="p">[</span><span class="s1">&#39;walter&#39;</span><span class="p">][</span><span class="s1">&#39;kind&#39;</span><span class="p">]</span>
-<span class="nb">print</span> <span class="s2">&quot;owner:&quot;</span><span class="p">,</span> <span class="n">pets</span><span class="p">[</span><span class="s1">&#39;walter&#39;</span><span class="p">][</span><span class="s1">&#39;owner&#39;</span><span class="p">]</span>
-<span class="nb">print</span> <span class="s2">&quot;vaccinated:&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">pets</span><span class="p">[</span><span class="s1">&#39;walter&#39;</span><span class="p">][</span><span class="s1">&#39;vaccinated&#39;</span><span class="p">])</span>
-<span class="nb">print</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Here is what I know about Walter:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;kind: </span><span class="si">{</span><span class="n">pets</span><span class="p">[</span><span class="s1">&#39;walter&#39;</span><span class="p">][</span><span class="s1">&#39;kind&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;owner: </span><span class="si">{</span><span class="n">pets</span><span class="p">[</span><span class="s1">&#39;walter&#39;</span><span class="p">][</span><span class="s1">&#39;kind&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;vaccinated: </span><span class="si">{</span><span class="n">pets</span><span class="p">[</span><span class="s1">&#39;walter&#39;</span><span class="p">][</span><span class="s1">&#39;vaccinated&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 
-<span class="nb">print</span> <span class="s2">&quot;Here is what I know about Peso:&quot;</span>
-<span class="nb">print</span> <span class="s2">&quot;kind:&quot;</span> <span class="p">,</span> <span class="n">pets</span><span class="p">[</span><span class="s1">&#39;peso&#39;</span><span class="p">][</span><span class="s1">&#39;kind&#39;</span><span class="p">]</span>
-<span class="nb">print</span> <span class="s2">&quot;owner:&quot;</span> <span class="p">,</span> <span class="n">pets</span><span class="p">[</span><span class="s1">&#39;peso&#39;</span><span class="p">][</span><span class="s1">&#39;owner&#39;</span><span class="p">]</span>
-<span class="nb">print</span> <span class="s2">&quot;vaccinated:&quot;</span> <span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">pets</span><span class="p">[</span><span class="s1">&#39;peso&#39;</span><span class="p">][</span><span class="s1">&#39;vaccinated&#39;</span><span class="p">])</span>
-<span class="nb">print</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Here is what I know about Peso:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;kind: </span><span class="si">{</span><span class="n">pets</span><span class="p">[</span><span class="s1">&#39;peso&#39;</span><span class="p">][</span><span class="s1">&#39;kind&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;owner: </span><span class="si">{</span><span class="n">pets</span><span class="p">[</span><span class="s1">&#39;peso&#39;</span><span class="p">][</span><span class="s1">&#39;kind&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;vaccinated: </span><span class="si">{</span><span class="n">pets</span><span class="p">[</span><span class="s1">&#39;peso&#39;</span><span class="p">][</span><span class="s1">&#39;vaccinated&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Here is what I know about Willie:
 kind: dog
-owner: eric
+owner: dog
 vaccinated: True
+
 
 Here is what I know about Walter:
 kind: cockroach
-owner: eric
+owner: cockroach
 vaccinated: False
+
 
 Here is what I know about Peso:
 kind: dog
-owner: chloe
+owner: dog
 vaccinated: True
 </pre></div>
 </div>
@@ -1595,34 +1595,36 @@ vaccinated: True
 
 <span class="c1"># Let&#39;s show all the information for each pet.</span>
 <span class="k">for</span> <span class="n">pet_name</span><span class="p">,</span> <span class="n">pet_information</span> <span class="ow">in</span> <span class="n">pets</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="nb">print</span> <span class="s2">&quot;Here is what I know about&quot;</span><span class="p">,</span> <span class="n">pet_name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
-    <span class="nb">print</span> <span class="s2">&quot;kind: &quot;</span><span class="p">,</span>  <span class="n">pet_information</span><span class="p">[</span><span class="s1">&#39;kind&#39;</span><span class="p">]</span>
-    <span class="nb">print</span> <span class="s2">&quot;owner: &quot;</span><span class="p">,</span> <span class="n">pet_information</span><span class="p">[</span><span class="s1">&#39;owner&#39;</span><span class="p">]</span>
-    <span class="nb">print</span> <span class="s2">&quot;vaccinated: &quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">pet_information</span><span class="p">[</span><span class="s1">&#39;vaccinated&#39;</span><span class="p">])</span>
-    <span class="nb">print</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Here is what I know about </span><span class="si">{</span><span class="n">pet_name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;kind: </span><span class="si">{</span><span class="n">pet_information</span><span class="p">[</span><span class="s1">&#39;kind&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;owner: </span><span class="si">{</span><span class="n">pet_information</span><span class="p">[</span><span class="s1">&#39;owner&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;vaccinated: </span><span class="si">{</span><span class="n">pet_information</span><span class="p">[</span><span class="s1">&#39;vaccinated&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Here is what I know about Peso
-kind:  dog
-owner:  chloe
-vaccinated:  True
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Here is what I know about Willie
+kind: dog
+owner: eric
+vaccinated: True
 
-Here is what I know about Willie
-kind:  dog
-owner:  eric
-vaccinated:  True
 
 Here is what I know about Walter
-kind:  cockroach
-owner:  eric
-vaccinated:  False
+kind: cockroach
+owner: eric
+vaccinated: False
+
+
+Here is what I know about Peso
+kind: dog
+owner: chloe
+vaccinated: True
 </pre></div>
 </div>
 </div>
 </div>
-<p>This code is much shorter and easier to maintain. But even this code will not keep up with our dictionary. If we add more information to the dictionary later, we will have to update our print statements. Let’s put a second <code class="docutils literal notranslate"><span class="pre">for</span></code> loop inside the first loop in order to run through all the information about each pet:</p>
+<p>This code is much shorter and easier to maintain. But even this code will not keep up with our dictionary. If we add more kinds of information to the dictionary (i.e., additional keys), we will have to update our print statements. Let’s put a second <code class="docutils literal notranslate"><span class="pre">for</span></code> loop inside the first loop in order to run through all the information about each pet:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This program stores information about pets. For each pet,</span>
@@ -1635,33 +1637,33 @@ vaccinated:  False
 
 <span class="c1"># Let&#39;s show all the information for each pet.</span>
 <span class="k">for</span> <span class="n">pet_name</span><span class="p">,</span> <span class="n">pet_information</span> <span class="ow">in</span> <span class="n">pets</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="nb">print</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Here is what I know about&quot;</span><span class="p">,</span> <span class="n">pet_name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Here is what I know about </span><span class="si">{</span><span class="n">pet_name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="c1"># Each animal&#39;s dictionary is in &#39;information&#39;</span>
     <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">pet_information</span><span class="p">:</span>
-        <span class="nb">print</span> <span class="n">key</span><span class="p">,</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">pet_information</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> : </span><span class="si">{</span><span class="n">pet_information</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Here is what I know about Peso
-owner : chloe
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Here is what I know about Willie
 kind : dog
-vaccinated : True
-
-Here is what I know about Willie
 owner : eric
-kind : dog
 vaccinated : True
 
 Here is what I know about Walter
-owner : eric
 kind : cockroach
+owner : eric
 vaccinated : False
+
+Here is what I know about Peso
+kind : dog
+owner : chloe
+vaccinated : True
 </pre></div>
 </div>
 </div>
 </div>
-<p>This nested loop can look pretty complicated, so again, don’t worry if it doesn’t make sense for a while.</p>
+<p>This nested loop can look pretty complicated, so again, don’t worry if it doesn’t make sense at first. Let’s go through it one bit at a time.</p>
 <ul class="simple">
 <li><p>The first loop gives us all the keys in the main dictionary, which consist of the name of each pet.</p></li>
 <li><p>Each of these names can be used to ‘unlock’ the dictionary of each pet.</p></li>
@@ -1670,7 +1672,7 @@ vaccinated : False
 <li><p>You can see that we could improve the formatting in the output.</p>
 <ul>
 <li><p>We could capitalize the owner’s name.</p></li>
-<li><p>We could print ‘yes’ or ‘no’, instead of True and False.</p></li>
+<li><p>We could print some special message about the vaccination status</p></li>
 </ul>
 </li>
 </ul>
@@ -1687,51 +1689,49 @@ vaccinated : False
 
 <span class="c1"># Let&#39;s show all the information for each pet.</span>
 <span class="k">for</span> <span class="n">pet_name</span><span class="p">,</span> <span class="n">pet_information</span> <span class="ow">in</span> <span class="n">pets</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="nb">print</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Here is what I know about&quot;</span><span class="p">,</span> <span class="n">pet_name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Here is what I know about </span><span class="si">{</span><span class="n">pet_name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="c1"># Each animal&#39;s dictionary is in pet_information</span>
     <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">pet_information</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s1">&#39;owner&#39;</span><span class="p">:</span>
             <span class="c1"># Capitalize the owner&#39;s name.</span>
-            <span class="nb">print</span> <span class="n">key</span> <span class="o">+</span> <span class="s2">&quot;: &quot;</span> <span class="o">+</span> <span class="n">pet_information</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">pet_information</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="k">elif</span> <span class="n">key</span> <span class="o">==</span> <span class="s1">&#39;vaccinated&#39;</span><span class="p">:</span>
             <span class="c1"># Print &#39;yes&#39; for True, and &#39;no&#39; for False.</span>
-            <span class="n">vaccinated</span> <span class="o">=</span> <span class="n">pet_information</span><span class="p">[</span><span class="s1">&#39;vaccinated&#39;</span><span class="p">]</span>
-            <span class="k">if</span> <span class="n">vaccinated</span><span class="p">:</span>
-                <span class="nb">print</span> <span class="s1">&#39;vaccinated: yes&#39;</span>
+            <span class="k">if</span> <span class="n">pet_information</span><span class="p">[</span><span class="s1">&#39;vaccinated&#39;</span><span class="p">]:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;is vaccinated!&quot;</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="nb">print</span> <span class="s1">&#39;vaccinated: no&#39;</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;is not vaccinated!&quot;</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="c1"># No special formatting needed for this key.</span>
-            <span class="nb">print</span> <span class="n">key</span> <span class="o">+</span> <span class="s2">&quot;: &quot;</span> <span class="o">+</span> <span class="n">pet_information</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">pet_information</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Here is what I know about Peso
-owner: Chloe
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Here is what I know about Willie
 kind: dog
-vaccinated: yes
-
-Here is what I know about Willie
 owner: Eric
-kind: dog
-vaccinated: yes
+is vaccinated!
 
 Here is what I know about Walter
-owner: Eric
 kind: cockroach
-vaccinated: no
+owner: Eric
+is not vaccinated!
+
+Here is what I know about Peso
+kind: dog
+owner: Chloe
+is vaccinated!
 </pre></div>
 </div>
 </div>
 </div>
-<p>This code is a lot longer, and now we have nested if statements as well as nested for loops. But keep in mind, this structure would work if there were 1000 pets in our dictionary, and it would work if we were storing 1000 pieces of information about each pet. One level of nesting lets us model an incredible array of information.</p>
+<p>This code is a lot longer, and now we have nested if statements as well as nested for loops. But keep in mind, this structure would work if there were 1000 pets in our dictionary, and it would work if we were storing 1000 pieces of information about each pet. One level of nesting lets us model an incredible variety of information.</p>
 </section>
 <section id="an-important-note-about-nesting">
 <h2>An important note about nesting<a class="headerlink" href="#an-important-note-about-nesting" title="Permalink to this headline">#</a></h2>
-<p>While one level of nesting is really useful, nesting much deeper than that gets really complicated, really quickly. There are other structures such as classes which can be even more useful for modeling information. In addition to this, we can use Python to store information in a database, which is the proper tool for storing deeply nested information.</p>
-<p>Often times when you are storing information in a database you will pull a small set of that information out and put it into a dictionary, or a slightly nested structure, and then work with it. But you will rarely, if ever, work with Python data structures nested more than one level deep.</p>
-<p><span class="xref myst">top</span></p>
+<p>While one level of nesting is really useful, nesting much deeper than that gets quickly complicated. There are other structures such as classes which can be even more useful for modeling information. In addition to this, we can use Python to store information in a database, which is the proper tool for storing deeply nested information.</p>
+<p>Oftentimes when you are storing information in a database you will pull a small set of that information out and put it into a dictionary, or a slightly nested structure, and then work with it. But you will rarely, if ever, work with Python data structures nested more than one level deep.</p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="using-dictionaries-in-experiment-design-some-examples">
