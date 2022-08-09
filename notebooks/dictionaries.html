@@ -159,13 +159,13 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="python_basics.html">
-   Variables, strings, and numbers
+  <a class="reference internal" href="var_string_num.html">
+   Variables, Strings, and Numbers
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="var_string_num.html">
-   Variables, Strings, and Numbers
+  <a class="reference internal" href="if_statements.html">
+   If Statements
   </a>
  </li>
  <li class="toctree-l1">
@@ -206,6 +206,28 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="regexp.html">
    Regular Expressions
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 1
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_basics.html">
+   Python basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise1-square.html">
+   Trying out PsychoPy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="in_class_exercise_1.html">
+   The first thinking exercise
   </a>
  </li>
 </ul>
@@ -719,15 +741,17 @@ title="Print to PDF"
                 
               <div>
                 
-  <h1>Table of Contents<span class="tocSkip"></span></h1>
-<div class="toc" style="margin-top: 1em;"><ul class="toc-item"><li><span><a href="#Dictionaries" data-toc-modified-id="Dictionaries-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Dictionaries</a></span></li><li><span><a href="#What-are-dictionaries?" data-toc-modified-id="What-are-dictionaries?-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>What are dictionaries?</a></span><ul class="toc-item"><li><span><a href="#General-Syntax" data-toc-modified-id="General-Syntax-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>General Syntax</a></span></li><li><span><a href="#Example" data-toc-modified-id="Example-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Example</a></span></li></ul></li><li><span><a href="#Common-operations-with-dictionaries" data-toc-modified-id="Common-operations-with-dictionaries-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Common operations with dictionaries</a></span><ul class="toc-item"><li><span><a href="#Adding-new-key-value-pairs" data-toc-modified-id="Adding-new-key-value-pairs-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Adding new key-value pairs</a></span></li><li><span><a href="#Modifying-values-in-a-dictionary" data-toc-modified-id="Modifying-values-in-a-dictionary-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Modifying values in a dictionary</a></span></li><li><span><a href="#Removing-key-value-pairs" data-toc-modified-id="Removing-key-value-pairs-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>Removing key-value pairs</a></span></li><li><span><a href="#Modifying-keys-in-a-dictionary" data-toc-modified-id="Modifying-keys-in-a-dictionary-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>Modifying keys in a dictionary</a></span></li></ul></li><li><span><a href="#Looping-through-a-dictionary" data-toc-modified-id="Looping-through-a-dictionary-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Looping through a dictionary</a></span><ul class="toc-item"><li><span><a href="#Looping-through-all-key-value-pairs" data-toc-modified-id="Looping-through-all-key-value-pairs-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Looping through all key-value pairs</a></span></li><li><span><a href="#Looping-through-all-keys-in-a-dictionary" data-toc-modified-id="Looping-through-all-keys-in-a-dictionary-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Looping through all keys in a dictionary</a></span></li><li><span><a href="#Looping-through-all-values-in-a-dictionary" data-toc-modified-id="Looping-through-all-values-in-a-dictionary-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>Looping through all values in a dictionary</a></span></li><li><span><a href="#Looping-through-a-dictionary-in-order-by-keys" data-toc-modified-id="Looping-through-a-dictionary-in-order-by-keys-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>Looping through a dictionary in order by keys</a></span></li><li><span><a href="#Looping-through-a-dictionary-in-order-by-values" data-toc-modified-id="Looping-through-a-dictionary-in-order-by-values-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>Looping through a dictionary in order by values</a></span><ul class="toc-item"><li><span><a href="#Sorting-by-values:-the-verbose-and-inefficient-solution" data-toc-modified-id="Sorting-by-values:-the-verbose-and-inefficient-solution-4.5.1"><span class="toc-item-num">4.5.1&nbsp;&nbsp;</span>Sorting by values: the verbose and inefficient solution</a></span></li><li><span><a href="#Sorting-by-values:-the-compact-and-efficient-solution" data-toc-modified-id="Sorting-by-values:-the-compact-and-efficient-solution-4.5.2"><span class="toc-item-num">4.5.2&nbsp;&nbsp;</span>Sorting by values: the compact and efficient solution</a></span></li></ul></li></ul></li><li><span><a href="#Nesting-data-structures" data-toc-modified-id="Nesting-data-structures-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Nesting data structures</a></span><ul class="toc-item"><li><span><a href="#Lists-in-a-dictionary" data-toc-modified-id="Lists-in-a-dictionary-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>Lists in a dictionary</a></span></li><li><span><a href="#Dictionaries-in-a-dictionary" data-toc-modified-id="Dictionaries-in-a-dictionary-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>Dictionaries in a dictionary</a></span></li><li><span><a href="#An-important-note-about-nesting" data-toc-modified-id="An-important-note-about-nesting-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>An important note about nesting</a></span></li></ul></li><li><span><a href="#Using-dictionaries-in-experiment-design:-some-examples" data-toc-modified-id="Using-dictionaries-in-experiment-design:-some-examples-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Using dictionaries in experiment design: some examples</a></span></li><li><span><a href="#Dictionary-Exercises" data-toc-modified-id="Dictionary-Exercises-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>Dictionary Exercises</a></span><ul class="toc-item"><li><span><a href="#Dictionary-access" data-toc-modified-id="Dictionary-access-7.1"><span class="toc-item-num">7.1&nbsp;&nbsp;</span>Dictionary access</a></span><ul class="toc-item"><li><span><a href="#Selective-access-continued" data-toc-modified-id="Selective-access-continued-7.1.1"><span class="toc-item-num">7.1.1&nbsp;&nbsp;</span>Selective access continued</a></span></li></ul></li><li><span><a href="#Letter-counts" data-toc-modified-id="Letter-counts-7.2"><span class="toc-item-num">7.2&nbsp;&nbsp;</span>Letter counts</a></span><ul class="toc-item"><li><span><a href="#Test-your-letter_counts-function" data-toc-modified-id="Test-your-letter_counts-function-7.2.1"><span class="toc-item-num">7.2.1&nbsp;&nbsp;</span>Test your letter_counts function</a></span></li></ul></li><li><span><a href="#Given-a-string,-find-the-n-most/least-frequent-letters-in-it" data-toc-modified-id="Given-a-string,-find-the-n-most/least-frequent-letters-in-it-7.3"><span class="toc-item-num">7.3&nbsp;&nbsp;</span>Given a string, find the n most/least frequent letters in it</a></span><ul class="toc-item"><li><span><a href="#Test-most_frequent()-and-least_frequent()" data-toc-modified-id="Test-most_frequent()-and-least_frequent()-7.3.1"><span class="toc-item-num">7.3.1&nbsp;&nbsp;</span>Test most_frequent() and least_frequent()</a></span></li></ul></li><li><span><a href="#Bonus:-Calculate-most/least-frequent-letters-in-words-beginning-with-consonants-or-vowels" data-toc-modified-id="Bonus:-Calculate-most/least-frequent-letters-in-words-beginning-with-consonants-or-vowels-7.4"><span class="toc-item-num">7.4&nbsp;&nbsp;</span>Bonus: Calculate most/least frequent letters in words beginning with consonants or vowels</a></span><ul class="toc-item"><li><span><a href="#Test-most_frequent2()-and-least_frequent2()" data-toc-modified-id="Test-most_frequent2()-and-least_frequent2()-7.4.1"><span class="toc-item-num">7.4.1&nbsp;&nbsp;</span>Test most_frequent2() and least_frequent2()</a></span></li></ul></li></ul></li></ul></div><section class="tex2jax_ignore mathjax_ignore" id="dictionaries">
+  <section class="tex2jax_ignore mathjax_ignore" id="dictionaries">
 <h1>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">#</a></h1>
-<p>Whereas lists allow us to store lists of values in a particular order, dictionaries allow us to store connected bits of information in <em>no</em> particular order. For example, you might store a subject id associated with their data, or response codes and their meaning in the context of your experiment.</p>
+<p>Lists allow us to store lists of values in a particular order and are always traversed in some order. <strong>Dictionaries</strong> (also known as hashes) allow us to store bits of information in <em>no</em> particular order. For example, you might store a subject id associated with their data, or response codes and their meaning in the context of your experiment.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="what-are-dictionaries">
 <h1>What are dictionaries?<a class="headerlink" href="#what-are-dictionaries" title="Permalink to this headline">#</a></h1>
-<p>Dictionaries are a way to store information that is connected in some way. Dictionaries store information in <em>key-value</em> pairs (in analogy to a conventional dictionary where the key would be a word and the value its meaning). In a Python dictionary, <code class="docutils literal notranslate"><span class="pre">keys</span></code> are usually strings, integers, or floats. You cannot have a list or dictionary as a key. Values can be pretty much anything. So you can have a dictionary where keys are strings and values are lists or dictionaries, or even functions.</p>
-<p><strong>Important</strong>: Python dictionaries do not store their information in any particular order, so you may not get your information back in the same order you entered it.</p>
+<p>Dictionaries are a way to store information that is connected in some way. Dictionaries store information in <em>key-value</em> pairs (in analogy to a conventional dictionary where the key would be a word and the value its meaning). In a Python dictionary, <code class="docutils literal notranslate"><span class="pre">keys</span></code> are usually strings, integers, or floats. You cannot use a list or dictionary as a key. Values can be pretty much anything. So you can have a dictionary where keys are strings and values are strings, lists, other dictionaries, or even functions.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>**Python dictionaries do not store their information in any particular order, so never assume that you can access it in the order you put it in. Python does make available to you a data-structure called an <a class="reference external" href="https://www.geeksforgeeks.org/ordereddict-in-python/">Ordered Dictionary</a>, so if you want one, use it; don’t reinvent the wheel.</p>
+</div>
 <section id="general-syntax">
 <h2>General Syntax<a class="headerlink" href="#general-syntax" title="Permalink to this headline">#</a></h2>
 <p>A general dictionary in Python looks something like this:</p>
@@ -737,7 +761,7 @@ title="Print to PDF"
 <p>Since the keys and values in dictionaries can be long, we often write just one key-value pair on a line. You might see key-value pairs in dictionaries specified like this (although most of the time you will be defining these dynamically in your program rather than hardcoding the assignments):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">dictionary_name</span> <span class="o">=</span> <span class="p">{</span><span class="n">key_1</span><span class="p">:</span> <span class="n">value_1</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dictionary_name</span> <span class="o">=</span> <span class="p">{</span><span class="n">key_1</span><span class="p">:</span> <span class="n">value_1</span><span class="p">,</span>
                    <span class="n">key_2</span><span class="p">:</span> <span class="n">value_2</span><span class="p">,</span>
                    <span class="n">key_3</span><span class="p">:</span> <span class="n">value_3</span><span class="p">,</span>
                    <span class="p">}</span>
@@ -752,7 +776,7 @@ title="Print to PDF"
 <p>As our first example, let’s use a dictionary that implements a glossary of a few Python terms.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">python_words</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;list&#39;</span><span class="p">:</span> <span class="s1">&#39;a collection of values that are not connected, but have an order.&#39;</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">python_words</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;list&#39;</span><span class="p">:</span> <span class="s1">&#39;a collection of values that are not connected, but have an order.&#39;</span><span class="p">,</span>
                 <span class="s1">&#39;dictionary&#39;</span><span class="p">:</span> <span class="s1">&#39;a collection of key-value pairs.&#39;</span><span class="p">,</span>
                 <span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;a named index in a dictionary&#39;</span><span class="p">,</span>
                 <span class="p">}</span>
@@ -763,7 +787,7 @@ title="Print to PDF"
 <p>We can get individual items out of the dictionary, by giving the dictionary’s name, and the key in square brackets, much like accessing an element from a list:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">python_words</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;list&#39;</span><span class="p">:</span> <span class="s1">&#39;a collection of values that are not connected, but have an order.&#39;</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">python_words</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;list&#39;</span><span class="p">:</span> <span class="s1">&#39;a collection of values that are not connected, but have an order.&#39;</span><span class="p">,</span>
                 <span class="s1">&#39;dictionary&#39;</span><span class="p">:</span> <span class="s1">&#39;a collection of key-value pairs.&#39;</span><span class="p">,</span>
                 <span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;a named index in a dictionary&#39;</span><span class="p">,</span>
                 <span class="p">}</span>
@@ -783,7 +807,7 @@ A dictionary is a collection of key-value pairs.
 <p>This code looks pretty repetitive, and it is. As with lists, we can iterate through dictionaries, but since there are two kinds of information in dictionaries, the structure is a bit more complicated than it is for lists. Here is how to use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop with a dictionary:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">python_words</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;list&#39;</span><span class="p">:</span> <span class="s1">&#39;a collection of values that are not connected, but have an order.&#39;</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">python_words</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;list&#39;</span><span class="p">:</span> <span class="s1">&#39;a collection of values that are not connected, but have an order.&#39;</span><span class="p">,</span>
                 <span class="s1">&#39;dictionary&#39;</span><span class="p">:</span> <span class="s1">&#39;a collection of key-value pairs.&#39;</span><span class="p">,</span>
                 <span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;a named index in a dictionary&#39;</span><span class="p">,</span>
                 <span class="p">}</span>
@@ -819,7 +843,7 @@ A dictionary is a collection of key-value pairs.
 <p>To add a new key-value pair, you give the dictionary name followed by the new key in square brackets, and set that equal to the new value. We will show this by starting with an empty dictionary, and re-creating the dictionary from the example above.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create an empty dictionary.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create an empty dictionary.</span>
 <span class="n">python_words</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1">#note that we define a new dictionary using curly braces, not square brackets.</span>
 
 <span class="c1"># Fill the dictionary, pair by pair.</span>
@@ -858,7 +882,7 @@ Meaning: a collection of key-value pairs.
 <p>At some point you may want to modify one of the values in your dictionary. Modifying a value in a dictionary is pretty similar to modifying an element in a list. You give the name of the dictionary and then the key in square brackets, and set that equal to the new value.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">python_words</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;list&#39;</span><span class="p">:</span> <span class="s1">&#39;a collection of values that are not connected, but have an order.&#39;</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">python_words</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;list&#39;</span><span class="p">:</span> <span class="s1">&#39;a collection of values that are not connected, but have an order.&#39;</span><span class="p">,</span>
                 <span class="s1">&#39;dictionary&#39;</span><span class="p">:</span> <span class="s1">&#39;a collection of key-value pairs.&#39;</span><span class="p">,</span>
                 <span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;a named index in a dictionary&#39;</span><span class="p">,</span>
                 <span class="p">}</span>
@@ -886,7 +910,7 @@ A collection of key-value pairs. Each key can be used to access its correspondin
 <p>You may want to remove some key-value pairs from one of your dictionaries at some point. You can do this using the same <code class="docutils literal notranslate"><span class="pre">del</span></code> command you learned to use with lists. To remove a key-value pair, you give the <code class="docutils literal notranslate"><span class="pre">del</span></code> command, followed by the name of the dictionary, with the key that you want to delete. This removes the key and the value as a pair.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">python_words</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;list&#39;</span><span class="p">:</span> <span class="s1">&#39;a collection of values that are not connected, but have an order.&#39;</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">python_words</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;list&#39;</span><span class="p">:</span> <span class="s1">&#39;a collection of values that are not connected, but have an order.&#39;</span><span class="p">,</span>
                 <span class="s1">&#39;dictionary&#39;</span><span class="p">:</span> <span class="s1">&#39;a collection of key-value pairs.&#39;</span><span class="p">,</span>
                 <span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;a named index in a dictionary&#39;</span><span class="p">,</span>
                 <span class="p">}</span>
@@ -930,7 +954,7 @@ Meaning a collection of key-value pairs.
 <p>If you were going to work with this code, you would want to put the code for displaying the dictionary into a function. Let’s see what this looks like:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">show_words_meanings</span><span class="p">(</span><span class="n">python_words</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">show_words_meanings</span><span class="p">(</span><span class="n">python_words</span><span class="p">):</span>
     <span class="c1"># This function takes in a dictionary of python words and meanings,</span>
     <span class="c1">#  and prints out each word with its meaning.</span>
     <span class="nb">print</span> <span class="s2">&quot;These are the Python words I know:&quot;</span>
@@ -979,7 +1003,7 @@ Word dictionary a collection of key-value pairs.
 <p>Here’s what this looks like. We will use a dictionary with just one key-value pair, to keep things simple.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We have a spelling mistake!</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We have a spelling mistake!</span>
 <span class="n">python_words</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;lisst&#39;</span><span class="p">:</span> <span class="s1">&#39;A collection of values that are not connected, but have an order.&#39;</span><span class="p">}</span>
 
 <span class="c1"># Create a new, correct key, and connect it to the old value.</span>
@@ -1014,7 +1038,7 @@ Word dictionary a collection of key-value pairs.
 <p>This is the kind of loop that was shown in the first example. Here’s what this loop looks like, in a general format:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;key_1&#39;</span><span class="p">:</span> <span class="s1">&#39;value_1&#39;</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;key_1&#39;</span><span class="p">:</span> <span class="s1">&#39;value_1&#39;</span><span class="p">,</span>
     <span class="s1">&#39;key_2&#39;</span><span class="p">:</span> <span class="s1">&#39;value_2&#39;</span><span class="p">,</span>
     <span class="s1">&#39;key_3&#39;</span><span class="p">:</span> <span class="s1">&#39;value_3&#39;</span><span class="p">,</span>
     <span class="p">}</span>
@@ -1039,7 +1063,7 @@ Value value_2
 <p>This works because the method <code class="docutils literal notranslate"><span class="pre">.items()</span></code> pulls all key-value pairs from a dictionary into a list of tuples:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;key_1&#39;</span><span class="p">:</span> <span class="s1">&#39;value_1&#39;</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;key_1&#39;</span><span class="p">:</span> <span class="s1">&#39;value_1&#39;</span><span class="p">,</span>
     <span class="s1">&#39;key_2&#39;</span><span class="p">:</span> <span class="s1">&#39;value_2&#39;</span><span class="p">,</span>
     <span class="s1">&#39;key_3&#39;</span><span class="p">:</span> <span class="s1">&#39;value_3&#39;</span><span class="p">,</span>
     <span class="p">}</span>
@@ -1058,7 +1082,7 @@ Value value_2
 <p>There is nothing special about any of these variable names, so Python code that uses this syntax becomes really readable. Rather than create a new example of this loop, let’s just look at the original example again to see this in a meaningful context:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">python_words</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;list&#39;</span><span class="p">:</span> <span class="s1">&#39;A collection of values that are not connected, but have an order.&#39;</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">python_words</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;list&#39;</span><span class="p">:</span> <span class="s1">&#39;A collection of values that are not connected, but have an order.&#39;</span><span class="p">,</span>
                 <span class="s1">&#39;dictionary&#39;</span><span class="p">:</span> <span class="s1">&#39;A collection of key-value pairs.&#39;</span><span class="p">,</span>
                 <span class="s1">&#39;function&#39;</span><span class="p">:</span> <span class="s1">&#39;A named set of instructions that defines a set of actions in Python.&#39;</span><span class="p">,</span>
                 <span class="p">}</span>
@@ -1089,7 +1113,7 @@ Meaning A collection of key-value pairs.
 <p>Python provides a clear syntax for looping through just the keys in a dictionary:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;key_1&#39;</span><span class="p">:</span> <span class="s1">&#39;value_1&#39;</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;key_1&#39;</span><span class="p">:</span> <span class="s1">&#39;value_1&#39;</span><span class="p">,</span>
     <span class="s1">&#39;key_2&#39;</span><span class="p">:</span> <span class="s1">&#39;value_2&#39;</span><span class="p">,</span>
     <span class="s1">&#39;key_3&#39;</span><span class="p">:</span> <span class="s1">&#39;value_3&#39;</span><span class="p">,</span>
     <span class="p">}</span>
@@ -1110,7 +1134,7 @@ Key key_2
 <p>This is actually the default behavior of looping through the dictionary itself. So you can leave out the <code class="docutils literal notranslate"><span class="pre">.keys()</span></code> part, and get the exact same behavior:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;key_1&#39;</span><span class="p">:</span> <span class="s1">&#39;value_1&#39;</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;key_1&#39;</span><span class="p">:</span> <span class="s1">&#39;value_1&#39;</span><span class="p">,</span>
     <span class="s1">&#39;key_2&#39;</span><span class="p">:</span> <span class="s1">&#39;value_2&#39;</span><span class="p">,</span>
     <span class="s1">&#39;key_3&#39;</span><span class="p">:</span> <span class="s1">&#39;value_3&#39;</span><span class="p">,</span>
     <span class="p">}</span>
@@ -1132,7 +1156,7 @@ Key key_2
 <p>You can pull out the value of any key that you are interested in within your loop, using the standard notation for accessing a dictionary value from a key:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;key_1&#39;</span><span class="p">:</span> <span class="s1">&#39;value_1&#39;</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;key_1&#39;</span><span class="p">:</span> <span class="s1">&#39;value_1&#39;</span><span class="p">,</span>
     <span class="s1">&#39;key_2&#39;</span><span class="p">:</span> <span class="s1">&#39;value_2&#39;</span><span class="p">,</span>
     <span class="s1">&#39;key_3&#39;</span><span class="p">:</span> <span class="s1">&#39;value_3&#39;</span><span class="p">,</span>
     <span class="p">}</span>
@@ -1156,7 +1180,7 @@ Key: key_2
 <p>Let’s show how we might use this in our Python words program. This kind of loop provides a straightforward way to show only the words in the dictionary:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">python_words</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;list&#39;</span><span class="p">:</span> <span class="s1">&#39;A collection of values that are not connected, but have an order.&#39;</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">python_words</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;list&#39;</span><span class="p">:</span> <span class="s1">&#39;A collection of values that are not connected, but have an order.&#39;</span><span class="p">,</span>
                 <span class="s1">&#39;dictionary&#39;</span><span class="p">:</span> <span class="s1">&#39;A collection of key-value pairs.&#39;</span><span class="p">,</span>
                 <span class="s1">&#39;function&#39;</span><span class="p">:</span> <span class="s1">&#39;A named set of instructions that defines a set of actions in Python.&#39;</span><span class="p">,</span>
                 <span class="p">}</span>
@@ -1184,7 +1208,7 @@ Key: key_2
 <p>Python provides a straightforward syntax for looping through all the values in a dictionary, as well:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;key_1&#39;</span><span class="p">:</span> <span class="s1">&#39;value_1&#39;</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;key_1&#39;</span><span class="p">:</span> <span class="s1">&#39;value_1&#39;</span><span class="p">,</span>
     <span class="s1">&#39;key_2&#39;</span><span class="p">:</span> <span class="s1">&#39;value_2&#39;</span><span class="p">,</span>
     <span class="s1">&#39;key_3&#39;</span><span class="p">:</span> <span class="s1">&#39;value_3&#39;</span><span class="p">,</span>
     <span class="p">}</span>
@@ -1211,7 +1235,7 @@ All keys in a dictionary must be unique. If you try to create an entry in a dict
 <p>Dictionaries are useful because they allow bits of information to be connected. When you print a dictionary, it may look like the keys are stored in a particular order. They are not and this order will vary from one run of the program to the next. Dictionaries are an <em>unordered</em> data-type. Sometimes you may want to sort the keys so that they do print (or are otherwise accessed) in a particular order. For alpha-numeric orders, there is a quick and easy way to do this.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">python_words</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;list&#39;</span><span class="p">:</span> <span class="s1">&#39;a collection of values that are not connected, but have an order.&#39;</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">python_words</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;list&#39;</span><span class="p">:</span> <span class="s1">&#39;a collection of values that are not connected, but have an order.&#39;</span><span class="p">,</span>
                 <span class="s1">&#39;dictionary&#39;</span><span class="p">:</span> <span class="s1">&#39;a collection of key-value pairs.&#39;</span><span class="p">,</span>
                 <span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;a named index in a dictionary&#39;</span><span class="p">,</span>
                 <span class="p">}</span>
@@ -1232,7 +1256,7 @@ dictionary
 <p>The resulting list is not in any particular order. The list of keys can be put in alpha-numeric order by passing the list into the <em>sorted()</em> function, in the line that initiates the for loop:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">python_words</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;list&#39;</span><span class="p">:</span> <span class="s1">&#39;a collection of values that are not connected, but have an order.&#39;</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">python_words</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;list&#39;</span><span class="p">:</span> <span class="s1">&#39;a collection of values that are not connected, but have an order.&#39;</span><span class="p">,</span>
                 <span class="s1">&#39;dictionary&#39;</span><span class="p">:</span> <span class="s1">&#39;a collection of key-value pairs.&#39;</span><span class="p">,</span>
                 <span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;a named index in a dictionary&#39;</span><span class="p">,</span>
                 <span class="p">}</span>
@@ -1260,7 +1284,7 @@ To sort in reverse order, give sorted() `reverse=True` as an argument
 <p>Finding the largest value is as simple as:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">my_dictionary</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;item1&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;item4&#39;</span><span class="p">:</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;item2&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;item3&#39;</span><span class="p">:</span><span class="mi">8</span><span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_dictionary</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;item1&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;item4&#39;</span><span class="p">:</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;item2&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;item3&#39;</span><span class="p">:</span><span class="mi">8</span><span class="p">}</span>
 <span class="nb">max</span><span class="p">(</span><span class="n">my_dictionary</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -1276,7 +1300,7 @@ To sort in reverse order, give sorted() `reverse=True` as an argument
 <h3>Sorting by values: the verbose and inefficient solution<a class="headerlink" href="#sorting-by-values-the-verbose-and-inefficient-solution" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="c1">#this dictionary contains some words and the number of letters they have.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#this dictionary contains some words and the number of letters they have.</span>
 <span class="n">dict_for_sorting</span> <span class="o">=</span> <span class="p">{</span>
  <span class="s1">&#39;Figure&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
  <span class="s1">&#39;Freestyle&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
@@ -1321,7 +1345,7 @@ To sort in reverse order, give sorted() `reverse=True` as an argument
 <h3>Sorting by values: the compact and efficient solution<a class="headerlink" href="#sorting-by-values-the-compact-and-efficient-solution" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">operator</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">operator</span>
 
 <span class="n">dict_for_sorting</span> <span class="o">=</span> <span class="p">{</span>
  <span class="s1">&#39;Figure&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
@@ -1368,7 +1392,7 @@ What does setting key to key=operator.itemgetter(0) do?
 <p>The first example will involve storing a number of people’s favorite numbers. The keys consist of people’s names, and the values are lists of each person’s favorite numbers. In this first example, we will access each person’s list one at a time.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This program stores people&#39;s favorite numbers, and displays them.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This program stores people&#39;s favorite numbers, and displays them.</span>
 <span class="n">favorite_numbers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;eric&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">42</span><span class="p">],</span>
                     <span class="s1">&#39;ever&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
                     <span class="s1">&#39;willie&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">120</span><span class="p">],</span>
@@ -1402,7 +1426,7 @@ Willie&#39;s favorite numbers are:
 <p>We are really just working our way through each key in the dictionary, so let’s use a for loop to go through the keys in the dictionary:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This program stores people&#39;s favorite numbers, and displays them.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This program stores people&#39;s favorite numbers, and displays them.</span>
 <span class="n">favorite_numbers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;eric&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">42</span><span class="p">],</span>
                     <span class="s1">&#39;ever&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
                     <span class="s1">&#39;willie&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">120</span><span class="p">],</span>
@@ -1430,7 +1454,7 @@ Eric&#39;s favorite numbers are:
 <p>This works, but we’d rather not print raw Python in our output. Let’s use a for loop to print the favorite numbers individually, rather than in a Python list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This program stores people&#39;s favorite numbers, and displays them.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This program stores people&#39;s favorite numbers, and displays them.</span>
 <span class="n">favorite_numbers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;eric&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">42</span><span class="p">],</span>
                     <span class="s1">&#39;ever&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
                     <span class="s1">&#39;willie&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">120</span><span class="p">],</span>
@@ -1468,7 +1492,7 @@ Eric&#39;s favorite numbers are:
 <p>Things get a little more complicated inside the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop. The value is a list of favorite numbers, so the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop pulls each <em>favorite_number</em> out of the list one at a time. If it makes more sense to you, you are free to store the list in a new variable, and use that to define your <code class="docutils literal notranslate"><span class="pre">for</span></code> loop:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This program stores people&#39;s favorite numbers, and displays them.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This program stores people&#39;s favorite numbers, and displays them.</span>
 <span class="n">favorite_numbers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;eric&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">42</span><span class="p">],</span>
                     <span class="s1">&#39;ever&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
                     <span class="s1">&#39;willie&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">120</span><span class="p">],</span>
@@ -1509,7 +1533,7 @@ Eric &#39;s favorite numbers are:
 <p>To demonstrate this, let’s make a dictionary of pets, with some information about each pet. The keys for this dictionary will consist of the pet’s name. The values will include information such as the kind of animal, the owner, and whether the pet has been vaccinated.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This program stores information about pets. For each pet,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This program stores information about pets. For each pet,</span>
 <span class="c1">#   we store the kind of animal, the owner&#39;s name, and</span>
 <span class="c1">#   the breed.</span>
 <span class="n">pets</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;willie&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;kind&#39;</span><span class="p">:</span> <span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;owner&#39;</span><span class="p">:</span> <span class="s1">&#39;eric&#39;</span><span class="p">,</span> <span class="s1">&#39;vaccinated&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
@@ -1561,7 +1585,7 @@ vaccinated: True
 <p>Let’s rewrite this program, using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to go through the dictionary’s keys:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This program stores information about pets. For each pet,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This program stores information about pets. For each pet,</span>
 <span class="c1">#   we store the kind of animal, the owner&#39;s name, and</span>
 <span class="c1">#   the breed.</span>
 <span class="n">pets</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;willie&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;kind&#39;</span><span class="p">:</span> <span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;owner&#39;</span><span class="p">:</span> <span class="s1">&#39;eric&#39;</span><span class="p">,</span> <span class="s1">&#39;vaccinated&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
@@ -1601,7 +1625,7 @@ vaccinated:  False
 <p>This code is much shorter and easier to maintain. But even this code will not keep up with our dictionary. If we add more information to the dictionary later, we will have to update our print statements. Let’s put a second <code class="docutils literal notranslate"><span class="pre">for</span></code> loop inside the first loop in order to run through all the information about each pet:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This program stores information about pets. For each pet,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This program stores information about pets. For each pet,</span>
 <span class="c1">#   we store the kind of animal, the owner&#39;s name, and</span>
 <span class="c1">#   the breed.</span>
 <span class="n">pets</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;willie&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;kind&#39;</span><span class="p">:</span> <span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;owner&#39;</span><span class="p">:</span> <span class="s1">&#39;eric&#39;</span><span class="p">,</span> <span class="s1">&#39;vaccinated&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
@@ -1653,7 +1677,7 @@ vaccinated : False
 <p>Let’s show one last version that uses some if statements to clean up our data for printing:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This program stores information about pets. For each pet,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This program stores information about pets. For each pet,</span>
 <span class="c1">#   we store the kind of animal, the owner&#39;s name, and</span>
 <span class="c1">#   the breed.</span>
 <span class="n">pets</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;willie&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;kind&#39;</span><span class="p">:</span> <span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;owner&#39;</span><span class="p">:</span> <span class="s1">&#39;eric&#39;</span><span class="p">,</span> <span class="s1">&#39;vaccinated&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
@@ -1727,7 +1751,7 @@ vaccinated: no
 <p>Here is another example in which we check whether the received response is equal to the correctResponse. Assume that correct_response is set to ‘match’ or ‘mismatch’</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">response_mapping</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;z&#39;</span><span class="p">:</span><span class="s1">&#39;match&#39;</span><span class="p">,</span> <span class="s1">&#39;slash&#39;</span><span class="p">:</span><span class="s1">&#39;mismatch&#39;</span><span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">response_mapping</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;z&#39;</span><span class="p">:</span><span class="s1">&#39;match&#39;</span><span class="p">,</span> <span class="s1">&#39;slash&#39;</span><span class="p">:</span><span class="s1">&#39;mismatch&#39;</span><span class="p">}</span>
 
 <span class="k">if</span> <span class="n">response_mapping</span><span class="p">[</span><span class="n">response_received</span><span class="p">]</span> <span class="o">==</span> <span class="n">correct_response</span><span class="p">:</span>
     <span class="n">isRight</span><span class="o">=</span><span class="mi">1</span>
@@ -1740,7 +1764,7 @@ vaccinated: no
 <p>Suppose we want to have a counterbalancing variable such that people assigned to the <em>matchLeft</em> condition response with ‘z’ as match and ‘slash’ as mismatch while people assigned to the <em>matchRight</em> condition have the response keys reversed. We could do if/else statements, but dictionaries provide a more elegant and more extendible solution:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>response_mapping = {
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>response_mapping = {
                     &#39;matchLeft&#39;: {&#39;z&#39;:&#39;match&#39;, &#39;slash&#39;:&#39;mismatch&#39;},
                     &#39;matchRight&#39;: {&#39;z&#39;:&#39;mismatch&#39;, &#39;slash&#39;:&#39;match&#39;}}
 
@@ -1871,7 +1895,7 @@ a_dict =
 <p>Here’s some code to help get you started:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="k">def</span> <span class="nf">isVowel</span><span class="p">(</span><span class="n">letter</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">letter</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">,</span><span class="s1">&#39;i&#39;</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="s1">&#39;u&#39;</span><span class="p">]</span>
@@ -1905,7 +1929,7 @@ Hint: You don't need to write separate isConsonant/isConsonantOnset functions!</
 <p>Complete the implementation of the function <code class="docutils literal notranslate"><span class="pre">letter_counts()</span></code> which receives a string as input and returns a dictionary with (lowercase) letters as keys and their respective counts as values.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">letter_counts</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">letter_counts</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
     <span class="n">letter_sums</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="n">letters</span> <span class="o">=</span> <span class="p">[</span><span class="n">letter</span> <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">string</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()]</span>
     <span class="k">for</span> <span class="n">curLetter</span> <span class="ow">in</span> <span class="n">letters</span><span class="p">:</span>
@@ -1922,7 +1946,7 @@ Hint: You don't need to write separate isConsonant/isConsonantOnset functions!</
 <h3>Test your letter_counts function<a class="headerlink" href="#test-your-letter-counts-function" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>letter_counts(&quot;Complete the implementation of the function. `letter_counts()` receives a string as input and returns a dictionary with (lowercase) letters and their respective counts. The keys are the letters and the counts are how many times a given letter occurred.&quot;)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>letter_counts(&quot;Complete the implementation of the function. `letter_counts()` receives a string as input and returns a dictionary with (lowercase) letters and their respective counts. The keys are the letters and the counts are how many times a given letter occurred.&quot;)
 ```
 {&#39;a&#39;: 12, &#39;c&#39;: 10, &#39;e&#39;: 32, &#39;d&#39;: 4, &#39;g&#39;: 1, &#39;f&#39;: 1, &#39;i&#39;: 12, &#39;h&#39;: 7, &#39;k&#39;: 0, &#39;m&#39;: 4, &#39;l&#39;: 6, &#39;o&#39;: 10, &#39;n&#39;: 15, &#39;p&#39;: 3, &#39;s&#39;: 12, &#39;r&#39;: 15, &#39;u&#39;: 6, &#39;t&#39;: 27, &#39;w&#39;: 2, &#39;v&#39;: 2, &#39;y&#39;: 2}
 ```
@@ -1944,7 +1968,7 @@ SyntaxError: invalid syntax
 <h2>Given a string, find the n most/least frequent letters in it<a class="headerlink" href="#given-a-string-find-the-n-most-least-frequent-letters-in-it" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">most_frequent</span><span class="p">(</span><span class="n">string</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">most_frequent</span><span class="p">(</span><span class="n">string</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
     <span class="k">pass</span>
 
 <span class="k">def</span> <span class="nf">least_frequent</span><span class="p">(</span><span class="n">string</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
@@ -1957,7 +1981,7 @@ SyntaxError: invalid syntax
 <h3>Test most_frequent() and least_frequent()<a class="headerlink" href="#test-most-frequent-and-least-frequent" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">a_string</span> <span class="o">=</span> <span class="s2">&quot;At this year&#39;s Winter Olympics in Pyeongchang, we may see quad corks in Big Air Snowboarding or in Freestyle Skiing -- and we&#39;ll see quad twists and quad jumps in Figure Skating. But have we reached the limit of what&#39;s possible? To do a quad, a skater&#39;s got less than a second to turn their body four times in the air.&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_string</span> <span class="o">=</span> <span class="s2">&quot;At this year&#39;s Winter Olympics in Pyeongchang, we may see quad corks in Big Air Snowboarding or in Freestyle Skiing -- and we&#39;ll see quad twists and quad jumps in Figure Skating. But have we reached the limit of what&#39;s possible? To do a quad, a skater&#39;s got less than a second to turn their body four times in the air.&quot;</span>
 
 <span class="o">&gt;</span><span class="n">most_frequent</span><span class="p">(</span><span class="n">a_string</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
 <span class="c1">#should return [(&#39;e&#39;, 24), (&#39;a&#39;, 21), (&#39;i&#39;, 21)]</span>
@@ -1988,7 +2012,7 @@ SyntaxError: invalid syntax
 <h3>Test most_frequent2() and least_frequent2()<a class="headerlink" href="#test-most-frequent2-and-least-frequent2" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">a_string</span> <span class="o">=</span> <span class="s2">&quot;At this year&#39;s Winter Olympics in Pyeongchang, we may see quad corks in Big Air Snowboarding or in Freestyle Skiing -- and we&#39;ll see quad twists and quad jumps in Figure Skating. But have we reached the limit of what&#39;s possible? To do a quad, a skater&#39;s got less than a second to turn their body four times in the air.&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_string</span> <span class="o">=</span> <span class="s2">&quot;At this year&#39;s Winter Olympics in Pyeongchang, we may see quad corks in Big Air Snowboarding or in Freestyle Skiing -- and we&#39;ll see quad twists and quad jumps in Figure Skating. But have we reached the limit of what&#39;s possible? To do a quad, a skater&#39;s got less than a second to turn their body four times in the air.&quot;</span>
 
 <span class="n">most_frequent2</span><span class="p">(</span><span class="n">a_string</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
 <span class="c1">#should return [(&#39;n&#39;, 6), (&#39;a&#39;, 5), (&#39;i&#39;, 5)]</span>
@@ -2015,13 +2039,13 @@ SyntaxError: invalid syntax
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python2",
+            kernelName: "python3",
             path: "./notebooks"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python2'</script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
