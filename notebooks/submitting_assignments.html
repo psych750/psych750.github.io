@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Programming and Automation Techniques for Psychologists &#8212; Psych 750</title>
+    <title>Submitting assignments &#8212; Psych 750</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -51,10 +51,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://psych750.github.io/notebooks/index.html" />
+    <link rel="canonical" href="https://psych750.github.io/notebooks/submitting_assignments.html" />
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Basic Linux commands" href="Shell_reference.html" />
+    <link rel="prev" title="Programming Environment for Windows" href="programming_environment_windows.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -123,7 +125,7 @@ const thebe_selector_output = ".output, .cell_output"
   Installation instructions
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="programming_environment_osx.html">
    Programming Environment for MacOS
@@ -134,8 +136,8 @@ const thebe_selector_output = ".output, .cell_output"
    Programming Environment for Windows
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="submitting_assignments.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Submitting assignments
   </a>
  </li>
@@ -323,7 +325,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/notebooks/index.ipynb"
+        <a href="../_sources/notebooks/submitting_assignments.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -382,35 +384,59 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#why-program">
-   Why Program?
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Submitting assignments
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-1-accept-an-assignment">
+     Step 1: Accept an assignment
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-2-do-the-assignment">
+     Step 2: Do the assignment
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-3-submit-the-assignment-part">
+     Step 3: Submit the assignment part
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#class-philosophy">
-   Class philosophy
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tips">
+   Tips
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-now">
-   What now?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#schedule">
-   Schedule
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#feedback">
-   Feedback
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#about">
-   About
-  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#see-the-git-log">
+     See the git log
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#figure-out-what-s-been-changed-and-which-files-are-being-staged">
+     Figure out what’s been changed and which files are being staged
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#check-out-a-particular-commit">
+     Check out a particular commit
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#undo-a-push">
+     Undo a push
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#get-the-url-of-remote-branch">
+     Get the URL of remote branch
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -421,7 +447,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Programming and Automation Techniques for Psychologists</h1>
+                <h1>Submitting assignments</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -431,35 +457,59 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#why-program">
-   Why Program?
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Submitting assignments
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-1-accept-an-assignment">
+     Step 1: Accept an assignment
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-2-do-the-assignment">
+     Step 2: Do the assignment
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-3-submit-the-assignment-part">
+     Step 3: Submit the assignment part
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#class-philosophy">
-   Class philosophy
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tips">
+   Tips
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-now">
-   What now?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#schedule">
-   Schedule
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#feedback">
-   Feedback
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#about">
-   About
-  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#see-the-git-log">
+     See the git log
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#figure-out-what-s-been-changed-and-which-files-are-being-staged">
+     Figure out what’s been changed and which files are being staged
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#check-out-a-particular-commit">
+     Check out a particular commit
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#undo-a-push">
+     Undo a push
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#get-the-url-of-remote-branch">
+     Get the URL of remote branch
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -471,63 +521,101 @@ title="Print to PDF"
                 
               <div>
                 
-  <h1>Table of Contents<span class="tocSkip"></span></h1>
-<div class="toc" style="margin-top: 1em;"><ul class="toc-item"><li><span><a href="#Programming-and-Automation-Techniques-for-Psychologists" data-toc-modified-id="Programming-and-Automation-Techniques-for-Psychologists-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Programming and Automation Techniques for Psychologists</a></span><ul class="toc-item"><li><span><a href="#Why-Program?" data-toc-modified-id="Why-Program?-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Why Program?</a></span></li><li><span><a href="#Class-philosophy" data-toc-modified-id="Class-philosophy-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Class philosophy</a></span></li><li><span><a href="#What-now?" data-toc-modified-id="What-now?-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>What now?</a></span></li><li><span><a href="#Schedule" data-toc-modified-id="Schedule-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Schedule</a></span></li><li><span><a href="#Feedback" data-toc-modified-id="Feedback-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Feedback</a></span></li><li><span><a href="#About" data-toc-modified-id="About-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>About</a></span></li></ul></li></ul></div><section class="tex2jax_ignore mathjax_ignore" id="programming-and-automation-techniques-for-psychologists">
-<h1>Programming and Automation Techniques for Psychologists<a class="headerlink" href="#programming-and-automation-techniques-for-psychologists" title="Permalink to this headline">#</a></h1>
-<hr class="docutils" />
-<p>Welcome! Our mission is to teach you how to stop relying on point-and-click experiment packages and program your own experiments, script common tasks, organize your data, and in the process, become a better scientist.</p>
-<p>In Spring, 2018 we will be meeting on Thursdays 9:00am-11:30am in Psych 634. The class is taught by Prof. Gary Lupyan (<a class="reference external" href="http://sapir.psych.wisc.edu">lab page</a>), (lupyan <em>at</em> wisc dot edu).</p>
-<section id="why-program">
-<h2>Why Program?<a class="headerlink" href="#why-program" title="Permalink to this headline">#</a></h2>
-<hr class="docutils" />
-<p>Knowing how to program and how to automate common tasks will make your life (or at least your academic life) better. Much better. A programmatic approach will allow you to create experiments in hours that would take days or weeks of fiddling in point-and-click packages like Eprime. Programming your experiments will give you complete control overy every aspect of the procedure. You will never again need to worry about whether you can implement your experiment <em>in</em> some program. If you can think it, you can program it.  A globally programmatic approach to behavioral research will also mean that you will never have to shuffle lists in Excel to create the proper counterbalancing or randomize things. You will never have to copy and paste data files, or <code class="docutils literal notranslate"><span class="pre">gasp</span></code> manually code people’s (objective) responses. Changing the size of 1000 images or measuring the onset latency of a voice response becomes as simple as executing a little program, which at the end of the class, you will be able to write from scratch.</p>
-<p>At the end of the class you’ll be comfortable with creating full-blown experiments using Python and Psychopy. You will learn how to design experiments in a programmatic way (no pointing, no clicking) and be amazed with your increase in efficiency. In addition to coding experiments, by the end of the class you’ll be on your way to doing all sorts of fancy schmancy things in Python and command-line tools (e.g., data massaging of all sorts, (basic) corpus linguistics, automatic image and audio processing, and collecting some data online. The world will be your oyster.  Mmm, oysters.</p>
-</section>
-<section id="class-philosophy">
-<h2>Class philosophy<a class="headerlink" href="#class-philosophy" title="Permalink to this headline">#</a></h2>
-<hr class="docutils" />
-<p>Programming, as taught by computer scientists, emphasizes lots of theory (pointers, O-notation, garbage collection) and relatively abstract problem solving (e.g., implementing sort algorithms, navigating trees, recursive functions). Although this is an excelelnt way to gain a deep understanding of computer science, we are betting that it is not the best way to teach applied programming skills in a short amount of time to non computer-scientists. In this class we’ll be taking a more applied approach. Every exercise we do will introduce students to a skill relevant to solving problems commonly encountered in behavioral research. We’ll learn some theory along the way, but the focus will be on practical how-to solutions. If you’ve never programmed before, you’re in for an initially steep learning curve, but it will flatten out quickly, and your mind will be blown at what you are able to accomplish. If your only experience with programming came from data-analysis environments like R or environments specially created for scientific computing like MATLAB, you will appreciate the power and elegance of Python. If you have some experience programming in languages like Java and C, you will find the transition to Python itself quite easy, and will learn a lot about how to make efficient use of Python and various open-source tools for quickly moving from an experiment idea to analyzable data.</p>
-</section>
-<section id="what-now">
-<h2>What now?<a class="headerlink" href="#what-now" title="Permalink to this headline">#</a></h2>
-<hr class="docutils" />
-<ul class="simple">
-<li><p>Begin by following the <em>download and install</em> instructions above to set up your Python environment.</p></li>
-<li><p>If you are in the class, make sure you’ve joined the Github repository, installed Slack, and joined the class channel (check for invite in your mailbox or email me if you don’t see one). For those using this site as a tutorial: I have taken down the posted solutions in preparation for the Spring semester, but if you need a solution (or any code that’s not posted), please email me (lupyan <em>at</em> wisc dot edu).</p></li>
-<li><p>Watch the <a class="reference external" href="https://www.youtube.com/watch?v=j2jhv29PIoM&amp;feature=youtu.be"><em>What is Python and how do I run it screencast</em></a></p></li>
-</ul>
-<p>The GitHub repository for the Jupyter Notebooks and scripts that generate these pages is <a class="reference external" href="https://github.com/lupyanlab/programming_for_psychologists">here</a>.</p>
-</section>
-<section id="schedule">
-<h2>Schedule<a class="headerlink" href="#schedule" title="Permalink to this headline">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">IFrame</span>
-<span class="n">IFrame</span><span class="p">(</span><span class="s1">&#39;week_by_week_schedule/index.html&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">750</span><span class="p">)</span>
+  <section class="tex2jax_ignore mathjax_ignore" id="submitting-assignments">
+<h1>Submitting assignments<a class="headerlink" href="#submitting-assignments" title="Permalink to this headline">#</a></h1>
+<p>We’ll be using Github classroom for submitting assignments. This will give you practice with version control and allow us to easily comment on your code.</p>
+<section id="step-1-accept-an-assignment">
+<h2>Step 1: Accept an assignment<a class="headerlink" href="#step-1-accept-an-assignment" title="Permalink to this headline">#</a></h2>
+<ol>
+<li><p>Make sure git is installed and that you have a github account (see installation instructions)</p></li>
+<li><p>Accept the assignment. For the purposes of this tutorial, please accept <a class="reference external" href="https://classroom.github.com/a/rcWz0RaL">this test assignment</a></p></li>
+<li><p>Next, you’ll want to clone the repository on your local machine using</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone URL
 </pre></div>
 </div>
+<p>where URL is the URL of your personal assignment repository, e.g., it might be <a class="reference external" href="https://github.com/psych750/exercise-1-glupyan">https://github.com/psych750/exercise-1-glupyan</a></p>
+</li>
+<li><p>Note that this directory contains a file called <code class="docutils literal notranslate"><span class="pre">test_assignment.py</span></code>. For real assignments, the repository will contain starter code and any additional files you may need to complete the assignment.</p></li>
+</ol>
+</section>
+<section id="step-2-do-the-assignment">
+<h2>Step 2: Do the assignment<a class="headerlink" href="#step-2-do-the-assignment" title="Permalink to this headline">#</a></h2>
+<p>This test assignment has 3 parts:</p>
+</section>
+<section id="step-3-submit-the-assignment-part">
+<h2>Step 3: Submit the assignment part<a class="headerlink" href="#step-3-submit-the-assignment-part" title="Permalink to this headline">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git add .
+git commit -m <span class="s2">&quot;Finished part 1&quot;</span>
+git tag <span class="s2">&quot;Exercise_1_1&quot;</span>
+git push --tags
+</pre></div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-<iframe
-    width="700"
-    height="750"
-    src="week_by_week_schedule/index.html"
-    frameborder="0"
-    allowfullscreen
-></iframe>
-</div></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By default <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">tag</span></code> will tag the most recent commit (i.e., the HEAD). If you want to attach the tag to a previous version, you can do specify its hash. Read more about tags <a class="reference external" href="https://git-scm.com/book/en/v2/Git-Basics-Tagging">here</a></p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Forgetting to use <code class="docutils literal notranslate"><span class="pre">--tags``</span> <span class="pre">after</span> </code>push` will cause the tags you added to only be visible to you locally; we won’t be able to see them on our end</p>
 </div>
 </section>
-<section id="feedback">
-<h2>Feedback<a class="headerlink" href="#feedback" title="Permalink to this headline">#</a></h2>
-<hr class="docutils" />
-<p>If you are currently enrolled in the class, please use the Slack channel. If you are browsing these resources and have a comment/question, please email: lupyan at wisc dot edu.</p>
 </section>
-<section id="about">
-<h2>About<a class="headerlink" href="#about" title="Permalink to this headline">#</a></h2>
-<hr class="docutils" />
-<p>Gary Lupyan is an Associate Professor of Psychology at University of Wisconsin-Madison. See the <a class="reference external" href="http://sapir.psych.wisc.edu">lab webpage</a> for info on research and lab openings.</p>
+<section class="tex2jax_ignore mathjax_ignore" id="tips">
+<h1>Tips<a class="headerlink" href="#tips" title="Permalink to this headline">#</a></h1>
+<section id="see-the-git-log">
+<h2>See the git log<a class="headerlink" href="#see-the-git-log" title="Permalink to this headline">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git log
+</pre></div>
+</div>
+<p>You can print a more compact log using</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git log --oneline
+</pre></div>
+</div>
+</section>
+<section id="figure-out-what-s-been-changed-and-which-files-are-being-staged">
+<h2>Figure out what’s been changed and which files are being staged<a class="headerlink" href="#figure-out-what-s-been-changed-and-which-files-are-being-staged" title="Permalink to this headline">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git status
+</pre></div>
+</div>
+</section>
+<section id="check-out-a-particular-commit">
+<h2>Check out a particular commit<a class="headerlink" href="#check-out-a-particular-commit" title="Permalink to this headline">#</a></h2>
+<p>You can check out using a tag name, e.g., <code class="docutils literal notranslate"><span class="pre">Exercise_1_2</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout &lt;tag name&gt;
+</pre></div>
+</div>
+<p>You can list the available tags (i.e., those you’ve used previously) with</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git tag
+</pre></div>
+</div>
+<p>If you want to go to a previous commit that did not have a tag associated with it, use the hash provided by <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> use the hash value of the commit you want to revert to:</p>
+<p>e.g. if the relevant part of the log looks like this:
+<img alt="images/git_log_example.jpg" src="../_images/git_log_example.jpg" /></p>
+<p>you can go to this commit by using</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout 6ebc972579c733621124e40360812777aeeeeb6f
+</pre></div>
+</div>
+</section>
+<section id="undo-a-push">
+<h2>Undo a push<a class="headerlink" href="#undo-a-push" title="Permalink to this headline">#</a></h2>
+<p>Sometimes you’ll push some changes to a remote repository and want to undo them.  To do this, reset back to the version you want by using the appropriate hash, e.g.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git reset --hard a4711f034e8cf4d90a4e537428b033333240d58a
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The –hard flag ensures that the reverted commit is wiped clean from the git log</p>
+</div>
+<p>This resets your local branch. You can now update the remote branch to the current status (the current HEAD) by using</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git push -f
+</pre></div>
+</div>
+</section>
+<section id="get-the-url-of-remote-branch">
+<h2>Get the URL of remote branch<a class="headerlink" href="#get-the-url-of-remote-branch" title="Permalink to this headline">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git remote -v
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -543,13 +631,13 @@ title="Print to PDF"
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python2",
+            kernelName: "python3",
             path: "./notebooks"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python2'</script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               

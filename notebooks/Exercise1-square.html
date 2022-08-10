@@ -110,6 +110,18 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item active">
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  Schedule
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="schedule.html">
+   Week by week schedule
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Installation instructions
  </span>
 </p>
@@ -122,6 +134,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="programming_environment_windows.html">
    Programming Environment for Windows
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="submitting_assignments.html">
+   Submitting assignments
   </a>
  </li>
 </ul>
@@ -161,6 +178,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="var_string_num.html">
    Variables, Strings, and Numbers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="list_basics.html">
+   Lists - the basics
   </a>
  </li>
  <li class="toctree-l1">
@@ -363,8 +385,8 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#go-through-each-line-and-understand-what-it-does">
-   Go through each line and understand what it does.
+  <a class="reference internal nav-link" href="#go-through-each-line-of-the-code-above-and-understand-what-it-does">
+   Go through each line of the code above and understand what it does.
   </a>
  </li>
 </ul>
@@ -387,8 +409,8 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#go-through-each-line-and-understand-what-it-does">
-   Go through each line and understand what it does.
+  <a class="reference internal nav-link" href="#go-through-each-line-of-the-code-above-and-understand-what-it-does">
+   Go through each line of the code above and understand what it does.
   </a>
  </li>
 </ul>
@@ -408,7 +430,7 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">from</span> <span class="nn">psychopy</span> <span class="kn">import</span> <span class="n">visual</span><span class="p">,</span><span class="n">event</span><span class="p">,</span><span class="n">core</span> <span class="c1"># import the bits of PsychoPy we&#39;ll need for these exercises</span>
+<span class="kn">from</span> <span class="nn">psychopy</span> <span class="kn">import</span> <span class="n">visual</span><span class="p">,</span><span class="n">event</span><span class="p">,</span><span class="n">core</span> <span class="c1"># import the bits of PsychoPy we&#39;ll need for this exercise</span>
 
 <span class="n">win</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Window</span><span class="p">([</span><span class="mi">400</span><span class="p">,</span><span class="mi">400</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s1">&#39;pix&#39;</span><span class="p">)</span> <span class="c1">#open a window</span>
 <span class="n">square</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="n">win</span><span class="p">,</span><span class="n">lineColor</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span><span class="n">fillColor</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">])</span> <span class="c1">#create a Rectangle type object with certain parameters</span>
@@ -421,16 +443,18 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<section id="go-through-each-line-and-understand-what-it-does">
-<h2>Go through each line and understand what it does.<a class="headerlink" href="#go-through-each-line-and-understand-what-it-does" title="Permalink to this headline">#</a></h2>
-<p>…then spend the next 15 mins working through these (you’ll finish the rest on your own at home)</p>
+<section id="go-through-each-line-of-the-code-above-and-understand-what-it-does">
+<h2>Go through each line of the code above and understand what it does.<a class="headerlink" href="#go-through-each-line-of-the-code-above-and-understand-what-it-does" title="Permalink to this headline">#</a></h2>
+<p>Then spend the next 15 mins in class working through these steps.</p>
+<p>After each step, commit your solution to the Exercise 1 repository and <strong>tag</strong> it with the problem code, e.g., e1-1, e1-2, e1-3 etc.</p>
+<p>No need to rush. You’ll finish the rest at home as your first assignment.</p>
 <ol>
 <li><p>Make the square red instead of blue</p></li>
 <li><p>Make the square appear for 1.5 secs.</p></li>
 <li><p>Show a red square for 1 second, then switch it to blue and show it for 1 second</p></li>
 <li><p>Make the square appear for 1.5 secs, then show a blank screen for 1 sec, then flash the square 3 times for 30 ms (i.e., .03 seconds) each.</p></li>
-<li><p>Show the following sequence: blue, red, blue, red, blue, red (with each square appearing for 1 s with a 50 ms blank screen in the middle).</p></li>
-<li><p>Show a red square for 1 s then change its orientation by 45-deg</p>
+<li><p>Show the following sequence: blue, red, blue, red, blue, red. Each color square should appear for 1 s with a 50 ms blank screen in the middle.</p></li>
+<li><p>Show a red square for 1 sec and then change its orientation by 45-deg</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>To change the orientation by a certain degree-value use square.setOri(value) where <code class="docutils literal notranslate"><span class="pre">value</span></code> is the new orientation.</p>
@@ -463,7 +487,7 @@ size</p>
 </li>
 <li><p>Make the rectangle decrease/increase its width by 10% of its current width with each keypress instead of 10 pixels</p></li>
 <li><p>Show <em>two</em> rotating squares simultaneously, one left of center rotating clockwise, the other right of center, rotating counterclockwise</p></li>
-<li><p>As time allows, do something that’s not listed here (e.g., make it a pentagon instead of a square, make it pulsate, play a sound as it moves, bounce off walls.. be creative.</p></li>
+<li><p>As time allows, do something that’s not listed here (e.g., make it a pentagon instead of a square, make it pulsate, play a sound as it moves, bounce off walls(!) if you’re really ambitious.</p></li>
 </ol>
 </section>
 </section>
