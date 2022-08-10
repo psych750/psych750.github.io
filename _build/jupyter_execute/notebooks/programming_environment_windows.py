@@ -161,9 +161,9 @@
 
 # # Download CMDer
 # 
-# Lastly, you will want to download and install [CDMer](https://github.com/cmderdev/cmder/releases/) on your computer to run BASH commands.
+# Lastly, you will want to download and install [CDMer](https://github.com/cmderdev/cmder/releases/). CMDer implements a mini BASH shell on your Windows machine and we'll use it to run various shell commands to give you experience with working in a shell. 
 # 
-# Extract all the files to your preferred location and run the `cmder.exe` software. 
+# Extract all the files to your preferred location and run the `cmder.exe` software. Create a shortcut for it so you can access it easily.
 # 
 # ```{warning}
 # CMDer developers recommend NOT extracting the files into C:\Program Files

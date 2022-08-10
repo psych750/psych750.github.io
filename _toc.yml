@@ -4,6 +4,10 @@ title: Psych 750
 options:
   numbered: true
 parts:
+  - caption: Schedule
+    chapters:
+    - file: assets/schedule/index
+      title: Complete schedule
   - caption: Installation instructions
     chapters:
     - file: notebooks/programming_environment_osx
