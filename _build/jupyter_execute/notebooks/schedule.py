@@ -48,9 +48,12 @@
 # 
 # ### In class:
 # 1. Code review of Exercise 1
+#     - Using good variable names
 # 1. Reading and writing files
 # 1. Exercise 2
 # 
+# 
+# ## Week 3 (Sept 22)
 
 # In[ ]:
 
@@ -74,8 +77,8 @@
 # 
 #  At home: Finish Exercise 3, Dictionaries study guide, [Variable
 #  scope](http://sebastianraschka.com/Articles/2014_python_scope_and_namespaces.html),
-#  [Writing readable code](http://ricardogeek.com/docs/r_clean_code.pdf)
-#  (Read Chapter 2)
+#  [Writing readable code](https://testdriven.io/blog/clean-code-python/)
+#  
 # 
 #  In class: Modularizing with functions, debugging, practice writing
 #  more readable code, Coding a perceptual grouping task. Capturing

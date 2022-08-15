@@ -109,7 +109,7 @@ type(True)
 
 a=3
 if (a==3):
-    print "it's a three!"
+    print("it's a three!")
 
 
 # In[20]:
@@ -117,7 +117,7 @@ if (a==3):
 
 a=3
 if a==3:
-    print "it's a four!"
+    print("it's a four!")
 
 
 # In[21]:
@@ -125,7 +125,7 @@ if a==3:
 
 a=3
 if a=4:
-    print "it's a four!"
+    print( "it's a four!")
     
 
 
@@ -134,9 +134,9 @@ if a=4:
 
 a=3
 if a<10:
-    print "we're here"
+    print ("we're here")
 elif a<100:
-    print "and also here"
+    print( "and also here")
     
 
 
@@ -145,9 +145,9 @@ elif a<100:
 
 a=3
 if a<10:
-    print "we're here"
+    print("we're here")
 if a<100:
-    print "and also here"
+    print("and also here")
     
 
 
@@ -156,9 +156,9 @@ if a<100:
 
 a = "True"
 if a:
-    print "we're in the 'if'"
+    print ("we're in the 'if'")
 else:
-    print "we're in the else"
+    print ("we're in the else")
 
 
 # In[3]:
@@ -187,7 +187,7 @@ if a and b:
 
 # ## Lists
 
-# In[9]:
+# In[5]:
 
 
 animals= ['dog', 'cat', 'panda']
@@ -195,7 +195,7 @@ if panda in animals:
     print("found it!")
 
 
-# In[10]:
+# In[2]:
 
 
 animals= ['dog', 'cat', 'panda']
@@ -203,14 +203,22 @@ if "panda" or "giraffe" in animals:
     print("found it!")
 
 
-# In[31]:
+# In[6]:
+
+
+animals= ['dog', 'cat', 'panda']
+if "panda" and "giraffe" in animals:
+    print("found it!")
+
+
+# In[3]:
 
 
 if ["dog", "cat"] in animals:
-    print "we're here"
+    print ("we're here")
 
 
-# In[13]:
+# In[4]:
 
 
 some_nums = range(1,10)
