@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Syllabus &#8212; Psych 750</title>
+    <title>Exercise 2: Display some text, take in responses, read from a file &#8212; Psych 750</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -51,10 +51,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://psych750.github.io/notebooks/syllabus.html" />
+    <link rel="canonical" href="https://psych750.github.io/notebooks/Exercise2-stroop.html" />
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Exercise 1 - Make a square and play with it" href="Exercise1-square.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -251,14 +252,14 @@ const thebe_selector_output = ".output, .cell_output"
   Exercises
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Exercise1-square.html">
    Exercise 1-Show and square and do stuff with it
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Exercise2-stroop.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Exercise 2-A Stroop task
   </a>
  </li>
@@ -335,7 +336,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/notebooks/syllabus.ipynb"
+        <a href="../_sources/notebooks/Exercise2-stroop.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -372,90 +373,23 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction">
-   Introduction
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setting-up-our-programming-environment">
-   Setting up our programming environment
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#python-basics">
-   Python Basics
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#projects-in-python">
-   Projects in Python
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Syllabus</h1>
+                <h1>Exercise 2: Display some text, take in responses, read from a file</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction">
-   Introduction
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setting-up-our-programming-environment">
-   Setting up our programming environment
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#python-basics">
-   Python Basics
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#projects-in-python">
-   Projects in Python
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -463,70 +397,97 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="syllabus">
-<h1>Syllabus<a class="headerlink" href="#syllabus" title="Permalink to this headline">#</a></h1>
-<p><a class="reference external" href="http://nbviewer.ipython.org/urls/raw.github.com/ehmatthes/intro_programming/master/notebooks/index.ipynb">Home</a></p>
-<section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="exercise-2-display-some-text-take-in-responses-read-from-a-file">
+<h1>Exercise 2: Display some text, take in responses, read from a file<a class="headerlink" href="#exercise-2-display-some-text-take-in-responses-read-from-a-file" title="Permalink to this headline">#</a></h1>
+<p>In this exercise we’ll put what you’ve learned about lists and conditionals to use. Plus we’ll read and write files! By the end of today you will start to have almost all the pieces for building a full experiment!</p>
+<p>Requirements: Make sure you have a names.txt file in your repo. If you’re using this as a tutorial, <span class="xref myst">download this sample file</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">from</span> <span class="nn">psychopy</span> <span class="kn">import</span> <span class="n">visual</span><span class="p">,</span><span class="n">event</span><span class="p">,</span><span class="n">core</span><span class="p">,</span><span class="n">gui</span>
+
+
+<span class="n">names</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;names.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<span class="n">firstNames</span> <span class="o">=</span> <span class="p">[</span><span class="n">name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">]</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">the two line above are a more compact way of writing: </span>
+<span class="sd">names = open(&#39;names.txt&#39;, &#39;r&#39;).readlines()</span>
+<span class="sd">firstNames=[]</span>
+<span class="sd">for name in names:</span>
+<span class="sd">    firstNames.append(name.split(&#39; &#39;)[0])</span>
+<span class="sd">&quot;&quot;&quot;</span>	
+
+<span class="n">win</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Window</span><span class="p">([</span><span class="mi">800</span><span class="p">,</span><span class="mi">600</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s1">&#39;pix&#39;</span><span class="p">)</span>
+<span class="n">firstNameStim</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">TextStim</span><span class="p">(</span><span class="n">win</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span><span class="n">pos</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">nameShown</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">firstNames</span><span class="p">)</span>
+    <span class="n">firstNameStim</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="n">nameShown</span><span class="p">)</span>
+    <span class="n">firstNameStim</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+    <span class="n">win</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+    <span class="n">core</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mf">.75</span><span class="p">)</span>
+    <span class="n">win</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+    <span class="n">core</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mf">.15</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">getKeys</span><span class="p">([</span><span class="s1">&#39;q&#39;</span><span class="p">]):</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Once you’ve successfully run this code and understand what all the lines do, proceed to the following exercises.</p>
+<ol class="simple">
+<li><p>Create a fixation cross using a TextStim object <code class="docutils literal notranslate"><span class="pre">visual.TextStim</span></code> set text to”+” and color to “white”. Make the fixation cross appear for 500 ms before each name
+and disappears right before the name comes up.</p></li>
+<li><p>Open names.txt to see what the names list looks like. Make the script
+show last names instead of first names (don’t change the names.txt
+file).</p></li>
+<li><p>Make the program randomly alternate between first names and last
+names.</p></li>
+<li><p>On each presentation of a name, wait for a response (‘f’ for first
+name, ‘l’ for last-name) and only proceed to the next name if the
+response is correct. Hint: if you’ve done steps 2-3 properly, this
+should be really easy. Refer to the psychopy documentation of
+event.waitKeys() if you have trouble.</p></li>
+<li><p>Now let’s implement some feedback. Let’s allow either a ‘f’ or
+‘l’ response for each trial. If the response is correct, show a
+green ‘O’ before the start of the next trial. If the response is
+wrong, show a red ‘X’ (you can use textStim objects for feedback).
+Show the feedback for 500 ms. Note: we have someone in a class whose
+last name is a common first name. If this were an experiment, how
+might this affect responses?</p></li>
+<li><p>Now, instead of waiting for a response forever, let’s implement a
+timeout. Show accuracy feedback as before, but now also show a red
+‘X’ if no response is received for 1 sec (and go on to the next
+trial automatically following the feedback). (<a class="reference external" href="http://www.psychopy.org/api/core.html">Use psychopy timers</a>)</p></li>
+<li><p><a class="reference external" href="http://sapir.psych.wisc.edu/programming_for_psychologists/notebooks/Psychopy_reference.html#Popping-up-a-box-to-get-user-input-e.g.,-to-specify-a-condition-name">Pop up a box</a> that accepts a first name, and check to make sure
+that the name exists. If it doesn’t, pop-up a <a class="reference external" href="http://sapir.psych.wisc.edu/programming_for_psychologists/notebooks/Psychopy_reference.html#A-simple-function-for-popping-up-an-error-using-a-gui-window">‘Name does not exist’error</a>
+box</p></li>
+<li><p>Extend the task by requiring the subject to respond by pressing a
+spacebar (the key is called ‘space’), as quickly as possible anytime the name on the screen matches the name you entered into the box (so if I enter ‘Gary’ I
+would have to press ‘space’ anytime the name ‘Gary’ shows up. If
+the participant presses ‘space’ to the wrong name (false alarm),
+or misses the name (a miss), show a red X.</p></li>
+<li><p>See if you can figure out how to compute the response times,
+measured from the onset of the name, to the response (<a class="reference external" href="http://www.psychopy.org/api/core.html">Use psychopy
+timers</a>)</p></li>
+<li><p>Output the response times (in ms, e.g., 453 for 453 ms) and accuracy
+(1 for correct, 0 for incorrect) to a file output.txt. Output one
+line per trial: each line should contain the accuracy (1 or 0) and
+the response time (in milliseconds). See the <a class="reference external" href="http://docs.python.org/tutorial/inputoutput.html#reading-and-writing-files">python
+documentation</a>
+for examples of how to write to a file. <strong>Ask for help if you are
+stuck.</strong></p></li>
+<li><p>Do something new. Compare response times to first and last names, measure effect of font face, etc.</p></li>
+</ol>
 <ul class="simple">
-<li><p>What is programming?</p></li>
-<li><p>What is not programming?</p></li>
-<li><p>what kinds of things can programmers build?</p></li>
+<li><p>Bonus: You’ve probably noticed that the name you typed in only
+appears rarely (in fact, it will appear 1/# of people in the class,
+on average). Change the code so that the name you entered appears on
+1/4 of the trials.</p></li>
 </ul>
-</section>
-<section id="setting-up-our-programming-environment">
-<h2>Setting up our programming environment<a class="headerlink" href="#setting-up-our-programming-environment" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p><a class="reference external" href="http://nbviewer.ipython.org/urls/raw.github.com/ehmatthes/intro_programming/master/notebooks/programming_environment.ipynb">Programming Environment</a></p>
-<ul>
-<li><p>Dual-booting Ubuntu</p></li>
-<li><p>Maintaining Ubuntu</p></li>
-<li><p>Configuring Ubuntu for Python 3.3</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="python-basics">
-<h2>Python Basics<a class="headerlink" href="#python-basics" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p><a class="reference external" href="http://nbviewer.ipython.org/urls/raw.github.com/ehmatthes/intro_programming/master/notebooks/hello_world.ipynb">Hello World</a></p></li>
-<li><p><a class="reference external" href="http://nbviewer.ipython.org/urls/raw.github.com/ehmatthes/intro_programming/master/notebooks/var_string_num.ipynb">Variables, strings, and Numbers</a></p></li>
-<li><p><a class="reference external" href="http://nbviewer.ipython.org/urls/raw.github.com/ehmatthes/intro_programming/master/notebooks/lists_tuples.ipynb">Lists and Tuples</a></p></li>
-<li><p><a class="reference external" href="http://nbviewer.ipython.org/urls/raw.github.com/ehmatthes/intro_programming/master/notebooks/introducing_functions.ipynb">Introducing Functions</a></p></li>
-<li><p><a class="reference external" href="http://nbviewer.ipython.org/urls/raw.github.com/ehmatthes/intro_programming/master/notebooks/if_statements.ipynb">If Statements</a></p></li>
-<li><p><a class="reference external" href="http://nbviewer.ipython.org/urls/raw.github.com/ehmatthes/intro_programming/master/notebooks/while_input.ipynb">While Loops and Input</a></p></li>
-<li><p><a class="reference external" href="http://nbviewer.ipython.org/urls/raw.github.com/ehmatthes/intro_programming/master/notebooks/terminal_apps.ipynb">Basic Terminal Apps</a></p></li>
-<li><p><a class="reference external" href="http://nbviewer.ipython.org/urls/raw.github.com/ehmatthes/intro_programming/master/notebooks/dictionaries.ipynb">Dictionaries</a></p></li>
-<li><p><a class="reference external" href="http://nbviewer.ipython.org/urls/raw.github.com/ehmatthes/intro_programming/master/notebooks/more_functions.ipynb">More Functions</a></p></li>
-<li><p><a class="reference external" href="http://nbviewer.ipython.org/urls/raw.github.com/ehmatthes/intro_programming/master/notebooks/classes.ipynb">Classes</a></p></li>
-<li><p><a class="reference external" href="http://nbviewer.ipython.org/urls/raw.github.com/ehmatthes/intro_programming/master/notebooks/exceptions.ipynb">Exceptions</a></p></li>
-<li><p><a class="reference external" href="http://nbviewer.ipython.org/urls/raw.github.com/ehmatthes/intro_programming/master/notebooks/testing.ipynb">Testing</a></p></li>
-</ul>
-</section>
-<section id="projects-in-python">
-<h2>Projects in Python<a class="headerlink" href="#projects-in-python" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Text-based Adventure Game</p></li>
-<li><p>Video Game</p>
-<ul>
-<li><p>2-dimensional, straight-line motion game</p></li>
-</ul>
-</li>
-<li><p>Visualization</p>
-<ul>
-<li><p>see <a class="reference external" href="http://www.reddit.com/r/dataisbeautiful">Data is Beautiful</a> for examples</p></li>
-<li><p><a class="reference external" href="http://nbviewer.ipython.org/urls/raw.github.com/ehmatthes/intro_programming/master/notebooks/visualization_earthquakes.ipynb">Mapping Global Earthquake Activity</a></p></li>
-</ul>
-</li>
-<li><p>Simple web application</p>
-<ul>
-<li><p>for example, a blog that you can make posts to</p></li>
-</ul>
-</li>
-</ul>
-<hr class="docutils" />
-<p><a class="reference external" href="http://nbviewer.ipython.org/urls/raw.github.com/ehmatthes/intro_programming/master/notebooks/index.ipynb">Home</a></p>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
