@@ -21,7 +21,7 @@
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -38,7 +38,7 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -108,6 +108,18 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item active">
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  Schedule
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="schedule.html">
+   Week by week schedule
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Installation instructions
  </span>
 </p>
@@ -120,6 +132,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="programming_environment_windows.html">
    Programming Environment for Windows
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="submitting_assignments.html">
+   Submitting assignments
   </a>
  </li>
 </ul>
@@ -214,7 +231,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Week 1
+  Activities
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -224,13 +241,25 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="in_class_exercise_1.html">
+   The first thinking exercise
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Exercises
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
   <a class="reference internal" href="Exercise1-square.html">
-   Trying out PsychoPy
+   Exercise 1-Show and square and do stuff with it
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="in_class_exercise_1.html">
-   The first thinking exercise
+  <a class="reference internal" href="Exercise2-stroop.html">
+   Exercise 2-A Stroop task
   </a>
  </li>
 </ul>
@@ -550,7 +579,7 @@ Qualtrics link you are given when you launch your Qualtrics task
 <span class="p">{</span>
   <span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/[\[]/</span><span class="p">,</span><span class="s2">&quot;\\[&quot;</span><span class="p">).</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/[\]]/</span><span class="p">,</span><span class="s2">&quot;\\]&quot;</span><span class="p">);</span>
   <span class="kd">var</span> <span class="nx">regexS</span> <span class="o">=</span> <span class="s2">&quot;[\?&amp;]&quot;</span><span class="o">+</span><span class="nx">name</span><span class="o">+</span><span class="s2">&quot;=([^&amp;#]*)&quot;</span><span class="p">;</span>
-  <span class="kd">var</span> <span class="nx">regex</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span> <span class="nx">regexS</span> <span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">regex</span> <span class="o">=</span> <span class="ow">new</span> <span class="nb">RegExp</span><span class="p">(</span> <span class="nx">regexS</span> <span class="p">);</span>
   <span class="kd">var</span> <span class="nx">results</span> <span class="o">=</span> <span class="nx">regex</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="p">);</span>
   <span class="k">if</span><span class="p">(</span> <span class="nx">results</span> <span class="o">==</span> <span class="kc">null</span> <span class="p">)</span>
     <span class="k">return</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
@@ -598,7 +627,7 @@ add an ‘Embedded Data’ element as the first element of your survey.
 Then enter the variables you’d like to log (using the names from the
 code you embedded in the MTurk hit (see above). In my case, I’m logging
 the variables ‘worker’, ‘hit’, and ‘assignment’.</p>
-<p><img alt="" src="notebooks/images/embeddedData.png" /></p>
+<p><img alt="" src="../_images/embeddedData.png" /></p>
 <p>Now the values of these variables, e.g., the person’s workerID, will be
 stored alongside the participant’s responses to your Qualtrics
 questions in the very same output file.</p>
@@ -623,7 +652,7 @@ generate and print the code, for example</p>
 happens. Reload the page to get a new code.</p>
 <p>To get Qualtrics to do this in the background, insert a ‘web service’
 like so:</p>
-<p><img alt="" src="notebooks/images/WebService.png" /></p>
+<p><img alt="" src="../_images/WebService.png" /></p>
 <p>You can easily write your own script to generate completion codes, or
 just use mine. The randString.php file in the example above looks like
 this:</p>

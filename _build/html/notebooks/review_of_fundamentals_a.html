@@ -21,7 +21,7 @@
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -38,7 +38,7 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -56,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Dictionaries" href="dictionaries.html" />
-    <link rel="prev" title="Variables, Strings, and Numbers" href="var_string_num.html" />
+    <link rel="prev" title="If Statements" href="if_statements.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -110,6 +110,18 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item active">
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  Schedule
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="schedule.html">
+   Week by week schedule
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Installation instructions
  </span>
 </p>
@@ -122,6 +134,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="programming_environment_windows.html">
    Programming Environment for Windows
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="submitting_assignments.html">
+   Submitting assignments
   </a>
  </li>
 </ul>
@@ -159,13 +176,18 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="python_basics.html">
-   Variables, strings, and numbers
+  <a class="reference internal" href="var_string_num.html">
+   Variables, Strings, and Numbers
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="var_string_num.html">
-   Variables, Strings, and Numbers
+  <a class="reference internal" href="list_basics.html">
+   Lists - the basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="if_statements.html">
+   If Statements
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -206,6 +228,40 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="regexp.html">
    Regular Expressions
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Activities
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_basics.html">
+   Python basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="in_class_exercise_1.html">
+   The first thinking exercise
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Exercises
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise1-square.html">
+   Exercise 1-Show and square and do stuff with it
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise2-stroop.html">
+   Exercise 2-A Stroop task
   </a>
  </li>
 </ul>
@@ -712,9 +768,9 @@ and also here
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;False&quot;</span>
 <span class="k">if</span> <span class="n">a</span><span class="p">:</span>
-    <span class="nb">print</span> <span class="s2">&quot;we&#39;re in the &#39;if&#39;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;we&#39;re in the &#39;if&#39;&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span> <span class="s2">&quot;we&#39;re in the &#39;else&#39;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;we&#39;re in the &#39;else&#39;&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -724,70 +780,24 @@ and also here
 </div>
 </div>
 </div>
-<div class="alert alert-block alert-info">
-If you were surprised by that, think about the difference between `False` and `"False"`
-</div><div class="cell docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">{tip}</span></code>
+If you were surprised by that, think about the difference between the literal <code class="docutils literal notranslate"><span class="pre">False</span></code> and the string <code class="docutils literal notranslate"><span class="pre">&quot;False&quot;</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">b</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="k">if</span> <span class="n">a</span> <span class="ow">and</span> <span class="n">b</span><span class="p">:</span>
-    <span class="nb">print</span> <span class="s2">&quot;a is&quot;</span><span class="p">,</span> <span class="n">a</span>
-    <span class="nb">print</span> <span class="s2">&quot;b is&quot;</span><span class="p">,</span> <span class="n">b</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a is&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;b is&quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a is 5
 b is 10
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="mi">20</span>
-<span class="k">if</span> <span class="n">c</span> <span class="ow">or</span> <span class="n">d</span><span class="p">:</span>
-    <span class="nb">print</span> <span class="s2">&quot;c is&quot;</span><span class="p">,</span> <span class="n">c</span>
-    <span class="nb">print</span> <span class="s2">&quot;d is&quot;</span><span class="p">,</span> <span class="n">d</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c is 20
-d is
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-27-a7e7c1242441&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">if</span> <span class="n">c</span> <span class="ow">or</span> <span class="n">d</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="nb">print</span> <span class="s2">&quot;c is&quot;</span><span class="p">,</span> <span class="n">c</span>
-<span class="ne">----&gt; </span><span class="mi">4</span>     <span class="nb">print</span> <span class="s2">&quot;d is&quot;</span><span class="p">,</span> <span class="n">d</span>
-
-<span class="ne">NameError</span>: name &#39;d&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="mi">20</span>
-<span class="k">if</span> <span class="n">c</span> <span class="ow">and</span> <span class="n">d</span><span class="p">:</span>
-    <span class="nb">print</span> <span class="s2">&quot;c is&quot;</span><span class="p">,</span> <span class="n">c</span>
-    <span class="nb">print</span> <span class="s2">&quot;d is&quot;</span><span class="p">,</span> <span class="n">d</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-28-40dcd95f37d9&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">20</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="k">if</span> <span class="n">c</span> <span class="ow">and</span> <span class="n">d</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="nb">print</span> <span class="s2">&quot;c is&quot;</span><span class="p">,</span> <span class="n">c</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="nb">print</span> <span class="s2">&quot;d is&quot;</span><span class="p">,</span> <span class="n">d</span>
-
-<span class="ne">NameError</span>: name &#39;d&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -799,17 +809,17 @@ d is
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">animals</span><span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;panda&#39;</span><span class="p">]</span>
 <span class="k">if</span> <span class="n">panda</span> <span class="ow">in</span> <span class="n">animals</span><span class="p">:</span>
-    <span class="nb">print</span> <span class="s2">&quot;a hit!&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;found it!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-29-23ce29a52d3a&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">animals</span><span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;panda&#39;</span><span class="p">]</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="k">if</span> <span class="n">panda</span> <span class="ow">in</span> <span class="n">animals</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="nb">print</span> <span class="s2">&quot;a hit!&quot;</span>
+<span class="nn">/Users/glupyan/gitRepos/psych750.github.io/notebooks/review_of_fundamentals_a.ipynb Cell 30</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750.github.io/notebooks/review_of_fundamentals_a.ipynb#X43sZmlsZQ%3D%3D?line=0&#39;</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">animals</span><span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;panda&#39;</span><span class="p">]</span>
+<span class="o">----&gt;</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750.github.io/notebooks/review_of_fundamentals_a.ipynb#X43sZmlsZQ%3D%3D?line=1&#39;</span><span class="o">&gt;</span><span class="mi">2</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="k">if</span> <span class="n">panda</span> <span class="ow">in</span> <span class="n">animals</span><span class="p">:</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750.github.io/notebooks/review_of_fundamentals_a.ipynb#X43sZmlsZQ%3D%3D?line=2&#39;</span><span class="o">&gt;</span><span class="mi">3</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a hit!&quot;</span><span class="p">)</span>
 
 <span class="ne">NameError</span>: name &#39;panda&#39; is not defined
 </pre></div>
@@ -820,12 +830,12 @@ d is
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">animals</span><span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;panda&#39;</span><span class="p">]</span>
 <span class="k">if</span> <span class="s2">&quot;panda&quot;</span> <span class="ow">or</span> <span class="s2">&quot;giraffe&quot;</span> <span class="ow">in</span> <span class="n">animals</span><span class="p">:</span>
-    <span class="nb">print</span> <span class="s2">&quot;a hit!&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;found it!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> a hit!
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a hit!
 </pre></div>
 </div>
 </div>
@@ -841,8 +851,8 @@ d is
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">some_nums</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
-<span class="nb">print</span> <span class="n">some_nums</span>
-<span class="nb">print</span> <span class="n">some_nums</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">some_nums</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">some_nums</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -856,7 +866,7 @@ d is
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">animals</span><span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;panda&#39;</span><span class="p">]</span>
-<span class="nb">print</span> <span class="n">animals</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">animals</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -869,7 +879,7 @@ d is
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">animals</span><span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;panda&#39;</span><span class="p">]</span>
-<span class="nb">print</span> <span class="n">animals</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">animals</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -883,7 +893,7 @@ d is
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">animals</span><span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;panda&#39;</span><span class="p">]</span>
 <span class="n">more_animals</span> <span class="o">=</span> <span class="n">animals</span><span class="o">+</span><span class="p">[</span><span class="s1">&#39;giraffe&#39;</span><span class="p">]</span>
-<span class="nb">print</span> <span class="n">more_animals</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">more_animals</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -912,7 +922,7 @@ The above is a tricky one! The issue is that append() does not return a value. I
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">animals</span><span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;panda&#39;</span><span class="p">]</span>
 <span class="n">animals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;giraffe&quot;</span><span class="p">)</span>
-<span class="nb">print</span> <span class="n">animals</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">animals</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -926,7 +936,7 @@ The above is a tricky one! The issue is that append() does not return a value. I
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">animals</span><span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;panda&#39;</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">num</span><span class="p">,</span><span class="n">animal</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">animals</span><span class="p">):</span>
-    <span class="nb">print</span> <span class="s2">&quot;Number&quot;</span><span class="p">,</span> <span class="n">num</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;is&quot;</span><span class="p">,</span> <span class="n">animals</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;Number&quot;</span><span class="p">,</span> <span class="n">num</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;is&quot;</span><span class="p">,</span> <span class="n">animals</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -942,8 +952,8 @@ Number 3 is [&#39;dog&#39;, &#39;cat&#39;, &#39;panda&#39;]
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">animals</span><span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;panda&#39;</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">num</span><span class="p">,</span><span class="n">animal</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">animals</span><span class="p">):</span>
-    <span class="nb">print</span> <span class="s2">&quot;Number&quot;</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="s2">&quot;is&quot;</span><span class="p">,</span> <span class="n">animal</span>
-<span class="nb">print</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">We have&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">animals</span><span class="p">),</span> <span class="s2">&quot;animals in our list.&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number </span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">animal</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">We have </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">animals</span><span class="p">)</span><span class="si">}</span><span class="s2"> animals in our list.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -961,9 +971,9 @@ We have 3 animals in our list.
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">animals</span><span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;panda&#39;</span><span class="p">]</span>
 <span class="k">while</span> <span class="n">animals</span><span class="p">:</span>
-    <span class="nb">print</span> <span class="n">animals</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">animals</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
 
-<span class="nb">print</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">We have&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">animals</span><span class="p">),</span> <span class="s2">&quot;animals in our list.&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">We have </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">animals</span><span class="p">)</span><span class="si">}</span><span class="s2"> animals in our list&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -972,12 +982,11 @@ We have 3 animals in our list.
 cat
 dog
 
-We have 0 animals in our list.
+We have 0 animals in our list
 </pre></div>
 </div>
 </div>
 </div>
-<p><span class="xref myst">top</span></p>
 </section>
 </section>
 

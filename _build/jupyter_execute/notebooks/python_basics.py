@@ -83,41 +83,37 @@ print(var_3*3)
 
 # Although printing is not something we'll be doing much of as an end in itself, it's massively useful for debugging your code, i.e., for knowing what a value of vertain variables is at a certain point in your code. We'll talk more about this when we discuss debugging. 
 # 
-# When you print, Python will try to convert what you are printing to a string. But if you try to print several different data-types or combine the printing of strings and variables -- both of which is something you'll be doing a lot of when debugging -- it gets cumbersome. Observe:
+# When you print, Python will try to convert what you are printing to a string. But if you try to print several different data types or combine the printing of strings and variables -- both of which is something you'll be doing a lot of when debugging -- it gets cumbersome. Observe:
 
-# In[54]:
+# Simple enough:
 
-
-print('four and a ...','5')
-
-
-# In[55]:
+# In[1]:
 
 
-print('four and a ...',5)
+name = "George's dog"
 
 
-# In[56]:
+# But what about this?
+
+# In[3]:
 
 
-print('four and a ... var_3')
+name = "George"
+print(name+"'s "+"dog")
 
 
-# In[57]:
-
-
-print('four and a ...', var_3)
-
+# Yuck... that's a lot of quotes and figuring out where the spaces should go. 
 
 # Python 3 provides a bit of "syntactic sugar" for printing combinations of raw strings and variables of different types:
 
-# In[59]:
+# In[7]:
 
 
-print(f"four and a ... {var_3}")
+name = "George"
+print(f"{name}'s dog")
 
 
-# Read more about these f-strings [here](https://realpython.com/python-f-strings/)
+# To use so-calld f (for formatted) strings, just encase the variables in curly-braces and write out raw strings as normal. Read more about these f-strings [here](https://realpython.com/python-f-strings/)
 
 # ## Lists and iterating through them 
 
@@ -153,7 +149,6 @@ for num in range(10):
 # ```{dropdown} What happened here?
 # `range()` generated a list of numbers in the specified range, beginning from 0. Then `for` iterates through those numbers, printing the value of each.
 # ```
-# 
 
 # ```{note}
 # Technically range() returns a `range object` which is a ["lazy iterable"](https://treyhunner.com/2018/02/python-range-is-not-an-iterator/) and is executed only later, when we try to access its values. This is different from Python 2 where `range()` returns a regular list.

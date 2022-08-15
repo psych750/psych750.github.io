@@ -6,14 +6,16 @@ options:
 parts:
   - caption: Schedule
     chapters:
-    - file: assets/schedule/index
-      title: Complete schedule
+    - file: notebooks/schedule
+      title: Week by week schedule
   - caption: Installation instructions
     chapters:
     - file: notebooks/programming_environment_osx
       title: Instructions for MacOS
     - file: notebooks/programming_environment_windows
       title: Instructions for Windows
+    - file: notebooks/submitting_assignments
+      title: Instructions for submitting assignments
   - caption: References
     chapters:
     - file: notebooks/Shell_reference
@@ -48,11 +50,15 @@ parts:
       title: Review of Fundamentals B
     - file: notebooks/regexp.ipynb
       title: Regular Expressions
-  - caption: Week 1
+  - caption: Activities
     chapters:
     - file: notebooks/python_basics
       title: Python basics 
-    - file: notebooks/Exercise1-square
-      title: Trying out PsychoPy
     - file: notebooks/in_class_exercise_1
       title: The first thinking exercise
+  - caption: Exercises
+    chapters:
+    - file: notebooks/Exercise1-square
+      title: Exercise 1-Show and square and do stuff with it
+    - file: notebooks/Exercise2-stroop
+      title: Exercise 2-A Stroop task

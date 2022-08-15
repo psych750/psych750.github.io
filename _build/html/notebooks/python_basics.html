@@ -21,7 +21,7 @@
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -38,7 +38,7 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Make a square and play with it" href="Exercise1-square.html" />
+    <link rel="next" title="Let’s warm up them neurons" href="in_class_exercise_1.html" />
     <link rel="prev" title="Regular expressions" href="regexp.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -110,6 +110,18 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item active">
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  Schedule
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="schedule.html">
+   Week by week schedule
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Installation instructions
  </span>
 </p>
@@ -122,6 +134,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="programming_environment_windows.html">
    Programming Environment for Windows
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="submitting_assignments.html">
+   Submitting assignments
   </a>
  </li>
 </ul>
@@ -161,6 +178,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="var_string_num.html">
    Variables, Strings, and Numbers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="list_basics.html">
+   Lists - the basics
   </a>
  </li>
  <li class="toctree-l1">
@@ -211,7 +233,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Week 1
+  Activities
  </span>
 </p>
 <ul class="current nav bd-sidenav">
@@ -221,13 +243,25 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="in_class_exercise_1.html">
+   The first thinking exercise
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Exercises
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
   <a class="reference internal" href="Exercise1-square.html">
-   Trying out PsychoPy
+   Exercise 1-Show and square and do stuff with it
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="in_class_exercise_1.html">
-   The first thinking exercise
+  <a class="reference internal" href="Exercise2-stroop.html">
+   Exercise 2-A Stroop task
   </a>
  </li>
 </ul>
@@ -587,69 +621,45 @@ var_6 =  &lt;class &#39;str&#39;&gt;
 <section id="a-bit-more-about-printing">
 <h2>A bit more about printing<a class="headerlink" href="#a-bit-more-about-printing" title="Permalink to this headline">#</a></h2>
 <p>Although printing is not something we’ll be doing much of as an end in itself, it’s massively useful for debugging your code, i.e., for knowing what a value of vertain variables is at a certain point in your code. We’ll talk more about this when we discuss debugging.</p>
-<p>When you print, Python will try to convert what you are printing to a string. But if you try to print several different data-types or combine the printing of strings and variables – both of which is something you’ll be doing a lot of when debugging – it gets cumbersome. Observe:</p>
+<p>When you print, Python will try to convert what you are printing to a string. But if you try to print several different data types or combine the printing of strings and variables – both of which is something you’ll be doing a lot of when debugging – it gets cumbersome. Observe:</p>
+<p>Simple enough:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;four and a ...&#39;</span><span class="p">,</span><span class="s1">&#39;5&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;George&#39;s dog&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>But what about this?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;George&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="o">+</span><span class="s2">&quot;&#39;s &quot;</span><span class="o">+</span><span class="s2">&quot;dog&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>four and a ... 5
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>George&#39;s dog
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;four and a ...&#39;</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>four and a ... 5
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;four and a ... var_3&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>four and a ... var_3
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;four and a ...&#39;</span><span class="p">,</span> <span class="n">var_3</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>four and a ... 5
-</pre></div>
-</div>
-</div>
-</div>
+<p>Yuck… that’s a lot of quotes and figuring out where the spaces should go.</p>
 <p>Python 3 provides a bit of “syntactic sugar” for printing combinations of raw strings and variables of different types:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;four and a ... </span><span class="si">{</span><span class="n">var_3</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;George&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;s dog&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>four and a ... 5
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>George&#39;s dog
 </pre></div>
 </div>
 </div>
 </div>
-<p>Read more about these f-strings <a class="reference external" href="https://realpython.com/python-f-strings/">here</a></p>
+<p>To use so-calld f (for formatted) strings, just encase the variables in curly-braces and write out raw strings as normal. Read more about these f-strings <a class="reference external" href="https://realpython.com/python-f-strings/">here</a></p>
 </section>
 <section id="lists-and-iterating-through-them">
 <h2>Lists and iterating through them<a class="headerlink" href="#lists-and-iterating-through-them" title="Permalink to this headline">#</a></h2>

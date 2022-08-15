@@ -61,8 +61,7 @@ string.ascii_letters
 
 # ### Notes on importing libraries and functions
 # 
-# Python provides a somewhat confusing variety of ways of importing
-# functions and libraries.
+# Python provides a somewhat confusing variety of ways of importing functions and libraries.
 # 
 # ```python
 # import X
@@ -116,7 +115,7 @@ if 'apples' in shoppingList:
 # you want to to determine if a string variable called shoppingList
 # contains the word 'apples' in it.
 
-# In[6]:
+# In[2]:
 
 
 shoppingString =  'apples, oranges, screwdriver'
@@ -139,7 +138,7 @@ if 'apples' in shoppingString:
 # stops. Therefore, both of these statements will be true for
 # shoppingStrings.
 
-# In[9]:
+# In[3]:
 
 
 'apple' in shoppingString
@@ -152,7 +151,7 @@ if 'apples' in shoppingString:
 
 
 # ```{tip}
-# If you want to search a string more flexibly, you can use for parts of a string, you can use [String.find](https://www.geeksforgeeks.org/python-string-find/) and regular expressions which we'll cover later in the term.
+# If you want to search a string more flexibly, you can use [String.find](https://www.geeksforgeeks.org/python-string-find/) and regular expressions which we'll cover later in the term.
 # ```
 
 # but not for shoppingList
@@ -229,7 +228,7 @@ lastNames =  [name.split(' ')[1] for name in names]
 
 # Another example: generate 10 random numbers in the range 1-5:
 
-# In[14]:
+# In[4]:
 
 
 import random
@@ -239,9 +238,10 @@ import random
 
 # Or generate 10 random letters:
 
-# In[15]:
+# In[6]:
 
 
+import string
 [random.choice(list(string.ascii_lowercase)) for i in range(10)]
 
 
@@ -262,11 +262,14 @@ import random
 # 
 # For example, the repetition function from Exercise 4 (trial generation) can be rewritten as a one-liner:
 
-# In[17]:
+# In[9]:
 
 
 def repetition(letters,numberBeforeSwitch,numRepetitions):
        print('\n'.join([item for sublist in  [[i] * numberBeforeSwitch for i in letters] for item in sublist] * numRepetitions))
+
+
+repetition(['a','b','c'], 2, 2)
 
 
 # It is fast and compact, but certainly not very clear.
