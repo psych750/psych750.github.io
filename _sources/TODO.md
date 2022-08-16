@@ -1,10 +1,12 @@
 # TODO
 
-[ ] Add file IO notebook
+[ ] Move removing items from a list section upward.
 
 [ ] Finish Exercise 2 specs
 
 [ ] Link Exercise 2 w/ starter code
+
+[ ] Add file IO notebook
 
 [ ] Exercise 3 extension of Stroop to speech recognition
 
