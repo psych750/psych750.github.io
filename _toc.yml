@@ -36,6 +36,8 @@ parts:
       title: If statements
     - file: notebooks/review_of_fundamentals_a
       title: Review of Fundamentals A
+    - file: notebooks/introducing_functions
+      title: Functions
     - file: notebooks/dictionaries
       title: Dictionaries
     - file: notebooks/trial_generation
