@@ -405,15 +405,10 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#">
    Lists - the basics
   </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introducing-lists">
-   Introducing Lists
-  </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example">
-     Example
+    <a class="reference internal nav-link" href="#introducing-lists">
+     Introducing Lists
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
@@ -512,8 +507,8 @@ title="Print to PDF"
     </ul>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-an-empty-list">
-     Creating an empty list
+    <a class="reference internal nav-link" href="#creating-lists-dynamically">
+     Creating lists dynamically
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
@@ -603,15 +598,10 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#">
    Lists - the basics
   </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introducing-lists">
-   Introducing Lists
-  </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example">
-     Example
+    <a class="reference internal nav-link" href="#introducing-lists">
+     Introducing Lists
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
@@ -710,8 +700,8 @@ title="Print to PDF"
     </ul>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-an-empty-list">
-     Creating an empty list
+    <a class="reference internal nav-link" href="#creating-lists-dynamically">
+     Creating lists dynamically
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
@@ -791,18 +781,17 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="lists-the-basics">
 <h1>Lists - the basics<a class="headerlink" href="#lists-the-basics" title="Permalink to this headline">#</a></h1>
 <p>In this notebook, you will learn about lists, a very important data structure, that allows you to store more than one value in a single variable. Lists (and arrays as they are also sometimes called) are one of the most powerful ideas in programming.</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="introducing-lists">
-<h1>Introducing Lists<a class="headerlink" href="#introducing-lists" title="Permalink to this headline">#</a></h1>
-<section id="example">
-<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h2>
+<section id="introducing-lists">
+<h2>Introducing Lists<a class="headerlink" href="#introducing-lists" title="Permalink to this headline">#</a></h2>
 <p>A list is a collection of items that is stored in a variable. The items should be related in some way, but there are no restrictions on what can be stored in a list. Here is a simple example of a list, and how we can quickly access each item in the list.</p>
-<div class="highlight-{note{ notranslate"><div class="highlight"><pre><span></span>Lists are called &quot;arrays&quot; in many languages. Python has a related data-structure called an array that is part of the `numpy` (numerical python) package. We will talk about differences between lists and arrays later on. 
-</pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Lists are called “arrays” in many languages. Python has a related data-structure called an array that is part of the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> (numerical python) package. We will talk about differences between lists and arrays later on.</p>
 </div>
 </section>
 <section id="naming-and-defining-a-list">
 <h2>Naming and defining a list<a class="headerlink" href="#naming-and-defining-a-list" title="Permalink to this headline">#</a></h2>
+<hr class="docutils" />
 <p>Since lists are collection of objects, it is good practice to give them a plural name. If each item in your list is an image, call the list <code class="docutils literal notranslate"><span class="pre">images</span></code>. If each item is a trial, call it <code class="docutils literal notranslate"><span class="pre">trials</span></code>. This gives you a straightforward way to refer to the entire list (‘images’), and to a single item in the list (‘image’).</p>
 <p>In Python, lists are designated by square brackets. You can define an empty list like this:</p>
 <div class="cell docutils container">
@@ -895,9 +884,9 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-15-96f880c40ec5&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">images</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;panda&#39;</span><span class="p">]</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="nb">print</span> <span class="n">images</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span>
+<span class="nn">/Users/glupyan/gitRepos/psych750.github.io/notebooks/list_basics.ipynb Cell 16</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750.github.io/notebooks/list_basics.ipynb#X21sZmlsZQ%3D%3D?line=0&#39;</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">images</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;panda&#39;</span><span class="p">]</span>
+<span class="o">----&gt;</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750.github.io/notebooks/list_basics.ipynb#X21sZmlsZQ%3D%3D?line=1&#39;</span><span class="o">&gt;</span><span class="mi">2</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="nb">print</span> <span class="p">(</span><span class="n">images</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">])</span>
 
 <span class="ne">IndexError</span>: list index out of range
 </pre></div>
@@ -1285,6 +1274,14 @@ I like [&#39;border collie&#39;, &#39;australian cattle dog&#39;, &#39;labrador 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Border Collies are cool.
+Australian Cattle Dogs are cool.
+Labrador Retrievers are cool.
+Poodles are cool.
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="inserting-items-into-a-list">
@@ -1299,12 +1296,17 @@ I like [&#39;border collie&#39;, &#39;australian cattle dog&#39;, &#39;labrador 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;border collie&#39;, &#39;poodle&#39;, &#39;australian cattle dog&#39;, &#39;labrador retriever&#39;]
+</pre></div>
+</div>
+</div>
 </div>
 <p>Note that you have to give the position of the new item first, and then the value of the new item. If you do it in the reverse order, you will get an error.</p>
 </section>
 </section>
-<section id="creating-an-empty-list">
-<h2>Creating an empty list<a class="headerlink" href="#creating-an-empty-list" title="Permalink to this headline">#</a></h2>
+<section id="creating-lists-dynamically">
+<h2>Creating lists dynamically<a class="headerlink" href="#creating-lists-dynamically" title="Permalink to this headline">#</a></h2>
 <p>Now that we know how to add items to a list after it is created, we can use lists more dynamically. We are no longer stuck defining our entire list at once.</p>
 <p>A common approach with lists is to define an empty list, and then let your program add items to the list as necessary. This approach works, for example, when starting to build an interactive web site. Your list of users might start out empty, and then as people register for the site it will grow. This is a simplified approach to how web sites actually work, but the idea is realistic.</p>
 <p>Here is a brief example of how to start with an empty list, start to fill it up, and work with the items in the list. The only new thing here is the way we define an empty list, which is just an empty set of square brackets.</p>
@@ -1494,13 +1496,6 @@ Aaron
 <p>In the third, we’re iterating by 2 meaning that if we are starting at the first (0th) element (which we are because that’s the default starting location), then the next one should be offset by an inde of 2, i.e., be the third element in the list.</p>
 <p>In the fourth we’re doing the same thing, but now from the back of the list.</p>
 <p>And finally, in the fifth we’re accessing the list one element at a time, but now from the end to the beginning, i.e., reverseing the list!</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>```note{}
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 </section>
 <section id="sorting-a-numerical-list">
