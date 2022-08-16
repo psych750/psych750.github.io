@@ -14,7 +14,7 @@
 # 
 # - Sign up for Github if you don’t already have an account (make sure you accept the invite to the class github site). We will be using the very basic capabilities of git: cloning, committing, checking out, and pushing.
 # 
-#      - If you’ve never used git and github, I recommend walking through these two tutorials: [1](https://githowto.com/setup) and [2](https://medium.com/@george.seif94/a-full-tutorial-on-how-to-use-github-88466bac7d42). The first focuses on working with git locally. The second describes pushing and pulling from remote repositories. Confused about the difference between git and github? See [here](https://www.geeksforgeeks.org/difference-between-git-and-github/). This [video walkthrough](https://www.youtube.com/watch?v=8JJ101D3knE) is also very nice.
+#      - If you’ve never used git and github, I recommend walking through two tutorials: [This one](https://githowto.com/setup) focuses on working with git locally. [This one](https://medium.com/@george.seif94/a-full-tutorial-on-how-to-use-github-88466bac7d42) describes pushing and pulling from remote repositories. Confused about the difference between git and github? See [here](https://www.geeksforgeeks.org/difference-between-git-and-github/). This [video walkthrough](https://www.youtube.com/watch?v=8JJ101D3knE) is also very nice.
 # 
 # - If you’re shaky on what a computer file is, how files are stored, how your operting system knows that sound.wav is a sound file and sound.txt is a text file, [watch this short video](https://www.youtube.com/watch?v=KN8YgJnShPM).
 # 
@@ -34,15 +34,10 @@
 # ## Week 2 (Sept 15): Programming basics
 # 
 # ### At home
-# 1. Think Python (1.1-1.8)
-# 1. [Variables, Expressions,
-# 1.  Statements](http://greenteapress.com/thinkpython2/html/thinkpython2003.html)
-#  (2.1-2.8; skim as necessary),
-# 1.  [Iteration](http://greenteapress.com/thinkpython2/html/thinkpython2008.html)
-#  (7.1-7.4 skim as necessary)
-# 1. [Lists](http://greenteapress.com/thinkpython2/html/thinkpython2011.html)
-#  (10.1-10.6), Go through the **first three self study guides**, Finish
-# 1. Exercise 1 and push it to the github classroom site.
+# 1. Read Think Python Sections 1.1-1.8
+# 1. Go through the **first three self study guides** on the class site (see the navigation pane on the left)
+# 1. Read/skim Think Python Sections 5.1-5.7, 7.1-7.8, 8.1-8.12, and 10.1-10.9
+# 1. Finish Exercise 1 and push it to the github classroom site.
 # 1. Sort out any remaining installation/environment issues. Work on customizing your coding environment
 # 1. Finish Exercise 1 and push it to the github classroom repository
 # 

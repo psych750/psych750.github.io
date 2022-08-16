@@ -31,7 +31,7 @@ message = "I'm learning to program"
 print(message)
 
 
-# Naming rules
+# Variable naming rules
 # ---
 # - Variable names can only have letters, numbers, and underscores. Variable names can start with a letter or an underscore, but cannot start with a number.
 # - Spaces are not allowed in variable names, so we use underscores instead of spaces. For example, use student_name instead of "student name".
@@ -93,7 +93,7 @@ quote = "Linus Torvalds once said, 'Any program is only as good as it is useful.
 
 
 my_string = "Here's a string with a "quote in it""
-print my_string
+print(my_string)
 
 
 # To make it work we have to "escape" the quotes that would otherwise tell the Python interpreter that ths string is to be terminated.
@@ -102,7 +102,7 @@ print my_string
 
 
 my_string = "Here's a string with a \"quote in it\""
-print my_string
+print (my_string)
 
 
 # Getting a string's length and checking if something exists
@@ -112,22 +112,22 @@ print my_string
 # In[1]:
 
 
-print "There are",len('aeiou'), "vowels in English"
+print (f"There are {len('aeiou')} vowels in English")
 
 
-# In[4]:
+# In[2]:
 
 
 if 'e' in 'aeiou':
-    print "yep, there's an e"
+    print ("yep, there's an e")
 
 
-# We'll cover more complex string searches later in the semester.
+# Here's a simple string search. We'll cover more complex string searches later in the semester.
 
-# In[ ]:
+# In[3]:
 
 
-print 'f' in 'aeiou'
+print ('f' in 'aeiou')
 
 
 # Changing case
@@ -243,9 +243,10 @@ print("\nHello everyone!")
 print("Hello \neveryone!")
 
 
-# In[24]:
+# In[4]:
 
 
+print("----")
 print("\n\n\nHello everyone!")
 
 
@@ -267,7 +268,7 @@ print(name.rstrip())
 print(name.strip())
 
 
-# It's hard to see exactly what is happening, so maybe the following will make it a little more clear:
+# It's hard to see exactly what is happening, so let's add some characters to make it a bit clearer.
 
 # In[11]:
 
@@ -413,7 +414,7 @@ type(False)
 
 a=3
 b='s'
-print a,b
+print (a,b)
 
 
 # Other times they don't':
@@ -423,8 +424,10 @@ print a,b
 
 a=3
 b='s'
-print a+b
+print (a+b)
 
+
+# ...this is not arbitrary. The design philosophy is -- if there's ambiguity in how an operation will be interpreted by users, then make it illegal. Otherwise, allow it (this is a very different philosophy from a language like Perl which is much more syntactically permissive)
 
 # Some of Python's operators are "overloaded" meaning that what they do depends on the type of the variables the operator is working with:
 
@@ -433,7 +436,7 @@ print a+b
 
 a=3
 b=5
-print a*b
+print (a*b)
 
 
 # In[12]:
@@ -441,15 +444,15 @@ print a*b
 
 a='q'
 b=3
-print a*b
+print (a*b)
 
 
-# In[14]:
+# In[5]:
 
 
 a='q'
 b='m'
-print a*b
+print (a*b)
 
 
 # In[15]:
@@ -457,10 +460,15 @@ print a*b
 
 a='q'
 b='m'
-print a+b
+print (a+b)
 
 
-# The '+' operator is overloaded: when given integers or floats, it does normal addition (that's what you would expect). Adding a string and an integer throws a `TypeError` because it doesn't make sense... how would you add a number to a string? *Multiplying* a string by an integer *does* have a sensible and unambiguous interpretation (to programmers anyway): just repeat the string that number of times (note that multiplying a string by a <float> will *not* work. Finally, multiplying two strings isn't defined (what's 's' times 'q'??). But *adding* two strings does have an unambiguous interpretation: concatenation! 
+# The '+' and '*' operators are overloaded: when given integers or floats, they do normal addition and multiplication (that's what you would expect, right?). Adding a string and an integer throws a `TypeError` because it doesn't make sense... how would you add a number to a string? *Multiplying* a string by an integer *does* have a sensible and unambiguous interpretation (to programmers anyway): just repeat the string that number of times
+# 
+# ```{note}
+# Multiplying a string by a <float> will *not* work though. What's 'a' times 3.5??
+# ```
+#  Finally, multiplying two strings isn't defined (what's 's' times 'q'??). But *adding* two strings does have an unambiguous interpretation: concatenation! 
 
 # Commenting your code
 # ===
@@ -477,13 +485,13 @@ print("This line is not a comment, it is code.")
 
 # For multi-line comments (e.g., for explaining what a function does), you can use a triple single quote `'''` but this is generally reserved for documenting code rather than writing simple comments. The triple quote can be  useful for *temporarily* commenting out a chunk of your code during debugging.
 
-#     '''
+#     '''{python}
 #     for i in range(10):
 #         print "blah"
 #     '''
 
 # ```{note}
-# In Sublime Text, you can highlight code you want to comment and press ⌘-/ to prefix it with the `#` character thereby commenting it out
+# In VS Code (as well as Sublime Text), you can comment multiple lines by highlight them and pressing ⌘/ . This will prefix thm with the `#` character.
 # ```
 # 
 

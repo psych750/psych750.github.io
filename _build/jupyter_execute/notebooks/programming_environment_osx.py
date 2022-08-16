@@ -16,7 +16,7 @@
 # # Install the Anaconda Distribution of Python
 # 
 # ```{attention}
-# The instructions are slightly different if you are using an Intel Mac or a newer M1/M2 (aka "Apple Silicon") Mac. If you're not sure Click on the Apple icon on the top left corner and select `About this Mac`. If it says Intel XXX, then follow the Intel CPU instructions. If it says Apple M1 or similar, follow the Mac CPU instructions.
+# The instructions are slightly different if you are using an Intel Mac or a newer M1/M2 mac. If you're not sure Click on the Apple icon on the top left corner and select `About this Mac`. If it says Intel XXX, then follow the Intel CPU instructions. If it says Apple M1 or similar, follow the Mac CPU instructions.
 # ```
 # 
 # ## Intel CPU Instructions
@@ -54,6 +54,14 @@
 # Type "help", "copyright", "credits" or "license" for more information.
 # ```
 # 
+# ## Install Homebrew
+# 
+# Next we need to install Homebrew and run some commands in order to install other packages. Follow the instructions [here](https://brew.sh) to install Homebrew.
+# 
+# Once Homebrew is installed, run the following command in Terminal:
+# ```bash
+# brew install portaudio
+# ```
 # 
 # ## Installing the necessary Python packages
 # * Now let's install the packages we'll need. Paste in the lines below, one at at a time, into your terminal (make sure your new environment is activated first). Wait for everything to install before proceeding to the next line.
@@ -126,37 +134,17 @@
 # psychopy.prefs.saveUserPrefs()
 # ```
 # 
-
-# # Installing Sublime Text
+# ## Install Visual Studio Code
 # 
+# Visual Studio Code is a very powerful and user-friendly code editor which we will use in this class to edit python/jupyter notebook scripts. Download Visual Studio Code [here](https://code.visualstudio.com) and install it.
 # 
-# Sublime Text is a popular text editor with a very large collection of plugins and themes that allow you to make it anything you want it to be. It is not free, but has a generous trial-use policy. If you like it, please purchase a license.
+# Once it's installed, open up VS code and select File -> New Text File. At the top of the script, click select a language and select `python`. VS code will prompt you to install the Python extension. Once that is installed go back to your file and press `Command + Shift + P`, and type in `Python: Select Interpreter`. Select the `psych750` conda Python environment you created earlier. 
 # 
-# To install Sublime Text, go to the [Downloads](http://www.sublimetext.com/download) page, and download/install the OS X version. 
+# ### Create a shortcut to Visual Studio code
 # 
-# To use it efficiently, you'll want to learn some [keyboard shortcuts](http://sweetme.at/2013/08/08/sublime-text-keyboard-shortcuts/). 
+# It is very useful to be able to quickly access your editor from the shell.
 # 
-# There are lots of handy packages for Sublime Text. To install them, you'll want to first install [Package Control](https://packagecontrol.io/installation) which allows you to browse and install packages directly from within Sublime Text. Some useful ones are [Origami](https://packagecontrol.io/packages/Origami), [SublimeREPL](https://packagecontrol.io/packages/SublimeREPL), [AdvancedCSV](https://packagecontrol.io/packages/Advanced%20CSV), and [Terminal](https://packagecontrol.io/packages/Terminal).
-# 
-# ## Create a shortcut to Sublime Text
-# 
-# * It's very handy to be able to quickly open text files with Sublime Text from the terminal. The easiest way to do this is with an `alias`. 
-# 
-# At the terminal, type `locate bin/subl`
-# This will tell you where Sublime Text is installed. Copy the directory path into the clipboard. Then from the terminal: `nano ~/.bash_profile`. This will open up your bash shell settings file inside a little text-based text editor called `nano`. Scroll to the bottom and paste in the Sublime Text directory such that the last line looks something like this:
-# 
-# ```bash
-# alias s="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
-# ```
-# 
-# Ctrl-X to exit. Save the file when it prompts you to and then restart Terminal.
-# 
-# Now you should be able to open any file using Sublime Text by using `s`. For example, `s my_file.txt` should open `my_file.txt` (or create it if it doesn't exist). 
-# 
-# ```{warning}
-# Any spaces in your path name need to be "escaped" with a backslash, 
-# so "/Applications/Sublime Text.app" becomes "/Applications/Sublime\ Text.app"
-# ```
+# ...
 
 # # Install R & RStudio Desktop
 # 

@@ -434,6 +434,11 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-homebrew">
+     Install Homebrew
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#installing-the-necessary-python-packages">
      Installing the necessary Python packages
     </a>
@@ -448,17 +453,17 @@ title="Print to PDF"
      Configure a few Psychopy settings
     </a>
    </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#installing-sublime-text">
-   Installing Sublime Text
-  </a>
-  <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#create-a-shortcut-to-sublime-text">
-     Create a shortcut to Sublime Text
+    <a class="reference internal nav-link" href="#install-visual-studio-code">
+     Install Visual Studio Code
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#create-a-shortcut-to-visual-studio-code">
+       Create a shortcut to Visual Studio code
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -531,6 +536,11 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-homebrew">
+     Install Homebrew
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#installing-the-necessary-python-packages">
      Installing the necessary Python packages
     </a>
@@ -545,17 +555,17 @@ title="Print to PDF"
      Configure a few Psychopy settings
     </a>
    </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#installing-sublime-text">
-   Installing Sublime Text
-  </a>
-  <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#create-a-shortcut-to-sublime-text">
-     Create a shortcut to Sublime Text
+    <a class="reference internal nav-link" href="#install-visual-studio-code">
+     Install Visual Studio Code
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#create-a-shortcut-to-visual-studio-code">
+       Create a shortcut to Visual Studio code
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -596,7 +606,7 @@ at the command prompt.</p>
 <h1>Install the Anaconda Distribution of Python<a class="headerlink" href="#install-the-anaconda-distribution-of-python" title="Permalink to this headline">#</a></h1>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
-<p>The instructions are slightly different if you are using an Intel Mac or a newer M1/M2 (aka “Apple Silicon”) Mac. If you’re not sure Click on the Apple icon on the top left corner and select <code class="docutils literal notranslate"><span class="pre">About</span> <span class="pre">this</span> <span class="pre">Mac</span></code>. If it says Intel XXX, then follow the Intel CPU instructions. If it says Apple M1 or similar, follow the Mac CPU instructions.</p>
+<p>The instructions are slightly different if you are using an Intel Mac or a newer M1/M2 mac. If you’re not sure Click on the Apple icon on the top left corner and select <code class="docutils literal notranslate"><span class="pre">About</span> <span class="pre">this</span> <span class="pre">Mac</span></code>. If it says Intel XXX, then follow the Intel CPU instructions. If it says Apple M1 or similar, follow the Mac CPU instructions.</p>
 </div>
 <section id="intel-cpu-instructions">
 <h2>Intel CPU Instructions<a class="headerlink" href="#intel-cpu-instructions" title="Permalink to this headline">#</a></h2>
@@ -630,6 +640,14 @@ at the command prompt.</p>
 Python <span class="m">3</span>.8.13 <span class="o">(</span>default, Mar <span class="m">28</span> <span class="m">2022</span>, <span class="m">06</span>:16:26<span class="o">)</span>
 <span class="o">[</span>Clang <span class="m">12</span>.0.0 <span class="o">]</span> :: Anaconda, Inc. on darwin
 Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&quot;</span>, <span class="s2">&quot;credits&quot;</span> or <span class="s2">&quot;license&quot;</span> <span class="k">for</span> more information.
+</pre></div>
+</div>
+</section>
+<section id="install-homebrew">
+<h2>Install Homebrew<a class="headerlink" href="#install-homebrew" title="Permalink to this headline">#</a></h2>
+<p>Next we need to install Homebrew and run some commands in order to install other packages. Follow the instructions <a class="reference external" href="https://brew.sh">here</a> to install Homebrew.</p>
+<p>Once Homebrew is installed, run the following command in Terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew install portaudio
 </pre></div>
 </div>
 </section>
@@ -702,30 +720,15 @@ Click on the terminal and enter <code class="docutils literal notranslate"><span
 </pre></div>
 </div>
 </section>
+<section id="install-visual-studio-code">
+<h2>Install Visual Studio Code<a class="headerlink" href="#install-visual-studio-code" title="Permalink to this headline">#</a></h2>
+<p>Visual Studio Code is a very powerful and user-friendly code editor which we will use in this class to edit python/jupyter notebook scripts. Download Visual Studio Code <a class="reference external" href="https://code.visualstudio.com">here</a> and install it.</p>
+<p>Once it’s installed, open up VS code and select File -&gt; New Text File. At the top of the script, click select a language and select <code class="docutils literal notranslate"><span class="pre">python</span></code>. VS code will prompt you to install the Python extension. Once that is installed go back to your file and press <code class="docutils literal notranslate"><span class="pre">Command</span> <span class="pre">+</span> <span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">P</span></code>, and type in <code class="docutils literal notranslate"><span class="pre">Python:</span> <span class="pre">Select</span> <span class="pre">Interpreter</span></code>. Select the <code class="docutils literal notranslate"><span class="pre">psych750</span></code> conda Python environment you created earlier.</p>
+<section id="create-a-shortcut-to-visual-studio-code">
+<h3>Create a shortcut to Visual Studio code<a class="headerlink" href="#create-a-shortcut-to-visual-studio-code" title="Permalink to this headline">#</a></h3>
+<p>It is very useful to be able to quickly access your editor from the shell.</p>
+<p>…</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="installing-sublime-text">
-<h1>Installing Sublime Text<a class="headerlink" href="#installing-sublime-text" title="Permalink to this headline">#</a></h1>
-<p>Sublime Text is a popular text editor with a very large collection of plugins and themes that allow you to make it anything you want it to be. It is not free, but has a generous trial-use policy. If you like it, please purchase a license.</p>
-<p>To install Sublime Text, go to the <a class="reference external" href="http://www.sublimetext.com/download">Downloads</a> page, and download/install the OS X version.</p>
-<p>To use it efficiently, you’ll want to learn some <a class="reference external" href="http://sweetme.at/2013/08/08/sublime-text-keyboard-shortcuts/">keyboard shortcuts</a>.</p>
-<p>There are lots of handy packages for Sublime Text. To install them, you’ll want to first install <a class="reference external" href="https://packagecontrol.io/installation">Package Control</a> which allows you to browse and install packages directly from within Sublime Text. Some useful ones are <a class="reference external" href="https://packagecontrol.io/packages/Origami">Origami</a>, <a class="reference external" href="https://packagecontrol.io/packages/SublimeREPL">SublimeREPL</a>, <a class="reference external" href="https://packagecontrol.io/packages/Advanced%20CSV">AdvancedCSV</a>, and <a class="reference external" href="https://packagecontrol.io/packages/Terminal">Terminal</a>.</p>
-<section id="create-a-shortcut-to-sublime-text">
-<h2>Create a shortcut to Sublime Text<a class="headerlink" href="#create-a-shortcut-to-sublime-text" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>It’s very handy to be able to quickly open text files with Sublime Text from the terminal. The easiest way to do this is with an <code class="docutils literal notranslate"><span class="pre">alias</span></code>.</p></li>
-</ul>
-<p>At the terminal, type <code class="docutils literal notranslate"><span class="pre">locate</span> <span class="pre">bin/subl</span></code>
-This will tell you where Sublime Text is installed. Copy the directory path into the clipboard. Then from the terminal: <code class="docutils literal notranslate"><span class="pre">nano</span> <span class="pre">~/.bash_profile</span></code>. This will open up your bash shell settings file inside a little text-based text editor called <code class="docutils literal notranslate"><span class="pre">nano</span></code>. Scroll to the bottom and paste in the Sublime Text directory such that the last line looks something like this:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">alias</span> <span class="nv">s</span><span class="o">=</span><span class="s2">&quot;/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl&quot;</span>
-</pre></div>
-</div>
-<p>Ctrl-X to exit. Save the file when it prompts you to and then restart Terminal.</p>
-<p>Now you should be able to open any file using Sublime Text by using <code class="docutils literal notranslate"><span class="pre">s</span></code>. For example, <code class="docutils literal notranslate"><span class="pre">s</span> <span class="pre">my_file.txt</span></code> should open <code class="docutils literal notranslate"><span class="pre">my_file.txt</span></code> (or create it if it doesn’t exist).</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Any spaces in your path name need to be “escaped” with a backslash,
-so “/Applications/Sublime Text.app” becomes “/Applications/Sublime\ Text.app”</p>
-</div>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="install-r-rstudio-desktop">

@@ -397,8 +397,8 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lists-randomization-and-list-comprehension">
-   Lists, randomization, and list comprehension
+  <a class="reference internal nav-link" href="#lists-list-comprehension-and-randomization">
+   Lists, list comprehension, and randomization
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -426,8 +426,8 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lists-randomization-and-list-comprehension">
-   Lists, randomization, and list comprehension
+  <a class="reference internal nav-link" href="#lists-list-comprehension-and-randomization">
+   Lists, list comprehension, and randomization
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -445,28 +445,29 @@ title="Print to PDF"
                 
               <div>
                 
-  <h1>Table of Contents<span class="tocSkip"></span></h1>
-<div class="toc" style="margin-top: 1em;"><ul class="toc-item"><li><span><a href="#Review-of-fundamentals-B" data-toc-modified-id="Review-of-fundamentals-B-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Review of fundamentals B</a></span><ul class="toc-item"><li><span><a href="#Lists,-randomization,-and-list-comprehension" data-toc-modified-id="Lists,-randomization,-and-list-comprehension-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Lists, randomization, and list comprehension</a></span></li><li><span><a href="#Dictionaries" data-toc-modified-id="Dictionaries-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Dictionaries</a></span></li></ul></li></ul></div><section class="tex2jax_ignore mathjax_ignore" id="review-of-fundamentals-b">
+  <section class="tex2jax_ignore mathjax_ignore" id="review-of-fundamentals-b">
 <h1>Review of fundamentals B<a class="headerlink" href="#review-of-fundamentals-b" title="Permalink to this headline">#</a></h1>
 <p>In this notebook, you will review the additional python syntax we’ve covered since the first review of fundamentals. You should be able to correctly predict what happens in all of these cases. If you get something wrong, figure out why!</p>
-<section id="lists-randomization-and-list-comprehension">
-<h2>Lists, randomization, and list comprehension<a class="headerlink" href="#lists-randomization-and-list-comprehension" title="Permalink to this headline">#</a></h2>
+<section id="lists-list-comprehension-and-randomization">
+<h2>Lists, list comprehension, and randomization<a class="headerlink" href="#lists-list-comprehension-and-randomization" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;spam&#39;</span><span class="p">]</span>
-<span class="nb">print</span> <span class="nb">len</span><span class="p">(</span><span class="n">my_list</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">my_list</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;spam&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">my_list</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">my_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 4
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+4
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)[</span><span class="o">-</span><span class="mi">5</span><span class="p">:]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)[</span><span class="o">-</span><span class="mi">5</span><span class="p">:]))</span>
 </pre></div>
 </div>
 </div>
@@ -478,7 +479,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 <span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">3</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">3</span>
 <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
 <span class="n">my_list</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
@@ -486,14 +487,14 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;a&#39;, &#39;c&#39;, &#39;d&#39;, &#39;c&#39;, &#39;d&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;b&#39;, &#39;b&#39;, &#39;c&#39;, &#39;c&#39;, &#39;d&#39;]
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 <span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">]</span>
 <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">my_list</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
 </pre></div>
@@ -502,40 +503,40 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-4-131e8d2f92c6&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">random</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">]</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">my_list</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
+<span class="nn">/Users/glupyan/gitRepos/psych750.github.io/notebooks/review_of_fundamentals_b.ipynb Cell 6</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750.github.io/notebooks/review_of_fundamentals_b.ipynb#W6sZmlsZQ%3D%3D?line=0&#39;</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="kn">import</span> <span class="nn">random</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750.github.io/notebooks/review_of_fundamentals_b.ipynb#W6sZmlsZQ%3D%3D?line=1&#39;</span><span class="o">&gt;</span><span class="mi">2</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">]</span>
+<span class="o">----&gt;</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750.github.io/notebooks/review_of_fundamentals_b.ipynb#W6sZmlsZQ%3D%3D?line=2&#39;</span><span class="o">&gt;</span><span class="mi">3</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">my_list</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
 
-<span class="nn">/Users/glupyan/anaconda2/lib/python2.7/random.pyc</span> in <span class="ni">sample</span><span class="nt">(self, population, k)</span>
-<span class="g g-Whitespace">    </span><span class="mi">321</span>         <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">population</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">322</span>         <span class="k">if</span> <span class="ow">not</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">k</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">323</span>             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;sample larger than population&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">324</span>         <span class="n">random</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">random</span>
-<span class="g g-Whitespace">    </span><span class="mi">325</span>         <span class="n">_int</span> <span class="o">=</span> <span class="nb">int</span>
+<span class="nn">File ~/anaconda3/envs/psych750/lib/python3.8/random.py:363,</span> in <span class="ni">Random.sample</span><span class="nt">(self, population, k)</span>
+<span class="g g-Whitespace">    </span><span class="mi">361</span> <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">population</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">362</span> <span class="k">if</span> <span class="ow">not</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">k</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">363</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Sample larger than population or is negative&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">364</span> <span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="n">k</span>
+<span class="g g-Whitespace">    </span><span class="mi">365</span> <span class="n">setsize</span> <span class="o">=</span> <span class="mi">21</span>        <span class="c1"># size of a small set minus size of an empty list</span>
 
-<span class="ne">ValueError</span>: sample larger than population
+<span class="ne">ValueError</span>: Sample larger than population or is negative
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 <span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(),</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">15</span><span class="p">)]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.3, 0.0, 0.4, 0.1, 0.1, 0.0, 0.5, 0.2, 0.5, 0.1, 0.0, 0.3, 0.9, 0.9, 0.3]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.8, 0.5, 0.4, 0.1, 0.4, 0.5, 0.7, 0.2, 0.4, 0.8, 0.0, 0.3, 0.4, 0.0, 0.9]
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">vowels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="s1">&#39;u&#39;</span><span class="p">]</span>
-<span class="nb">print</span> <span class="p">[</span><span class="n">element</span><span class="o">*</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">element</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">vowels</span><span class="p">)]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vowels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="s1">&#39;u&#39;</span><span class="p">]</span>
+<span class="nb">print</span> <span class="p">([</span><span class="n">element</span><span class="o">*</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">element</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">vowels</span><span class="p">)])</span>
 </pre></div>
 </div>
 </div>
@@ -547,7 +548,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">((</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;and a&#39;</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="p">,</span> <span class="s1">&#39;four&#39;</span><span class="p">)])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">((</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;and a&#39;</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="p">,</span> <span class="s1">&#39;four&#39;</span><span class="p">)]))</span>
 </pre></div>
 </div>
 </div>
@@ -559,7 +560,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">responses</span> <span class="o">=</span> <span class="s1">&#39;ccctcttcttttcccttctcccctctctccc&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">responses</span> <span class="o">=</span> <span class="s1">&#39;ccctcctttttcc&#39;</span>
 <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">curResp</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">responses</span><span class="p">)</span> <span class="k">if</span> <span class="n">curResp</span><span class="o">==</span><span class="s1">&#39;c&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -572,7 +573,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 
 <span class="n">positions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="s1">&#39;middle&#39;</span><span class="p">,</span> <span class="s1">&#39;right&#39;</span><span class="p">]</span>
 <span class="n">positions2</span> <span class="o">=</span> <span class="n">positions</span>
@@ -580,14 +581,14 @@ title="Print to PDF"
 <span class="n">positions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;bottom&#39;</span><span class="p">)</span>
 <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">positions2</span><span class="p">)</span>
 
-<span class="nb">print</span> <span class="n">positions</span><span class="p">,</span> <span class="n">positions2</span>
-<span class="nb">print</span> <span class="nb">len</span><span class="p">(</span><span class="n">positions</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">positions2</span><span class="p">)</span>
-<span class="nb">print</span> <span class="n">positions</span><span class="o">==</span><span class="n">positions2</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">positions</span><span class="p">,</span> <span class="n">positions2</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">positions</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">positions2</span><span class="p">))</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">positions</span><span class="o">==</span><span class="n">positions2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;middle&#39;, &#39;bottom&#39;, &#39;right&#39;, &#39;left&#39;] [&#39;middle&#39;, &#39;bottom&#39;, &#39;right&#39;, &#39;left&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;middle&#39;, &#39;right&#39;, &#39;bottom&#39;, &#39;left&#39;] [&#39;middle&#39;, &#39;right&#39;, &#39;bottom&#39;, &#39;left&#39;]
 4 4
 True
 </pre></div>
@@ -599,51 +600,55 @@ True
 <h2>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">positions</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;left&#39;</span><span class="p">:(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="s1">&#39;middle&#39;</span><span class="p">:(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="s1">&#39;right&#39;</span><span class="p">:(</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">)}</span>
-<span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">positions</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">positions</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;left&#39;</span><span class="p">:(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="s1">&#39;middle&#39;</span><span class="p">:(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="s1">&#39;right&#39;</span><span class="p">:(</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">)}</span>
+<span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">positions</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;left&#39;,
- &#39;right&#39;,
  &#39;left&#39;,
+ &#39;left&#39;,
+ &#39;left&#39;,
+ &#39;middle&#39;,
  &#39;middle&#39;,
  &#39;left&#39;,
  &#39;middle&#39;,
- &#39;left&#39;,
- &#39;left&#39;,
- &#39;left&#39;,
- &#39;right&#39;]
+ &#39;middle&#39;,
+ &#39;middle&#39;]
 </pre></div>
 </div>
 </div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In Python 2, dict.keys() returned a list. In Python 3 it returns a ‘view’ object which is fine if you want to see what the keys are, but won’t work for subsetting or doing things like getting choosing a random element as we do here. To make it work, we must force it to be a list with <code class="docutils literal notranslate"><span class="pre">list()</span></code></p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">positions</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;left&#39;</span><span class="p">:(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="s1">&#39;middle&#39;</span><span class="p">:(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="s1">&#39;right&#39;</span><span class="p">:(</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">)}</span>
-<span class="p">[</span><span class="n">positions</span><span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">positions</span><span class="o">.</span><span class="n">keys</span><span class="p">())]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">positions</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;left&#39;</span><span class="p">:(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="s1">&#39;middle&#39;</span><span class="p">:(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="s1">&#39;right&#39;</span><span class="p">:(</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">)}</span>
+<span class="p">[</span><span class="n">positions</span><span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">positions</span><span class="o">.</span><span class="n">keys</span><span class="p">()))]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(0, 0),
+ (100, 0),
+ (100, 0),
  (0, 0),
  (100, 0),
  (0, 0),
- (-100, 0),
  (100, 0),
- (0, 0),
  (-100, 0),
  (-100, 0),
- (-100, 0)]
+ (0, 0)]
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">responses</span> <span class="o">=</span> <span class="s1">&#39;ccctcttcttttcccttctcccctctctccc&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">responses</span> <span class="o">=</span> <span class="s1">&#39;ccctcctttttcc&#39;</span>
 <span class="n">responsesMapping</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;c&#39;</span><span class="p">:</span><span class="s1">&#39;chair&#39;</span><span class="p">,</span><span class="s1">&#39;t&#39;</span><span class="p">:</span><span class="s1">&#39;table&#39;</span><span class="p">}</span>
 <span class="p">[</span><span class="n">responsesMapping</span><span class="p">[</span><span class="n">curResp</span><span class="p">]</span> <span class="k">for</span> <span class="n">curResp</span> <span class="ow">in</span> <span class="n">responses</span><span class="p">]</span>
 </pre></div>
@@ -655,30 +660,12 @@ True
  &#39;chair&#39;,
  &#39;table&#39;,
  &#39;chair&#39;,
- &#39;table&#39;,
- &#39;table&#39;,
  &#39;chair&#39;,
  &#39;table&#39;,
  &#39;table&#39;,
  &#39;table&#39;,
  &#39;table&#39;,
- &#39;chair&#39;,
- &#39;chair&#39;,
- &#39;chair&#39;,
  &#39;table&#39;,
- &#39;table&#39;,
- &#39;chair&#39;,
- &#39;table&#39;,
- &#39;chair&#39;,
- &#39;chair&#39;,
- &#39;chair&#39;,
- &#39;chair&#39;,
- &#39;table&#39;,
- &#39;chair&#39;,
- &#39;table&#39;,
- &#39;chair&#39;,
- &#39;table&#39;,
- &#39;chair&#39;,
  &#39;chair&#39;,
  &#39;chair&#39;]
 </pre></div>
@@ -700,13 +687,13 @@ True
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python2",
+            kernelName: "python3",
             path: "./notebooks"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python2'</script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               

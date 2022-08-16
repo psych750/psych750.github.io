@@ -2,7 +2,7 @@
 # coding: utf-8
 
 # # Review of fundamentals A
-# In this notebook, you will guess the output of simple Python statements. You should be able to correctly predict most (ideally *all*) of them. If you get something wrong, figure out why!
+# In this notebook, you will guess the output of simple Python statements. You should be able to correctly predict almost all (ideally *all*) of them. If you get something wrong, make sure you understand why! Don't be satisfied until you've understood why every snipped of code returns the value it does or produces the error it does.
 
 # ## Simple operations
 
@@ -171,7 +171,7 @@ else:
     print("we're in the 'else'")
 
 
-# ```{tip}```
+# ```{tip}
 # If you were surprised by that, think about the difference between the literal `False` and the string `"False"`
 # ```
 
@@ -248,18 +248,21 @@ more_animals = animals+['giraffe']
 print (more_animals)
 
 
-# In[36]:
+# In[2]:
 
 
 animals= ['dog', 'cat', 'panda']
 more_animals = animals.append('giraffe')
-print more_animals
+print (more_animals)
 
 
-# <div class="alert alert-block alert-info">
-# The above is a tricky one! The issue is that append() does not return a value. It simply appends</div>
+# ```{note}
+# The above is a tricky one! The issue is that append() does not return a value. It simply appends.
+# ```
 
-# In[37]:
+# Compare the above with what happens in the code below
+
+# In[3]:
 
 
 animals= ['dog', 'cat', 'panda']
@@ -267,12 +270,12 @@ animals.append("giraffe")
 print(animals)
 
 
-# In[38]:
+# In[4]:
 
 
 animals= ['dog', 'cat', 'panda']
 for num,animal in enumerate(animals):
-    print( "Number", num+1, "is", animals)
+    print(f"Number {num+1} is {animals}")
 
 
 # In[18]:
@@ -284,7 +287,7 @@ for num,animal in enumerate(animals):
 print(f"\nWe have {len(animals)} animals in our list.")
 
 
-# In[19]:
+# In[5]:
 
 
 animals= ['dog', 'cat', 'panda']

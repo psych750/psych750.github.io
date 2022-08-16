@@ -564,7 +564,7 @@ is	be	VBZ	192975
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span> <span class="c1">#import the python regexp module</span>
 
 <span class="n">words</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;word&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">data</span><span class="p">])</span>
-<span class="nb">print</span> <span class="s2">&quot;We have&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">words</span><span class="p">),</span> <span class="s2">&quot;words&quot;</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;We have&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">words</span><span class="p">),</span> <span class="s2">&quot;words&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -955,18 +955,12 @@ is	be	VBZ	192975
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;intraperitoneally&#39;,
- &#39;characterizations&#39;,
- &#39;catheterization&#39;,
- &#39;characterization&#39;,
- &#39;cardiorespiratory&#39;,
- &#39;categorization&#39;,
- &#39;carvedilol&#39;,
- &#39;compartmentalization&#39;,
- &#39;intraperitoneal&#39;,
- &#39;campesino&#39;,
- &#39;parameterization&#39;,
- &#39;chloramphenicol&#39;]
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">/Users/glupyan/gitRepos/psych750.github.io/notebooks/regexp.ipynb Cell 20</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="o">----&gt;</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750.github.io/notebooks/regexp.ipynb#X25sZmlsZQ%3D%3D?line=0&#39;</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">curWord</span> <span class="k">for</span> <span class="n">curWord</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;\w+a+\w+e+\w+i+\w+o+&#39;</span><span class="p">,</span><span class="n">curWord</span><span class="p">)]</span>
+
+<span class="ne">NameError</span>: name &#39;words&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -975,14 +969,19 @@ is	be	VBZ	192975
 <p>Let’s find out how many words there are that have <em>ie</em> vs. <em>ei</em> in them.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="s2">&quot;ie words:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">([</span><span class="n">curWord</span> <span class="k">for</span> <span class="n">curWord</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;ie&#39;</span><span class="p">,</span><span class="n">curWord</span><span class="p">)])</span>
-<span class="nb">print</span> <span class="s2">&quot;ei words:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">([</span><span class="n">curWord</span> <span class="k">for</span> <span class="n">curWord</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;ei&#39;</span><span class="p">,</span><span class="n">curWord</span><span class="p">)])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;ie words:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">([</span><span class="n">curWord</span> <span class="k">for</span> <span class="n">curWord</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;ie&#39;</span><span class="p">,</span><span class="n">curWord</span><span class="p">)]))</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;ei words:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">([</span><span class="n">curWord</span> <span class="k">for</span> <span class="n">curWord</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;ei&#39;</span><span class="p">,</span><span class="n">curWord</span><span class="p">)]))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ie words: 1439
-ei words: 483
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">/Users/glupyan/gitRepos/psych750.github.io/notebooks/regexp.ipynb Cell 23</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="nn">----&gt; &lt;a href=&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750.github.io/notebooks/regexp.ipynb#X31sZmlsZQ%3D%3D?line=0&#39;&gt;1&lt;/a&gt; print (&quot;ie words:&quot;, len([curWord for curWord</span> in <span class="ni">words if re.findall</span><span class="nt">(&#39;ie&#39;,curWord)]))</span>
+<span class="nn">      &lt;a href=&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750.github.io/notebooks/regexp.ipynb#X31sZmlsZQ%3D%3D?line=1&#39;&gt;2&lt;/a&gt; print (&quot;ei words:&quot;, len([curWord for curWord</span> in <span class="ni">words if re.findall</span><span class="nt">(&#39;ei&#39;,curWord)]))</span>
+
+<span class="ne">NameError</span>: name &#39;words&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -990,8 +989,8 @@ ei words: 483
 <p>Now let’s check what happens when we check for a ‘c’ preceding ie/ei</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="s2">&quot;cie words:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">([</span><span class="n">curWord</span> <span class="k">for</span> <span class="n">curWord</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;cie&#39;</span><span class="p">,</span><span class="n">curWord</span><span class="p">)])</span>
-<span class="nb">print</span> <span class="s2">&quot;cei words:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">([</span><span class="n">curWord</span> <span class="k">for</span> <span class="n">curWord</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;cei&#39;</span><span class="p">,</span><span class="n">curWord</span><span class="p">)])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;cie words:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">([</span><span class="n">curWord</span> <span class="k">for</span> <span class="n">curWord</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;cie&#39;</span><span class="p">,</span><span class="n">curWord</span><span class="p">)]))</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;cei words:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">([</span><span class="n">curWord</span> <span class="k">for</span> <span class="n">curWord</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;cei&#39;</span><span class="p">,</span><span class="n">curWord</span><span class="p">)]))</span>
 </pre></div>
 </div>
 </div>
@@ -1205,7 +1204,9 @@ What are these words?</p>
 <p>Here are some more examples.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#will match any numbers</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="c1">#will match any numbers</span>
 <span class="n">anyNums</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;[0-9]+&#39;</span><span class="p">)</span>
 <span class="n">anyNums</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;There are 99 bottles of beer on the wall. 999....&#39;</span><span class="p">)</span> <span class="c1">#will return all matches</span>
 <span class="n">anyNums</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;There are 99 bottles of beer on the wall. 999....&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">()</span> <span class="c1">#will return just the first occurrence</span>

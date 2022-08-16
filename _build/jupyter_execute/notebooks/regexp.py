@@ -72,7 +72,7 @@ data = csv.DictReader(csvfile, delimiter='\t')
 import re #import the python regexp module
 
 words = set([row['word'] for row in data])
-print "We have", len(words), "words"
+print ("We have", len(words), "words")
 
 
 # Now let's use some regular expressions starting with simple ones, and moving on to every slightly more complicated ones.
@@ -119,7 +119,7 @@ print "We have", len(words), "words"
 
 # Let's get all the words containing the vowels a, e, i, o, in that order
 
-# In[160]:
+# In[3]:
 
 
 [curWord for curWord in words if re.findall('\w+a+\w+e+\w+i+\w+o+',curWord)]
@@ -130,20 +130,20 @@ print "We have", len(words), "words"
 # Let's find out how many words there are that have *ie* vs. *ei* in them.
 # 
 
-# In[161]:
+# In[2]:
 
 
-print "ie words:", len([curWord for curWord in words if re.findall('ie',curWord)])
-print "ei words:", len([curWord for curWord in words if re.findall('ei',curWord)])
+print ("ie words:", len([curWord for curWord in words if re.findall('ie',curWord)]))
+print ("ei words:", len([curWord for curWord in words if re.findall('ei',curWord)]))
 
 
 # Now let's check what happens when we check for a 'c' preceding ie/ei
 
-# In[162]:
+# In[ ]:
 
 
-print "cie words:", len([curWord for curWord in words if re.findall('cie',curWord)])
-print "cei words:", len([curWord for curWord in words if re.findall('cei',curWord)])
+print ("cie words:", len([curWord for curWord in words if re.findall('cie',curWord)]))
+print ("cei words:", len([curWord for curWord in words if re.findall('cei',curWord)]))
 
 
 # There are actually *more* words that violate the mnemonic than those that obey it!
@@ -195,8 +195,10 @@ variousWords.match('cag').group()
 
 # Here are some more examples.
 
-# In[168]:
+# In[5]:
 
+
+import re
 
 #will match any numbers
 anyNums = re.compile('[0-9]+')

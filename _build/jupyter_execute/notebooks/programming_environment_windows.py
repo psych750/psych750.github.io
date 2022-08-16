@@ -112,37 +112,18 @@
 # psychopy.prefs.saveUserPrefs()
 # ```
 # 
-
-# # Installing Sublime Text
+# ## Install Visual Studio Code
+# 
+# Visual Studio Code is a very powerful and user-friendly code editor which we will use in this class to edit python/jupyter notebook scripts. Download Visual Studio Code [here](https://code.visualstudio.com) and install it.
+# 
+# Once installed, open up VS code and select File -> New Text File. At the top of the script, click select a language and select `python`. VS code will prompt you to install the Python extension. Once that is installed. Go back to your file and press `Ctrl + Shift + P`, and type in `Python: Select Interpreter`. Select the `psych750` python environment you created earlier. 
 # 
 # 
-# Sublime Text is a popular text editor with a very large collection of plugins and themes that allow you to make it anything you want it to be. It is not free, but has a generous trial-use policy. If you like it, please purchase a license.
+# ### Create a shortcut to Visual Studio code
 # 
-# To install Sublime Text, go to the [Downloads](http://www.sublimetext.com/download) page, and download/install the Windows version. 
+# It is very useful to be able to quickly access your editor from the shell.
 # 
-# To use it efficiently, you'll want to learn some [keyboard shortcuts](http://sweetme.at/2013/08/08/sublime-text-keyboard-shortcuts/). 
-# 
-# There are lots of handy packages for Sublime Text. To install them, you'll want to first install [Package Control](https://packagecontrol.io/installation) which allows you to browse and install packages directly from within Sublime Text. Some useful ones are [Origami](https://packagecontrol.io/packages/Origami), [SublimeREPL](https://packagecontrol.io/packages/SublimeREPL), [AdvancedCSV](https://packagecontrol.io/packages/Advanced%20CSV), and [Terminal](https://packagecontrol.io/packages/Terminal).
-# 
-# ## Create a shortcut to Sublime Text
-# 
-# * It's very handy to be able to quickly open text files with Sublime Text from the terminal. The easiest way to do this is with a `doskey`.
-# 
-# From the command prompt enter the following command:
-# 
-# ```bash
-# doskey s="C:\Program Files\Sublime Text\subl.exe"
-# ```
-# 
-# ```{note}
-# Make sure to change the directory to where you installed Sublime Text!
-# ```
-# 
-# Now you should be able to open any file using Sublime Text by using `s`. For example, `s my_file.txt` should open `my_file.txt` (or create it if it doesn't exist). 
-# 
-# ```{warning}
-# In Windows, directory separators are backslashes. Make sure not to use the wrong one!
-# ```
+# ...
 
 # # Install R & RStudio Desktop
 # 
