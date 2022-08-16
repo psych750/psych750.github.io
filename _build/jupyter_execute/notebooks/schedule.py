@@ -39,40 +39,44 @@
 # 1. Read/skim Think Python Sections 5.1-5.7, 7.1-7.8, 8.1-8.12, and 10.1-10.9
 # 1. Finish Exercise 1 and push it to the github classroom site.
 # 1. Sort out any remaining installation/environment issues. Work on customizing your coding environment
-# 1. Finish Exercise 1 and push it to the github classroom repository
 # 
 # ### In class:
 # 1. Code review of Exercise 1
 #     - Using good variable names
+# 1. Our first experiment! A Stroop task.
 # 1. Reading and writing files
-# 1. Exercise 2
+# 1. Begin Exercise 2
 # 
-# 
+
 # ## Week 3 (Sept 22)
-
-# In[ ]:
-
-
-
-
-
 # 
+# ### At home
+# 1. Go through **and understand** Review of Fundamentals A
+# 2. Go through the Dictionaries notebook
+# 3. Read about [reading and writing files](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
+# 4. Go through the File Reading and Writing notebook to test your understanding of basic file operations
+# 5. Read through [writing readable code](https://testdriven.io/blog/clean-code-python/)
+# 6. Finish Exercise 2 while adhering to the advice in the previous step.
+#  
+# ### In class
+# 1. Exercise 2 Code Review
+# 2. Introduction to functions
+# 3. Randomization and iteration exercises
+# 4. Creating trial files
+# 
+
+# <!-- 
 # Week 3 (Sept 22): File access; basic randomization
 # 
-#  At home: Finish and submit the names exercise. Go through Review of
-#  Fundamentals A. Watch [“random” number
-#  generators](https://www.youtube.com/watch?v=_tN2ev3hO14) and read
-#  through the [random
-#  module](https://docs.python.org/2/library/random.html) documentation.
+# 1. Watch [random number generators](https://www.youtube.com/watch?v=_tN2ev3hO14) and read through the [random module](https://docs.python.org/2/library/random.html) documentation.
 # 
-#  In class: Introduction to Functions. Programming a Stroop task.
-#  Generating trial files.
+# 
+#  At home: Finish and submit the names exercise. 
 # 
 # Week 4 (Sept 29): Dictionaries, namespaces, and readable code.
 # 
 #  At home: Finish Exercise 3, Dictionaries study guide, [Variable
 #  scope](http://sebastianraschka.com/Articles/2014_python_scope_and_namespaces.html),
-#  [Writing readable code](https://testdriven.io/blog/clean-code-python/)
 #  
 # 
 #  In class: Modularizing with functions, debugging, practice writing
@@ -162,4 +166,4 @@
 # 
 #  At home: Collect some data for Project 2
 # 
-#  In class: Project presentations (include some data)
+#  In class: Project presentations (include some data) -->
