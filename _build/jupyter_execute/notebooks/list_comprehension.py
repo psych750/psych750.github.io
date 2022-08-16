@@ -92,9 +92,9 @@ sentence = 'The Quick Brown Fox Jumped Over The Lazy Dog'
 
 # ### A list of all consonants
 # Return a list containing all the consonants in `sentence`. The consonants don't have to be unique, but the list should not have both uppercas and lowercase letters. You should do this in one line of code.
-# <div class="alert alert-block alert-info">
+# ```{note}
 # Use str.isalpha() to check for punctuation. E.g., 'word'.isalpha() returns True while '?'.isalpha() and 'a word'.isalpha() return False 
-# </div>
+# ```
 
 # In[34]:
 
@@ -106,42 +106,32 @@ vowels = ['a','e','i','o','u']
 #insert your code here
 
 
+# Use *dictionary* comprehension to count the length of each word in a sentence. 
+
 # In[35]:
 
 
-#Use a dictionary comprehension to count the length of each word in a sentence. 
+
 sentence = 'Use a dictionary comprehension to count the length of each word in a sentence' 
 results = {word:len(word) for word in sentence.split()} 
 print(results) 
 
 
 # ### Dictionary refresher
+# ```{admonition} Challenge
 # Add a line to the code below to get the average word length in `sentence`
-# <div class="alert alert-block alert-info">
 # Hint: `sum(a_list)` returns the sum of the elements in the list
-# </div>
+# ```
 
-# In[51]:
+# In[3]:
 
 
-sentence = "Just a simple little sentence the word lengths of which we can count in one line"
+sentence = "Just a simple little sentence, the word lengths of which we can count in one line"
 wordLengths = {key: len(key) for key in sentence.split(' ')}
-sum(wordLengths.values())/float(len(wordLengths.values()))
+sum(wordLengths.values())/len(wordLengths.values())
 
 
 # In[ ]:
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

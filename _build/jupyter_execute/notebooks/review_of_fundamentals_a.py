@@ -109,7 +109,7 @@ type(True)
 
 a=3
 if (a==3):
-    print "it's a three!"
+    print("it's a three!")
 
 
 # In[20]:
@@ -117,7 +117,7 @@ if (a==3):
 
 a=3
 if a==3:
-    print "it's a four!"
+    print("it's a four!")
 
 
 # In[21]:
@@ -125,7 +125,7 @@ if a==3:
 
 a=3
 if a=4:
-    print "it's a four!"
+    print( "it's a four!")
     
 
 
@@ -134,9 +134,9 @@ if a=4:
 
 a=3
 if a<10:
-    print "we're here"
+    print ("we're here")
 elif a<100:
-    print "and also here"
+    print( "and also here")
     
 
 
@@ -145,9 +145,9 @@ elif a<100:
 
 a=3
 if a<10:
-    print "we're here"
+    print("we're here")
 if a<100:
-    print "and also here"
+    print("and also here")
     
 
 
@@ -156,106 +156,96 @@ if a<100:
 
 a = "True"
 if a:
-    print "we're in the 'if'"
+    print ("we're in the 'if'")
 else:
-    print "we're in the else"
+    print ("we're in the else")
 
 
-# In[25]:
+# In[3]:
 
 
 a = "False"
 if a:
-    print "we're in the 'if'"
+    print("we're in the 'if'")
 else:
-    print "we're in the 'else'"
+    print("we're in the 'else'")
 
 
-# <div class="alert alert-block alert-info">
-# If you were surprised by that, think about the difference between `False` and `"False"`
-# </div>
+# ```{tip}```
+# If you were surprised by that, think about the difference between the literal `False` and the string `"False"`
+# ```
 
-# In[26]:
+# In[5]:
 
 
 a = 5
 b = 10
 if a and b:
-    print "a is", a
-    print "b is", b
-
-
-# In[27]:
-
-
-c = 20
-if c or d:
-    print "c is", c
-    print "d is", d
-
-
-# In[28]:
-
-
-c = 20
-if c and d:
-    print "c is", c
-    print "d is", d
+    print("a is", a)
+    print("b is", b)
 
 
 # ## Lists
 
-# In[29]:
+# In[5]:
 
 
 animals= ['dog', 'cat', 'panda']
 if panda in animals:
-    print "a hit!"
+    print("found it!")
 
 
-# In[30]:
+# In[2]:
 
 
 animals= ['dog', 'cat', 'panda']
 if "panda" or "giraffe" in animals:
-    print "a hit!"
+    print("found it!")
 
 
-# In[31]:
-
-
-if ["dog", "cat"] in animals:
-    print "we're here"
-
-
-# In[32]:
-
-
-some_nums = range(1,10)
-print some_nums
-print some_nums[0]
-
-
-# In[33]:
+# In[6]:
 
 
 animals= ['dog', 'cat', 'panda']
-print animals[-1]
+if "panda" and "giraffe" in animals:
+    print("found it!")
+
+
+# In[3]:
+
+
+if ["dog", "cat"] in animals:
+    print ("we're here")
+
+
+# In[4]:
+
+
+some_nums = range(1,10)
+print(list(some_nums))
+print(some_nums[0])
+
+
+# In[14]:
+
+
+animals= ['dog', 'cat', 'panda']
+print(animals[-1])
 
 
 # In[34]:
 
 
 animals= ['dog', 'cat', 'panda']
-print animals.index('cat')
+print(animals.index('cat'))
 
 
-# In[35]:
+# In[16]:
 
 
 animals= ['dog', 'cat', 'panda']
 more_animals = animals+['giraffe']
-print more_animals
+print (more_animals)
 
 
 # In[36]:
@@ -274,7 +264,7 @@ print more_animals
 
 animals= ['dog', 'cat', 'panda']
 animals.append("giraffe")
-print animals
+print(animals)
 
 
 # In[38]:
@@ -282,26 +272,24 @@ print animals
 
 animals= ['dog', 'cat', 'panda']
 for num,animal in enumerate(animals):
-    print "Number", num+1, "is", animals
+    print( "Number", num+1, "is", animals)
 
 
-# In[39]:
+# In[18]:
 
 
 animals= ['dog', 'cat', 'panda']
 for num,animal in enumerate(animals):
-    print "Number", num, "is", animal
-print "\nWe have", len(animals), "animals in our list."
+    print(f"Number {num} is {animal}")
+print(f"\nWe have {len(animals)} animals in our list.")
 
 
-# In[40]:
+# In[19]:
 
 
 animals= ['dog', 'cat', 'panda']
 while animals:
-    print animals.pop()
+    print (animals.pop())
 
-print "\nWe have", len(animals), "animals in our list."
+print(f"\nWe have {len(animals)} animals in our list")
 
-
-# [top](#)

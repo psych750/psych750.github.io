@@ -1,15 +1,11 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# <h1>Table of Contents<span class="tocSkip"></span></h1>
-# <div class="toc" style="margin-top: 1em;"><ul class="toc-item"><li><span><a href="#Psychopy-reference" data-toc-modified-id="Psychopy-reference-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Psychopy reference</a></span><ul class="toc-item"><li><span><a href="#A-simple-function-for-popping-up-an-error-using-a-gui-window" data-toc-modified-id="A-simple-function-for-popping-up-an-error-using-a-gui-window-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>A simple function for popping up an error using a gui window</a></span><ul class="toc-item"><li><span><a href="#Popping-up-a-box-to-get-user-input-e.g.,-to-specify-a-condition-name" data-toc-modified-id="Popping-up-a-box-to-get-user-input-e.g.,-to-specify-a-condition-name-1.1.1"><span class="toc-item-num">1.1.1&nbsp;&nbsp;</span>Popping up a box to get user input e.g., to specify a condition name</a></span></li><li><span><a href="#A-different-way-of-showing-a-text-box" data-toc-modified-id="A-different-way-of-showing-a-text-box-1.1.2"><span class="toc-item-num">1.1.2&nbsp;&nbsp;</span>A different way of showing a text box</a></span></li><li><span><a href="#Easy-way-to-get-runtime-variables" data-toc-modified-id="Easy-way-to-get-runtime-variables-1.1.3"><span class="toc-item-num">1.1.3&nbsp;&nbsp;</span>Easy way to get runtime variables</a></span></li></ul></li><li><span><a href="#How-do-I-have-people-respond-with-a-mouse?" data-toc-modified-id="How-do-I-have-people-respond-with-a-mouse?-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>How do I have people respond with a mouse?</a></span><ul class="toc-item"><li><span><a href="#Get-mouse-position-of-mouse-at-point-of-buttonpress" data-toc-modified-id="Get-mouse-position-of-mouse-at-point-of-buttonpress-1.2.1"><span class="toc-item-num">1.2.1&nbsp;&nbsp;</span>Get mouse position of mouse at point of buttonpress</a></span></li><li><span><a href="#Show-text-until-mouse-click" data-toc-modified-id="Show-text-until-mouse-click-1.2.2"><span class="toc-item-num">1.2.2&nbsp;&nbsp;</span>Show text until mouse click</a></span></li><li><span><a href="#Wait-for-click-on-a-picture" data-toc-modified-id="Wait-for-click-on-a-picture-1.2.3"><span class="toc-item-num">1.2.3&nbsp;&nbsp;</span>Wait for click on a picture</a></span></li></ul></li><li><span><a href="#How-do-I-keep-doing-something-while-waiting-for-a-response?" data-toc-modified-id="How-do-I-keep-doing-something-while-waiting-for-a-response?-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>How do I keep doing something while waiting for a response?</a></span><ul class="toc-item"><li><span><a href="#A-generic-function-for-collecting-responses" data-toc-modified-id="A-generic-function-for-collecting-responses-1.3.1"><span class="toc-item-num">1.3.1&nbsp;&nbsp;</span>A generic function for collecting responses</a></span></li><li><span><a href="#A-function-for-writing-a-string-(trial-info)-to-a-file." data-toc-modified-id="A-function-for-writing-a-string-(trial-info)-to-a-file.-1.3.2"><span class="toc-item-num">1.3.2&nbsp;&nbsp;</span>A function for writing a string (trial info) to a file.</a></span></li></ul></li><li><span><a href="#Convert-from-polar-to-rectangular-coordinates" data-toc-modified-id="Convert-from-polar-to-rectangular-coordinates-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Convert from polar to rectangular coordinates</a></span></li><li><span><a href="#Staircasing" data-toc-modified-id="Staircasing-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Staircasing</a></span></li><li><span><a href="#Preloading-image-and-audio-files" data-toc-modified-id="Preloading-image-and-audio-files-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>Preloading image and audio files</a></span></li><li><span><a href="#A-sample-factorial-design-trial-list-generation-file-(generateTrials.py)" data-toc-modified-id="A-sample-factorial-design-trial-list-generation-file-(generateTrials.py)-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>A sample factorial design trial list generation file (generateTrials.py)</a></span></li><li><span><a href="#Importing-a-trial-list" data-toc-modified-id="Importing-a-trial-list-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>Importing a trial list</a></span></li><li><span><a href="#A-function-for-grabbing-screenshots" data-toc-modified-id="A-function-for-grabbing-screenshots-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>A function for grabbing screenshots</a></span></li><li><span><a href="#Popping-up-a-web-based-survey-from-within-your-python-script" data-toc-modified-id="Popping-up-a-web-based-survey-from-within-your-python-script-1.10"><span class="toc-item-num">1.10&nbsp;&nbsp;</span>Popping up a web-based survey from within your python script</a></span><ul class="toc-item"><li><span><a href="#Google-form" data-toc-modified-id="Google-form-1.10.1"><span class="toc-item-num">1.10.1&nbsp;&nbsp;</span>Google form</a></span></li><li><span><a href="#Qualtrics-forms" data-toc-modified-id="Qualtrics-forms-1.10.2"><span class="toc-item-num">1.10.2&nbsp;&nbsp;</span>Qualtrics forms</a></span></li></ul></li><li><span><a href="#Using-a-webcam-in-psychopy" data-toc-modified-id="Using-a-webcam-in-psychopy-1.11"><span class="toc-item-num">1.11&nbsp;&nbsp;</span>Using a webcam in psychopy</a></span></li></ul></li></ul></div>
-
 # # Psychopy reference
 # 
-# Please use the official [psychopy reference](http://www.psychopy.org/api/api.html) page for basic info.
-# Below is some extra functionality that you will find useful.
+# Please use the official [psychopy reference](http://www.psychopy.org/api/) page for looking up how to use specific functions and objects. Below is some extra functionality in the form of little recipes that may come in handy.
 
-# ## A simple function for popping up an error using a gui window
+# ## A simple function for popping up an error using a GUI window
 
 # ```python
 # from psychopy import visual, gui
@@ -22,7 +18,7 @@
 # popupError('There was an error!')
 # ```
 
-# ### Popping up a box to get user input e.g., to specify a condition name
+# ### Popping up a box to get user input e.g., to specify a condition name or subject code at runtime
 # 
 # Here's the simplest code:
 # 
@@ -66,16 +62,16 @@
 # #if you want to get a bit fancier, you can monitor the 'OK' or 'cancel' press:
 # if myDlg.OK:  # then the user pressed OK
 #     # this will print the list of passed in values in the order in which you added the fields above.
-#     print myDlg.data 
+#     print(myDlg.data)
 # else:
-#     print 'user cancelled'
+#     print('User cancelled')
 # ```
 # 
-# Note that `myDlg.data` is a list, so you access the first element, you
-# should index it: `myDlg.data[0]`
-# 
+# ```{note}
+# `myDlg.data` is a list, so to access the first element, you should index it: `myDlg.data[0]`
+# ```
 
-# ### Easy way to get runtime variables
+# ### Easy way to get a bunch of runtime variables
 # 
 # Runtime variables are variables you want to set at runtime -- the subject code, demographic info, the condition(s) the subject is assigned to, etc.
 # 
@@ -86,7 +82,7 @@
 #     if infoDlg.OK:
 #         return varsToGet
 #     else: 
-#         print 'User Cancelled'
+#         print('User Cancelled')
 # ```
 # 
 # Sample usage:
@@ -96,13 +92,17 @@
 # runTimeVars = getRunTimeVars({'subjCode':'pGrouping_101', 'seed':10, 'gender':['Choose', 'male','female']}, order, 'ver1')
 # ```
 # 
+# ```{admonition} Challenge!
+# A better solution here is to re-implement this recipe with an OrderedDict
+# ```
+# 
 
 # ## How do I have people respond with a mouse?
 # 
 # PsychoPy makes it very easy to collect mouse responses.
 # 
-# ### Get mouse position of mouse at point of buttonpress
-# The following code shows you how you get the coordinates of the mouse at the point that a user presses a button.
+# ### Get mouse position at point of button press.
+# The following code shows how to get the mouse position (i.e., its coordinates) at the point that a user presses a button.
 
 # In[ ]:
 
@@ -116,10 +116,12 @@ while True:
     if any(mouse.getPressed()): #if any mouse button is pressed
         mouse_pos = mouse.getPos() #get its position at time of button press
     break
-print 'user clicked at', mouse_pos
+print('user clicked at', mouse_pos)
     
 
 
+# What's going on here?
+# 
 # `getPressed()` returns a list of mouse button states, e.g., [0,0,0] which will always evaluate to `True`. The built-in function `any()` allows us to check if any of the values in the list are `True`
 
 # ### Show text until mouse click
@@ -145,25 +147,27 @@ def showText(win,text,color,mouse):
 # ### Wait for click on a picture
 # The following code waits until a user clicks on one of the items (any visual objects) currently displayed
 
-# In[ ]:
+# #.... mouse, window, pic1, pic2, pic3 initialization
+# 
+# #check mouse until pressed in one of the pics
+# 	while True:
+# 		if mouse.isPressedIn(pic1) or mouse.isPressedIn(pic2) or mouse.isPressedIn(pic3):
+# 			response = mouse.getPos()
+# 			break
+# 
+#     #assuming pic1 is the correct response
+# 	#check if response is correct
+# 	if pic1.contains(response):
+# 		correctFeedback.draw()
+# 	else:
+# 		incorrectFeedback.draw()
+# 	win.flip()
+# 
+# 
 
-
-#.... mouse, window, pic1, pic2, pic3 initialization
-
-	#check mouse until pressed in one of the pics
-	while True:
-		if mouse.isPressedIn(pic1) or mouse.isPressedIn(pic2) or mouse.isPressedIn(pic3):
-			response = mouse.getPos()
-			break
-
-    #assuming pic1 is the correct response
-	#check if response is correct
-	if pic1.contains(response):
-		correctFeedback.draw()
-	else:
-		incorrectFeedback.draw()
-	win.flip()
-
+# ```{tip}
+# You can easily extend this recipe to an arbitrary number of objects by checking if `mouse.isPressedIn()` is True for any value in a list that you pass in.
+# ```
 
 # ## How do I keep doing something while waiting for a response?
 # 
@@ -185,8 +189,9 @@ def showText(win,text,color,mouse):
 #     #do stuff here
 # ```
 # 
-# **Caution**: If you have a `win.flip()` inside a loop, that loop will execute at most every screen-refresh (or slower if you're doing something computationally intensive inside the loop). That means that if you have a `event.getKeys()` inside the loop, you will only be checking responses every screen-refresh. At 60Hz, that means that all your responses will be rounded up to the next 16.67 ms -- probably not what you want!
-# 
+# ```{warning}
+# If you have a `win.flip()` inside a loop, that loop will execute at most every screen-refresh (or slower if you're doing something computationally intensive inside the loop). That means that if you have a `event.getKeys()` inside the loop, you will only be checking responses every screen-refresh. At 60Hz, that means that all your responses will be rounded up to the next 16.67 ms -- not what you want!!
+# ```
 # 
 
 # ### A generic function for collecting responses
@@ -304,7 +309,7 @@ staircase is an iterator; you can get its next stat by calling
 staircase.next(), or having it in a loop:
 '''
 for curTrial in staircase:
-    print curTrial
+    print(curTrial)
     #curTrial will contain the current intensity value, here, beginning with 20 
     staircase.addResponse(1) # 1 if response is correct; 0 if incorrect
 
@@ -344,7 +349,7 @@ for curTrial in staircase:
 # 				(width,height) = (stim.size[0],stim.size[1])
 # 				fileMatrix[stimFile] = {'stim':stim,'fullPath':fullPath,'filename':stimFile,'num':num,'width':width, 'height':height}
 # 			except:
-# 				print "Need to define window before loading stimuli"
+# 				print("Need to define window before loading stimuli")
 # 		elif fileType=="sound":
 # 			fileMatrix[stimFile] = {'stim':sound.Sound(fullPath), 'duration':sound.Sound(fullPath).getDuration()}
 # 
@@ -429,7 +434,7 @@ for curTrial in staircase:
 #                     try:
 #                         trial = separator.join(map(str,map(eval,headerCols)))
 #                     except NameError:
-#                         print 'column not defined.  check code'
+#                         print('column not defined.  check code')
 #                     trialList.append(trial)
 # 
 #     random.seed(seed)
@@ -445,9 +450,9 @@ for curTrial in staircase:
 # if __name__ == "__main__":
 #     #for testing; this part is only executed if you run generateTrials.py from the terminal.
 #     trialList = generateTrials('test',10)
-#     print header
+#     print(header)
 #     for curTrial in trialList:
-#         print curTrial
+#         print(curTrial)
 # ```
 
 # To use it inside your main experiment file, import it like so:
@@ -492,10 +497,10 @@ for curTrial in staircase:
 #     curTrial[colName] #to access a particular value (where colName is something like 'pictureType')
 # ```
 # 
-# *Note: this functionality is actually built into PsychoPy using the
-# importConditions function (see
-# [here](http://www.psychopy.org/api/data.html#psychopy.data.importConditions))*
-# 
+# ```{note}
+# This functionality is actually built into PsychoPy using the
+# [importConditions function](http://www.psychopy.org/api/data.html#psychopy.data.importConditions)
+# ```
 
 # ## A function for grabbing screenshots
 # 

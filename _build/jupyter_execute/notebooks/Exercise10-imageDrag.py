@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# <h1>Table of Contents<span class="tocSkip"></span></h1>
-# <div class="toc" style="margin-top: 1em;"><ul class="toc-item"><li><span><a href="#Exercise-10---Dragging-images-to-obtain-a-similarity-space" data-toc-modified-id="Exercise-10---Dragging-images-to-obtain-a-similarity-space-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Exercise 10 - Dragging images to obtain a similarity space</a></span></li></ul></div>
-
 # # Exercise 10 - Dragging images to obtain a similarity space
 # 
 # Suppose we want to find out how similar Chinese characters appear to people who do not read Chinese. There are several ways of doing this. One is to have people view pairs of images and provide pairwise similarity ratings. But the number of such judgments quickly grows with the number of stimuli. An alternative is to display many images at the same time and have people drag them into groups depending on how similar they look. So something like this:

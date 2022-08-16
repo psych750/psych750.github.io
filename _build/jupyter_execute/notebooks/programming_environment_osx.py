@@ -8,16 +8,32 @@
 # # Install git
 # [Download and install](https://sourceforge.net/projects/git-osx-installer/files/) the latest version of `git` 
 # 
-# Test it by typing `git --version`` at the command prompt.
+# Test it by typing 
+# `git --version` 
+# at the command prompt.
 # 
 # 
 # # Install the Anaconda Distribution of Python
 # 
+# ```{attention}
+# The instructions are slightly different if you are using an Intel Mac or a newer M1/M2 (aka "Apple Silicon") Mac. If you're not sure Click on the Apple icon on the top left corner and select `About this Mac`. If it says Intel XXX, then follow the Intel CPU instructions. If it says Apple M1 or similar, follow the Mac CPU instructions.
+# ```
 # 
+# ## Intel CPU Instructions
 # * Download and Install the **Python 3.8 64 bit** [Miniconda installer](https://conda.io/miniconda.html). If you are asked whether you want the installer to prepend Anaconda to your PATH, respond ***yes***.
 # 
 # 
-# * Next let's create a virtual environment for this course. At the command prompt type
+# ## Mac CPU Instructions
+# * Open up your `Finder` and click on `Applications`. Then navigate to `Utilities` folder and right click on the `Terminal` and select Duplicate. Rename the duplicate to `Rosetta-Terminal`. Then right click on the `Rosetta-Terminal` and select `Get Info`. Check the `Open with Rosetta` option.
+# 
+# * Download and Install the **Python 3.8 64 bit** [Miniconda installer](https://conda.io/miniconda.html). Make sure to select the `macOS Intel x86 64-bit` version. The `pkg` file is more user friendly and installs like any other programs. If you are asked whether you want the installer to prepend Anaconda to your PATH, respond ***yes***.
+# 
+# * From now on, use the `Rosetta-Terminal` instead of the original `Terminal`.
+# 
+# 
+# # Create Virtual Environment
+# 
+# Next let's create a virtual environment for this course. At the command prompt type
 # 
 # ```bash
 # conda create -n psych750 python=3.8 pip
@@ -28,16 +44,16 @@
 # conda activate psych750
 # ```
 # 
-# 
 # ## Test the Anaconda Python install
 # 
-# Activate your environment using `conda activate` and then type `python` to start the Python interpreter
+# Activate your environment using `conda activate psych750` and then type `python` to start the Python interpreter
 # ```bash
 # $ python 
 # Python 3.8.13 (default, Mar 28 2022, 06:16:26)
 # [Clang 12.0.0 ] :: Anaconda, Inc. on darwin
 # Type "help", "copyright", "credits" or "license" for more information.
 # ```
+# 
 # 
 # ## Installing the necessary Python packages
 # * Now let's install the packages we'll need. Paste in the lines below, one at at a time, into your terminal (make sure your new environment is activated first). Wait for everything to install before proceeding to the next line.

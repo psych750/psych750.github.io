@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# <h1>Table of Contents<span class="tocSkip"></span></h1>
-# <div class="toc" style="margin-top: 1em;"><ul class="toc-item"><li><span><a href="#Variables,-Strings,-and-Numbers" data-toc-modified-id="Variables,-Strings,-and-Numbers-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Variables, Strings, and Numbers</a></span></li><li><span><a href="#Variables" data-toc-modified-id="Variables-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Variables</a></span><ul class="toc-item"><li><span><a href="#Example" data-toc-modified-id="Example-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Example</a></span></li><li><span><a href="#Naming-rules" data-toc-modified-id="Naming-rules-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Naming rules</a></span></li><li><span><a href="#NameError" data-toc-modified-id="NameError-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>NameError</a></span></li></ul></li><li><span><a href="#Strings" data-toc-modified-id="Strings-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Strings</a></span><ul class="toc-item"><li><span><a href="#Single-and-double-quotes" data-toc-modified-id="Single-and-double-quotes-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Single and double quotes</a></span></li><li><span><a href="#Getting-a-string's-length-and-checking-for-character" data-toc-modified-id="Getting-a-string's-length-and-checking-for-character-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Getting a string's length and checking for character</a></span></li><li><span><a href="#Changing-case" data-toc-modified-id="Changing-case-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>Changing case</a></span></li><li><span><a href="#Combining-strings-(concatenation)" data-toc-modified-id="Combining-strings-(concatenation)-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>Combining strings (concatenation)</a></span></li><li><span><a href="#Whitespace" data-toc-modified-id="Whitespace-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>Whitespace</a></span><ul class="toc-item"><li><span><a href="#Stripping-whitespace" data-toc-modified-id="Stripping-whitespace-3.5.1"><span class="toc-item-num">3.5.1&nbsp;&nbsp;</span>Stripping whitespace</a></span></li></ul></li></ul></li><li><span><a href="#Numbers" data-toc-modified-id="Numbers-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Numbers</a></span><ul class="toc-item"><li><span><a href="#Floating-Point-numbers" data-toc-modified-id="Floating-Point-numbers-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Floating-Point numbers</a></span></li><li><span><a href="#Integers-in-Python-2.7" data-toc-modified-id="Integers-in-Python-2.7-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Integers in Python 2.7</a></span><ul class="toc-item"><li><span><a href="#Division-in-Python-2.7" data-toc-modified-id="Division-in-Python-2.7-4.2.1"><span class="toc-item-num">4.2.1&nbsp;&nbsp;</span>Division in Python 2.7</a></span></li><li><span><a href="#Division-in-Python-3.3" data-toc-modified-id="Division-in-Python-3.3-4.2.2"><span class="toc-item-num">4.2.2&nbsp;&nbsp;</span>Division in Python 3.3</a></span></li></ul></li></ul></li><li><span><a href="#Comments" data-toc-modified-id="Comments-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Comments</a></span><ul class="toc-item"><li><span><a href="#What-makes-a-good-comment?" data-toc-modified-id="What-makes-a-good-comment?-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>What makes a good comment?</a></span></li><li><span><a href="#When-should-you-write-comments?" data-toc-modified-id="When-should-you-write-comments?-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>When should you write comments?</a></span></li></ul></li><li><span><a href="#Zen-of-Python" data-toc-modified-id="Zen-of-Python-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Zen of Python</a></span></li></ul></div>
-
 # Variables, Strings, and Numbers
 # ===
 # In this section, you will learn to store information in variables. You will learn about three types of data: strings, which are lists of characters, integers, which are numbers like 2 and 3,  and floats, which are numbers like 2.0 and 2.5.
@@ -62,21 +59,10 @@ print(mesage)
 # 
 # We can fix NameErrors by making sure all of our variable names are spelled consistently.
 # 
-# <div class="alert alert-block alert-info">
-# Nearly in every case, capitalization matters! The variable names `message`, `Message`, and `messagE` are -- to Python -- as different from one another as `message` and `rhinoceros` Of course to *humans* `message` and `Message` are quite similar and liable to get confused, which is a reason to not use variable names that differ only in capitalization!</div>
+# ```{note} In nearly in every case, capitalization matters! The variable names `message`, `Message`, and `messagE` are -- to Python -- as different from one another as `message` and `rhinoceros` Of course to *humans* `message` and `Message` are quite similar and liable to get confused, which is a reason to not use variable names that differ only in capitalization!
+# ```
 # 
 # 
-
-# In[1]:
-
-
-message = "Thank you for making Python, Guido!"
-print(message)
-
-
-# [Guido](http://en.wikipedia.org/wiki/Guido_van_Rossum) [van Rossum](http://www.python.org/~guido/) created the Python language over 20 years ago, and he is considered Python's [Benevolent Dictator for Life](http://en.wikipedia.org/wiki/Benevolent_Dictator_for_Life). Guido still signs off on all major changes to the core Python language.
-
-# [top](#)
 
 # Strings
 # ===
@@ -293,8 +279,6 @@ print('-' + name.rstrip() + '-')
 print('-' + name.strip() + '-')
 
 
-# [top](#)
-
 # Numbers
 # ===
 
@@ -374,55 +358,21 @@ print(0.1+0.2)
 print(3*0.1)
 
 
-# Integers in Python 2.7
+# Integers in Python 3
 # ---
-# There are a couple differences in the way Python 2 and Python 3 handle numbers. In Python 2, dividing two integers always results in an integer, while Python 3 always returns a float. This is fine when the result of your integer division is an integer, but it leads to quite different results when the answer is a decimal.
-
-# ### Division in Python 2.7
-
-# In[2]:
-
-
-# Python 2.7
-print 4/2
-
-
-# In[5]:
-
-
-# Python 2.7
-print 3/2
-
-
-# You can force Python 2 to use decimal-point (float) division by having one or both of the divisors be a float. Both of these methods work 
-
-# In[6]:
-
-
-print 3.0/2
-
-
-# In[9]:
-
-
-print float(3)/2
-
-
-# ### Division in Python 3.3
+# There are a couple differences in the way Python 2 and Python 3 handle numbers. In Python 2, dividing two integers always resulted in an integer, while Python 3 always returns a float.
 
 # Python 3 does float division by default:
 
 # In[11]:
 
 
-# Python 3.3
 print(4/2)
 
 
 # In[12]:
 
 
-# Python 3.3
 print(3/2)
 
 
@@ -532,8 +482,9 @@ print("This line is not a comment, it is code.")
 #         print "blah"
 #     '''
 
-# <div class="alert alert-block alert-info">
-# In Sublime Text, you can highlight code you want to comment and press ⌘-/ to prefix it with the `#` character thereby commenting it out</div>
+# ```{note}
+# In Sublime Text, you can highlight code you want to comment and press ⌘-/ to prefix it with the `#` character thereby commenting it out
+# ```
 # 
 
 # What makes a good comment?
@@ -551,8 +502,6 @@ print("This line is not a comment, it is code.")
 # - When others are unlikely to anticipate your way of thinking about a problem.
 # 
 # Writing good comments is one of the clear signs of a good programmer. If you have any real interest in taking programming seriously, start using comments now. You will see them throughout the examples in these notebooks.
-
-# [top](#)
 
 # Zen of Python
 # ===
@@ -592,5 +541,3 @@ import this
 #     Now is better than never.
 # 
 # No one ever writes perfect code. If you have an idea you want to implement it, write some code that works. Release it, let it be used by others, and then steadily improve it.
-
-# [top](#)

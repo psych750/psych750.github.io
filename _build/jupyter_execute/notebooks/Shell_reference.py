@@ -71,6 +71,10 @@
 # ```bash
 # ls -ltr
 # ```
+# 
+# ```{tip}
+# Those letters that specify options after linux commands are called command flags
+# ```
 
 # ## Copy/move/delete files
 # 
@@ -189,10 +193,9 @@
 # man ls
 # ```
 # 
-# <div class="alert alert-block alert-info">
+# ```{note}
 # If you're using Cmder on windows, man won't work. Use `ls --help | less` instead
-# </div>
-# 
+# ```
 # 
 # You can scroll through the documentation using PgUp/PgDown or up and
 # down arrows. To exit, press `q`
@@ -203,8 +206,8 @@
 # ls --help
 # ```
 # 
-# There are many many many linux commands. The best way to find one is
-# probably googling for it, e.g., google for `how to zip a file in linux`.
+# There are many many many linux commands. Probably the best way to find one is
+# by Googling, e.g., google for `how to zip a file in linux` or `ls command flags`
 # 
 # You can also try the `apropos` command in the terminal. For example, try
 # 
@@ -293,18 +296,20 @@
 # 
 # For example, the grep command in its basic form searches through text
 # and outputs a line that matches some search term. Recall that you
-# created an alias for psych711 in your .bashrc file. Let\'s find it.
+# created an alias for psych750 in your .bashrc file. Let\'s find it.
 # 
 # ```bash
-# cat ~/.bashrc | grep psych711
+# cat ~/.bashrc | grep psych750
 # ```
 # 
 # This means send the output of `cat ~/.bashrc` (the contents of the
 # .bashrc file) to the command `grep` which then tries to find
-# "psych711" within that output.
+# "psych750" within that output.
 # 
-# Caveat: you can also just type `grep "psych711" ~/.bashrc`, but in some
-# cases using the '|' is the only way to do what you need to do.
+# ```{note}
+# You can also just type `grep "psych750" ~/.bashrc`, but in some
+# cases using the pipe (`|`) is the only way to do what you need to do.
+# ```
 
 # In[ ]:
 
