@@ -412,8 +412,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#naming-rules">
-     Naming rules
+    <a class="reference internal nav-link" href="#variable-naming-rules">
+     Variable naming rules
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
@@ -546,8 +546,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#naming-rules">
-     Naming rules
+    <a class="reference internal nav-link" href="#variable-naming-rules">
+     Variable naming rules
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
@@ -696,8 +696,8 @@ Python is my favorite language!
 </div>
 </div>
 </section>
-<section id="naming-rules">
-<h2>Naming rules<a class="headerlink" href="#naming-rules" title="Permalink to this headline">#</a></h2>
+<section id="variable-naming-rules">
+<h2>Variable naming rules<a class="headerlink" href="#variable-naming-rules" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Variable names can only have letters, numbers, and underscores. Variable names can start with a letter or an underscore, but cannot start with a number.</p></li>
 <li><p>Spaces are not allowed in variable names, so we use underscores instead of spaces. For example, use student_name instead of “student name”.</p></li>
@@ -765,7 +765,7 @@ Python is my favorite language!
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_string</span> <span class="o">=</span> <span class="s2">&quot;Here&#39;s a string with a &quot;</span><span class="n">quote</span> <span class="ow">in</span> <span class="n">it</span><span class="s2">&quot;&quot;</span>
-<span class="nb">print</span> <span class="n">my_string</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_string</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -782,7 +782,7 @@ Python is my favorite language!
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_string</span> <span class="o">=</span> <span class="s2">&quot;Here&#39;s a string with a </span><span class="se">\&quot;</span><span class="s2">quote in it</span><span class="se">\&quot;</span><span class="s2">&quot;</span>
-<span class="nb">print</span> <span class="n">my_string</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">my_string</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -798,12 +798,12 @@ Python is my favorite language!
 <p>Remember how we said that strings are lists of characters? We’ll learn more about lists in the next section, but for now, just note that because they’re lists, you can do the following:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="s2">&quot;There are&quot;</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="s1">&#39;aeiou&#39;</span><span class="p">),</span> <span class="s2">&quot;vowels in English&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;There are </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="s1">&#39;aeiou&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> vowels in English&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>There are  5 vowels in English
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>There are 5 vowels in English
 </pre></div>
 </div>
 </div>
@@ -811,21 +811,25 @@ Python is my favorite language!
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="s1">&#39;e&#39;</span> <span class="ow">in</span> <span class="s1">&#39;aeiou&#39;</span><span class="p">:</span>
-    <span class="nb">print</span> <span class="s2">&quot;yep, there&#39;s an e&quot;</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;yep, there&#39;s an e&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>yep, there&#39;s an e
-False
 </pre></div>
 </div>
 </div>
 </div>
-<p>We’ll cover more complex string searches later in the semester.</p>
+<p>Here’s a simple string search. We’ll cover more complex string searches later in the semester.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="s1">&#39;f&#39;</span> <span class="ow">in</span> <span class="s1">&#39;aeiou&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;f&#39;</span> <span class="ow">in</span> <span class="s1">&#39;aeiou&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
 </pre></div>
 </div>
 </div>
@@ -1000,12 +1004,17 @@ everyone!
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n\n</span><span class="s2">Hello everyone!&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;----&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n\n</span><span class="s2">Hello everyone!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello everyone!
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>----
+
+
+
+Hello everyone!
 </pre></div>
 </div>
 </div>
@@ -1033,7 +1042,7 @@ eric
 </div>
 </div>
 </div>
-<p>It’s hard to see exactly what is happening, so maybe the following will make it a little more clear:</p>
+<p>It’s hard to see exactly what is happening, so let’s add some characters to make it a bit clearer.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39; eric &#39;</span>
@@ -1233,7 +1242,7 @@ eric
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mi">3</span>
 <span class="n">b</span><span class="o">=</span><span class="s1">&#39;s&#39;</span>
-<span class="nb">print</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1248,7 +1257,7 @@ eric
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mi">3</span>
 <span class="n">b</span><span class="o">=</span><span class="s1">&#39;s&#39;</span>
-<span class="nb">print</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1265,12 +1274,13 @@ eric
 </div>
 </div>
 </div>
+<p>…this is not arbitrary. The design philosophy is – if there’s ambiguity in how an operation will be interpreted by users, then make it illegal. Otherwise, allow it (this is a very different philosophy from a language like Perl which is much more syntactically permissive)</p>
 <p>Some of Python’s operators are “overloaded” meaning that what they do depends on the type of the variables the operator is working with:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mi">3</span>
 <span class="n">b</span><span class="o">=</span><span class="mi">5</span>
-<span class="nb">print</span> <span class="n">a</span><span class="o">*</span><span class="n">b</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1284,7 +1294,7 @@ eric
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="s1">&#39;q&#39;</span>
 <span class="n">b</span><span class="o">=</span><span class="mi">3</span>
-<span class="nb">print</span> <span class="n">a</span><span class="o">*</span><span class="n">b</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1298,17 +1308,17 @@ eric
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="s1">&#39;q&#39;</span>
 <span class="n">b</span><span class="o">=</span><span class="s1">&#39;m&#39;</span>
-<span class="nb">print</span> <span class="n">a</span><span class="o">*</span><span class="n">b</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-14-cee7ba96a964&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">a</span><span class="o">=</span><span class="s1">&#39;q&#39;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">b</span><span class="o">=</span><span class="s1">&#39;m&#39;</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="nb">print</span> <span class="n">a</span><span class="o">*</span><span class="n">b</span>
+<span class="nn">/Users/glupyan/gitRepos/psych750.github.io/notebooks/var_string_num.ipynb Cell 84</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750.github.io/notebooks/var_string_num.ipynb#Y145sZmlsZQ%3D%3D?line=0&#39;</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">a</span><span class="o">=</span><span class="s1">&#39;q&#39;</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750.github.io/notebooks/var_string_num.ipynb#Y145sZmlsZQ%3D%3D?line=1&#39;</span><span class="o">&gt;</span><span class="mi">2</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">b</span><span class="o">=</span><span class="s1">&#39;m&#39;</span>
+<span class="o">----&gt;</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750.github.io/notebooks/var_string_num.ipynb#Y145sZmlsZQ%3D%3D?line=2&#39;</span><span class="o">&gt;</span><span class="mi">3</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="nb">print</span> <span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">)</span>
 
 <span class="ne">TypeError</span>: can&#39;t multiply sequence by non-int of type &#39;str&#39;
 </pre></div>
@@ -1319,7 +1329,7 @@ eric
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="s1">&#39;q&#39;</span>
 <span class="n">b</span><span class="o">=</span><span class="s1">&#39;m&#39;</span>
-<span class="nb">print</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1329,7 +1339,12 @@ eric
 </div>
 </div>
 </div>
-<p>The ‘+’ operator is overloaded: when given integers or floats, it does normal addition (that’s what you would expect). Adding a string and an integer throws a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> because it doesn’t make sense… how would you add a number to a string? <em>Multiplying</em> a string by an integer <em>does</em> have a sensible and unambiguous interpretation (to programmers anyway): just repeat the string that number of times (note that multiplying a string by a <float> will <em>not</em> work. Finally, multiplying two strings isn’t defined (what’s ‘s’ times ‘q’??). But <em>adding</em> two strings does have an unambiguous interpretation: concatenation!</p>
+<p>The ‘+’ and ‘*’ operators are overloaded: when given integers or floats, they do normal addition and multiplication (that’s what you would expect, right?). Adding a string and an integer throws a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> because it doesn’t make sense… how would you add a number to a string? <em>Multiplying</em> a string by an integer <em>does</em> have a sensible and unambiguous interpretation (to programmers anyway): just repeat the string that number of times</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Multiplying a string by a <float> will <em>not</em> work though. What’s ‘a’ times 3.5??</p>
+</div>
+<p>Finally, multiplying two strings isn’t defined (what’s ‘s’ times ‘q’??). But <em>adding</em> two strings does have an unambiguous interpretation: concatenation!</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="commenting-your-code">
 <h1>Commenting your code<a class="headerlink" href="#commenting-your-code" title="Permalink to this headline">#</a></h1>
@@ -1349,7 +1364,7 @@ eric
 </div>
 </div>
 <p>For multi-line comments (e.g., for explaining what a function does), you can use a triple single quote <code class="docutils literal notranslate"><span class="pre">'''</span></code> but this is generally reserved for documenting code rather than writing simple comments. The triple quote can be  useful for <em>temporarily</em> commenting out a chunk of your code during debugging.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;&#39;&#39;
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;&#39;&#39;{python}
 for i in range(10):
     print &quot;blah&quot;
 &#39;&#39;&#39;
@@ -1357,7 +1372,7 @@ for i in range(10):
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>In Sublime Text, you can highlight code you want to comment and press ⌘-/ to prefix it with the <code class="docutils literal notranslate"><span class="pre">#</span></code> character thereby commenting it out</p>
+<p>In VS Code (as well as Sublime Text), you can comment multiple lines by highlight them and pressing ⌘/ . This will prefix thm with the <code class="docutils literal notranslate"><span class="pre">#</span></code> character.</p>
 </div>
 <section id="what-makes-a-good-comment">
 <h2>What makes a good comment?<a class="headerlink" href="#what-makes-a-good-comment" title="Permalink to this headline">#</a></h2>
