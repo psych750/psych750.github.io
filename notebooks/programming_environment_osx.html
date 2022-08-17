@@ -486,6 +486,11 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-r-to-jupyter-notebook">
+   Adding R to Jupyter Notebook
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -584,6 +589,11 @@ title="Print to PDF"
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-r-to-jupyter-notebook">
+   Adding R to Jupyter Notebook
+  </a>
  </li>
 </ul>
 
@@ -764,6 +774,19 @@ Press <code class="docutils literal notranslate"><span class="pre">enter</span><
 </pre></div>
 </div>
 </section>
+</section>
+<section id="adding-r-to-jupyter-notebook">
+<h2>Adding R to Jupyter Notebook<a class="headerlink" href="#adding-r-to-jupyter-notebook" title="Permalink to this headline">#</a></h2>
+<p>It’s handy to run R within jupyter notebook so you can have a markdown style document detailing what analyses and results you got. To install R and R kernel in jupyter, simply follow the steps below:</p>
+<p>First you need to activate the psych750 environment in your Terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate psych750
+</pre></div>
+</div>
+<p>Then enter the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install -c r r-irkernel
+</pre></div>
+</div>
+<p>Once everything is installed, you can test it out by entering <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> in your Terminal window to start a new session. On the top right corner, select <code class="docutils literal notranslate"><span class="pre">new</span></code>, and it will prompt you to choose either the <code class="docutils literal notranslate"><span class="pre">python3</span></code> kernel or the <code class="docutils literal notranslate"><span class="pre">R</span></code> kernel.</p>
 </section>
 </section>
 
