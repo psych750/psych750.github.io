@@ -153,10 +153,27 @@
 
 # # Download CMDer
 # 
-# Lastly, you will want to download and install [CDMer](https://github.com/cmderdev/cmder/releases/). CMDer implements a mini BASH shell on your Windows machine and we'll use it to run various shell commands to give you experience with working in a shell. 
+# You will want to download and install [CDMer](https://github.com/cmderdev/cmder/releases/). CMDer implements a mini BASH shell on your Windows machine and we'll use it to run various shell commands to give you experience with working in a shell. 
 # 
 # Extract all the files to your preferred location and run the `cmder.exe` software. Create a shortcut for it so you can access it easily.
 # 
 # ```{warning}
 # CMDer developers recommend NOT extracting the files into C:\Program Files
 # ```
+
+# ## Adding R to Jupyter Notebook
+# 
+# It's handy to run R within jupyter notebook so you can have a markdown style document detailing what analyses and results you got. To install R and R kernel in jupyter, simply follow the steps below:
+# 
+# First you need to activate the psych750 environment in your CMDer:
+# 
+# ```bash
+# conda activate psych750
+# ```
+# 
+# Then enter the following command:
+# ```bash
+# conda install -c r r-irkernel
+# ```
+# 
+# Once everything is installed, you can test it out by entering `jupyter notebook` in your CMDer window to start a new session. On the top right corner, select `new`, and it will prompt you to choose either the `python3` kernel or the `R` kernel.

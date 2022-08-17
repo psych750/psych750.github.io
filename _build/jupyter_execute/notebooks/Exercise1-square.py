@@ -9,7 +9,7 @@
 # 
 # This starter code will show a blue square for half a second (500 ms) and then exit out of the program.
 
-# In[5]:
+# In[1]:
 
 
 import time
@@ -46,21 +46,24 @@ core.quit() #quit out of the program -- don't need this if you're running this a
 # 
 # 1. Show a red square for 1 sec and then change its orientation by 45-deg
 # 
-#     ```{note}
+#     ```{tip}
 #     To change the orientation by a certain degree-value use square.setOri(value) where `value` is the new orientation.
 #     ```
 #     
 # 1. Now make a square rotate continuously, one full revolution (360 degrees) per second
 # 
-#     ```{note}
+#     ```{tip}
 #     To increase orientation use `square.ori += value` where `value` is the value by which to increase the
 #     orientation.
 #     ```
 # 1. Make a rotating square stop rotating when you press the 's' key
 # 
+#     ````{tip}
+#     To accept keyboard input, use event.getKeys() and event.waitKeys(). Look at how these functions are defined at the [psychopy API web page](https://psychopy.org/api/event.html) or by typing `help(function name)`, e.g., `help(event.getKeys)` after importing `event`
 #     ```{note}
-#     To accept keyboard input, use event.getKeys() and event.waitKeys(). Look at how these functions are defined at the psychopy API web page or by typing `help(function name)`, e.g., `help(event.getKeys)`. getKeys checks if a certain key has been entered since the last call to getKeys, e.g., if an 's' was pressed, `event.getKeys(['s'])` will become True. event.waitKeys() waits until a certain key (or any key) was pressed. 
+#     getKeys checks if a certain key has been entered since the last call to getKeys, e.g., if an 's' was pressed, `event.getKeys(['s'])` will become True. event.waitKeys() waits until a certain key (or any key) was pressed. 
 #     ```
+#     ````
 # 
 # 1. Make a square stop rotating when you press 's' and then start rotating again when you press 'r'. Your code should keep running, rotating the square and stopping it whenever you press the `s` and `r` keys. Include a check for a `q` key which, when received, should quit the program.
 # 
@@ -81,10 +84,4 @@ core.quit() #quit out of the program -- don't need this if you're running this a
 # 
 # 1. As time allows, do something that's not listed here (e.g., make it a pentagon instead of a square, make it pulsate, play a sound as it moves, bounce off walls(!) if you're really ambitious.
 # 
-# 1. Lastly, quickly fill out this form that asks you how much time you spent on the assignment and what was most difficult (no need to do any commits for this part).
-
-# In[8]:
-
-
-help(event.getKeys)
-
+# 1. Lastly, quickly [fill out this brief anonymous form](https://forms.gle/2vxSkbyViuBPSkzE8) that asks you how much time you spent on the assignment and what was most difficult. No need to do any commits for this part.

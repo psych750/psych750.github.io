@@ -2,9 +2,10 @@
 # Book settings
 title: Psych 750
 author: Gary Lupyan
+copyright: "2022. Some examples adapted from http://introtopython.org/"
 email: lupyan@wisc.edu
 logo                        : "favicon.png"  # A path to the book logo
-exclude_patterns            : ["README.md"]  # Patterns to skip when building the book. Can be glob-style (e.g. "*skip.ipynb")
+exclude_patterns            : [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints"]
 
 #######################################################################################
 # Execution settings

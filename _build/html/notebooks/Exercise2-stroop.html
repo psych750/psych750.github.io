@@ -118,6 +118,11 @@ const thebe_selector_output = ".output, .cell_output"
    Week by week schedule
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="submitting_assignments.html">
+   Submitting assignments
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -133,11 +138,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="programming_environment_windows.html">
    Programming Environment for Windows
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="submitting_assignments.html">
-   Submitting assignments
   </a>
  </li>
 </ul>
@@ -411,7 +411,7 @@ title="Print to PDF"
 <h1>Exercise 2: The stroop effect<a class="headerlink" href="#exercise-2-the-stroop-effect" title="Permalink to this headline">#</a></h1>
 <p><a class="reference external" href="https://classroom.github.com/a/WEYm669c">Accept the exercise</a></p>
 <p>In this exercise we’ll put some of what we’ve learned so far together into an simple experiment demonstrating the <a class="reference external" href="https://en.wikipedia.org/wiki/Stroop_effect">The Stroop Effect</a>. Then we’ll gradually build this codebase out into a full experiment and implement some snazzy things like speech recognition.</p>
-<div class="cell docutils container">
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">sys</span>
@@ -441,29 +441,6 @@ title="Print to PDF"
     <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">getKeys</span><span class="p">([</span><span class="s1">&#39;q&#39;</span><span class="p">]):</span>
         <span class="n">win</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
         <span class="n">core</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-08-16 15:54:00.936 python[6843:9525888] Warning: Expected min height of view: (&lt;NSPopoverTouchBarItemButton: 0x7fab558ec460&gt;) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
-2022-08-16 15:54:00.937 python[6843:9525888] Warning: Expected min height of view: (&lt;NSButton: 0x7fab37c16980&gt;) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
-2022-08-16 15:54:00.939 python[6843:9525888] Warning: Expected min height of view: (&lt;NSPopoverTouchBarItemButton: 0x7fab37c18510&gt;) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
-2022-08-16 15:54:00.941 python[6843:9525888] Warning: Expected min height of view: (&lt;NSPopoverTouchBarItemButton: 0x7fab37c1dee0&gt;) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2064.4675 	WARNING 	Monitor specification not found. Creating a temporary one...
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">An</span> <span class="n">exception</span> <span class="n">has</span> <span class="n">occurred</span><span class="p">,</span> <span class="n">use</span> <span class="o">%</span><span class="k">tb</span> to see the full traceback.
-
-<span class="ne">SystemExit</span>: 0
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/glupyan/anaconda3/envs/psych750/lib/python3.8/site-packages/IPython/core/interactiveshell.py:3406: UserWarning: To exit: use &#39;exit&#39;, &#39;quit&#39;, or Ctrl-D.
-  warn(&quot;To exit: use &#39;exit&#39;, &#39;quit&#39;, or Ctrl-D.&quot;, stacklevel=1)
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">Kernel</span> <span class="n">crashed</span> <span class="k">while</span> <span class="n">executing</span> <span class="n">code</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">the</span> <span class="n">current</span> <span class="n">cell</span> <span class="ow">or</span> <span class="n">a</span> <span class="n">previous</span> <span class="n">cell</span><span class="o">.</span> <span class="n">Please</span> <span class="n">review</span> <span class="n">the</span> <span class="n">code</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">cell</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">to</span> <span class="n">identify</span> <span class="n">a</span> <span class="n">possible</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">failure</span><span class="o">.</span> <span class="n">Click</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;https://aka.ms/vscodeJupyterKernelCrash&#39;</span><span class="o">&gt;</span><span class="n">here</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="k">for</span> <span class="n">more</span> <span class="n">info</span><span class="o">.</span> <span class="n">View</span> <span class="n">Jupyter</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;command:jupyter.viewOutput&#39;</span><span class="o">&gt;</span><span class="n">log</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="k">for</span> <span class="n">further</span> <span class="n">details</span><span class="o">.</span>
 </pre></div>
 </div>
 </div>
@@ -524,11 +501,11 @@ title="Print to PDF"
 </tr>
 </tbody>
 </table>
-<p>Col 1: The word shown
-Col 2: The color of the word
-Col 3: Trial type
-COl 4: 1 for a correct response, 0 for incorrect
-Col 5: The reaction time, in milliseconds.</p>
+<p>Col 1: The word shown</p>
+<p>Col 2: The color of the word</p>
+<p>Col 3: Trial type</p>
+<p>COl 4: 1 for a correct response, 0 for incorrect</p>
+<p>Col 5: The reaction time, in milliseconds.</p>
 <p>The columns should be separated with commas, i.e., the string containing the first line of the file with the data above would look like this:
 <code class="docutils literal notranslate"><span class="pre">green,green,congruent,1,854</span></code></p>
 <p>You should be writing to the file after every trial.</p>
@@ -576,7 +553,7 @@ stuck.**
   
     By Gary Lupyan<br/>
   
-      &copy; Copyright 2022.<br/>
+      &copy; Copyright 2022. Some examples adapted from http://introtopython.org/.<br/>
 </p>
         </footer>
     </div>

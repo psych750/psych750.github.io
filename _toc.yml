@@ -8,14 +8,14 @@ parts:
     chapters:
     - file: notebooks/schedule
       title: Week by week schedule
+    - file: notebooks/submitting_assignments
+      title: Instructions for submitting assignments
   - caption: Installation instructions
     chapters:
     - file: notebooks/programming_environment_osx
       title: Instructions for MacOS
     - file: notebooks/programming_environment_windows
       title: Instructions for Windows
-    - file: notebooks/submitting_assignments
-      title: Instructions for submitting assignments
   - caption: References
     chapters:
     - file: notebooks/Shell_reference

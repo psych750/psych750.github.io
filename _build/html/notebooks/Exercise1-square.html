@@ -119,6 +119,11 @@ const thebe_selector_output = ".output, .cell_output"
    Week by week schedule
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="submitting_assignments.html">
+   Submitting assignments
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -134,11 +139,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="programming_environment_windows.html">
    Programming Environment for Windows
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="submitting_assignments.html">
-   Submitting assignments
   </a>
  </li>
 </ul>
@@ -479,22 +479,26 @@ title="Print to PDF"
 <li><p>Show a red square for 1 second, then switch it to blue and show it for 1 second</p></li>
 <li><p>Show the following sequence: blue, red, blue, red, blue, red. Each color square should appear for 1 s with a 50 ms blank screen in the middle.</p></li>
 <li><p>Show a red square for 1 sec and then change its orientation by 45-deg</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
 <p>To change the orientation by a certain degree-value use square.setOri(value) where <code class="docutils literal notranslate"><span class="pre">value</span></code> is the new orientation.</p>
 </div>
 </li>
 <li><p>Now make a square rotate continuously, one full revolution (360 degrees) per second</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
 <p>To increase orientation use <code class="docutils literal notranslate"><span class="pre">square.ori</span> <span class="pre">+=</span> <span class="pre">value</span></code> where <code class="docutils literal notranslate"><span class="pre">value</span></code> is the value by which to increase the
 orientation.</p>
 </div>
 </li>
 <li><p>Make a rotating square stop rotating when you press the ‘s’ key</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To accept keyboard input, use event.getKeys() and event.waitKeys(). Look at how these functions are defined at the <a class="reference external" href="https://psychopy.org/api/event.html">psychopy API web page</a> or by typing <code class="docutils literal notranslate"><span class="pre">help(function</span> <span class="pre">name)</span></code>, e.g., <code class="docutils literal notranslate"><span class="pre">help(event.getKeys)</span></code> after importing <code class="docutils literal notranslate"><span class="pre">event</span></code></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>To accept keyboard input, use event.getKeys() and event.waitKeys(). Look at how these functions are defined at the psychopy API web page or by typing <code class="docutils literal notranslate"><span class="pre">help(function</span> <span class="pre">name)</span></code>, e.g., <code class="docutils literal notranslate"><span class="pre">help(event.getKeys)</span></code>. getKeys checks if a certain key has been entered since the last call to getKeys, e.g., if an ‘s’ was pressed, <code class="docutils literal notranslate"><span class="pre">event.getKeys(['s'])</span></code> will become True. event.waitKeys() waits until a certain key (or any key) was pressed.</p>
+<p>getKeys checks if a certain key has been entered since the last call to getKeys, e.g., if an ‘s’ was pressed, <code class="docutils literal notranslate"><span class="pre">event.getKeys(['s'])</span></code> will become True. event.waitKeys() waits until a certain key (or any key) was pressed.</p>
+</div>
 </div>
 </li>
 <li><p>Make a square stop rotating when you press ‘s’ and then start rotating again when you press ‘r’. Your code should keep running, rotating the square and stopping it whenever you press the <code class="docutils literal notranslate"><span class="pre">s</span></code> and <code class="docutils literal notranslate"><span class="pre">r</span></code> keys. Include a check for a <code class="docutils literal notranslate"><span class="pre">q</span></code> key which, when received, should quit the program.</p></li>
@@ -512,47 +516,8 @@ the size. x is the width; y is the height.</p>
 <li><p>Make the rectangle decrease/increase its width by 10% of its current width with each keypress instead of 10 pixels</p></li>
 <li><p>Show <em>two</em> rotating squares simultaneously, one left of center rotating clockwise, the other right of center, rotating counterclockwise. This is a little tricky. The squares should be visible at the same time and should not flash.</p></li>
 <li><p>As time allows, do something that’s not listed here (e.g., make it a pentagon instead of a square, make it pulsate, play a sound as it moves, bounce off walls(!) if you’re really ambitious.</p></li>
-<li><p>Lastly, quickly fill out this form that asks you how much time you spent on the assignment and what was most difficult (no need to do any commits for this part).</p></li>
+<li><p>Lastly, quickly <a class="reference external" href="https://forms.gle/2vxSkbyViuBPSkzE8">fill out this brief anonymous form</a> that asks you how much time you spent on the assignment and what was most difficult. No need to do any commits for this part.</p></li>
 </ol>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">getKeys</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on function getKeys in module psychopy.event:
-
-getKeys(keyList=None, modifiers=False, timeStamped=False)
-    Returns a list of keys that were pressed.
-    
-    :Parameters:
-        keyList : **None** or []
-            Allows the user to specify a set of keys to check for.
-            Only keypresses from this set of keys will be removed from
-            the keyboard buffer. If the keyList is `None`, all keys will be
-            checked and the key buffer will be cleared completely.
-            NB, pygame doesn&#39;t return timestamps (they are always 0)
-        modifiers : **False** or True
-            If True will return a list of tuples instead of a list of
-            keynames. Each tuple has (keyname, modifiers). The modifiers
-            are a dict of keyboard modifier flags keyed by the modifier
-            name (eg. &#39;shift&#39;, &#39;ctrl&#39;).
-        timeStamped : **False**, True, or `Clock`
-            If True will return a list of tuples instead of a list of
-            keynames. Each tuple has (keyname, time). If a `core.Clock`
-            is given then the time will be relative to the `Clock`&#39;s last
-            reset.
-    
-    :Author:
-        - 2003 written by Jon Peirce
-        - 2009 keyList functionality added by Gary Strangman
-        - 2009 timeStamped code provided by Dave Britton
-        - 2016 modifiers code provided by 5AM Solutions
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 </section>
 
@@ -589,7 +554,7 @@ getKeys(keyList=None, modifiers=False, timeStamped=False)
   
     By Gary Lupyan<br/>
   
-      &copy; Copyright 2022.<br/>
+      &copy; Copyright 2022. Some examples adapted from http://introtopython.org/.<br/>
 </p>
         </footer>
     </div>

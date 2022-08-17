@@ -56,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Programming Environment for Windows" href="programming_environment_windows.html" />
-    <link rel="prev" title="Week by week schedule" href="schedule.html" />
+    <link rel="prev" title="Submitting assignments" href="submitting_assignments.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -119,6 +119,11 @@ const thebe_selector_output = ".output, .cell_output"
    Week by week schedule
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="submitting_assignments.html">
+   Submitting assignments
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -134,11 +139,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="programming_environment_windows.html">
    Programming Environment for Windows
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="submitting_assignments.html">
-   Submitting assignments
   </a>
  </li>
 </ul>
@@ -486,6 +486,11 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-r-to-jupyter-notebook">
+   Adding R to Jupyter Notebook
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -584,6 +589,11 @@ title="Print to PDF"
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-r-to-jupyter-notebook">
+   Adding R to Jupyter Notebook
+  </a>
  </li>
 </ul>
 
@@ -765,6 +775,19 @@ Press <code class="docutils literal notranslate"><span class="pre">enter</span><
 </div>
 </section>
 </section>
+<section id="adding-r-to-jupyter-notebook">
+<h2>Adding R to Jupyter Notebook<a class="headerlink" href="#adding-r-to-jupyter-notebook" title="Permalink to this headline">#</a></h2>
+<p>It’s handy to run R within jupyter notebook so you can have a markdown style document detailing what analyses and results you got. To install R and R kernel in jupyter, simply follow the steps below:</p>
+<p>First you need to activate the psych750 environment in your Terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate psych750
+</pre></div>
+</div>
+<p>Then enter the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install -c r r-irkernel
+</pre></div>
+</div>
+<p>Once everything is installed, you can test it out by entering <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> in your Terminal window to start a new session. On the top right corner, select <code class="docutils literal notranslate"><span class="pre">new</span></code>, and it will prompt you to choose either the <code class="docutils literal notranslate"><span class="pre">python3</span></code> kernel or the <code class="docutils literal notranslate"><span class="pre">R</span></code> kernel.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -800,7 +823,7 @@ Press <code class="docutils literal notranslate"><span class="pre">enter</span><
   
     By Gary Lupyan<br/>
   
-      &copy; Copyright 2022.<br/>
+      &copy; Copyright 2022. Some examples adapted from http://introtopython.org/.<br/>
 </p>
         </footer>
     </div>

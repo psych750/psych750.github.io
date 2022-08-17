@@ -70,9 +70,13 @@ while True:
 # 
 # 
 # Col 1: The word shown
+# 
 # Col 2: The color of the word
+# 
 # Col 3: Trial type
+# 
 # COl 4: 1 for a correct response, 0 for incorrect
+# 
 # Col 5: The reaction time, in milliseconds.
 # 
 #  The columns should be separated with commas, i.e., the string containing the first line of the file with the data above would look like this:

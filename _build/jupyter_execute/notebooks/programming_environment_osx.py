@@ -201,3 +201,20 @@
 # install.packages(c("tidyverse", "ggplot2", "lme4", "psych", "psychTools"))
 # ```
 # 
+
+# ## Adding R to Jupyter Notebook
+# 
+# It's handy to run R within jupyter notebook so you can have a markdown style document detailing what analyses and results you got. To install R and R kernel in jupyter, simply follow the steps below:
+# 
+# First you need to activate the psych750 environment in your Terminal:
+# 
+# ```bash
+# conda activate psych750
+# ```
+# 
+# Then enter the following command:
+# ```bash
+# conda install -c r r-irkernel
+# ```
+# 
+# Once everything is installed, you can test it out by entering `jupyter notebook` in your Terminal window to start a new session. On the top right corner, select `new`, and it will prompt you to choose either the `python3` kernel or the `R` kernel.
