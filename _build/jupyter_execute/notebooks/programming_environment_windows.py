@@ -13,11 +13,10 @@
 # at the command prompt.
 # 
 # 
+
+# 
 # # Install the Anaconda Distribution of Python
-# 
-# 
 # * Download and Install the **Python 3.8 64 bit** [Miniconda installer](https://conda.io/miniconda.html). If you are asked whether you want the installer to prepend Anaconda to your PATH, respond ***yes***.
-# 
 # 
 # * Next let's create a virtual environment for this course. At the command prompt type
 # 
@@ -41,7 +40,9 @@
 # Type "help", "copyright", "credits" or "license" for more information.
 # ```
 # 
-# ## Installing the necessary Python packages
+
+# 
+# # Install the necessary Python packages
 # * Now let's install the packages we'll need. Paste in the lines below, one at at a time, into your terminal (make sure your new environment is activated first). Wait for everything to install before proceeding to the next line.
 # 
 # ```bash
@@ -55,7 +56,7 @@
 # ```
 # 
 # ## Test PsychoPy
-# ====
+# 
 # * Now let's test that `PsychoPy` installed correctly. Start the python interpreter and then import the psychopy package:
 # 
 # ```python
@@ -64,7 +65,7 @@
 # '2022.2.2'
 # ```
 # 
-# If you see the verison number, the PsychoPy library probably installed correctly. Let's do some more tests
+# If you see the verison number, the PsychoPy library probably installed correctly. But let's do some more tests
 # 
 # * Let's test if PsychoPy can successfully open a new window.
 # 
@@ -73,7 +74,7 @@
 # >>> visual.Window((400,400),color="green")
 # ```
 # 
-# When you hit enter after the second line, you should see a small green window appear. There may me some warnings displayed... You can safely ignore them.
+# When you hit enter after the second line, you should see a small green window appear. There may me some warnings displayed. You can safely ignore them.
 # 
 # ```{note}
 # You won't be able to close the window like a regular window.
@@ -112,20 +113,30 @@
 # psychopy.prefs.saveUserPrefs()
 # ```
 # 
-# ## Install Visual Studio Code
+
+# 
+# # Install Visual Studio Code
 # 
 # Visual Studio Code is a very powerful and user-friendly code editor which we will use in this class to edit python/jupyter notebook scripts. Download Visual Studio Code [here](https://code.visualstudio.com) and install it.
 # 
 # Once installed, open up VS code and select File -> New Text File. At the top of the script, click select a language and select `python`. VS code will prompt you to install the Python extension. Once that is installed. Go back to your file and press `Ctrl + Shift + P`, and type in `Python: Select Interpreter`. Select the `psych750` python environment you created earlier. 
 # 
 # 
-# ### Create a shortcut to Visual Studio code
+# ## Create a shortcut to Visual Studio code
 # 
 # It is very useful to be able to quickly access your editor from the shell.
 # 
-# ...
+# VS Code installation on Windows automatically adds VS Code to $PATH. So you can type in the following in your Command Line:
+# 
+# ```bash
+# code some_file_name.txt
+# ```
+# 
+# where `some_file_name.txt` is the file you want to open. 
+# 
+# It should open up in visual Studio Code
 
-# # Install R & RStudio Desktop
+# # Install R and RStudio Desktop
 # 
 # Next install R and RSudio Desktop by following the instructions [here](https://www.rstudio.com/products/rstudio/download/#download). Make sure to install Rtools as well when you download R.
 # 

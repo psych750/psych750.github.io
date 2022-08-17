@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Exercise 2: Display some text, take in responses, read from a file" href="Exercise2-stroop.html" />
-    <link rel="prev" title="Let’s warm up them neurons" href="in_class_exercise_1.html" />
+    <link rel="next" title="Exercise 2: The stroop effect" href="Exercise2-stroop.html" />
+    <link rel="prev" title="Debugging practice" href="debugging_1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -128,7 +128,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="programming_environment_osx.html">
-   Programming Environment for MacOS
+   Instructions for MacOS
   </a>
  </li>
  <li class="toctree-l1">
@@ -201,13 +201,18 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="trial_generation.html">
-   Randomization and Iteration
+  <a class="reference internal" href="introducing_functions.html">
+   Introducing Functions
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="list_comprehension.html">
    List Comprehension
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="trial_generation.html">
+   Randomization and Iteration
   </a>
  </li>
  <li class="toctree-l1">
@@ -233,7 +238,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Activities
+  In class activities
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -245,6 +250,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="in_class_exercise_1.html">
    The first thinking exercise
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="debugging_1.html">
+   Debugging practice 1
   </a>
  </li>
 </ul>
@@ -437,8 +447,8 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="exercise-1-make-a-square-and-play-with-it">
 <h1>Exercise 1 - Make a square and play with it<a class="headerlink" href="#exercise-1-make-a-square-and-play-with-it" title="Permalink to this headline">#</a></h1>
-<p>Please accept the first assignment [here](CLASSROOM CODE)</p>
-<p>Once you clone the repository, you’ll see a file starter code. This is the file you will edit and add to to complete the exercises. For reference, the code is reproduced below.</p>
+<p>Please <a class="reference external" href="https://classroom.github.com/a/PFK7xzsr">accept the first assignment</a></p>
+<p>Once you clone the repository, you’ll see a file with the starter code. This is the file you will edit and add to to complete the exercises. For reference, the code is reproduced below.</p>
 <p>This starter code will show a blue square for half a second (500 ms) and then exit out of the program.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
@@ -452,7 +462,7 @@ title="Print to PDF"
 <span class="n">win</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span> <span class="c1">#make the buffer visible, i.e., show what&#39;s been drawn to it</span>
 <span class="n">core</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mf">.5</span><span class="p">)</span> <span class="c1">#pause for half a second (i.e., 500 ms)</span>
 <span class="n">win</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1">#close the window -- don&#39;t need this if you&#39;re running this as a separate file</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span> <span class="c1">#quit out of the program -- don&#39;t need this if you&#39;re running this as a separate file</span>
+<span class="n">core</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span> <span class="c1">#quit out of the program -- don&#39;t need this if you&#39;re running this as a separate file</span>
 </pre></div>
 </div>
 </div>

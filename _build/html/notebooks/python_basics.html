@@ -128,7 +128,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="programming_environment_osx.html">
-   Programming Environment for MacOS
+   Instructions for MacOS
   </a>
  </li>
  <li class="toctree-l1">
@@ -201,13 +201,18 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="trial_generation.html">
-   Randomization and Iteration
+  <a class="reference internal" href="introducing_functions.html">
+   Introducing Functions
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="list_comprehension.html">
    List Comprehension
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="trial_generation.html">
+   Randomization and Iteration
   </a>
  </li>
  <li class="toctree-l1">
@@ -233,7 +238,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Activities
+  In class activities
  </span>
 </p>
 <ul class="current nav bd-sidenav">
@@ -245,6 +250,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="in_class_exercise_1.html">
    The first thinking exercise
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="debugging_1.html">
+   Debugging practice 1
   </a>
  </li>
 </ul>
@@ -501,9 +511,10 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="python-essentials-to-get-you-started">
 <h1>Python essentials to get you started<a class="headerlink" href="#python-essentials-to-get-you-started" title="Permalink to this headline">#</a></h1>
+<p>This notebook is designed to familiarize you with some basic programming constructs before the start of actual instruction. If you’ve coded before, this will show you how stuff you already know are implemented in the Python programming language. If you’ve never coded before, you’ll probably be a bit confused. Don’t worry! The class hasn’t started yet!</p>
 <section id="variable-types-and-assignments">
 <h2>Variable types and assignments<a class="headerlink" href="#variable-types-and-assignments" title="Permalink to this headline">#</a></h2>
-<p>Python is a dynamically typed language meaning that you don’t have to declare the type of variable (string, integer, boolean, float, etc.) before assigning a value to it. For example, let’s look at these 6 innanely-named variables.</p>
+<p>Variables are the building blocks of programs. You tell a compute what to do largely by maniulating the values of variables. Variables come in different types such as <code class="docutils literal notranslate"><span class="pre">string</span></code>, <code class="docutils literal notranslate"><span class="pre">integer</span></code>, <code class="docutils literal notranslate"><span class="pre">boolean</span></code>, and <code class="docutils literal notranslate"><span class="pre">float</span></code>. Because Python is what’s called a dynamically typed language, you don’t have to declare the type of variable before assigning a value to it. For example, let’s look at these 6 (very badly named) variables.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var_1</span> <span class="o">=</span> <span class="s2">&quot;five&quot;</span>
@@ -562,31 +573,36 @@ var_6 =  &lt;class &#39;str&#39;&gt;
 </div>
 </div>
 </div>
-<p>Notice that <code class="docutils literal notranslate"><span class="pre">var_2</span></code> and <code class="docutils literal notranslate"><span class="pre">var_3</span></code> have exactly the same printed value (5) as doe <code class="docutils literal notranslate"><span class="pre">var_5</span></code> and <code class="docutils literal notranslate"><span class="pre">var_6</span></code> (True), but they are of different types, e.g., <code class="docutils literal notranslate"><span class="pre">var_2</span></code> is an integer while <code class="docutils literal notranslate"><span class="pre">var_3</span></code> is a string.</p>
+<p>Notice that <code class="docutils literal notranslate"><span class="pre">var_2</span></code> and <code class="docutils literal notranslate"><span class="pre">var_3</span></code> have exactly the same printed value (5). <code class="docutils literal notranslate"><span class="pre">var_5</span></code> and <code class="docutils literal notranslate"><span class="pre">var_6</span></code> also have the same value (True). In both cases, however, they are of different types, e.g., <code class="docutils literal notranslate"><span class="pre">var_2</span></code> is an integer while <code class="docutils literal notranslate"><span class="pre">var_3</span></code> is a string; <code class="docutils literal notranslate"><span class="pre">var_5</span></code> is a boolean while <code class="docutils literal notranslate"><span class="pre">var_6</span></code> is a string.</p>
 <p>Does this matter? Yes it does! Have a look at what happens when we try to add 3 to <code class="docutils literal notranslate"><span class="pre">var_2</span></code> vs. <code class="docutils literal notranslate"><span class="pre">var_3</span></code></p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">var_2</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">var_3</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Adding 3 to var_2 gets us &quot;</span><span class="p">,</span> <span class="n">var_2</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Adding 3 to var_3 gets us &quot;</span><span class="p">,</span> <span class="n">var_3</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adding 3 to var_2 gets us  8
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">32</span><span class="o">-</span><span class="mi">73</span><span class="n">fdead89bb9</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">var_2</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">var_3</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span>
+<span class="nn">/Users/glupyan/gitRepos/psych750.github.io/notebooks/python_basics.ipynb Cell 10</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750.github.io/notebooks/python_basics.ipynb#X12sZmlsZQ%3D%3D?line=0&#39;</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Adding 3 to var_2 gets us &quot;</span><span class="p">,</span> <span class="n">var_2</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span>
+<span class="o">----&gt;</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750.github.io/notebooks/python_basics.ipynb#X12sZmlsZQ%3D%3D?line=1&#39;</span><span class="o">&gt;</span><span class="mi">2</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Adding 3 to var_3 gets us &quot;</span><span class="p">,</span> <span class="n">var_3</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span>
 
 <span class="ne">TypeError</span>: can only concatenate str (not &quot;int&quot;) to str
 </pre></div>
 </div>
 </div>
 </div>
-<p>The first one is 8 because… 5+3=8. The second one throws a TypeError because you tried to combine two types (a string and an integer) in a way that could not be resolved. The string ‘5’ + the integer 3 is…???</p>
+<p>The first one is 8 because. 5+3=8.</p>
+<p>The second one throws a TypeError because you tried to combine two types (a string and an integer) in a way that could not be resolved. The string ‘5’ + the integer 3 is not defined. Computers are literal-minded. Just because something looks like the number 5 doesn’t make it a five!</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You will be seeing a lot of error messages like the one above. Don’t let them intimidate you. Generally, the very last line will tell you what kind of error it is (in this case, a TypeError meaning that something went wrong when combining different variable types). The text above tells you where in your code the error is coming from.</p>
+</div>
 <p>Now have a look at this. Try to predict what happens before looking at the output</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
@@ -659,7 +675,7 @@ var_6 =  &lt;class &#39;str&#39;&gt;
 </div>
 </div>
 </div>
-<p>To use so-calld f (for formatted) strings, just encase the variables in curly-braces and write out raw strings as normal. Read more about these f-strings <a class="reference external" href="https://realpython.com/python-f-strings/">here</a></p>
+<p>To use so-called f strings (f stands for formatted) just encase the variables in curly-braces and write out the regular text part of the string as normal. Read more about these f-strings <a class="reference external" href="https://realpython.com/python-f-strings/">here</a></p>
 </section>
 <section id="lists-and-iterating-through-them">
 <h2>Lists and iterating through them<a class="headerlink" href="#lists-and-iterating-through-them" title="Permalink to this headline">#</a></h2>
@@ -699,8 +715,8 @@ pig
 <p>A common use of <code class="docutils literal notranslate"><span class="pre">for</span></code> loops is to do something a certain number of times. Fr example, let’s print the first 10 integers, beginning from 0:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">cur_nu</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">cur_nu</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -728,7 +744,25 @@ What happened here?<div class="sd-summary-down docutils">
 </summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">range()</span></code> generated a list of numbers in the specified range, beginning from 0. Then <code class="docutils literal notranslate"><span class="pre">for</span></code> iterates through those numbers, printing the value of each.</p>
 </div>
-</details><div class="admonition note">
+</details><p>You don’t have to start at 0. Pass a starting number to <code class="docutils literal notranslate"><span class="pre">range()</span></code> like so.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">cur_num</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">cur_num</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+6
+7
+8
+9
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Technically range() returns a <code class="docutils literal notranslate"><span class="pre">range</span> <span class="pre">object</span></code> which is a <a class="reference external" href="https://treyhunner.com/2018/02/python-range-is-not-an-iterator/">“lazy iterable”</a> and is executed only later, when we try to access its values. This is different from Python 2 where <code class="docutils literal notranslate"><span class="pre">range()</span></code> returns a regular list.</p>
 </div>

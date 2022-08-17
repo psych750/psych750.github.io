@@ -3,7 +3,9 @@
 
 # # Submitting assignments
 # 
-# We'll be using Github classroom for submitting assignments. This will give you practice with version control and allow us to easily comment on your code.
+# We'll be using Github classroom for submitting assignments. This will give you practice with version control and allow us to easily comment on your code. 
+# 
+# **Assignments are due on Tuesday by 9pm central.**
 
 # ## Step 1: Accept an assignment
 # 
@@ -124,5 +126,3 @@
 # ```bash
 # git remote -v
 # ```
-
-# 

@@ -3,9 +3,9 @@
 
 # # Exercise 1 - Make a square and play with it
 
-# Please accept the first assignment [here](CLASSROOM CODE)
+# Please [accept the first assignment](https://classroom.github.com/a/PFK7xzsr)
 # 
-# Once you clone the repository, you'll see a file starter code. This is the file you will edit and add to to complete the exercises. For reference, the code is reproduced below.
+# Once you clone the repository, you'll see a file with the starter code. This is the file you will edit and add to to complete the exercises. For reference, the code is reproduced below.
 # 
 # This starter code will show a blue square for half a second (500 ms) and then exit out of the program.
 
@@ -22,7 +22,7 @@ square.draw() #draw the square to the screen buffer
 win.flip() #make the buffer visible, i.e., show what's been drawn to it
 core.wait(.5) #pause for half a second (i.e., 500 ms)
 win.close() #close the window -- don't need this if you're running this as a separate file
-sys.exit() #quit out of the program -- don't need this if you're running this as a separate file
+core.quit() #quit out of the program -- don't need this if you're running this as a separate file
 
 
 # **Go through each line of the code above and understand what each line does.**

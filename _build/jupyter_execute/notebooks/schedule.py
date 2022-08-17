@@ -3,10 +3,15 @@
 
 # # Week by week schedule
 # 
+# Here's the schedule so far. The **In class** sections list the things we'll be doing in class that week. **At home** sections tell you what you should do at home *before* that week's class. For example, you should complete Exercise 1 at home prior to the Week 2 class.  
+# 
+# This schedule is subject to update. I will be staying ahead of you by at least 2 weeks, meaning if you want to get an early start on the next 1 or 2 assignments, you can do it without worrying that something will change while you are working on it. If there an error, I will correct it and alert the class through Slack.
+# 
+
 # 
 # ## Prior to first class
 # 
-# - Sign up for the class Slack group
+# - Sign up for the class Slack group. The link was sent to your @wisc email.
 # 
 # - Follow [“Download and Install” instructions](https://psych750.github.io/index.html) from the class site.
 # 
@@ -18,7 +23,7 @@
 # 
 # - If you’re shaky on what a computer file is, how files are stored, how your operting system knows that sound.wav is a sound file and sound.txt is a text file, [watch this short video](https://www.youtube.com/watch?v=KN8YgJnShPM).
 # 
-# - Lastly, please look through the [very basics of Python notebook](https://psych750.github.io/notebooks/python_basics.html) to get you ready for the first class. If you don't understand something in that notebook, come prepared to ask a question about it.
+# - Lastly, please look through the [very basics of Python notebook](https://psych750.github.io/notebooks/python_basics.html) to get you ready for the first class. If you don't understand something in that notebook, don't worry about it, but come prepared to ask questions.
 # 
 # 
 
@@ -52,15 +57,18 @@
 # 
 # ### At home
 # 1. Go through **and understand** Review of Fundamentals A
-# 2. Go through the Dictionaries notebook
+# 2. Go through the *Dictionaries* and *Intro to functions* notebooks.
 # 3. Read about [reading and writing files](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
-# 4. Go through the File Reading and Writing notebook to test your understanding of basic file operations
+# 4. Go through the *File Reading and Writing notebook* to test your understanding of basic file operations
 # 5. Read through [writing readable code](https://testdriven.io/blog/clean-code-python/)
 # 6. Finish Exercise 2 while adhering to the advice in the previous step.
-#  
+# ```{tip}
+# You are encouraged to use the [Linting feature](https://code.visualstudio.com/docs/python/linting) of Visual Studio Code (I recommend pycodestyle) to help you write code that adheres to Python stylistic standards
+# ```
+# 
 # ### In class
 # 1. Exercise 2 Code Review
-# 2. Introduction to functions
+# 2. More about functions
 # 3. Randomization and iteration exercises
 # 4. Creating trial files
 # 

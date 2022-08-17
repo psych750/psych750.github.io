@@ -2,12 +2,14 @@
 # coding: utf-8
 
 # # Python essentials to get you started
+# 
+# This notebook is designed to familiarize you with some basic programming constructs before the start of actual instruction. If you've coded before, this will show you how stuff you already know are implemented in the Python programming language. If you've never coded before, you'll probably be a bit confused. Don't worry! The class hasn't started yet!
 
 # ## Variable types and assignments
 
-# Python is a dynamically typed language meaning that you don't have to declare the type of variable (string, integer, boolean, float, etc.) before assigning a value to it. For example, let's look at these 6 innanely-named variables.
+# Variables are the building blocks of programs. You tell a compute what to do largely by maniulating the values of variables. Variables come in different types such as `string`, `integer`, `boolean`, and `float`. Because Python is what's called a dynamically typed language, you don't have to declare the type of variable before assigning a value to it. For example, let's look at these 6 (very badly named) variables.
 
-# In[16]:
+# In[4]:
 
 
 var_1 = "five"
@@ -44,20 +46,25 @@ print('var_5 = ',type(var_5))
 print('var_6 = ',type(var_6))
 
 
-# Notice that `var_2` and `var_3` have exactly the same printed value (5) as doe `var_5` and `var_6` (True), but they are of different types, e.g., `var_2` is an integer while `var_3` is a string. 
+# Notice that `var_2` and `var_3` have exactly the same printed value (5). `var_5` and `var_6` also have the same value (True). In both cases, however, they are of different types, e.g., `var_2` is an integer while `var_3` is a string; `var_5` is a boolean while `var_6` is a string.
 # 
 # Does this matter? Yes it does! Have a look at what happens when we try to add 3 to `var_2` vs. `var_3`
 
-# In[32]:
+# In[5]:
 
 
-print(var_2+3)
-print(var_3+3)
+print("Adding 3 to var_2 gets us ", var_2+3)
+print("Adding 3 to var_3 gets us ", var_3+3)
 
 
-# The first one is 8 because... 5+3=8. The second one throws a TypeError because you tried to combine two types (a string and an integer) in a way that could not be resolved. The string '5' + the integer 3 is...???
+# The first one is 8 because. 5+3=8. 
 # 
+# The second one throws a TypeError because you tried to combine two types (a string and an integer) in a way that could not be resolved. The string '5' + the integer 3 is not defined. Computers are literal-minded. Just because something looks like the number 5 doesn't make it a five! 
 # 
+# ```{note}
+# You will be seeing a lot of error messages like the one above. Don't let them intimidate you. Generally, the very last line will tell you what kind of error it is (in this case, a TypeError meaning that something went wrong when combining different variable types). The text above tells you where in your code the error is coming from.
+# ```
+
 # Now have a look at this. Try to predict what happens before looking at the output
 
 # In[33]:
@@ -113,7 +120,7 @@ name = "George"
 print(f"{name}'s dog")
 
 
-# To use so-calld f (for formatted) strings, just encase the variables in curly-braces and write out raw strings as normal. Read more about these f-strings [here](https://realpython.com/python-f-strings/)
+# To use so-called f strings (f stands for formatted) just encase the variables in curly-braces and write out the regular text part of the string as normal. Read more about these f-strings [here](https://realpython.com/python-f-strings/)
 
 # ## Lists and iterating through them 
 
@@ -142,13 +149,22 @@ for animal in animals:
 # In[9]:
 
 
-for num in range(10):
-    print(num)
+for cur_nu in range(10):
+    print(cur_nu)
 
 
 # ```{dropdown} What happened here?
 # `range()` generated a list of numbers in the specified range, beginning from 0. Then `for` iterates through those numbers, printing the value of each.
 # ```
+
+# You don't have to start at 0. Pass a starting number to `range()` like so.
+
+# In[1]:
+
+
+for cur_num in range (5,10):
+    print(cur_num)
+
 
 # ```{note}
 # Technically range() returns a `range object` which is a ["lazy iterable"](https://treyhunner.com/2018/02/python-range-is-not-an-iterator/) and is executed only later, when we try to access its values. This is different from Python 2 where `range()` returns a regular list.

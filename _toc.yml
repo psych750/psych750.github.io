@@ -36,14 +36,14 @@ parts:
       title: If statements
     - file: notebooks/review_of_fundamentals_a
       title: Review of Fundamentals A
-    - file: notebooks/introducing_functions
-      title: Functions
     - file: notebooks/dictionaries
       title: Dictionaries
-    - file: notebooks/trial_generation
-      title: Randomization and Iteration
+    - file: notebooks/introducing_functions
+      title: Functions
     - file: notebooks/list_comprehension
       title: List Comprehension
+    - file: notebooks/trial_generation
+      title: Randomization and Iteration
     - url: https://docs.python.org/3.7/tutorial/errors.html
       title: Handling Exceptions
     - file: notebooks/classes
@@ -52,12 +52,16 @@ parts:
       title: Review of Fundamentals B
     - file: notebooks/regexp.ipynb
       title: Regular Expressions
-  - caption: Activities
+  - caption: In class activities
     chapters:
     - file: notebooks/python_basics
       title: Python basics 
     - file: notebooks/in_class_exercise_1
       title: The first thinking exercise
+    - file: notebooks/palindromes_fibonacci
+      title: Palindromes and Fibonacci
+    - file: notebooks/debugging_1
+      title: Debugging practice 1
   - caption: Exercises
     chapters:
     - file: notebooks/Exercise1-square

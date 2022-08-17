@@ -1,22 +1,18 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# <h1>Table of Contents<span class="tocSkip"></span></h1>
-# <div class="toc" style="margin-top: 1em;"><ul class="toc-item"><li><span><a href="#Introducing-Functions" data-toc-modified-id="Introducing-Functions-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Introducing Functions</a></span></li><li><span><a href="#What-are-functions?" data-toc-modified-id="What-are-functions?-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>What are functions?</a></span><ul class="toc-item"><li><span><a href="#General-Syntax" data-toc-modified-id="General-Syntax-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>General Syntax</a></span></li></ul></li><li><span><a href="#Basic-Examples" data-toc-modified-id="Basic-Examples-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Basic Examples</a></span><ul class="toc-item"><li><ul class="toc-item"><li><span><a href="#A-common-error" data-toc-modified-id="A-common-error-3.0.1"><span class="toc-item-num">3.0.1&nbsp;&nbsp;</span>A common error</a></span></li></ul></li><li><span><a href="#A-second-example" data-toc-modified-id="A-second-example-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>A second example</a></span><ul class="toc-item"><li><span><a href="#Advantages-of-using-functions" data-toc-modified-id="Advantages-of-using-functions-3.1.1"><span class="toc-item-num">3.1.1&nbsp;&nbsp;</span>Advantages of using functions</a></span></li></ul></li><li><span><a href="#Returning-a-Value" data-toc-modified-id="Returning-a-Value-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Returning a Value</a></span></li><li><span><a href="#More-Later" data-toc-modified-id="More-Later-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>More Later</a></span></li></ul></li></ul></div>
-
-# Introducing Functions
-# ===
+# # Introducing Functions
+# 
 # One of the core principles of any programming language is, "Don't Repeat Yourself". If something needs to be done multiple times (even just twice), you should define it as a *function* and call that function whenever you need the action performed.
 # 
-# We are already repeating ourselves in our code, so this is a good time to introduce simple functions. Functions mean less work for us as programmers, and effective use of functions results in code that is less error-prone.
+# We are already repeating ourselves in our code, so this is a good time to introduce simple functions. Effective use of functions results in code that is shorter, easier to read, and less error-prone.
 
-# What are functions?
-# ===
+# # What are functions?
+# 
 # Functions are a set of actions that we group together, and give a name to. You have already used a number of functions from the core Python language, such as *string.title()* and *list.sort()*. We can define our own functions, which allows us to "teach" Python new behavior.
 
-# General Syntax
-# ---
-# A general function looks something like this:
+# ## General Syntax
+# Here's what defining a function looks like:
 
 # In[2]:
 
@@ -26,7 +22,7 @@ def square_it(num):
     return num**2
 
 # Now let's call it
-square_it(14)
+square_it(12)
 
 
 # - **Defining a function**
@@ -56,16 +52,14 @@ def shuffle_list(list_to_shuffle):
 
 a_list = ['a','b','c','d']
 
-print "The original list:", a_list
+print ("The original list:", a_list)
 shuffle_list(a_list)
-print "Now it's shuffled:", a_list
+print( "Now it's shuffled:", a_list)
 
 
-# <div class="alert alert-block alert-info">
-# Can you figure out why we didn't `return` the shuffled list? What happens if you try to return it?</div>
-# 
-
-# [top](#)
+# ```{admonition} Question
+# Can you figure out why we didn't `return` the shuffled list? What happens if you try to return it?
+# ```
 
 # Basic Examples
 # ===
@@ -273,7 +267,6 @@ for current_number in range(0,6):
 # In[ ]:
 
 
-###highlight=[16,17,18]
 def get_number_word(number):
     # Takes in a numerical value, and returns
     #  the word corresponding to that number.
@@ -300,9 +293,7 @@ for current_number in range(0,6):
 
 # More Later
 # ---
-# There is much more to learn about functions, but we will get to those details later. For now, feel free to use functions whenever you find yourself writing the same code several times in a program. Some of the things you will learn when we focus on functions:
+# There is much more to learn about functions, but we will get to those details later. For now, whenever you find yourself writing the same code several times in a program, refactor it into a function. Some of the things you will learn when we focus on functions:
 # 
 # - How to give the arguments in your function default values.
 # - How to let your functions accept different numbers of arguments.
-
-# [top](#)

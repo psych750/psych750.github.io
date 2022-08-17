@@ -128,7 +128,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="programming_environment_osx.html">
-   Programming Environment for MacOS
+   Instructions for MacOS
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -201,13 +201,18 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="trial_generation.html">
-   Randomization and Iteration
+  <a class="reference internal" href="introducing_functions.html">
+   Introducing Functions
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="list_comprehension.html">
    List Comprehension
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="trial_generation.html">
+   Randomization and Iteration
   </a>
  </li>
  <li class="toctree-l1">
@@ -233,7 +238,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Activities
+  In class activities
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -245,6 +250,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="in_class_exercise_1.html">
    The first thinking exercise
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="debugging_1.html">
+   Debugging practice 1
   </a>
  </li>
 </ul>
@@ -416,11 +426,13 @@ title="Print to PDF"
      Test the Anaconda Python install
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#installing-the-necessary-python-packages">
-     Installing the necessary Python packages
-    </a>
-   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-the-necessary-python-packages">
+   Install the necessary Python packages
+  </a>
+  <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#test-psychopy">
      Test PsychoPy
@@ -431,23 +443,23 @@ title="Print to PDF"
      Configure a few Psychopy settings
     </a>
    </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-visual-studio-code">
+   Install Visual Studio Code
+  </a>
+  <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#install-visual-studio-code">
-     Install Visual Studio Code
+    <a class="reference internal nav-link" href="#create-a-shortcut-to-visual-studio-code">
+     Create a shortcut to Visual Studio code
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#create-a-shortcut-to-visual-studio-code">
-       Create a shortcut to Visual Studio code
-      </a>
-     </li>
-    </ul>
    </li>
   </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#install-r-rstudio-desktop">
-   Install R &amp; RStudio Desktop
+  <a class="reference internal nav-link" href="#install-r-and-rstudio-desktop">
+   Install R and RStudio Desktop
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -501,11 +513,13 @@ title="Print to PDF"
      Test the Anaconda Python install
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#installing-the-necessary-python-packages">
-     Installing the necessary Python packages
-    </a>
-   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-the-necessary-python-packages">
+   Install the necessary Python packages
+  </a>
+  <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#test-psychopy">
      Test PsychoPy
@@ -516,23 +530,23 @@ title="Print to PDF"
      Configure a few Psychopy settings
     </a>
    </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-visual-studio-code">
+   Install Visual Studio Code
+  </a>
+  <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#install-visual-studio-code">
-     Install Visual Studio Code
+    <a class="reference internal nav-link" href="#create-a-shortcut-to-visual-studio-code">
+     Create a shortcut to Visual Studio code
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#create-a-shortcut-to-visual-studio-code">
-       Create a shortcut to Visual Studio code
-      </a>
-     </li>
-    </ul>
    </li>
   </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#install-r-rstudio-desktop">
-   Install R &amp; RStudio Desktop
+  <a class="reference internal nav-link" href="#install-r-and-rstudio-desktop">
+   Install R and RStudio Desktop
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -591,8 +605,9 @@ Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&
 </pre></div>
 </div>
 </section>
-<section id="installing-the-necessary-python-packages">
-<h2>Installing the necessary Python packages<a class="headerlink" href="#installing-the-necessary-python-packages" title="Permalink to this headline">#</a></h2>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="install-the-necessary-python-packages">
+<h1>Install the necessary Python packages<a class="headerlink" href="#install-the-necessary-python-packages" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
 <li><p>Now let’s install the packages we’ll need. Paste in the lines below, one at at a time, into your terminal (make sure your new environment is activated first). Wait for everything to install before proceeding to the next line.</p></li>
 </ul>
@@ -605,10 +620,8 @@ pip install psychopy
 <p class="admonition-title">Warning</p>
 <p>If you run into any install errors, please make note of the precise errors and post them to the #installation_problems Slack channel.</p>
 </div>
-</section>
 <section id="test-psychopy">
 <h2>Test PsychoPy<a class="headerlink" href="#test-psychopy" title="Permalink to this headline">#</a></h2>
-<p>====</p>
 <ul class="simple">
 <li><p>Now let’s test that <code class="docutils literal notranslate"><span class="pre">PsychoPy</span></code> installed correctly. Start the python interpreter and then import the psychopy package:</p></li>
 </ul>
@@ -617,7 +630,7 @@ pip install psychopy
 <span class="go">&#39;2022.2.2&#39;</span>
 </pre></div>
 </div>
-<p>If you see the verison number, the PsychoPy library probably installed correctly. Let’s do some more tests</p>
+<p>If you see the verison number, the PsychoPy library probably installed correctly. But let’s do some more tests</p>
 <ul class="simple">
 <li><p>Let’s test if PsychoPy can successfully open a new window.</p></li>
 </ul>
@@ -625,7 +638,7 @@ pip install psychopy
 <span class="gp">&gt;&gt;&gt; </span><span class="n">visual</span><span class="o">.</span><span class="n">Window</span><span class="p">((</span><span class="mi">400</span><span class="p">,</span><span class="mi">400</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>When you hit enter after the second line, you should see a small green window appear. There may me some warnings displayed… You can safely ignore them.</p>
+<p>When you hit enter after the second line, you should see a small green window appear. There may me some warnings displayed. You can safely ignore them.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You won’t be able to close the window like a regular window.
@@ -660,19 +673,24 @@ Click on the terminal and enter <code class="docutils literal notranslate"><span
 </pre></div>
 </div>
 </section>
-<section id="install-visual-studio-code">
-<h2>Install Visual Studio Code<a class="headerlink" href="#install-visual-studio-code" title="Permalink to this headline">#</a></h2>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="install-visual-studio-code">
+<h1>Install Visual Studio Code<a class="headerlink" href="#install-visual-studio-code" title="Permalink to this headline">#</a></h1>
 <p>Visual Studio Code is a very powerful and user-friendly code editor which we will use in this class to edit python/jupyter notebook scripts. Download Visual Studio Code <a class="reference external" href="https://code.visualstudio.com">here</a> and install it.</p>
 <p>Once installed, open up VS code and select File -&gt; New Text File. At the top of the script, click select a language and select <code class="docutils literal notranslate"><span class="pre">python</span></code>. VS code will prompt you to install the Python extension. Once that is installed. Go back to your file and press <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">P</span></code>, and type in <code class="docutils literal notranslate"><span class="pre">Python:</span> <span class="pre">Select</span> <span class="pre">Interpreter</span></code>. Select the <code class="docutils literal notranslate"><span class="pre">psych750</span></code> python environment you created earlier.</p>
 <section id="create-a-shortcut-to-visual-studio-code">
-<h3>Create a shortcut to Visual Studio code<a class="headerlink" href="#create-a-shortcut-to-visual-studio-code" title="Permalink to this headline">#</a></h3>
+<h2>Create a shortcut to Visual Studio code<a class="headerlink" href="#create-a-shortcut-to-visual-studio-code" title="Permalink to this headline">#</a></h2>
 <p>It is very useful to be able to quickly access your editor from the shell.</p>
-<p>…</p>
+<p>VS Code installation on Windows automatically adds VS Code to $PATH. So you can type in the following in your Command Line:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>code some_file_name.txt
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">some_file_name.txt</span></code> is the file you want to open.</p>
+<p>It should open up in visual Studio Code</p>
 </section>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="install-r-rstudio-desktop">
-<h1>Install R &amp; RStudio Desktop<a class="headerlink" href="#install-r-rstudio-desktop" title="Permalink to this headline">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="install-r-and-rstudio-desktop">
+<h1>Install R and RStudio Desktop<a class="headerlink" href="#install-r-and-rstudio-desktop" title="Permalink to this headline">#</a></h1>
 <p>Next install R and RSudio Desktop by following the instructions <a class="reference external" href="https://www.rstudio.com/products/rstudio/download/#download">here</a>. Make sure to install Rtools as well when you download R.</p>
 <section id="install-a-few-r-packages">
 <h2>Install a few R packages<a class="headerlink" href="#install-a-few-r-packages" title="Permalink to this headline">#</a></h2>
