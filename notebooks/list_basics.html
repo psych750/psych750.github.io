@@ -21,7 +21,7 @@
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -38,7 +38,7 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -196,23 +196,23 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="introducing_functions.html">
-   Introducing Functions
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="dictionaries.html">
    Dictionaries
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="trial_generation.html">
-   Randomization and Iteration
+  <a class="reference internal" href="introducing_functions.html">
+   Introducing Functions
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="list_comprehension.html">
    List Comprehension
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="trial_generation.html">
+   Randomization and Iteration
   </a>
  </li>
  <li class="toctree-l1">
@@ -238,7 +238,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Activities
+  In class activities
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -250,6 +250,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="in_class_exercise_1.html">
    The first thinking exercise
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="debugging_1.html">
+   Debugging practice 1
   </a>
  </li>
 </ul>
@@ -1122,9 +1127,9 @@ That&#39;s just how I feel about dogs.
 <span class="n">names</span> <span class="o">=</span> <span class="p">[]</span>
 
 <span class="c1"># Add some users.</span>
-<span class="n">names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Desia&#39;</span><span class="p">)</span>
-<span class="n">names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Pablo&#39;</span><span class="p">)</span>
-<span class="n">names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Matt&#39;</span><span class="p">)</span>
+<span class="n">names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Meng&#39;</span><span class="p">)</span>
+<span class="n">names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Sizhe&#39;</span><span class="p">)</span>
+<span class="n">names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Michelle&#39;</span><span class="p">)</span>
 
 <span class="c1"># Greet everyone.</span>
 <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
@@ -1156,29 +1161,35 @@ That&#39;s just how I feel about dogs.
 <p>The index always starts at 0, so in this example the value of <em>place</em> should actually be the current index, plus one:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">students</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Desia&#39;</span><span class="p">,</span> <span class="s1">&#39;Pablo&#39;</span><span class="p">,</span> <span class="s1">&#39;Matt&#39;</span><span class="p">,</span> <span class="s1">&#39;Vincent&#39;</span><span class="p">,</span> <span class="s1">&#39;Tamara&#39;</span><span class="p">,</span> <span class="s1">&#39;Mengguo&#39;</span><span class="p">,</span> <span class="s1">&#39;Ian&#39;</span><span class="p">,</span> <span class="s1">&#39;Rui&#39;</span><span class="p">,</span> <span class="s1">&#39;Yuvraj&#39;</span><span class="p">,</span> <span class="s1">&#39;Steven&#39;</span><span class="p">,</span> <span class="s1">&#39;Katharine&#39;</span><span class="p">,</span> <span class="s1">&#39;Sasha&#39;</span><span class="p">,</span> <span class="s1">&#39;Nathan&#39;</span><span class="p">,</span> <span class="s1">&#39;Kristina&#39;</span><span class="p">,</span> <span class="s1">&#39;Olivia&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">students</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Lauren&#39;</span><span class="p">,</span> <span class="s1">&#39;Drew&#39;</span><span class="p">,</span> <span class="s1">&#39;Alexander&#39;</span><span class="p">,</span> <span class="s1">&#39;Carol&#39;</span><span class="p">,</span> <span class="s1">&#39;Emma&#39;</span><span class="p">,</span> <span class="s1">&#39;Meng&#39;</span><span class="p">,</span> <span class="s1">&#39;Sizhe&#39;</span><span class="p">,</span> <span class="s1">&#39;Benjamin&#39;</span><span class="p">,</span> <span class="s1">&#39;Kendall&#39;</span><span class="p">,</span> <span class="s1">&#39;Lihao&#39;</span><span class="p">,</span> <span class="s1">&#39;Jacob&#39;</span><span class="p">,</span> <span class="s1">&#39;Yuanxue&#39;</span><span class="p">,</span> <span class="s1">&#39;Michelle&#39;</span><span class="p">,</span> <span class="s1">&#39;Lucas&#39;</span><span class="p">,</span> <span class="s1">&#39;Matthew&#39;</span><span class="p">,</span> <span class="s1">&#39;Andrea&#39;</span><span class="p">,</span> <span class="s1">&#39;Sujin&#39;</span><span class="p">,</span> <span class="s1">&#39;Ezgi&#39;</span><span class="p">,</span> <span class="s1">&#39;Zhuolu&#39;</span><span class="p">,</span> <span class="s1">&#39;Yan&#39;</span><span class="p">]</span>
+
 
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">student</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">students</span><span class="p">)):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Person number </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> in the class is </span><span class="si">{</span><span class="n">person</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Person number </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> in the class is </span><span class="si">{</span><span class="n">student</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Person number 0 in the class is Desia
-Person number 1 in the class is Ian
-Person number 2 in the class is Katharine
-Person number 3 in the class is Kristina
-Person number 4 in the class is Matt
-Person number 5 in the class is Mengguo
-Person number 6 in the class is Nathan
-Person number 7 in the class is Olivia
-Person number 8 in the class is Pablo
-Person number 9 in the class is Rui
-Person number 10 in the class is Sasha
-Person number 11 in the class is Steven
-Person number 12 in the class is Tamara
-Person number 13 in the class is Vincent
-Person number 14 in the class is Yuvraj
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Person number 0 in the class is Alexander
+Person number 1 in the class is Andrea
+Person number 2 in the class is Benjamin
+Person number 3 in the class is Carol
+Person number 4 in the class is Drew
+Person number 5 in the class is Emma
+Person number 6 in the class is Ezgi
+Person number 7 in the class is Jacob
+Person number 8 in the class is Kendall
+Person number 9 in the class is Lauren
+Person number 10 in the class is Lihao
+Person number 11 in the class is Lucas
+Person number 12 in the class is Matthew
+Person number 13 in the class is Meng
+Person number 14 in the class is Michelle
+Person number 15 in the class is Sizhe
+Person number 16 in the class is Sujin
+Person number 17 in the class is Yan
+Person number 18 in the class is Yuanxue
+Person number 19 in the class is Zhuolu
 </pre></div>
 </div>
 </div>
