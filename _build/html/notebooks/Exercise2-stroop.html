@@ -383,12 +383,36 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-2-parts">
+   Exercise 2 parts
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -400,6 +424,19 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-2-parts">
+   Exercise 2 parts
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -446,9 +483,11 @@ title="Print to PDF"
 </div>
 </div>
 <p>Once you’ve successfully run this code and understand what all the lines do, proceed to the following exercises.</p>
+<section id="exercise-2-parts">
+<h2>Exercise 2 parts<a class="headerlink" href="#exercise-2-parts" title="Permalink to this headline">#</a></h2>
 <ol>
 <li><p>Create a fixation cross using a TextStim object <code class="docutils literal notranslate"><span class="pre">visual.TextStim</span></code> set text to “+” and color to “black” and height to 15. Make the fixation cross appear for 500 ms before each color word, and disappear right before the color word appears.</p></li>
-<li><p>Rather than cycling throught the colors, use <code class="docutils literal notranslate"><span class="pre">event.waitKeys()</span></code> to wait for a response (e.g., “o” for “orange”).  Your script should nly accept ‘r’, ‘o’, ‘y’, ‘g’, ‘b’, and ‘q’ for quit.</p>
+<li><p>Rather than cycling throught the colors, use <code class="docutils literal notranslate"><span class="pre">event.waitKeys()</span></code> to wait for a response (e.g., “o” for “orange”).  Your script should nly accept ‘r’, ‘o’, ‘y’, ‘g’, ‘b’ (the first letter of each color) and – to make testing easier for you – ‘q’ for quit.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Make sure your code has just the functionality it needs, e.g., for part 2, you don’t need <code class="docutils literal notranslate"><span class="pre">event.getKeys(['q'])</span></code></p>
@@ -518,6 +557,7 @@ stuck.**
 </pre></div>
 </div>
 </div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">

@@ -1,13 +1,10 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# <h1>Table of Contents<span class="tocSkip"></span></h1>
-# <div class="toc" style="margin-top: 1em;"><ul class="toc-item"><li><ul class="toc-item"><li><span><a href="#Documentation" data-toc-modified-id="Documentation-0.1"><span class="toc-item-num">0.1&nbsp;&nbsp;</span>Documentation</a></span></li><li><span><a href="#Tutorials" data-toc-modified-id="Tutorials-0.2"><span class="toc-item-num">0.2&nbsp;&nbsp;</span>Tutorials</a></span></li><li><span><a href="#Cheat-Sheets" data-toc-modified-id="Cheat-Sheets-0.3"><span class="toc-item-num">0.3&nbsp;&nbsp;</span>Cheat Sheets</a></span></li><li><span><a href="#Programming-Challenges" data-toc-modified-id="Programming-Challenges-0.4"><span class="toc-item-num">0.4&nbsp;&nbsp;</span>Programming Challenges</a></span></li></ul></li></ul></div>
-
 # Documentation
 # ---
 # 
-# * The official documentation for [Python2](https://docs.python.org/2/) and [Python3](https://docs.python.org/3/). 
+# * The official documentation for [Python3](https://docs.python.org/3/). 
 # 
 # * The official documentation of [PsychoPy](http://www.psychopy.org/api/api.html)
 

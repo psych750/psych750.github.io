@@ -43,9 +43,11 @@ while True:
 
 # Once you've successfully run this code and understand what all the lines do, proceed to the following exercises.
 
+# ## Exercise 2 parts
+# 
 # 1.  Create a fixation cross using a TextStim object `visual.TextStim` set text to "+" and color to "black" and height to 15. Make the fixation cross appear for 500 ms before each color word, and disappear right before the color word appears.
 # 
-# 2. Rather than cycling throught the colors, use `event.waitKeys()` to wait for a response (e.g., "o" for "orange").  Your script should nly accept 'r', 'o', 'y', 'g', 'b', and 'q' for quit. 
+# 2. Rather than cycling throught the colors, use `event.waitKeys()` to wait for a response (e.g., "o" for "orange").  Your script should nly accept 'r', 'o', 'y', 'g', 'b' (the first letter of each color) and -- to make testing easier for you -- 'q' for quit. 
 #     ```{tip}
 #     Make sure your code has just the functionality it needs, e.g., for part 2, you don't need `event.getKeys(['q'])`
 #     ```
@@ -53,13 +55,13 @@ while True:
 #     ```{tip}
 #     Append each reaction time to the RT list after every response
 #     ```
-# 1.  Now let's implement some feedback. If the user responded correctly, do nothing. If the user responded incorrectly, show "Incorrect" in black letters and add a 1s time delay before going on to the next trial.
+# 4.  Now let's implement some feedback. If the user responded correctly, do nothing. If the user responded incorrectly, show "Incorrect" in black letters and add a 1s time delay before going on to the next trial.
 #     
-# 1.  Now, instead of waiting for a response forever, let's implement a timeout. Show accuracy feedback as before, show "Too slow" if the user takes more than 1.5 secs to respond.
+# 5.  Now, instead of waiting for a response forever, let's implement a timeout. Show accuracy feedback as before, show "Too slow" if the user takes more than 1.5 secs to respond.
 # 
-# 1. Introduce *incongruent* trials by showing words in the "wrong" color, e.g., "yellow" printed in green. To do this, define a function called `make_incongruent()` which takes in a color as an argument and returns one of the other colors in `stimuli` that's different from the one being passed in. Then set the color word's color to this new value, thereby creating an incongruent trial. 
+# 6. Introduce *incongruent* trials by showing words in the "wrong" color, e.g., "yellow" printed in green. To do this, define a function called `make_incongruent()` which takes in a color as an argument and returns one of the other colors in `stimuli` that's different from the one being passed in. Then set the color word's color to this new value, thereby creating an incongruent trial. 
 # 
-# 1.  Output the trial information and the user's response, one line per response. The file should look like this and should be called results.txt. Your submission should have at least 20 trials of data, i.e., the results.txt file that you push to the repo should have 20 lines.
+# 7.  Output the trial information and the user's response, one line per response. The file should look like this and should be called results.txt. Your submission should have at least 20 trials of data, i.e., the results.txt file that you push to the repo should have 20 lines.
 # 
 # |        |        |             |   |      |
 # |--------|--------|-------------|---|------|

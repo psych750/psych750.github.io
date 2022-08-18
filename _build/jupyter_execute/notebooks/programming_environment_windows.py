@@ -177,3 +177,5 @@
 # ```
 # 
 # Once everything is installed, you can test it out by entering `jupyter notebook` in your CMDer window to start a new session. On the top right corner, select `new`, and it will prompt you to choose either the `python3` kernel or the `R` kernel.
+# 
+# You can also open these notebooks in Visual Studio Code. Open up an .ipynb file in Visual Studio Code, choose R as the Kernel and start running R code! The first time you do this, Visual Studio Code will prompt you to install some add-ons. Just click ok on the recommended extensions and you should be good to go.

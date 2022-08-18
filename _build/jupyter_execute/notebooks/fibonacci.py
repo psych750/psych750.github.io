@@ -74,7 +74,7 @@ def is_palindrome_iterate(str):
 is_palindrome_nonrec('MalayalaM')
 
 
-# In[55]:
+# In[120]:
 
 
 def is_palindrome_builtin(str):

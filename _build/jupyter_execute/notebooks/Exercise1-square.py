@@ -36,6 +36,10 @@ core.quit() #quit out of the program -- don't need this if you're running this a
 
 # ## Exercise 1 parts
 # 
+# ```{note}
+# Remember to tag each part with e1_1, e1_2 etc.
+# ```
+# 
 # 1. Make the square red instead of blue
 # 
 # 1. Make the square appear for 1.5 secs.
