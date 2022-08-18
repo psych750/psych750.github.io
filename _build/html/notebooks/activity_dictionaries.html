@@ -1,0 +1,778 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Dictionary Exercises &#8212; Psych 750</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/book.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://psych750.github.io/notebooks/activity_dictionaries.html" />
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/favicon.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Psych 750</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search..." aria-label="Search..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Schedule
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="schedule.html">
+   Week by week schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="submitting_assignments.html">
+   Submitting assignments
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Installation instructions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="programming_environment_osx.html">
+   Instructions for MacOS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="programming_environment_windows.html">
+   Programming Environment for Windows
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  References
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Shell_reference.html">
+   Basic Linux commands
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Python_reference.html">
+   Python reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Psychopy_reference.html">
+   PsychoPy reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ImageMagick.html">
+   ImageMagick/GraphicsMagick reference
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Self Study Guides
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="var_string_num.html">
+   Variables, Strings, and Numbers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="list_basics.html">
+   Lists - the basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="if_statements.html">
+   If Statements
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="review_of_fundamentals_a.html">
+   Review of Fundamentals A
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dictionaries.html">
+   Dictionaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="introducing_functions.html">
+   Introducing Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="list_comprehension.html">
+   List Comprehension
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="trial_generation.html">
+   Randomization and Iteration
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://docs.python.org/3.7/tutorial/errors.html">
+   Handling Exceptions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="classes.html">
+   Classes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="review_of_fundamentals_b.html">
+   Review of Fundamentals B
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regexp.html">
+   Regular Expressions
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  In class activities
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_basics.html">
+   Python basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="in_class_exercise_1.html">
+   The first thinking exercise
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="debugging_1.html">
+   Debugging practice 1
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Exercises
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise1-square.html">
+   Exercise 1-Show and square and do stuff with it
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise2-stroop.html">
+   Exercise 2-A Stroop task
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/notebooks/activity_dictionaries.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#selective-dictionary-access">
+   Selective dictionary access
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#selective-access-continued">
+     Selective access continued
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#letter-counts">
+   Letter counts
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#test-your-letter-counts-function">
+     Test your letter_counts function
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#given-a-string-find-the-n-most-least-frequent-letters-in-it">
+   Given a string, find the n most/least frequent letters in it
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#test-most-frequent-and-least-frequent">
+     Test most_frequent() and least_frequent()
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bonus-calculate-most-least-frequent-letters-in-words-beginning-with-consonants-or-vowels">
+   Bonus: Calculate most/least frequent letters in words beginning with consonants or vowels
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#test-most-frequent2-and-least-frequent2">
+     Test most_frequent2() and least_frequent2()
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Dictionary Exercises</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#selective-dictionary-access">
+   Selective dictionary access
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#selective-access-continued">
+     Selective access continued
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#letter-counts">
+   Letter counts
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#test-your-letter-counts-function">
+     Test your letter_counts function
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#given-a-string-find-the-n-most-least-frequent-letters-in-it">
+   Given a string, find the n most/least frequent letters in it
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#test-most-frequent-and-least-frequent">
+     Test most_frequent() and least_frequent()
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bonus-calculate-most-least-frequent-letters-in-words-beginning-with-consonants-or-vowels">
+   Bonus: Calculate most/least frequent letters in words beginning with consonants or vowels
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#test-most-frequent2-and-least-frequent2">
+     Test most_frequent2() and least_frequent2()
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="dictionary-exercises">
+<h1>Dictionary Exercises<a class="headerlink" href="#dictionary-exercises" title="Permalink to this headline">#</a></h1>
+<section id="selective-dictionary-access">
+<h2>Selective dictionary access<a class="headerlink" href="#selective-dictionary-access" title="Permalink to this headline">#</a></h2>
+<p>Given the following dictionary, find the mean value of the keys that begin with a vowel.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">a_dict</span> <span class="o">=</span> 
+<span class="p">{</span><span class="s1">&#39;--&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+ <span class="s1">&#39;Air&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+ <span class="s1">&#39;At&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+ <span class="s1">&#39;Big&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+ <span class="s1">&#39;But&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+ <span class="s1">&#39;Figure&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+ <span class="s1">&#39;Freestyle&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
+ <span class="s1">&#39;Olympics&#39;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+ <span class="s1">&#39;Pyeongchang,&#39;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+ <span class="s1">&#39;Skating.&#39;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+ <span class="s1">&#39;Skiing&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+ <span class="s1">&#39;Snowboarding&#39;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+ <span class="s1">&#39;To&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+ <span class="s1">&#39;Winter&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+ <span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+ <span class="s1">&#39;air.&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+ <span class="s1">&#39;and&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+ <span class="s1">&#39;body&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+ <span class="s1">&#39;corks&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+ <span class="s1">&#39;do&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+ <span class="s1">&#39;four&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+ <span class="s1">&#39;got&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+ <span class="s1">&#39;have&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+ <span class="s1">&#39;in&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+ <span class="s1">&#39;jumps&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+ <span class="s1">&#39;less&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+ <span class="s1">&#39;limit&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+ <span class="s1">&#39;may&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+ <span class="s1">&#39;of&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+ <span class="s1">&#39;or&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+ <span class="s1">&#39;possible?&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
+ <span class="s1">&#39;quad&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+ <span class="s1">&#39;quad,&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+ <span class="s1">&#39;reached&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+ <span class="s1">&#39;second&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+ <span class="s1">&#39;see&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+ <span class="s2">&quot;skater&#39;s&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+ <span class="s1">&#39;than&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+ <span class="s1">&#39;the&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+ <span class="s1">&#39;their&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+ <span class="s1">&#39;this&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+ <span class="s1">&#39;times&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+ <span class="s1">&#39;to&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+ <span class="s1">&#39;turn&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+ <span class="s1">&#39;twists&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+ <span class="s1">&#39;we&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+ <span class="s2">&quot;we&#39;ll&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+ <span class="s2">&quot;what&#39;s&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+ <span class="s2">&quot;year&#39;s&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Here’s some code to help get you started:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">vowels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">,</span><span class="s1">&#39;i&#39;</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="s1">&#39;u&#39;</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">isVowel</span><span class="p">(</span><span class="n">letter</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">vowels</span>
+
+<span class="k">def</span> <span class="nf">isVowelOnset</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">isVowel</span><span class="p">(</span><span class="n">string</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="c1">#to find a mean of a list, use the mean() function from the numpy library</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)))</span>
+<span class="c1">#it is commonly imported as np so that you can type np.mean() instead of numpy.mean()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.5
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">{note}</span></code>
+By taking advantage of statements that already return True/False values, the code above avoids having to have code like: if X return True, else return Y.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<section id="selective-access-continued">
+<h3>Selective access continued<a class="headerlink" href="#selective-access-continued" title="Permalink to this headline">#</a></h3>
+<p>Now do the same for consonants</p>
+<div class="alert alert-block alert-info">
+Hint: You don't need to write separate isConsonant/isConsonantOnset functions!</div>
+</section>
+</section>
+<section id="letter-counts">
+<h2>Letter counts<a class="headerlink" href="#letter-counts" title="Permalink to this headline">#</a></h2>
+<p>Complete the implementation of the function <code class="docutils literal notranslate"><span class="pre">letter_counts()</span></code> which receives a string as input and returns a dictionary with (lowercase) letters as keys and their respective counts as values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">letter_counts</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+    <span class="n">letter_sums</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">letters</span> <span class="o">=</span> <span class="p">[</span><span class="n">letter</span> <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">string</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()]</span>
+    <span class="k">for</span> <span class="n">curLetter</span> <span class="ow">in</span> <span class="n">letters</span><span class="p">:</span>
+        <span class="k">pass</span>
+    
+    <span class="k">return</span> <span class="n">letter_sums</span>
+
+<span class="c1">#Replace pass with appropriate code to make the function work. You only need a couple lines of code.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="test-your-letter-counts-function">
+<h3>Test your letter_counts function<a class="headerlink" href="#test-your-letter-counts-function" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>letter_counts(&quot;Complete the implementation of the function. `letter_counts()` receives a string as input and returns a dictionary with (lowercase) letters and their respective counts. The keys are the letters and the counts are how many times a given letter occurred.&quot;)
+```python
+{&#39;a&#39;: 12, &#39;c&#39;: 10, &#39;e&#39;: 32, &#39;d&#39;: 4, &#39;g&#39;: 1, &#39;f&#39;: 1, &#39;i&#39;: 12, &#39;h&#39;: 7, &#39;k&#39;: 0, &#39;m&#39;: 4, &#39;l&#39;: 6, &#39;o&#39;: 10, &#39;n&#39;: 15, &#39;p&#39;: 3, &#39;s&#39;: 12, &#39;r&#39;: 15, &#39;u&#39;: 6, &#39;t&#39;: 27, &#39;w&#39;: 2, &#39;v&#39;: 2, &#39;y&#39;: 2}
+```
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  Input In [2]
+    ```python
+    ^
+SyntaxError: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="given-a-string-find-the-n-most-least-frequent-letters-in-it">
+<h2>Given a string, find the n most/least frequent letters in it<a class="headerlink" href="#given-a-string-find-the-n-most-least-frequent-letters-in-it" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">most_frequent</span><span class="p">(</span><span class="n">string</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="k">def</span> <span class="nf">least_frequent</span><span class="p">(</span><span class="n">string</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="test-most-frequent-and-least-frequent">
+<h3>Test most_frequent() and least_frequent()<a class="headerlink" href="#test-most-frequent-and-least-frequent" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_string</span> <span class="o">=</span> <span class="s2">&quot;At this year&#39;s Winter Olympics in Pyeongchang, we may see quad corks in Big Air Snowboarding or in Freestyle Skiing -- and we&#39;ll see quad twists and quad jumps in Figure Skating. But have we reached the limit of what&#39;s possible? To do a quad, a skater&#39;s got less than a second to turn their body four times in the air.&quot;</span>
+
+<span class="o">&gt;</span><span class="n">most_frequent</span><span class="p">(</span><span class="n">a_string</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="c1">#should return [(&#39;e&#39;, 24), (&#39;a&#39;, 21), (&#39;i&#39;, 21)]</span>
+
+<span class="o">&gt;</span><span class="n">least_frequent</span><span class="p">(</span><span class="n">a_string</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="c1"># should return [(&#39;j&#39;, 0), (&#39;v&#39;, 0), (&#39;f&#39;, 3)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="bonus-calculate-most-least-frequent-letters-in-words-beginning-with-consonants-or-vowels">
+<h2>Bonus: Calculate most/least frequent letters in words beginning with consonants or vowels<a class="headerlink" href="#bonus-calculate-most-least-frequent-letters-in-words-beginning-with-consonants-or-vowels" title="Permalink to this headline">#</a></h2>
+<p>Implement <code class="docutils literal notranslate"><span class="pre">most_frequent2()</span></code> which makes the following function-called produce the desired results:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">most_frequent2</span><span class="p">(</span><span class="n">string</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+<span class="sd">&#39;&#39;&#39; Given a string, return the n most frequent letters occurring in words beginning with vowels.</span>
+<span class="sd">&#39;&#39;&#39;</span>
+    <span class="k">pass</span>
+
+<span class="k">def</span> <span class="nf">least_frequent2</span><span class="p">(</span><span class="n">string</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+<span class="sd">&#39;&#39;&#39; Given a string, return the n least frequent letters occurring in words beginning with vowels</span>
+<span class="sd">&#39;&#39;&#39;</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<section id="test-most-frequent2-and-least-frequent2">
+<h3>Test most_frequent2() and least_frequent2()<a class="headerlink" href="#test-most-frequent2-and-least-frequent2" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_string</span> <span class="o">=</span> <span class="s2">&quot;At this year&#39;s Winter Olympics in Pyeongchang, we may see quad corks in Big Air Snowboarding or in Freestyle Skiing -- and we&#39;ll see quad twists and quad jumps in Figure Skating. But have we reached the limit of what&#39;s possible? To do a quad, a skater&#39;s got less than a second to turn their body four times in the air.&quot;</span>
+
+<span class="n">most_frequent2</span><span class="p">(</span><span class="n">a_string</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="c1">#should return [(&#39;n&#39;, 6), (&#39;a&#39;, 5), (&#39;i&#39;, 5)]</span>
+
+<span class="n">least_frequent2</span><span class="p">(</span><span class="n">a_string</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="c1">#should return [(&#39;f&#39;, 0), (&#39;d&#39;, 1), (&#39;o&#39;, 1)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Gary Lupyan<br/>
+  
+      &copy; Copyright 2022. Some examples adapted from http://introtopython.org/.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

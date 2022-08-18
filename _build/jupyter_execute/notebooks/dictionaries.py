@@ -146,8 +146,8 @@ python_words['dictionary'] = 'a collection of key-value pairs. Each key can be u
 print(python_words['dictionary']) #the clarified definition
 
 
-# Removing key-value pairs
-# ---
+# ### Removing key-value pairs
+# 
 # You may want to remove some key-value pairs from one of your dictionaries at some point. You can do this using the same `del` command you learned to use with lists. To remove a key-value pair, you give the `del` command, followed by the name of the dictionary, with the key that you want to delete. This removes the key and the value as a pair.
 
 # In[29]:
