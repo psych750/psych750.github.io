@@ -6,11 +6,13 @@
 
 [x] Finish reorganizing dictionary notebook 
 
-[ ] Finalize dicitonary in-class activity for week 3
-
 [ ] Exercise 3 extension of Stroop to speech recognition + runtime vars
 
+[ ] Finalize dicitonary in-class activity for week 3
+
 [ ] Add file IO notebook
+
+[ ] R reference notebook necessary?
 
 [ ] Add anonymous vars (_)to python reference
 
