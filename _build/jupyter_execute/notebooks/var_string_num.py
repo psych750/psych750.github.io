@@ -1,16 +1,13 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# Variables, Strings, and Numbers
-# ===
+# # Variables, Strings, and Numbers
+# 
 # In this section, you will learn to store information in variables. You will learn about three types of data: strings, which are lists of characters, integers, which are numbers like 2 and 3,  and floats, which are numbers like 2.0 and 2.5.
 
-# Variables
-# ===
-# A variable holds a value.
-
-# Example
-# ---
+# ## Variables
+# 
+# A variable holds a value, for example
 
 # In[1]:
 
@@ -19,7 +16,7 @@ message = "Hello world!"
 print(message)
 
 
-# A variable holds a value. You can change the value of a variable at any point. When you do, the original value is overwritten.
+# You can change the value of a variable at any point. When you do, the original value is overwritten.
 
 # In[2]:
 
@@ -31,8 +28,8 @@ message = "I'm learning to program"
 print(message)
 
 
-# Variable naming rules
-# ---
+# ### Variable naming rules
+# 
 # - Variable names can only have letters, numbers, and underscores. Variable names can start with a letter or an underscore, but cannot start with a number.
 # - Spaces are not allowed in variable names, so we use underscores instead of spaces. For example, use student_name instead of "student name".
 # - You cannot use [Python keywords](http://docs.python.org/2/reference/lexical_analysis.html#keywords) as variable names.
@@ -40,14 +37,14 @@ print(message)
 # - Be careful about using the lowercase letter l and the uppercase letter O in places where they could be confused with the numbers 1 and 0.
 # - Python conventions dictate separating naming clauses with underscores (e.g., `cur_trial`). An alternate naming convention, and one that I will use in the class because of old habits is *mixed case* (e.g., `curTrial`)
 
-# NameError
-# ---
-# There is one common error when using variables, that you will almost certainly encounter at some point. Take a look at this code, and see if you can figure out why it causes an error.
+# ### NameError
+# 
+# There is a common error when using variables, that you will almost certainly encounter at some point. Take a look at this code, and see if you can figure out why it causes an error.
 
 # In[12]:
 
 
-message = "Thank you for sharing Python with the world, Guido!"
+message = "Python was created by Guido van Rossum way back in 1991."
 print(mesage)
 
 
@@ -64,12 +61,12 @@ print(mesage)
 # 
 # 
 
-# Strings
-# ===
+# ## Strings
+# 
 # Strings are lists of characters. Let's look at some examples.
 
-# Single and double quotes
-# ---
+# ### Single and double quotes
+# 
 # Strings are contained by either single or double quotes.
 
 # In[ ]:
@@ -89,7 +86,7 @@ quote = "Linus Torvalds once said, 'Any program is only as good as it is useful.
 
 # What if we want to have a string with both single and double quotes in it? The following won't work. Can you see why?
 
-# In[3]:
+# In[1]:
 
 
 my_string = "Here's a string with a "quote in it""
@@ -105,9 +102,9 @@ my_string = "Here's a string with a \"quote in it\""
 print (my_string)
 
 
-# Getting a string's length and checking if something exists
-# ---
-# Remember how we said that strings are lists of characters? We'll learn more about lists in the next section, but for now, just note that because they're lists, you can do the following:
+# ## Getting a string's length and checking if it contains something
+# 
+# Python represents strings as lists of characters. Because of this, all the functions that apply to lists (which you'll larn about in the next notebook), apply to strings as well. This allows you to do things like this:
 
 # In[1]:
 
@@ -130,8 +127,8 @@ if 'e' in 'aeiou':
 print ('f' in 'aeiou')
 
 
-# Changing case
-# ---
+# ## Changing case
+# 
 # You can easily change the case of a string, to present it the way you want it to look.
 
 # In[4]:
@@ -166,8 +163,8 @@ print(first_name.lower())
 # 
 # In this example, the word "action" is the name of a method. A method is something that can be done to a variable. The methods 'lower', 'title', and 'upper' are all functions that have been written into the Python language, which do something to strings. Later on, you will learn to write your own methods.
 
-# Combining strings (concatenation)
-# ---
+# ## Combining strings (concatenation)
+# 
 # It is often very useful to be able to combine strings into a message or page element that we want to display. Again, this is easier to understand through an example.
 
 # In[8]:
@@ -197,8 +194,8 @@ print(message)
 
 # If you don't know who Ada Lovelace is, you might want to go read what [Wikipedia](http://en.wikipedia.org/wiki/Ada_Lovelace) or the [Computer History Museum](http://www.computerhistory.org/babbage/adalovelace/) have to say about her. Her life and her work are also the inspiration for the [Ada Initiative](http://adainitiative.org/faq/about-ada-lovelace/).
 
-# Whitespace
-# ---
+# ## Whitespace
+# 
 # The term "whitespace" refers to characters that the computer is aware of, but are invisible to readers. The most common whitespace characters are spaces, tabs, and newlines.
 # 
 # Spaces are easy to create, because you have been using them as long as you have been using computers. Tabs and newlines are represented by special character combinations.
@@ -280,11 +277,11 @@ print('-' + name.rstrip() + '-')
 print('-' + name.strip() + '-')
 
 
-# Numbers
-# ===
+# ## Numbers
+# 
 
-# Integers
-# ---
+# ### Integers
+# 
 # You can do all of the basic operations with integers, and everything should behave as you expect. Addition and subtraction use the standard plus and minus symbols. Multiplication uses the asterisk, and division uses a forward slash. Exponents use two asterisks.
 
 # In[ ]:
@@ -329,7 +326,7 @@ my_order = (2+3)*4
 print(my_order)
 
 
-# Floating-Point numbers
+# ### Floating-Point numbers (floats)
 # ---
 # Floating-point numbers refer to any number with a decimal point. Most of the time, you can think of floating point numbers as decimals, and they will behave as you expect them to.
 
@@ -359,8 +356,8 @@ print(0.1+0.2)
 print(3*0.1)
 
 
-# Integers in Python 3
-# ---
+# ### Integers in Python 3
+# 
 # There are a couple differences in the way Python 2 and Python 3 handle numbers. In Python 2, dividing two integers always resulted in an integer, while Python 3 always returns a float.
 
 # Python 3 does float division by default:
@@ -470,8 +467,8 @@ print (a+b)
 # ```
 #  Finally, multiplying two strings isn't defined (what's 's' times 'q'??). But *adding* two strings does have an unambiguous interpretation: concatenation! 
 
-# Commenting your code
-# ===
+# # Commenting your code
+# 
 # As you begin to write more complicated code, you will have to spend more time thinking about how to code solutions to the problems you want to solve. Once you come up with an idea, you will spend a fair amount of time troubleshooting your code, and revising your overall approach.
 # 
 # Comments allow you to write in English, within your program. In Python, any line that starts with a pound (#) symbol is ignored by the Python interpreter.
@@ -495,15 +492,15 @@ print("This line is not a comment, it is code.")
 # ```
 # 
 
-# What makes a good comment?
-# ---
+# ## What makes a good comment?
+# 
 # - It is short and to the point, but a complete thought. Most comments should be written in complete sentences.
 # - It explains your thinking, so that when you return to the code later you will understand how you were approaching the problem.
 # - It explains your thinking, so that others who work with your code will understand your overall approach to a problem.
 # - It explains particularly difficult sections of code in detail.
 # 
-# When should you write comments?
-# ---
+# ## When should you write comments?
+# 
 # - When you have to think about code before writing it.
 # - When you are likely to forget later exactly how you were approaching a problem.
 # - When there is more than one way to solve a problem.
@@ -511,7 +508,7 @@ print("This line is not a comment, it is code.")
 # 
 # Writing good comments is one of the clear signs of a good programmer. If you have any real interest in taking programming seriously, start using comments now. You will see them throughout the examples in these notebooks.
 
-# Zen of Python
+# # Zen of Python
 # ===
 # The Python community is incredibly large and diverse. People are using Python in science, in medicine, in robotics, on the internet, and in any other field you can imagine. This diverse group of thinkers has developed a collective mindset about how programs should be written. If you want to understand Python and the community of Python programmers, it is a good idea to learn the ways Python programmers think.
 # 

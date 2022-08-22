@@ -4,23 +4,34 @@
 
 [x] Link Exercise 2 w/ starter code
 
-[x] Finish reorganizing dictionary notebook - discuss hashes
+[x] Finish reorganizing dictionary notebook 
 
-[ ] Finalize dicitonary in-class activity for week 3
+[ ] Exercise 3 extension of Stroop to speech recognition + runtime vars
+
+[ ] Finalize dict in-class activity for week 3
+
+[ ] Edit debugging exercise part 2. Break it into several parts. Part 2 too difficult early on.
 
 [ ] Add file IO notebook
 
-[ ] Make sure we have example of `for _` in python reference
+[ ] R reference notebook necessary?
 
-[ ] Figure out how to share solutions for in class exercises
+[ ] Add anonymous vars (_)to python reference
+
+[ ] Figure out how to share solutions for in class exercises - https://codeshare.io/?
 
 [ ] Add recursive fibonacci to function notebook?
+    - efficient one line- fib = lambda n,a=0,b=1: a if n<=0 else fib(n-1,b,a+b)
+    - fib = lambda n,x=(0,1):[x := (x[1], sum(x)) for i in range(n+1)][-1][0]
 
-[ ] Exercise 3 extension of Stroop to speech recognition
+[ ] Add assignment operators to python reference. Cool. 
+    - https://www.digitalocean.com/community/tutorials/how-to-use-assignment-expressions-in-python
 
 [ ] For string manipulation add a names in-class exercise where students have to get first names from class roster
 
-[ ] Exercise 4 - Posner cueing? - extension to bike signaling
+[ ] Exercise 4 - interactive adjustment? + mouse. Adaptation experiment. Easy.
 
-[ ] Exercise 5 - interactive adjustment? + mouse
+[ ] Exercise 5 - Posner cueing? - extension to bike signaling. Collect data in lab; bring it to them to analyze.
+
+[ ] Exercise 6 - GSS data-wrangling and plotting.
 

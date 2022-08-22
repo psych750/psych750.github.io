@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>“Hello world” in Python &#8212; Psych 750</title>
+    <title>Exercise 3: Extending the stroop effect - NOT DONE YET &#8212; Psych 750</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -21,7 +21,7 @@
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -38,7 +38,7 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -51,10 +51,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://psych750.github.io/notebooks/hello_world.html" />
+    <link rel="canonical" href="https://psych750.github.io/notebooks/Exercise3-extended-stroop.html" />
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Exercise 2: The stroop effect" href="Exercise2-stroop.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -108,18 +109,35 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item active">
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  Schedule
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="schedule.html">
+   Week by week schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="submitting_assignments.html">
+   Submitting assignments
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Installation instructions
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="programming_environment_osx.html">
-   Programming Environment for MacOS
+   Instructions for MacOS
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="programming_environment_windows.html">
-   Programming Environment: Windows 10
+   Programming Environment for Windows
   </a>
  </li>
 </ul>
@@ -130,64 +148,134 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="Shell_reference.html">
+   Basic Linux commands
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="Python_reference.html">
    Python reference
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Shell_reference.html">
-   Basic Linux commands
+  <a class="reference internal" href="Psychopy_reference.html">
+   PsychoPy reference
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ImageMagick.html">
+   ImageMagick/GraphicsMagick reference
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Self Study Guides
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="var_string_num.html">
+   Variables, Strings, and Numbers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="list_basics.html">
+   Lists - the basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="if_statements.html">
+   If Statements
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="review_of_fundamentals_a.html">
+   Review of Fundamentals A
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dictionaries.html">
+   Dictionaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="introducing_functions.html">
+   Introducing Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="list_comprehension.html">
+   List Comprehension
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="trial_generation.html">
+   Randomization and Iteration
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://docs.python.org/3.7/tutorial/errors.html">
+   Handling Exceptions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="classes.html">
+   Classes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="review_of_fundamentals_b.html">
+   Review of Fundamentals B
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regexp.html">
+   Regular Expressions
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  In class activities
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="python_basics.html">
    Python basics
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="review_of_fundamentals_a.html">
-   Review of fundamentals A
+  <a class="reference internal" href="in_class_exercise_1.html">
+   The first thinking exercise
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="review_of_fundamentals_b.html">
-   Review of fundamentals B
+  <a class="reference internal" href="debugging_1.html">
+   Debugging practice 1
   </a>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Self study guides
+  Exercises
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Exercise1-square.html">
-   A square
+   Exercise 1-Show and square and do stuff with it
   </a>
  </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  In class exercises
- </span>
-</p>
-<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="in_class_exercise_1.html">
-   Getting comfortable
+  <a class="reference internal" href="Exercise2-stroop.html">
+   Exercise 2-A Stroop task
   </a>
  </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  At home exercises
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="Exercise2-names.html">
-   A name
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Exercise 3-Extending the Stroop
   </a>
  </li>
 </ul>
@@ -263,7 +351,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/notebooks/hello_world.ipynb"
+        <a href="../_sources/notebooks/Exercise3-extended-stroop.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -300,23 +388,60 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-3-parts">
+   Exercise 3 parts
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>“Hello world” in Python</h1>
+                <h1>Exercise 3: Extending the stroop effect - NOT DONE YET</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-3-parts">
+   Exercise 3 parts
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -324,38 +449,117 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="hello-world-in-python">
-<h1>“Hello world” in Python<a class="headerlink" href="#hello-world-in-python" title="Permalink to this headline">#</a></h1>
-<p>When programmers are learning a new language, we tend to write a one-line program that prints some version of the message “Hello world!” this is a simple program that shows whether your computer is properly set up to run Python programs.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="exercise-3-extending-the-stroop-effect-not-done-yet">
+<h1>Exercise 3: Extending the stroop effect - NOT DONE YET<a class="headerlink" href="#exercise-3-extending-the-stroop-effect-not-done-yet" title="Permalink to this headline">#</a></h1>
+<p><span class="xref myst">Accept the exercise</span></p>
+<p>In this exercise we’ll be extending the Stroop effect you coded for Exercise 2 into a more complete experiment that (1) uses external files for stimulus generation rather than building them in, (2) accept runtime variables such as a subject code and what condition they’re in, and (3) use some out-of-the-box speech recognition to allow participants to respond with their voices (as the original Stroop task did).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello Python world!&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>## Generating a simple trial list. 
+
+-- to be revised -- 
+
+Suppose we are interested in finding out the efficacy of a particular kind of masking technique and want to examine if it&#39;s more effective in the left vs. right visual field. Let&#39;s code a basic trial list for an experiment in which we display an image on either the left or the right side of the screen. Both sides of the screen are then masked, and we are interested in measuring people&#39;s ability (e.g., accuracy, reaction time) in responding whether the image was on the right or left side of the screen, while comparing responses on masked vs. nonmasked trials. 
+
+To do this, we need to generate a list of trials in which some proportion is masked and some is not masked. Within each condition, we want the image on the left side displayed with some proportion of the time, and on the right the remaining times. 
+
+Let&#39;s begin by having 2/3 masked trials and 1/3 non-masked trials. Within each level of the masking factor, half of the targets should be on the left and half on the right. Let&#39;s have 5 blocks with each block having all the possible trial types. 
+
+The code you write should output to the terminal output that looks just like this (that first number is the block number).
+
+```Text
+$ python generateTrials.py
+1,masked,right
+1,masked,left
+1,masked,right
+1,masked,left
+1,nonmasked,right
+1,nonmasked,left
+2,masked,right
+2,masked,left
+2,masked,right
+2,masked,left
+2,nonmasked,right
+2,nonmasked,left
+3,masked,right
+3,masked,left
+3,masked,right
+3,masked,left
+3,nonmasked,right
+3,nonmasked,left
+4,masked,right
+4,masked,left
+4,masked,right
+4,masked,left
+4,nonmasked,right
+4,nonmasked,left
+5,masked,right
+5,masked,left
+5,masked,right
+5,masked,left
+5,nonmasked,right
+5,nonmasked,left
+```
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello Python world!
-</pre></div>
 </div>
+<section id="exercise-3-parts">
+<h2>Exercise 3 parts<a class="headerlink" href="#exercise-3-parts" title="Permalink to this headline">#</a></h2>
+<div class="admonition-challenge admonition">
+<p class="admonition-title">Challenge!</p>
+<ol class="simple">
+<li><p>Ensure that you can’t run the same participant code twice. If you enter a participant code that’s already been entered, PsychoPy should pop-up a warning box saying “Participant code already exists”. This should prevent you from overwriting an existing data-file.</p></li>
+</ol>
 </div>
-</div>
-<p>Note: If you are using Python 2.7, this would be:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="s2">&quot;Hello Python world!&quot;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello Python world!
-</pre></div>
-</div>
-</div>
-</div>
-<p>If it works, congratulations! You just ran your first Python program.</p>
-<hr class="docutils" />
-<p><a class="reference external" href="http://nbviewer.ipython.org/urls/raw.github.com/ehmatthes/intro_programming/master/notebooks/index.ipynb">Home</a> |
-<a class="reference external" href="http://nbviewer.ipython.org/urls/raw.github.com/ehmatthes/intro_programming/master/notebooks/var_string_num.ipynb">Next: Variables, Strings, and Numbers</a></p>
+<ol class="simple">
+<li><p>Output the trial information and the user’s response, one line per response. The file should look like this and should be called results.txt. Your submission should have at least 20 trials of data, i.e., the results.txt file that you push to the repo should have 20 lines.</p></li>
+</ol>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>green</p></td>
+<td><p>green</p></td>
+<td><p>congruent</p></td>
+<td><p>1</p></td>
+<td><p>854</p></td>
+</tr>
+<tr class="row-odd"><td><p>green</p></td>
+<td><p>yellow</p></td>
+<td><p>incongruent</p></td>
+<td><p>1</p></td>
+<td><p>1023</p></td>
+</tr>
+<tr class="row-even"><td><p>yellow</p></td>
+<td><p>green</p></td>
+<td><p>incongruent</p></td>
+<td><p>0</p></td>
+<td><p>912</p></td>
+</tr>
+<tr class="row-odd"><td><p>yellow</p></td>
+<td><p>yellow</p></td>
+<td><p>congruent</p></td>
+<td><p>1</p></td>
+<td><p>810</p></td>
+</tr>
+</tbody>
+</table>
+<p>Col 1: The word shown</p>
+<p>Col 2: The color of the word</p>
+<p>Col 3: Trial type</p>
+<p>COl 4: 1 for a correct response, 0 for incorrect</p>
+<p>Col 5: The reaction time, in milliseconds.</p>
+<p>The columns should be separated with commas, i.e., the string containing the first line of the file with the data above would look like this:
+<code class="docutils literal notranslate"><span class="pre">green,green,congruent,1,854</span></code></p>
+<p>As in Exercise 2, you should be writing to the file after every trial. Make sure your fine is named <code class="docutils literal notranslate"><span class="pre">subject-code_data.csv</span></code> where <code class="docutils literal notranslate"><span class="pre">subject-code</span></code> is the subject code entered at runtime.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -391,7 +595,7 @@ title="Print to PDF"
   
     By Gary Lupyan<br/>
   
-      &copy; Copyright 2022.<br/>
+      &copy; Copyright 2022. Some examples adapted from http://introtopython.org/.<br/>
 </p>
         </footer>
     </div>

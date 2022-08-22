@@ -84,14 +84,13 @@ while True:
 #  The columns should be separated with commas, i.e., the string containing the first line of the file with the data above would look like this:
 #  `green,green,congruent,1,854`
 # 
-# You should be writing to the file after every trial.
 # 
 # 
+# :::{note}
+# You should be writing to the file after every trial so that if the user quits, you have their partial data.
+# :::
 # 
-# ```{tip}
-#     See the [python
-#     documentation](http://docs.python.org/tutorial/inputoutput.html#reading-and-writing-files)
-#     for examples of how to write to a file. **Ask for help if you are
-#     stuck.**
-# ```
+# :::{tip}
+# See the [python documentation](http://docs.python.org/tutorial/inputoutput.html#reading-and-writing-files) for examples of how to write to a file. **Ask for help if you are stuck.**
+# :::
 # 
