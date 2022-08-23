@@ -65,7 +65,7 @@ parts:
   - caption: Exercises
     chapters:
     - file: notebooks/Exercise1-square
-      title: Exercise 1-Show and square and do stuff with it
+      title: Exercise 1-Show a square and do stuff with it
     - file: notebooks/Exercise2-stroop
       title: Exercise 2-A Stroop task
     - file: notebooks/Exercise3-extended-stroop

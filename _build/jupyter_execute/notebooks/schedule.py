@@ -70,7 +70,7 @@
 # ### In class
 # 1. Exercise 2 Code Review
 # 2. More about functions
-# 3. Randomization and iteration exercise
+# 3. Randomization and iteration exercises
 # 4. Creating simple trial files
 # 5. Extending Exercise 3 with out of the box speech recognition(!)
 # 
@@ -85,7 +85,7 @@
 # ### In class
 # 1. Exercise 3 Code Review
 #     1. Emphasis on refactoring using functions and modular code
-# 2. Randomization and iteration exercises
+# 2. Additional randomization and iteration exercises
 # 3. Begin Exercise 4 - a Posner cueing task
 # 
 

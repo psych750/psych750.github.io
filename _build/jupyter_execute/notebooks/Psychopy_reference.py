@@ -76,11 +76,11 @@
 # Runtime variables are variables you want to set at runtime -- the subject code, demographic info, the condition(s) the subject is assigned to, etc.
 # 
 # ```Python
-# def getRunTimeVars(varsToGet,order,expVersion):
+# def getRunTimeVars(vars_to_get,order,expVersion,exp_version="experiment_code_for_reference"):
 #     #Get run time variables, see http://www.psychopy.org/api/gui.html for explanation
-#     infoDlg = gui.DlgFromDict(dictionary=varsToGet, title=expVersion, fixed=[expVersion],order=order)
+#     infoDlg = gui.DlgFromDict(dictionary=vars_to_get, title=exp_version, order=order)
 #     if infoDlg.OK:
-#         return varsToGet
+#         return vars_to_get
 #     else: 
 #         print('User Cancelled')
 # ```
@@ -88,8 +88,8 @@
 # Sample usage:
 # 
 # ```Python
-# order =  ['subjCode','seed','gender']
-# runTimeVars = getRunTimeVars({'subjCode':'pGrouping_101', 'seed':10, 'gender':['Choose', 'male','female']}, order, 'ver1')
+# order =  ['subj_code','seed','gender']
+# runTimeVars = getRunTimeVars({'subj_code':'stroop_101', 'seed':10, 'gender':['Choose', 'male','female']}, order)
 # ```
 # 
 # ```{admonition} Challenge!

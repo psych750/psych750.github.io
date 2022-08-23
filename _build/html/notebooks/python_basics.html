@@ -422,8 +422,14 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lists-and-iterating-through-them">
-   Lists and iterating through them
+  <a class="reference internal nav-link" href="#lists-and-for-loops">
+   Lists and
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     for
+    </span>
+   </code>
+   loops
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -478,8 +484,14 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lists-and-iterating-through-them">
-   Lists and iterating through them
+  <a class="reference internal nav-link" href="#lists-and-for-loops">
+   Lists and
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     for
+    </span>
+   </code>
+   loops
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -682,8 +694,8 @@ var_6 =  &lt;class &#39;str&#39;&gt;
 </div>
 <p>To use so-called f strings (f stands for formatted) just encase the variables in curly-braces and write out the regular text part of the string as normal. Read more about these f-strings <a class="reference external" href="https://realpython.com/python-f-strings/">here</a></p>
 </section>
-<section id="lists-and-iterating-through-them">
-<h2>Lists and iterating through them<a class="headerlink" href="#lists-and-iterating-through-them" title="Permalink to this headline">#</a></h2>
+<section id="lists-and-for-loops">
+<h2>Lists and <code class="docutils literal notranslate"><span class="pre">for</span></code> loops<a class="headerlink" href="#lists-and-for-loops" title="Permalink to this headline">#</a></h2>
 <p>A data structure you’ll be using a whole lot in Python is a <a class="reference external" href="https://learnpython.com/blog/python-array-vs-list/">list</a>. For those coming from other programming languages, lists are largely the same as arrays, although Python lists can mix different types of variables. For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -717,11 +729,11 @@ pig
 </div>
 </div>
 </div>
-<p>A common use of <code class="docutils literal notranslate"><span class="pre">for</span></code> loops is to do something a certain number of times. Fr example, let’s print the first 10 integers, beginning from 0:</p>
+<p>A common use of <code class="docutils literal notranslate"><span class="pre">for</span></code> loops is to do something a certain number of times. For example, let’s print the first 10 integers, beginning from 0:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">cur_nu</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">cur_nu</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">cur_num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">cur_num</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -770,6 +782,15 @@ What happened here?<div class="sd-summary-down docutils">
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Technically range() returns a <code class="docutils literal notranslate"><span class="pre">range</span> <span class="pre">object</span></code> which is a <a class="reference external" href="https://treyhunner.com/2018/02/python-range-is-not-an-iterator/">“lazy iterable”</a> and is executed only later, when we try to access its values. This is different from Python 2 where <code class="docutils literal notranslate"><span class="pre">range()</span></code> returns a regular list.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If all you need to do is to execute some command a certain number of times, there’s a Python convention to use <code class="docutils literal notranslate"><span class="pre">_</span></code> as a throwaway index variable, for example, let’s generate 5 random integers between 1-10:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">25</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
 </div>
 </section>
 <section id="a-while-loop">

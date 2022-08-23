@@ -9,7 +9,7 @@
 # for wide or 'n' for narrow, and buzzing sound otherwise. It should
 # also output the correctness of the response and the RT to the console/terminal (a.k.a. `standard
 # output`. The .wav files it uses are available can be downloaded
-# [here](http://sapir.psych.wisc.edu/classMaterials/psych711/buzzBleep.zip))
+# [here](https://github.com/psych750/resources/blob/main/stimuli/buzzBleep.zip))
 
 # In[ ]:
 
@@ -44,7 +44,7 @@ for curIter in range(20)
 
 
 # ## Practice 2
-# Here's some more broken code. This program should prompt you with an expression category (Happy, Sad, etc.) and then show a face. If you categorize the face correctly, you should see a green CORRECT. Otherwise a red ERROR. The program should present you with 40 trials. Download the faces [here](http://sapir.psych.wisc.edu/classMaterials/psych711/faces.zip) and place them inside a `faces` folder in the same directory as the script below.
+# Here's some more broken code. This program should prompt you with an expression category (Happy, Sad, etc.) and then show a face. If you categorize the face correctly (or at least normatively), you should see a green CORRECT. Otherwise a red ERROR. The program should present you with 40 trials. Download the faces [here](https://github.com/psych750/resources/blob/main/stimuli/faces.zip) and place them inside a `faces` folder in the same directory as the script below.
 
 # In[1]:
 

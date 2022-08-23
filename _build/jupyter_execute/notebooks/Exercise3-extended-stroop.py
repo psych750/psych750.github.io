@@ -1,91 +1,111 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Exercise 3: Extending the stroop effect - NOT DONE YET
+# # Exercise 3: Extending the Stroop effect
 # 
-# [Accept the exercise](XXXX)
+# [Accept the exercise](https://classroom.github.com/a/ld0o1bOq). Please note that this exercise is more involved than Exercise 2 and will require more time. To this end, we'll make it a group exercise. Each of you has been paired with another student in the class. You can collaborate in person, through Slack, or by using [live code editing feature of VSC](https://code.visualstudio.com/learn/collaboration/live-share)
 # 
-# In this exercise we'll be extending the Stroop effect you coded for Exercise 2 into a more complete experiment that (1) uses external files for stimulus generation rather than building them in, (2) accept runtime variables such as a subject code and what condition they're in, and (3) use some out-of-the-box speech recognition to allow participants to respond with their voices (as the original Stroop task did).
-
-# In[ ]:
-
-
-## Generating a simple trial list. 
-
--- to be revised -- 
-
-Suppose we are interested in finding out the efficacy of a particular kind of masking technique and want to examine if it's more effective in the left vs. right visual field. Let's code a basic trial list for an experiment in which we display an image on either the left or the right side of the screen. Both sides of the screen are then masked, and we are interested in measuring people's ability (e.g., accuracy, reaction time) in responding whether the image was on the right or left side of the screen, while comparing responses on masked vs. nonmasked trials. 
-
-To do this, we need to generate a list of trials in which some proportion is masked and some is not masked. Within each condition, we want the image on the left side displayed with some proportion of the time, and on the right the remaining times. 
-
-Let's begin by having 2/3 masked trials and 1/3 non-masked trials. Within each level of the masking factor, half of the targets should be on the left and half on the right. Let's have 5 blocks with each block having all the possible trial types. 
-
-The code you write should output to the terminal output that looks just like this (that first number is the block number).
-
-```Text
-$ python generateTrials.py
-1,masked,right
-1,masked,left
-1,masked,right
-1,masked,left
-1,nonmasked,right
-1,nonmasked,left
-2,masked,right
-2,masked,left
-2,masked,right
-2,masked,left
-2,nonmasked,right
-2,nonmasked,left
-3,masked,right
-3,masked,left
-3,masked,right
-3,masked,left
-3,nonmasked,right
-3,nonmasked,left
-4,masked,right
-4,masked,left
-4,masked,right
-4,masked,left
-4,nonmasked,right
-4,nonmasked,left
-5,masked,right
-5,masked,left
-5,masked,right
-5,masked,left
-5,nonmasked,right
-5,nonmasked,left
-```
-
+# In this exercise we'll be extending the Stroop effect task you coded for Exercise 2 into a more complete experiment that (1) generates stimulus lists that are then read in by the main script, (3) accept runtime variables to assign participants to conditions and record participant codes, and (3) use some out-of-the-box speech recognition to allow participants to respond by using their voice.
+# 
+# We'll use the all same stimuli, but introduce several variations: 
+# 
+# a. We'll vary the proportion of trials that are incongruent (i.e., when the color of the font does not match the word).
+# 
+# b. We'll introduce an orientation manipulation so that on 50% of trials the word is presented upside down (what effect do you think this will have on response times?)
+# 
+# c. Lastly, we'll introduce a speech to-text feature so that participants can respond using their voice rather than by pressing a key. 
+# 
+# In this exercise we'll also substantially modularize the code so that one part of it is responsibl for generating the trials, another for reading in the trial list, another for showing the stimuli, and another for writing the participant's responses to a file.
+# 
 
 # ## Exercise 3 parts
+
+# ## Part 1.
+# Complete the `generate_trials()` function below so that it writes a file with all the trials to be presented to the participant.
+
+# In[9]:
+
+
+def generate_trials(subj_code, prop_incongruent, num_trials=100):
+    '''
+    Writes a file named {subj_code_}trials.csv, one line per trial. Creates a trials subdirectory if one does not exist
+    subj_code: a string corresponding to a participant's unique subject code
+    prop_incongruent: float [0-1] corresponding to the proportion of trials that are incongruent
+    num_trials: integer specifying total number of trials (default 100)
+    '''
+    import os
+    import random
+    
+    try:
+        os.mkdir('trials')
+    except FileExistsError:
+        print('Trials directory exists; proceeding to open file')
+    f= open(f"trials/{subj_code}_trials.csv","w")
+    
+    pass
+
+
+# :::{tip}
+# The text at the start of the function explaining what it does and its arguments is called a ["docstring"](https://classroom.github.com/classrooms/110263119-psych750-fa22). This is the proper way to document what a function does. Unlike comments, which are completely ignored by the Python interpreter, docstrings are part of the function and can be accessed like so: `print(generateTrials.__doc__)`. 
+# :::
 # 
-# ```{admonition} Challenge!
-# 1. Ensure that you can't run the same participant code twice. If you enter a participant code that's already been entered, PsychoPy should pop-up a warning box saying "Participant code already exists". This should prevent you from overwriting an existing data-file. 
+# The produced file should be a CSV and have the following format:
+# 
+# Col 1: subject code
+# 
+# Col 2: trial number (1,2,3,etc.) from 1 for the first line to num_trials for the second
+# 
+# Col 3: proportion of incongruent trials
+# 
+# Col 4: the word to be shown
+# 
+# Col 5: the color of the word
+# 
+# Col 6: whether the trial is 'congruent' or 'incongruent'
+# 
+# Col 7: The orientation of the word, "upright", or "upside_down". Please ensure that 50% of the congruent trials are upright (and the remaining are upside-down). Same thing for incongruent trials -- 50% should be upright and the remainder upside-down. What this means is that if there are 100 total trials and 25% are incongruent, then 75/2 of the congruent trials (rounded to the nearest integer = 38) should be upright and 25/2 of the incongruent trials (rounded = 13 trials) should be upright.
+# 
+# 
+
+# ## Part 2
+# 
+# Extend the script you wrote for Exercise 2 (or use the provided solution if you like) to accept these 2 runtime variables [using a GUI box](https://psych750.github.io/notebooks/Psychopy_reference.html#a-simple-function-for-popping-up-an-error-using-a-gui-window):
+# 
+# - subject code (any string, but conventionally somthing like stroop_101, stroop_102, etc.)
+# - proportion of incongruent trials (drop down box of 25%, 50%, and 75%)
+# 
+# The entered values should be stored in a dictionary called `runTimeVars`. After the values are collected, the dictionary might look like this:
+# 
+# ```python
+# runTimeVars = {'subj_code':'stroop_101', 'prop_incongruent':25}
 # ```
 # 
-# 1.  Output the trial information and the user's response, one line per response. The file should look like this and should be called results.txt. Your submission should have at least 20 trials of data, i.e., the results.txt file that you push to the repo should have 20 lines.
+# ```{note}
+# This dictionary must be populated dynamically. You should not be hard-coding any of these values
+# ``` 
 # 
-# |        |        |             |   |      |
-# |--------|--------|-------------|---|------|
-# | green  | green  | congruent   | 1 | 854  |
-# | green  | yellow | incongruent | 1 | 1023 |
-# | yellow | green  | incongruent | 0 | 912  |
-# | yellow | yellow | congruent   | 1 | 810  |
+
+# ## Part 3
 # 
+# Define a `write_data()` function in your code that is called after every response and writes all the trial information **and** responses to a file. 
 # 
-# Col 1: The word shown
+#  As in Exercise 2, you should be writing to the file after every trial. Make sure your data is written to `data/subject-code_data.csv` where `subject-code` is the subject code entered at runtime and `data/` is a subdirectory that will contain all the data files. Your code should record one line per response and record responses as they come in. If a user quits after trial 50, the data file should have recorded those 50 responses.  Here's an example of what your output file should look like (note that the first line contains column names.
 # 
-# Col 2: The color of the word
+# | subj_code  | trial_num | prop_incongruent | word   | color | congruence  | orientation | resp | is_correct | RT  |
+# |------------|-----------|------------------|--------|-------|-------------|-------------|------|------------|-----|
+# | stroop_101 | 1         | .5               | green  | blue  | incongruent | upright     | b    | 1          | 898 |
+# | stroop_101 | 2         | .5               | green  | green | congruent   | upright     | g    | 1          | 754 |
+# | stroop_101 | 3         | .5               | yellow | red   | incongruent | upside_down | y    | 0          | 902 |
 # 
-# Col 3: Trial type
+# ```{note}
+# Use a CSV format as before: fields are separated by commas
+# ```  
 # 
-# COl 4: 1 for a correct response, 0 for incorrect
+# ```{admonition} Challenge!
+# Ensure that you can't run the same participant code twice. If you enter a participant code that's already been entered before, PsychoPy should pop-up a warning box saying "Participant code already exists". This should prevent you from overwriting an existing data-file. If you take up this challenge, tag it as e3_4_challenge
+# ```
+
+# ## Part 4
 # 
-# Col 5: The reaction time, in milliseconds.
-# 
-#  The columns should be separated with commas, i.e., the string containing the first line of the file with the data above would look like this:
-#  `green,green,congruent,1,854`
-# 
-# As in Exercise 2, you should be writing to the file after every trial. Make sure your fine is named `subject-code_data.csv` where `subject-code` is the subject code entered at runtime.
-# 
-# 
+# Microphone response
+# ....stay tuned for starter code.....

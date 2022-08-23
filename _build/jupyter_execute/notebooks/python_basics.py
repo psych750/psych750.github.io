@@ -122,7 +122,7 @@ print(f"{name}'s dog")
 
 # To use so-called f strings (f stands for formatted) just encase the variables in curly-braces and write out the regular text part of the string as normal. Read more about these f-strings [here](https://realpython.com/python-f-strings/)
 
-# ## Lists and iterating through them 
+# ## Lists and `for` loops  
 
 # A data structure you'll be using a whole lot in Python is a [list](https://learnpython.com/blog/python-array-vs-list/). For those coming from other programming languages, lists are largely the same as arrays, although Python lists can mix different types of variables. For example:
 
@@ -144,13 +144,13 @@ for animal in animals:
     print(animal)
 
 
-# A common use of `for` loops is to do something a certain number of times. Fr example, let's print the first 10 integers, beginning from 0:
+# A common use of `for` loops is to do something a certain number of times. For example, let's print the first 10 integers, beginning from 0:
 
 # In[9]:
 
 
-for cur_nu in range(10):
-    print(cur_nu)
+for cur_num in range(10):
+    print(cur_num)
 
 
 # ```{dropdown} What happened here?
@@ -169,6 +169,15 @@ for cur_num in range (5,10):
 # ```{note}
 # Technically range() returns a `range object` which is a ["lazy iterable"](https://treyhunner.com/2018/02/python-range-is-not-an-iterator/) and is executed only later, when we try to access its values. This is different from Python 2 where `range()` returns a regular list.
 # ```
+
+# :::{tip}
+# If all you need to do is to execute some command a certain number of times, there's a Python convention to use `_` as a throwaway index variable, for example, let's generate 5 random integers between 1-10:
+# ```python
+# import random
+# for _ in range(25):
+#     print(random.randrange(1,10+1))
+# ```
+# :::
 
 # ## A `while` loop
 
