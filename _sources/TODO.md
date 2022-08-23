@@ -10,7 +10,7 @@
 
 [x] Figure out how to share solutions for in class exercises
 
-[ ] Exercise 3 extension of Stroop to speech recognition + runtime vars
+[ ] Exercise 3 extension of Stroop to speech recognition 
 
 [ ] Finalize dict in-class activity for week 3
 
