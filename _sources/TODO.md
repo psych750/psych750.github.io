@@ -6,6 +6,10 @@
 
 [x] Finish reorganizing dictionary notebook 
 
+[x] Add anonymous vars (_)to python reference
+
+[x] Figure out how to share solutions for in class exercises - https://codeshare.io/?
+
 [ ] Exercise 3 extension of Stroop to speech recognition + runtime vars
 
 [ ] Finalize dict in-class activity for week 3
@@ -15,10 +19,6 @@
 [ ] Add file IO notebook
 
 [ ] R reference notebook necessary?
-
-[ ] Add anonymous vars (_)to python reference
-
-[ ] Figure out how to share solutions for in class exercises - https://codeshare.io/?
 
 [ ] Add recursive fibonacci to function notebook?
     - efficient one line- fib = lambda n,a=0,b=1: a if n<=0 else fib(n-1,b,a+b)
