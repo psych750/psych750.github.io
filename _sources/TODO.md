@@ -8,7 +8,7 @@
 
 [x] Add anonymous vars (_)to python reference
 
-[x] Figure out how to share solutions for in class exercises - https://codeshare.io/?
+[x] Figure out how to share solutions for in class exercises
 
 [ ] Exercise 3 extension of Stroop to speech recognition + runtime vars
 
@@ -16,7 +16,7 @@
 
 [ ] Edit debugging exercise part 2. Break it into several parts. Part 2 too difficult early on.
 
-[ ] Add file IO notebook
+[ ] Add file IO notebook: opening and writing CSVs both with and without pandas 
 
 [ ] R reference notebook necessary?
 

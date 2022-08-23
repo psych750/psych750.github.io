@@ -426,8 +426,18 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-3">
-   Part 3
+  <a class="reference internal nav-link" href="#part-4">
+   Part 4
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Part 4
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-5">
+   Part 5
   </a>
  </li>
 </ul>
@@ -465,8 +475,18 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-3">
-   Part 3
+  <a class="reference internal nav-link" href="#part-4">
+   Part 4
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Part 4
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-5">
+   Part 5
   </a>
  </li>
 </ul>
@@ -481,10 +501,18 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="exercise-3-extending-the-stroop-effect-not-done-yet">
 <h1>Exercise 3: Extending the Stroop effect - NOT DONE YET<a class="headerlink" href="#exercise-3-extending-the-stroop-effect-not-done-yet" title="Permalink to this headline">#</a></h1>
-<p><span class="xref myst">Accept the exercise</span></p>
-<p>In this exercise we’ll be extending the Stroop effect you coded for Exercise 2 into a more complete experiment that (1) generates stimulus lists that are then read in by the main script, (3) accept runtime variables to assign participants to conditions and record participant codes, and (3) use some out-of-the-box speech recognition to allow participants to respond by using their voice.</p>
+<p><span class="xref myst">Accept the exercise</span>. Please note that this exercise is more involved than Exercise 2 and will require more time. To this end, we’ll make it a group exercise. Each of you has been paired with another student in the class. You can collaborate in person, through Slack, or by using <a class="reference external" href="https://code.visualstudio.com/learn/collaboration/live-share">live code editing feature of VSC</a></p>
+<p>In this exercise we’ll be extending the Stroop effect task you coded for Exercise 2 into a more complete experiment that (1) generates stimulus lists that are then read in by the main script, (3) accept runtime variables to assign participants to conditions and record participant codes, and (3) use some out-of-the-box speech recognition to allow participants to respond by using their voice.</p>
 <p>We’ll use the all same stimuli, but introduce several variations:</p>
-<p>a. Some congruent conditions</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>a. We&#39;ll vary the proportion of trials that are incongruent (i.e., when the color of the font does not match the word)
+
+b. We&#39;ll introduce an orientation manipulation so that on 50% of trials the word is presented upside down (what effect do you think this will have on response times?)
+
+c. Lastly, we&#39;ll introduce a speech to-text feature so that participants can respond using their voice rather than by pressing a key. 
+
+In this exercise we&#39;ll also substantially modularize the code so that one part of it is responsibl for generating the trials, another for reading in the trial list, another for showing the stimuli, and another for writing the participant&#39;s responses to a file.
+</pre></div>
+</div>
 <section id="exercise-3-parts">
 <h2>Exercise 3 parts<a class="headerlink" href="#exercise-3-parts" title="Permalink to this headline">#</a></h2>
 </section>
@@ -522,8 +550,8 @@ The text at the start of the function explaining what it does and its arguments 
 <p>Col 2: trial number (1,2,3,etc.) from 1 for the first line to num_trials for the second</p>
 <p>Col 3: the word to be shown</p>
 <p>Col 4: the color of the word</p>
-<p>Col 5: The orientation of the word, “upright”, or “upside_down”</p>
 <p>Col 5: whether the trial is ‘congruent’ or ‘incongruent’</p>
+<p>Col 5: The orientation of the word, “upright”, or “upside_down”. Please ensure that 50% of the congruent trials are upright (and the remaining are upside-down). Same thing for incongruent trials – 50% should be upright and the remainder upside-down. What this means is that if there are 100 total trials and 25% are incongruent, then 75/2 of the congruent trials (rounded to the nearest integer = 38) should be upright and 25/2 of the incongruent trials (rounded = 13 trials) should be upright.</p>
 </section>
 <section id="part-2">
 <h2>Part 2<a class="headerlink" href="#part-2" title="Permalink to this headline">#</a></h2>
@@ -541,23 +569,22 @@ The text at the start of the function explaining what it does and its arguments 
 <p>This dictionary must be populated dynamically. You should not be hard-coding any of these values</p>
 </div>
 </section>
-<section id="part-3">
-<h2>Part 3<a class="headerlink" href="#part-3" title="Permalink to this headline">#</a></h2>
-<p>Extend the script to pass in the values collected by the GUI box to the <code class="docutils literal notranslate"><span class="pre">generateTrials()</span></code> function you wrote in part 1 so that it creates a custom trial file for the subject with the data entered into the GUI box. For example, if you entered “stroop_101” as the subject ccode and 25% incongruent trials, then running your script should generate a file inside <code class="docutils literal notranslate"><span class="pre">trials/</span></code> called “stroop_101_trials.csv” containing 100 trials of which 25% are incongruent.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Part 4</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>As in Exercise 2, you should be writing to the file after every trial. Make sure your fine is named <code class="docutils literal notranslate"><span class="pre">subject-code_data.csv</span></code> where <code class="docutils literal notranslate"><span class="pre">subject-code</span></code> is the subject code entered at runtime.</p>
+<section id="part-4">
+<h2>Part 4<a class="headerlink" href="#part-4" title="Permalink to this headline">#</a></h2>
+<p>Let’s introduce another condition</p>
+</section>
+<section id="id1">
+<h2>Part 4<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>As in Exercise 2, you should be writing to the file after every trial. Make sure your fine is named <code class="docutils literal notranslate"><span class="pre">subject-code_data.csv</span></code> where <code class="docutils literal notranslate"><span class="pre">subject-code</span></code> is the subject code entered at runtime. It should record one line per response and record responses as they come in. If a user quits after trial 50, the data file should have recorded those 50 responses.</p>
 <div class="admonition-challenge admonition">
 <p class="admonition-title">Challenge!</p>
-<ol class="simple">
-<li><p>Ensure that you can’t run the same participant code twice. If you enter a participant code that’s already been entered, PsychoPy should pop-up a warning box saying “Participant code already exists”. This should prevent you from overwriting an existing data-file.</p></li>
-</ol>
+<p>Ensure that you can’t run the same participant code twice. If you enter a participant code that’s already been entered, PsychoPy should pop-up a warning box saying “Participant code already exists”. This should prevent you from overwriting an existing data-file. If you take up this challenge, tag it as e3_4_challenge</p>
 </div>
+</section>
+<section id="part-5">
+<h2>Part 5<a class="headerlink" href="#part-5" title="Permalink to this headline">#</a></h2>
+<p>Microphone response
+….add starter code…</p>
 </section>
 </section>
 
