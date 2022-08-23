@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Exercise 3: Extending the Stroop effect - NOT DONE YET &#8212; Psych 750</title>
+    <title>Exercise 3: Extending the Stroop effect &#8212; Psych 750</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -431,11 +431,6 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Part 4
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#part-5">
    Part 5
   </a>
@@ -449,7 +444,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Exercise 3: Extending the Stroop effect - NOT DONE YET</h1>
+                <h1>Exercise 3: Extending the Stroop effect</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -480,11 +475,6 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Part 4
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#part-5">
    Part 5
   </a>
@@ -499,29 +489,24 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="exercise-3-extending-the-stroop-effect-not-done-yet">
-<h1>Exercise 3: Extending the Stroop effect - NOT DONE YET<a class="headerlink" href="#exercise-3-extending-the-stroop-effect-not-done-yet" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="exercise-3-extending-the-stroop-effect">
+<h1>Exercise 3: Extending the Stroop effect<a class="headerlink" href="#exercise-3-extending-the-stroop-effect" title="Permalink to this headline">#</a></h1>
 <p><span class="xref myst">Accept the exercise</span>. Please note that this exercise is more involved than Exercise 2 and will require more time. To this end, we’ll make it a group exercise. Each of you has been paired with another student in the class. You can collaborate in person, through Slack, or by using <a class="reference external" href="https://code.visualstudio.com/learn/collaboration/live-share">live code editing feature of VSC</a></p>
 <p>In this exercise we’ll be extending the Stroop effect task you coded for Exercise 2 into a more complete experiment that (1) generates stimulus lists that are then read in by the main script, (3) accept runtime variables to assign participants to conditions and record participant codes, and (3) use some out-of-the-box speech recognition to allow participants to respond by using their voice.</p>
 <p>We’ll use the all same stimuli, but introduce several variations:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>a. We&#39;ll vary the proportion of trials that are incongruent (i.e., when the color of the font does not match the word)
-
-b. We&#39;ll introduce an orientation manipulation so that on 50% of trials the word is presented upside down (what effect do you think this will have on response times?)
-
-c. Lastly, we&#39;ll introduce a speech to-text feature so that participants can respond using their voice rather than by pressing a key. 
-
-In this exercise we&#39;ll also substantially modularize the code so that one part of it is responsibl for generating the trials, another for reading in the trial list, another for showing the stimuli, and another for writing the participant&#39;s responses to a file.
-</pre></div>
-</div>
+<p>a. We’ll vary the proportion of trials that are incongruent (i.e., when the color of the font does not match the word)</p>
+<p>b. We’ll introduce an orientation manipulation so that on 50% of trials the word is presented upside down (what effect do you think this will have on response times?)</p>
+<p>c. Lastly, we’ll introduce a speech to-text feature so that participants can respond using their voice rather than by pressing a key.</p>
+<p>In this exercise we’ll also substantially modularize the code so that one part of it is responsibl for generating the trials, another for reading in the trial list, another for showing the stimuli, and another for writing the participant’s responses to a file.</p>
 <section id="exercise-3-parts">
 <h2>Exercise 3 parts<a class="headerlink" href="#exercise-3-parts" title="Permalink to this headline">#</a></h2>
 </section>
 <section id="part-1">
 <h2>Part 1.<a class="headerlink" href="#part-1" title="Permalink to this headline">#</a></h2>
-<p>Complete the <code class="docutils literal notranslate"><span class="pre">generateTrials()</span></code> function below so that it writes a file with all the trials to be presented to the participant.</p>
+<p>Complete the <code class="docutils literal notranslate"><span class="pre">generate_trials()</span></code> function below so that it writes a file with all the trials to be presented to the participant.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generateTrials</span><span class="p">(</span><span class="n">subj_code</span><span class="p">,</span> <span class="n">prop_incongruent</span><span class="p">,</span> <span class="n">num_trials</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate_trials</span><span class="p">(</span><span class="n">subj_code</span><span class="p">,</span> <span class="n">prop_incongruent</span><span class="p">,</span> <span class="n">num_trials</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Writes a file named {subj_code_}trials.csv, one line per trial. Creates a trials subdirectory if one does not exist</span>
 <span class="sd">    subj_code: a string corresponding to a participant&#39;s unique subject code</span>
@@ -542,9 +527,10 @@ In this exercise we&#39;ll also substantially modularize the code so that one pa
 </div>
 </div>
 </div>
-<p>!!!{tip}
-The text at the start of the function explaining what it does and its arguments is called a <a class="reference external" href="https://classroom.github.com/classrooms/110263119-psych750-fa22">“docstring”</a>. This is the proper way to document what a function does. Unlike comments, which are completely ignored by the Python interpreter, docstrings are part of the function and can be accessed like so: <code class="docutils literal notranslate"><span class="pre">print(generateTrials.__doc__)</span></code>.
-!!!</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The text at the start of the function explaining what it does and its arguments is called a <a class="reference external" href="https://classroom.github.com/classrooms/110263119-psych750-fa22">“docstring”</a>. This is the proper way to document what a function does. Unlike comments, which are completely ignored by the Python interpreter, docstrings are part of the function and can be accessed like so: <code class="docutils literal notranslate"><span class="pre">print(generateTrials.__doc__)</span></code>.</p>
+</div>
 <p>The produced file should be a CSV and have the following format:</p>
 <p>Col 1: subject code</p>
 <p>Col 2: trial number (1,2,3,etc.) from 1 for the first line to num_trials for the second</p>
@@ -571,11 +557,7 @@ The text at the start of the function explaining what it does and its arguments 
 </section>
 <section id="part-4">
 <h2>Part 4<a class="headerlink" href="#part-4" title="Permalink to this headline">#</a></h2>
-<p>Let’s introduce another condition</p>
-</section>
-<section id="id1">
-<h2>Part 4<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
-<p>As in Exercise 2, you should be writing to the file after every trial. Make sure your fine is named <code class="docutils literal notranslate"><span class="pre">subject-code_data.csv</span></code> where <code class="docutils literal notranslate"><span class="pre">subject-code</span></code> is the subject code entered at runtime. It should record one line per response and record responses as they come in. If a user quits after trial 50, the data file should have recorded those 50 responses.</p>
+<p>As in Exercise 2, you should be writing to the file after every trial. Make sure your data is written to <code class="docutils literal notranslate"><span class="pre">data/subject-code_data.csv</span></code> where <code class="docutils literal notranslate"><span class="pre">subject-code</span></code> is the subject code entered at runtime and <code class="docutils literal notranslate"><span class="pre">data/</span></code> is a subdirectory that will contain all the data files. Your code should record one line per response and record responses as they come in. If a user quits after trial 50, the data file should have recorded those 50 responses.</p>
 <div class="admonition-challenge admonition">
 <p class="admonition-title">Challenge!</p>
 <p>Ensure that you can’t run the same participant code twice. If you enter a participant code that’s already been entered, PsychoPy should pop-up a warning box saying “Participant code already exists”. This should prevent you from overwriting an existing data-file. If you take up this challenge, tag it as e3_4_challenge</p>
@@ -584,7 +566,7 @@ The text at the start of the function explaining what it does and its arguments 
 <section id="part-5">
 <h2>Part 5<a class="headerlink" href="#part-5" title="Permalink to this headline">#</a></h2>
 <p>Microphone response
-….add starter code…</p>
+….stay tuned for starter code…..</p>
 </section>
 </section>
 
