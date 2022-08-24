@@ -31,7 +31,7 @@
 [ ] Add assignment operators to python reference. Cool. 
     - https://www.digitalocean.com/community/tutorials/how-to-use-assignment-expressions-in-python
 
-[ ] For string manipulation add a names in-class exercise where students have to get first names from class roster
+[x] For string manipulation add a names in-class exercise where students have to get first names from class roster
 
 [ ] Exercise 4 - interactive adjustment? + mouse. Adaptation experiment. Easy.
 
