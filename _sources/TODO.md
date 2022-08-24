@@ -10,13 +10,17 @@
 
 [x] Figure out how to share solutions for in class exercises
 
-[ ] Exercise 3 extension of Stroop to speech recognition 
+[x] Exercise 3 basics
+
+[ ] Add speech recognition + starter code to Exercise 3
+
+[ ] Add file IO notebook: opening and writing CSVs both with and without pandas 
 
 [ ] Finalize dict in-class activity for week 3
 
-[ ] Edit debugging exercise part 2. Break it into several parts. Part 2 too difficult early on.
+[ ] Revise and fix trial_generation notebook
 
-[ ] Add file IO notebook: opening and writing CSVs both with and without pandas 
+[ ] Edit debugging exercise part 2. Break it into several parts. Part 2 too difficult early on.
 
 [ ] R reference notebook necessary?
 
@@ -34,4 +38,3 @@
 [ ] Exercise 5 - Posner cueing? - extension to bike signaling. Collect data in lab; bring it to them to analyze.
 
 [ ] Exercise 6 - GSS data-wrangling and plotting.
-
