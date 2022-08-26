@@ -253,6 +253,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="name_parsing.html">
+   String manipulation
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="debugging_1.html">
    Debugging practice 1
   </a>
@@ -265,8 +270,13 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="Exercise0-test.html">
+   Exercise 0-Test assignment
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="Exercise1-square.html">
-   Exercise 1-Show and square and do stuff with it
+   Exercise 1-Show a square and do stuff with it
   </a>
  </li>
  <li class="toctree-l1">
@@ -623,13 +633,15 @@ Python <span class="m">3</span>.8.13 <span class="o">(</span>default, Mar <span 
 Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&quot;</span>, <span class="s2">&quot;credits&quot;</span> or <span class="s2">&quot;license&quot;</span> <span class="k">for</span> more information.
 </pre></div>
 </div>
+<p>Now you can exit out of Python by typing:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>exit<span class="o">()</span>
+</pre></div>
+</div>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="install-the-necessary-python-packages">
 <h1>Install the necessary Python packages<a class="headerlink" href="#install-the-necessary-python-packages" title="Permalink to this headline">#</a></h1>
-<ul class="simple">
-<li><p>Now let’s install the packages we’ll need. Paste in the lines below, one at at a time, into your terminal (make sure your new environment is activated first). Wait for everything to install before proceeding to the next line.</p></li>
-</ul>
+<p>Now let’s install the packages we’ll need. Paste in the lines below, one at at a time, into your terminal – not the Python interpreter. Make sure your new environment is activated first using <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span></code>. Wait for everything to install before proceeding to the next line.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install jupyter jupyterlab
 conda install pyaudio
 pip install psychopy
@@ -637,7 +649,7 @@ pip install psychopy
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>If you run into any install errors, please make note of the precise errors and post them to the #installation_problems Slack channel.</p>
+<p>If you run into any install errors, please <strong>make note of the precise errors</strong> and post them to the #installation_problems Slack channel.</p>
 </div>
 <section id="test-psychopy">
 <h2>Test PsychoPy<a class="headerlink" href="#test-psychopy" title="Permalink to this headline">#</a></h2>
@@ -649,10 +661,11 @@ pip install psychopy
 <span class="go">&#39;2022.2.2&#39;</span>
 </pre></div>
 </div>
-<p>If you see the verison number, the PsychoPy library probably installed correctly. But let’s do some more tests</p>
+<p>If you see the verison number, the PsychoPy library probably installed correctly. But let’s do some more tests.</p>
 <ul class="simple">
 <li><p>Let’s test if PsychoPy can successfully open a new window.</p></li>
 </ul>
+<p>Start the Python interpreter and type (copy/paste) the following:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">psychopy</span> <span class="kn">import</span> <span class="n">visual</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">visual</span><span class="o">.</span><span class="n">Window</span><span class="p">((</span><span class="mi">400</span><span class="p">,</span><span class="mi">400</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
 </pre></div>

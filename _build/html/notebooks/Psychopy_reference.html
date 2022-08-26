@@ -253,6 +253,16 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="name_parsing.html">
+   String manipulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="list_manip_vowels_1.html">
+   String/list manipulation
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="debugging_1.html">
    Debugging practice 1
   </a>
@@ -265,8 +275,13 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="Exercise0-test.html">
+   Exercise 0-Test assignment
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="Exercise1-square.html">
-   Exercise 1-Show and square and do stuff with it
+   Exercise 1-Show a square and do stuff with it
   </a>
  </li>
  <li class="toctree-l1">
@@ -766,54 +781,78 @@ box, see below.</p>
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
     <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">mouse</span><span class="o">.</span><span class="n">getPressed</span><span class="p">()):</span> <span class="c1">#if any mouse button is pressed</span>
         <span class="n">mouse_pos</span> <span class="o">=</span> <span class="n">mouse</span><span class="o">.</span><span class="n">getPos</span><span class="p">()</span> <span class="c1">#get its position at time of button press</span>
-    <span class="k">break</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;user clicked at&#39;</span><span class="p">,</span> <span class="n">mouse_pos</span><span class="p">)</span>
-    
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;user clicked at&#39;</span><span class="p">,</span> <span class="n">mouse_pos</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">getKeys</span><span class="p">(</span><span class="s1">&#39;q&#39;</span><span class="p">):</span>
+        <span class="k">break</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>What’s going on here?</p>
-<p><code class="docutils literal notranslate"><span class="pre">getPressed()</span></code> returns a list of mouse button states, e.g., [0,0,0] which will always evaluate to <code class="docutils literal notranslate"><span class="pre">True</span></code>. The built-in function <code class="docutils literal notranslate"><span class="pre">any()</span></code> allows us to check if any of the values in the list are <code class="docutils literal notranslate"><span class="pre">True</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">getPressed()</span></code> returns a list of mouse button states, e.g., [0,0,0] if no buttons are pressed and [1,0,0] if the first/left mouse buttom is pressed. Because it’s a non-empty list it will always evaluate to <code class="docutils literal notranslate"><span class="pre">True</span></code>. The built-in function <code class="docutils literal notranslate"><span class="pre">any()</span></code> allows us to check if any of the values in the list are <code class="docutils literal notranslate"><span class="pre">True</span></code> at which point we grab the position of the mouse and print it out for reference.</p>
 </section>
 <section id="show-text-until-mouse-click">
 <h3>Show text until mouse click<a class="headerlink" href="#show-text-until-mouse-click" title="Permalink to this headline">#</a></h3>
-<p>One difference between keyboards and mice is that <code class="docutils literal notranslate"><span class="pre">event.getKeys(['d'])</span></code> becomes false as soon as ‘d’ key is pressed (the ‘d’ is removed from the buffer and a single key-press corresponds to a single event). In contrast, <code class="docutils literal notranslate"><span class="pre">mouse.getPressed()</span></code> will be true as long as a mouse button is held. This means that if you have several text screens, it’s easy to scroll through all of them real quick in the time that the user is holding down the mouse-button. Here’s a simple function that allows you to show text and wait for either a keyboard or mouse response</p>
+<p>One difference between keyboards and mice is that <code class="docutils literal notranslate"><span class="pre">event.getKeys(['d'])</span></code> becomes false as soon as ‘d’ key is pressed (the ‘d’ is removed from the buffer and a single key-press corresponds to a single event). In contrast, <code class="docutils literal notranslate"><span class="pre">mouse.getPressed()</span></code> will be true as long as a mouse button is held. This means that if you have several text screens, it’s easy to scroll through all of them real quick in the time that the user is holding down the mouse-button. Here’s a simple function that allows you to do something (here, make the text disappear) with the very first mouse press. This code also monitors for key presses. Make sure you understand what’s going on and why we’ve inccluded <code class="docutils literal notranslate"><span class="pre">clicked=1</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">showText</span><span class="p">(</span><span class="n">win</span><span class="p">,</span><span class="n">text</span><span class="p">,</span><span class="n">color</span><span class="p">,</span><span class="n">mouse</span><span class="p">):</span>
-	<span class="n">visual</span><span class="o">.</span><span class="n">TextStim</span><span class="p">(</span><span class="n">win</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="n">text</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
-	<span class="n">win</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
-	<span class="k">if</span> <span class="n">mouse</span><span class="p">:</span>
-		<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-			<span class="k">while</span> <span class="nb">any</span><span class="p">(</span><span class="n">mouse</span><span class="o">.</span><span class="n">getPressed</span><span class="p">()):</span>
-				<span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="n">mouse</span><span class="o">.</span><span class="n">getPressed</span><span class="p">()):</span>
-					<span class="k">return</span>
-	<span class="k">else</span><span class="p">:</span>
-		<span class="n">event</span><span class="o">.</span><span class="n">waitKeys</span><span class="p">()</span>
-		<span class="k">return</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">psychopy</span> <span class="kn">import</span> <span class="n">core</span><span class="p">,</span> <span class="n">visual</span><span class="p">,</span> <span class="n">event</span>
+
+<span class="n">win</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Window</span><span class="p">([</span><span class="mi">300</span><span class="p">,</span><span class="mi">300</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s1">&#39;pix&#39;</span><span class="p">)</span>
+<span class="n">mouse</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">Mouse</span><span class="p">(</span><span class="n">win</span><span class="o">=</span><span class="n">win</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">show_text_until_mouse_or_keypress</span><span class="p">(</span><span class="n">win</span><span class="p">,</span><span class="n">text</span><span class="p">,</span><span class="n">color</span><span class="p">,</span><span class="n">mouse</span><span class="p">):</span>
+    <span class="n">visual</span><span class="o">.</span><span class="n">TextStim</span><span class="p">(</span><span class="n">win</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="n">text</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+    <span class="n">win</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">clicked</span><span class="o">=</span><span class="mi">0</span>
+        <span class="k">while</span> <span class="nb">any</span><span class="p">(</span><span class="n">mouse</span><span class="o">.</span><span class="n">getPressed</span><span class="p">()):</span> <span class="c1"># evaluates to true when mouse button is down</span>
+            <span class="n">clicked</span><span class="o">=</span><span class="mi">1</span>
+            <span class="n">mouse_pos</span> <span class="o">=</span> <span class="n">mouse</span><span class="o">.</span><span class="n">getPos</span><span class="p">()</span>
+            <span class="n">win</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">clicked</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;user clicked&#39;</span><span class="p">,</span><span class="n">mouse_pos</span><span class="p">)</span>
+                <span class="k">return</span>
+        <span class="n">keys</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">getKeys</span><span class="p">()</span>        
+        <span class="k">if</span> <span class="n">keys</span><span class="p">:</span>
+            <span class="n">win</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;user presed &#39;</span><span class="p">,</span><span class="n">keys</span><span class="p">)</span>
+            <span class="k">return</span>
+
+<span class="n">show_text_until_mouse_or_keypress</span><span class="p">(</span><span class="n">win</span><span class="p">,</span><span class="s2">&quot;sample text&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="n">mouse</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+</div>
+<div class="admonition-more-advanced-python-tip admonition">
+<p class="admonition-title">More advanced Python tip</p>
+<p>Notice that we had to use a temporary variable <code class="docutils literal notranslate"><span class="pre">keys</span></code> to store the value of a keypress (if one exists). We then check whether keys is non-empty in the subsequent if statement. Wouldn’t it be nice if we could do both in one line? Python 3.8 provides this functionality with the <code class="docutils literal notranslate"><span class="pre">:=</span></code> operator which allows us to check whether a statement is true <em>and</em> assign its return value in one go. So instead of having separate lines we can just have <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">keys</span> <span class="pre">!=</span>&#160; <span class="pre">event.getKeys():</span></code></p>
 </div>
 </section>
 <section id="wait-for-click-on-a-picture">
 <h3>Wait for click on a picture<a class="headerlink" href="#wait-for-click-on-a-picture" title="Permalink to this headline">#</a></h3>
 <p>The following code waits until a user clicks on one of the items (any visual objects) currently displayed</p>
-<p>#…. mouse, window, pic1, pic2, pic3 initialization</p>
-<p>#check mouse until pressed in one of the pics
-while True:
-if mouse.isPressedIn(pic1) or mouse.isPressedIn(pic2) or mouse.isPressedIn(pic3):
-response = mouse.getPos()
-break</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>#assuming pic1 is the correct response
-#check if response is correct
-if pic1.contains(response):
-	correctFeedback.draw()
-else:
-	incorrectFeedback.draw()
-win.flip()
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#.... mouse, window, pic1, pic2, pic3 initialization</span>
+
+<span class="c1">#check mouse until pressed in one of the pics</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">mouse</span><span class="o">.</span><span class="n">isPressedIn</span><span class="p">(</span><span class="n">pic1</span><span class="p">)</span> <span class="ow">or</span> <span class="n">mouse</span><span class="o">.</span><span class="n">isPressedIn</span><span class="p">(</span><span class="n">pic2</span><span class="p">)</span> <span class="ow">or</span> <span class="n">mouse</span><span class="o">.</span><span class="n">isPressedIn</span><span class="p">(</span><span class="n">pic3</span><span class="p">):</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">mouse</span><span class="o">.</span><span class="n">getPos</span><span class="p">()</span>
+            <span class="k">break</span>
+
+    <span class="c1">#assuming pic1 is the correct response</span>
+    <span class="c1">#check if response is correct</span>
+    <span class="k">if</span> <span class="n">pic1</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">response</span><span class="p">):</span>
+        <span class="n">correctFeedback</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">incorrectFeedback</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+    <span class="n">win</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
 </pre></div>
+</div>
+</div>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>

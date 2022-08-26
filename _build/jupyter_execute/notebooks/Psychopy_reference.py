@@ -115,55 +115,75 @@ mouse = event.Mouse(win=win)
 while True:
     if any(mouse.getPressed()): #if any mouse button is pressed
         mouse_pos = mouse.getPos() #get its position at time of button press
-    break
-print('user clicked at', mouse_pos)
-    
+        print('user clicked at', mouse_pos)
+    if event.getKeys('q'):
+        break
 
 
 # What's going on here?
 # 
-# `getPressed()` returns a list of mouse button states, e.g., [0,0,0] which will always evaluate to `True`. The built-in function `any()` allows us to check if any of the values in the list are `True`
+# `getPressed()` returns a list of mouse button states, e.g., [0,0,0] if no buttons are pressed and [1,0,0] if the first/left mouse buttom is pressed. Because it's a non-empty list it will always evaluate to `True`. The built-in function `any()` allows us to check if any of the values in the list are `True` at which point we grab the position of the mouse and print it out for reference.
 
 # ### Show text until mouse click
 # 
-# One difference between keyboards and mice is that `event.getKeys(['d'])` becomes false as soon as 'd' key is pressed (the 'd' is removed from the buffer and a single key-press corresponds to a single event). In contrast, `mouse.getPressed()` will be true as long as a mouse button is held. This means that if you have several text screens, it's easy to scroll through all of them real quick in the time that the user is holding down the mouse-button. Here's a simple function that allows you to show text and wait for either a keyboard or mouse response
+# One difference between keyboards and mice is that `event.getKeys(['d'])` becomes false as soon as 'd' key is pressed (the 'd' is removed from the buffer and a single key-press corresponds to a single event). In contrast, `mouse.getPressed()` will be true as long as a mouse button is held. This means that if you have several text screens, it's easy to scroll through all of them real quick in the time that the user is holding down the mouse-button. Here's a simple function that allows you to do something (here, make the text disappear) with the very first mouse press. This code also monitors for key presses. Make sure you understand what's going on and why we've inccluded `clicked=1`
 
 # In[ ]:
 
 
-def showText(win,text,color,mouse):
-	visual.TextStim(win,text=text,color=color,height=30).draw()
-	win.flip()
-	if mouse:
-		while True:
-			while any(mouse.getPressed()):
-				if not any(mouse.getPressed()):
-					return
-	else:
-		event.waitKeys()
-		return
+from psychopy import core, visual, event
 
+win = visual.Window([300,300],color="black", units='pix')
+mouse = event.Mouse(win=win)
+
+
+def show_text_until_mouse_or_keypress(win,text,color,mouse):
+    visual.TextStim(win,text=text,color=color,height=30).draw()
+    win.flip()
+    while True:
+        clicked=0
+        while any(mouse.getPressed()): # evaluates to true when mouse button is down
+            clicked=1
+            mouse_pos = mouse.getPos()
+            win.flip()
+            if clicked:
+                print('user clicked',mouse_pos)
+                return
+        keys = event.getKeys()        
+        if keys:
+            win.flip()
+            print('user presed ',keys)
+            return
+
+show_text_until_mouse_or_keypress(win,"sample text","red",mouse)
+
+
+# ```{admonition} More advanced Python tip
+# Notice that we had to use a temporary variable `keys` to store the value of a keypress (if one exists). We then check whether keys is non-empty in the subsequent if statement. Wouldn't it be nice if we could do both in one line? Python 3.8 provides this functionality with the `:=` operator which allows us to check whether a statement is true *and* assign its return value in one go. So instead of having separate lines we can just have `if keys !=  event.getKeys():`   
+# ```
 
 # ### Wait for click on a picture
 # The following code waits until a user clicks on one of the items (any visual objects) currently displayed
 
-# #.... mouse, window, pic1, pic2, pic3 initialization
-# 
-# #check mouse until pressed in one of the pics
-# 	while True:
-# 		if mouse.isPressedIn(pic1) or mouse.isPressedIn(pic2) or mouse.isPressedIn(pic3):
-# 			response = mouse.getPos()
-# 			break
-# 
-#     #assuming pic1 is the correct response
-# 	#check if response is correct
-# 	if pic1.contains(response):
-# 		correctFeedback.draw()
-# 	else:
-# 		incorrectFeedback.draw()
-# 	win.flip()
-# 
-# 
+# In[ ]:
+
+
+#.... mouse, window, pic1, pic2, pic3 initialization
+
+#check mouse until pressed in one of the pics
+    while True:
+        if mouse.isPressedIn(pic1) or mouse.isPressedIn(pic2) or mouse.isPressedIn(pic3):
+            response = mouse.getPos()
+            break
+
+    #assuming pic1 is the correct response
+    #check if response is correct
+    if pic1.contains(response):
+        correctFeedback.draw()
+    else:
+        incorrectFeedback.draw()
+    win.flip()
+
 
 # ```{tip}
 # You can easily extend this recipe to an arbitrary number of objects by checking if `mouse.isPressedIn()` is True for any value in a list that you pass in.

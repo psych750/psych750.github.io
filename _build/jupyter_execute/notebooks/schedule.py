@@ -13,7 +13,7 @@
 # 
 # - Sign up for the class Slack group. The link was sent to your @wisc email.
 # 
-# - Follow [“Download and Install” instructions](https://psych750.github.io/index.html) from the class site.
+# - Follow "Download and Install" instructions (see sidebar on left). The instructions are slightly different depending on whether you have a PC or Mac.
 # 
 # - If you’ve never used a Linux shell (or Mac terminal), watch [this video](https://www.youtube.com/watch?v=oxuRxtrO2Ag). Even if you've used a terminal before, go through this [basic linux commands notebook](https://psych750.github.io/notebooks/Shell_reference.html) as a refresher.
 # 

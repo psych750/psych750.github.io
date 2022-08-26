@@ -40,10 +40,17 @@
 # Type "help", "copyright", "credits" or "license" for more information.
 # ```
 # 
+# Now you can exit out of Python by typing:
+# 
+# ```bash
+# exit()
+# ```
+# 
 
 # 
 # # Install the necessary Python packages
-# * Now let's install the packages we'll need. Paste in the lines below, one at at a time, into your terminal (make sure your new environment is activated first). Wait for everything to install before proceeding to the next line.
+# 
+# Now let's install the packages we'll need. Paste in the lines below, one at at a time, into your terminal -- not the Python interpreter. Make sure your new environment is activated first using `conda activate`. Wait for everything to install before proceeding to the next line.
 # 
 # ```bash
 # conda install jupyter jupyterlab
@@ -52,7 +59,7 @@
 # ```
 # 
 # ```{warning}
-# If you run into any install errors, please make note of the precise errors and post them to the #installation_problems Slack channel.
+# If you run into any install errors, please **make note of the precise errors** and post them to the #installation_problems Slack channel.
 # ```
 # 
 # ## Test PsychoPy
@@ -65,9 +72,11 @@
 # '2022.2.2'
 # ```
 # 
-# If you see the verison number, the PsychoPy library probably installed correctly. But let's do some more tests
+# If you see the verison number, the PsychoPy library probably installed correctly. But let's do some more tests.
 # 
 # * Let's test if PsychoPy can successfully open a new window.
+# 
+# Start the Python interpreter and type (copy/paste) the following:
 # 
 # ```python
 # >>> from psychopy import visual

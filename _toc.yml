@@ -60,10 +60,16 @@ parts:
       title: The first thinking exercise
     - file: notebooks/palindromes_fibonacci
       title: Palindromes and Fibonacci
+    - file: notebooks/name_parsing
+      title: String manipulation
+    - file: notebooks/list_manip_vowels_1
+      title: String/list manipulation
     - file: notebooks/debugging_1
       title: Debugging practice 1
   - caption: Exercises
     chapters:
+    - file: notebooks/Exercise0-test
+      title: Exercise 0-Test assignment
     - file: notebooks/Exercise1-square
       title: Exercise 1-Show a square and do stuff with it
     - file: notebooks/Exercise2-stroop
