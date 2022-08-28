@@ -63,7 +63,9 @@ parts:
     - file: notebooks/name_parsing
       title: String manipulation
     - file: notebooks/list_manip_vowels_1
-      title: String/list manipulation
+      title: Working with strings in lists
+    - file: notebooks/activity_dictionaries
+      title: A few dictionary activities
     - file: notebooks/debugging_1
       title: Debugging practice 1
   - caption: Exercises

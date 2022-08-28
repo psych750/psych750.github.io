@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Dictionary Exercises &#8212; Psych 750</title>
+    <title>Playing around with dictionaries &#8212; Psych 750</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,6 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Debugging practice" href="debugging_1.html" />
+    <link rel="prev" title="List/string manipulation exercise" href="list_manip_vowels_1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -239,7 +241,7 @@ const thebe_selector_output = ".output, .cell_output"
   In class activities
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="python_basics.html">
    Python basics
@@ -253,6 +255,16 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="name_parsing.html">
    String manipulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="list_manip_vowels_1.html">
+   Working with strings in lists
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   A few dictionary activities
   </a>
  </li>
  <li class="toctree-l1">
@@ -420,52 +432,14 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#selective-dictionary-access">
-   Selective dictionary access
+  <a class="reference internal nav-link" href="#practice-with-operations-on-dictionary-values">
+   Practice with operations on dictionary values
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#selective-access-continued">
-     Selective access continued
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#letter-counts">
-   Letter counts
+  <a class="reference internal nav-link" href="#using-a-dictionary-as-a-look-up-table">
+   Using a dictionary as a look-up table
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#test-your-letter-counts-function">
-     Test your letter_counts function
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#given-a-string-find-the-n-most-least-frequent-letters-in-it">
-   Given a string, find the n most/least frequent letters in it
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#test-most-frequent-and-least-frequent">
-     Test most_frequent() and least_frequent()
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bonus-calculate-most-least-frequent-letters-in-words-beginning-with-consonants-or-vowels">
-   Bonus: Calculate most/least frequent letters in words beginning with consonants or vowels
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#test-most-frequent2-and-least-frequent2">
-     Test most_frequent2() and least_frequent2()
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -476,7 +450,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Dictionary Exercises</h1>
+                <h1>Playing around with dictionaries</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -487,52 +461,14 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#selective-dictionary-access">
-   Selective dictionary access
+  <a class="reference internal nav-link" href="#practice-with-operations-on-dictionary-values">
+   Practice with operations on dictionary values
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#selective-access-continued">
-     Selective access continued
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#letter-counts">
-   Letter counts
+  <a class="reference internal nav-link" href="#using-a-dictionary-as-a-look-up-table">
+   Using a dictionary as a look-up table
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#test-your-letter-counts-function">
-     Test your letter_counts function
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#given-a-string-find-the-n-most-least-frequent-letters-in-it">
-   Given a string, find the n most/least frequent letters in it
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#test-most-frequent-and-least-frequent">
-     Test most_frequent() and least_frequent()
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bonus-calculate-most-least-frequent-letters-in-words-beginning-with-consonants-or-vowels">
-   Bonus: Calculate most/least frequent letters in words beginning with consonants or vowels
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#test-most-frequent2-and-least-frequent2">
-     Test most_frequent2() and least_frequent2()
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -544,200 +480,105 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="dictionary-exercises">
-<h1>Dictionary Exercises<a class="headerlink" href="#dictionary-exercises" title="Permalink to this headline">#</a></h1>
-<section id="selective-dictionary-access">
-<h2>Selective dictionary access<a class="headerlink" href="#selective-dictionary-access" title="Permalink to this headline">#</a></h2>
-<p>Given the following dictionary, find the mean value of the keys that begin with a vowel.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">a_dict</span> <span class="o">=</span> 
-<span class="p">{</span><span class="s1">&#39;--&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
- <span class="s1">&#39;Air&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
- <span class="s1">&#39;At&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
- <span class="s1">&#39;Big&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
- <span class="s1">&#39;But&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
- <span class="s1">&#39;Figure&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
- <span class="s1">&#39;Freestyle&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
- <span class="s1">&#39;Olympics&#39;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
- <span class="s1">&#39;Pyeongchang,&#39;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
- <span class="s1">&#39;Skating.&#39;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
- <span class="s1">&#39;Skiing&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
- <span class="s1">&#39;Snowboarding&#39;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
- <span class="s1">&#39;To&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
- <span class="s1">&#39;Winter&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
- <span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
- <span class="s1">&#39;air.&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
- <span class="s1">&#39;and&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
- <span class="s1">&#39;body&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
- <span class="s1">&#39;corks&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
- <span class="s1">&#39;do&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
- <span class="s1">&#39;four&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
- <span class="s1">&#39;got&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
- <span class="s1">&#39;have&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
- <span class="s1">&#39;in&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
- <span class="s1">&#39;jumps&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
- <span class="s1">&#39;less&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
- <span class="s1">&#39;limit&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
- <span class="s1">&#39;may&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
- <span class="s1">&#39;of&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
- <span class="s1">&#39;or&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
- <span class="s1">&#39;possible?&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
- <span class="s1">&#39;quad&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
- <span class="s1">&#39;quad,&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
- <span class="s1">&#39;reached&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
- <span class="s1">&#39;second&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
- <span class="s1">&#39;see&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
- <span class="s2">&quot;skater&#39;s&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
- <span class="s1">&#39;than&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
- <span class="s1">&#39;the&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
- <span class="s1">&#39;their&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
- <span class="s1">&#39;this&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
- <span class="s1">&#39;times&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
- <span class="s1">&#39;to&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
- <span class="s1">&#39;turn&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
- <span class="s1">&#39;twists&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
- <span class="s1">&#39;we&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
- <span class="s2">&quot;we&#39;ll&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
- <span class="s2">&quot;what&#39;s&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
- <span class="s2">&quot;year&#39;s&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">}</span>
-</pre></div>
-</div>
-<p>Here’s some code to help get you started:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="playing-around-with-dictionaries">
+<h1>Playing around with dictionaries<a class="headerlink" href="#playing-around-with-dictionaries" title="Permalink to this headline">#</a></h1>
+<section id="practice-with-operations-on-dictionary-values">
+<h2>Practice with operations on dictionary values<a class="headerlink" href="#practice-with-operations-on-dictionary-values" title="Permalink to this headline">#</a></h2>
+<p>Here’s a <a class="reference external" href="https://philip.greenspun.com/humor/deep-thoughts">deep thought (by Jack Handey)</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="n">vowels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">,</span><span class="s1">&#39;i&#39;</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="s1">&#39;u&#39;</span><span class="p">]</span>
-
-<span class="k">def</span> <span class="nf">isVowel</span><span class="p">(</span><span class="n">letter</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">vowels</span>
-
-<span class="k">def</span> <span class="nf">isVowelOnset</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">isVowel</span><span class="p">(</span><span class="n">string</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-
-<span class="c1">#to find a mean of a list, use the mean() function from the numpy library</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_deep_thought</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;If you saw two guys named Hambone and Flippy, which one would you think liked dolphins the most? </span>
+<span class="s1">I&#39;d say Flippy, wouldn&#39;t you? You&#39;d be wrong, though. It&#39;s Hambone.&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>If you saw two guys named Hambone and Flippy, which one would you think liked dolphins the most? 
+I&#39;d say Flippy, wouldn&#39;t you? You&#39;d be wrong, though. It&#39;s Hambone.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s create a dictionary out of it where each word is a key and its number of letters is a value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deep_thought_dict</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">cur_word</span> <span class="ow">in</span> <span class="n">a_deep_thought</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">):</span>
+    <span class="n">deep_thought_dict</span><span class="p">[</span><span class="n">cur_word</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">cur_word</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">deep_thought_dict</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;if&#39;: 2, &#39;you&#39;: 3, &#39;saw&#39;: 3, &#39;two&#39;: 3, &#39;guys&#39;: 4, &#39;named&#39;: 5, &#39;hambone&#39;: 7, &#39;and&#39;: 3, &#39;flippy,&#39;: 7, &#39;which&#39;: 5, &#39;one&#39;: 3, &#39;would&#39;: 5, &#39;think&#39;: 5, &#39;liked&#39;: 5, &#39;dolphins&#39;: 8, &#39;the&#39;: 3, &#39;most?&#39;: 5, &quot;\ni&#39;d&quot;: 4, &#39;say&#39;: 3, &quot;wouldn&#39;t&quot;: 8, &#39;you?&#39;: 4, &quot;you&#39;d&quot;: 5, &#39;be&#39;: 2, &#39;wrong,&#39;: 6, &#39;though.&#39;: 7, &quot;it&#39;s&quot;: 4, &#39;hambone.&#39;: 8}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Common operations like this often have one-line solutions. We can accomplish the same behavior without an explicit <code class="docutils literal notranslate"><span class="pre">for</span></code> loop by using <a class="reference external" href="https://www.programiz.com/python-programming/dictionary-comprehension">dictionary comprehension</a>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">deep_thought_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">cur_word</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span> <span class="nb">len</span><span class="p">(</span><span class="n">cur_word</span><span class="p">)</span> <span class="k">for</span> <span class="n">cur_word</span> <span class="ow">in</span> <span class="n">a_deep_thought</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)}</span>
+</pre></div>
+</div>
+</div>
+<p>Now that we have this information in a dictionary, do the following:</p>
+<ul class="simple">
+<li><p>What’s the average number of letters in these words?</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To find an average use <code class="docutils literal notranslate"><span class="pre">mean()</span></code> from the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> library. For example,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)))</span>
-<span class="c1">#it is commonly imported as np so that you can type np.mean() instead of numpy.mean()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.5
+<ul class="simple">
+<li><p>What’s the average number of letters in words beginning with vowels?</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>By taking advantage of statements that already return True/False values, the code below avoids having to have code like: if X return True, else return Y.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_vowel</span><span class="p">(</span><span class="n">letter</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">letter</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">,</span><span class="s1">&#39;i&#39;</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="s1">&#39;u&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
+<ul class="simple">
+<li><p>Now return the mean length of words beginning with a consonant</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You don’t need to write separate is_consonant() functions!</p>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">{note}</span></code>
-By taking advantage of statements that already return True/False values, the code above avoids having to have code like: if X return True, else return Y.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<section id="selective-access-continued">
-<h3>Selective access continued<a class="headerlink" href="#selective-access-continued" title="Permalink to this headline">#</a></h3>
-<p>Now do the same for consonants</p>
-<div class="alert alert-block alert-info">
-Hint: You don't need to write separate isConsonant/isConsonantOnset functions!</div>
 </section>
-</section>
-<section id="letter-counts">
-<h2>Letter counts<a class="headerlink" href="#letter-counts" title="Permalink to this headline">#</a></h2>
-<p>Complete the implementation of the function <code class="docutils literal notranslate"><span class="pre">letter_counts()</span></code> which receives a string as input and returns a dictionary with (lowercase) letters as keys and their respective counts as values.</p>
+<section id="using-a-dictionary-as-a-look-up-table">
+<h2>Using a dictionary as a look-up table<a class="headerlink" href="#using-a-dictionary-as-a-look-up-table" title="Permalink to this headline">#</a></h2>
+<p>Dictionaries are a useful data-type for dynamically choosing actions based on the value of some variable.</p>
+<p>For example, suppose we want to show different stimuli based on whether participant responded with a particular arrow key (up, down, left, right). Depending on their response, we want to update the position of a stimulus, moving it 10 pixels to the right, left, etc.We might initially write code like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">resp</span> <span class="o">==</span> <span class="s1">&#39;left&#39;</span><span class="p">:</span>
+    <span class="n">stim</span><span class="o">.</span><span class="n">pos</span> <span class="o">+=</span> <span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">resp</span> <span class="o">==</span> <span class="s1">&#39;right&#39;</span><span class="p">:</span>
+    <span class="n">stim</span><span class="o">.</span><span class="n">pos</span> <span class="o">+=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">resp</span> <span class="o">==</span> <span class="s1">&#39;up&#39;</span><span class="p">:</span>
+    <span class="n">stim</span><span class="o">.</span><span class="n">pos</span> <span class="o">+=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">resp</span> <span class="o">==</span> <span class="s1">&#39;down&#39;</span><span class="p">:</span>
+    <span class="n">stim</span><span class="o">.</span><span class="n">pos</span> <span class="o">+=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This is bearable if we have just 4 alternatives, but what if we have 10? 30? Remember, anytime you’re finding yourself repeating a piece of code with minor variation, there’s gonna be a better way. In this case, one better way is to use dictionaries.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">resps_to_positions</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;left&#39;</span><span class="p">:(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="s1">&#39;right&#39;</span><span class="p">:(</span><span class="mi">10</span><span class="p">,</span><span class="mi">0</span><span class="p">)}</span>
+</pre></div>
+</div>
+<p>Finish this activity by specifying the rest of the dictionary. Then rewrite the conditional above to use this dictionary, replacing the multi-pronged conditional with a single line of code.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">letter_counts</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
-    <span class="n">letter_sums</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="n">letters</span> <span class="o">=</span> <span class="p">[</span><span class="n">letter</span> <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">string</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()]</span>
-    <span class="k">for</span> <span class="n">curLetter</span> <span class="ow">in</span> <span class="n">letters</span><span class="p">:</span>
-        <span class="k">pass</span>
-    
-    <span class="k">return</span> <span class="n">letter_sums</span>
-
-<span class="c1">#Replace pass with appropriate code to make the function work. You only need a couple lines of code.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load</span> &quot;solution_dictionary_look_up.py&quot;
 </pre></div>
 </div>
 </div>
 </div>
-<section id="test-your-letter-counts-function">
-<h3>Test your letter_counts function<a class="headerlink" href="#test-your-letter-counts-function" title="Permalink to this headline">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>letter_counts(&quot;Complete the implementation of the function. `letter_counts()` receives a string as input and returns a dictionary with (lowercase) letters and their respective counts. The keys are the letters and the counts are how many times a given letter occurred.&quot;)
-```python
-{&#39;a&#39;: 12, &#39;c&#39;: 10, &#39;e&#39;: 32, &#39;d&#39;: 4, &#39;g&#39;: 1, &#39;f&#39;: 1, &#39;i&#39;: 12, &#39;h&#39;: 7, &#39;k&#39;: 0, &#39;m&#39;: 4, &#39;l&#39;: 6, &#39;o&#39;: 10, &#39;n&#39;: 15, &#39;p&#39;: 3, &#39;s&#39;: 12, &#39;r&#39;: 15, &#39;u&#39;: 6, &#39;t&#39;: 27, &#39;w&#39;: 2, &#39;v&#39;: 2, &#39;y&#39;: 2}
-```
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  Input In [2]
-    ```python
-    ^
-SyntaxError: invalid syntax
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="given-a-string-find-the-n-most-least-frequent-letters-in-it">
-<h2>Given a string, find the n most/least frequent letters in it<a class="headerlink" href="#given-a-string-find-the-n-most-least-frequent-letters-in-it" title="Permalink to this headline">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">most_frequent</span><span class="p">(</span><span class="n">string</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">pass</span>
-
-<span class="k">def</span> <span class="nf">least_frequent</span><span class="p">(</span><span class="n">string</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">pass</span>
-</pre></div>
-</div>
-</div>
-</div>
-<section id="test-most-frequent-and-least-frequent">
-<h3>Test most_frequent() and least_frequent()<a class="headerlink" href="#test-most-frequent-and-least-frequent" title="Permalink to this headline">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_string</span> <span class="o">=</span> <span class="s2">&quot;At this year&#39;s Winter Olympics in Pyeongchang, we may see quad corks in Big Air Snowboarding or in Freestyle Skiing -- and we&#39;ll see quad twists and quad jumps in Figure Skating. But have we reached the limit of what&#39;s possible? To do a quad, a skater&#39;s got less than a second to turn their body four times in the air.&quot;</span>
-
-<span class="o">&gt;</span><span class="n">most_frequent</span><span class="p">(</span><span class="n">a_string</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-<span class="c1">#should return [(&#39;e&#39;, 24), (&#39;a&#39;, 21), (&#39;i&#39;, 21)]</span>
-
-<span class="o">&gt;</span><span class="n">least_frequent</span><span class="p">(</span><span class="n">a_string</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
-<span class="c1"># should return [(&#39;j&#39;, 0), (&#39;v&#39;, 0), (&#39;f&#39;, 3)]</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="bonus-calculate-most-least-frequent-letters-in-words-beginning-with-consonants-or-vowels">
-<h2>Bonus: Calculate most/least frequent letters in words beginning with consonants or vowels<a class="headerlink" href="#bonus-calculate-most-least-frequent-letters-in-words-beginning-with-consonants-or-vowels" title="Permalink to this headline">#</a></h2>
-<p>Implement <code class="docutils literal notranslate"><span class="pre">most_frequent2()</span></code> which makes the following function-called produce the desired results:</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">most_frequent2</span><span class="p">(</span><span class="n">string</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
-<span class="sd">&#39;&#39;&#39; Given a string, return the n most frequent letters occurring in words beginning with vowels.</span>
-<span class="sd">&#39;&#39;&#39;</span>
-    <span class="k">pass</span>
-
-<span class="k">def</span> <span class="nf">least_frequent2</span><span class="p">(</span><span class="n">string</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
-<span class="sd">&#39;&#39;&#39; Given a string, return the n least frequent letters occurring in words beginning with vowels</span>
-<span class="sd">&#39;&#39;&#39;</span>
-    <span class="k">pass</span>
-</pre></div>
-</div>
-<section id="test-most-frequent2-and-least-frequent2">
-<h3>Test most_frequent2() and least_frequent2()<a class="headerlink" href="#test-most-frequent2-and-least-frequent2" title="Permalink to this headline">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_string</span> <span class="o">=</span> <span class="s2">&quot;At this year&#39;s Winter Olympics in Pyeongchang, we may see quad corks in Big Air Snowboarding or in Freestyle Skiing -- and we&#39;ll see quad twists and quad jumps in Figure Skating. But have we reached the limit of what&#39;s possible? To do a quad, a skater&#39;s got less than a second to turn their body four times in the air.&quot;</span>
-
-<span class="n">most_frequent2</span><span class="p">(</span><span class="n">a_string</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-<span class="c1">#should return [(&#39;n&#39;, 6), (&#39;a&#39;, 5), (&#39;i&#39;, 5)]</span>
-
-<span class="n">least_frequent2</span><span class="p">(</span><span class="n">a_string</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-<span class="c1">#should return [(&#39;f&#39;, 0), (&#39;d&#39;, 1), (&#39;o&#39;, 1)]</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
 </section>
 </section>
 

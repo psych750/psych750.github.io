@@ -49,9 +49,10 @@
 # ### In class:
 # 1. Code review of Exercise 1
 #     - Special attention to variable names!!
-# 2. Our first experiment! A Stroop task.
-# 3. Reading and writing files
-# 4. Begin Exercise 2
+# 2. String manipulation activity
+# 3. Our first experiment! A Stroop task.
+# 4. Primer on files: opening, reading, writing
+# 5. Begin Exercise 2
 # 
 
 # ## Week 3 (Sept 22)
@@ -70,9 +71,9 @@
 # ### In class
 # 1. Exercise 2 Code Review
 # 2. More about functions
-# 3. Randomization and iteration exercises
-# 4. Creating simple trial files
-# 5. Extending Exercise 3 with out of the box speech recognition(!)
+# 3. List/string manipulation activity
+# 4. Dictionary manipulation activity
+# 5. Randomization and iteration activities: creating simple trial lists
 # 
 
 # ## Week 4 (Sept 29)
@@ -85,8 +86,9 @@
 # ### In class
 # 1. Exercise 3 Code Review
 #     1. Emphasis on refactoring using functions and modular code
-# 2. Additional randomization and iteration exercises
-# 3. Begin Exercise 4 - a Posner cueing task
+# 2. Debugging activity
+# 3. Additional randomization and iteration exercises
+# 4. Begin Exercise 4 - a Posner cueing task
 # 
 
 # <!-- 
