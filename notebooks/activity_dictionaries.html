@@ -55,6 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Debugging practice" href="debugging_1.html" />
+    <link rel="prev" title="List/string manipulation exercise" href="list_manip_vowels_1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -239,7 +241,7 @@ const thebe_selector_output = ".output, .cell_output"
   In class activities
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="python_basics.html">
    Python basics
@@ -257,7 +259,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="list_manip_vowels_1.html">
-   String/list manipulation
+   Working with strings in lists
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   A few dictionary activities
   </a>
  </li>
  <li class="toctree-l1">
@@ -475,13 +482,6 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="playing-around-with-dictionaries">
 <h1>Playing around with dictionaries<a class="headerlink" href="#playing-around-with-dictionaries" title="Permalink to this headline">#</a></h1>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Turn </span>
-</pre></div>
-</div>
-</div>
-</div>
 <section id="practice-with-operations-on-dictionary-values">
 <h2>Practice with operations on dictionary values<a class="headerlink" href="#practice-with-operations-on-dictionary-values" title="Permalink to this headline">#</a></h2>
 <p>Here’s a <a class="reference external" href="https://philip.greenspun.com/humor/deep-thoughts">deep thought (by Jack Handey)</a></p>
@@ -515,37 +515,42 @@ I&#39;d say Flippy, wouldn&#39;t you? You&#39;d be wrong, though. It&#39;s Hambo
 </div>
 </div>
 </div>
-<p>!!!{tip}
-Common operations like this often have one-line solutions. We can accomplish the same behavior without an explicit <code class="docutils literal notranslate"><span class="pre">for</span></code> loop by using <a class="reference external" href="https://www.programiz.com/python-programming/dictionary-comprehension">dictionary comprehension</a>:</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Common operations like this often have one-line solutions. We can accomplish the same behavior without an explicit <code class="docutils literal notranslate"><span class="pre">for</span></code> loop by using <a class="reference external" href="https://www.programiz.com/python-programming/dictionary-comprehension">dictionary comprehension</a>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">deep_thought_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">cur_word</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span> <span class="nb">len</span><span class="p">(</span><span class="n">cur_word</span><span class="p">)</span> <span class="k">for</span> <span class="n">cur_word</span> <span class="ow">in</span> <span class="n">a_deep_thought</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)}</span>
 </pre></div>
 </div>
-<p>!!!</p>
+</div>
 <p>Now that we have this information in a dictionary, do the following:</p>
 <ul class="simple">
-<li><p>What’s the average number of letters in these words?
-!!!{tip}
-To find an average use <code class="docutils literal notranslate"><span class="pre">mean()</span></code> from the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> library.
-For example,</p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>import numpy as np
-print(np.mean(range(10)))
-!!!
-
-!!!{tip}
-By taking advantage of statements that already return True/False values, the code above avoids having to have code like: if X return True, else return Y.
-```python
-def isVowel(letter):
-    return letter in [&#39;a&#39;,&#39;e&#39;,&#39;i&#39;,&#39;o&#39;,&#39;u&#39;]
-</pre></div>
-</div>
-<p>!!!</p>
-<ul class="simple">
-<li><p>Now do the same for consonants</p></li>
+<li><p>What’s the average number of letters in these words?</p></li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>You don’t need to write separate isConsonant/isConsonantOnset functions!</p>
+<p>To find an average use <code class="docutils literal notranslate"><span class="pre">mean()</span></code> from the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> library. For example,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<ul class="simple">
+<li><p>What’s the average number of letters in words beginning with vowels?</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>By taking advantage of statements that already return True/False values, the code below avoids having to have code like: if X return True, else return Y.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_vowel</span><span class="p">(</span><span class="n">letter</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">letter</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">,</span><span class="s1">&#39;i&#39;</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="s1">&#39;u&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Now return the mean length of words beginning with a consonant</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You don’t need to write separate is_consonant() functions!</p>
 </div>
 </section>
 <section id="using-a-dictionary-as-a-look-up-table">
