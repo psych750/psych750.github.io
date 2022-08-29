@@ -459,8 +459,11 @@ title="Print to PDF"
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Python will automatically start every separate <code class="docutils literal notranslate"><span class="pre">print()</span></code> statement on a new line. If you want to have several separate print statements print all to the same line, include an <code class="docutils literal notranslate"><span class="pre">end=&quot;&quot;</span></code> argument in your print statement, e.g.:
-<code class="docutils literal notranslate"><span class="pre">{python}</span>&#160;&#160;&#160;&#160;&#160; <span class="pre">print('I'm</span> <span class="pre">gonna</span> <span class="pre">print</span> <span class="pre">on</span> <span class="pre">line</span> <span class="pre">1',end=&quot;&quot;)</span>&#160;&#160;&#160;&#160;&#160; <span class="pre">print('And</span> <span class="pre">so</span> <span class="pre">will</span> <span class="pre">I&quot;)</span>&#160;&#160;&#160;&#160;&#160; </code></p>
+<p>Python will automatically start every separate <code class="docutils literal notranslate"><span class="pre">print()</span></code> statement on a new line. If you want to have several separate print statements print all to the same line, include an <code class="docutils literal notranslate"><span class="pre">end=&quot;&quot;</span></code> argument in your print statement, e.g.:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;I&#39;</span><span class="n">m</span> <span class="n">gonna</span> <span class="nb">print</span> <span class="n">on</span> <span class="n">line</span> <span class="mi">1</span><span class="s1">&#39;,end=&quot;&quot;)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;And so will I&quot;)</span>
+</pre></div>
+</div>
 </div>
 </li>
 <li><p>If you’ve done any coding before, the last one was probably quite easy. Here’s one that’s slightly more challenging: Write some code that uses a variable <code class="docutils literal notranslate"><span class="pre">rows</span></code> to print the following:
