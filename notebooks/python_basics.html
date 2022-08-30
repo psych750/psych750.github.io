@@ -837,6 +837,46 @@ What happened here?<div class="sd-summary-down docutils">
 <p class="admonition-title">Note</p>
 <p>Technically range() returns a <code class="docutils literal notranslate"><span class="pre">range</span> <span class="pre">object</span></code> which is a <a class="reference external" href="https://treyhunner.com/2018/02/python-range-is-not-an-iterator/">“lazy iterable”</a> and is executed only later, when we try to access its values. This is different from Python 2 where <code class="docutils literal notranslate"><span class="pre">range()</span></code> returns a regular list.</p>
 </div>
+<p>What about counting by 2s or counting down? Simple</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">cur_num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">cur_num</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+2
+4
+6
+8
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">cur_num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">cur_num</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+</pre></div>
+</div>
+</div>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>If all you need to do is to execute some command a certain number of times, there’s a Python convention to use <code class="docutils literal notranslate"><span class="pre">_</span></code> as a throwaway index variable, for example, let’s generate 5 random integers between 1-10:</p>
