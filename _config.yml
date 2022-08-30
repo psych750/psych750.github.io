@@ -26,12 +26,11 @@ html:
   use_edit_page_button      : false
   use_issues_button         : false
 
+
 #######################################################################################
 # Launch button settings
 launch_buttons:
-  notebook_interface        : "jupyterlab" 
   binderhub_url             : "https://mybinder.org"  # The URL of the BinderHub (e.g., https://mybinder.org)
-  colab_url                 : "https://colab.research.google.com"
 
 repository:
   url                       : https://github.com/psych750/psych750.github.io  # The URL to your book's repository
@@ -40,7 +39,3 @@ repository:
 sphinx:
   config:
     html_extra_path: ['assets']
-    html_theme_options:
-      search_bar_text: "Search..."
-      show_prev_next: False
-      navigation_with_keys: False
