@@ -14,15 +14,17 @@
 
 [x] For string manipulation add a names in-class exercise where students have to get first names from class roster
 
-[o] CHallenge exercise: max(set(a),key=a.count) to find mode. Have students explain why it works. 
-
-[ ] Add speech recognition + starter code to Exercise 3
+[x] Finalize dict in-class activity for week 3 (activity_dictionaries - not all of the parts are about dictionaries). Include one where a dictionary is used as a join to avoid long conditionals
 
 [x] For list exercise: given list, return string containing the most vowels. For loop; return to this when we go regex
 
-[ ] Add file IO notebook: opening and writing CSVs both with and without pandas 
+[x] Add file writing primer
 
-[ ] Finalize dict in-class activity for week 3 (activity_dictionaries - not all of the parts are about dictionaries). Include one where a dictionary is used as a join to avoid long conditionals
+[ ] Sources for writing/ppending w/ & w/o pandas 
+
+[o] CHallenge exercise: max(set(a),key=a.count) to find mode. Have students explain why it works. 
+
+[ ] Add speech recognition + starter code to Exercise 3
 
 [ ] Revise and fix trial_generation notebook
 
@@ -35,7 +37,7 @@
 [ ] Add assignment operators to python reference. Cool. 
     - https://www.digitalocean.com/community/tutorials/how-to-use-assignment-expressions-in-python
 
-[ ] Exercise 4 - Posner cueing? - extension to bike signaling. Collect data in lab; bring it to them to analyze.
+[ ] Exercise 4 - Posner cueing + extension to bike signaling. Collect data in lab; bring it to them to analyze.
 
 [ ] Exercise 5 - interactive adjustment? + mouse. Adaptation experiment.
 
