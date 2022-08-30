@@ -21,7 +21,7 @@
 # 
 #      - If you’ve never used git and github, I recommend walking through two tutorials: [This one](https://githowto.com/setup) focuses on working with git locally. [This one](https://medium.com/@george.seif94/a-full-tutorial-on-how-to-use-github-88466bac7d42) describes pushing and pulling from remote repositories. Confused about the difference between git and github? See [here](https://www.geeksforgeeks.org/difference-between-git-and-github/). This [video walkthrough](https://www.youtube.com/watch?v=8JJ101D3knE) is also very nice.
 # 
-# - If you’re shaky on what a computer file is, how files are stored, how your operting system knows that sound.wav is a sound file and sound.txt is a text file, [watch this short video](https://www.youtube.com/watch?v=KN8YgJnShPM).
+# - If you’re shaky on what a computer file is, how files are stored, how your operating system knows that sound.wav is a sound file and sound.txt is a text file, [watch this short video](https://www.youtube.com/watch?v=KN8YgJnShPM).
 # 
 # - Lastly, please look through the [very basics of Python notebook](https://psych750.github.io/notebooks/python_basics.html) to get you ready for the first class. If you don't understand something in that notebook, don't worry about it, but come prepared to ask questions.
 # 
@@ -39,12 +39,12 @@
 # ## Week 2 (Sept 15): Programming basics
 # 
 # ### At home
-# 1. Submit test assignment by Friday (Sept 9) at 9pm.
+# 1. Submit [test assignment](https://psych750.github.io/notebooks/Exercise0-test.html) by Friday (Sept 9) at 9pm.
 # 1. Read [Think Python Sections](https://greenteapress.com/wp/think-python-2e/) 1.1-1.8
 # 1. Go through the **first three self study guides** on the class site (see the navigation pane on the left)
 # 1. Read/skim [Think Python](https://greenteapress.com/wp/think-python-2e/) Sections 5.1-5.7, 7.1-7.8, 8.1-8.12, and 10.1-10.9
 # 1. Finish Exercise 1 and push it to your github classroom repository
-# 1. Sort out any remaining installation/environment issues. Work on customizing your coding environment
+# 1. Sort out any remaining installation/environment issues. Work on customizing your coding environment and learn some [keyboard shortcuts!](https://code.visualstudio.com/docs/getstarted/keybindings#_keyboard-shortcuts-reference). See also [this helpful video](https://www.youtube.com/watch?v=zwyHmFxeJtg)
 # 
 # ### In class:
 # 1. Code review of Exercise 1
@@ -79,17 +79,29 @@
 # ## Week 4 (Sept 29)
 # 
 # ### At home
-# 1. Go through the *List Comprehension* and *Randomization* self-study guides
+# 1. Go through the *List Comprehension* and *Randomization/Iteration* self-study guides
 # 1. Read about [Namespaces and variable scope](http://sebastianraschka.com/Articles/2014_python_scope_and_namespaces.html)
 # 1. Complete Exercise 3
 # 
 # ### In class
 # 1. Exercise 3 Code Review
 #     1. Emphasis on refactoring using functions and modular code
-# 2. Debugging activity
+# 2. Debugging activity - namespace bugs
 # 3. Additional randomization and iteration exercises
 # 4. Begin Exercise 4 - a Posner cueing task
 # 
+
+# ## Week 5 (Oct 6)
+# 
+# ### At home
+# 1. [Handling exceptions ](https://docs.python.org/3.7/tutorial/errors.html)
+# 2. Complete Exercise 4 (use exception-handling as necessary).
+# 3. [File globbing and image preloading](https://psych750.github.io/notebooks/globbing_files.html)
+# 
+# ### In class
+# 1. Exercise 4 code review
+# 2. Adapting the cueing task to test a [pet peeve](https://rickandkathy.com/wp-content/uploads/2014/10/hand-signals.jpg) (erm, a topic with great scintific importance)
+# 3. Intro to interactive experiments
 
 # <!-- 
 # Week 3 (Sept 22): File access; basic randomization

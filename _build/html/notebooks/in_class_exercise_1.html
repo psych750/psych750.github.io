@@ -258,6 +258,16 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="list_manip_vowels_1.html">
+   Working with strings in lists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="activity_dictionaries.html">
+   A few dictionary activities
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="debugging_1.html">
    Debugging practice 1
   </a>
@@ -426,17 +436,16 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="let-s-warm-up-them-neurons">
 <h1>Let’s warm up them neurons<a class="headerlink" href="#let-s-warm-up-them-neurons" title="Permalink to this headline">#</a></h1>
 <p>Now that we’ve gotten your environment all set up, let’s switch gears and do some actual coding.</p>
-<ol class="simple">
+<ol>
 <li><p>Write a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to print out the numbers 0 through 5</p></li>
-<li><p>Write a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to print out the numbers 2 through 8. Now do another one to print 9 through 0 (i.e., backwards)</p></li>
-</ol>
-<div class="highlight-tip notranslate"><div class="highlight"><pre><span></span>Use help(range) to see some other things you can do with the range function
-</pre></div>
+<li><p>Write a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to print out the numbers 2 through 8. Now do another one to print 9 through 0 (i.e., backwards)</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Use help(range) to see some other things you can do with the range function</p>
 </div>
-<ol class="simple">
+</li>
 <li><p>Given the list [‘one’, ‘two’,’three’,’four’], write code that will print: ‘one and a two and a three and a four’</p></li>
-<li><p>Write a bit of code using for loop(s) that print out the following sequence:</p></li>
-</ol>
+<li><p>Write a bit of code using <code class="docutils literal notranslate"><span class="pre">for</span></code> loop(s) that prints out the following sequence:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span>
 <span class="mi">12</span>
 <span class="mi">123</span>
@@ -444,16 +453,24 @@ title="Print to PDF"
 <span class="mi">12345</span>
 </pre></div>
 </div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> ```{note}
- This one&#39;s gonna be challenging to people who have not programmed before. Give it a try and then turn to your neighbor and talk about how you might solve it.
- ```
-
- ```{warning}
- If you&#39;re writing your program in the Python Shell or in a Jupyter Notebook, Python will automatically append a newline to anything you print. To keep it from doing that end the print statement with a comma, e.g., `print i,`. If you&#39;re writing the code in a text editor and executing using `python filename.py`, you won&#39;t get a newline. If you want one, add `\n` to the end of your string.
- ```
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This one’s may be challenging to people who have not programmed before. Give it a try on your own. If you’re having trouble, turn to your neighbor and talk about how to solve it.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Python will automatically start every separate <code class="docutils literal notranslate"><span class="pre">print()</span></code> statement on a new line. If you want to have several separate print statements print all to the same line, include an <code class="docutils literal notranslate"><span class="pre">end=&quot;&quot;</span></code> argument in your print statement, e.g.:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I&#39;m gonna print on line 1&quot;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;And so will I&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">I</span><span class="s1">&#39;m gonna print on line 1And so will I</span>
 </pre></div>
 </div>
-<ol class="simple">
+<p>You can print a single newline, do this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</li>
 <li><p>If you’ve done any coding before, the last one was probably quite easy. Here’s one that’s slightly more challenging: Write some code that uses a variable <code class="docutils literal notranslate"><span class="pre">rows</span></code> to print the following:
 If <code class="docutils literal notranslate"><span class="pre">row==1</span></code>, then the following pattern should be printed:</p></li>
 </ol>
@@ -468,7 +485,7 @@ If <code class="docutils literal notranslate"><span class="pre">row==1</span></c
  <span class="n">ooooooooo</span>
 </pre></div>
 </div>
-<p>You should be able to give any value to row (though at some point you will run out screen space for printing).</p>
+<p>You should be able to give any value to row (though at some point you will run out screen space for printing). Before you start coding, <strong>think</strong> what set of instructions (algorithm) your code needs to carry out for a certain value of <code class="docutils literal notranslate"><span class="pre">rows</span></code>.</p>
 <p>If it doesn’t look like a pyramid, you’re not doing it right ;)</p>
 </section>
 
