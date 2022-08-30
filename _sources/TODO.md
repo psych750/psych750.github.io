@@ -20,7 +20,7 @@
 
 [x] Add file writing primer
 
-[ ] Sources for writing/ppending w/ & w/o pandas 
+[ ] Sources for reading/apending w/ & w/o pandas 
 
 [o] CHallenge exercise: max(set(a),key=a.count) to find mode. Have students explain why it works. 
 

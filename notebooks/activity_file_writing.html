@@ -533,10 +533,10 @@ title="Print to PDF"
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">output_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;results.csv&#39;</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Here, we’ve opened a file called results.csv. The ‘w’ flag tells Python to open the file in writing mode. The open() function outputs a “file handle” that we assign to a variable, here called <code class="docutils literal notranslate"><span class="pre">output_file</span></code>. This variable then allows you to write new data to the file .</p>
+<p>Here, we’ve opened a file called results.csv. The ‘w’ flag tells Python to open the file in writing mode. The open() function outputs a “file handle” that we assign to a variable, here called <code class="docutils literal notranslate"><span class="pre">output_file</span></code>. This variable then allows you to write new data to the file.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>If results.txt already exists, it will be overwritten (i.e., all existing data in results.txt will be lost)</p>
+<p>If you open() results.txt and it already exists, it will be overwritten (i.e., all existing data in results.txt will be lost)</p>
 </div>
 </section>
 <section id="how-to-write-to-a-file">
@@ -545,10 +545,11 @@ title="Print to PDF"
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">output_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Hello, world!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>When you are done writing and want to close the file (so that it’s not corrupted by other processes that may write to it), close it like so:</p>
+<p>When you are completely done writing and want to close the file (so that it’s not corrupted by other processes that may write to it), close it like so:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">output_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </div>
+<p>Remember, don’t close it until you are totally done. If you reopen it in ‘w’ mode, it will be rewritten (we’ll talk later about <strong>appending</strong> to files, but this is not necessary for Exercise 2).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>When you write to a file you have to be mindful of newlines. If you want to write separate lines, you need to explicitly add a “\n” character to your string.</p>
