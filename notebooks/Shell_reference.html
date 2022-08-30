@@ -105,7 +105,7 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search..." aria-label="Search..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <p aria-level="2" class="caption" role="heading">
@@ -307,7 +307,7 @@ const thebe_selector_output = ".output, .cell_output"
              <!-- To handle the deprecated key -->
             
             <div class="navbar_extra_footer">
-            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
             
         </div>
@@ -350,6 +350,35 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/psych750/psych750.github.io/main?urlpath=tree/notebooks/Shell_reference.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -363,6 +392,19 @@ title="Fullscreen mode"
   </span>
 
 </button>
+<a href="https://github.com/psych750/psych750.github.io"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
 
 <div class="menu-dropdown menu-dropdown-download-buttons">
   <button class="headerbtn menu-dropdown__trigger"
@@ -883,6 +925,23 @@ cases using the pipe (<code class="docutils literal notranslate"><span class="pr
             </main>
             <footer class="footer-article noprint">
                 
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="programming_environment_windows.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Programming Environment for Windows</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Python_reference.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Python basics</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
             </footer>
         </div>
     </div>
