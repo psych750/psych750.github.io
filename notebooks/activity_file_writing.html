@@ -530,6 +530,9 @@ title="Print to PDF"
 <p>We’ll do lots of reading from files in the coming weeks. This primer is for providing you with the minimum information necessary to write to files that you’ll need to complete Exercise 2.</p>
 <section id="how-to-open-a-file-for-writing">
 <h2>How to open a file for writing?<a class="headerlink" href="#how-to-open-a-file-for-writing" title="Permalink to this headline">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">output_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;results.csv&#39;</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 <p>Here, we’ve opened a file called results.csv. The ‘w’ flag tells Python to open the file in writing mode. The open() function outputs a “file handle” that we assign to a variable, here called <code class="docutils literal notranslate"><span class="pre">output_file</span></code>. This variable then allows you to write new data to the file .</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -539,7 +542,13 @@ title="Print to PDF"
 <section id="how-to-write-to-a-file">
 <h2>How to write to a file?<a class="headerlink" href="#how-to-write-to-a-file" title="Permalink to this headline">#</a></h2>
 <p>Once a file is open for writing, you can write to it like so:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">output_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Hello, world!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 <p>When you are done writing and want to close the file (so that it’s not corrupted by other processes that may write to it), close it like so:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">output_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>When you write to a file you have to be mindful of newlines. If you want to write separate lines, you need to explicitly add a “\n” character to your string.</p>
@@ -547,9 +556,20 @@ title="Print to PDF"
 </section>
 <section id="practice-writing-to-files">
 <h2>Practice writing to files<a class="headerlink" href="#practice-writing-to-files" title="Permalink to this headline">#</a></h2>
-<ol class="simple">
-<li><p>Open a file called ‘counter.txt’ and write the following list to it, one word (element) at a time</p></li>
-<li><p>Open a file called ‘results.csv’ and write code so that at the end the file looks like this. Make sure you code can accommodate a list of arbitrary length. If I asked you to write 50 lines, your code should be no longer than for printing these 4.</p></li>
+<ol>
+<li><p>Open a file called ‘counter.txt’ and write the following list to it, one word (element) at a time</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">list_to_write</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;one&#39;</span><span class="p">,</span><span class="s1">&#39;two&#39;</span><span class="p">,</span><span class="s1">&#39;three&#39;</span><span class="p">,</span><span class="s1">&#39;four&#39;</span><span class="p">,</span><span class="s1">&#39;five&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p>Open a file called ‘results.csv’ and write code so that at the end the file looks like this. Make sure you code can accommodate a list of arbitrary length. If I asked you to write 50 lines, your code should be no longer than for printing these 4.</p>
+<div class="highlight-csv notranslate"><div class="highlight"><pre><span></span>1,dog
+2,cat
+3,wolf
+4,penguin
+</pre></div>
+</div>
+</li>
 </ol>
 </section>
 </section>
