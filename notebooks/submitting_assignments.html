@@ -517,6 +517,28 @@ title="Print to PDF"
      Get the URL of remote branch
     </a>
    </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#list-the-available-branches">
+     List the available branches
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#delete-tags">
+     Delete tags
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#deleting-a-remote-tag">
+       Deleting a remote tag
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#deleting-a-local-tag">
+       Deleting a local tag
+      </a>
+     </li>
+    </ul>
+   </li>
   </ul>
  </li>
 </ul>
@@ -589,6 +611,28 @@ title="Print to PDF"
     <a class="reference internal nav-link" href="#get-the-url-of-remote-branch">
      Get the URL of remote branch
     </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#list-the-available-branches">
+     List the available branches
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#delete-tags">
+     Delete tags
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#deleting-a-remote-tag">
+       Deleting a remote tag
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#deleting-a-local-tag">
+       Deleting a local tag
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -719,6 +763,29 @@ git push --tags
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git remote -v
 </pre></div>
 </div>
+</section>
+<section id="list-the-available-branches">
+<h2>List the available branches<a class="headerlink" href="#list-the-available-branches" title="Permalink to this headline">#</a></h2>
+<p>Lists both local and remote branches</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git branch -a
+</pre></div>
+</div>
+</section>
+<section id="delete-tags">
+<h2>Delete tags<a class="headerlink" href="#delete-tags" title="Permalink to this headline">#</a></h2>
+<p>Sometimes you might want to delete a local and/or remote tag. Because you can’t have two identical tags, if you want to update info associated with a particular tag, you first need to delete the tag and then push the new one.</p>
+<section id="deleting-a-remote-tag">
+<h3>Deleting a remote tag<a class="headerlink" href="#deleting-a-remote-tag" title="Permalink to this headline">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git push --delete origin <span class="s2">&quot;name of your tag&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="deleting-a-local-tag">
+<h3>Deleting a local tag<a class="headerlink" href="#deleting-a-local-tag" title="Permalink to this headline">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git tag -d <span class="s2">&quot;name of your tag&quot;</span>
+</pre></div>
+</div>
+</section>
 </section>
 </section>
 

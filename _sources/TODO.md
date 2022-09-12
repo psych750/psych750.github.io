@@ -8,17 +8,9 @@
 
 [x] Add anonymous vars (_)to python reference
 
-[x] Figure out how to share solutions for in class exercises
+[ ] Add instrucitons on deletings tags git push --delete origin tagname
 
-[x] Exercise 3 basics
-
-[x] For string manipulation add a names in-class exercise where students have to get first names from class roster
-
-[x] Finalize dict in-class activity for week 3 (activity_dictionaries - not all of the parts are about dictionaries). Include one where a dictionary is used as a join to avoid long conditionals
-
-[x] For list exercise: given list, return string containing the most vowels. For loop; return to this when we go regex
-
-[x] Add file writing primer
+[ ] Add instructions on pushing tags to a branch
 
 [ ] Sources for reading/apending w/ & w/o pandas 
 
