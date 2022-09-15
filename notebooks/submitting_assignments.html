@@ -258,11 +258,6 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="activity_name_parsing.html">
-   String manipulation
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="activity_list_manip_vowels_1.html">
    Working with strings in lists
   </a>
@@ -493,6 +488,11 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#looking-at-solutions">
+   Looking at solutions
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#tips">
    Tips
   </a>
@@ -586,6 +586,11 @@ title="Print to PDF"
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#looking-at-solutions">
+   Looking at solutions
+  </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#tips">
@@ -689,8 +694,12 @@ title="Print to PDF"
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git add .
 git commit -m <span class="s2">&quot;Finished part 1&quot;</span>
 git tag <span class="s2">&quot;Exercise_0_1&quot;</span>
-git push --tags
+git push origin --tag
 </pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The first time you push, you may be asked to valiate your github access token. If you have trouble with this, ask for help</p>
 </div>
 <p>Some parts of actual assignments will require you to code quite a bit, so you’ll want to make multiple commits. You can push these intermediate commits to the classroom site if you like, but all that’s required is that your final solution for each part is committed <strong>and tagged</strong>.</p>
 <div class="admonition important">
@@ -711,6 +720,12 @@ git push --tags
 <p>Forgetting to use <code class="docutils literal notranslate"><span class="pre">--tags``</span> <span class="pre">after</span> </code>push` will cause the tags you added to only be visible to you locally; we won’t be able to see them on our end</p>
 </div>
 </section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="looking-at-solutions">
+<h1>Looking at solutions<a class="headerlink" href="#looking-at-solutions" title="Permalink to this headline">#</a></h1>
+<p>Following the submission deadline, I will push the Exercise solutions to a private repository <a class="reference external" href="https://github.com/psych750/solution">https://github.com/psych750/solution</a>
+You must be subscribed to this repository.,
+They will be tagged in the same way as your submitted assignments so you can browse the tags on the github site or <code class="docutils literal notranslate"><span class="pre">checkout</span></code> individual tagged commits using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code></p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="tips">
 <h1>Tips<a class="headerlink" href="#tips" title="Permalink to this headline">#</a></h1>
