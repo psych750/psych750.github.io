@@ -8,6 +8,8 @@ parts:
     chapters:
     - file: notebooks/schedule
       title: Week by week schedule
+    - url: https://github.com/psych750/resources/blob/main/syllabus/programming_dataScience_fa22.pdf
+      title: Syllabus
     - file: notebooks/submitting_assignments
       title: Instructions for submitting assignments
   - caption: Installation instructions
@@ -56,17 +58,19 @@ parts:
     chapters:
     - file: notebooks/python_basics
       title: Python basics 
-    - file: notebooks/in_class_exercise_1
+    - file: notebooks/activity_print_pyramids
       title: The first thinking exercise
     - file: notebooks/palindromes_fibonacci
       title: Palindromes and Fibonacci
-    - file: notebooks/name_parsing
+    - file: notebooks/activity_name_parsing
       title: String manipulation
-    - file: notebooks/list_manip_vowels_1
+    - file: notebooks/activity_list_manip_vowels_1
       title: Working with strings in lists
+    - file: notebooks/activity_file_writing
+      title: Primer on writing files
     - file: notebooks/activity_dictionaries
       title: A few dictionary activities
-    - file: notebooks/debugging_1
+    - file: notebooks/activity_debugging_1
       title: Debugging practice 1
   - caption: Exercises
     chapters:

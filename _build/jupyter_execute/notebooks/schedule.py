@@ -17,7 +17,7 @@
 # 
 # - If you’ve never used a Linux shell (or Mac terminal), watch [this video](https://www.youtube.com/watch?v=oxuRxtrO2Ag). Even if you've used a terminal before, go through this [basic linux commands notebook](https://psych750.github.io/notebooks/Shell_reference.html) as a refresher.
 # 
-# - Sign up for Github if you don’t already have an account (make sure you accept the invite to the class github site). We will be using the very basic capabilities of git: cloning, committing, checking out, and pushing.
+# - Sign up for Github if you don’t already have an account. We will be using the very basic capabilities of git: cloning, committing, checking out, and pushing.
 # 
 #      - If you’ve never used git and github, I recommend walking through two tutorials: [This one](https://githowto.com/setup) focuses on working with git locally. [This one](https://medium.com/@george.seif94/a-full-tutorial-on-how-to-use-github-88466bac7d42) describes pushing and pulling from remote repositories. Confused about the difference between git and github? See [here](https://www.geeksforgeeks.org/difference-between-git-and-github/). This [video walkthrough](https://www.youtube.com/watch?v=8JJ101D3knE) is also very nice.
 # 
@@ -33,8 +33,8 @@
 # 1. What do we do when we program?
 # 1. How to run Python scripts.
 # 1. Intro to Python and PsychoPy
-# 1. Show a shape, make it do something, accept a response
-# 1. An exercise in algorithmic thinking
+# 1. [Show a square, make it do something, accept a response](https://psych750.github.io/notebooks/Exercise1-square.html)
+# 1. [An exercise in algorithmic thinking](https://psych750.github.io/notebooks/activity_print_pyramids.html)
 
 # ## Week 2 (Sept 15): Programming basics
 # 
@@ -43,16 +43,17 @@
 # 1. Read [Think Python Sections](https://greenteapress.com/wp/think-python-2e/) 1.1-1.8
 # 1. Go through the **first three self study guides** on the class site (see the navigation pane on the left)
 # 1. Read/skim [Think Python](https://greenteapress.com/wp/think-python-2e/) Sections 5.1-5.7, 7.1-7.8, 8.1-8.12, and 10.1-10.9
-# 1. Finish Exercise 1 and push it to your github classroom repository
-# 1. Sort out any remaining installation/environment issues. Work on customizing your coding environment and learn some [keyboard shortcuts!](https://code.visualstudio.com/docs/getstarted/keybindings#_keyboard-shortcuts-reference). See also [this helpful video](https://www.youtube.com/watch?v=zwyHmFxeJtg)
+# 1. Finish [Exercise 1](https://psych750.github.io/notebooks/Exercise1-square.html) and push it to your github classroom repository
+# 1. Sort out any remaining installation/environment issues. Work on customizing your coding environment and learn some [keyboard shortcuts!](https://code.visualstudio.com/docs/getstarted/keybindings#_keyboard-shortcuts-reference). Also see [this helpful video](https://www.youtube.com/watch?v=zwyHmFxeJtg)
 # 
 # ### In class:
 # 1. Code review of Exercise 1
 #     - Special attention to variable names!!
-# 2. String manipulation activity
-# 3. Our first experiment! A Stroop task.
-# 4. Primer on files: opening, reading, writing
-# 5. Begin Exercise 2
+# 2. Questions about self-study guides
+# 3. Revisiting the [exercise in algorithmic thinking from Week 1](https://psych750.github.io/notebooks/activity_print_pyramids.html)
+# 4. [Primer on writing files](https://psych750.github.io/notebooks/activity_file_writing.html)
+# 5. [Our first experiment! A Stroop task.](https://psych750.github.io/notebooks/Exercise2-stroop.html)
+# 6. Spend rest of the time working on Exercise 2
 # 
 
 # ## Week 3 (Sept 22)
@@ -61,8 +62,8 @@
 # 1. Go through **and understand** Review of Fundamentals A
 # 2. Go through the *Dictionaries* and *Intro to functions* self-study guides.
 # 3. Read about [reading and writing files](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
-# 4. Go through the *File Reading and Writing notebook* to test your understanding of basic file operations
-# 5. Read through [writing readable code](https://testdriven.io/blog/clean-code-python/)
+# 4. Make sure you've gone through the [Primer on writing files](https://psych750.github.io/notebooks/activity_file_writing.html)
+# 5. Read about [writing readable code](https://testdriven.io/blog/clean-code-python/)
 # 6. Finish Exercise 2 while heeding the advice in the previous step.
 # ```{tip}
 # You are encouraged to use the [Linting feature](https://code.visualstudio.com/docs/python/linting) of Visual Studio Code (I recommend pycodestyle) to help you write code that adheres to Python stylistic standards
@@ -71,8 +72,8 @@
 # ### In class
 # 1. Exercise 2 Code Review
 # 2. More about functions
-# 3. List/string manipulation activity
-# 4. Dictionary manipulation activity
+# 3. [String manipulation activity](https://psych750.github.io/notebooks/activity_list_manip_vowels_1.html)
+# 4. [Dictionary manipulation activity](https://psych750.github.io/notebooks/activity_dictionaries.html)
 # 5. Randomization and iteration activities: creating simple trial lists
 # 
 

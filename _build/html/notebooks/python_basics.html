@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Let’s warm up them neurons" href="in_class_exercise_1.html" />
+    <link rel="next" title="Let’s warm up them neurons" href="activity_print_pyramids.html" />
     <link rel="prev" title="Regular expressions" href="regexp.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -105,7 +105,7 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search..." aria-label="Search..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <p aria-level="2" class="caption" role="heading">
@@ -248,18 +248,23 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="in_class_exercise_1.html">
+  <a class="reference internal" href="activity_print_pyramids.html">
    The first thinking exercise
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="name_parsing.html">
+  <a class="reference internal" href="activity_name_parsing.html">
    String manipulation
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="list_manip_vowels_1.html">
+  <a class="reference internal" href="activity_list_manip_vowels_1.html">
    Working with strings in lists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="activity_file_writing.html">
+   Primer on writing files
   </a>
  </li>
  <li class="toctree-l1">
@@ -268,7 +273,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="debugging_1.html">
+  <a class="reference internal" href="activity_debugging_1.html">
    Debugging practice 1
   </a>
  </li>
@@ -307,7 +312,7 @@ const thebe_selector_output = ".output, .cell_output"
              <!-- To handle the deprecated key -->
             
             <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
             </div>
             
         </div>
@@ -392,19 +397,6 @@ title="Fullscreen mode"
   </span>
 
 </button>
-<a href="https://github.com/psych750/psych750.github.io"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="bottom"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-
-</a>
 
 <div class="menu-dropdown menu-dropdown-download-buttons">
   <button class="headerbtn menu-dropdown__trigger"
@@ -506,8 +498,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-few-simple-conditionals-if-statements">
-   A few simple conditionals (
+  <a class="reference internal nav-link" href="#primer-on-conditionals-if-statements">
+   Primer on conditionals (
    <code class="docutils literal notranslate">
     <span class="pre">
      if
@@ -568,8 +560,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-few-simple-conditionals-if-statements">
-   A few simple conditionals (
+  <a class="reference internal nav-link" href="#primer-on-conditionals-if-statements">
+   Primer on conditionals (
    <code class="docutils literal notranslate">
     <span class="pre">
      if
@@ -845,6 +837,46 @@ What happened here?<div class="sd-summary-down docutils">
 <p class="admonition-title">Note</p>
 <p>Technically range() returns a <code class="docutils literal notranslate"><span class="pre">range</span> <span class="pre">object</span></code> which is a <a class="reference external" href="https://treyhunner.com/2018/02/python-range-is-not-an-iterator/">“lazy iterable”</a> and is executed only later, when we try to access its values. This is different from Python 2 where <code class="docutils literal notranslate"><span class="pre">range()</span></code> returns a regular list.</p>
 </div>
+<p>What about counting by 2s or counting down? Simple</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">cur_num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">cur_num</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+2
+4
+6
+8
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">cur_num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">cur_num</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+</pre></div>
+</div>
+</div>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>If all you need to do is to execute some command a certain number of times, there’s a Python convention to use <code class="docutils literal notranslate"><span class="pre">_</span></code> as a throwaway index variable, for example, let’s generate 5 random integers between 1-10:</p>
@@ -857,12 +889,12 @@ What happened here?<div class="sd-summary-down docutils">
 </section>
 <section id="a-while-loop">
 <h2>A <code class="docutils literal notranslate"><span class="pre">while</span></code> loop<a class="headerlink" href="#a-while-loop" title="Permalink to this headline">#</a></h2>
-<p>Another kind of loop we’ll use is a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop. We use this to itereate until a condition is met (or is no longer met, as the case may be).</p>
+<p>Another kind of loop we’ll use is a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop. We use this to iterate until a condition is met (i.e., something that’s <code class="docutils literal notranslate"><span class="pre">false</span></code> becomes <code class="docutils literal notranslate"><span class="pre">true</span></code>), or a condition is no longer met (i.e., something that’s <code class="docutils literal notranslate"><span class="pre">true</span></code> becomes <code class="docutils literal notranslate"><span class="pre">false</span></code>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">another_num</span><span class="o">=</span><span class="mi">5</span>
-<span class="k">while</span> <span class="n">another_num</span> <span class="o">&lt;=</span> <span class="mi">5</span> <span class="ow">and</span> <span class="n">another_num</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;I&#39;m a </span><span class="si">{</span><span class="n">another_num</span><span class="si">}</span><span class="s2"> and I&#39;m less than or equal to 5!&quot;</span><span class="p">)</span>
+<span class="k">while</span> <span class="n">another_num</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;I&#39;m a </span><span class="si">{</span><span class="n">another_num</span><span class="si">}</span><span class="s2"> and I&#39;m greater than 0!&quot;</span><span class="p">)</span>
     <span class="n">another_num</span> <span class="o">-=</span> <span class="mi">1</span>
 </pre></div>
 </div>
@@ -877,7 +909,16 @@ I&#39;m a 1 and I&#39;m less than or equal to 5!
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+What happened here?<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The first line of the while loop evaluates the truth value of another_num being greater than 0. As long as both of these conditions are met, we execute the loop. On each iteration, we decrease the value of another_num by 1 until it’s no longer greater than 0 at which point the while loop exits.</p>
+</div>
+</details><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
 <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">:</span> 
@@ -907,8 +948,8 @@ zzzzzzzzzz
 s+=”z” is equivalent to s = s+”z”</p>
 </div>
 </section>
-<section id="a-few-simple-conditionals-if-statements">
-<h2>A few simple conditionals (<code class="docutils literal notranslate"><span class="pre">if</span></code> statements)<a class="headerlink" href="#a-few-simple-conditionals-if-statements" title="Permalink to this headline">#</a></h2>
+<section id="primer-on-conditionals-if-statements">
+<h2>Primer on conditionals (<code class="docutils literal notranslate"><span class="pre">if</span></code> statements)<a class="headerlink" href="#primer-on-conditionals-if-statements" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_num</span> <span class="o">=</span> <span class="mi">5</span>
@@ -1073,23 +1114,6 @@ False
             </main>
             <footer class="footer-article noprint">
                 
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="regexp.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Regular expressions</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="in_class_exercise_1.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Let’s warm up them neurons</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
             </footer>
         </div>
     </div>

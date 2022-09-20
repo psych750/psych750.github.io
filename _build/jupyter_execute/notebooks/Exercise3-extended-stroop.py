@@ -3,7 +3,9 @@
 
 # # Exercise 3: Extending the Stroop effect
 # 
-# [Accept the exercise](https://classroom.github.com/a/ld0o1bOq). Please note that this exercise is more involved than Exercise 2 and will require more time. To this end, we'll make it a group exercise. Each of you has been paired with another student in the class. You can collaborate in person, through Slack, or by using [live code editing feature of VSC](https://code.visualstudio.com/learn/collaboration/live-share)
+# [Accept the exercise](https://classroom.github.com/a/ld0o1bOq). 
+# 
+# Please note that this exercise is more involved than Exercise 2 and will require more time. Because of this, you'll work in pairs. You can collaborate in person, through Slack, or by using [live code editing feature of VSC](https://code.visualstudio.com/learn/collaboration/live-share)
 # 
 # In this exercise we'll be extending the Stroop effect task you coded for Exercise 2 into a more complete experiment that (1) generates stimulus lists that are then read in by the main script, (3) accept runtime variables to assign participants to conditions and record participant codes, and (3) use some out-of-the-box speech recognition to allow participants to respond by using their voice.
 # 
@@ -53,17 +55,18 @@ def generate_trials(subj_code, prop_incongruent, num_trials=100):
 # 
 # Col 1: subject code
 # 
-# Col 2: trial number (1,2,3,etc.) from 1 for the first line to num_trials for the second
+# Col 2: proportion of incongruent trials
 # 
-# Col 3: proportion of incongruent trials
+# Col 3: the word to be shown
 # 
-# Col 4: the word to be shown
+# Col 4: the color of the word
 # 
-# Col 5: the color of the word
+# Col 5: whether the trial is 'congruent' or 'incongruent'
 # 
-# Col 6: whether the trial is 'congruent' or 'incongruent'
+# Col 6: The orientation of the word, "upright", or "upside_down". Please ensure that 50% of the congruent trials are upright (and the remaining are upside-down). Same thing for incongruent trials -- 50% should be upright and the remainder upside-down. What this means is that if there are 100 total trials and 25% are incongruent, then 75/2 of the congruent trials (rounded to the nearest integer = 38) should be upright and 25/2 of the incongruent trials (rounded = 13 trials) should be upright.
 # 
-# Col 7: The orientation of the word, "upright", or "upside_down". Please ensure that 50% of the congruent trials are upright (and the remaining are upside-down). Same thing for incongruent trials -- 50% should be upright and the remainder upside-down. What this means is that if there are 100 total trials and 25% are incongruent, then 75/2 of the congruent trials (rounded to the nearest integer = 38) should be upright and 25/2 of the incongruent trials (rounded = 13 trials) should be upright.
+# 
+# Make sure the trial order is **randomized** (i.e., shuffle the order) so that you don't have all the congruent trials together, all the trials containg the same word together, etc.
 # 
 # 
 
@@ -74,10 +77,10 @@ def generate_trials(subj_code, prop_incongruent, num_trials=100):
 # - subject code (any string, but conventionally somthing like stroop_101, stroop_102, etc.)
 # - proportion of incongruent trials (drop down box of 25%, 50%, and 75%)
 # 
-# The entered values should be stored in a dictionary called `runTimeVars`. After the values are collected, the dictionary might look like this:
+# The entered values should be stored in a dictionary called `runtime_vars`. After the values are collected, the dictionary might look like this:
 # 
 # ```python
-# runTimeVars = {'subj_code':'stroop_101', 'prop_incongruent':25}
+# runtime_vars= {'subj_code':'stroop_101', 'prop_incongruent':25}
 # ```
 # 
 # ```{note}
@@ -86,6 +89,10 @@ def generate_trials(subj_code, prop_incongruent, num_trials=100):
 # 
 
 # ## Part 3
+# 
+# Extend the script further to read in the trials data-file and step through it, one line at a time & show the appropriate trial. For example, if trial 3 in the trial file shows "green" in red in an upside-down orientation, then that's what your experiments should be doing on trial 3.
+
+# ## Part 4
 # 
 # Define a `write_data()` function in your code that is called after every response and writes all the trial information **and** responses to a file. 
 # 
@@ -105,7 +112,7 @@ def generate_trials(subj_code, prop_incongruent, num_trials=100):
 # Ensure that you can't run the same participant code twice. If you enter a participant code that's already been entered before, PsychoPy should pop-up a warning box saying "Participant code already exists". This should prevent you from overwriting an existing data-file. If you take up this challenge, tag it as e3_4_challenge
 # ```
 
-# ## Part 4
+# ## Part 5
 # 
-# Microphone response
-# ....stay tuned for starter code.....
+# In the original demonstration of the Stroop effect, participants responded by using their voices. The researcher used a stopwatch to time how long it took to read a block of incongruent trials and compared it to reading a block of congruent trials. We can do a bit better. In this part, we'll be using some out-of-the-box speech recognition to decode what word the participant is saying and scoring it as correct or incorrect. We'll also use a (somewhat imprecise) psychopy function to automatically compute the onset time of people's verbal responses. 
+# 

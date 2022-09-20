@@ -103,7 +103,7 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search..." aria-label="Search..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <p aria-level="2" class="caption" role="heading">
@@ -115,6 +115,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="schedule.html">
    Week by week schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/psych750/resources/blob/main/syllabus/programming_dataScience_fa22.pdf">
+   Syllabus
   </a>
  </li>
  <li class="toctree-l1">
@@ -246,18 +251,18 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="in_class_exercise_1.html">
+  <a class="reference internal" href="activity_print_pyramids.html">
    The first thinking exercise
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="name_parsing.html">
-   String manipulation
+  <a class="reference internal" href="activity_list_manip_vowels_1.html">
+   Working with strings in lists
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="list_manip_vowels_1.html">
-   Working with strings in lists
+  <a class="reference internal" href="activity_file_writing.html">
+   Primer on writing files
   </a>
  </li>
  <li class="toctree-l1">
@@ -266,7 +271,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="debugging_1.html">
+  <a class="reference internal" href="activity_debugging_1.html">
    Debugging practice 1
   </a>
  </li>
@@ -305,7 +310,7 @@ const thebe_selector_output = ".output, .cell_output"
              <!-- To handle the deprecated key -->
             
             <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
             </div>
             
         </div>
@@ -390,19 +395,6 @@ title="Fullscreen mode"
   </span>
 
 </button>
-<a href="https://github.com/psych750/psych750.github.io"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="bottom"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-
-</a>
 
 <div class="menu-dropdown menu-dropdown-download-buttons">
   <button class="headerbtn menu-dropdown__trigger"
@@ -474,11 +466,6 @@ title="Print to PDF"
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
    Lists and Tuples
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#contents">
-   Contents
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -1164,11 +1151,6 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#contents">
-   Contents
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#lists">
    Lists
   </a>
@@ -1842,100 +1824,6 @@ title="Print to PDF"
 <p><a class="reference external" href="http://nbviewer.ipython.org/urls/raw.github.com/ehmatthes/intro_programming/master/notebooks/var_string_num.ipynb">Previous: Variables, Strings, and Numbers</a> |
 <a class="reference external" href="http://nbviewer.ipython.org/urls/raw.github.com/ehmatthes/intro_programming/master/notebooks/index.ipynb">Home</a> |
 <a class="reference external" href="http://nbviewer.ipython.org/urls/raw.github.com/ehmatthes/intro_programming/master/notebooks/introducing_functions.ipynb">Next: Introducing Functions</a></p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="contents">
-<h1>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">#</a></h1>
-<ul class="simple">
-<li><p><a class="reference external" href="#Lists">Lists</a></p>
-<ul>
-<li><p><a class="reference external" href="#Introducing-Lists">Introducing Lists</a></p>
-<ul>
-<li><p><a class="reference external" href="#Example">Example</a></p></li>
-<li><p><a class="reference external" href="#Naming-and-defining-a-list">Naming and defining a list</a></p></li>
-<li><p><a class="reference external" href="#Accessing-one-item-in-a-list">Accessing one item in a list</a></p></li>
-<li><p><a class="reference external" href="#Exercises-lists">Exercises</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference external" href="#Lists-and-Looping">Lists and Looping</a></p>
-<ul>
-<li><p><a class="reference external" href="#Accessing-all-elements-in-a-list">Accessing all elements in a list</a></p></li>
-<li><p><a class="reference external" href="#Enumerating-a-list">Enumerating a list</a></p></li>
-<li><p><a class="reference external" href="#Exercises-loops">Exercises</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference external" href="#Common-List-Operations">Common List Operations</a></p>
-<ul>
-<li><p><a class="reference external" href="#Modifying-elements-in-a-list">Modifying elements in a list</a></p></li>
-<li><p><a class="reference external" href="#Finding-an-element-in-a-list">Finding an element in a list</a></p></li>
-<li><p><a class="reference external" href="#Testing-whether-an-element-is-in-a-list">Testing whether an element is in a list</a></p></li>
-<li><p><a class="reference external" href="#Adding-items-to-a-list">Adding items to a list</a></p></li>
-<li><p><a class="reference external" href="#Creating-an-empty-list">Creating an empty list</a></p></li>
-<li><p><a class="reference external" href="#Sorting-a-list">Sorting a list</a></p></li>
-<li><p><a class="reference external" href="#Finding-the-length-of-a-list">Finding the length of a list</a></p></li>
-<li><p><a class="reference external" href="#Exercises-operations">Exercises</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference external" href="#Removing-Items-from-a-List">Removing Items from a List</a></p>
-<ul>
-<li><p><a class="reference external" href="#Removing-items-by-position">Removing items by position</a></p></li>
-<li><p><a class="reference external" href="#Removing-items-by-value">Removing items by value</a></p></li>
-<li><p><a class="reference external" href="#Popping-items">Popping items</a></p></li>
-<li><p><a class="reference external" href="#Exercises-removing">Exercises</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference external" href="#Want-to-see-what-functions-are?">Want to see what functions are?</a></p></li>
-<li><p><a class="reference external" href="#Slicing-a-list">Slicing a List</a></p>
-<ul>
-<li><p><a class="reference external" href="#Copying-a-list">Copying a list</a></p></li>
-<li><p><a class="reference external" href="#Exercises_slicing">Exercises</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference external" href="#Numerical-Lists">Numerical Lists</a></p>
-<ul>
-<li><p><a class="reference external" href="#The-*range()*-function">The <em>range()</em> function</a></p></li>
-<li><p><a class="reference external" href="#min_max_sum">The <em>min()</em>, <em>max()</em>, <em>sum()</em> functions</a></p></li>
-<li><p><a class="reference external" href="#Exercises_numerical">Exercises</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference external" href="#List-Comprehensions">List Comprehensions</a></p>
-<ul>
-<li><p><a class="reference external" href="#Numerical-comprehensions">Numerical comprehensions</a></p></li>
-<li><p><a class="reference external" href="#Non-numerical-comprehensions">Non-numerical comprehensions</a></p></li>
-<li><p><a class="reference external" href="#Exercises_comprehensions">Exercises</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference external" href="#Strings-as-lists">Strings as Lists</a></p>
-<ul>
-<li><p><a class="reference external" href="#Strings-as-a-list-of-characters">Strings as a list of characters</a></p></li>
-<li><p><a class="reference external" href="#Slicing-strings">Slicing strings</a></p></li>
-<li><p><a class="reference external" href="#Finding-substrings">Finding substrings</a></p></li>
-<li><p><a class="reference external" href="#Replacing-substrings">Replacing substrings</a></p></li>
-<li><p><a class="reference external" href="#Counting-substrings">Counting substrings</a></p></li>
-<li><p><a class="reference external" href="#Splitting-strings">Splitting strings</a></p></li>
-<li><p><a class="reference external" href="#Other-string-methods">Other string methods</a></p></li>
-<li><p><a class="reference external" href="#Exercises-strings-as-lists">Exercises</a></p></li>
-<li><p><a class="reference external" href="#Challenges-strings-as-lists">Challenges</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference external" href="#Tuples">Tuples</a></p>
-<ul>
-<li><p><a class="reference external" href="#Defining-tuples,-and-accessing-elements">Defining tuples, and accessing elements</a></p></li>
-<li><p><a class="reference external" href="#Using-tuples-to-make-strings">Using tuples to make strings</a></p></li>
-<li><p><a class="reference external" href="#Exercises_tuples">Exercises</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference external" href="#Coging-Style:-PEP-8">Coding Style: PEP 8</a></p>
-<ul>
-<li><p><a class="reference external" href="#Why-have-style-conventions?">Why have style conventions?</a></p></li>
-<li><p><a class="reference external" href="#What-is-a-PEP?">What is a PEP?</a></p></li>
-<li><p><a class="reference external" href="#Basic-Python-style-guidelines">Basic Python style guidelines</a></p></li>
-<li><p><a class="reference external" href="#Exercises-pep8">Exercises</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference external" href="#Overall-Challenges">Overall Challenges</a></p></li>
-</ul>
-</li>
-</ul>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="lists">
 <h1>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">#</a></h1>
@@ -4276,9 +4164,6 @@ Exercises<a class="headerlink" href="#a-id-exercises-pep8-a-exercises" title="Pe
             </main>
             <footer class="footer-article noprint">
                 
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-</div>
             </footer>
         </div>
     </div>

@@ -105,7 +105,7 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search..." aria-label="Search..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <p aria-level="2" class="caption" role="heading">
@@ -117,6 +117,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Week by week schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/psych750/resources/blob/main/syllabus/programming_dataScience_fa22.pdf">
+   Syllabus
   </a>
  </li>
  <li class="toctree-l1">
@@ -248,18 +253,18 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="in_class_exercise_1.html">
+  <a class="reference internal" href="activity_print_pyramids.html">
    The first thinking exercise
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="name_parsing.html">
-   String manipulation
+  <a class="reference internal" href="activity_list_manip_vowels_1.html">
+   Working with strings in lists
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="list_manip_vowels_1.html">
-   Working with strings in lists
+  <a class="reference internal" href="activity_file_writing.html">
+   Primer on writing files
   </a>
  </li>
  <li class="toctree-l1">
@@ -268,7 +273,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="debugging_1.html">
+  <a class="reference internal" href="activity_debugging_1.html">
    Debugging practice 1
   </a>
  </li>
@@ -307,7 +312,7 @@ const thebe_selector_output = ".output, .cell_output"
              <!-- To handle the deprecated key -->
             
             <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
             </div>
             
         </div>
@@ -392,19 +397,6 @@ title="Fullscreen mode"
   </span>
 
 </button>
-<a href="https://github.com/psych750/psych750.github.io"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="bottom"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-
-</a>
 
 <div class="menu-dropdown menu-dropdown-download-buttons">
   <button class="headerbtn menu-dropdown__trigger"
@@ -682,7 +674,7 @@ title="Print to PDF"
 <li><p>Sign up for the class Slack group. The link was sent to your &#64;wisc email.</p></li>
 <li><p>Follow “Download and Install” instructions (see sidebar on left). The instructions are slightly different depending on whether you have a PC or Mac.</p></li>
 <li><p>If you’ve never used a Linux shell (or Mac terminal), watch <a class="reference external" href="https://www.youtube.com/watch?v=oxuRxtrO2Ag">this video</a>. Even if you’ve used a terminal before, go through this <a class="reference external" href="https://psych750.github.io/notebooks/Shell_reference.html">basic linux commands notebook</a> as a refresher.</p></li>
-<li><p>Sign up for Github if you don’t already have an account (make sure you accept the invite to the class github site). We will be using the very basic capabilities of git: cloning, committing, checking out, and pushing.</p>
+<li><p>Sign up for Github if you don’t already have an account. We will be using the very basic capabilities of git: cloning, committing, checking out, and pushing.</p>
 <ul>
 <li><p>If you’ve never used git and github, I recommend walking through two tutorials: <a class="reference external" href="https://githowto.com/setup">This one</a> focuses on working with git locally. <a class="reference external" href="https://medium.com/&#64;george.seif94/a-full-tutorial-on-how-to-use-github-88466bac7d42">This one</a> describes pushing and pulling from remote repositories. Confused about the difference between git and github? See <a class="reference external" href="https://www.geeksforgeeks.org/difference-between-git-and-github/">here</a>. This <a class="reference external" href="https://www.youtube.com/watch?v=8JJ101D3knE">video walkthrough</a> is also very nice.</p></li>
 </ul>
@@ -699,8 +691,8 @@ title="Print to PDF"
 <li><p>What do we do when we program?</p></li>
 <li><p>How to run Python scripts.</p></li>
 <li><p>Intro to Python and PsychoPy</p></li>
-<li><p>Show a shape, make it do something, accept a response</p></li>
-<li><p>An exercise in algorithmic thinking</p></li>
+<li><p><a class="reference external" href="https://psych750.github.io/notebooks/Exercise1-square.html">Show a square, make it do something, accept a response</a></p></li>
+<li><p><a class="reference external" href="https://psych750.github.io/notebooks/activity_print_pyramids.html">An exercise in algorithmic thinking</a></p></li>
 </ol>
 </section>
 </section>
@@ -713,8 +705,8 @@ title="Print to PDF"
 <li><p>Read <a class="reference external" href="https://greenteapress.com/wp/think-python-2e/">Think Python Sections</a> 1.1-1.8</p></li>
 <li><p>Go through the <strong>first three self study guides</strong> on the class site (see the navigation pane on the left)</p></li>
 <li><p>Read/skim <a class="reference external" href="https://greenteapress.com/wp/think-python-2e/">Think Python</a> Sections 5.1-5.7, 7.1-7.8, 8.1-8.12, and 10.1-10.9</p></li>
-<li><p>Finish Exercise 1 and push it to your github classroom repository</p></li>
-<li><p>Sort out any remaining installation/environment issues. Work on customizing your coding environment and learn some <a class="reference external" href="https://code.visualstudio.com/docs/getstarted/keybindings#_keyboard-shortcuts-reference">keyboard shortcuts!</a>. See also <a class="reference external" href="https://www.youtube.com/watch?v=zwyHmFxeJtg">this helpful video</a></p></li>
+<li><p>Finish <a class="reference external" href="https://psych750.github.io/notebooks/Exercise1-square.html">Exercise 1</a> and push it to your github classroom repository</p></li>
+<li><p>Sort out any remaining installation/environment issues. Work on customizing your coding environment and learn some <a class="reference external" href="https://code.visualstudio.com/docs/getstarted/keybindings#_keyboard-shortcuts-reference">keyboard shortcuts!</a>. Also see <a class="reference external" href="https://www.youtube.com/watch?v=zwyHmFxeJtg">this helpful video</a></p></li>
 </ol>
 </section>
 <section id="id1">
@@ -725,10 +717,11 @@ title="Print to PDF"
 <li><p>Special attention to variable names!!</p></li>
 </ul>
 </li>
-<li><p>String manipulation activity</p></li>
-<li><p>Our first experiment! A Stroop task.</p></li>
-<li><p>Primer on files: opening, reading, writing</p></li>
-<li><p>Begin Exercise 2</p></li>
+<li><p>Questions about self-study guides</p></li>
+<li><p>Revisiting the <a class="reference external" href="https://psych750.github.io/notebooks/activity_print_pyramids.html">exercise in algorithmic thinking from Week 1</a></p></li>
+<li><p><a class="reference external" href="https://psych750.github.io/notebooks/activity_file_writing.html">Primer on writing files</a></p></li>
+<li><p><a class="reference external" href="https://psych750.github.io/notebooks/Exercise2-stroop.html">Our first experiment! A Stroop task.</a></p></li>
+<li><p>Spend rest of the time working on Exercise 2</p></li>
 </ol>
 </section>
 </section>
@@ -740,8 +733,8 @@ title="Print to PDF"
 <li><p>Go through <strong>and understand</strong> Review of Fundamentals A</p></li>
 <li><p>Go through the <em>Dictionaries</em> and <em>Intro to functions</em> self-study guides.</p></li>
 <li><p>Read about <a class="reference external" href="https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files">reading and writing files</a></p></li>
-<li><p>Go through the <em>File Reading and Writing notebook</em> to test your understanding of basic file operations</p></li>
-<li><p>Read through <a class="reference external" href="https://testdriven.io/blog/clean-code-python/">writing readable code</a></p></li>
+<li><p>Make sure you’ve gone through the <a class="reference external" href="https://psych750.github.io/notebooks/activity_file_writing.html">Primer on writing files</a></p></li>
+<li><p>Read about <a class="reference external" href="https://testdriven.io/blog/clean-code-python/">writing readable code</a></p></li>
 <li><p>Finish Exercise 2 while heeding the advice in the previous step.</p></li>
 </ol>
 <div class="admonition tip">
@@ -754,8 +747,8 @@ title="Print to PDF"
 <ol class="simple">
 <li><p>Exercise 2 Code Review</p></li>
 <li><p>More about functions</p></li>
-<li><p>List/string manipulation activity</p></li>
-<li><p>Dictionary manipulation activity</p></li>
+<li><p><a class="reference external" href="https://psych750.github.io/notebooks/activity_list_manip_vowels_1.html">String manipulation activity</a></p></li>
+<li><p><a class="reference external" href="https://psych750.github.io/notebooks/activity_dictionaries.html">Dictionary manipulation activity</a></p></li>
 <li><p>Randomization and iteration activities: creating simple trial lists</p></li>
 </ol>
 </section>
@@ -1015,23 +1008,6 @@ Week 14 (May 3): Project presentations
             </main>
             <footer class="footer-article noprint">
                 
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../index.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Psych 750: Programming for Behavioral Data Science</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="submitting_assignments.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Submitting assignments</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
             </footer>
         </div>
     </div>

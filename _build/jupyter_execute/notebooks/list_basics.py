@@ -80,7 +80,7 @@ print( images[-2])
 
 # If you attemp to use a negative number larger than the length of the list you will get an IndexError:
 
-# In[45]:
+# In[1]:
 
 
 images = ['dog', 'cat', 'panda']

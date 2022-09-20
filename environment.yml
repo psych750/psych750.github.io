@@ -6,6 +6,5 @@ dependencies:
   - python=3.8
   - jupyter
   - jupyterlab
-  - pyaudio
   - pycodestyle
 prefix: /Users/glupyan/anaconda3/envs/psych750

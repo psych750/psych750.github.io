@@ -104,7 +104,7 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search..." aria-label="Search..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <p aria-level="2" class="caption" role="heading">
@@ -116,6 +116,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="schedule.html">
    Week by week schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/psych750/resources/blob/main/syllabus/programming_dataScience_fa22.pdf">
+   Syllabus
   </a>
  </li>
  <li class="toctree-l1">
@@ -247,18 +252,18 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="in_class_exercise_1.html">
+  <a class="reference internal" href="activity_print_pyramids.html">
    The first thinking exercise
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="name_parsing.html">
-   String manipulation
+  <a class="reference internal" href="activity_list_manip_vowels_1.html">
+   Working with strings in lists
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="list_manip_vowels_1.html">
-   Working with strings in lists
+  <a class="reference internal" href="activity_file_writing.html">
+   Primer on writing files
   </a>
  </li>
  <li class="toctree-l1">
@@ -267,7 +272,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="debugging_1.html">
+  <a class="reference internal" href="activity_debugging_1.html">
    Debugging practice 1
   </a>
  </li>
@@ -306,7 +311,7 @@ const thebe_selector_output = ".output, .cell_output"
              <!-- To handle the deprecated key -->
             
             <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
             </div>
             
         </div>
@@ -391,19 +396,6 @@ title="Fullscreen mode"
   </span>
 
 </button>
-<a href="https://github.com/psych750/psych750.github.io"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="bottom"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-
-</a>
 
 <div class="menu-dropdown menu-dropdown-download-buttons">
   <button class="headerbtn menu-dropdown__trigger"
@@ -497,6 +489,11 @@ title="Print to PDF"
    Part 4
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-5">
+   Part 5
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -541,6 +538,11 @@ title="Print to PDF"
    Part 4
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-5">
+   Part 5
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -553,7 +555,8 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="exercise-3-extending-the-stroop-effect">
 <h1>Exercise 3: Extending the Stroop effect<a class="headerlink" href="#exercise-3-extending-the-stroop-effect" title="Permalink to this headline">#</a></h1>
-<p><a class="reference external" href="https://classroom.github.com/a/ld0o1bOq">Accept the exercise</a>. Please note that this exercise is more involved than Exercise 2 and will require more time. To this end, we’ll make it a group exercise. Each of you has been paired with another student in the class. You can collaborate in person, through Slack, or by using <a class="reference external" href="https://code.visualstudio.com/learn/collaboration/live-share">live code editing feature of VSC</a></p>
+<p><a class="reference external" href="https://classroom.github.com/a/ld0o1bOq">Accept the exercise</a>.</p>
+<p>Please note that this exercise is more involved than Exercise 2 and will require more time. Because of this, you’ll work in pairs. You can collaborate in person, through Slack, or by using <a class="reference external" href="https://code.visualstudio.com/learn/collaboration/live-share">live code editing feature of VSC</a></p>
 <p>In this exercise we’ll be extending the Stroop effect task you coded for Exercise 2 into a more complete experiment that (1) generates stimulus lists that are then read in by the main script, (3) accept runtime variables to assign participants to conditions and record participant codes, and (3) use some out-of-the-box speech recognition to allow participants to respond by using their voice.</p>
 <p>We’ll use the all same stimuli, but introduce several variations:</p>
 <p>a. We’ll vary the proportion of trials that are incongruent (i.e., when the color of the font does not match the word).</p>
@@ -595,12 +598,12 @@ title="Print to PDF"
 </div>
 <p>The produced file should be a CSV and have the following format:</p>
 <p>Col 1: subject code</p>
-<p>Col 2: trial number (1,2,3,etc.) from 1 for the first line to num_trials for the second</p>
-<p>Col 3: proportion of incongruent trials</p>
-<p>Col 4: the word to be shown</p>
-<p>Col 5: the color of the word</p>
-<p>Col 6: whether the trial is ‘congruent’ or ‘incongruent’</p>
-<p>Col 7: The orientation of the word, “upright”, or “upside_down”. Please ensure that 50% of the congruent trials are upright (and the remaining are upside-down). Same thing for incongruent trials – 50% should be upright and the remainder upside-down. What this means is that if there are 100 total trials and 25% are incongruent, then 75/2 of the congruent trials (rounded to the nearest integer = 38) should be upright and 25/2 of the incongruent trials (rounded = 13 trials) should be upright.</p>
+<p>Col 2: proportion of incongruent trials</p>
+<p>Col 3: the word to be shown</p>
+<p>Col 4: the color of the word</p>
+<p>Col 5: whether the trial is ‘congruent’ or ‘incongruent’</p>
+<p>Col 6: The orientation of the word, “upright”, or “upside_down”. Please ensure that 50% of the congruent trials are upright (and the remaining are upside-down). Same thing for incongruent trials – 50% should be upright and the remainder upside-down. What this means is that if there are 100 total trials and 25% are incongruent, then 75/2 of the congruent trials (rounded to the nearest integer = 38) should be upright and 25/2 of the incongruent trials (rounded = 13 trials) should be upright.</p>
+<p>Make sure the trial order is <strong>randomized</strong> (i.e., shuffle the order) so that you don’t have all the congruent trials together, all the trials containg the same word together, etc.</p>
 </section>
 <section id="part-2">
 <h2>Part 2<a class="headerlink" href="#part-2" title="Permalink to this headline">#</a></h2>
@@ -609,8 +612,8 @@ title="Print to PDF"
 <li><p>subject code (any string, but conventionally somthing like stroop_101, stroop_102, etc.)</p></li>
 <li><p>proportion of incongruent trials (drop down box of 25%, 50%, and 75%)</p></li>
 </ul>
-<p>The entered values should be stored in a dictionary called <code class="docutils literal notranslate"><span class="pre">runTimeVars</span></code>. After the values are collected, the dictionary might look like this:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">runTimeVars</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;subj_code&#39;</span><span class="p">:</span><span class="s1">&#39;stroop_101&#39;</span><span class="p">,</span> <span class="s1">&#39;prop_incongruent&#39;</span><span class="p">:</span><span class="mi">25</span><span class="p">}</span>
+<p>The entered values should be stored in a dictionary called <code class="docutils literal notranslate"><span class="pre">runtime_vars</span></code>. After the values are collected, the dictionary might look like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">runtime_vars</span><span class="o">=</span> <span class="p">{</span><span class="s1">&#39;subj_code&#39;</span><span class="p">:</span><span class="s1">&#39;stroop_101&#39;</span><span class="p">,</span> <span class="s1">&#39;prop_incongruent&#39;</span><span class="p">:</span><span class="mi">25</span><span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -620,6 +623,10 @@ title="Print to PDF"
 </section>
 <section id="part-3">
 <h2>Part 3<a class="headerlink" href="#part-3" title="Permalink to this headline">#</a></h2>
+<p>Extend the script further to read in the trials data-file and step through it, one line at a time &amp; show the appropriate trial. For example, if trial 3 in the trial file shows “green” in red in an upside-down orientation, then that’s what your experiments should be doing on trial 3.</p>
+</section>
+<section id="part-4">
+<h2>Part 4<a class="headerlink" href="#part-4" title="Permalink to this headline">#</a></h2>
 <p>Define a <code class="docutils literal notranslate"><span class="pre">write_data()</span></code> function in your code that is called after every response and writes all the trial information <strong>and</strong> responses to a file.</p>
 <p>As in Exercise 2, you should be writing to the file after every trial. Make sure your data is written to <code class="docutils literal notranslate"><span class="pre">data/subject-code_data.csv</span></code> where <code class="docutils literal notranslate"><span class="pre">subject-code</span></code> is the subject code entered at runtime and <code class="docutils literal notranslate"><span class="pre">data/</span></code> is a subdirectory that will contain all the data files. Your code should record one line per response and record responses as they come in. If a user quits after trial 50, the data file should have recorded those 50 responses.  Here’s an example of what your output file should look like (note that the first line contains column names.</p>
 <table class="colwidths-auto table">
@@ -681,10 +688,9 @@ title="Print to PDF"
 <p>Ensure that you can’t run the same participant code twice. If you enter a participant code that’s already been entered before, PsychoPy should pop-up a warning box saying “Participant code already exists”. This should prevent you from overwriting an existing data-file. If you take up this challenge, tag it as e3_4_challenge</p>
 </div>
 </section>
-<section id="part-4">
-<h2>Part 4<a class="headerlink" href="#part-4" title="Permalink to this headline">#</a></h2>
-<p>Microphone response
-….stay tuned for starter code…..</p>
+<section id="part-5">
+<h2>Part 5<a class="headerlink" href="#part-5" title="Permalink to this headline">#</a></h2>
+<p>In the original demonstration of the Stroop effect, participants responded by using their voices. The researcher used a stopwatch to time how long it took to read a block of incongruent trials and compared it to reading a block of congruent trials. We can do a bit better. In this part, we’ll be using some out-of-the-box speech recognition to decode what word the participant is saying and scoring it as correct or incorrect. We’ll also use a (somewhat imprecise) psychopy function to automatically compute the onset time of people’s verbal responses.</p>
 </section>
 </section>
 
@@ -713,16 +719,6 @@ title="Print to PDF"
             </main>
             <footer class="footer-article noprint">
                 
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="Exercise2-stroop.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Exercise 2: The stroop effect</p>
-        </div>
-    </a>
-</div>
             </footer>
         </div>
     </div>

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>String manipulation exercise &#8212; Psych 750</title>
+    <title>Primer on writing files &#8212; Psych 750</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -51,12 +51,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://psych750.github.io/notebooks/name_parsing.html" />
+    <link rel="canonical" href="https://psych750.github.io/notebooks/activity_file_writing.html" />
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="List/string manipulation exercise" href="list_manip_vowels_1.html" />
-    <link rel="prev" title="&lt;no title&gt;" href="palindromes_fibonacci.html" />
+    <link rel="next" title="Playing around with dictionaries" href="activity_dictionaries.html" />
+    <link rel="prev" title="List/string manipulation exercise" href="activity_list_manip_vowels_1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -105,7 +105,7 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search..." aria-label="Search..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <p aria-level="2" class="caption" role="heading">
@@ -248,18 +248,23 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="in_class_exercise_1.html">
+  <a class="reference internal" href="activity_print_pyramids.html">
    The first thinking exercise
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="activity_name_parsing.html">
    String manipulation
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="list_manip_vowels_1.html">
+  <a class="reference internal" href="activity_list_manip_vowels_1.html">
    Working with strings in lists
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Primer on writing files
   </a>
  </li>
  <li class="toctree-l1">
@@ -268,7 +273,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="debugging_1.html">
+  <a class="reference internal" href="activity_debugging_1.html">
    Debugging practice 1
   </a>
  </li>
@@ -307,7 +312,7 @@ const thebe_selector_output = ".output, .cell_output"
              <!-- To handle the deprecated key -->
             
             <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
             </div>
             
         </div>
@@ -358,7 +363,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/psych750/psych750.github.io/main?urlpath=tree/notebooks/name_parsing.ipynb"
+        <a href="https://mybinder.org/v2/gh/psych750/psych750.github.io/main?urlpath=tree/notebooks/activity_file_writing.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -392,19 +397,6 @@ title="Fullscreen mode"
   </span>
 
 </button>
-<a href="https://github.com/psych750/psych750.github.io"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="bottom"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-
-</a>
 
 <div class="menu-dropdown menu-dropdown-download-buttons">
   <button class="headerbtn menu-dropdown__trigger"
@@ -414,7 +406,7 @@ title="Source repository"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/notebooks/name_parsing.ipynb"
+        <a href="../_sources/notebooks/activity_file_writing.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -474,18 +466,18 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#output-first-names-only">
-   Output first names only
+  <a class="reference internal nav-link" href="#how-to-open-a-file-for-writing">
+   How to open a file for writing?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#now-turn-it-into-a-function">
-   Now turn it into a function
+  <a class="reference internal nav-link" href="#how-to-write-to-a-file">
+   How to write to a file?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#test-your-function">
-   Test your function
+  <a class="reference internal nav-link" href="#practice-writing-to-files">
+   Practice writing to files
   </a>
  </li>
 </ul>
@@ -497,7 +489,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>String manipulation exercise</h1>
+                <h1>Primer on writing files</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -508,18 +500,18 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#output-first-names-only">
-   Output first names only
+  <a class="reference internal nav-link" href="#how-to-open-a-file-for-writing">
+   How to open a file for writing?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#now-turn-it-into-a-function">
-   Now turn it into a function
+  <a class="reference internal nav-link" href="#how-to-write-to-a-file">
+   How to write to a file?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#test-your-function">
-   Test your function
+  <a class="reference internal nav-link" href="#practice-writing-to-files">
+   Practice writing to files
   </a>
  </li>
 </ul>
@@ -532,49 +524,54 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="string-manipulation-exercise">
-<h1>String manipulation exercise<a class="headerlink" href="#string-manipulation-exercise" title="Permalink to this headline">#</a></h1>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">names</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/psych750/resources/main/stimuli/psych750_roster.csv&#39;</span><span class="p">)</span>
-<span class="n">full_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">names</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">full_names</span><span class="p">)</span>
+  <section class="tex2jax_ignore mathjax_ignore" id="primer-on-writing-files">
+<h1>Primer on writing files<a class="headerlink" href="#primer-on-writing-files" title="Permalink to this headline">#</a></h1>
+<p>Your programs become a whole lot more useful when you are able to access external data (typically from external files) and when you can save your outputs (participant responses, outputs of your computations, etc.) to files.</p>
+<p>We’ll do lots of reading from files in the coming weeks. This primer is for providing you with the minimum information necessary to write to files that you’ll need to complete Exercise 2.</p>
+<section id="how-to-open-a-file-for-writing">
+<h2>How to open a file for writing?<a class="headerlink" href="#how-to-open-a-file-for-writing" title="Permalink to this headline">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">output_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;results.csv&#39;</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>Here, we’ve opened a file called results.csv. The ‘w’ flag tells Python to open the file in writing mode. The open() function outputs a “file handle” that we assign to a variable, here called <code class="docutils literal notranslate"><span class="pre">output_file</span></code>. This variable then allows you to write new data to the file.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you open() results.txt and it already exists, it will be overwritten (i.e., all existing data in results.txt will be lost)</p>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Anthony,Lauren Elise&#39;, &#39;Beatty,Drew Evelyn&#39;, &#39;Cheung,Alexander Jefferson&#39;, &#39;Chu,Carol&#39;, &#39;Cunningham,Emma Gayle&#39;, &#39;Fu,Meng&#39;, &#39;Gao,Sizhe&#39;, &#39;Green,Benjamin Douglas&#39;, &#39;Holley,Kendall Isaiah&#39;, &#39;Hou,Lihao&#39;, &#39;Koppel Egierd,Jacob I&#39;, &#39;Ma,Yuanxue&#39;, &#39;Marji,Michelle&#39;, &#39;Modahl,Lucas Nolan&#39;, &#39;Smith,Matthew Aaron&#39;, &#39;Stein,Andrea Gray&#39;, &#39;Yoo,Sujin&#39;, &#39;Yuksel,Ezgi Melisa&#39;, &#39;Zhong,Zhuolun&#39;, &#39;Zhu,Yan&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-<section id="output-first-names-only">
-<h2>Output first names only<a class="headerlink" href="#output-first-names-only" title="Permalink to this headline">#</a></h2>
-<p>Write a loop with code that processes the <code class="docutils literal notranslate"><span class="pre">full_names</span></code> list and outputs just the first names</p>
 </section>
-<section id="now-turn-it-into-a-function">
-<h2>Now turn it into a function<a class="headerlink" href="#now-turn-it-into-a-function" title="Permalink to this headline">#</a></h2>
-<p>Complete the body of this function to return a list containing just the first names in the same order as the full names that were given to the function.</p>
+<section id="how-to-write-to-a-file">
+<h2>How to write to a file?<a class="headerlink" href="#how-to-write-to-a-file" title="Permalink to this headline">#</a></h2>
+<p>Once a file is open for writing, you can write to it like so:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">output_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Hello, world!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>When you are completely done writing and want to close the file (so that it’s not corrupted by other processes that may write to it), close it like so:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">output_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Remember, don’t close it until you are totally done. If you reopen it in ‘w’ mode, it will be rewritten (we’ll talk later about <strong>appending</strong> to files, but this is not necessary for Exercise 2).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When you write to a file you have to be mindful of newlines. If you want to write separate lines, you need to explicitly add a “\n” character to your string.</p>
+</div>
 </section>
-<section id="test-your-function">
-<h2>Test your function<a class="headerlink" href="#test-your-function" title="Permalink to this headline">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_names</span> <span class="o">=</span> <span class="n">return_first_names</span><span class="p">(</span><span class="n">full_names</span><span class="p">)</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="k">assert</span> <span class="n">first_names</span> <span class="o">==</span> <span class="p">[</span><span class="s1">&#39;Lauren&#39;</span><span class="p">,</span> <span class="s1">&#39;Drew&#39;</span><span class="p">,</span> <span class="s1">&#39;Alexander&#39;</span><span class="p">,</span> <span class="s1">&#39;Carol&#39;</span><span class="p">,</span> <span class="s1">&#39;Emma&#39;</span><span class="p">,</span> <span class="s1">&#39;Meng&#39;</span><span class="p">,</span> <span class="s1">&#39;Sizhe&#39;</span><span class="p">,</span> <span class="s1">&#39;Benjamin&#39;</span><span class="p">,</span> <span class="s1">&#39;Kendall&#39;</span><span class="p">,</span> <span class="s1">&#39;Lihao&#39;</span><span class="p">,</span> <span class="s1">&#39;Jacob&#39;</span><span class="p">,</span> <span class="s1">&#39;Yuanxue&#39;</span><span class="p">,</span> <span class="s1">&#39;Michelle&#39;</span><span class="p">,</span> <span class="s1">&#39;Lucas&#39;</span><span class="p">,</span> <span class="s1">&#39;Matthew&#39;</span><span class="p">,</span> <span class="s1">&#39;Andrea&#39;</span><span class="p">,</span> <span class="s1">&#39;Sujin&#39;</span><span class="p">,</span> <span class="s1">&#39;Ezgi&#39;</span><span class="p">,</span> <span class="s1">&#39;Zhuolun&#39;</span><span class="p">,</span> <span class="s1">&#39;Yan&#39;</span><span class="p">]</span>
-<span class="k">except</span> <span class="ne">AssertionError</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Woops something&#39;s not right with your list&quot;</span><span class="p">)</span>
+<section id="practice-writing-to-files">
+<h2>Practice writing to files<a class="headerlink" href="#practice-writing-to-files" title="Permalink to this headline">#</a></h2>
+<ol>
+<li><p>Open a file called ‘counter.txt’ and write the following list to it, one word (element) at a time</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">list_to_write</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;one&#39;</span><span class="p">,</span><span class="s1">&#39;two&#39;</span><span class="p">,</span><span class="s1">&#39;three&#39;</span><span class="p">,</span><span class="s1">&#39;four&#39;</span><span class="p">,</span><span class="s1">&#39;five&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Woops something&#39;s not right with your list
+</li>
+<li><p>Open a file called ‘results.csv’ and write code so that at the end the file looks like this. Make sure you code can accommodate a list of arbitrary length. If I asked you to write 50 lines, your code should be no longer than for printing these 4.</p>
+<div class="highlight-csv notranslate"><div class="highlight"><pre><span></span>1,dog
+2,cat
+3,wolf
+4,penguin
 </pre></div>
 </div>
-</div>
-</div>
+</li>
+</ol>
 </section>
 </section>
 
@@ -603,23 +600,6 @@ title="Print to PDF"
             </main>
             <footer class="footer-article noprint">
                 
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="palindromes_fibonacci.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">&lt;no title&gt;</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="list_manip_vowels_1.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">List/string manipulation exercise</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
             </footer>
         </div>
     </div>

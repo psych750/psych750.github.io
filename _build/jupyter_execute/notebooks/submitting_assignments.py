@@ -34,23 +34,27 @@
 
 # ## Step 3: Submit each part of the assignment
 # 
-# After you complete each part, commit the changes and tag it. 
+# After you complete each part, commit the changes and tag it.  Here's the workflow.
 # 
 # ```bash
 # git add .
 # git commit -m "Finished part 1"
 # git tag "Exercise_0_1"
-# git push --tags
+# git push origin main --tags
 # ```
 # 
-# Some parts of actual assignments will require you to code quite a bit, so you'll want to make multiple commits. You can push these intermediate commits to the classroom site if you like, but all that's required is that your final solution for each part is committed **and tagged**.
+# ```{important}
+# The first time you push, you may be asked to valiate your github access token. If you have trouble with this, ask for help  
+# ```
+# 
+# Some parts of actual assignments will require you to code quite a bit, so you'll want to make multiple commits. You can push these intermediate commits to the classroom site if you like, but all that's required is that your final solution for each part is committed **and tagged**. 
 # 
 # :::{important}
-# You must use following format for tags: `Exercise_[exercise#]_[part#]`. For example, your tag for part 3 of Exercise 2 should be `Exercise_2_3`.
+# You must use following format for tags: `Exercise_[exercise#]_[part#]`. For example, your tag for part 3 of Exercise 2 should be `Exercise_2_3`. Please make sure this is correct!
 # :::
 # 
 # ```{tip}
-# You can combine `add` and `commit` into a single line like so: `git commit -am "Finished part 1"`.
+# After you've tracked the file you are changing with `git add .` You can combine `add` and `commit` into a single line like so: `git commit -am "Finished part 2"`.
 # ```
 # 
 # ```{note}
@@ -62,6 +66,12 @@
 # ```{warning}
 # Forgetting to use `--tags`` after `push` will cause the tags you added to only be visible to you locally; we won't be able to see them on our end
 # ```
+
+# # Looking at solutions
+# 
+# Following the submission deadline, I will push the Exercise solutions to a private repository https://github.com/psych750/solution
+# You must be subscribed to this repository., 
+# They will be tagged in the same way as your submitted assignments so you can browse the tags on the github site or `checkout` individual tagged commits using `git checkout`
 
 # #  Tips
 # 
@@ -80,7 +90,7 @@
 # git status
 # ```
 # 
-# ## Check out a particular commit
+# ## Check out a particular commit 
 # 
 # You can check out using a tag name, e.g., `Exercise_1_2`
 # ```bash
@@ -121,8 +131,29 @@
 # ```
 # 
 # 
-# 
 # ## Get the URL of remote branch
 # ```bash
 # git remote -v
 # ```
+# 
+# ## List the available branches
+# Lists both local and remote branches
+# ```bash
+# git branch -a
+# ```
+# 
+# ## Delete tags
+# 
+# Sometimes you might want to delete a local and/or remote tag. Because you can't have two identical tags, if you want to update info associated with a particular tag, you first need to delete the tag and then push the new one.
+# 
+# ### Deleting a remote tag
+# ```bash
+# git push --delete origin "name of your tag"
+# ```
+# 
+# ### Deleting a local tag
+# ```bash
+# git tag -d "name of your tag"
+# ```
+# 
+# 

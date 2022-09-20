@@ -170,6 +170,22 @@ for cur_num in range (5,10):
 # Technically range() returns a `range object` which is a ["lazy iterable"](https://treyhunner.com/2018/02/python-range-is-not-an-iterator/) and is executed only later, when we try to access its values. This is different from Python 2 where `range()` returns a regular list.
 # ```
 
+# What about counting by 2s or counting down? Simple
+
+# In[2]:
+
+
+for cur_num in range(0,10,2):
+    print(cur_num)
+
+
+# In[3]:
+
+
+for cur_num in range(10,0,-1):
+    print(cur_num)
+
+
 # :::{tip}
 # If all you need to do is to execute some command a certain number of times, there's a Python convention to use `_` as a throwaway index variable, for example, let's generate 5 random integers between 1-10:
 # ```python
@@ -181,16 +197,20 @@ for cur_num in range (5,10):
 
 # ## A `while` loop
 
-# Another kind of loop we'll use is a `while` loop. We use this to itereate until a condition is met (or is no longer met, as the case may be).
+# Another kind of loop we'll use is a `while` loop. We use this to iterate until a condition is met (i.e., something that's `false` becomes `true`), or a condition is no longer met (i.e., something that's `true` becomes `false`).
 
 # In[41]:
 
 
 another_num=5
-while another_num <= 5 and another_num>0:
-    print(f"I'm a {another_num} and I'm less than or equal to 5!")
+while another_num>0:
+    print(f"I'm a {another_num} and I'm greater than 0!")
     another_num -= 1
 
+
+# ```{dropdown} What happened here?
+# The first line of the while loop evaluates the truth value of another_num being greater than 0. As long as both of these conditions are met, we execute the loop. On each iteration, we decrease the value of another_num by 1 until it's no longer greater than 0 at which point the while loop exits.
+# ```
 
 # In[42]:
 
@@ -206,7 +226,7 @@ while len(s)<10:
 # s+="z" is equivalent to s = s+"z"
 # ```
 
-# ## A few simple conditionals (`if` statements)
+# ## Primer on conditionals (`if` statements)
 
 # In[7]:
 
