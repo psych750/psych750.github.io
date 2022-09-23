@@ -196,11 +196,6 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="review_of_fundamentals_a.html">
-   Review of Fundamentals A
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="dictionaries.html">
    Dictionaries
   </a>
@@ -213,6 +208,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="list_comprehension.html">
    List Comprehension
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="review_of_fundamentals_a.html">
+   Review of Fundamentals A
   </a>
  </li>
  <li class="toctree-l1">
@@ -258,13 +258,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="activity_list_manip_vowels_1.html">
-   Working with strings in lists
+  <a class="reference internal" href="activity_file_writing.html">
+   Primer on writing files
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="activity_file_writing.html">
-   Primer on writing files
+  <a class="reference internal" href="activity_list_manip_vowels_1.html">
+   Working with strings in lists
   </a>
  </li>
  <li class="toctree-l1">
@@ -576,6 +576,21 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#splitting-a-string-to-make-a-list">
+     Splitting a string to make a list
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#joining-a-list-to-make-a-string">
+     Joining a list to make a string
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#converting-all-the-elements-of-the-list-to-a-certain-type">
+     Converting all the elements of the list to a certain type
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#sorting-a-list">
      Sorting a List
     </a>
@@ -766,6 +781,21 @@ title="Print to PDF"
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#inserting-items-into-a-list">
      Inserting items into a list
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#splitting-a-string-to-make-a-list">
+     Splitting a string to make a list
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#joining-a-list-to-make-a-string">
+     Joining a list to make a string
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#converting-all-the-elements-of-the-list-to-a-certain-type">
+     Converting all the elements of the list to a certain type
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
@@ -1420,6 +1450,66 @@ Poodles are cool.
 </div>
 </div>
 <p>Note that the code welcoming our newest user will always work, because we have used the index -1. If we had used the index 2 we would always get the third user, even as our list of users grows and grows.</p>
+</section>
+<section id="splitting-a-string-to-make-a-list">
+<h2>Splitting a string to make a list<a class="headerlink" href="#splitting-a-string-to-make-a-list" title="Permalink to this headline">#</a></h2>
+<p>Suppose we have a string containing multiple elements that would be better stored as a list. We can do this by <code class="docutils literal notranslate"><span class="pre">split</span></code>ting it, like so:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">some_string_with_lots_of_data</span> <span class="o">=</span> <span class="s1">&#39;apples,bananas,pears,oranges&#39;</span>
+<span class="n">some_string_with_lots_of_data</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;apples&#39;, &#39;banananes&#39;, &#39;pears&#39;, &#39;oranges&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>The comma in the above example is the separator character: it tells split() to separate the string using commas a marker of when each element ends.</p>
+<p>This is often useful when we read in structured data from a file or when it’s useful to handle a variable as a string in one part of the code (e.g., to do global search/replace through it), but then it becomes easier to handle it as a list in another part of your code.</p>
+</section>
+<section id="joining-a-list-to-make-a-string">
+<h2>Joining a list to make a string<a class="headerlink" href="#joining-a-list-to-make-a-string" title="Permalink to this headline">#</a></h2>
+<p>The opposite of <code class="docutils literal notranslate"><span class="pre">split</span></code> is <code class="docutils literal notranslate"><span class="pre">join</span></code>. Joining is taking a list and turning it into a string, separating each element with some character (the separator). This is a very common operation. For example, we might want to build a list of variables that we want to then write to a file. If we’re just using base Python functions to write, we have to write a string, not a list. What to do? Join it into a string like so:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;apples&#39;</span><span class="p">,</span> <span class="s1">&#39;bananas&#39;</span><span class="p">,</span> <span class="s1">&#39;pears&#39;</span><span class="p">,</span> <span class="s1">&#39;oranges&#39;</span><span class="p">]</span>
+<span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">a_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;apples,banananes,pears,oranges&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice the quirky syntax. That first part <code class="docutils literal notranslate"><span class="pre">','</span></code> is the separater string. You might think that <code class="docutils literal notranslate"><span class="pre">split</span></code> is something you do to a string and join is something you do to a list. But in fact, both are string operations. There’s a long discussion of why that you can read about <a class="reference external" href="https://stackoverflow.com/questions/493819/why-is-it-string-joinlist-instead-of-list-joinstring">here</a> if you’re interested. Suffice to say that it has to do with joining being something you can do to other things than lists, but its output is always a string, so it made sense to implement it as part of the <code class="docutils literal notranslate"><span class="pre">String</span></code> class.</p>
+</section>
+<section id="converting-all-the-elements-of-the-list-to-a-certain-type">
+<h2>Converting all the elements of the list to a certain type<a class="headerlink" href="#converting-all-the-elements-of-the-list-to-a-certain-type" title="Permalink to this headline">#</a></h2>
+<p>If you try to join a list whose elements are not all strings you will get a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>. You’ll be told that a <code class="docutils literal notranslate"><span class="pre">str</span></code> was expected, but something else (like an <code class="docutils literal notranslate"><span class="pre">int</span></code>eger) was found. We can do this by looping through all the list elements and replacing each one with its string version by doing <code class="docutils literal notranslate"><span class="pre">str(element)</span></code>. But we can also just use <code class="docutils literal notranslate"><span class="pre">map</span></code>, that is, applying a function to every element in the list.</p>
+<p>Like so:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;congruent&#39;</span><span class="p">,</span> <span class="mf">3.45</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="n">a_list</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;1&#39;, &#39;congruent&#39;, &#39;3.45&#39;, &#39;1&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that all the elements are now strings.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The explicit conversion to list() in the line above was only necessary for printing and is not needed otherwise.</p>
+</div>
 </section>
 <section id="sorting-a-list">
 <h2>Sorting a List<a class="headerlink" href="#sorting-a-list" title="Permalink to this headline">#</a></h2>
