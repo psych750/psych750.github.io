@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Exercise 9 - Face Morph &#8212; Psych 750</title>
+    <title>Exercise 4: Modularizing and Error Checking &#8212; Psych 750</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -51,7 +51,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://psych750.github.io/notebooks/Exercise9-faceMorph.html" />
+    <link rel="canonical" href="https://psych750.github.io/notebooks/Exercise4-more_modularized_stroop.html" />
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -361,7 +361,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/psych750/psych750.github.io/main?urlpath=tree/notebooks/Exercise9-faceMorph.ipynb"
+        <a href="https://mybinder.org/v2/gh/psych750/psych750.github.io/main?urlpath=tree/notebooks/Exercise4-more_modularized_stroop.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -404,7 +404,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/notebooks/Exercise9-faceMorph.ipynb"
+        <a href="../_sources/notebooks/Exercise4-more_modularized_stroop.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -441,23 +441,110 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-4-parts">
+   Exercise 4 parts
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-1">
+   Part 1.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-2">
+   Part 2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-3">
+   Part 3
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-4">
+   Part 4
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-5">
+   Part 5
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Exercise 9 - Face Morph</h1>
+                <h1>Exercise 4: Modularizing and Error Checking</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-4-parts">
+   Exercise 4 parts
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-1">
+   Part 1.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-2">
+   Part 2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-3">
+   Part 3
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-4">
+   Part 4
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-5">
+   Part 5
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -465,112 +552,50 @@ title="Print to PDF"
                 
               <div>
                 
-  <h1>Table of Contents<span class="tocSkip"></span></h1>
-<div class="toc" style="margin-top: 1em;"><ul class="toc-item"><li><span><a href="#Exercise-9---Face-Morph" data-toc-modified-id="Exercise-9---Face-Morph-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Exercise 9 - Face Morph</a></span></li></ul></div><section class="tex2jax_ignore mathjax_ignore" id="exercise-9-face-morph">
-<h1>Exercise 9 - Face Morph<a class="headerlink" href="#exercise-9-face-morph" title="Permalink to this headline">#</a></h1>
-<p>This example shows you how to implement a task where you want subjects to smoothly adjust stimuli along some dimension. In this case that dimension spans two faces, e.g., a male and a female face, or an angry and a happy face. The same procedure can be used for other types of visual stimuli as well.</p>
-<video controls src="images/emotion_adjust.mov" />
-<p>Like <a class="reference external" href="http://sapir.psych.wisc.edu/programming_for_psychologists/notebooks/Exercise8-orientation.html">Exercise 8</a>, we’re going to use the mouse-wheel/trackpad for adjustments. This time though the adjustments will affect which image we are seeing. When done properly, the result is a smooth continuum as shown in the movie above.</p>
-<p>Our trial list (<code class="docutils literal notranslate"><span class="pre">trials/sampleTrials.csv</span></code>) will look like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">morphType</span><span class="p">,</span><span class="n">trialIndex</span><span class="p">,</span><span class="n">stimGender</span><span class="p">,</span><span class="n">iteration</span><span class="p">,</span><span class="n">continuum</span><span class="p">,</span><span class="n">continuumCode</span><span class="p">,</span><span class="n">direction</span><span class="p">,</span><span class="n">filename</span>
-<span class="n">gender</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">NA</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">NA</span><span class="p">,</span><span class="n">NA</span><span class="p">,</span><span class="n">right</span><span class="p">,</span><span class="n">malefemalemorph_</span>
-<span class="n">gender</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">NA</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">NA</span><span class="p">,</span><span class="n">NA</span><span class="p">,</span><span class="n">left</span><span class="p">,</span><span class="n">malefemalemorph_</span>
-<span class="n">emotion</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">man</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">sad</span><span class="o">-</span><span class="n">ang</span><span class="p">,</span><span class="n">SA</span><span class="p">,</span><span class="n">left</span><span class="p">,</span><span class="n">manSA_</span>
-<span class="n">emotion</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">woman</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">ang</span><span class="o">-</span><span class="n">hap</span><span class="p">,</span><span class="n">HA</span><span class="p">,</span><span class="n">left</span><span class="p">,</span><span class="n">womanHA_</span>
-<span class="n">emotion</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">woman</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">ang</span><span class="o">-</span><span class="n">hap</span><span class="p">,</span><span class="n">HA</span><span class="p">,</span><span class="n">right</span><span class="p">,</span><span class="n">womanHA_</span>
-<span class="n">emotion</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="n">man</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">sad</span><span class="o">-</span><span class="n">ang</span><span class="p">,</span><span class="n">SA</span><span class="p">,</span><span class="n">left</span><span class="p">,</span><span class="n">manSA_</span>
-<span class="n">emotion</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="n">man</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">sad</span><span class="o">-</span><span class="n">ang</span><span class="p">,</span><span class="n">SA</span><span class="p">,</span><span class="n">right</span><span class="p">,</span><span class="n">manSA_</span>
-<span class="n">emotion</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="n">woman</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">ang</span><span class="o">-</span><span class="n">hap</span><span class="p">,</span><span class="n">HA</span><span class="p">,</span><span class="n">right</span><span class="p">,</span><span class="n">womanHA_</span>
-<span class="n">emotion</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="n">woman</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">ang</span><span class="o">-</span><span class="n">hap</span><span class="p">,</span><span class="n">HA</span><span class="p">,</span><span class="n">left</span><span class="p">,</span><span class="n">womanHA_</span>
+  <section class="tex2jax_ignore mathjax_ignore" id="exercise-4-modularizing-and-error-checking">
+<h1>Exercise 4: Modularizing and Error Checking<a class="headerlink" href="#exercise-4-modularizing-and-error-checking" title="Permalink to this headline">#</a></h1>
+<p><a class="reference external" href="https://classroom.github.com/a/dUrj9P3_">Accept the exercise</a>.</p>
+<p>As promised, we will be slowing down and so rather than having a brand new exercise, we’ll stick with the previous one and</p>
+<p>You may either join a team (limited to 2 people) or work individually. If you want to join a team and there isn’t an existing one to join, please create a new one with <code class="docutils literal notranslate"><span class="pre">your_name_team</span></code>. If you’d like to work alone, create a team just called <code class="docutils literal notranslate"><span class="pre">your_name</span></code>.</p>
+<p>The purpose of this exercise is to get you more comfortable with the solution I posted for Exercise 3 and to further modularize it (Parts 1-5) and error-proof it (Part 5).</p>
+<section id="exercise-4-parts">
+<h2>Exercise 4 parts<a class="headerlink" href="#exercise-4-parts" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="part-1">
+<h2>Part 1.<a class="headerlink" href="#part-1" title="Permalink to this headline">#</a></h2>
+<p>Collect the stimulus presentation &amp; response collection code – setting colors, orientations, doing win.flips, collecting responses – and place it into a <code class="docutils literal notranslate"><span class="pre">show_trial()</span></code> function. You’ll need to decide what arguments this function should take (the fewer the better! Keep it as extendable as possible!) and what it should return. If done correctly, you should not have any setText, setOri, setColor, core.wait, or win.flip commands outside of this function.</p>
+</section>
+<section id="part-2">
+<h2>Part 2<a class="headerlink" href="#part-2" title="Permalink to this headline">#</a></h2>
+<p>From exercise_3 solution (mirrored in Exercise 4 starter code):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="c1">#can we avoid this if statement by using a dictionary?</span>
+    <span class="k">if</span> <span class="n">cur_orientation</span><span class="o">==</span><span class="s1">&#39;upside_down&#39;</span><span class="p">:</span>
+        <span class="n">word_stim</span><span class="o">.</span><span class="n">setOri</span><span class="p">(</span><span class="mi">180</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">word_stim</span><span class="o">.</span><span class="n">setOri</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
 </pre></div>
 </div>
-<p>The code below reads in these trials (notice that we’re using a pandas dataframe to do it; we will cover pandas in a few weeks, but feel free to [<a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/10min.html">http://pandas.pydata.org/pandas-docs/stable/10min.html</a>](read up on it) in the meantime).</p>
-<p>We then go through the trials one by one, and draw the picture contains in the filename column + a three-digit number (001 to 120) which is the frame-number, with 60 being the midpoint.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>import os
-import random
-from psychopy import visual, core, event
-import pandas as pd
-from useful_functions import loadFiles
-
-
-win = visual.Window([800,700],color=&quot;gray&quot;, allowGUI=False, units=&#39;pix&#39;)
-myMouse = event.Mouse(win=win,visible=False)
-
-visual.TextStim(win,text=&quot;Loading images...&quot;, color=&quot;black&quot;,height=40).draw()
-win.flip()
-
-
-
-def showText(win,text,color,mouse):
-```
-Displays text and waits for a mouse press or keyboard press
-This would ordinarily go into your useful_functions library```
-```
-    visual.TextStim(win,text=text,color=color,height=30).draw()
-	win.flip()
-	if mouse:
-		while True:
-			while any(mouse.getPressed()):
-				if not any(mouse.getPressed()):
-					return
-	else:
-		event.waitKeys()
-		return
-
-pics = loadFiles(&#39;stimuli&#39;,&#39;jpg&#39;,&#39;image&#39;,win)
-emotionMorphText=&quot;Adjust the emotion of the face by moving the mouse wheel up or down until you find the point at which one emotion transitions to another emotion. When you are satisfied, click the left mouse button to go on to the next picture.&quot;
-genderMorphText=&quot;Adjust the gender of the face by moving the mouse wheel up or down until you find the transition from male-to-female or female-to-make. When you are satisfied, click the left mouse button to go on to the next picture.&quot;
-
-delta = 1
-maxStimNum=120
-expTimer = core.Clock()
-
-trials = pd.read_csv(&#39;trials/sampleTrials.csv&#39;)
-trials = trials.to_dict(&#39;records&#39;)
-
-
-def runTrial(curTrial):
-		if curTrial[&#39;direction&#39;]==&#39;left&#39;:
-			stimNum=&#39;1&#39;.zfill(3)
-		else:
-			stimNum=str(maxStimNum)
-		win.flip()
-		core.wait(1.0)
-		win.flip()
-		respTimer = core.Clock()
-		numWheelTurnsUp = numWheelTurnsDown = 0
-		
-		while True:
-			wheelRel = myMouse.getWheelRel()[1]
-			if wheelRel&lt;0.0:
-				numWheelTurnsDown+=1
-				if int(stimNum)&gt;1:
-					stimNum = str(int(stimNum)-delta).zfill(3) 
-			elif wheelRel&gt;0.0:
-				numWheelTurnsUp+=1
-				if int(stimNum)&lt;maxStimNum:
-					stimNum = str(int(stimNum)+delta).zfill(3) 
-			elif myMouse.getPressed()[0]==1:
-				rt = respTimer.getTime()
-				if rt&gt;.8 and (numWheelTurnsUp&gt;0 or numWheelTurnsDown&gt;0):
-					break
-			pics[curTrial[&#39;filename&#39;]+str(stimNum)][&#39;stim&#39;].draw()
-			win.flip()
-
-for curTrial in trials:
-	print curTrial[&#39;trialIndex&#39;], curTrial[&#39;morphType&#39;]
-	if curTrial[&#39;trialIndex&#39;]==0 and curTrial[&#39;morphType&#39;]==&quot;emotion&quot;:
-		showText(win,emotionMorphText,color=&quot;black&quot;,mouse=myMouse)
-	elif curTrial[&#39;trialIndex&#39;]==0 and curTrial[&#39;morphType&#39;]==&quot;gender&quot;:
-		showText(win,genderMorphText,color=&quot;black&quot;,mouse=myMouse)
-
-	runTrial(curTrial)
-</pre></div>
+<p>Avoid it by using a dictionary!</p>
+</section>
+<section id="part-3">
+<h2>Part 3<a class="headerlink" href="#part-3" title="Permalink to this headline">#</a></h2>
+<p>Recall this part:</p>
+<p>Not only is this a lot of repetitive code, but it requires us to know which column is which. Improve this code by adding column names to the trial list so that you know which column is which. When you read the trials back in, use Pandas as demonstrated in class to access the trial data from the pandas data-frame</p>
+</section>
+<section id="part-4">
+<h2>Part 4<a class="headerlink" href="#part-4" title="Permalink to this headline">#</a></h2>
+<p>Add <code class="docutils literal notranslate"><span class="pre">response_type</span></code> to the pop-up (GUI) box. The value of this variable can be either “voice” or “key”. If it’s key, proceed with the experiment as before. If it’s voice, have it use the speech-recognition voice capability. <code class="docutils literal notranslate"><span class="pre">is_correct</span></code> should be 1 if the said word matched the text color (i.e., person said “green” and it was actually green), 0 if not, and ‘NA’ if there was some processing error. RT should reflect the measured speech onset or NA if it couldn’t be measured. The results file should also include the response, as recognized. If a person said “green”, it should record “green”.</p>
+<p>Make sure the value of <code class="docutils literal notranslate"><span class="pre">response_type</span></code> is included in the data file (so that someone looking at it later would know how the responses were collected).</p>
+</section>
+<section id="part-5">
+<h2>Part 5<a class="headerlink" href="#part-5" title="Permalink to this headline">#</a></h2>
+<p>Exercise 3 allowed us to reuse a subject code which would result in overwriting the existing data file if it existed. Implement error checking to prevent the user from reusing a subject code. If they attempt to use it, pop up an error saying “Subject code already exists” and give them an opportunity to enter another subject code until they enter one that does not have an associated data file. The results files should be stored in a <code class="docutils literal notranslate"><span class="pre">data</span></code> subdirectory just as the trial lists are stored in a <code class="docutils literal notranslate"><span class="pre">trials</span></code> subdirectory.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Use <a class="reference external" href="https://docs.python.org/3/library/os.path.html#os.path.exists">os.path.exists</a>!</p>
 </div>
-</div>
-</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -585,13 +610,13 @@ for curTrial in trials:
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python2",
+            kernelName: "python3",
             path: "./notebooks"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python2'</script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
