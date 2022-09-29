@@ -533,7 +533,14 @@ title="Print to PDF"
 <p>Your code should accept a variable specifying how long the sequence should be (<code class="docutils literal notranslate"><span class="pre">min</span> <span class="pre">=</span> <span class="pre">len(animals)</span></code>, <code class="docutils literal notranslate"><span class="pre">max</span> <span class="pre">=</span> <span class="pre">500</span></code>)</p>
 <p>Now comes the tricky part. The sequence you generate should be randomized, but not have any animal repeating back to back.</p>
 <p>So:</p>
-<p>is not ok, but</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span><span class="s1">&#39;pig&#39;</span><span class="p">,</span><span class="s1">&#39;cow&#39;</span><span class="p">,</span><span class="s1">&#39;mouse&#39;</span><span class="p">,</span><span class="s1">&#39;mouse&#39;</span><span class="p">,</span><span class="s1">&#39;dog&#39;</span><span class="p">]</span> 
+</pre></div>
+</div>
+<p>is not ok because mouse repeated twice in a row, but</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span><span class="s1">&#39;cow&#39;</span><span class="p">,</span><span class="s1">&#39;pig&#39;</span><span class="p">,</span><span class="s1">&#39;mouse&#39;</span><span class="p">,</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span><span class="s1">&#39;mouse&#39;</span><span class="p">]</span> 
+</pre></div>
+</div>
+<p>is ok.</p>
 </section>
 <section id="exercise-2">
 <h2>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h2>

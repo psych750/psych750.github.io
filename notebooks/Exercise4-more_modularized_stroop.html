@@ -592,6 +592,14 @@ title="Print to PDF"
 <section id="part-3">
 <h2>Part 3<a class="headerlink" href="#part-3" title="Permalink to this headline">#</a></h2>
 <p>Recall this part:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">subj_code</span> <span class="o">=</span> <span class="n">cur_trial</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">prop_incongruent</span> <span class="o">=</span> <span class="n">cur_trial</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">cur_word</span> <span class="o">=</span> <span class="n">cur_trial</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">cur_color</span> <span class="o">=</span> <span class="n">cur_trial</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+    <span class="n">cur_trial_type</span> <span class="o">=</span> <span class="n">cur_trial</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+    <span class="n">cur_orientation</span> <span class="o">=</span> <span class="n">cur_trial</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
 <p>Not only is this a lot of repetitive code, but it requires us to know which column is which. Improve this code by adding column names to the trial list so that you know which column is which. When you read the trials back in, use Pandas as demonstrated in class to access the trial data from the pandas data-frame</p>
 </section>
 <section id="part-4">
