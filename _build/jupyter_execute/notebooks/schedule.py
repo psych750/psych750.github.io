@@ -80,28 +80,31 @@
 # ## Week 4 (Sept 29)
 # 
 # ### At home
-# 1. Go through the *List Comprehension* and *Randomization/Iteration* self-study guides
+# 1. Go through the [List Comprehension](https://psych750.github.io/notebooks/list_comprehension.html) and [Randomization/Iteration/trial generation](https://psych750.github.io/notebooks/trial_generation.html) self-study guides
+# 1. I strongly recommend that you try out the [dictionary exercises](https://psych750.github.io/notebooks/activity_dictionaries.html) that we didn't get to in class
 # 1. Read about [Namespaces and variable scope](http://sebastianraschka.com/Articles/2014_python_scope_and_namespaces.html)
 # 1. Complete Exercise 3
 # 
 # ### In class
-# 1. Exercise 3 Code Review
-#     1. Emphasis on refactoring using functions and modular code
-# 2. Debugging activity - namespace bugs
-# 3. Additional randomization and iteration exercises
-# 4. Begin Exercise 4 - a Posner cueing task
+# 1. Thinking for coding 
+# 2. Code review for Exercise 3
+#     1. Emphasis on refactoring and using modular code
+# 3. [Additional randomization and iteration exercises](https://psych750.github.io/notebooks/activity_trial_generation.html)
+# 4. Error checking
+# 5. Intro to Exercise 4 - modularize your Exercise 3 code and collect 120 trials of data.
 # 
 
 # ## Week 5 (Oct 6)
 # 
 # ### At home
 # 1. [Handling exceptions ](https://docs.python.org/3.7/tutorial/errors.html)
-# 2. Complete Exercise 4 (use exception-handling as necessary).
-# 3. [File globbing and image preloading](https://psych750.github.io/notebooks/globbing_files.html)
+# 2. [Review of Fundamentals A](https://psych750.github.io/notebooks/review_of_fundamentals_a.html) - test yourself!!
+# 3. Complete Exercise 4 (use exception-handling as necessary).
+# 4. [File globbing and image preloading](https://psych750.github.io/notebooks/globbing_files.html)
 # 
 # ### In class
-# 1. Exercise 4 code review
-# 2. Adapting the cueing task to test a [pet peeve](https://rickandkathy.com/wp-content/uploads/2014/10/hand-signals.jpg) (erm, a topic with great scintific importance)
+# 1. Exercise 4 Code Review (40 mins; groups review each other's code)
+# 2. Debugging activities - namespace bugs, indexing bugs
 # 3. Intro to interactive experiments
 
 # <!-- 

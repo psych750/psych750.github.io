@@ -7,16 +7,15 @@
 # 
 # Here's a [deep thought (by Jack Handey)](https://philip.greenspun.com/humor/deep-thoughts)
 
-# In[13]:
+# In[5]:
 
 
-a_deep_thought = '''If you saw two guys named Hambone and Flippy, which one would you think liked dolphins the most? 
-I'd say Flippy, wouldn't you? You'd be wrong, though. It's Hambone.'''
+a_deep_thought = '''If you saw two guys named Hambone and Flippy, which one would you think liked dolphins the most? I'd say Flippy, wouldn't you? You'd be wrong, though. It's Hambone.'''
 
 
 # Let's create a dictionary out of it where each word is a key and its number of letters is a value.
 
-# In[17]:
+# In[6]:
 
 
 deep_thought_dict = {}
@@ -34,7 +33,7 @@ print(deep_thought_dict)
 
 # Now that we have this information in a dictionary, do the following:
 # 
-# * What's the average number of letters in these words?
+# * What's the average number of characters in these words?
 # 
 # :::{tip} 
 # To find an average use `mean()` from the `numpy` library. For example,
@@ -42,23 +41,30 @@ print(deep_thought_dict)
 # import numpy as np
 # print(np.mean(range(10)))
 # ```
+# You may need to explicitly convert the argument to np.mean to a list by using `list()`
 # :::
 # 
 # 
-# * What's the average number of letters in words beginning with vowels?
+# * What's the average number of characters in words beginning with vowels? 
 # 
 # :::{tip}
-# By taking advantage of statements that already return True/False values, the code below avoids having to have code like: if X return True, else return Y.
+# By taking advantage of statements that already return True/False values, the code below avoids having to have code like: if X return True, else return Y. You don't necessarily want to use this exact code; it's just a demonstration.
 # ```python
 # def is_vowel(letter):
 #     return letter in ['a','e','i','o','u']
 # ```
 # :::
 # 
+# ```{dropdown} Challenge
+# Can you do this in one line of code? (hint: you'll need to use list comprehension)
+# ```
+# 
+# 
+# 
 
 # * Now return the mean length of words beginning with a consonant
 # ```{tip}
-# You don't need to write separate is_consonant() functions!
+# You don't need to write a separate function for consonants!
 # ```
 # 
 
@@ -85,11 +91,5 @@ print(deep_thought_dict)
 # resps_to_positions = {'left':(-10,0), 'right':(10,0)}
 # ```
 # 
-# Finish this activity by specifying the rest of the dictionary. Then rewrite the conditional above to use this dictionary, replacing the multi-pronged conditional with a single line of code.
+# Finish this activity by specifying the rest of the dictionary. Then rewrite the conditional above to use this dictionary, replacing the multi-pronged conditional with a single line of code. That is, if you have a response stored in `resp`, how do you return the corresponding position?
 # 
-
-# In[ ]:
-
-
-get_ipython().run_line_magic('load', '"solution_dictionary_look_up.py"')
-

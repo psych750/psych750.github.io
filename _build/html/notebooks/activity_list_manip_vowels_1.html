@@ -55,7 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Primer on writing files" href="activity_file_writing.html" />
+    <link rel="next" title="Playing around with dictionaries" href="activity_dictionaries.html" />
+    <link rel="prev" title="Primer on writing files" href="activity_file_writing.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -195,11 +196,6 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="review_of_fundamentals_a.html">
-   Review of Fundamentals A
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="dictionaries.html">
    Dictionaries
   </a>
@@ -212,6 +208,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="list_comprehension.html">
    List Comprehension
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="review_of_fundamentals_a.html">
+   Review of Fundamentals A
   </a>
  </li>
  <li class="toctree-l1">
@@ -256,14 +257,14 @@ const thebe_selector_output = ".output, .cell_output"
    The first thinking exercise
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Working with strings in lists
-  </a>
- </li>
  <li class="toctree-l1">
   <a class="reference internal" href="activity_file_writing.html">
    Primer on writing files
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Working with strings in lists
   </a>
  </li>
  <li class="toctree-l1">
@@ -556,12 +557,31 @@ title="Print to PDF"
 <section id="exercise-1">
 <h2>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h2>
 <p>For the first exercise, you’ll be reading in some names and manipulating them.</p>
+<p>First, let’s grab your full names from the course roster.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">names</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/psych750/resources/main/stimuli/psych750_roster.csv&#39;</span><span class="p">)</span>
 <span class="n">full_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">names</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">full_names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Anthony,Lauren Elise&#39;, &#39;Beatty,Drew Evelyn&#39;, &#39;Cheung,Alexander Jefferson&#39;, &#39;Chu,Carol&#39;, &#39;Cunningham,Emma Gayle&#39;, &#39;Fu,Meng&#39;, &#39;Gao,Sizhe&#39;, &#39;Green,Benjamin Douglas&#39;, &#39;Holley,Kendall Isaiah&#39;, &#39;Hou,Lihao&#39;, &#39;Koppel Egierd,Jacob I&#39;, &#39;Ma,Yuanxue&#39;, &#39;Marji,Michelle&#39;, &#39;Modahl,Lucas Nolan&#39;, &#39;Smith,Matthew Aaron&#39;, &#39;Stein,Andrea Gray&#39;, &#39;Yoo,Sujin&#39;, &#39;Yuksel,Ezgi Melisa&#39;, &#39;Zhong,Zhuolun&#39;, &#39;Zhu,Yan&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">cur_name</span> <span class="ow">in</span> <span class="n">full_names</span><span class="p">:</span>
+    
+    <span class="n">first_middle</span> <span class="o">=</span> <span class="n">cur_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">first_middle</span><span class="o">.</span><span class="n">split</span><span class="p">(</span> <span class="p">))</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">first_middle</span><span class="o">.</span><span class="n">split</span><span class="p">(</span> <span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">first_middle</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

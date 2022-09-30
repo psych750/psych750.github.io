@@ -127,7 +127,7 @@ print(conditions.count('congruent'),     conditions.count('incongruent'),     co
 
 
 #  ```{note}
-#  What's that '\' in the code-block above? It's a way to break up a long line for ease of reading. Python knows that lines that terminate with slashes should continue to the next line 
+#  What're those slashes in the above? It's a way to break up a long line for ease of reading. Python knows that lines that terminate with backslashes should continue to the next line 
 # ```
 
 # ### Setting the random seed

@@ -196,11 +196,6 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="review_of_fundamentals_a.html">
-   Review of Fundamentals A
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="dictionaries.html">
    Dictionaries
   </a>
@@ -213,6 +208,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="list_comprehension.html">
    List Comprehension
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="review_of_fundamentals_a.html">
+   Review of Fundamentals A
   </a>
  </li>
  <li class="toctree-l1">
@@ -258,18 +258,23 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="activity_list_manip_vowels_1.html">
-   Working with strings in lists
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="activity_file_writing.html">
    Primer on writing files
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="activity_list_manip_vowels_1.html">
+   Working with strings in lists
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="activity_dictionaries.html">
    A few dictionary activities
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="activity_trial_generation.html">
+   Some more trial generation practice
   </a>
  </li>
  <li class="toctree-l1">
@@ -302,6 +307,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="Exercise3-extended-stroop.html">
    Exercise 3-Extending the Stroop
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise4-more_modularized_stroop.html">
+   Exercise 4-Modularization and error checking
   </a>
  </li>
 </ul>
@@ -784,7 +794,7 @@ box, see below.</p>
 <section id="easy-way-to-get-a-bunch-of-runtime-variables">
 <h3>Easy way to get a bunch of runtime variables<a class="headerlink" href="#easy-way-to-get-a-bunch-of-runtime-variables" title="Permalink to this headline">#</a></h3>
 <p>Runtime variables are variables you want to set at runtime – the subject code, demographic info, the condition(s) the subject is assigned to, etc.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">getRunTimeVars</span><span class="p">(</span><span class="n">vars_to_get</span><span class="p">,</span><span class="n">order</span><span class="p">,</span><span class="n">expVersion</span><span class="p">,</span><span class="n">exp_version</span><span class="o">=</span><span class="s2">&quot;experiment_code_for_reference&quot;</span><span class="p">):</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_runtime_vars</span><span class="p">(</span><span class="n">vars_to_get</span><span class="p">,</span><span class="n">order</span><span class="p">,</span><span class="n">exp_version</span><span class="o">=</span><span class="s2">&quot;experiment_code_for_reference&quot;</span><span class="p">):</span>
     <span class="c1">#Get run time variables, see http://www.psychopy.org/api/gui.html for explanation</span>
     <span class="n">infoDlg</span> <span class="o">=</span> <span class="n">gui</span><span class="o">.</span><span class="n">DlgFromDict</span><span class="p">(</span><span class="n">dictionary</span><span class="o">=</span><span class="n">vars_to_get</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">exp_version</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">infoDlg</span><span class="o">.</span><span class="n">OK</span><span class="p">:</span>
@@ -795,7 +805,7 @@ box, see below.</p>
 </div>
 <p>Sample usage:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">order</span> <span class="o">=</span>  <span class="p">[</span><span class="s1">&#39;subj_code&#39;</span><span class="p">,</span><span class="s1">&#39;seed&#39;</span><span class="p">,</span><span class="s1">&#39;gender&#39;</span><span class="p">]</span>
-<span class="n">runTimeVars</span> <span class="o">=</span> <span class="n">getRunTimeVars</span><span class="p">({</span><span class="s1">&#39;subj_code&#39;</span><span class="p">:</span><span class="s1">&#39;stroop_101&#39;</span><span class="p">,</span> <span class="s1">&#39;seed&#39;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;gender&#39;</span><span class="p">:[</span><span class="s1">&#39;Choose&#39;</span><span class="p">,</span> <span class="s1">&#39;male&#39;</span><span class="p">,</span><span class="s1">&#39;female&#39;</span><span class="p">]},</span> <span class="n">order</span><span class="p">)</span>
+<span class="n">runtime_vars</span><span class="o">=</span> <span class="n">getRunTimeVars</span><span class="p">({</span><span class="s1">&#39;subj_code&#39;</span><span class="p">:</span><span class="s1">&#39;stroop_101&#39;</span><span class="p">,</span> <span class="s1">&#39;seed&#39;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;gender&#39;</span><span class="p">:[</span><span class="s1">&#39;Choose&#39;</span><span class="p">,</span> <span class="s1">&#39;male&#39;</span><span class="p">,</span><span class="s1">&#39;female&#39;</span><span class="p">,</span> <span class="s1">&#39;other&#39;</span><span class="p">]},</span> <span class="n">order</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="admonition-challenge admonition">

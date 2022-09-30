@@ -85,6 +85,19 @@
 # git log --oneline
 # ```
 # 
+# 
+# `git log` will list the commits made on the branch you're currently on. If you want to also see the commits you made while on other branches, use 
+# 
+# ```bash
+# git log --all
+# ```
+# Or combine it with --oneline for more compact printing. 
+# 
+# If you want to additionally see the commits made on unnamed (typically temporary) branches, you can with this:
+# ```bash
+# git log --reflog
+# ```
+# 
 # ## Figure out what's been changed and which files are being staged
 # ```bash
 # git status
@@ -156,4 +169,6 @@
 # git tag -d "name of your tag"
 # ```
 # 
+# ## Deatched HEAD?
 # 
+# Have a detached HEAD that you want to re-attach? [See here](https://stackoverflow.com/questions/10228760/how-do-i-fix-a-git-detached-head) 

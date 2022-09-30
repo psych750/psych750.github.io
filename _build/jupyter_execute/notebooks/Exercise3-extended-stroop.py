@@ -3,21 +3,21 @@
 
 # # Exercise 3: Extending the Stroop effect
 # 
-# [Accept the exercise](https://classroom.github.com/a/ld0o1bOq). 
+# [Accept the exercise](https://classroom.github.com/a/ld0o1bOq).
 # 
 # Please note that this exercise is more involved than Exercise 2 and will require more time. Because of this, you'll work in pairs. You can collaborate in person, through Slack, or by using [live code editing feature of VSC](https://code.visualstudio.com/learn/collaboration/live-share)
 # 
-# In this exercise we'll be extending the Stroop effect task you coded for Exercise 2 into a more complete experiment that (1) generates stimulus lists that are then read in by the main script, (3) accept runtime variables to assign participants to conditions and record participant codes, and (3) use some out-of-the-box speech recognition to allow participants to respond by using their voice.
+# In this exercise we'll be extending the Stroop effect task you coded for Exercise 2 into a more complete experiment that (1) generates stimulus lists that are then read in by the main script, (2) accept runtime variables to assign participants to conditions and record participant codes, and (3) use some out-of-the-box speech recognition to allow participants to respond by using their voice.
 # 
 # We'll use the all same stimuli, but introduce several variations: 
 # 
-# a. We'll vary the proportion of trials that are incongruent (i.e., when the color of the font does not match the word).
+# a. We'll vary the proportion of trials that are incongruent (i.e., when the color of the font does not match the word). Make sure you go through the [randomization notebook](https://psych750.github.io/notebooks/trial_generation.html) first!
 # 
 # b. We'll introduce an orientation manipulation so that on 50% of trials the word is presented upside down (what effect do you think this will have on response times?)
 # 
-# c. Lastly, we'll introduce a speech to-text feature so that participants can respond using their voice rather than by pressing a key. 
+# c. Lastly, we'll introduce a speech to-text feature so that participants can respond using their voice rather than by pressing a key. In addition to live transcription it will also attempt to measure speech onset (it doesn't work very well unless you're in a quiet room and have a good microphone, but it's something...).
 # 
-# In this exercise we'll also substantially modularize the code so that one part of it is responsibl for generating the trials, another for reading in the trial list, another for showing the stimuli, and another for writing the participant's responses to a file.
+# In this exercise we'll also substantially modularize the code so that one part of it is responsible for generating the trials, another for reading in the trial list, another for showing the stimuli, and another for writing the participant's responses to a file. This is preparation for coding larger projects.
 # 
 
 # ## Exercise 3 parts
@@ -116,3 +116,6 @@ def generate_trials(subj_code, prop_incongruent, num_trials=100):
 # 
 # In the original demonstration of the Stroop effect, participants responded by using their voices. The researcher used a stopwatch to time how long it took to read a block of incongruent trials and compared it to reading a block of congruent trials. We can do a bit better. In this part, we'll be using some out-of-the-box speech recognition to decode what word the participant is saying and scoring it as correct or incorrect. We'll also use a (somewhat imprecise) psychopy function to automatically compute the onset time of people's verbal responses. 
 # 
+# Before adding the `speech_recognition.py` starter code into your main code, make sure to install the speech recognition library by `pip install SpeechRecognition` in your terminal (remember to activate your `psych750` environment first!)
+# 
+# The `speech_recognition.py` script should be pretty much plug and play with minimal changes needed to be made on your side. 

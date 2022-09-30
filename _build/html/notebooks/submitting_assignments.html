@@ -196,11 +196,6 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="review_of_fundamentals_a.html">
-   Review of Fundamentals A
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="dictionaries.html">
    Dictionaries
   </a>
@@ -213,6 +208,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="list_comprehension.html">
    List Comprehension
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="review_of_fundamentals_a.html">
+   Review of Fundamentals A
   </a>
  </li>
  <li class="toctree-l1">
@@ -258,13 +258,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="activity_list_manip_vowels_1.html">
-   Working with strings in lists
+  <a class="reference internal" href="activity_file_writing.html">
+   Primer on writing files
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="activity_file_writing.html">
-   Primer on writing files
+  <a class="reference internal" href="activity_list_manip_vowels_1.html">
+   Working with strings in lists
   </a>
  </li>
  <li class="toctree-l1">
@@ -544,6 +544,11 @@ title="Print to PDF"
      </li>
     </ul>
    </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deatched-head">
+     Deatched HEAD?
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -644,6 +649,11 @@ title="Print to PDF"
      </li>
     </ul>
    </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deatched-head">
+     Deatched HEAD?
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -738,6 +748,15 @@ They will be tagged in the same way as your submitted assignments so you can bro
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git log --oneline
 </pre></div>
 </div>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> will list the commits made on the branch you’re currently on. If you want to also see the commits you made while on other branches, use</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git log --all
+</pre></div>
+</div>
+<p>Or combine it with –oneline for more compact printing.</p>
+<p>If you want to additionally see the commits made on unnamed (typically temporary) branches, you can with this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git log --reflog
+</pre></div>
+</div>
 </section>
 <section id="figure-out-what-s-been-changed-and-which-files-are-being-staged">
 <h2>Figure out what’s been changed and which files are being staged<a class="headerlink" href="#figure-out-what-s-been-changed-and-which-files-are-being-staged" title="Permalink to this headline">#</a></h2>
@@ -806,6 +825,10 @@ They will be tagged in the same way as your submitted assignments so you can bro
 </pre></div>
 </div>
 </section>
+</section>
+<section id="deatched-head">
+<h2>Deatched HEAD?<a class="headerlink" href="#deatched-head" title="Permalink to this headline">#</a></h2>
+<p>Have a detached HEAD that you want to re-attach? <a class="reference external" href="https://stackoverflow.com/questions/10228760/how-do-i-fix-a-git-detached-head">See here</a></p>
 </section>
 </section>
 

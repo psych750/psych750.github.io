@@ -442,6 +442,54 @@ print("And a warm welcome to our newest user, " + names[-1].title() + '!')
 
 # Note that the code welcoming our newest user will always work, because we have used the index -1. If we had used the index 2 we would always get the third user, even as our list of users grows and grows.
 
+# ## Splitting a string to make a list
+# 
+# Suppose we have a string containing multiple elements that would be better stored as a list. We can do this by `split`ting it, like so:
+# 
+
+# In[7]:
+
+
+some_string_with_lots_of_data = 'apples,bananas,pears,oranges'
+some_string_with_lots_of_data.split(',')
+
+
+# The comma in the above example is the separator character: it tells split() to separate the string using commas a marker of when each element ends.  
+# 
+# This is often useful when we read in structured data from a file or when it's useful to handle a variable as a string in one part of the code (e.g., to do global search/replace through it), but then it becomes easier to handle it as a list in another part of your code.
+
+# ## Joining a list to make a string
+# 
+# The opposite of `split` is `join`. Joining is taking a list and turning it into a string, separating each element with some character (the separator). This is a very common operation. For example, we might want to build a list of variables that we want to then write to a file. If we're just using base Python functions to write, we have to write a string, not a list. What to do? Join it into a string like so:
+
+# In[8]:
+
+
+a_list = ['apples', 'bananas', 'pears', 'oranges']
+','.join(a_list)
+
+
+# Notice the quirky syntax. That first part `','` is the separater string. You might think that `split` is something you do to a string and join is something you do to a list. But in fact, both are string operations. There's a long discussion of why that you can read about [here](https://stackoverflow.com/questions/493819/why-is-it-string-joinlist-instead-of-list-joinstring) if you're interested. Suffice to say that it has to do with joining being something you can do to other things than lists, but its output is always a string, so it made sense to implement it as part of the `String` class.  
+
+# ## Converting all the elements of the list to a certain type
+# 
+# If you try to join a list whose elements are not all strings you will get a `TypeError`. You'll be told that a `str` was expected, but something else (like an `int`eger) was found. We can do this by looping through all the list elements and replacing each one with its string version by doing `str(element)`. But we can also just use `map`, that is, applying a function to every element in the list. 
+# 
+# Like so:
+# 
+
+# In[13]:
+
+
+a_list = [1, 'congruent', 3.45, 1]
+print(list(map(str,a_list)))
+
+
+# Notice that all the elements are now strings.
+# ```{note}
+# The explicit conversion to list() in the line above was only necessary for printing and is not needed otherwise.
+# ```
+
 # ## Sorting a List
 # 
 # We can sort a list alphabetically, in either order.

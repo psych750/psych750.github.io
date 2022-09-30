@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>String manipulation exercise &#8212; Psych 750</title>
+    <title>A couple trial-generation activities &#8212; Psych 750</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -51,12 +51,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://psych750.github.io/notebooks/activity_name_parsing.html" />
+    <link rel="canonical" href="https://psych750.github.io/notebooks/activity_trial_generation.html" />
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="List/string manipulation exercise" href="activity_list_manip_vowels_1.html" />
-    <link rel="prev" title="&lt;no title&gt;" href="palindromes_fibonacci.html" />
+    <link rel="next" title="Debugging practice" href="activity_debugging_1.html" />
+    <link rel="prev" title="Playing around with dictionaries" href="activity_dictionaries.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -117,6 +117,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="schedule.html">
    Week by week schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/psych750/resources/blob/main/syllabus/programming_dataScience_fa22.pdf">
+   Syllabus
   </a>
  </li>
  <li class="toctree-l1">
@@ -191,11 +196,6 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="review_of_fundamentals_a.html">
-   Review of Fundamentals A
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="dictionaries.html">
    Dictionaries
   </a>
@@ -208,6 +208,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="list_comprehension.html">
    List Comprehension
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="review_of_fundamentals_a.html">
+   Review of Fundamentals A
   </a>
  </li>
  <li class="toctree-l1">
@@ -252,9 +257,9 @@ const thebe_selector_output = ".output, .cell_output"
    The first thinking exercise
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   String manipulation
+ <li class="toctree-l1">
+  <a class="reference internal" href="activity_file_writing.html">
+   Primer on writing files
   </a>
  </li>
  <li class="toctree-l1">
@@ -263,13 +268,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="activity_file_writing.html">
-   Primer on writing files
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="activity_dictionaries.html">
    A few dictionary activities
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Some more trial generation practice
   </a>
  </li>
  <li class="toctree-l1">
@@ -302,6 +307,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="Exercise3-extended-stroop.html">
    Exercise 3-Extending the Stroop
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise4-more_modularized_stroop.html">
+   Exercise 4-Modularization and error checking
   </a>
  </li>
 </ul>
@@ -363,7 +373,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/psych750/psych750.github.io/main?urlpath=tree/notebooks/activity_name_parsing.ipynb"
+        <a href="https://mybinder.org/v2/gh/psych750/psych750.github.io/main?urlpath=tree/notebooks/activity_trial_generation.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -406,7 +416,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/notebooks/activity_name_parsing.ipynb"
+        <a href="../_sources/notebooks/activity_trial_generation.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -466,18 +476,13 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#output-first-names-only">
-   Output first names only
+  <a class="reference internal nav-link" href="#exercise-1">
+   Exercise 1
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#now-turn-it-into-a-function">
-   Now turn it into a function
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#test-your-function">
-   Test your function
+  <a class="reference internal nav-link" href="#exercise-2">
+   Exercise 2
   </a>
  </li>
 </ul>
@@ -489,7 +494,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>String manipulation exercise</h1>
+                <h1>A couple trial-generation activities</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -500,18 +505,13 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#output-first-names-only">
-   Output first names only
+  <a class="reference internal nav-link" href="#exercise-1">
+   Exercise 1
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#now-turn-it-into-a-function">
-   Now turn it into a function
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#test-your-function">
-   Test your function
+  <a class="reference internal nav-link" href="#exercise-2">
+   Exercise 2
   </a>
  </li>
 </ul>
@@ -524,49 +524,30 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="string-manipulation-exercise">
-<h1>String manipulation exercise<a class="headerlink" href="#string-manipulation-exercise" title="Permalink to this headline">#</a></h1>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">names</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/psych750/resources/main/stimuli/psych750_roster.csv&#39;</span><span class="p">)</span>
-<span class="n">full_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">names</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">full_names</span><span class="p">)</span>
+  <section class="tex2jax_ignore mathjax_ignore" id="a-couple-trial-generation-activities">
+<h1>A couple trial-generation activities<a class="headerlink" href="#a-couple-trial-generation-activities" title="Permalink to this headline">#</a></h1>
+<p>Before you type anything, think about how to go about solving these. Try to think of two ways. Which one is easier? Do the easy one!</p>
+<section id="exercise-1">
+<h2>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h2>
+<p>Write code to create a <strong>qusi-random</strong> sequence of these animals</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">animals</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span><span class="s1">&#39;cow&#39;</span><span class="p">,</span><span class="s1">&#39;pig&#39;</span><span class="p">,</span><span class="s1">&#39;mouse&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Anthony,Lauren Elise&#39;, &#39;Beatty,Drew Evelyn&#39;, &#39;Cheung,Alexander Jefferson&#39;, &#39;Chu,Carol&#39;, &#39;Cunningham,Emma Gayle&#39;, &#39;Fu,Meng&#39;, &#39;Gao,Sizhe&#39;, &#39;Green,Benjamin Douglas&#39;, &#39;Holley,Kendall Isaiah&#39;, &#39;Hou,Lihao&#39;, &#39;Koppel Egierd,Jacob I&#39;, &#39;Ma,Yuanxue&#39;, &#39;Marji,Michelle&#39;, &#39;Modahl,Lucas Nolan&#39;, &#39;Smith,Matthew Aaron&#39;, &#39;Stein,Andrea Gray&#39;, &#39;Yoo,Sujin&#39;, &#39;Yuksel,Ezgi Melisa&#39;, &#39;Zhong,Zhuolun&#39;, &#39;Zhu,Yan&#39;]
+<p>Your code should accept a variable specifying how long the sequence should be (<code class="docutils literal notranslate"><span class="pre">min</span> <span class="pre">=</span> <span class="pre">len(animals)</span></code>, <code class="docutils literal notranslate"><span class="pre">max</span> <span class="pre">=</span> <span class="pre">50</span></code>)</p>
+<p>Now comes the tricky part. The sequence you generate should be randomized, but not have any animal repeating back to back.</p>
+<p>So:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span><span class="s1">&#39;pig&#39;</span><span class="p">,</span><span class="s1">&#39;cow&#39;</span><span class="p">,</span><span class="s1">&#39;mouse&#39;</span><span class="p">,</span><span class="s1">&#39;mouse&#39;</span><span class="p">,</span><span class="s1">&#39;dog&#39;</span><span class="p">]</span> 
 </pre></div>
 </div>
+<p>is not ok because mouse repeated twice in a row, but</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span><span class="s1">&#39;cow&#39;</span><span class="p">,</span><span class="s1">&#39;pig&#39;</span><span class="p">,</span><span class="s1">&#39;mouse&#39;</span><span class="p">,</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span><span class="s1">&#39;mouse&#39;</span><span class="p">]</span> 
+</pre></div>
 </div>
-</div>
-<section id="output-first-names-only">
-<h2>Output first names only<a class="headerlink" href="#output-first-names-only" title="Permalink to this headline">#</a></h2>
-<p>Write a loop with code that processes the <code class="docutils literal notranslate"><span class="pre">full_names</span></code> list and outputs just the first names</p>
+<p>is ok.</p>
 </section>
-<section id="now-turn-it-into-a-function">
-<h2>Now turn it into a function<a class="headerlink" href="#now-turn-it-into-a-function" title="Permalink to this headline">#</a></h2>
-<p>Complete the body of this function to return a list containing just the first names in the same order as the full names that were given to the function.</p>
-</section>
-<section id="test-your-function">
-<h2>Test your function<a class="headerlink" href="#test-your-function" title="Permalink to this headline">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_names</span> <span class="o">=</span> <span class="n">return_first_names</span><span class="p">(</span><span class="n">full_names</span><span class="p">)</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="k">assert</span> <span class="n">first_names</span> <span class="o">==</span> <span class="p">[</span><span class="s1">&#39;Lauren&#39;</span><span class="p">,</span> <span class="s1">&#39;Drew&#39;</span><span class="p">,</span> <span class="s1">&#39;Alexander&#39;</span><span class="p">,</span> <span class="s1">&#39;Carol&#39;</span><span class="p">,</span> <span class="s1">&#39;Emma&#39;</span><span class="p">,</span> <span class="s1">&#39;Meng&#39;</span><span class="p">,</span> <span class="s1">&#39;Sizhe&#39;</span><span class="p">,</span> <span class="s1">&#39;Benjamin&#39;</span><span class="p">,</span> <span class="s1">&#39;Kendall&#39;</span><span class="p">,</span> <span class="s1">&#39;Lihao&#39;</span><span class="p">,</span> <span class="s1">&#39;Jacob&#39;</span><span class="p">,</span> <span class="s1">&#39;Yuanxue&#39;</span><span class="p">,</span> <span class="s1">&#39;Michelle&#39;</span><span class="p">,</span> <span class="s1">&#39;Lucas&#39;</span><span class="p">,</span> <span class="s1">&#39;Matthew&#39;</span><span class="p">,</span> <span class="s1">&#39;Andrea&#39;</span><span class="p">,</span> <span class="s1">&#39;Sujin&#39;</span><span class="p">,</span> <span class="s1">&#39;Ezgi&#39;</span><span class="p">,</span> <span class="s1">&#39;Zhuolun&#39;</span><span class="p">,</span> <span class="s1">&#39;Yan&#39;</span><span class="p">]</span>
-<span class="k">except</span> <span class="ne">AssertionError</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Woops something&#39;s not right with your list&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Woops something&#39;s not right with your list
-</pre></div>
-</div>
-</div>
-</div>
+<section id="exercise-2">
+<h2>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h2>
+<p>Now let’s try the opposite. Ensure that in your sequence, 20% of items (give or take a percent or so) is a back to back repeat.</p>
 </section>
 </section>
 

@@ -195,11 +195,6 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="review_of_fundamentals_a.html">
-   Review of Fundamentals A
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="dictionaries.html">
    Dictionaries
   </a>
@@ -212,6 +207,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="list_comprehension.html">
    List Comprehension
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="review_of_fundamentals_a.html">
+   Review of Fundamentals A
   </a>
  </li>
  <li class="toctree-l1">
@@ -257,13 +257,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="activity_list_manip_vowels_1.html">
-   Working with strings in lists
+  <a class="reference internal" href="activity_file_writing.html">
+   Primer on writing files
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="activity_file_writing.html">
-   Primer on writing files
+  <a class="reference internal" href="activity_list_manip_vowels_1.html">
+   Working with strings in lists
   </a>
  </li>
  <li class="toctree-l1">
@@ -557,12 +557,12 @@ title="Print to PDF"
 <h1>Exercise 3: Extending the Stroop effect<a class="headerlink" href="#exercise-3-extending-the-stroop-effect" title="Permalink to this headline">#</a></h1>
 <p><a class="reference external" href="https://classroom.github.com/a/ld0o1bOq">Accept the exercise</a>.</p>
 <p>Please note that this exercise is more involved than Exercise 2 and will require more time. Because of this, you’ll work in pairs. You can collaborate in person, through Slack, or by using <a class="reference external" href="https://code.visualstudio.com/learn/collaboration/live-share">live code editing feature of VSC</a></p>
-<p>In this exercise we’ll be extending the Stroop effect task you coded for Exercise 2 into a more complete experiment that (1) generates stimulus lists that are then read in by the main script, (3) accept runtime variables to assign participants to conditions and record participant codes, and (3) use some out-of-the-box speech recognition to allow participants to respond by using their voice.</p>
+<p>In this exercise we’ll be extending the Stroop effect task you coded for Exercise 2 into a more complete experiment that (1) generates stimulus lists that are then read in by the main script, (2) accept runtime variables to assign participants to conditions and record participant codes, and (3) use some out-of-the-box speech recognition to allow participants to respond by using their voice.</p>
 <p>We’ll use the all same stimuli, but introduce several variations:</p>
-<p>a. We’ll vary the proportion of trials that are incongruent (i.e., when the color of the font does not match the word).</p>
+<p>a. We’ll vary the proportion of trials that are incongruent (i.e., when the color of the font does not match the word). Make sure you go through the <a class="reference external" href="https://psych750.github.io/notebooks/trial_generation.html">randomization notebook</a> first!</p>
 <p>b. We’ll introduce an orientation manipulation so that on 50% of trials the word is presented upside down (what effect do you think this will have on response times?)</p>
-<p>c. Lastly, we’ll introduce a speech to-text feature so that participants can respond using their voice rather than by pressing a key.</p>
-<p>In this exercise we’ll also substantially modularize the code so that one part of it is responsibl for generating the trials, another for reading in the trial list, another for showing the stimuli, and another for writing the participant’s responses to a file.</p>
+<p>c. Lastly, we’ll introduce a speech to-text feature so that participants can respond using their voice rather than by pressing a key. In addition to live transcription it will also attempt to measure speech onset (it doesn’t work very well unless you’re in a quiet room and have a good microphone, but it’s something…).</p>
+<p>In this exercise we’ll also substantially modularize the code so that one part of it is responsible for generating the trials, another for reading in the trial list, another for showing the stimuli, and another for writing the participant’s responses to a file. This is preparation for coding larger projects.</p>
 <section id="exercise-3-parts">
 <h2>Exercise 3 parts<a class="headerlink" href="#exercise-3-parts" title="Permalink to this headline">#</a></h2>
 </section>
@@ -691,6 +691,8 @@ title="Print to PDF"
 <section id="part-5">
 <h2>Part 5<a class="headerlink" href="#part-5" title="Permalink to this headline">#</a></h2>
 <p>In the original demonstration of the Stroop effect, participants responded by using their voices. The researcher used a stopwatch to time how long it took to read a block of incongruent trials and compared it to reading a block of congruent trials. We can do a bit better. In this part, we’ll be using some out-of-the-box speech recognition to decode what word the participant is saying and scoring it as correct or incorrect. We’ll also use a (somewhat imprecise) psychopy function to automatically compute the onset time of people’s verbal responses.</p>
+<p>Before adding the <code class="docutils literal notranslate"><span class="pre">speech_recognition.py</span></code> starter code into your main code, make sure to install the speech recognition library by <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">SpeechRecognition</span></code> in your terminal (remember to activate your <code class="docutils literal notranslate"><span class="pre">psych750</span></code> environment first!)</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">speech_recognition.py</span></code> script should be pretty much plug and play with minimal changes needed to be made on your side.</p>
 </section>
 </section>
 

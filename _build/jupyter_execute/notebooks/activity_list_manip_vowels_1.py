@@ -7,15 +7,29 @@
 # 
 # For the first exercise, you'll be reading in some names and manipulating them.
 # 
+# First, let's grab your full names from the course roster.
+# 
 # 
 
-# In[ ]:
+# In[1]:
 
 
 import pandas as pd
 names = pd.read_csv('https://raw.githubusercontent.com/psych750/resources/main/stimuli/psych750_roster.csv')
 full_names = list(names['Name'])
 print(full_names)
+
+
+# In[ ]:
+
+
+for cur_name in full_names:
+    
+    first_middle = cur_name.split(',')[1]
+    if len(first_middle.split( ))>1:
+        print(first_middle.split( )[0])
+    else:
+        print(first_middle)
 
 
 # ### Output first names only
