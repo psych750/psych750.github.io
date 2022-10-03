@@ -600,7 +600,7 @@ title="Print to PDF"
     <span class="n">cur_orientation</span> <span class="o">=</span> <span class="n">cur_trial</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Not only is this a lot of repetitive code, but it requires us to know which column is which. Improve this code by adding column names to the trial list so that you know which column is which. When you read the trials back in, use Pandas as demonstrated in class to access the trial data from the pandas data-frame</p>
+<p>Not only is this a lot of repetitive code, but it requires us to know which column is which. Improve this code by adding column names to the trial list so that you know which column is which. When you read the trials back in, store the different columns in dictionaries so you can access them by name, e.g., <code class="docutils literal notranslate"><span class="pre">cur_trial[text_color]</span></code> to access the what the current text color should be. <strong>OR</strong> read in the data using a Pandas data-frame. We didn’t have time to go over it in class, but you can see an example of iterating through rows of a Pandas dataframe <a class="reference external" href="https://stackoverflow.com/questions/16476924/how-to-iterate-over-rows-in-a-dataframe-in-pandas">here</a>. For more on how to access rows/columns of Pandas dataframes, see <a class="reference external" href="https://pythonhow.com/python-tutorial/pandas/Accessing-pandas-dataframe-columns-rows-and-cells/">here</a>.</p>
 </section>
 <section id="part-4">
 <h2>Part 4<a class="headerlink" href="#part-4" title="Permalink to this headline">#</a></h2>
