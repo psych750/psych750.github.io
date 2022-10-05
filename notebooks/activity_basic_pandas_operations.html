@@ -55,6 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Exercise 0 - Test assignment" href="Exercise0-test.html" />
+    <link rel="prev" title="Debugging practice" href="activity_debugging_experiments.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -244,7 +246,7 @@ const thebe_selector_output = ".output, .cell_output"
   In class activities
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="python_basics.html">
    Python basics
@@ -285,6 +287,11 @@ const thebe_selector_output = ".output, .cell_output"
    Debugging practice 2
   </a>
  </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Basic Pandas operations
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -315,6 +322,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="Exercise4-more_modularized_stroop.html">
    Exercise 4-Modularization and error checking
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise5-interactive.html">
+   Exercise 5-Getting interactive
   </a>
  </li>
 </ul>
@@ -600,11 +612,40 @@ title="Print to PDF"
 </section>
 <section id="loading-in-data-from-a-csv-file">
 <h2>Loading in data from a CSV file<a class="headerlink" href="#loading-in-data-from-a-csv-file" title="Permalink to this headline">#</a></h2>
-<p>After loading in the data, we can do some quick checks using <code class="docutils literal notranslate"><span class="pre">head()</span></code> and <code class="docutils literal notranslate"><span class="pre">tail()</span></code></p>
+<p>After loading in the data, we can do some quick checks. First, let’s check the column names:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;ClassList.csv&#39;</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span> <span class="c1"># This will give you the first 5 rows of data</span>
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.core.indexes.base.Index
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pandas implements its own data types, but you can convert them to familiar things like lists (Basically, if it looks like it’s a list, you can convert it to a list. You’ll lose some functionality when you do it, but often it’s functionality you don’t need.).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">))</span>
+<span class="n">col_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">col_names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.indexes.base.Index&#39;&gt;
+[&#39;Name&#39;, &#39;Class ID&#39;, &#39;Age&#39;, &#39;Score&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, let’s look at the <code class="docutils literal notranslate"><span class="pre">head</span></code> (first few rows), and <code class="docutils literal notranslate"><span class="pre">tail</span></code> (the last few rows). This is always a good idea to make sure that everything is being read in as we expect.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1">#the first 5 rows by default. If you want more, insert the number as an argument to head.</span>
 </pre></div>
 </div>
 </div>
@@ -669,6 +710,41 @@ title="Print to PDF"
       <td>26</td>
       <td>75</td>
     </tr>
+    <tr>
+      <th>5</th>
+      <td>Frank</td>
+      <td>6</td>
+      <td>29</td>
+      <td>62</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Greta</td>
+      <td>7</td>
+      <td>30</td>
+      <td>94</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Helen</td>
+      <td>8</td>
+      <td>28</td>
+      <td>61</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Ian</td>
+      <td>9</td>
+      <td>20</td>
+      <td>77</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Jack</td>
+      <td>10</td>
+      <td>27</td>
+      <td>93</td>
+    </tr>
   </tbody>
 </table>
 </div></div></div>
@@ -709,36 +785,36 @@ title="Print to PDF"
       <th>7</th>
       <td>Helen</td>
       <td>8</td>
-      <td>27</td>
-      <td>97</td>
+      <td>28</td>
+      <td>61</td>
     </tr>
     <tr>
       <th>8</th>
       <td>Ian</td>
       <td>9</td>
-      <td>23</td>
-      <td>63</td>
+      <td>20</td>
+      <td>77</td>
     </tr>
     <tr>
       <th>9</th>
       <td>Jack</td>
       <td>10</td>
-      <td>26</td>
-      <td>98</td>
+      <td>27</td>
+      <td>93</td>
     </tr>
     <tr>
       <th>10</th>
       <td>Klaus</td>
       <td>11</td>
-      <td>29</td>
-      <td>94</td>
+      <td>23</td>
+      <td>75</td>
     </tr>
     <tr>
       <th>11</th>
       <td>Lucy</td>
       <td>12</td>
-      <td>27</td>
-      <td>99</td>
+      <td>20</td>
+      <td>73</td>
     </tr>
   </tbody>
 </table>
