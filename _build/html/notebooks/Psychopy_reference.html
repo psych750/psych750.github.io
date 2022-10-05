@@ -966,20 +966,20 @@ without any arguments:</p>
 </section>
 <section id="a-function-for-writing-a-string-trial-info-to-a-file">
 <h3>A function for writing a string (trial info) to a file.<a class="headerlink" href="#a-function-for-writing-a-string-trial-info-to-a-file" title="Permalink to this headline">#</a></h3>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">writeToFile</span><span class="p">(</span><span class="n">fileHandle</span><span class="p">,</span><span class="n">trial</span><span class="p">,</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-    <span class="c1">#Writes a trial (array of lists) to a file.</span>
-    <span class="c1">#File needs to be opened outside the function. Pass in the filehandle as an argument.</span>
-    <span class="n">line</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">trial</span><span class="p">])</span> <span class="c1">#TABify</span>
-    <span class="n">line</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="c1">#add a newline</span>
-    <span class="n">fileHandle</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">write_to_file</span><span class="p">(</span><span class="n">fileHandle</span><span class="p">,</span><span class="n">trial</span><span class="p">,</span><span class="n">separator</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">add_newline</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Writes a trial (array of lists) to a previously opened file&quot;&quot;&quot;</span>
+    <span class="n">trial</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="n">trial</span><span class="p">)</span>
+    <span class="n">line</span> <span class="o">=</span> <span class="n">separator</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">trial</span><span class="p">])</span> <span class="c1">#join with separator</span>
+    <span class="k">if</span> <span class="n">add_newline</span><span class="p">:</span>
+        <span class="n">line</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="c1">#add a newline</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">fileHandle</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;file is not open for writing&#39;</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">sync</span><span class="p">:</span>
-        <span class="n">fileHandle</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">fsync</span><span class="p">(</span><span class="n">fileHandle</span><span class="p">)</span>
-
-<span class="c1"># Usage:</span>
-<span class="n">subjDataFile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;subj1.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
-<span class="n">trial</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="mf">143.9</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-<span class="n">writeToFile</span><span class="p">(</span><span class="n">subjDataFile</span><span class="p">,</span> <span class="n">trial</span><span class="p">)</span>
+    	<span class="n">fileHandle</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+    	<span class="n">os</span><span class="o">.</span><span class="n">fsync</span><span class="p">(</span><span class="n">fileHandle</span><span class="p">)</span>
+            
 </pre></div>
 </div>
 </section>
