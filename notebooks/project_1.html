@@ -276,8 +276,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="activity_debugging_1.html">
+  <a class="reference internal" href="activity_debugging.html">
    Debugging practice 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="activity_debugging_experiments.html">
+   Debugging practice 2
   </a>
  </li>
 </ul>
@@ -615,7 +620,7 @@ Following the usual terminology, correctly responding to an old item is a *hit*;
 The “non-special” stims are all the ones in the stimulis/visual directory that are <em>not</em> in the special stims.</p>
 <p>As indicated in the schematic below, participants should see a 1000 ms feedback screen if they miss a repeat. If they respond correctly or if they false alarm (thought they saw a repeat when in fact there wasn’t one), no feedback should be shown. The sutdy part should begin with an instruction screen and end with a scren alerting them that they will now go on to the second part of the experiment.</p>
 <p>There should be no user-controlled breaks in the study session.</p>
-<p><img alt="Proj1-a-Study" src="notebooks/images/proj1_memory_study.png" /></p>
+<p><img alt="Proj1-a-Study" src="../_images/proj1_memory_study.png" /></p>
 </section>
 <section id="test-phase-details">
 <h3>Test phase details<a class="headerlink" href="#test-phase-details" title="Permalink to this headline">#</a></h3>
@@ -631,7 +636,7 @@ The “non-special” stims are all the ones in the stimulis/visual directory th
 <p>Note that each category should be tested only once. If participants see “bear” at study and “pear” at test, they should not also see a different exemplar of a bear at test.</p>
 <p>There should be no user-controlled breaks in the test session.</p>
 <p>There is no accuracy feedback in the test session.</p>
-<p><img alt="Proj1-a-Test" src="notebooks/images/proj1_memory_test.png" /></p>
+<p><img alt="Proj1-a-Test" src="../_images/proj1_memory_test.png" /></p>
 </section>
 <section id="output-file-details">
 <h3>Output file details<a class="headerlink" href="#output-file-details" title="Permalink to this headline">#</a></h3>
@@ -671,10 +676,10 @@ The “non-special” stims are all the ones in the stimulis/visual directory th
 <section id="option-2-reinforcement-learning-and-meaningfulness">
 <h2>Option 2: Reinforcement learning and meaningfulness<a class="headerlink" href="#option-2-reinforcement-learning-and-meaningfulness" title="Permalink to this headline">#</a></h2>
 <p>Quick, what’s this?
-<img alt="Droodle Elephants" src="notebooks/images/droodle_elephants.png" /></p>
+<img alt="Droodle Elephants" src="../_images/droodle_elephants.png" /></p>
 <p>…why that’s four elephants smelling an orange of course!</p>
 <p>What is the consequence of ascribing meaning to an underdetermined image? In this experiment, we will examine whether ascribing meaning helps people associate images with arbitrary responses.</p>
-<p><img alt="Proj1-a-Study" src="notebooks/images/proj1_reinforcement_learning.png" /></p>
+<p><img alt="Proj1-a-Study" src="../_images/proj1_reinforcement_learning.png" /></p>
 <p>The experiment consists of several blocks. Each block begins with a display of all the stimuli (3 in the schematic above). Each of these is assigned to one of three keys (‘z’, ‘x’, ‘c’) <em>with</em> replacement such that two images may be assigned to the same key. Participants then see these images and try to learn which key each image goes with, receiving accuracy feedback after every trial. Once the termination condition shown above is met, a new block begins which contains several novel items.</p>
 <p>The only difference between the meaningful and meaningless conditions is that in the meaningful condition, the screen that introduces the stimuli contains a verbal description of each one.</p>
 <p>By seeding the random number generator with the same value for pairs of participants, you’ll be able to run pairs people on the identical trial sequence, except one will be in the <em>description</em> condition and the other in the <em>no-description</em> condition.</p>
