@@ -25,7 +25,7 @@
 # ```python
 # from psychopy import visual, gui
 # 
-# userVar = {'Name':'Enter your name'}
+# runtime_variables = {'Name':'Enter your name'}
 # dlg = gui.DlgFromDict(userVar)
 # ```
 # 
@@ -33,20 +33,20 @@
 # following syntax:
 # 
 # ```python
-# userVar['Name']
+# runtime_variables['Name']
 # ```
 # 
 # For example, if I enter 'Gary' in the pop-up box. Then once I press
 # enter and the box closes,
 # 
 # ```python
-# userVar['Name']
+# runtime_variables['Name']
 # ```
 # 
 # will return the string 'Gary'
 # 
 # Note that when the box pops up it will be pre-filled with "Enter your
-# name". To overwrite it, just hit tab until it's highlights. Or
+# name". To overwrite it, just hit tab until it's highlightd. Or
 # position your cursor inside it, hit command-A (ctrl-A on PC) which will
 # highlight all the text, and then start typing. For a more elegant text
 # box, see below.
@@ -68,12 +68,12 @@
 # ```
 # 
 # ```{note}
-# `myDlg.data` is a list, so to access the first element, you should index it: `myDlg.data[0]`
+# `myDlg.data` is a list, so to access the first element, you should index it: `myDlg.data[0]`. This method is included for demonstration, but is **not** preferable because it requires you to know and keep track of which index corresponds to which variable.
 # ```
 
-# ### Easy way to get a bunch of runtime variables
+# ### Easier way to get a bunch of runtime variables
 # 
-# Runtime variables are variables you want to set at runtime -- the subject code, demographic info, the condition(s) the subject is assigned to, etc.
+# Runtime variables are variables you want to set at runtime -- the subject code, demographic info, the condition(s) the subject is assigned to, etc. Here's a more flexible solution (compared to those listed above) to get a bunch of variables at the same time.
 # 
 # ```Python
 # def get_runtime_vars(vars_to_get,order,exp_version="experiment_code_for_reference"):
@@ -87,7 +87,7 @@
 # 
 # Sample usage:
 # 
-# ```Python
+# ```python
 # order =  ['subj_code','seed','gender']
 # runtime_vars= getRunTimeVars({'subj_code':'stroop_101', 'seed':10, 'gender':['Choose', 'male','female', 'other']}, order)
 # ```
@@ -96,6 +96,12 @@
 # A better solution here is to re-implement this recipe with an OrderedDict
 # ```
 # 
+
+# In[ ]:
+
+
+
+
 
 # ## How do I have people respond with a mouse?
 # 
@@ -152,13 +158,13 @@ def show_text_until_mouse_or_keypress(win,text,color,mouse):
         keys = event.getKeys()        
         if keys:
             win.flip()
-            print('user presed ',keys)
+            print('user pressed ',keys)
             return
 
 show_text_until_mouse_or_keypress(win,"sample text","red",mouse)
 
 
-# ```{admonition} More advanced Python tip
+# ```{admonition} Advanced tip
 # Notice that we had to use a temporary variable `keys` to store the value of a keypress (if one exists). We then check whether keys is non-empty in the subsequent if statement. Wouldn't it be nice if we could do both in one line? Python 3.8 provides this functionality with the `:=` operator which allows us to check whether a statement is true *and* assign its return value in one go. So instead of having separate lines we can just have `if keys !=  event.getKeys():`   
 # ```
 
@@ -219,21 +225,15 @@ show_text_until_mouse_or_keypress(win,"sample text","red",mouse)
 # ```python
 # from psychopy import event, core
 # 
-# def getKeyboardResponse(validResponses,duration=0):
-#     """Returns keypress and RT. Specify a duration (in secs) if you want response collection to last that long. Unlike event.waitkeys(maxWait=..), this function will not exit until duration. Use waitKeys with a maxWait parameter if you want to have a response deadline, but exit as soon as a response is received."""
-# 
-#     event.clearEvents() 
-#     #not strictly necessary here, but good practice - 
-#     #will prevent buffer overruns if, for some reason there are too many responses in
-#     #between auto-clears (e.g., from mouse, eye tracking data)
-#     
+# def get_keyboard_response(validResponses,duration=0):
+#     event.clearEvents()
 #     responded = False
 #     done = False
 #     rt = '*'
 #     responseTimer = core.Clock()
 #     while True: 
 #         if not responded:
-#             responded = event.getKeys(validResponses, responseTimer) 
+#             responded = event.getKeys(keyList=validResponses, timeStamped=responseTimer) 
 #         if duration>0:
 #             if responseTimer.getTime() > duration:
 #                 break
@@ -241,9 +241,10 @@ show_text_until_mouse_or_keypress(win,"sample text","red",mouse)
 #             if responded:
 #                 break
 #     if not responded:
-#         return ['*','*']
+#         return ['NA','NA']
 #     else:
 #         return responded[0] #only get the first resp
+# 
 # ```
 
 # ### A function for writing a string (trial info) to a file.
@@ -276,7 +277,7 @@ show_text_until_mouse_or_keypress(win,"sample text","red",mouse)
 # ```python
 # from math import *
 # 
-# def polarToRect(angleList,radius):
+# def polar_to_rect(angleList,radius):
 #     """Accepts a list of angles and a radius.  Outputs the x,y positions for the angles"""
 #     coords=[]
 #     for curAngle in angleList:
@@ -286,11 +287,11 @@ show_text_until_mouse_or_keypress(win,"sample text","red",mouse)
 #         coords.append([xCoord,yCoord])
 #     return coords
 # 
-# polarToRect([0,30,60,90],50) #generate the x,y coordinates for supplied angles with a radius of 50
+# polar_to_rect([0,30,60,90],50) #generate the x,y coordinates for supplied angles with a radius of 50
 # # [[50.0, 0.0], [43.0, 25.0], [25.0, 43.0], [0.0, 50.0]]
 # ```
 #  
-# **Hint:** You can use list comprehension to make psychopy's built-in function work like the one above:
+# You can use list comprehension to make psychopy's built-in function work like the one above
 # 
 # ```python
 # from psychopy.tools import coordinatetools
@@ -328,9 +329,9 @@ staircase = data.StairHandler(
 staircase is an iterator; you can get its next stat by calling 
 staircase.next(), or having it in a loop:
 '''
-for curTrial in staircase:
-    print(curTrial)
-    #curTrial will contain the current intensity value, here, beginning with 20 
+for cur_trial in staircase:
+    print(cur_trial)
+    #cur_trial will contain the current intensity value, here, beginning with 20 
     staircase.addResponse(1) # 1 if response is correct; 0 if incorrect
 
 
@@ -416,13 +417,13 @@ for curTrial in staircase:
 # You can play a sound like this
 # 
 # ```python
-# soundStims['beep']['stim'].play()
+# sound_stims['beep']['stim'].play()
 # ```
 # 
 # And get its duration like this:
 # 
 # ```python
-# soundStims['beep']['duration']
+# sound_stims['beep']['duration']
 # ```
 
 # ## Importing a custom function and Testing a function that's in a separate file
@@ -458,7 +459,7 @@ for curTrial in staircase:
 # A flexible routine for importing trial lists (of the kind generated by the generateTrials function) into a list of dictionaries, keyed by column name. This is functionally very similar to the importConditions psychopy function (see below) 
 
 # ```python
-# def import_rials(trialsFilename, colNames=None, separator='\t'):
+# def import_rials(trialsFilename, colNames=None, separator=','):
 #     trialsFile = open(trialsFilename, 'rb')
 #  
 #     if colNames is None:
