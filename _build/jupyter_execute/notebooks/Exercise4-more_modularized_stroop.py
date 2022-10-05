@@ -42,7 +42,7 @@
 #     cur_trial_type = cur_trial[4]
 #     cur_orientation = cur_trial[5]
 # ```
-# Not only is this a lot of repetitive code, but it requires us to know which column is which. Improve this code by adding column names to the trial list so that you know which column is which. When you read the trials back in, use Pandas as demonstrated in class to access the trial data from the pandas data-frame
+# Not only is this a lot of repetitive code, but it requires us to know which column is which. Improve this code by adding column names to the trial list so that you know which column is which. When you read the trials back in, store the different columns in dictionaries so you can access them by name, e.g., `cur_trial[text_color]` to access the what the current text color should be. **OR** read in the data using a Pandas data-frame. We didn't have time to go over it in class, but you can see an example of iterating through rows of a Pandas dataframe [here](https://stackoverflow.com/questions/16476924/how-to-iterate-over-rows-in-a-dataframe-in-pandas). For more on how to access rows/columns of Pandas dataframes, see [here](https://pythonhow.com/python-tutorial/pandas/Accessing-pandas-dataframe-columns-rows-and-cells/).  
 # 
 # 
 

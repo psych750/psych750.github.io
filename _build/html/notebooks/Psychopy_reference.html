@@ -278,8 +278,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="activity_debugging_1.html">
+  <a class="reference internal" href="activity_debugging.html">
    Debugging practice 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="activity_debugging_experiments.html">
+   Debugging practice 2
   </a>
  </li>
 </ul>
@@ -552,8 +557,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-basic-factorial-design-trial-list-generation-file-generatetrials-py">
-   A basic factorial design trial list generation file (generateTrials.py)
+  <a class="reference internal nav-link" href="#importing-a-custom-function-and-testing-a-function-that-s-in-a-separate-file">
+   Importing a custom function and Testing a function that’s in a separate file
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -684,8 +689,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-basic-factorial-design-trial-list-generation-file-generatetrials-py">
-   A basic factorial design trial list generation file (generateTrials.py)
+  <a class="reference internal nav-link" href="#importing-a-custom-function-and-testing-a-function-that-s-in-a-separate-file">
+   Importing a custom function and Testing a function that’s in a separate file
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1052,56 +1057,61 @@ to set the position of your stimulus to something to the negative 15th power.)</
 <span class="kn">import</span> <span class="nn">glob</span>
 <span class="kn">from</span> <span class="nn">psychopy</span> <span class="kn">import</span> <span class="n">visual</span>
 
-<span class="k">def</span> <span class="nf">loadFiles</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span><span class="n">extension</span><span class="p">,</span><span class="n">fileType</span><span class="p">,</span><span class="n">win</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="n">whichFiles</span><span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">,</span><span class="n">stimList</span><span class="o">=</span><span class="p">[]):</span>
-	<span class="sd">&quot;&quot;&quot; Load all the pics and sounds. Uses pyo or pygame for the sound library (see prefs.general[&#39;audioLib&#39;])&quot;&quot;&quot;</span>
-	<span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="c1">#set path to current directory</span>
-	<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">extension</span><span class="p">,</span><span class="nb">list</span><span class="p">):</span>
-		<span class="n">fileList</span> <span class="o">=</span> <span class="p">[]</span>
-		<span class="k">for</span> <span class="n">curExtension</span> <span class="ow">in</span> <span class="n">extension</span><span class="p">:</span>
-			<span class="n">fileList</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="n">directory</span><span class="p">,</span><span class="n">whichFiles</span><span class="o">+</span><span class="n">curExtension</span><span class="p">)))</span>
-	<span class="k">else</span><span class="p">:</span>
-		<span class="n">fileList</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="n">directory</span><span class="p">,</span><span class="n">whichFiles</span><span class="o">+</span><span class="n">extension</span><span class="p">))</span>
-	<span class="n">fileMatrix</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1">#initialize fileMatrix  as a dict because it&#39;ll be accessed by file names (picture names, sound names)</span>
-	<span class="k">for</span> <span class="n">num</span><span class="p">,</span><span class="n">curFile</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">fileList</span><span class="p">):</span>
-		<span class="n">fullPath</span> <span class="o">=</span> <span class="n">curFile</span>
-		<span class="n">fullFileName</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">fullPath</span><span class="p">)</span>
-		<span class="n">stimFile</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">fullFileName</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-		<span class="k">if</span> <span class="n">fileType</span><span class="o">==</span><span class="s2">&quot;image&quot;</span><span class="p">:</span>
-			<span class="k">try</span><span class="p">:</span>
-				<span class="n">stim</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">ImageStim</span><span class="p">(</span><span class="n">win</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">fullPath</span><span class="p">,</span><span class="n">mask</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">interpolate</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-				<span class="p">(</span><span class="n">width</span><span class="p">,</span><span class="n">height</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">stim</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">stim</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-				<span class="n">fileMatrix</span><span class="p">[</span><span class="n">stimFile</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;stim&#39;</span><span class="p">:</span><span class="n">stim</span><span class="p">,</span><span class="s1">&#39;fullPath&#39;</span><span class="p">:</span><span class="n">fullPath</span><span class="p">,</span><span class="s1">&#39;filename&#39;</span><span class="p">:</span><span class="n">stimFile</span><span class="p">,</span><span class="s1">&#39;num&#39;</span><span class="p">:</span><span class="n">num</span><span class="p">,</span><span class="s1">&#39;width&#39;</span><span class="p">:</span><span class="n">width</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">:</span><span class="n">height</span><span class="p">}</span>
-			<span class="k">except</span><span class="p">:</span>
-				<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Need to define window before loading stimuli&quot;</span><span class="p">)</span>
-		<span class="k">elif</span> <span class="n">fileType</span><span class="o">==</span><span class="s2">&quot;sound&quot;</span><span class="p">:</span>
-			<span class="n">fileMatrix</span><span class="p">[</span><span class="n">stimFile</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;stim&#39;</span><span class="p">:</span><span class="n">sound</span><span class="o">.</span><span class="n">Sound</span><span class="p">(</span><span class="n">fullPath</span><span class="p">),</span> <span class="s1">&#39;duration&#39;</span><span class="p">:</span><span class="n">sound</span><span class="o">.</span><span class="n">Sound</span><span class="p">(</span><span class="n">fullPath</span><span class="p">)</span><span class="o">.</span><span class="n">getDuration</span><span class="p">()}</span>
 
-	<span class="c1">#optionally check a list of desired stimuli against those that&#39;ve been loaded</span>
-	<span class="k">if</span> <span class="n">stimList</span> <span class="ow">and</span> <span class="nb">set</span><span class="p">(</span><span class="n">fileMatrix</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">stimList</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">set</span><span class="p">(</span><span class="n">stimList</span><span class="p">):</span>
-		<span class="n">popupError</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">stimList</span><span class="p">)</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">fileMatrix</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span> <span class="o">+</span> <span class="s2">&quot; does not exist in &quot;</span> <span class="o">+</span> <span class="n">path</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span><span class="o">+</span><span class="n">directory</span><span class="p">)</span> 
-	<span class="k">return</span> <span class="n">fileMatrix</span>
+<span class="k">def</span> <span class="nf">load_files</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span><span class="n">extension</span><span class="p">,</span><span class="n">fileType</span><span class="p">,</span><span class="n">win</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="n">restriction</span><span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">,</span><span class="n">stim_list</span><span class="o">=</span><span class="p">[]):</span>
+    <span class="sd">&quot;&quot;&quot; Load all the pics and sounds. Uses pyo or pygame for the sound library (see prefs.general[&#39;audioLib&#39;])&quot;&quot;&quot;</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="c1">#set path to current directory</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">extension</span><span class="p">,</span><span class="nb">list</span><span class="p">):</span>
+        <span class="n">file_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">curExtension</span> <span class="ow">in</span> <span class="n">extension</span><span class="p">:</span>
+            <span class="n">file_list</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="n">directory</span><span class="p">,</span><span class="n">restriction</span><span class="o">+</span><span class="n">curExtension</span><span class="p">)))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">file_list</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="n">directory</span><span class="p">,</span><span class="n">restriction</span><span class="o">+</span><span class="n">extension</span><span class="p">))</span>
+    <span class="n">files_data</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1">#initialize files_data  as a dict because it&#39;ll be accessed by file names (picture names, sound names)</span>
+    <span class="k">for</span> <span class="n">num</span><span class="p">,</span><span class="n">curFile</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">file_list</span><span class="p">):</span>
+        <span class="n">fullPath</span> <span class="o">=</span> <span class="n">curFile</span>
+        <span class="n">fullFileName</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">fullPath</span><span class="p">)</span>
+        <span class="n">stimFile</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">fullFileName</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">fileType</span><span class="o">==</span><span class="s2">&quot;image&quot;</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">surface</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fullPath</span><span class="p">)</span> <span class="c1">#gets height/width of the image</span>
+                <span class="n">stim</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">ImageStim</span><span class="p">(</span><span class="n">win</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">fullPath</span><span class="p">,</span><span class="n">mask</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">interpolate</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="p">(</span><span class="n">width</span><span class="p">,</span><span class="n">height</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">surface</span><span class="o">.</span><span class="n">get_width</span><span class="p">(),</span><span class="n">surface</span><span class="o">.</span><span class="n">get_height</span><span class="p">())</span>
+            <span class="k">except</span><span class="p">:</span> <span class="c1">#if no pygame, image dimensions may not be available</span>
+                <span class="k">pass</span>
+            <span class="n">stim</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">ImageStim</span><span class="p">(</span><span class="n">win</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">fullPath</span><span class="p">,</span><span class="n">mask</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">interpolate</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="p">(</span><span class="n">width</span><span class="p">,</span><span class="n">height</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">stim</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">stim</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="n">files_data</span><span class="p">[</span><span class="n">stimFile</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;stim&#39;</span><span class="p">:</span><span class="n">stim</span><span class="p">,</span><span class="s1">&#39;fullPath&#39;</span><span class="p">:</span><span class="n">fullFileName</span><span class="p">,</span><span class="s1">&#39;filename&#39;</span><span class="p">:</span><span class="n">stimFile</span><span class="p">,</span><span class="s1">&#39;num&#39;</span><span class="p">:</span><span class="n">num</span><span class="p">,</span><span class="s1">&#39;width&#39;</span><span class="p">:</span><span class="n">width</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">:</span><span class="n">height</span><span class="p">}</span>
+        <span class="k">elif</span> <span class="n">fileType</span><span class="o">==</span><span class="s2">&quot;sound&quot;</span><span class="p">:</span>
+            <span class="n">files_data</span><span class="p">[</span><span class="n">stimFile</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;stim&#39;</span><span class="p">:</span><span class="n">sound</span><span class="o">.</span><span class="n">Sound</span><span class="p">(</span><span class="n">fullPath</span><span class="p">),</span> <span class="s1">&#39;duration&#39;</span><span class="p">:</span><span class="n">sound</span><span class="o">.</span><span class="n">Sound</span><span class="p">(</span><span class="n">fullPath</span><span class="p">)</span><span class="o">.</span><span class="n">getDuration</span><span class="p">()}</span>
+ 
+    <span class="c1">#optionally check that the stimuli we *need* to load are actually available in the directory; return error if there is a discrepancy</span>
+    <span class="k">if</span> <span class="n">stim_list</span> <span class="ow">and</span> <span class="nb">set</span><span class="p">(</span><span class="n">files_data</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">stim_list</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">set</span><span class="p">(</span><span class="n">stim_list</span><span class="p">):</span>
+        <span class="n">popupError</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">stim_list</span><span class="p">)</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">files_data</span><span class="o">.</span><span class="n">keys</span><span class="p">())))</span> <span class="o">+</span> <span class="s2">&quot; does not exist in &quot;</span> <span class="o">+</span> <span class="n">path</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span><span class="o">+</span><span class="n">directory</span><span class="p">)</span> 
+    <span class="k">return</span> <span class="n">files_data</span>
 
+   
 
 <span class="n">win</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Window</span><span class="p">([</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s1">&#39;pix&#39;</span><span class="p">)</span>
-<span class="n">fileMatrix</span> <span class="o">=</span> <span class="n">loadFiles</span><span class="p">(</span><span class="s1">&#39;stimuli/visual&#39;</span><span class="p">,</span><span class="s1">&#39;.png&#39;</span><span class="p">,</span><span class="n">fileType</span><span class="o">=</span><span class="s2">&quot;image&quot;</span><span class="p">,</span><span class="n">win</span><span class="o">=</span><span class="n">win</span><span class="p">)</span>
+<span class="n">files_data</span> <span class="o">=</span> <span class="n">load_files</span><span class="p">(</span><span class="s1">&#39;stimuli/visual&#39;</span><span class="p">,</span><span class="s1">&#39;.png&#39;</span><span class="p">,</span><span class="n">fileType</span><span class="o">=</span><span class="s2">&quot;image&quot;</span><span class="p">,</span><span class="n">win</span><span class="o">=</span><span class="n">win</span><span class="p">)</span>
 
 </pre></div>
 </div>
 <p>Sample usage, assuming your stimuli are in stimuli subfolders:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">picStims</span> <span class="o">=</span> <span class="n">loadFiles</span><span class="p">(</span><span class="s1">&#39;stimuli/pics&#39;</span><span class="p">,</span><span class="s1">&#39;.jpg&#39;</span><span class="p">,</span><span class="s1">&#39;image&#39;</span><span class="p">,</span> <span class="n">win</span><span class="o">=</span><span class="n">win</span><span class="p">)</span>
-<span class="n">soundStims</span> <span class="o">=</span> <span class="n">loadFiles</span><span class="p">(</span><span class="s1">&#39;stimuli/sounds&#39;</span><span class="p">,</span><span class="s1">&#39;.wav&#39;</span><span class="p">,</span><span class="s1">&#39;sound&#39;</span><span class="p">,</span> <span class="n">win</span><span class="o">=</span><span class="n">win</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pic_stims</span> <span class="o">=</span> <span class="n">load_files</span><span class="p">(</span><span class="s1">&#39;stimuli/pics&#39;</span><span class="p">,</span><span class="s1">&#39;.jpg&#39;</span><span class="p">,</span><span class="s1">&#39;image&#39;</span><span class="p">,</span> <span class="n">win</span><span class="o">=</span><span class="n">win</span><span class="p">)</span>
+<span class="n">sound_stims</span> <span class="o">=</span> <span class="n">load_files</span><span class="p">(</span><span class="s1">&#39;stimuli/sounds&#39;</span><span class="p">,</span><span class="s1">&#39;.wav&#39;</span><span class="p">,</span><span class="s1">&#39;sound&#39;</span><span class="p">,</span> <span class="n">win</span><span class="o">=</span><span class="n">win</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>You can optionally specify stimList (the list of stims you’ll be using
 in the experiment). This is not necessary, but lets you check to make
 sure that all the stimuli you need are available.</p>
 <p>Now you can display the image dog.jpg like so:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">picStims</span><span class="p">[</span><span class="s1">&#39;dog&#39;</span><span class="p">][</span><span class="s1">&#39;stim&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pic_stims</span><span class="p">[</span><span class="s1">&#39;dog&#39;</span><span class="p">][</span><span class="s1">&#39;stim&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
 <span class="n">win</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Get the full path of the image like this:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">picStims</span><span class="p">[</span><span class="s1">&#39;dog&#39;</span><span class="p">][</span><span class="s1">&#39;fullPath&#39;</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pic_stims</span><span class="p">[</span><span class="s1">&#39;dog&#39;</span><span class="p">][</span><span class="s1">&#39;fullPath&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>You can play a sound like this</p>
@@ -1113,76 +1123,31 @@ sure that all the stimuli you need are available.</p>
 </pre></div>
 </div>
 </section>
-<section id="a-basic-factorial-design-trial-list-generation-file-generatetrials-py">
-<h2>A basic factorial design trial list generation file (<a class="reference external" href="http://generateTrials.py">generateTrials.py</a>)<a class="headerlink" href="#a-basic-factorial-design-trial-list-generation-file-generatetrials-py" title="Permalink to this headline">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
-
-<span class="n">stims</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;car&quot;</span><span class="p">,</span> <span class="s2">&quot;dog&quot;</span><span class="p">,</span> <span class="s2">&quot;frog&quot;</span><span class="p">,</span> <span class="s2">&quot;gun&quot;</span><span class="p">,</span><span class="s2">&quot;motorcycle&quot;</span><span class="p">,</span><span class="s2">&quot;rooster&quot;</span><span class="p">,</span> <span class="s2">&quot;train&quot;</span><span class="p">,</span> <span class="s2">&quot;cow&quot;</span><span class="p">,</span> <span class="s2">&quot;whistle&quot;</span><span class="p">]</span> 
-<span class="n">primeTypes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">,</span><span class="s2">&quot;sound&quot;</span><span class="p">,</span><span class="s2">&quot;noPrime&quot;</span><span class="p">]</span>
-<span class="n">side</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;left&#39;</span><span class="p">:</span><span class="s1">&#39;right&#39;</span><span class="p">,</span><span class="s1">&#39;right&#39;</span><span class="p">:</span><span class="s1">&#39;left&#39;</span><span class="p">}</span>
-<span class="n">isValid</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;0&quot;</span><span class="p">]</span><span class="o">*</span><span class="mi">1</span><span class="o">+</span><span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">]</span><span class="o">*</span><span class="mi">4</span>
-<span class="n">separator</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span>
-<span class="n">seed</span><span class="o">=</span><span class="mi">10</span>
-
-<span class="n">headerCols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;curStim&#39;</span><span class="p">,</span> <span class="s1">&#39;curPrimeType&#39;</span><span class="p">,</span> <span class="s1">&#39;curIsValid&#39;</span><span class="p">,</span> <span class="s1">&#39;curSoundFile&#39;</span><span class="p">,</span> <span class="s1">&#39;curTargetSide&#39;</span><span class="p">,</span> <span class="s1">&#39;curDistractorSide&#39;</span><span class="p">]</span>
-<span class="n">header</span> <span class="o">=</span> <span class="n">separator</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">headerCols</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">generateTrials</span><span class="p">(</span><span class="n">subjCode</span><span class="p">,</span><span class="n">seed</span><span class="p">):</span>
-    <span class="n">trialList</span><span class="o">=</span><span class="p">[]</span>
-    <span class="k">for</span> <span class="n">curStim</span> <span class="ow">in</span> <span class="n">stims</span><span class="p">:</span>
-        <span class="k">for</span> <span class="n">curPrimeType</span> <span class="ow">in</span> <span class="n">primeTypes</span><span class="p">:</span>
-            <span class="k">for</span> <span class="n">curIsValid</span> <span class="ow">in</span> <span class="n">isValid</span><span class="p">:</span>
-                <span class="k">for</span> <span class="n">curTargetSide</span> <span class="ow">in</span> <span class="n">side</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-                    <span class="k">if</span> <span class="n">curPrimeType</span><span class="o">==</span><span class="s1">&#39;noPrime&#39;</span><span class="p">:</span>
-                        <span class="n">soundFile</span> <span class="o">=</span> <span class="s1">&#39;noise&#39;</span>
-                        <span class="n">curIsValid</span> <span class="o">=</span> <span class="s1">&#39;*&#39;</span>
-                    <span class="k">else</span><span class="p">:</span>
-                        <span class="k">if</span> <span class="n">curIsValid</span><span class="o">==</span><span class="s2">&quot;1&quot;</span><span class="p">:</span>
-                            <span class="n">curSoundFile</span> <span class="o">=</span> <span class="s1">&#39;_&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">curStim</span><span class="p">,</span><span class="n">curPrimeType</span><span class="p">])</span>
-                        <span class="k">elif</span> <span class="n">curIsValid</span><span class="o">==</span><span class="s2">&quot;0&quot;</span><span class="p">:</span>
-                            <span class="n">curSoundFile</span> <span class="o">=</span> <span class="s1">&#39;_&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">randomButNot</span><span class="p">(</span><span class="n">stims</span><span class="p">,</span><span class="n">curStim</span><span class="p">),</span><span class="n">curPrimeType</span><span class="p">])</span>
-                    <span class="n">curDistractorSide</span> <span class="o">=</span> <span class="n">side</span><span class="p">[</span><span class="n">curTargetSide</span><span class="p">]</span>
-                    <span class="k">try</span><span class="p">:</span>
-                        <span class="n">trial</span> <span class="o">=</span> <span class="n">separator</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="nb">map</span><span class="p">(</span><span class="nb">eval</span><span class="p">,</span><span class="n">headerCols</span><span class="p">)))</span>
-                    <span class="k">except</span> <span class="ne">NameError</span><span class="p">:</span>
-                        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;column not defined.  check code&#39;</span><span class="p">)</span>
-                    <span class="n">trialList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">trial</span><span class="p">)</span>
-
-    <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
-    <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">trialList</span><span class="p">)</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">trialFile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;trialList_&#39;</span><span class="o">+</span><span class="n">subjCode</span><span class="o">+</span><span class="s1">&#39;.csv&#39;</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
-        <span class="n">trialFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">header</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-        <span class="p">[</span><span class="n">trialFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">curTrial</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">curTrial</span> <span class="ow">in</span> <span class="n">trialList</span><span class="p">]</span>
-        <span class="k">return</span> <span class="n">trialList</span>
-    <span class="k">except</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">False</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="c1">#for testing; this part is only executed if you run generateTrials.py from the terminal.</span>
-    <span class="n">trialList</span> <span class="o">=</span> <span class="n">generateTrials</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">header</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">curTrial</span> <span class="ow">in</span> <span class="n">trialList</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">curTrial</span><span class="p">)</span>
+<section id="importing-a-custom-function-and-testing-a-function-that-s-in-a-separate-file">
+<h2>Importing a custom function and Testing a function that’s in a separate file<a class="headerlink" href="#importing-a-custom-function-and-testing-a-function-that-s-in-a-separate-file" title="Permalink to this headline">#</a></h2>
+<p>It is often useful to modularize your code by having conceptually distinct parts stored in separate files. For example, it’s useful to have all the code dealing with trial generation inside a separate <code class="docutils literal notranslate"><span class="pre">generate_trials.py</span></code> file. Inside it you might have a function (also called generate_trials in this example, but it can be called anything),</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate_trials</span><span class="p">(</span><span class="n">subj_code</span><span class="p">,</span><span class="n">seed</span><span class="p">):</span>
+    <span class="c1">#your function here...</span>
+    <span class="c1">#generates trials..</span>
+    <span class="c1">#writes to a file, prints stuff to the console for testing etc.</span>
 </pre></div>
 </div>
-<p>To use it inside your main experiment file, import it like so:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">generateTrials</span> <span class="kn">import</span> <span class="n">generateTrials</span>
+<p>Assuming this function is inside a file called generate_trials.py, you can import it like so:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">generate_trials</span> <span class="kn">import</span> <span class="n">generate_trials</span>
 </pre></div>
 </div>
-<p>(this assumes that the code above is placed in a file called
-<a class="reference external" href="http://generateTrials.py">generateTrials.py</a>) Now, you can create a trialList_subjCode.csv file by
-having a line like this in your main experiment file (making sure that
-subjCode and seed are contain the values entered at runtime:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">generateTrials</span><span class="p">(</span><span class="n">subjCode</span><span class="p">,</span><span class="n">seed</span><span class="p">)</span>
+<p>The first part is the file name; the second is the function name. They do not have to be the same. Now you’ll be able to call <code class="docutils literal notranslate"><span class="pre">generate_trial()</span></code> in the scripe into which you’ve imported it.</p>
+<p><strong>However</strong>, it’s often useful to have addition code in <code class="docutils literal notranslate"><span class="pre">generate_trials.py</span></code> for testing which you do not want to import or run when you import your function. The following conditional evaluates to TRUE <strong>only</strong> when you execute your code directly, e.g., by typing <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">generate_trials.py</span></code> at the command line. It evaluates to FALSE if the code is run through an import. SOme mre</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="c1">#code here is run only when the file is executed directly</span>
 </pre></div>
 </div>
+<p>You can read more about it <a class="reference external" href="https://www.jcchouinard.com/python-if-name-equals-main/">here</a></p>
 </section>
 <section id="importing-a-trial-list">
 <h2>Importing a trial list<a class="headerlink" href="#importing-a-trial-list" title="Permalink to this headline">#</a></h2>
-<p>A flexible routine for importing trial lists (of the kind generated by the generateTrials function) into a list of dictionaries, keyed by column name.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">importTrials</span><span class="p">(</span><span class="n">trialsFilename</span><span class="p">,</span> <span class="n">colNames</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">separator</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">):</span>
+<p>A flexible routine for importing trial lists (of the kind generated by the generateTrials function) into a list of dictionaries, keyed by column name. This is functionally very similar to the importConditions psychopy function (see below)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">import_rials</span><span class="p">(</span><span class="n">trialsFilename</span><span class="p">,</span> <span class="n">colNames</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">separator</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">):</span>
     <span class="n">trialsFile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">trialsFilename</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span>
  
     <span class="k">if</span> <span class="n">colNames</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -1198,7 +1163,7 @@ subjCode and seed are contain the values entered at runtime:</p>
 </pre></div>
 </div>
 <p>You can use it like so:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">trialList</span> <span class="o">=</span> <span class="n">importTrials</span><span class="p">(</span><span class="s1">&#39;trialList.txt&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">trialList</span> <span class="o">=</span> <span class="n">import_rials</span><span class="p">(</span><span class="s1">&#39;trialList.txt&#39;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">curTrial</span> <span class="ow">in</span> <span class="n">trialList</span><span class="p">:</span>
     <span class="n">curTrial</span><span class="p">[</span><span class="n">colName</span><span class="p">]</span> <span class="c1">#to access a particular value (where colName is something like &#39;pictureType&#39;)</span>
 </pre></div>

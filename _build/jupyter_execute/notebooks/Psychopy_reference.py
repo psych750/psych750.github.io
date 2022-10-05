@@ -349,46 +349,51 @@ for curTrial in staircase:
 # import glob
 # from psychopy import visual
 # 
-# def loadFiles(directory,extension,fileType,win='',whichFiles='*',stimList=[]):
-# 	""" Load all the pics and sounds. Uses pyo or pygame for the sound library (see prefs.general['audioLib'])"""
-# 	path = os.getcwd() #set path to current directory
-# 	if isinstance(extension,list):
-# 		fileList = []
-# 		for curExtension in extension:
-# 			fileList.extend(glob.glob(os.path.join(path,directory,whichFiles+curExtension)))
-# 	else:
-# 		fileList = glob.glob(os.path.join(path,directory,whichFiles+extension))
-# 	fileMatrix = {} #initialize fileMatrix  as a dict because it'll be accessed by file names (picture names, sound names)
-# 	for num,curFile in enumerate(fileList):
-# 		fullPath = curFile
-# 		fullFileName = os.path.basename(fullPath)
-# 		stimFile = os.path.splitext(fullFileName)[0]
-# 		if fileType=="image":
-# 			try:
-# 				stim = visual.ImageStim(win, image=fullPath,mask=None,interpolate=True)
-# 				(width,height) = (stim.size[0],stim.size[1])
-# 				fileMatrix[stimFile] = {'stim':stim,'fullPath':fullPath,'filename':stimFile,'num':num,'width':width, 'height':height}
-# 			except:
-# 				print("Need to define window before loading stimuli")
-# 		elif fileType=="sound":
-# 			fileMatrix[stimFile] = {'stim':sound.Sound(fullPath), 'duration':sound.Sound(fullPath).getDuration()}
 # 
-# 	#optionally check a list of desired stimuli against those that've been loaded
-# 	if stimList and set(fileMatrix.keys()).intersection(stimList) != set(stimList):
-# 		popupError(str(set(stimList).difference(fileMatrix.keys())) + " does not exist in " + path+'\\'+directory) 
-# 	return fileMatrix
+# def load_files(directory,extension,fileType,win='',restriction='*',stim_list=[]):
+#     """ Load all the pics and sounds. Uses pyo or pygame for the sound library (see prefs.general['audioLib'])"""
+#     path = os.getcwd() #set path to current directory
+#     if isinstance(extension,list):
+#         file_list = []
+#         for curExtension in extension:
+#             file_list.extend(glob.glob(os.path.join(path,directory,restriction+curExtension)))
+#     else:
+#         file_list = glob.glob(os.path.join(path,directory,restriction+extension))
+#     files_data = {} #initialize files_data  as a dict because it'll be accessed by file names (picture names, sound names)
+#     for num,curFile in enumerate(file_list):
+#         fullPath = curFile
+#         fullFileName = os.path.basename(fullPath)
+#         stimFile = os.path.splitext(fullFileName)[0]
+#         if fileType=="image":
+#             try:
+#                 surface = pygame.image.load(fullPath) #gets height/width of the image
+#                 stim = visual.ImageStim(win, image=fullPath,mask=None,interpolate=True)
+#                 (width,height) = (surface.get_width(),surface.get_height())
+#             except: #if no pygame, image dimensions may not be available
+#                 pass
+#             stim = visual.ImageStim(win, image=fullPath,mask=None,interpolate=True)
+#             (width,height) = (stim.size[0],stim.size[1])
+#             files_data[stimFile] = {'stim':stim,'fullPath':fullFileName,'filename':stimFile,'num':num,'width':width, 'height':height}
+#         elif fileType=="sound":
+#             files_data[stimFile] = {'stim':sound.Sound(fullPath), 'duration':sound.Sound(fullPath).getDuration()}
+#  
+#     #optionally check that the stimuli we *need* to load are actually available in the directory; return error if there is a discrepancy
+#     if stim_list and set(files_data.keys()).intersection(stim_list) != set(stim_list):
+#         popupError(str(set(stim_list).difference(list(files_data.keys()))) + " does not exist in " + path+'\\'+directory) 
+#     return files_data
 # 
+#    
 # 
 # win = visual.Window([200,200],color="black", units='pix')
-# fileMatrix = loadFiles('stimuli/visual','.png',fileType="image",win=win)
+# files_data = load_files('stimuli/visual','.png',fileType="image",win=win)
 # 
 # ```
 # 
 # Sample usage, assuming your stimuli are in stimuli subfolders:
 # 
 # ```python
-# picStims = loadFiles('stimuli/pics','.jpg','image', win=win)
-# soundStims = loadFiles('stimuli/sounds','.wav','sound', win=win)
+# pic_stims = load_files('stimuli/pics','.jpg','image', win=win)
+# sound_stims = load_files('stimuli/sounds','.wav','sound', win=win)
 # ```
 # 
 # You can optionally specify stimList (the list of stims you'll be using
@@ -398,14 +403,14 @@ for curTrial in staircase:
 # Now you can display the image dog.jpg like so:
 # 
 # ```python
-# picStims['dog']['stim'].draw()
+# pic_stims['dog']['stim'].draw()
 # win.flip()
 # ```
 # 
 # Get the full path of the image like this:
 # 
 # ```python
-# picStims['dog']['fullPath']
+# pic_stims['dog']['fullPath']
 # ```
 # 
 # You can play a sound like this
@@ -420,81 +425,40 @@ for curTrial in staircase:
 # soundStims['beep']['duration']
 # ```
 
-# ## A basic factorial design trial list generation file (generateTrials.py)
-
+# ## Importing a custom function and Testing a function that's in a separate file
+# 
+# It is often useful to modularize your code by having conceptually distinct parts stored in separate files. For example, it's useful to have all the code dealing with trial generation inside a separate `generate_trials.py` file. Inside it you might have a function (also called generate_trials in this example, but it can be called anything),  
+# 
 # ```python
-# import random
+# def generate_trials(subj_code,seed):
+#     #your function here...
+#     #generates trials..
+#     #writes to a file, prints stuff to the console for testing etc.
+# ```
+# Assuming this function is inside a file called generate_trials.py, you can import it like so:
 # 
-# stims = ["cat", "car", "dog", "frog", "gun","motorcycle","rooster", "train", "cow", "whistle"] 
-# primeTypes = ["label","sound","noPrime"]
-# side = {'left':'right','right':'left'}
-# isValid = ["0"]*1+["1"]*4
-# separator = ","
-# seed=10
+# ```python
+# from generate_trials import generate_trials
+# ```
 # 
-# headerCols = ['curStim', 'curPrimeType', 'curIsValid', 'curSoundFile', 'curTargetSide', 'curDistractorSide']
-# header = separator.join(headerCols)
+# The first part is the file name; the second is the function name. They do not have to be the same. Now you'll be able to call `generate_trial()` in the scripe into which you've imported it.
 # 
+# **However**, it's often useful to have addition code in `generate_trials.py` for testing which you do not want to import or run when you import your function. The following conditional evaluates to TRUE **only** when you execute your code directly, e.g., by typing `python generate_trials.py` at the command line. It evaluates to FALSE if the code is run through an import. SOme mre
 # 
-# def generateTrials(subjCode,seed):
-#     trialList=[]
-#     for curStim in stims:
-#         for curPrimeType in primeTypes:
-#             for curIsValid in isValid:
-#                 for curTargetSide in side.keys():
-#                     if curPrimeType=='noPrime':
-#                         soundFile = 'noise'
-#                         curIsValid = '*'
-#                     else:
-#                         if curIsValid=="1":
-#                             curSoundFile = '_'.join([curStim,curPrimeType])
-#                         elif curIsValid=="0":
-#                             curSoundFile = '_'.join([randomButNot(stims,curStim),curPrimeType])
-#                     curDistractorSide = side[curTargetSide]
-#                     try:
-#                         trial = separator.join(map(str,map(eval,headerCols)))
-#                     except NameError:
-#                         print('column not defined.  check code')
-#                     trialList.append(trial)
-# 
-#     random.seed(seed)
-#     random.shuffle(trialList)
-#     try:
-#         trialFile = open('trialList_'+subjCode+'.csv','w')
-#         trialFile.write(header+'\n')
-#         [trialFile.write(curTrial+'\n') for curTrial in trialList]
-#         return trialList
-#     except:
-#         return False
-# 
+# ```python
 # if __name__ == "__main__":
-#     #for testing; this part is only executed if you run generateTrials.py from the terminal.
-#     trialList = generateTrials('test',10)
-#     print(header)
-#     for curTrial in trialList:
-#         print(curTrial)
-# ```
-
-# To use it inside your main experiment file, import it like so:
-# 
-# ```python
-# from generateTrials import generateTrials
+#     #code here is run only when the file is executed directly
 # ```
 # 
-# (this assumes that the code above is placed in a file called
-# generateTrials.py) Now, you can create a trialList_subjCode.csv file by
-# having a line like this in your main experiment file (making sure that
-# subjCode and seed are contain the values entered at runtime:
 # 
-# ```python
-# generateTrials(subjCode,seed)
-# ```
+# You can read more about it [here](https://www.jcchouinard.com/python-if-name-equals-main/)
+# 
 
 # ## Importing a trial list
-# A flexible routine for importing trial lists (of the kind generated by the generateTrials function) into a list of dictionaries, keyed by column name.
+# A flexible routine for importing trial lists (of the kind generated by the generateTrials function) into a list of dictionaries, keyed by column name. This is functionally very similar to the importConditions psychopy function (see below) 
 
 # ```python
-# def importTrials(trialsFilename, colNames=None, separator='\t'):
+# def import_rials(trialsFilename, colNames=None, separator='\t'):
 #     trialsFile = open(trialsFilename, 'rb')
 #  
 #     if colNames is None:
@@ -512,7 +476,7 @@ for curTrial in staircase:
 # You can use it like so:
 # 
 # ```python
-# trialList = importTrials('trialList.txt')
+# trialList = import_rials('trialList.txt')
 # for curTrial in trialList:
 #     curTrial[colName] #to access a particular value (where colName is something like 'pictureType')
 # ```

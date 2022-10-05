@@ -68,8 +68,10 @@ parts:
       title: A few dictionary activities
     - file: notebooks/activity_trial_generation
       title: Some more trial generation practice
-    - file: notebooks/activity_debugging_1
+    - file: notebooks/activity_debugging
       title: Debugging practice 1
+    - file: notebooks/activity_debugging_experiments
+      title: Debugging practice 2
   - caption: Exercises
     chapters:
     - file: notebooks/Exercise0-test

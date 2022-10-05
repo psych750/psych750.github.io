@@ -100,45 +100,40 @@
 # 1. [Handling exceptions ](https://docs.python.org/3.7/tutorial/errors.html)
 # 2. [Review of Fundamentals A](https://psych750.github.io/notebooks/review_of_fundamentals_a.html) - test yourself!!
 # 3. Complete Exercise 4 (use exception-handling as necessary).
-# 4. [File globbing and image preloading](https://psych750.github.io/notebooks/globbing_files.html)
 # 
 # ### In class
-# 1. Exercise 4 Code Review (40 mins; groups review each other's code)
-# 2. Debugging activities - namespace bugs, indexing bugs
-# 3. Intro to interactive experiments
+# 1. Exercise 4 Code Review (25 mins; groups review each other's code)
+# 2. A little extra flourish - [Saving state through pickling](https://psychopy.org/api/tools/filetools.html)
+# 3. Debugging activities - namespace bugs, indexing bugs, practice with error catching
+# 4. Reading and writing dataframes with pandas
+# 5. Intro to interactive experiments (Exercise 5)
+# 6. Working with external files ([globbing and preloading](https://psych750.github.io/notebooks/globbing_files.html))
+
+# ## Week 6 (Oct 13)
+# 
+# ### At home
+# 1. Look carefully through `my_first_function_library.py` function library in the Exercise 5 folder and try to understand the code. Play with it. Explore.
+# 2. Finish Exercise 5, using appropriate functionality from `my_first_function_library.py`
+# 3. Ensure your R-studio environment works and that you have the following libraries installed: `tidyverse, ggplot2, psych, psychTools, lme4`. R notebooks don't run that well inside Visual Code Studio, so we'll be running them inside R Studio instead.
+# 
+# ### In class
+# 1. Data Wrangling Crash Course (1/2)
+#    a. Data that **you've** created.
+#    b. Well formatted external data (General Social Survey)
+#    c. Messier (real world) data 
 
 # <!-- 
-# Week 3 (Sept 22): File access; basic randomization
 # 
-# 1. Watch [random number generators](https://www.youtube.com/watch?v=_tN2ev3hO14) and read through the [random module](https://docs.python.org/2/library/random.html) documentation.
+# Comma (CSV) vs. Tab (TSV) data files. 
+# https://github.com/eBay/tsv-utils/blob/master/docs/comparing-tsv-and-csv.md
 # 
 # 
-#  At home: Finish and submit the names exercise. 
+# 4. [File globbing and image preloading](https://psych750.github.io/notebooks/globbing_files.html)
 # 
-# Week 4 (Sept 29): Dictionaries, namespaces, and readable code.
 # 
-#  At home: Finish Exercise 3, Dictionaries study guide, [Variable
-#  scope](http://sebastianraschka.com/Articles/2014_python_scope_and_namespaces.html),
-#  
+# 5. Watch [random number generators](https://www.youtube.com/watch?v=_tN2ev3hO14) and read through the [random module](https://docs.python.org/2/library/random.html) documentation.
 # 
-#  In class: Modularizing with functions, debugging, practice writing
-#  more readable code, Coding a perceptual grouping task. Capturing
-#  [mouse clicks](http://www.psychopy.org/api/event.html).
 # 
-# Week 5 (Oct 6): Randomization 2: seeds, blocks, combinations and
-# permutations
-# 
-#  At home: [Trial generation
-#  notebooks](http://sapir.psych.wisc.edu/programming_for_psychologists/notebooks/trial_generation.html),
-#  [Itertools
-#  documentation](https://docs.python.org/2/library/itertools.html)
-# 
-#  In class: Practice with more complex trial generation
-# 
-# Week 6 (Oct 13): Manipulating files, list comprehension
-# 
-#  At home: Go through Exercise 5b solution; run yourself; upload data to
-#  dropbox
 # 
 #  In class: Auto loading external stimuli with glob. List comprehension
 #  exercises. Project 1 planning
