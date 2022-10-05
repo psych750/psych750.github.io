@@ -496,8 +496,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#easy-way-to-get-a-bunch-of-runtime-variables">
-     Easy way to get a bunch of runtime variables
+    <a class="reference internal nav-link" href="#easier-way-to-get-a-bunch-of-runtime-variables">
+     Easier way to get a bunch of runtime variables
     </a>
    </li>
   </ul>
@@ -628,8 +628,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#easy-way-to-get-a-bunch-of-runtime-variables">
-     Easy way to get a bunch of runtime variables
+    <a class="reference internal nav-link" href="#easier-way-to-get-a-bunch-of-runtime-variables">
+     Easier way to get a bunch of runtime variables
     </a>
    </li>
   </ul>
@@ -755,23 +755,23 @@ title="Print to PDF"
 <p>Here’s the simplest code:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">psychopy</span> <span class="kn">import</span> <span class="n">visual</span><span class="p">,</span> <span class="n">gui</span>
 
-<span class="n">userVar</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span><span class="s1">&#39;Enter your name&#39;</span><span class="p">}</span>
+<span class="n">runtime_variables</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span><span class="s1">&#39;Enter your name&#39;</span><span class="p">}</span>
 <span class="n">dlg</span> <span class="o">=</span> <span class="n">gui</span><span class="o">.</span><span class="n">DlgFromDict</span><span class="p">(</span><span class="n">userVar</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>You can now access the value of the ‘Name’ variable using the
 following syntax:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">userVar</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">runtime_variables</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>For example, if I enter ‘Gary’ in the pop-up box. Then once I press
 enter and the box closes,</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">userVar</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">runtime_variables</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>will return the string ‘Gary’</p>
 <p>Note that when the box pops up it will be pre-filled with “Enter your
-name”. To overwrite it, just hit tab until it’s highlights. Or
+name”. To overwrite it, just hit tab until it’s highlightd. Or
 position your cursor inside it, hit command-A (ctrl-A on PC) which will
 highlight all the text, and then start typing. For a more elegant text
 box, see below.</p>
@@ -793,12 +793,12 @@ box, see below.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><code class="docutils literal notranslate"><span class="pre">myDlg.data</span></code> is a list, so to access the first element, you should index it: <code class="docutils literal notranslate"><span class="pre">myDlg.data[0]</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">myDlg.data</span></code> is a list, so to access the first element, you should index it: <code class="docutils literal notranslate"><span class="pre">myDlg.data[0]</span></code>. This method is included for demonstration, but is <strong>not</strong> preferable because it requires you to know and keep track of which index corresponds to which variable.</p>
 </div>
 </section>
-<section id="easy-way-to-get-a-bunch-of-runtime-variables">
-<h3>Easy way to get a bunch of runtime variables<a class="headerlink" href="#easy-way-to-get-a-bunch-of-runtime-variables" title="Permalink to this headline">#</a></h3>
-<p>Runtime variables are variables you want to set at runtime – the subject code, demographic info, the condition(s) the subject is assigned to, etc.</p>
+<section id="easier-way-to-get-a-bunch-of-runtime-variables">
+<h3>Easier way to get a bunch of runtime variables<a class="headerlink" href="#easier-way-to-get-a-bunch-of-runtime-variables" title="Permalink to this headline">#</a></h3>
+<p>Runtime variables are variables you want to set at runtime – the subject code, demographic info, the condition(s) the subject is assigned to, etc. Here’s a more flexible solution (compared to those listed above) to get a bunch of variables at the same time.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_runtime_vars</span><span class="p">(</span><span class="n">vars_to_get</span><span class="p">,</span><span class="n">order</span><span class="p">,</span><span class="n">exp_version</span><span class="o">=</span><span class="s2">&quot;experiment_code_for_reference&quot;</span><span class="p">):</span>
     <span class="c1">#Get run time variables, see http://www.psychopy.org/api/gui.html for explanation</span>
     <span class="n">infoDlg</span> <span class="o">=</span> <span class="n">gui</span><span class="o">.</span><span class="n">DlgFromDict</span><span class="p">(</span><span class="n">dictionary</span><span class="o">=</span><span class="n">vars_to_get</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">exp_version</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">)</span>
@@ -809,7 +809,7 @@ box, see below.</p>
 </pre></div>
 </div>
 <p>Sample usage:</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">order</span> <span class="o">=</span>  <span class="p">[</span><span class="s1">&#39;subj_code&#39;</span><span class="p">,</span><span class="s1">&#39;seed&#39;</span><span class="p">,</span><span class="s1">&#39;gender&#39;</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">order</span> <span class="o">=</span>  <span class="p">[</span><span class="s1">&#39;subj_code&#39;</span><span class="p">,</span><span class="s1">&#39;seed&#39;</span><span class="p">,</span><span class="s1">&#39;gender&#39;</span><span class="p">]</span>
 <span class="n">runtime_vars</span><span class="o">=</span> <span class="n">getRunTimeVars</span><span class="p">({</span><span class="s1">&#39;subj_code&#39;</span><span class="p">:</span><span class="s1">&#39;stroop_101&#39;</span><span class="p">,</span> <span class="s1">&#39;seed&#39;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;gender&#39;</span><span class="p">:[</span><span class="s1">&#39;Choose&#39;</span><span class="p">,</span> <span class="s1">&#39;male&#39;</span><span class="p">,</span><span class="s1">&#39;female&#39;</span><span class="p">,</span> <span class="s1">&#39;other&#39;</span><span class="p">]},</span> <span class="n">order</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -871,7 +871,7 @@ box, see below.</p>
         <span class="n">keys</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">getKeys</span><span class="p">()</span>        
         <span class="k">if</span> <span class="n">keys</span><span class="p">:</span>
             <span class="n">win</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;user presed &#39;</span><span class="p">,</span><span class="n">keys</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;user pressed &#39;</span><span class="p">,</span><span class="n">keys</span><span class="p">)</span>
             <span class="k">return</span>
 
 <span class="n">show_text_until_mouse_or_keypress</span><span class="p">(</span><span class="n">win</span><span class="p">,</span><span class="s2">&quot;sample text&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="n">mouse</span><span class="p">)</span>
@@ -879,8 +879,8 @@ box, see below.</p>
 </div>
 </div>
 </div>
-<div class="admonition-more-advanced-python-tip admonition">
-<p class="admonition-title">More advanced Python tip</p>
+<div class="admonition-advanced-tip admonition">
+<p class="admonition-title">Advanced tip</p>
 <p>Notice that we had to use a temporary variable <code class="docutils literal notranslate"><span class="pre">keys</span></code> to store the value of a keypress (if one exists). We then check whether keys is non-empty in the subsequent if statement. Wouldn’t it be nice if we could do both in one line? Python 3.8 provides this functionality with the <code class="docutils literal notranslate"><span class="pre">:=</span></code> operator which allows us to check whether a statement is true <em>and</em> assign its return value in one go. So instead of having separate lines we can just have <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">keys</span> <span class="pre">!=</span>&#160; <span class="pre">event.getKeys():</span></code></p>
 </div>
 </section>
@@ -936,21 +936,15 @@ without any arguments:</p>
 <h3>A generic function for collecting responses<a class="headerlink" href="#a-generic-function-for-collecting-responses" title="Permalink to this headline">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">psychopy</span> <span class="kn">import</span> <span class="n">event</span><span class="p">,</span> <span class="n">core</span>
 
-<span class="k">def</span> <span class="nf">getKeyboardResponse</span><span class="p">(</span><span class="n">validResponses</span><span class="p">,</span><span class="n">duration</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Returns keypress and RT. Specify a duration (in secs) if you want response collection to last that long. Unlike event.waitkeys(maxWait=..), this function will not exit until duration. Use waitKeys with a maxWait parameter if you want to have a response deadline, but exit as soon as a response is received.&quot;&quot;&quot;</span>
-
-    <span class="n">event</span><span class="o">.</span><span class="n">clearEvents</span><span class="p">()</span> 
-    <span class="c1">#not strictly necessary here, but good practice - </span>
-    <span class="c1">#will prevent buffer overruns if, for some reason there are too many responses in</span>
-    <span class="c1">#between auto-clears (e.g., from mouse, eye tracking data)</span>
-    
+<span class="k">def</span> <span class="nf">get_keyboard_response</span><span class="p">(</span><span class="n">validResponses</span><span class="p">,</span><span class="n">duration</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="n">event</span><span class="o">.</span><span class="n">clearEvents</span><span class="p">()</span>
     <span class="n">responded</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="n">done</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="n">rt</span> <span class="o">=</span> <span class="s1">&#39;*&#39;</span>
     <span class="n">responseTimer</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">Clock</span><span class="p">()</span>
     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span> 
         <span class="k">if</span> <span class="ow">not</span> <span class="n">responded</span><span class="p">:</span>
-            <span class="n">responded</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">getKeys</span><span class="p">(</span><span class="n">validResponses</span><span class="p">,</span> <span class="n">responseTimer</span><span class="p">)</span> 
+            <span class="n">responded</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">getKeys</span><span class="p">(</span><span class="n">keyList</span><span class="o">=</span><span class="n">validResponses</span><span class="p">,</span> <span class="n">timeStamped</span><span class="o">=</span><span class="n">responseTimer</span><span class="p">)</span> 
         <span class="k">if</span> <span class="n">duration</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">responseTimer</span><span class="o">.</span><span class="n">getTime</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">duration</span><span class="p">:</span>
                 <span class="k">break</span>
@@ -958,9 +952,10 @@ without any arguments:</p>
             <span class="k">if</span> <span class="n">responded</span><span class="p">:</span>
                 <span class="k">break</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">responded</span><span class="p">:</span>
-        <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;*&#39;</span><span class="p">,</span><span class="s1">&#39;*&#39;</span><span class="p">]</span>
+        <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;NA&#39;</span><span class="p">,</span><span class="s1">&#39;NA&#39;</span><span class="p">]</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">responded</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">#only get the first resp</span>
+
 </pre></div>
 </div>
 </section>
@@ -992,7 +987,7 @@ circle. As it happens, psychopy provides a handy <a class="reference external" h
 built-in one, allowing you to pass in a list of angles:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="k">def</span> <span class="nf">polarToRect</span><span class="p">(</span><span class="n">angleList</span><span class="p">,</span><span class="n">radius</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">polar_to_rect</span><span class="p">(</span><span class="n">angleList</span><span class="p">,</span><span class="n">radius</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Accepts a list of angles and a radius.  Outputs the x,y positions for the angles&quot;&quot;&quot;</span>
     <span class="n">coords</span><span class="o">=</span><span class="p">[]</span>
     <span class="k">for</span> <span class="n">curAngle</span> <span class="ow">in</span> <span class="n">angleList</span><span class="p">:</span>
@@ -1002,11 +997,11 @@ built-in one, allowing you to pass in a list of angles:</p>
         <span class="n">coords</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">xCoord</span><span class="p">,</span><span class="n">yCoord</span><span class="p">])</span>
     <span class="k">return</span> <span class="n">coords</span>
 
-<span class="n">polarToRect</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">90</span><span class="p">],</span><span class="mi">50</span><span class="p">)</span> <span class="c1">#generate the x,y coordinates for supplied angles with a radius of 50</span>
+<span class="n">polar_to_rect</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">90</span><span class="p">],</span><span class="mi">50</span><span class="p">)</span> <span class="c1">#generate the x,y coordinates for supplied angles with a radius of 50</span>
 <span class="c1"># [[50.0, 0.0], [43.0, 25.0], [25.0, 43.0], [0.0, 50.0]]</span>
 </pre></div>
 </div>
-<p><strong>Hint:</strong> You can use list comprehension to make psychopy’s built-in function work like the one above:</p>
+<p>You can use list comprehension to make psychopy’s built-in function work like the one above</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">psychopy.tools</span> <span class="kn">import</span> <span class="n">coordinatetools</span>
 <span class="p">[</span><span class="n">coordinatetools</span><span class="o">.</span><span class="n">pol2cart</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span> <span class="k">for</span> <span class="n">theta</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">90</span><span class="p">)]</span>
 </pre></div>
@@ -1038,9 +1033,9 @@ to set the position of your stimulus to something to the negative 15th power.)</
 <span class="sd">staircase is an iterator; you can get its next stat by calling </span>
 <span class="sd">staircase.next(), or having it in a loop:</span>
 <span class="sd">&#39;&#39;&#39;</span>
-<span class="k">for</span> <span class="n">curTrial</span> <span class="ow">in</span> <span class="n">staircase</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">curTrial</span><span class="p">)</span>
-    <span class="c1">#curTrial will contain the current intensity value, here, beginning with 20 </span>
+<span class="k">for</span> <span class="n">cur_trial</span> <span class="ow">in</span> <span class="n">staircase</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">cur_trial</span><span class="p">)</span>
+    <span class="c1">#cur_trial will contain the current intensity value, here, beginning with 20 </span>
     <span class="n">staircase</span><span class="o">.</span><span class="n">addResponse</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># 1 if response is correct; 0 if incorrect</span>
 </pre></div>
 </div>
@@ -1115,11 +1110,11 @@ sure that all the stimuli you need are available.</p>
 </pre></div>
 </div>
 <p>You can play a sound like this</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">soundStims</span><span class="p">[</span><span class="s1">&#39;beep&#39;</span><span class="p">][</span><span class="s1">&#39;stim&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sound_stims</span><span class="p">[</span><span class="s1">&#39;beep&#39;</span><span class="p">][</span><span class="s1">&#39;stim&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>And get its duration like this:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">soundStims</span><span class="p">[</span><span class="s1">&#39;beep&#39;</span><span class="p">][</span><span class="s1">&#39;duration&#39;</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sound_stims</span><span class="p">[</span><span class="s1">&#39;beep&#39;</span><span class="p">][</span><span class="s1">&#39;duration&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </section>
@@ -1147,7 +1142,7 @@ sure that all the stimuli you need are available.</p>
 <section id="importing-a-trial-list">
 <h2>Importing a trial list<a class="headerlink" href="#importing-a-trial-list" title="Permalink to this headline">#</a></h2>
 <p>A flexible routine for importing trial lists (of the kind generated by the generateTrials function) into a list of dictionaries, keyed by column name. This is functionally very similar to the importConditions psychopy function (see below)</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">import_rials</span><span class="p">(</span><span class="n">trialsFilename</span><span class="p">,</span> <span class="n">colNames</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">separator</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">import_rials</span><span class="p">(</span><span class="n">trialsFilename</span><span class="p">,</span> <span class="n">colNames</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">separator</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">):</span>
     <span class="n">trialsFile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">trialsFilename</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span>
  
     <span class="k">if</span> <span class="n">colNames</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
