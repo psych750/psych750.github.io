@@ -479,8 +479,23 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#improving-the-design">
-   Improving the design
+  <a class="reference internal nav-link" href="#part-1">
+   Part 1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-2">
+   Part 2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-3">
+   Part 3
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-4">
+   Part 4
   </a>
  </li>
 </ul>
@@ -503,8 +518,23 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#improving-the-design">
-   Improving the design
+  <a class="reference internal nav-link" href="#part-1">
+   Part 1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-2">
+   Part 2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-3">
+   Part 3
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-4">
+   Part 4
   </a>
  </li>
 </ul>
@@ -519,86 +549,105 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="exercise-5-interactive-experiments">
 <h1>Exercise 5 - Interactive experiments<a class="headerlink" href="#exercise-5-interactive-experiments" title="Permalink to this headline">#</a></h1>
+<p><a class="reference external" href="https://classroom.github.com/a/bxyDH5Uq">Accept the exercise</a></p>
 <p>Inside the exercise 5 repository is a 1-page article by <a class="reference external" href="http://www.nature.com/neuro/journal/v3/n1/full/nn0100_13.html">Whitaker and McGraw
 (2000)</a> who report a curious tilt illusion that I have recreated for you below.</p>
 <a class="reference internal image-reference" href="../_images/digitalclocks.png"><img alt="Digital Clock" class="align-center" src="../_images/digitalclocks.png" style="width: 460px;" /></a>
-<p>Believe it or not, the degree of tilt of the numbers in the two alarm clocks is exactly the same. More curious still is that the illusion largely goes away if the stimuli are not plausible numbers (though depending on the conditions, it can be elicited with letters as well). See for yourselves!</p>
+<p>Believe it or not, while the numbers in the two alarm clocks are tilted in opposite directions, they are tilted to the exact same degree. More curious still is that the illusion largely goes away if the stimuli are not plausible numbers (though depending on the conditions, it can be elicited with letters as well). See for yourselves!</p>
 <a class="reference internal image-reference" href="../_images/digitalclocks_reversed.png"><img alt="Digital Clock Reversed" class="align-center" src="../_images/digitalclocks_reversed.png" style="width: 460px;" /></a>
-<p>If we are going to figure out what causes this illusion, we need to start by measuring its strength. That’s what this exercise will show you. The other purpose of this exercise is to show you how to code a simple interactive experiment, how to load external files, and how to collect responses from the mouse.</p>
+<p>If we are going to figure out what causes this illusion, we need to start by measuring its strength. The exercise has two purposes. First, it serves as an example of a simple interactive experiment and is designed to help you cement some coding patterns we’ve been working on (loading in external files) while also teaching you some new things (how to use the mouse for responding). Second, it’s a nice illustration of how we go about measuring the strength of an illusion.</p>
 <p>On each trial, the participant will view one of the “standard” images – numbers or letters presented in the normal or reversed orientation and tilting to the left or right.</p>
-<p>The participants’ goal is to adjust the orientation of a small gabor stimulus positioned below the clock display such that it matches the orientation of the standard image.
+<p>The participants’ goal is to adjust the orientation of a small line positioned below the clock display such that it matches the orientation of the standard image. The extent
 Participants orientation of the gabor using the mouse wheel.</p>
-<p>Your task is to fill in <code class="docutils literal notranslate"><span class="pre">do_adjustment()</span></code> with the code necessary to display the stimuli, update the orientation of <code class="docutils literal notranslate"><span class="pre">adjustingStim</span></code> and print some data.</p>
-<p>Since you all know how to write proper data files already, for this exercise, just have the output to print to the terminal in the following way:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stimType</span> <span class="n">base</span> <span class="n">orientation</span> <span class="n">angle</span> <span class="n">direction</span> <span class="n">response</span>
-<span class="n">letters</span> <span class="n">ycyc</span> <span class="n">inverted</span> <span class="mi">2</span> <span class="n">left</span> <span class="mi">3</span>
-<span class="n">letters</span> <span class="n">ycyc</span> <span class="n">upright</span> <span class="mi">5</span> <span class="n">right</span> <span class="mi">3</span>
-<span class="n">numbers</span> <span class="mi">7</span><span class="o">-</span><span class="mi">44</span> <span class="n">upright</span> <span class="mi">12</span> <span class="n">left</span> <span class="mi">2</span>
-<span class="n">numbers</span> <span class="mi">7</span><span class="o">-</span><span class="mi">44</span> <span class="n">inverted</span> <span class="mi">12</span> <span class="n">left</span> <span class="o">-</span><span class="mi">10</span>
-</pre></div>
-</div>
+<p>Your task is to fill in <code class="docutils literal notranslate"><span class="pre">do_adjustment()</span></code> with the code necessary to display the stimuli, update the orientation of <code class="docutils literal notranslate"><span class="pre">adjusting_stim</span></code> and write some data to a CSV file for later analysis.</p>
 <p>Here is the code for getting mouse wheel movements (which are equivalent to scrolling on a
 trackpad, normally a two finger vertical swipe).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">psychopy</span> <span class="kn">import</span> <span class="n">core</span><span class="p">,</span> <span class="n">visual</span><span class="p">,</span> <span class="n">prefs</span><span class="p">,</span> <span class="n">event</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">psychopy</span> <span class="kn">import</span> <span class="n">core</span><span class="p">,</span> <span class="n">visual</span><span class="p">,</span> <span class="n">prefs</span><span class="p">,</span> <span class="n">event</span>
 <span class="n">win</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Window</span><span class="p">([</span><span class="mi">800</span><span class="p">,</span><span class="mi">600</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s1">&#39;pix&#39;</span><span class="p">)</span>
 
 <span class="n">myMouse</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">Mouse</span><span class="p">()</span>
 <span class="n">myMouse</span><span class="o">.</span><span class="n">setVisible</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
-<span class="n">numWheelTurnsDown</span><span class="o">=</span><span class="n">numWheelTurnsUp</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">num_wheel_turns_down</span><span class="o">=</span><span class="n">num_wheel_turns_up</span><span class="o">=</span><span class="mi">0</span>
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
     <span class="n">wheelRel</span> <span class="o">=</span> <span class="n">myMouse</span><span class="o">.</span><span class="n">getWheelRel</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
     <span class="k">if</span> <span class="n">wheelRel</span><span class="o">&gt;</span><span class="mf">0.0</span><span class="p">:</span>
-        <span class="n">numWheelTurnsDown</span><span class="o">+=</span><span class="mi">1</span>
-        <span class="nb">print</span> <span class="s1">&#39;wheel down&#39;</span><span class="p">,</span> <span class="n">numWheelTurnsUp</span><span class="p">,</span> <span class="n">numWheelTurnsDown</span>
+        <span class="n">num_wheel_turns_down</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;wheel down: &#39;</span><span class="p">,</span> <span class="n">num_wheel_turns_up</span><span class="p">,</span> <span class="n">num_wheel_turns_down</span><span class="p">)</span>
     <span class="k">elif</span> <span class="n">wheelRel</span><span class="o">&lt;</span><span class="mf">0.0</span><span class="p">:</span>
-        <span class="n">numWheelTurnsUp</span><span class="o">+=</span><span class="mi">1</span>
-        <span class="nb">print</span> <span class="s1">&#39;wheel up&#39;</span><span class="p">,</span> <span class="n">numWheelTurnsUp</span><span class="p">,</span> <span class="n">numWheelTurnsDown</span>
+        <span class="n">num_wheel_turns_up</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;wheel up&#39;</span><span class="p">,</span> <span class="n">num_wheel_turns_up</span><span class="p">,</span> <span class="n">num_wheel_turns_down</span><span class="p">)</span>
         
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-10-05 09:24:20.400 python[47727:2051381] Warning: Expected min height of view: (&lt;NSPopoverTouchBarItemButton: 0x7fd6e32ca600&gt;) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+2022-10-05 09:24:20.401 python[47727:2051381] Warning: Expected min height of view: (&lt;NSButton: 0x7fd6e4c42890&gt;) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+2022-10-05 09:24:20.403 python[47727:2051381] Warning: Expected min height of view: (&lt;NSPopoverTouchBarItemButton: 0x7fd6e4c43450&gt;) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+2022-10-05 09:24:20.405 python[47727:2051381] Warning: Expected min height of view: (&lt;NSPopoverTouchBarItemButton: 0x7fd6e4c48d00&gt;) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+</pre></div>
 </div>
-<p>And here’s your starter code</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">psychopy</span> <span class="kn">import</span> <span class="n">core</span><span class="p">,</span> <span class="n">visual</span><span class="p">,</span> <span class="n">prefs</span><span class="p">,</span> <span class="n">event</span>
-<span class="kn">from</span> <span class="nn">useful_functions</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">win</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Window</span><span class="p">([</span><span class="mi">800</span><span class="p">,</span><span class="mi">600</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s1">&#39;pix&#39;</span><span class="p">)</span>
-<span class="n">myMouse</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">Mouse</span><span class="p">()</span>
-<span class="n">myMouse</span><span class="o">.</span><span class="n">setVisible</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">/Users/glupyan/gitRepos/psych750.github.io/notebooks/Exercise5-interactive.ipynb Cell 8</span> in <span class="ni">&lt;cell line: 9&gt;</span><span class="nt">()</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750.github.io/notebooks/Exercise5-interactive.ipynb#W6sZmlsZQ%3D%3D?line=6&#39;</span><span class="o">&gt;</span><span class="mi">7</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">num_wheel_turns_down</span><span class="o">=</span><span class="n">num_wheel_turns_up</span><span class="o">=</span><span class="mi">0</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750.github.io/notebooks/Exercise5-interactive.ipynb#W6sZmlsZQ%3D%3D?line=7&#39;</span><span class="o">&gt;</span><span class="mi">8</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="o">----&gt;</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750.github.io/notebooks/Exercise5-interactive.ipynb#W6sZmlsZQ%3D%3D?line=8&#39;</span><span class="o">&gt;</span><span class="mi">9</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>     <span class="n">wheelRel</span> <span class="o">=</span> <span class="n">myMouse</span><span class="o">.</span><span class="n">getWheelRel</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
+     <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750.github.io/notebooks/Exercise5-interactive.ipynb#W6sZmlsZQ%3D%3D?line=9&#39;</span><span class="o">&gt;</span><span class="mi">10</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>     <span class="k">if</span> <span class="n">wheelRel</span><span class="o">&gt;</span><span class="mf">0.0</span><span class="p">:</span>
+     <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750.github.io/notebooks/Exercise5-interactive.ipynb#W6sZmlsZQ%3D%3D?line=10&#39;</span><span class="o">&gt;</span><span class="mi">11</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>         <span class="n">num_wheel_turns_down</span><span class="o">+=</span><span class="mi">1</span>
 
-<span class="n">pics</span> <span class="o">=</span>  <span class="n">loadFiles</span><span class="p">(</span><span class="s1">&#39;stimuli/&#39;</span><span class="p">,</span><span class="s1">&#39;.png&#39;</span><span class="p">,</span><span class="s1">&#39;image&#39;</span><span class="p">,</span> <span class="n">win</span><span class="o">=</span><span class="n">win</span><span class="p">)</span>
-<span class="n">adjustStim</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">GratingStim</span><span class="p">(</span><span class="n">win</span><span class="o">=</span><span class="n">win</span><span class="p">,</span><span class="n">tex</span><span class="o">=</span><span class="s1">&#39;sin&#39;</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="s1">&#39;gauss&#39;</span><span class="p">,</span><span class="n">interpolate</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="mi">96</span><span class="p">],</span> <span class="n">pos</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">150</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+<span class="nn">File ~/anaconda3/envs/psych750/lib/python3.8/site-packages/psychopy/event.py:784,</span> in <span class="ni">Mouse.getWheelRel</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">782</span> <span class="k">global</span> <span class="n">mouseWheelRel</span>
+<span class="g g-Whitespace">    </span><span class="mi">783</span> <span class="n">rel</span> <span class="o">=</span> <span class="n">mouseWheelRel</span>
+<span class="ne">--&gt; </span><span class="mi">784</span> <span class="n">mouseWheelRel</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">])</span>
+<span class="g g-Whitespace">    </span><span class="mi">785</span> <span class="k">return</span> <span class="n">rel</span>
 
-
-<span class="k">def</span> <span class="nf">do_adjustment</span><span class="p">(</span><span class="n">pic</span><span class="p">):</span>
-	<span class="n">numWheelTurnsDown</span><span class="o">=</span><span class="n">numWheelTurnsUp</span><span class="o">=</span><span class="mi">0</span>
-	<span class="n">responded</span><span class="o">=</span><span class="kc">False</span>
-	<span class="k">while</span> <span class="ow">not</span> <span class="n">responded</span><span class="p">:</span>
-		<span class="n">pics</span><span class="p">[</span><span class="n">pic</span><span class="p">][</span><span class="s1">&#39;stim&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
-		<span class="n">adjustStim</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
-
-		<span class="c1">#insert your code here</span>
-
-		<span class="k">if</span> <span class="n">myMouse</span><span class="o">.</span><span class="n">getPressed</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
-			<span class="n">responded</span><span class="o">=</span><span class="kc">True</span>
-		<span class="n">win</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
-	
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-	<span class="n">do_adjustment</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">pics</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
 </div>
-<div class="alert alert-block alert-info">
-Hint: Make sure to print a test message each time you register a response so you can make sure your response collection is working as it should.
-</div><section id="improving-the-design">
-<h2>Improving the design<a class="headerlink" href="#improving-the-design" title="Permalink to this headline">#</a></h2>
-<p>What are some things you can add to this experiment to improve the procedure?</p>
+<p>Your starter code has this code wrapped in a <code class="docutils literal notranslate"><span class="pre">do_adjustment()</span></code> function. We’ll go over it in class.</p>
+<section id="part-1">
+<h2>Part 1<a class="headerlink" href="#part-1" title="Permalink to this headline">#</a></h2>
+<p>Grab a set of runtime variables using a GUI box as we did previously. You should have an error check built-in so you don’t overwrite an existing data file. Also use the saving state trick I showed you to load in the previous values you used, so if you ran subject tilt_103, that’s the value that comes up in the GUI box the next time you run.</p>
+<p>For the runtime variables, just use these:</p>
+<ul class="simple">
+<li><p>Subject code</p></li>
+<li><p>Random seed (controls the pseudo-random order)</p></li>
+<li><p>Number of blocks (an integer – one controls how many times we go through the stimulus list)</p></li>
+</ul>
+</section>
+<section id="part-2">
+<h2>Part 2<a class="headerlink" href="#part-2" title="Permalink to this headline">#</a></h2>
+<p>Pass these runtime variables to generate_trials() so that it generates a subjCode_trials.csv trial file with the correct properties. This one’s very simple – just iterate through all the image files number of blocks times, in pseudo-random order (determined by the seed). The starter code for <code class="docutils literal notranslate"><span class="pre">generate_trials()</span></code> uses <code class="docutils literal notranslate"><span class="pre">os.glob()</span></code> to get a list of filenames inside the <code class="docutils literal notranslate"><span class="pre">stimuli</span></code> directory. Notice that the starter code for <code class="docutils literal notranslate"><span class="pre">generate_trials()</span></code> breaks up the fiename into its fields. Write these into appropriate columns in your trials file so that you can read them in and use them in your main script.</p>
+</section>
+<section id="part-3">
+<h2>Part 3<a class="headerlink" href="#part-3" title="Permalink to this headline">#</a></h2>
+<p>Read in the trial file – use column headers! –  show the appropriate trial and collect the response. For this part, just print the response (the angle of the adjustable bar), to the console. No need to write to a data-file just yet.</p>
+</section>
+<section id="part-4">
+<h2>Part 4<a class="headerlink" href="#part-4" title="Permalink to this headline">#</a></h2>
+<p>Write the result to a data-file: subj_code_data.csv placed inside a data subfolder. The data-file should be in the following format. <em>Please make sure your format is exactly this – these columns in this order, separated by commas</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Col</span> <span class="mi">1</span><span class="p">:</span> <span class="n">trial_number</span> <span class="p">(</span><span class="n">beginning</span> <span class="k">with</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">Col</span> <span class="mi">2</span><span class="p">:</span> <span class="n">subject_code</span>
+<span class="n">Col</span> <span class="mi">3</span><span class="p">:</span> <span class="n">random_seed</span>
+<span class="n">Col</span> <span class="mi">4</span><span class="p">:</span> <span class="n">number_of_blocks</span> <span class="p">(</span><span class="n">defaulting</span> <span class="n">to</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">this</span> <span class="n">exercise</span><span class="p">)</span>
+<span class="n">Col</span> <span class="mi">5</span><span class="p">:</span> <span class="n">displayed_string</span>
+<span class="n">Col</span> <span class="mi">6</span><span class="p">:</span> <span class="n">orientation</span>
+<span class="n">Col</span> <span class="mi">7</span><span class="p">:</span> <span class="n">true_angle</span>
+<span class="n">Col</span> <span class="mi">8</span><span class="p">:</span> <span class="n">tilt_direction</span>
+<span class="n">Col</span> <span class="mi">9</span><span class="p">:</span> <span class="n">matched_angle</span> <span class="o">--</span> <span class="n">participnt</span><span class="s1">&#39;s response (vertical = 0)</span>
+<span class="n">Col</span> <span class="mi">10</span><span class="p">:</span> <span class="n">signed_error</span> <span class="p">(</span><span class="n">positive</span> <span class="n">means</span> <span class="n">the</span> <span class="n">adjusted</span> <span class="n">stimulus</span> <span class="n">leans</span> <span class="n">too</span> <span class="n">much</span> <span class="n">to</span> <span class="n">the</span> <span class="n">right</span><span class="p">;</span> <span class="n">negative</span> <span class="o">=</span> <span class="n">too</span> <span class="n">much</span> <span class="n">to</span> <span class="n">the</span> <span class="n">left</span><span class="p">,</span> <span class="mi">0</span> <span class="o">=</span> <span class="n">perfectly</span> <span class="n">correct</span><span class="p">)</span>
+<span class="n">Col</span> <span class="mi">11</span><span class="p">:</span> <span class="n">absolute</span> <span class="n">error</span> <span class="p">(</span><span class="n">absolute</span> <span class="n">difference</span> <span class="n">between</span> <span class="n">true_angle</span> <span class="ow">and</span> <span class="n">matched_angle</span> <span class="o">--</span> <span class="n">make</span> <span class="n">sure</span> <span class="n">you</span> <span class="n">are</span> <span class="n">mindful</span> <span class="n">of</span> <span class="n">the</span> <span class="n">tilt</span> <span class="n">direction</span> <span class="n">difference</span> <span class="n">b</span><span class="o">/</span><span class="n">w</span> <span class="n">left</span> <span class="mi">7</span> <span class="ow">and</span> <span class="n">right</span> <span class="mi">7</span> <span class="ow">is</span> <span class="mi">14</span><span class="p">)</span>
+<span class="n">Col</span> <span class="mi">12</span><span class="p">:</span> <span class="n">RT</span> <span class="o">-</span> <span class="n">reaction</span> <span class="n">time</span> <span class="kn">from</span> <span class="nn">stimulus</span> <span class="n">onset</span> <span class="n">to</span> <span class="n">response</span><span class="p">,</span> <span class="ow">in</span> <span class="n">milliseconds</span><span class="p">,</span> <span class="n">rounded</span> <span class="n">to</span> <span class="n">the</span> <span class="n">nearest</span> <span class="n">millisecond</span>
+</pre></div>
+</div>
+<p>The first line of your file should be column names, i.e,</p>
+<p><code class="docutils literal notranslate"><span class="pre">trial_number,subject_code,random_seed,number_of_blocks,displayed_string,orientation,true_angle,tilt_direction,matched_angle,signed_error,absolute_error,RT</span></code></p>
 </section>
 </section>
 
@@ -611,16 +660,16 @@ Hint: Make sure to print a test message each time you register a response so you
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "other-env"
+            mode: "python"
         },
         kernelOptions: {
-            kernelName: "other-env",
+            kernelName: "python3",
             path: "./notebooks"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'other-env'</script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               

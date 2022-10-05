@@ -3,118 +3,57 @@
 
 # # Debugging practice
 # 
-# ## Practice 1
-# Here's some broken code. When fixed, it should display wide and narrow
-# rectangles, in random order, and play a bleep sound if you respond 'w'
-# for wide or 'n' for narrow, and buzzing sound otherwise. It should
-# also output the correctness of the response and the RT to the console/terminal (a.k.a. `standard
-# output`. The .wav files it uses are available can be downloaded
-# [here](https://github.com/psych750/resources/blob/main/stimuli/buzzBleep.zip))
+# Debugging your code is an inescapable part of coding just like revising your writing is an inescapable part of writing. These exercises are designd to help you practice your debugging skills while demonstrating a few common pitfalls.
+# 
 
-# In[ ]:
+# This bit of code is supposed to iterate through a shuffled list. Why is it not working?
+
+# In[4]:
 
 
-import time
-import random
-from psychopy import visual, core, event,sound
-win = visual.Window([800,600],color="blak", units='pix')
-
-rect = visual.Rect(win,fillColor="blue",size=size)
-aspect = {'wide':[200,100], 'narrow':[100,200]}
-validKeys = {'wide':'w', 'narrow':'n'}
-
-bleep = sound.Sound('sounds/bleep.wav')
-buzz = sound.Sound('sounds/buzz.wav')
-
-for curIter in range(20)
-	win.flip()
-	core.wait(.5)
-	curAspect  = random.choice(aspect.values())
-	rect.setSize(aspect[curAspect])
-	rect.draw()
-	win.flip()
-	timer = core.Timer()
-	resp = event.waitKeys(keyList=validKeys.values())
-	if resp==validKeys[aspect]:
-		print 1, timer.getTime()
-		bleep.play()
-	else:
-		print 0, timer.getTime()
-		buzz.play()
+vowels = ['a','e','i','o','u']
+for cur_vowel in random.shuffle(vowels):
+	print(cur_vowel)
 
 
-# ## Practice 2
-# Here's some more broken code. This program should prompt you with an expression category (Happy, Sad, etc.) and then show a face. If you categorize the face correctly (or at least normatively), you should see a green CORRECT. Otherwise a red ERROR. The program should present you with 40 trials. Download the faces [here](https://github.com/psych750/resources/blob/main/stimuli/faces.zip) and place them inside a `faces` folder in the same directory as the script below.
+# `Sets` are like lists except they allow us to perform set operations like union, intersection, difference etc. Unlike lists which have no restrictions on duplicated elements, a set -- by definition -- only contains unique elements. Because sets are implemented in a very efficient way, we can use them to remove duplicates from a list. For example:
 
-# In[1]:
-
-
-import sys
-from psychopy import visual, core, event
-
-categories = {'Happy'='F', 'Angry'='W', 'Sad'='T'}
-actors = ['001m', '001w', '002m', '002w', '003m', '003w', '004m', '004w', '005m', '005w']
-suffix = '_90_60.jpg'
-responseMapping = {'up':1,'down':0}
-numTrials = 40
+# In[6]:
 
 
-def randomButNot(l,toExclude):
-	chosen = random.choice(l)
-	while toExclude in chosen:
-		chosen = random.choice(l)
-	return chosen
+list_with_duplicates = ['dog', 'cat', 'wolf', 'dog']
+print(list_with_duplicates)
+print(list(set(list_with_duplicates))) #voila, duplicates gone!
 
-def generateTrials(numTrials):
-	trials=[]
-	propMatch  = .6
-	for i in range(numTrials):
-		emotionPrompt = random.choice(categories.keys())
-		shownActor = random.choice(actors)
-		isMatch = int(random.random()<propMatch)
 
-		if isMatch:
-			shownCategory = emotionPrompt
-			targetFaceImage = shownActor+categories[emotionPrompt]+suffix
-		else:
-			shownCategory = randomButNot(categories.keys(), emotionPrompt)
-			targetFaceImage = shownActor+categories[shownCategory]+suffix
+# I'm trying to do something similar here, but running into a problem. Help!
 
-		trials.append({	'isMatch':isMatch,
-						'emotionPrompt':emotionPrompt,
-						'shownActor':shownActor,
-						'shownCategory':shownCategory,
-						'targetFaceImage':targetFaceImage
-						})
+# In[7]:
 
-		return trials
 
-trials = generateTrials(numTrials)
+list = ['violin', 'guitar', 'guitar', 'piano']
+print(list(set(list))) #voila, duplicates gone?
 
-win = visual.Window([800,600],color="black", units='pix')
-prompt = visual.TextStim(win=win,text='',color="white",height=60)
-correctFeedback = visual.TextStim(win=win,text='CORRECT',color="green",height=60)
-incorrectFeedback = visual.TextStim(win=win,text='ERROR',color="red",height=60)
-pic = visual.ImageStim(win=win, mask=None,interpolate=True)
 
-for curTrial in trials:
-	win.flip()
-	core.wait(25)
-	prompt.setText(curTrial['emotionPrompt']+'?')
-	prompt.draw()
-	win.flip()
-	core.wait(.5)
+# I'm trying to iterate through a list, check if each element is a palindrom (reads the same backwards and forwards), and if it's not, remove it from the list so that I only have palindromes at the end. The palindrome checker is working... but something else is not..
 
-	win.flip()
-	core.wait(.1)
-	pic.setImage('faces/'+curTrial['targetFaceImage'])
-	pic.draw()
-	win.flip()
-	response = event.waitKeys(keyList=responseMapping.values())[0]
-	if response==responseMapping[curTrial['isMatch']]:
-		correctFeedback.draw()
-	else:
-		correctFeedback.draw()
-	win.flip()
-	core.wait(.5)
+# In[24]:
 
+
+def is_palindrome(str):
+    str = str.replace(' ','') # remove spaces
+    return str == str[::-1]
+
+list_of_strings = ['dog', 'rotator', 'dod', 'cat', 'kayak', 'malyalam', 'a man a plan a canal panama']
+
+for cur_elt,cur_string in enumerate(list_of_strings):
+    if not is_palindrome(cur_string):
+        list_of_strings.remove(cur_elt)
+
+
+# To add: 
+# 
+# List and dictionary indexing
+# Namespaces (2)
+# 
+# 

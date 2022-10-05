@@ -248,21 +248,21 @@ show_text_until_mouse_or_keypress(win,"sample text","red",mouse)
 
 # ### A function for writing a string (trial info) to a file.
 # 
-# ```Python
-# def writeToFile(fileHandle,trial,sync=True):
-#     #Writes a trial (array of lists) to a file.
-#     #File needs to be opened outside the function. Pass in the filehandle as an argument.
-#     line = '\t'.join([str(i) for i in trial]) #TABify
-#     line += '\n' #add a newline
-#     fileHandle.write(line)
+# ```python
+# def write_to_file(fileHandle,trial,separator=',', sync=True,add_newline=False):
+#     """Writes a trial (array of lists) to a previously opened file"""
+#     trial = map(str,trial)
+#     line = separator.join([str(i) for i in trial]) #join with separator
+#     if add_newline:
+#         line += '\n' #add a newline
+#     try:
+#         fileHandle.write(line)
+#     except:
+#         print('file is not open for writing')
 #     if sync:
-#         fileHandle.flush()
-#         os.fsync(fileHandle)
-# 
-# # Usage:
-# subjDataFile = open('subj1.txt', 'w')
-# trial = ['dog', 143.9, 0]
-# writeToFile(subjDataFile, trial)
+#     	fileHandle.flush()
+#     	os.fsync(fileHandle)
+#             
 # ```
 
 # ## Convert from polar to rectangular coordinates

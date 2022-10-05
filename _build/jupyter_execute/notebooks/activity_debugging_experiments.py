@@ -3,13 +3,14 @@
 
 # # Debugging practice
 # 
+# It's easier to work with .py versions of these files. They are located in [here](https://github.com/psych750/activity_debugging_experiments) along with the necessary image/sound files to run this code.
+# 
 # ## Practice 1
 # Here's some broken code. When fixed, it should display wide and narrow
 # rectangles, in random order, and play a bleep sound if you respond 'w'
 # for wide or 'n' for narrow, and buzzing sound otherwise. It should
 # also output the correctness of the response and the RT to the console/terminal (a.k.a. `standard
-# output`. The .wav files it uses are available can be downloaded
-# [here](https://github.com/psych750/resources/blob/main/stimuli/buzzBleep.zip))
+# output`. The .wav files it uses are available [here](https://github.com/psych750/activity_debugging_experiments) - the same repository you cloned for the previos activity.
 
 # In[ ]:
 
@@ -44,12 +45,11 @@ for curIter in range(20)
 
 
 # ## Practice 2
-# Here's some more broken code. This program should prompt you with an expression category (Happy, Sad, etc.) and then show a face. If you categorize the face correctly (or at least normatively), you should see a green CORRECT. Otherwise a red ERROR. The program should present you with 40 trials. Download the faces [here](https://github.com/psych750/resources/blob/main/stimuli/faces.zip) and place them inside a `faces` folder in the same directory as the script below.
+# Here's some more broken code. This program should prompt you with an expression category (Happy, Sad, etc.) and then show a face. If you categorize the face correctly (or at least normatively), you should see a green CORRECT. Otherwise a red ERROR. The program should present you with 40 trials. The faces are avaialble in [this repository](https://github.com/psych750/activity_debugging_experiments) (that you should've already cloned for the previous activity)
 
 # In[1]:
 
 
-import sys
 from psychopy import visual, core, event
 
 categories = {'Happy'='F', 'Angry'='W', 'Sad'='T'}
