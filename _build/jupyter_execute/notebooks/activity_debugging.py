@@ -8,7 +8,7 @@
 
 # This bit of code is supposed to iterate through a shuffled list. Why is it not working?
 
-# In[4]:
+# In[5]:
 
 
 vowels = ['a','e','i','o','u']
@@ -51,9 +51,54 @@ for cur_elt,cur_string in enumerate(list_of_strings):
         list_of_strings.remove(cur_elt)
 
 
-# To add: 
+# I'm trying to access the last item from a list using index, but something is wrong. What happened?
 # 
-# List and dictionary indexing
-# Namespaces (2)
-# 
-# 
+
+# In[9]:
+
+
+thisList = ['violin', 'guitar', 'saxophone', 'piano','cello']
+thisList[5]
+
+
+# Now instead of a list, I'm trying to access a key from a dictionary, and it's not working
+
+# In[13]:
+
+
+thisDict = {
+    'brand':['Alfa Romeo','BMW','Chevrolet','Dodge'],
+    'year':[2018,2023,1997,1969],
+    'model':['Stelvio','M3','Corvette','Challenger']
+}
+
+thisDict['modle']
+
+
+# I'm trying to access a variable but the program keeps throwing this error at me. What is going on?
+
+# In[11]:
+
+
+def myFunction(x):
+    y = x + 3
+    z = x + 5
+    return y
+
+a = 5
+b = myFunction(a)
+print(z)
+
+
+# I'm trying to create a function that multiplies the number I input by 3, but why does it result in `None`?
+
+# In[17]:
+
+
+def multiplyByThree(x):
+    x *= 3
+
+a = 5
+b = multiplyByThree(a)
+print(b)
+
