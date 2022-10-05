@@ -497,10 +497,10 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">/Users/glupyan/gitRepos/psych750.github.io/notebooks/activity_debugging.ipynb Cell 3</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750.github.io/notebooks/activity_debugging.ipynb#W2sZmlsZQ%3D%3D?line=0&#39;</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">vowels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">,</span><span class="s1">&#39;i&#39;</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="s1">&#39;u&#39;</span><span class="p">]</span>
-<span class="o">----&gt;</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750.github.io/notebooks/activity_debugging.ipynb#W2sZmlsZQ%3D%3D?line=1&#39;</span><span class="o">&gt;</span><span class="mi">2</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="k">for</span> <span class="n">cur_vowel</span> <span class="ow">in</span> <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">vowels</span><span class="p">):</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750.github.io/notebooks/activity_debugging.ipynb#W2sZmlsZQ%3D%3D?line=2&#39;</span><span class="o">&gt;</span><span class="mi">3</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> 	<span class="nb">print</span><span class="p">(</span><span class="n">cur_vowel</span><span class="p">)</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">vowels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">,</span><span class="s1">&#39;i&#39;</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="s1">&#39;u&#39;</span><span class="p">]</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="k">for</span> <span class="n">cur_vowel</span> <span class="ow">in</span> <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">vowels</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 	<span class="nb">print</span><span class="p">(</span><span class="n">cur_vowel</span><span class="p">)</span>
 
 <span class="ne">TypeError</span>: &#39;NoneType&#39; object is not iterable
 </pre></div>
@@ -575,9 +575,100 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>To add:</p>
-<p>List and dictionary indexing
-Namespaces (2)</p>
+<p>I’m trying to access the last item from a list using index, but something is wrong. What happened?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">thisList</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;violin&#39;</span><span class="p">,</span> <span class="s1">&#39;guitar&#39;</span><span class="p">,</span> <span class="s1">&#39;saxophone&#39;</span><span class="p">,</span> <span class="s1">&#39;piano&#39;</span><span class="p">,</span><span class="s1">&#39;cello&#39;</span><span class="p">]</span>
+<span class="n">thisList</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">thisList</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;violin&#39;</span><span class="p">,</span> <span class="s1">&#39;guitar&#39;</span><span class="p">,</span> <span class="s1">&#39;saxophone&#39;</span><span class="p">,</span> <span class="s1">&#39;piano&#39;</span><span class="p">,</span><span class="s1">&#39;cello&#39;</span><span class="p">]</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">thisList</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+
+<span class="ne">IndexError</span>: list index out of range
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now instead of a list, I’m trying to access a key from a dictionary, and it’s not working</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">thisDict</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;brand&#39;</span><span class="p">:[</span><span class="s1">&#39;Alfa Romeo&#39;</span><span class="p">,</span><span class="s1">&#39;BMW&#39;</span><span class="p">,</span><span class="s1">&#39;Chevrolet&#39;</span><span class="p">,</span><span class="s1">&#39;Dodge&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;year&#39;</span><span class="p">:[</span><span class="mi">2018</span><span class="p">,</span><span class="mi">2023</span><span class="p">,</span><span class="mi">1997</span><span class="p">,</span><span class="mi">1969</span><span class="p">],</span>
+    <span class="s1">&#39;model&#39;</span><span class="p">:[</span><span class="s1">&#39;Stelvio&#39;</span><span class="p">,</span><span class="s1">&#39;M3&#39;</span><span class="p">,</span><span class="s1">&#39;Corvette&#39;</span><span class="p">,</span><span class="s1">&#39;Challenger&#39;</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">thisDict</span><span class="p">[</span><span class="s1">&#39;modle&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">7</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">thisDict</span> <span class="o">=</span> <span class="p">{</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="s1">&#39;brand&#39;</span><span class="p">:[</span><span class="s1">&#39;Alfa Romeo&#39;</span><span class="p">,</span><span class="s1">&#39;BMW&#39;</span><span class="p">,</span><span class="s1">&#39;Chevrolet&#39;</span><span class="p">,</span><span class="s1">&#39;Dodge&#39;</span><span class="p">],</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="s1">&#39;year&#39;</span><span class="p">:[</span><span class="mi">2018</span><span class="p">,</span><span class="mi">2023</span><span class="p">,</span><span class="mi">1997</span><span class="p">,</span><span class="mi">1969</span><span class="p">],</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="s1">&#39;model&#39;</span><span class="p">:[</span><span class="s1">&#39;Stelvio&#39;</span><span class="p">,</span><span class="s1">&#39;M3&#39;</span><span class="p">,</span><span class="s1">&#39;Corvette&#39;</span><span class="p">,</span><span class="s1">&#39;Challenger&#39;</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="p">}</span>
+<span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">thisDict</span><span class="p">[</span><span class="s1">&#39;modle&#39;</span><span class="p">]</span>
+
+<span class="ne">KeyError</span>: &#39;modle&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>I’m trying to access a variable but the program keeps throwing this error at me. What is going on?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myFunction</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">3</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">5</span>
+    <span class="k">return</span> <span class="n">y</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">myFunction</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">8</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">b</span> <span class="o">=</span> <span class="n">myFunction</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">8</span> <span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;z&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>I’m trying to create a function that multiplies the number I input by 3, but why does it result in <code class="docutils literal notranslate"><span class="pre">None</span></code>?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">multiplyByThree</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">*=</span> <span class="mi">3</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">multiplyByThree</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
