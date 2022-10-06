@@ -55,6 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Exercise 0 - Test assignment" href="Exercise0-test.html" />
+    <link rel="prev" title="Debugging practice" href="activity_debugging_experiments.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -244,7 +246,7 @@ const thebe_selector_output = ".output, .cell_output"
   In class activities
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="python_basics.html">
    Python basics
@@ -285,6 +287,11 @@ const thebe_selector_output = ".output, .cell_output"
    Debugging practice 2
   </a>
  </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Basic Pandas operations
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -315,6 +322,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="Exercise4-more_modularized_stroop.html">
    Exercise 4-Modularization and error checking
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise5-interactive.html">
+   Exercise 5-Getting interactive
   </a>
  </li>
 </ul>
@@ -499,8 +511,13 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#iterate-through-rows-and-accessing-a-particular-column-of-that-row">
-   Iterate through rows and accessing a particular column of that row
+  <a class="reference internal nav-link" href="#iterate-through-rows-and-access-values-in-that-row">
+   Iterate through rows and access values in that row
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#changing-data-in-a-data-frame">
+   Changing data in a data-frame
   </a>
  </li>
 </ul>
@@ -543,8 +560,13 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#iterate-through-rows-and-accessing-a-particular-column-of-that-row">
-   Iterate through rows and accessing a particular column of that row
+  <a class="reference internal nav-link" href="#iterate-through-rows-and-access-values-in-that-row">
+   Iterate through rows and access values in that row
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#changing-data-in-a-data-frame">
+   Changing data in a data-frame
   </a>
  </li>
 </ul>
@@ -561,13 +583,13 @@ title="Print to PDF"
 <h1>Basic Pandas Operations<a class="headerlink" href="#basic-pandas-operations" title="Permalink to this headline">#</a></h1>
 <section id="why-do-we-use-pandas">
 <h2>Why do we use Pandas?<a class="headerlink" href="#why-do-we-use-pandas" title="Permalink to this headline">#</a></h2>
-<p>Pandas is a powerful Python library that supports creation, storage, and manipulation of data frames. As a psychologist or data scientist, you will inevitably deal with some kind of datasets. Pandas stores and represents data in a streamlined fashion that makes things simple for you - either you are planning on directly analyzing the data in Python or exporting the data to CSV files and analyze them in other statistical softwares such as R.</p>
-<p>It also has other advantages such as simplifying coding writing, handling large data more efficiently, and making data more flexible and customizable. More importantly, Pandas has features such as handling missing data, cleaning up the data, and it also supports multiple file formats including CSV, Excel, SQL, etc.</p>
+<p>Pandas is a powerful Python library that supports creation, storage, and manipulation of data frames. Aa data-frame as a 2-dimensional data-structure – basically a spreadsheet – with rows and columns. It’s probably the most common way that we organize our data, whether experimental, survey, whatever… It’s basically the bread and butter of data-analysis.</p>
+<p>Pandas has features such as handling missing data, cleaning up the data, and it also supports multiple file formats including CSV, Excel, SQL, etc.</p>
 <p>In this activity, we will learn some of the basic oprations to get you started with Pandas.</p>
 </section>
 <section id="storing-data-frames-in-a-csv-file">
 <h2>Storing data frames in a CSV file<a class="headerlink" href="#storing-data-frames-in-a-csv-file" title="Permalink to this headline">#</a></h2>
-<p>First we will create a dictionary containing the data. Then we can convert the dictionary to a pandas data frame and store it as a csv file.</p>
+<p>First we will create a dictionary containing the data. Then we can convert the dictionary to a pandas data frame and store it as a csv file. In real life you will never be hard-coding data like this. This is just a demonstration.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -590,11 +612,40 @@ title="Print to PDF"
 </section>
 <section id="loading-in-data-from-a-csv-file">
 <h2>Loading in data from a CSV file<a class="headerlink" href="#loading-in-data-from-a-csv-file" title="Permalink to this headline">#</a></h2>
-<p>After loading in the data, we can do some quick checks using <code class="docutils literal notranslate"><span class="pre">head()</span></code> and <code class="docutils literal notranslate"><span class="pre">tail()</span></code></p>
+<p>After loading in the data, we can do some quick checks. First, let’s check the column names:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;ClassList.csv&#39;</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span> <span class="c1"># This will give you the first 5 rows of data</span>
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.core.indexes.base.Index
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pandas implements its own data types, but you can convert them to familiar things like lists (Basically, if it looks like it’s a list, you can convert it to a list. You’ll lose some functionality when you do it, but often it’s functionality you don’t need.).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">))</span>
+<span class="n">col_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">col_names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.indexes.base.Index&#39;&gt;
+[&#39;Name&#39;, &#39;Class ID&#39;, &#39;Age&#39;, &#39;Score&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, let’s look at the <code class="docutils literal notranslate"><span class="pre">head</span></code> (first few rows), and <code class="docutils literal notranslate"><span class="pre">tail</span></code> (the last few rows). This is always a good idea to make sure that everything is being read in as we expect.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1">#the first 5 rows by default. If you want more, insert the number as an argument to head.</span>
 </pre></div>
 </div>
 </div>
@@ -628,36 +679,71 @@ title="Print to PDF"
       <th>0</th>
       <td>Adam</td>
       <td>1</td>
-      <td>28</td>
-      <td>63</td>
+      <td>29</td>
+      <td>72</td>
     </tr>
     <tr>
       <th>1</th>
       <td>Becky</td>
       <td>2</td>
-      <td>27</td>
-      <td>72</td>
+      <td>29</td>
+      <td>90</td>
     </tr>
     <tr>
       <th>2</th>
       <td>Charlie</td>
       <td>3</td>
-      <td>28</td>
-      <td>82</td>
+      <td>20</td>
+      <td>81</td>
     </tr>
     <tr>
       <th>3</th>
       <td>Daniel</td>
       <td>4</td>
-      <td>22</td>
-      <td>82</td>
+      <td>23</td>
+      <td>65</td>
     </tr>
     <tr>
       <th>4</th>
       <td>Emily</td>
       <td>5</td>
-      <td>24</td>
-      <td>71</td>
+      <td>26</td>
+      <td>75</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Frank</td>
+      <td>6</td>
+      <td>29</td>
+      <td>62</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Greta</td>
+      <td>7</td>
+      <td>30</td>
+      <td>94</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Helen</td>
+      <td>8</td>
+      <td>28</td>
+      <td>61</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Ian</td>
+      <td>9</td>
+      <td>20</td>
+      <td>77</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Jack</td>
+      <td>10</td>
+      <td>27</td>
+      <td>93</td>
     </tr>
   </tbody>
 </table>
@@ -699,36 +785,36 @@ title="Print to PDF"
       <th>7</th>
       <td>Helen</td>
       <td>8</td>
-      <td>27</td>
-      <td>97</td>
+      <td>28</td>
+      <td>61</td>
     </tr>
     <tr>
       <th>8</th>
       <td>Ian</td>
       <td>9</td>
-      <td>23</td>
-      <td>63</td>
+      <td>20</td>
+      <td>77</td>
     </tr>
     <tr>
       <th>9</th>
       <td>Jack</td>
       <td>10</td>
-      <td>26</td>
-      <td>98</td>
+      <td>27</td>
+      <td>93</td>
     </tr>
     <tr>
       <th>10</th>
       <td>Klaus</td>
       <td>11</td>
-      <td>29</td>
-      <td>94</td>
+      <td>23</td>
+      <td>75</td>
     </tr>
     <tr>
       <th>11</th>
       <td>Lucy</td>
       <td>12</td>
-      <td>27</td>
-      <td>99</td>
+      <td>20</td>
+      <td>73</td>
     </tr>
   </tbody>
 </table>
@@ -818,9 +904,9 @@ Name: Age, dtype: int64
 </div>
 </div>
 </section>
-<section id="iterate-through-rows-and-accessing-a-particular-column-of-that-row">
-<h2>Iterate through rows and accessing a particular column of that row<a class="headerlink" href="#iterate-through-rows-and-accessing-a-particular-column-of-that-row" title="Permalink to this headline">#</a></h2>
-<p>In some cases, we need to iterate through all the rows and do some computation with a particular column of that row</p>
+<section id="iterate-through-rows-and-access-values-in-that-row">
+<h2>Iterate through rows and access values in that row<a class="headerlink" href="#iterate-through-rows-and-access-values-in-that-row" title="Permalink to this headline">#</a></h2>
+<p>In some cases, we need to iterate through all the rows, for example when we are using a pandas data-frame as a trial list and creating experimental trials based on that data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Printing everything of each row</span>
@@ -896,25 +982,62 @@ Name: 11, dtype: object)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Iterate through all rows and select only the Score column</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Iterate through all rows and select only the name and Score columns</span>
 <span class="k">for</span> <span class="n">index</span><span class="p">,</span><span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;Score&#39;</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Score&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>63
-72
-82
-82
-71
-82
-84
-97
-63
-98
-94
-99
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adam 72
+Becky 90
+Charlie 81
+Daniel 65
+Emily 75
+Frank 62
+Greta 94
+Helen 61
+Ian 77
+Jack 93
+Klaus 75
+Lucy 73
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="changing-data-in-a-data-frame">
+<h2>Changing data in a data-frame<a class="headerlink" href="#changing-data-in-a-data-frame" title="Permalink to this headline">#</a></h2>
+<p>If what you want to do is <strong>change</strong> data in a data-frame, the preferred way is to <strong>not</strong> iterate through the data-frame, but change it procedurally. For example, let’s say we want to add a column to our data-frame that converts scores to letter-grades. Rather than iterating through it and executing various conditionals, we do this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">convert_score_to_grade</span><span class="p">(</span><span class="n">score</span><span class="p">):</span>
+    <span class="n">min_score_to_letter</span> <span class="o">=</span> <span class="p">{</span><span class="mi">90</span><span class="p">:</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="mi">80</span><span class="p">:</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="mi">70</span><span class="p">:</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="mi">60</span><span class="p">:</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="s1">&#39;F&#39;</span><span class="p">}</span>
+    <span class="k">for</span> <span class="n">min_score</span><span class="p">,</span><span class="n">letter</span> <span class="ow">in</span> <span class="n">min_score_to_letter</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">score</span><span class="o">&gt;=</span><span class="n">min_score</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">letter</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Letter&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">convert_score_to_grade</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Score&#39;</span><span class="p">]))</span> <span class="c1">#create a new column called Letter</span>
+
+<span class="c1">#now let&#39;s check it</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span><span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;Score&#39;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Letter&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>72 C
+90 A
+81 B
+65 D
+75 C
+62 D
+94 A
+61 D
+77 C
+93 A
+75 C
+73 C
 </pre></div>
 </div>
 </div>

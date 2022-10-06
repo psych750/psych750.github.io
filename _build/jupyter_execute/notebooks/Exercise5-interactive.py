@@ -104,7 +104,9 @@ while True:
 # Col 12: RT - reaction time from stimulus onset to response, in milliseconds, rounded to the nearest millisecond
 # ```
 # 
-# The first line of your file should be column names, i.e,
+# The first line of your file should be the column names, i.e,
 # 
-# `trial_number,subject_code,random_seed,number_of_blocks,displayed_string,orientation,true_angle,tilt_direction,matched_angle,signed_error,absolute_error,RT`
+# ```
+# trial_number,subject_code,random_seed,number_of_blocks,displayed_string,orientation,true_angle,tilt_direction,matched_angle,signed_error,absolute_error,RT
+# ```
 # 

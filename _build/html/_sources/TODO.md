@@ -1,26 +1,13 @@
 # TODO
 
 
+[x] Finish demo of Exercise 5
+
+[x] pickling
+
+[x] solution to exercise 4
+
 [o] CHallenge exercise: max(set(a),key=a.count) to find mode. Have students explain why it works. 
-
-[ ] Add instrucitons on deletings tags git push --delete origin tagname
-
-[ ] Add instructions on pushing tags to a branch
-
-[ ] Sources for reading/apending w/ & w/o pandas 
-
-[ ] Add speech recognition + starter code to Exercise 3
-
-[ ] Revise and fix trial_generation notebook
-
-[ ] Edit debugging exercise part 2. Break it into several parts. Part 2 too difficult early on.
-
-[ ] Add assignment operators to python reference. Cool. 
-    - https://www.digitalocean.com/community/tutorials/how-to-use-assignment-expressions-in-python
-
-[ ] Exercise 4 - Posner cueing + extension to bike signaling. Have students do the task in 456. Share with all to analyze it
-
-[ ] Exercise 5 - interactive adjustment? + mouse. Adaptation experiment?
 
 [ ] R tidyverse demo notebook necessary?
 

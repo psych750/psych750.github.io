@@ -103,16 +103,16 @@
 # 
 # ### In class
 # 1. Exercise 4 Code Review (25 mins; groups review each other's code)
-# 2. A little extra flourish - [Saving state through pickling](https://psychopy.org/api/tools/filetools.html)
-# 3. Debugging activities - namespace bugs, indexing bugs, practice with error catching
-# 4. Reading and writing dataframes with pandas
-# 5. Intro to interactive experiments (Exercise 5)
+# 2. A little extra flourish - [Saving state through pickling](https://psychopy.org/api/tools/filetools.html). [Example code](https://psych750.github.io/notebooks/Psychopy_reference.html#saving-state-of-a-variable-and-reloading-it)
+# 3. Debugging activities - namespace bugs, indexing bugs
+# 4. [Reading and writing dataframes with pandas](https://psych750.github.io/notebooks/activity_basic_pandas_operations.html)
+# 5. Intro to interactive experiments ([Exercise 5](https://psych750.github.io/notebooks/Exercise5-interactive.html))
 # 6. Working with external files ([globbing and preloading](https://psych750.github.io/notebooks/globbing_files.html))
 
 # ## Week 6 (Oct 13)
 # 
 # ### At home
-# 1. Look carefully through `my_first_function_library.py` function library in the Exercise 5 folder and try to understand the code. Play with it. Explore.
+# 1. Look carefully through `my_first_function_library.py` function library in the Exercise 5 repository and try to understand the code. Play with it. Explore.
 # 2. Finish Exercise 5, using appropriate functionality from `my_first_function_library.py`
 # 3. Ensure your R-studio environment works and that you have the following libraries installed: `tidyverse, ggplot2, psych, psychTools, lme4`. R notebooks don't run that well inside Visual Code Studio, so we'll be running them inside R Studio instead.
 # 

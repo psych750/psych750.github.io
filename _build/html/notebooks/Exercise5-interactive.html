@@ -55,6 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Exercise 4: Modularizing and Error Checking" href="Exercise4-more_modularized_stroop.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -285,13 +286,18 @@ const thebe_selector_output = ".output, .cell_output"
    Debugging practice 2
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="activity_basic_pandas_operations.html">
+   Basic Pandas operations
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Exercises
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Exercise0-test.html">
    Exercise 0-Test assignment
@@ -315,6 +321,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="Exercise4-more_modularized_stroop.html">
    Exercise 4-Modularization and error checking
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Exercise 5-Getting interactive
   </a>
  </li>
 </ul>
@@ -646,8 +657,10 @@ trackpad, normally a two finger vertical swipe).</p>
 <span class="n">Col</span> <span class="mi">12</span><span class="p">:</span> <span class="n">RT</span> <span class="o">-</span> <span class="n">reaction</span> <span class="n">time</span> <span class="kn">from</span> <span class="nn">stimulus</span> <span class="n">onset</span> <span class="n">to</span> <span class="n">response</span><span class="p">,</span> <span class="ow">in</span> <span class="n">milliseconds</span><span class="p">,</span> <span class="n">rounded</span> <span class="n">to</span> <span class="n">the</span> <span class="n">nearest</span> <span class="n">millisecond</span>
 </pre></div>
 </div>
-<p>The first line of your file should be column names, i.e,</p>
-<p><code class="docutils literal notranslate"><span class="pre">trial_number,subject_code,random_seed,number_of_blocks,displayed_string,orientation,true_angle,tilt_direction,matched_angle,signed_error,absolute_error,RT</span></code></p>
+<p>The first line of your file should be the column names, i.e,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">trial_number</span><span class="p">,</span><span class="n">subject_code</span><span class="p">,</span><span class="n">random_seed</span><span class="p">,</span><span class="n">number_of_blocks</span><span class="p">,</span><span class="n">displayed_string</span><span class="p">,</span><span class="n">orientation</span><span class="p">,</span><span class="n">true_angle</span><span class="p">,</span><span class="n">tilt_direction</span><span class="p">,</span><span class="n">matched_angle</span><span class="p">,</span><span class="n">signed_error</span><span class="p">,</span><span class="n">absolute_error</span><span class="p">,</span><span class="n">RT</span>
+</pre></div>
+</div>
 </section>
 </section>
 

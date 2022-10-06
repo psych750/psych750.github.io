@@ -90,9 +90,9 @@ b = myFunction(a)
 print(z)
 
 
-# I'm trying to create a function that multiplies the number I input by 3, but why does it result in `None`?
+# I'm trying to create a function that multiplies the number I input by 3, but why does it result in `None`? And why can't I print x??
 
-# In[17]:
+# In[31]:
 
 
 def multiplyByThree(x):
@@ -101,4 +101,5 @@ def multiplyByThree(x):
 a = 5
 b = multiplyByThree(a)
 print(b)
+print(x)
 

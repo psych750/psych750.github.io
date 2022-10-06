@@ -287,6 +287,11 @@ const thebe_selector_output = ".output, .cell_output"
    Debugging practice 2
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="activity_basic_pandas_operations.html">
+   Basic Pandas operations
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -317,6 +322,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="Exercise4-more_modularized_stroop.html">
    Exercise 4-Modularization and error checking
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise5-interactive.html">
+   Exercise 5-Getting interactive
   </a>
  </li>
 </ul>
@@ -481,10 +491,15 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-simple-function-for-popping-up-an-error-using-a-gui-window">
-   A simple function for popping up an error using a GUI window
+  <a class="reference internal nav-link" href="#some-helper-functions-for-grabbing-runtime-variables-with-a-gui-box">
+   Some helper functions for grabbing runtime variables with a GUI box
   </a>
   <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pop-up-an-error-box">
+     Pop up an error box
+    </a>
+   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#popping-up-a-box-to-get-user-input-e-g-to-specify-a-condition-name-or-subject-code-at-runtime">
      Popping up a box to get user input e.g., to specify a condition name or subject code at runtime
@@ -498,6 +513,11 @@ title="Print to PDF"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#easier-way-to-get-a-bunch-of-runtime-variables">
      Easier way to get a bunch of runtime variables
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#saving-state-of-a-variable-and-reloading-it">
+     Saving state of a variable and reloading it
     </a>
    </li>
   </ul>
@@ -613,10 +633,15 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-simple-function-for-popping-up-an-error-using-a-gui-window">
-   A simple function for popping up an error using a GUI window
+  <a class="reference internal nav-link" href="#some-helper-functions-for-grabbing-runtime-variables-with-a-gui-box">
+   Some helper functions for grabbing runtime variables with a GUI box
   </a>
   <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pop-up-an-error-box">
+     Pop up an error box
+    </a>
+   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#popping-up-a-box-to-get-user-input-e-g-to-specify-a-condition-name-or-subject-code-at-runtime">
      Popping up a box to get user input e.g., to specify a condition name or subject code at runtime
@@ -630,6 +655,11 @@ title="Print to PDF"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#easier-way-to-get-a-bunch-of-runtime-variables">
      Easier way to get a bunch of runtime variables
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#saving-state-of-a-variable-and-reloading-it">
+     Saving state of a variable and reloading it
     </a>
    </li>
   </ul>
@@ -738,8 +768,10 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="psychopy-reference">
 <h1>Psychopy reference<a class="headerlink" href="#psychopy-reference" title="Permalink to this headline">#</a></h1>
 <p>Please use the official <a class="reference external" href="http://www.psychopy.org/api/">psychopy reference</a> page for looking up how to use specific functions and objects. Below is some extra functionality in the form of little recipes that may come in handy.</p>
-<section id="a-simple-function-for-popping-up-an-error-using-a-gui-window">
-<h2>A simple function for popping up an error using a GUI window<a class="headerlink" href="#a-simple-function-for-popping-up-an-error-using-a-gui-window" title="Permalink to this headline">#</a></h2>
+<section id="some-helper-functions-for-grabbing-runtime-variables-with-a-gui-box">
+<h2>Some helper functions for grabbing runtime variables with a GUI box<a class="headerlink" href="#some-helper-functions-for-grabbing-runtime-variables-with-a-gui-box" title="Permalink to this headline">#</a></h2>
+<section id="pop-up-an-error-box">
+<h3>Pop up an error box<a class="headerlink" href="#pop-up-an-error-box" title="Permalink to this headline">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">psychopy</span> <span class="kn">import</span> <span class="n">visual</span><span class="p">,</span> <span class="n">gui</span>
 
 <span class="k">def</span> <span class="nf">popupError</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
@@ -750,6 +782,7 @@ title="Print to PDF"
 <span class="n">popupError</span><span class="p">(</span><span class="s1">&#39;There was an error!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</section>
 <section id="popping-up-a-box-to-get-user-input-e-g-to-specify-a-condition-name-or-subject-code-at-runtime">
 <h3>Popping up a box to get user input e.g., to specify a condition name or subject code at runtime<a class="headerlink" href="#popping-up-a-box-to-get-user-input-e-g-to-specify-a-condition-name-or-subject-code-at-runtime" title="Permalink to this headline">#</a></h3>
 <p>Here’s the simplest code:</p>
@@ -816,6 +849,37 @@ box, see below.</p>
 <div class="admonition-challenge admonition">
 <p class="admonition-title">Challenge!</p>
 <p>A better solution here is to re-implement this recipe with an OrderedDict</p>
+</div>
+</section>
+<section id="saving-state-of-a-variable-and-reloading-it">
+<h3>Saving state of a variable and reloading it<a class="headerlink" href="#saving-state-of-a-variable-and-reloading-it" title="Permalink to this headline">#</a></h3>
+<p>It’s often useful to save the state of a previous experiment run (especially the subject code). Here’s an example of a get_runtime_vars function that stores a (pickld) dictionary of all the runtime variables and. The next time around we preset the subject code to the previous subject code.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_runtime_vars</span><span class="p">(</span><span class="n">vars_to_get</span><span class="p">,</span><span class="n">order</span><span class="p">,</span><span class="n">exp_version</span><span class="o">=</span><span class="s2">&quot;Exercise 4&quot;</span><span class="p">):</span>
+    <span class="c1">#Get run time variables, see http://www.psychopy.org/api/gui.html for explanation</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">vars_to_get</span><span class="p">[</span><span class="s1">&#39;subj_code&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">filetools</span><span class="o">.</span><span class="n">fromFile</span><span class="p">(</span><span class="s1">&#39;last_run.pickle&#39;</span><span class="p">)[</span><span class="s1">&#39;subj_code&#39;</span><span class="p">]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;retrieved these&quot;</span><span class="p">,</span><span class="n">vars_to_get</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">infoDlg</span> <span class="o">=</span> <span class="n">gui</span><span class="o">.</span><span class="n">DlgFromDict</span><span class="p">(</span><span class="n">dictionary</span><span class="o">=</span><span class="n">vars_to_get</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">exp_version</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">,</span><span class="n">copyDict</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
+        <span class="n">populated_runtime_vars</span> <span class="o">=</span> <span class="n">infoDlg</span><span class="o">.</span><span class="n">dictionary</span> 
+        <span class="n">data_file</span> <span class="o">=</span> <span class="n">open_data_file</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;data/</span><span class="si">{</span><span class="n">populated_runtime_vars</span><span class="p">[</span><span class="s1">&#39;subj_code&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">_data.csv&quot;</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="s1">&#39;Choose&#39;</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">populated_runtime_vars</span><span class="o">.</span><span class="n">values</span><span class="p">()):</span>
+            <span class="n">popupError</span><span class="p">(</span><span class="s1">&#39;Need to choose a value from each dropdown box&#39;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">infoDlg</span><span class="o">.</span><span class="n">OK</span> <span class="ow">and</span> <span class="n">data_file</span><span class="p">:</span>
+            <span class="n">filetools</span><span class="o">.</span><span class="n">toFile</span><span class="p">(</span><span class="s1">&#39;last_run.pickle&#39;</span><span class="p">,</span> <span class="n">populated_runtime_vars</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">populated_runtime_vars</span><span class="p">,</span> <span class="n">data_file</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="n">infoDlg</span><span class="o">.</span><span class="n">OK</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;User Cancelled&#39;</span><span class="p">)</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+     
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>
@@ -1142,30 +1206,33 @@ sure that all the stimuli you need are available.</p>
 <section id="importing-a-trial-list">
 <h2>Importing a trial list<a class="headerlink" href="#importing-a-trial-list" title="Permalink to this headline">#</a></h2>
 <p>A flexible routine for importing trial lists (of the kind generated by the generateTrials function) into a list of dictionaries, keyed by column name. This is functionally very similar to the importConditions psychopy function (see below)</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">import_rials</span><span class="p">(</span><span class="n">trialsFilename</span><span class="p">,</span> <span class="n">colNames</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">separator</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">):</span>
-    <span class="n">trialsFile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">trialsFilename</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">import_trials</span> <span class="p">(</span><span class="n">trial_filename</span><span class="p">,</span> <span class="n">col_names</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">separator</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">):</span>
+    <span class="n">trial_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">trial_filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
  
-    <span class="k">if</span> <span class="n">colNames</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">col_names</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="c1"># Assume the first row contains the column names</span>
-        <span class="n">colNames</span> <span class="o">=</span> <span class="n">trialsFile</span><span class="o">.</span><span class="n">next</span><span class="p">()</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">separator</span><span class="p">)</span>
-    <span class="n">trialsList</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">trialStr</span> <span class="ow">in</span> <span class="n">trialsFile</span><span class="p">:</span>
-        <span class="n">trialList</span> <span class="o">=</span> <span class="n">trialStr</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">separator</span><span class="p">)</span>
-        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">trialList</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">colNames</span><span class="p">)</span>
-        <span class="n">trialDict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">colNames</span><span class="p">,</span> <span class="n">trialList</span><span class="p">))</span>
-        <span class="n">trialsList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">trialDict</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">trialsList</span>
+        <span class="n">col_names</span> <span class="o">=</span> <span class="n">trial_file</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">separator</span><span class="p">)</span>
+    <span class="n">trials_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">cur_trial</span> <span class="ow">in</span> <span class="n">trial_file</span><span class="p">:</span>
+        <span class="n">cur_trial</span> <span class="o">=</span> <span class="n">cur_trial</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">separator</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">cur_trial</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">col_names</span><span class="p">)</span> <span class="c1"># make sure the number of column names = number of columns</span>
+        <span class="n">trial_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">col_names</span><span class="p">,</span> <span class="n">cur_trial</span><span class="p">))</span>
+        <span class="n">trials_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">trial_dict</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">trials_list</span>
 </pre></div>
 </div>
 <p>You can use it like so:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">trialList</span> <span class="o">=</span> <span class="n">import_rials</span><span class="p">(</span><span class="s1">&#39;trialList.txt&#39;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">curTrial</span> <span class="ow">in</span> <span class="n">trialList</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">trial_list</span> <span class="o">=</span> <span class="n">import_trials</span><span class="p">(</span><span class="s1">&#39;trialList.csv&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+<p>Trial list is now a list of dictionaries keyed with column names. We can iterate through it like so:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">curTrial</span> <span class="ow">in</span> <span class="n">trial_list</span><span class="p">:</span>
     <span class="n">curTrial</span><span class="p">[</span><span class="n">colName</span><span class="p">]</span> <span class="c1">#to access a particular value (where colName is something like &#39;pictureType&#39;)</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This functionality is actually built into PsychoPy using the
+<p>This functionality is actually built into PsychoPy with the
 <a class="reference external" href="http://www.psychopy.org/api/data.html#psychopy.data.importConditions">importConditions function</a></p>
 </div>
 </section>

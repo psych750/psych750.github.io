@@ -5,15 +5,15 @@
 # 
 # ## Why do we use Pandas?
 # 
-# Pandas is a powerful Python library that supports creation, storage, and manipulation of data frames. As a psychologist or data scientist, you will inevitably deal with some kind of datasets. Pandas stores and represents data in a streamlined fashion that makes things simple for you - either you are planning on directly analyzing the data in Python or exporting the data to CSV files and analyze them in other statistical softwares such as R.
+# Pandas is a powerful Python library that supports creation, storage, and manipulation of data frames. Aa data-frame as a 2-dimensional data-structure -- basically a spreadsheet -- with rows and columns. It's probably the most common way that we organize our data, whether experimental, survey, whatever... It's basically the bread and butter of data-analysis.
 # 
-# It also has other advantages such as simplifying coding writing, handling large data more efficiently, and making data more flexible and customizable. More importantly, Pandas has features such as handling missing data, cleaning up the data, and it also supports multiple file formats including CSV, Excel, SQL, etc.
+# Pandas has features such as handling missing data, cleaning up the data, and it also supports multiple file formats including CSV, Excel, SQL, etc.
 # 
 # In this activity, we will learn some of the basic oprations to get you started with Pandas.
 # 
 # ## Storing data frames in a CSV file
 # 
-# First we will create a dictionary containing the data. Then we can convert the dictionary to a pandas data frame and store it as a csv file.
+# First we will create a dictionary containing the data. Then we can convert the dictionary to a pandas data frame and store it as a csv file. In real life you will never be hard-coding data like this. This is just a demonstration.
 
 # In[2]:
 
@@ -35,16 +35,34 @@ df.to_csv('ClassList.csv',index=False)
 
 # ## Loading in data from a CSV file
 # 
-# After loading in the data, we can do some quick checks using `head()` and `tail()`
+# After loading in the data, we can do some quick checks. First, let's check the column names:
 
-# In[3]:
+# In[28]:
 
 
 df = pd.read_csv('ClassList.csv')
-df.head() # This will give you the first 5 rows of data
+df.columns
 
 
-# In[4]:
+# Pandas implements its own data types, but you can convert them to familiar things like lists (Basically, if it looks like it's a list, you can convert it to a list. You'll lose some functionality when you do it, but often it's functionality you don't need.).
+
+# In[30]:
+
+
+print(type(df.columns))
+col_names = list(df.columns)
+print(col_names)
+
+
+# Next, let's look at the `head` (first few rows), and `tail` (the last few rows). This is always a good idea to make sure that everything is being read in as we expect.
+
+# In[26]:
+
+
+df.head(10) #the first 5 rows by default. If you want more, insert the number as an argument to head.
+
+
+# In[24]:
 
 
 df.tail() # This will give you the last 5 rows of data
@@ -84,9 +102,9 @@ df.iloc[:,2] # This will also access the Score column
 df.iloc[0]['Score'] # This will access the first row ([0]) of the Score column
 
 
-# ## Iterate through rows and accessing a particular column of that row
+# ## Iterate through rows and access values in that row
 # 
-# In some cases, we need to iterate through all the rows and do some computation with a particular column of that row
+# In some cases, we need to iterate through all the rows, for example when we are using a pandas data-frame as a trial list and creating experimental trials based on that data.
 
 # In[10]:
 
@@ -96,10 +114,30 @@ for row in df.iterrows():
     print(row)
 
 
-# In[11]:
+# In[4]:
 
 
-# Iterate through all rows and select only the Score column
+# Iterate through all rows and select only the name and Score columns
 for index,row in df.iterrows():
-    print(row['Score'])
+    print(row['Name'], row['Score'])
+
+
+# ## Changing data in a data-frame
+# 
+# If what you want to do is **change** data in a data-frame, the preferred way is to **not** iterate through the data-frame, but change it procedurally. For example, let's say we want to add a column to our data-frame that converts scores to letter-grades. Rather than iterating through it and executing various conditionals, we do this:
+
+# In[21]:
+
+
+def convert_score_to_grade(score):
+    min_score_to_letter = {90:'A', 80:'B', 70:'C', 60:'D', 0:'F'}
+    for min_score,letter in min_score_to_letter.items():
+        if score>=min_score:
+            return letter
+
+df['Letter'] = list(map(convert_score_to_grade, df['Score'])) #create a new column called Letter
+
+#now let's check it
+for index,row in df.iterrows():
+    print(row['Score'], row['Letter'])
 

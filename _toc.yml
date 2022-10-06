@@ -72,6 +72,8 @@ parts:
       title: Debugging practice 1
     - file: notebooks/activity_debugging_experiments
       title: Debugging practice 2
+    - file: notebooks/activity_basic_pandas_operations
+      title: Basic Pandas operations
   - caption: Exercises
     chapters:
     - file: notebooks/Exercise0-test
@@ -84,3 +86,5 @@ parts:
       title: Exercise 3-Extending the Stroop
     - file: notebooks/Exercise4-more_modularized_stroop
       title: Exercise 4-Modularization and error checking
+    - file: notebooks/Exercise5-interactive
+      title: Exercise 5-Getting interactive
