@@ -504,18 +504,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">vowels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">,</span><span class="s1">&#39;i&#39;</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="s1">&#39;u&#39;</span><span class="p">]</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="k">for</span> <span class="n">cur_vowel</span> <span class="ow">in</span> <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">vowels</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> 	<span class="nb">print</span><span class="p">(</span><span class="n">cur_vowel</span><span class="p">)</span>
-
-<span class="ne">TypeError</span>: &#39;NoneType&#39; object is not iterable
-</pre></div>
-</div>
-</div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">Sets</span></code> are like lists except they allow us to perform set operations like union, intersection, difference etc. Unlike lists which have no restrictions on duplicated elements, a set – by definition – only contains unique elements. Because sets are implemented in a very efficient way, we can use them to remove duplicates from a list. For example:</p>
 <div class="cell docutils container">
@@ -526,33 +514,12 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;dog&#39;, &#39;cat&#39;, &#39;wolf&#39;, &#39;dog&#39;]
-[&#39;wolf&#39;, &#39;dog&#39;, &#39;cat&#39;]
-</pre></div>
-</div>
-</div>
 </div>
 <p>I’m trying to do something similar here, but running into a problem. Help!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;violin&#39;</span><span class="p">,</span> <span class="s1">&#39;guitar&#39;</span><span class="p">,</span> <span class="s1">&#39;guitar&#39;</span><span class="p">,</span> <span class="s1">&#39;piano&#39;</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="nb">list</span><span class="p">)))</span> <span class="c1">#voila, duplicates gone?</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;violin&#39;, &#39;guitar&#39;, &#39;guitar&#39;, &#39;piano&#39;]
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">/Users/glupyan/gitRepos/psych750.github.io/notebooks/activity_debugging.ipynb Cell 7</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750.github.io/notebooks/activity_debugging.ipynb#X15sZmlsZQ%3D%3D?line=0&#39;</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;violin&#39;</span><span class="p">,</span> <span class="s1">&#39;guitar&#39;</span><span class="p">,</span> <span class="s1">&#39;guitar&#39;</span><span class="p">,</span> <span class="s1">&#39;piano&#39;</span><span class="p">]</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750.github.io/notebooks/activity_debugging.ipynb#X15sZmlsZQ%3D%3D?line=1&#39;</span><span class="o">&gt;</span><span class="mi">2</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
-<span class="o">----&gt;</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750.github.io/notebooks/activity_debugging.ipynb#X15sZmlsZQ%3D%3D?line=2&#39;</span><span class="o">&gt;</span><span class="mi">3</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="nb">list</span><span class="p">)))</span>
-
-<span class="ne">TypeError</span>: &#39;list&#39; object is not callable
 </pre></div>
 </div>
 </div>
@@ -572,69 +539,39 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="nn">/Users/glupyan/gitRepos/psych750.github.io/notebooks/activity_debugging.ipynb Cell 9</span> in <span class="ni">&lt;cell line: 7&gt;</span><span class="nt">()</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750.github.io/notebooks/activity_debugging.ipynb#X21sZmlsZQ%3D%3D?line=6&#39;</span><span class="o">&gt;</span><span class="mi">7</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="k">for</span> <span class="n">cur_elt</span><span class="p">,</span><span class="n">cur_string</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">list_of_strings</span><span class="p">):</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750.github.io/notebooks/activity_debugging.ipynb#X21sZmlsZQ%3D%3D?line=7&#39;</span><span class="o">&gt;</span><span class="mi">8</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">is_palindrome</span><span class="p">(</span><span class="n">cur_string</span><span class="p">):</span>
-<span class="o">----&gt;</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750.github.io/notebooks/activity_debugging.ipynb#X21sZmlsZQ%3D%3D?line=8&#39;</span><span class="o">&gt;</span><span class="mi">9</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>         <span class="n">list_of_strings</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">cur_elt</span><span class="p">)</span>
-
-<span class="ne">ValueError</span>: list.remove(x): x not in list
-</pre></div>
 </div>
-</div>
-</div>
-<p>I’m trying to access the last item from a list using index, but something is wrong. What happened?</p>
+<p>I’m trying to iterate through a list, but something is wrong. What happened?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">thisList</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;violin&#39;</span><span class="p">,</span> <span class="s1">&#39;guitar&#39;</span><span class="p">,</span> <span class="s1">&#39;saxophone&#39;</span><span class="p">,</span> <span class="s1">&#39;piano&#39;</span><span class="p">,</span><span class="s1">&#39;cello&#39;</span><span class="p">]</span>
-<span class="n">thisList</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">thisList</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;violin&#39;</span><span class="p">,</span> <span class="s1">&#39;guitar&#39;</span><span class="p">,</span> <span class="s1">&#39;saxophone&#39;</span><span class="p">,</span> <span class="s1">&#39;piano&#39;</span><span class="p">,</span><span class="s1">&#39;cello&#39;</span><span class="p">]</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">thisList</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myList</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">myList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 
-<span class="ne">IndexError</span>: list index out of range
+<span class="n">listSize</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">myList</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">listSize</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">myList</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Now instead of a list, I’m trying to access a key from a dictionary, and it’s not working</p>
+<p>Now instead of a list, I’m trying to iterate through a key in a dictionary, and it’s not working</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">thisDict</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;brand&#39;</span><span class="p">:[</span><span class="s1">&#39;Alfa Romeo&#39;</span><span class="p">,</span><span class="s1">&#39;BMW&#39;</span><span class="p">,</span><span class="s1">&#39;Chevrolet&#39;</span><span class="p">,</span><span class="s1">&#39;Dodge&#39;</span><span class="p">],</span>
     <span class="s1">&#39;year&#39;</span><span class="p">:[</span><span class="mi">2018</span><span class="p">,</span><span class="mi">2023</span><span class="p">,</span><span class="mi">1997</span><span class="p">,</span><span class="mi">1969</span><span class="p">],</span>
-    <span class="s1">&#39;model&#39;</span><span class="p">:[</span><span class="s1">&#39;Stelvio&#39;</span><span class="p">,</span><span class="s1">&#39;M3&#39;</span><span class="p">,</span><span class="s1">&#39;Corvette&#39;</span><span class="p">,</span><span class="s1">&#39;Challenger&#39;</span><span class="p">]</span>
+    <span class="s1">&#39;model&#39;</span><span class="p">:[</span><span class="s1">&#39;Stelvio&#39;</span><span class="p">,</span><span class="s1">&#39;M3&#39;</span><span class="p">,</span><span class="s1">&#39;Corvette&#39;</span><span class="p">,</span><span class="s1">&#39;Challenger&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;color&#39;</span><span class="p">:[</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="s1">&#39;green&#39;</span><span class="p">,</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="s1">&#39;black&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;horsepower&#39;</span><span class="p">:[</span><span class="mi">280</span><span class="p">,</span><span class="mi">473</span><span class="p">,</span><span class="mi">345</span><span class="p">,</span><span class="mi">425</span><span class="p">]</span>
 <span class="p">}</span>
 
-<span class="n">thisDict</span><span class="p">[</span><span class="s1">&#39;modle&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">7</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">thisDict</span> <span class="o">=</span> <span class="p">{</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="s1">&#39;brand&#39;</span><span class="p">:[</span><span class="s1">&#39;Alfa Romeo&#39;</span><span class="p">,</span><span class="s1">&#39;BMW&#39;</span><span class="p">,</span><span class="s1">&#39;Chevrolet&#39;</span><span class="p">,</span><span class="s1">&#39;Dodge&#39;</span><span class="p">],</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="s1">&#39;year&#39;</span><span class="p">:[</span><span class="mi">2018</span><span class="p">,</span><span class="mi">2023</span><span class="p">,</span><span class="mi">1997</span><span class="p">,</span><span class="mi">1969</span><span class="p">],</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="s1">&#39;model&#39;</span><span class="p">:[</span><span class="s1">&#39;Stelvio&#39;</span><span class="p">,</span><span class="s1">&#39;M3&#39;</span><span class="p">,</span><span class="s1">&#39;Corvette&#39;</span><span class="p">,</span><span class="s1">&#39;Challenger&#39;</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="p">}</span>
-<span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">thisDict</span><span class="p">[</span><span class="s1">&#39;modle&#39;</span><span class="p">]</span>
-
-<span class="ne">KeyError</span>: &#39;modle&#39;
+<span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">thisDict</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">thisDict</span><span class="p">[</span><span class="s1">&#39;model&#39;</span><span class="p">][</span><span class="n">index</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>I’m trying to access a variable but the program keeps throwing this error at me. What is going on?</p>
+<p>The function I defined has two computations inside the function. I’m trying to access the result of one of the operations but Python keeps throwing an error at me. What is going on?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myFunction</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -645,18 +582,6 @@ title="Print to PDF"
 <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">myFunction</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">8</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">b</span> <span class="o">=</span> <span class="n">myFunction</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">8</span> <span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;z&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -671,21 +596,6 @@ title="Print to PDF"
 <span class="n">b</span> <span class="o">=</span> <span class="n">multiplyByThree</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">/Users/glupyan/gitRepos/psych750.github.io/notebooks/activity_debugging.ipynb Cell 17</span> in <span class="ni">&lt;cell line: 8&gt;</span><span class="nt">()</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750.github.io/notebooks/activity_debugging.ipynb#X50sZmlsZQ%3D%3D?line=5&#39;</span><span class="o">&gt;</span><span class="mi">6</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">multiplyByThree</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750.github.io/notebooks/activity_debugging.ipynb#X50sZmlsZQ%3D%3D?line=6&#39;</span><span class="o">&gt;</span><span class="mi">7</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="o">----&gt;</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750.github.io/notebooks/activity_debugging.ipynb#X50sZmlsZQ%3D%3D?line=7&#39;</span><span class="o">&gt;</span><span class="mi">8</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;x&#39; is not defined
 </pre></div>
 </div>
 </div>
