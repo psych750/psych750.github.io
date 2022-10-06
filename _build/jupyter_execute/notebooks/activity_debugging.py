@@ -66,7 +66,7 @@ for index in range(listSize+1):
     print(myList[index])
 
 
-# Now instead of a list, I'm trying to iterate through a key in a dictionary, and it's not working
+# Now instead of a list, I'm trying to iterate through a dictionary and print out the various car models stored inside it. Why isn't it working?
 
 # In[ ]:
 
@@ -83,7 +83,7 @@ for index in range(len(thisDict)):
     print(thisDict['model'][index])
 
 
-# The function I defined has two computations inside the function. I'm trying to access the result of one of the operations but Python keeps throwing an error at me. What is going on?
+# The function I defined is doing two addition operations. I'm trying to access the result of one of the additions, but Python keeps throwing an error at me. What is going on?
 
 # In[ ]:
 
