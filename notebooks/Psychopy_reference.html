@@ -491,10 +491,15 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-simple-function-for-popping-up-an-error-using-a-gui-window">
-   A simple function for popping up an error using a GUI window
+  <a class="reference internal nav-link" href="#some-helper-functions-for-grabbing-runtime-variables-with-a-gui-box">
+   Some helper functions for grabbing runtime variables with a GUI box
   </a>
   <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pop-up-an-error-box">
+     Pop up an error box
+    </a>
+   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#popping-up-a-box-to-get-user-input-e-g-to-specify-a-condition-name-or-subject-code-at-runtime">
      Popping up a box to get user input e.g., to specify a condition name or subject code at runtime
@@ -628,10 +633,15 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-simple-function-for-popping-up-an-error-using-a-gui-window">
-   A simple function for popping up an error using a GUI window
+  <a class="reference internal nav-link" href="#some-helper-functions-for-grabbing-runtime-variables-with-a-gui-box">
+   Some helper functions for grabbing runtime variables with a GUI box
   </a>
   <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pop-up-an-error-box">
+     Pop up an error box
+    </a>
+   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#popping-up-a-box-to-get-user-input-e-g-to-specify-a-condition-name-or-subject-code-at-runtime">
      Popping up a box to get user input e.g., to specify a condition name or subject code at runtime
@@ -758,8 +768,10 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="psychopy-reference">
 <h1>Psychopy reference<a class="headerlink" href="#psychopy-reference" title="Permalink to this headline">#</a></h1>
 <p>Please use the official <a class="reference external" href="http://www.psychopy.org/api/">psychopy reference</a> page for looking up how to use specific functions and objects. Below is some extra functionality in the form of little recipes that may come in handy.</p>
-<section id="a-simple-function-for-popping-up-an-error-using-a-gui-window">
-<h2>A simple function for popping up an error using a GUI window<a class="headerlink" href="#a-simple-function-for-popping-up-an-error-using-a-gui-window" title="Permalink to this headline">#</a></h2>
+<section id="some-helper-functions-for-grabbing-runtime-variables-with-a-gui-box">
+<h2>Some helper functions for grabbing runtime variables with a GUI box<a class="headerlink" href="#some-helper-functions-for-grabbing-runtime-variables-with-a-gui-box" title="Permalink to this headline">#</a></h2>
+<section id="pop-up-an-error-box">
+<h3>Pop up an error box<a class="headerlink" href="#pop-up-an-error-box" title="Permalink to this headline">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">psychopy</span> <span class="kn">import</span> <span class="n">visual</span><span class="p">,</span> <span class="n">gui</span>
 
 <span class="k">def</span> <span class="nf">popupError</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
@@ -770,6 +782,7 @@ title="Print to PDF"
 <span class="n">popupError</span><span class="p">(</span><span class="s1">&#39;There was an error!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</section>
 <section id="popping-up-a-box-to-get-user-input-e-g-to-specify-a-condition-name-or-subject-code-at-runtime">
 <h3>Popping up a box to get user input e.g., to specify a condition name or subject code at runtime<a class="headerlink" href="#popping-up-a-box-to-get-user-input-e-g-to-specify-a-condition-name-or-subject-code-at-runtime" title="Permalink to this headline">#</a></h3>
 <p>Here’s the simplest code:</p>
