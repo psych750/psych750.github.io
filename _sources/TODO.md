@@ -1,13 +1,13 @@
 # TODO
 
 
-[ ] pickling
-[ ] solution to exercise 4
+[x] Finish demo of Exercise 5
 
+[x] pickling
+
+[x] solution to exercise 4
 
 [o] CHallenge exercise: max(set(a),key=a.count) to find mode. Have students explain why it works. 
-
-[ ] Add instructions on pushing tags to a branch
 
 [ ] R tidyverse demo notebook necessary?
 

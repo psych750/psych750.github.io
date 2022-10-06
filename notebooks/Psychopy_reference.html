@@ -510,6 +510,11 @@ title="Print to PDF"
      Easier way to get a bunch of runtime variables
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#saving-state-of-a-variable-and-reloading-it">
+     Saving state of a variable and reloading it
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -640,6 +645,11 @@ title="Print to PDF"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#easier-way-to-get-a-bunch-of-runtime-variables">
      Easier way to get a bunch of runtime variables
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#saving-state-of-a-variable-and-reloading-it">
+     Saving state of a variable and reloading it
     </a>
    </li>
   </ul>
@@ -826,6 +836,37 @@ box, see below.</p>
 <div class="admonition-challenge admonition">
 <p class="admonition-title">Challenge!</p>
 <p>A better solution here is to re-implement this recipe with an OrderedDict</p>
+</div>
+</section>
+<section id="saving-state-of-a-variable-and-reloading-it">
+<h3>Saving state of a variable and reloading it<a class="headerlink" href="#saving-state-of-a-variable-and-reloading-it" title="Permalink to this headline">#</a></h3>
+<p>It’s often useful to save the state of a previous experiment run (especially the subject code). Here’s an example of a get_runtime_vars function that stores a (pickld) dictionary of all the runtime variables and. The next time around we preset the subject code to the previous subject code.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_runtime_vars</span><span class="p">(</span><span class="n">vars_to_get</span><span class="p">,</span><span class="n">order</span><span class="p">,</span><span class="n">exp_version</span><span class="o">=</span><span class="s2">&quot;Exercise 4&quot;</span><span class="p">):</span>
+    <span class="c1">#Get run time variables, see http://www.psychopy.org/api/gui.html for explanation</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">vars_to_get</span><span class="p">[</span><span class="s1">&#39;subj_code&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">filetools</span><span class="o">.</span><span class="n">fromFile</span><span class="p">(</span><span class="s1">&#39;last_run.pickle&#39;</span><span class="p">)[</span><span class="s1">&#39;subj_code&#39;</span><span class="p">]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;retrieved these&quot;</span><span class="p">,</span><span class="n">vars_to_get</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">infoDlg</span> <span class="o">=</span> <span class="n">gui</span><span class="o">.</span><span class="n">DlgFromDict</span><span class="p">(</span><span class="n">dictionary</span><span class="o">=</span><span class="n">vars_to_get</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">exp_version</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">,</span><span class="n">copyDict</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
+        <span class="n">populated_runtime_vars</span> <span class="o">=</span> <span class="n">infoDlg</span><span class="o">.</span><span class="n">dictionary</span> 
+        <span class="n">data_file</span> <span class="o">=</span> <span class="n">open_data_file</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;data/</span><span class="si">{</span><span class="n">populated_runtime_vars</span><span class="p">[</span><span class="s1">&#39;subj_code&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">_data.csv&quot;</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="s1">&#39;Choose&#39;</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">populated_runtime_vars</span><span class="o">.</span><span class="n">values</span><span class="p">()):</span>
+            <span class="n">popupError</span><span class="p">(</span><span class="s1">&#39;Need to choose a value from each dropdown box&#39;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">infoDlg</span><span class="o">.</span><span class="n">OK</span> <span class="ow">and</span> <span class="n">data_file</span><span class="p">:</span>
+            <span class="n">filetools</span><span class="o">.</span><span class="n">toFile</span><span class="p">(</span><span class="s1">&#39;last_run.pickle&#39;</span><span class="p">,</span> <span class="n">populated_runtime_vars</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">populated_runtime_vars</span><span class="p">,</span> <span class="n">data_file</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="n">infoDlg</span><span class="o">.</span><span class="n">OK</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;User Cancelled&#39;</span><span class="p">)</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+     
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>
