@@ -1,16 +1,8 @@
 # TODO
 
-Exercise 4
 
-[ ] Add counterbalancing upLeft/upRight
-[x] Add break
-[x] Add numWheel up /down
-[x] Add practice trials
-[x] Add random jitter to positions in generateTrials
-[x] Add instructions
-[x] Add bounds
+[ ] Concatenation  tail -n +2 *csv
 
-[ ]
 [ ] R tidyverse demo notebook necessary?
 
 [ ] Exercise 6 - GSS data-wrangling and plotting.
