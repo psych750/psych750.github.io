@@ -1,17 +1,21 @@
 # TODO
 
+Exercise 4
 
-[x] Finish demo of Exercise 5
+[ ] Add counterbalancing upLeft/upRight
+[x] Add break
+[x] Add numWheel up /down
+[x] Add practice trials
+[x] Add random jitter to positions in generateTrials
+[x] Add instructions
+[x] Add bounds
 
-[x] pickling
-
-[x] solution to exercise 4
-
-[o] CHallenge exercise: max(set(a),key=a.count) to find mode. Have students explain why it works. 
-
+[ ]
 [ ] R tidyverse demo notebook necessary?
 
 [ ] Exercise 6 - GSS data-wrangling and plotting.
+
+[o] CHallenge exercise: max(set(a),key=a.count) to find mode. Have students explain why it works. 
 
 [ ] Add recursive fibonacci to function notebook?
     - efficient one line- fib = lambda n,a=0,b=1: a if n<=0 else fib(n-1,b,a+b)
