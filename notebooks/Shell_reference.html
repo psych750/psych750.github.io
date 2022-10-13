@@ -231,6 +231,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="activity_reference_vs_value.html">
+   Mutable and immutable types
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="classes.html">
    Classes
   </a>
@@ -553,6 +558,11 @@ title="Print to PDF"
        Concatenate files while getting rid of the first line
       </a>
      </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#use-cat-and-tail-together">
+       Use cat and tail together:
+      </a>
+     </li>
     </ul>
    </li>
   </ul>
@@ -676,6 +686,11 @@ title="Print to PDF"
      <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#concatenate-files-while-getting-rid-of-the-first-line">
        Concatenate files while getting rid of the first line
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#use-cat-and-tail-together">
+       Use cat and tail together:
       </a>
      </li>
     </ul>
@@ -885,9 +900,20 @@ happens if you try <code class="docutils literal notranslate"><span class="pre">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tail -n +2 *data*txt &gt; allDat.txt
 </pre></div>
 </div>
-<p>You’ll notice that if you pass multiple files to <code class="docutils literal notranslate"><span class="pre">tail</span></code>, it will print a header at the start of every file. This will mess up your neat file. To suppress the header add <code class="docutils literal notranslate"><span class="pre">-q</span></code>, i.e.,</p>
+<p>You’ll notice that if you pass multiple files to <code class="docutils literal notranslate"><span class="pre">tail</span></code>, it will print the filename at the start of every file. This will mess up your neatly formatted file. To suppress the filename add <code class="docutils literal notranslate"><span class="pre">-q</span></code>, i.e.,</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tail -q -n +2 *data*txt &gt; allDat.txt
 </pre></div>
+</div>
+</section>
+<section id="use-cat-and-tail-together">
+<h3>Use cat and tail together:<a class="headerlink" href="#use-cat-and-tail-together" title="Permalink to this headline">#</a></h3>
+<p>Let’s say you want to concatenate all of one file and all but the first line of other files. You can chain <code class="docutils literal notranslate"><span class="pre">cat</span></code> and <code class="docutils literal notranslate"><span class="pre">tail</span></code> like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat files_whose_header_you_want_to_keep*txt <span class="o">&amp;&amp;</span> tail -q -n +2 files_whose_header_you_want_to_omit*txt &gt; allDat.txt
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Make sure all your files end with a newline or the first line of the next file will continue from the last line of the previous file.</p>
 </div>
 </section>
 </section>
