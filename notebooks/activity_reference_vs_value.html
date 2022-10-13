@@ -504,12 +504,14 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="mutables-immutables-and-object-references">
 <h1>Mutables, Immutables, and Object References<a class="headerlink" href="#mutables-immutables-and-object-references" title="Permalink to this headline">#</a></h1>
-<p>This section introduces a couple distinctions: <strong>mutable</strong> vs. <strong>immutable</strong>, and <strong>passing by value</strong>, by <strong>reference</strong>, and by <strong>object reference</strong></p>
+<p>This section introduces a couple distinctions: <strong>mutable</strong> vs. <strong>immutable</strong>, and <strong>passing by value</strong>, by <strong>reference</strong>, and by <strong>object reference</strong>. You can read about this in more detail <a class="reference external" href="https://secon.utulsa.edu/cs2123/slides/pypass.pdf">here</a> and <a class="reference external" href="https://www.geeksforgeeks.org/is-python-call-by-reference-or-call-by-value/#:~:text=Python%20utilizes%20a%20system%2C%20which,being%20passed%20to%20the%20function.">here</a>. Another good source with some helpful illustrations is <a class="reference external" href="https://blog.finxter.com/how-to-pass-a-variable-by-reference-in-python/">this explanation</a>.</p>
+<p>If you want a bit more of a brain melt, check <a class="reference external" href="https://medium.datadriveninvestor.com/mutable-and-immutable-python-2093deeac8d9">this out</a>.</p>
 <p>Python’s variable types come in two main flavors: immutables and mutables.</p>
 <p><strong>Immutables</strong></p>
 <p>An immutble is a variable whose internal state cannot be changed. Numbers (integers and floats), strings, booleans, and tuples are all of this kind. The internal value of 5 is… 5. An ‘s’ is an ‘s’. A True is a True.</p>
 <p><strong>Mutables</strong></p>
 <p>A mutable type is the opposite – a variable whose internal value <em>can</em> be changed. Lists, dictionaries, and more complex user-defined objects (for example the various psychopy objects we’ve been working with like <code class="docutils literal notranslate"><span class="pre">win</span></code>, <code class="docutils literal notranslate"><span class="pre">visual.Rect</span></code>, etc.</p>
+<p>When we pass variables between functions or between a function and the main code block, the information the variables contains is passed differently depending on whether the variable is mutable or immutable. Immutable variables are passed by value while mutable variables are passed by reference (i.e., what’s passed is the pointer to the memory location of that object, not the object’s contents).</p>
 <p>Understanding this distinction will improve your mental model of how information is passed around in a python program and helps to understand why some things may not work the way you initally expect them to.</p>
 <p>Predict what happens in these next two cells</p>
 <div class="cell tag_hide-output docutils container">
