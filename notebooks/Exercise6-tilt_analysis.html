@@ -508,6 +508,11 @@ title="Print to PDF"
    Part 2
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-3">
+   Part 3
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -537,6 +542,11 @@ title="Print to PDF"
    Part 2
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-3">
+   Part 3
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -553,6 +563,7 @@ title="Print to PDF"
 <p>Although we’re working with R code for this exercise, the procedure for tagging and submitting it is exactly the same as with the previous exercises. I recommend you work with R notebooks (.Rmd) files inside R studio. They notebooks will run in VSCode with some additonal extensions, but it’s not as nice.</p>
 <p>Recall that the aim of this experiment was to measure the strength of this tilt illusion. We want to know whether people are mis-estimating the tilt of the numbers and whether this mis-estimation is different for left-leaning and right-leaning numbers, and also whether it changes when the numbers are mirror-reversed so they don’t really look like numbers anymore.</p>
 <a class="reference internal image-reference" href="../_images/digitalclocks.png"><img alt="Digital Clock" class="align-center" src="../_images/digitalclocks.png" style="width: 460px;" /></a>
+<hr class="docutils" />
 <a class="reference internal image-reference" href="../_images/digitalclocks_reversed.png"><img alt="Digital Clock Reversed" class="align-center" src="../_images/digitalclocks_reversed.png" style="width: 460px;" /></a>
 <section id="part-1">
 <h2>Part 1<a class="headerlink" href="#part-1" title="Permalink to this headline">#</a></h2>
@@ -571,6 +582,16 @@ title="Print to PDF"
           2           left          -2
 </pre></div>
 </div>
+<p>Next, create a <code class="docutils literal notranslate"><span class="pre">exclude</span></code> column which is set to 1 if RT&lt;600 or if we’re on a practice trial, i.e., if practice_or_real==”practice”</p>
+<p>Your <code class="docutils literal notranslate"><span class="pre">dat</span></code> dataframe should contain both of these new columns when you submit.</p>
+</section>
+<section id="part-3">
+<h2>Part 3<a class="headerlink" href="#part-3" title="Permalink to this headline">#</a></h2>
+<p>From now on exclude all trials for which <code class="docutils literal notranslate"><span class="pre">exclude==1</span></code>. Please add a code block your notebook which:</p>
+<ol class="simple">
+<li><p>returns the number of rows for which <code class="docutils literal notranslate"><span class="pre">exclude==0</span></code></p></li>
+<li><p>computes the mean <code class="docutils literal notranslate"><span class="pre">absolute_error</span></code> for trials with true_angle&lt;=8 and trials for which true_angle&gt;8. Which is bigger (include this as plain text, outside of the code block in your notebook)</p></li>
+</ol>
 </section>
 </section>
 
