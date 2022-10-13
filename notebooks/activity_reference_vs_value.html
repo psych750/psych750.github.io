@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>&lt;no title&gt; &#8212; Psych 750</title>
+    <title>Mutables, Immutables, and Object References &#8212; Psych 750</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -51,10 +51,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://psych750.github.io/notebooks/Exercise10-FiniteState.html" />
+    <link rel="canonical" href="https://psych750.github.io/notebooks/activity_reference_vs_value.html" />
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Classes" href="classes.html" />
+    <link rel="prev" title="Preloading files" href="globbing_files.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -177,7 +179,7 @@ const thebe_selector_output = ".output, .cell_output"
   Self Study Guides
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="var_string_num.html">
    Variables, Strings, and Numbers
@@ -228,8 +230,8 @@ const thebe_selector_output = ".output, .cell_output"
    File access-Globbing and preloading
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="activity_reference_vs_value.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Mutable and immutable types
   </a>
  </li>
@@ -388,6 +390,35 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/psych750/psych750.github.io/main?urlpath=tree/notebooks/activity_reference_vs_value.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -410,7 +441,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/notebooks/Exercise10-FiniteState.ipynb"
+        <a href="../_sources/notebooks/activity_reference_vs_value.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -447,50 +478,23 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1><no title></h1>
+                <h1>Mutables, Immutables, and Object References</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -498,42 +502,146 @@ title="Print to PDF"
                 
               <div>
                 
-  <sidebar>
-Psych711
-</sidebar>
-This is a finite-state machine (automaton).\
-![](Fsm.png "fig:Fsm.png")
-<p>Some examples of legal strings that it can generate:<br />
-VXXXVPXXXXVPS<br />
-VXXXVPS<br />
-TPPTS<br />
-XXXVS<br />
-VXXVPS<br />
-<br />
-<br />
-For the first part of this exercise, please write some pseudocode for
-generating sequences of events (letters) that obey the grammar of the
-automaton and for checking whether a particular sequence obeys the
-grammar or not. Once fully implemented (as we will do in the next
-class), we will be able to use it for programming a variety of
-artificial-grammar learning tasks. Here is a <a class="reference external" href="http://sapir.psych.wisc.edu/classMaterials/psych711/grammaticalStates.txt">sample list of legal
-sequences.</a><br />
-<br />
-Here is one example of an artificial grammar learning task.<br />
-<br />
-<img alt="" src="notebooks/automatonFrames.png" /><br />
-Participants see letters in boxes around a central point. The letters
-change colors (from white to yellow) in the order specified by the
-string generated by the automaton. The participant’s task is to click
-on the letter currently appearing in yellow, as quickly as possible. At
-the end of the string, (after the letter S in the case of this grammar),
-the central fixation point should turn yellow. Clicking on it begins the
-next letter sequence. Learning the grammar shows up as speeding up in
-processing of legal sequences and slowing down in the processing of
-illegal ones.<br />
-<br />
-\</p>
-<p><span class="xref myst">Category:Exercise</span></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="mutables-immutables-and-object-references">
+<h1>Mutables, Immutables, and Object References<a class="headerlink" href="#mutables-immutables-and-object-references" title="Permalink to this headline">#</a></h1>
+<p>This section introduces a couple distinctions: <strong>mutable</strong> vs. <strong>immutable</strong>, and <strong>passing by value</strong>, by <strong>reference</strong>, and by <strong>object reference</strong></p>
+<p>Python’s variable types come in two main flavors: immutables and mutables.</p>
+<p><strong>Immutables</strong></p>
+<p>An immutble is a variable whose internal state cannot be changed. Numbers (integers and floats), strings, booleans, and tuples are all of this kind. The internal value of 5 is… 5. An ‘s’ is an ‘s’. A True is a True.</p>
+<p><strong>Mutables</strong></p>
+<p>A mutable type is the opposite – a variable whose internal value <em>can</em> be changed. Lists, dictionaries, and more complex user-defined objects (for example the various psychopy objects we’ve been working with like <code class="docutils literal notranslate"><span class="pre">win</span></code>, <code class="docutils literal notranslate"><span class="pre">visual.Rect</span></code>, etc.</p>
+<p>Understanding this distinction will improve your mental model of how information is passed around in a python program and helps to understand why some things may not work the way you initally expect them to.</p>
+<p>Predict what happens in these next two cells</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_fruit</span> <span class="o">=</span> <span class="s1">&#39;apple&#39;</span>
+<span class="n">another_fruit</span> <span class="o">=</span> <span class="s1">&#39;mango&#39;</span>
+
+<span class="n">another_fruit</span> <span class="o">=</span> <span class="n">a_fruit</span> 
+<span class="n">a_fruit</span> <span class="o">*=</span> <span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">a_fruit</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">another_fruit</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;apple&#39;, &#39;pear&#39;, &#39;avocado&#39;]
+[&#39;apple&#39;, &#39;pear&#39;, &#39;avocado&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;pear&#39;</span><span class="p">]</span>
+<span class="n">more_fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;mango&#39;</span><span class="p">,</span> <span class="s1">&#39;watermelon&#39;</span><span class="p">]</span>
+
+<span class="n">more_fruits</span> <span class="o">=</span> <span class="n">fruits</span> 
+<span class="n">fruits</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;avocado&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">more_fruits</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<p>The distinction is especially important to understand because it underpins how information is passed between functions/namespaces.  Let’s take a look at these couple examples. Predict the output of each cell.</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">change</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">+</span><span class="mi">5</span>
+    <span class="k">return</span> <span class="n">x</span>
+
+<span class="n">a_num</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">a_num</span> <span class="o">=</span> <span class="n">change</span><span class="p">(</span><span class="n">a_num</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a_num</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">change</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">+</span><span class="mi">5</span>
+
+<span class="n">a_num</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">change</span><span class="p">(</span><span class="n">a_num</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a_num</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">change</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="n">a_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">change</span><span class="p">(</span><span class="n">a_list</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4, 5]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">change</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+
+<span class="n">a_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">change</span><span class="p">(</span><span class="n">a_list</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4, 5]
+[4, 5]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">change</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">x</span>
+
+<span class="n">a_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">b_list</span> <span class="o">=</span> <span class="n">change</span><span class="p">(</span><span class="n">a_list</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b_list</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4, 6]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
