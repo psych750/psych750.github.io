@@ -55,6 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Exercise 5 - Interactive experiments" href="Exercise5-interactive.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -306,7 +307,7 @@ const thebe_selector_output = ".output, .cell_output"
   Exercises
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Exercise0-test.html">
    Exercise 0-Test assignment
@@ -335,6 +336,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="Exercise5-interactive.html">
    Exercise 5-Getting interactive
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Exercise 6-Analyzing the tilt adjustment data
   </a>
  </li>
 </ul>
@@ -513,6 +519,16 @@ title="Print to PDF"
    Part 3
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-4">
+   Part 4
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-5">
+   Part 5
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -547,6 +563,16 @@ title="Print to PDF"
    Part 3
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-4">
+   Part 4
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-5">
+   Part 5
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -559,8 +585,8 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="exercise-6-exploring-the-tilt-adjustment-data">
 <h1>Exercise 6 - Exploring the tilt adjustment data<a class="headerlink" href="#exercise-6-exploring-the-tilt-adjustment-data" title="Permalink to this headline">#</a></h1>
-<p><a class="reference external" href="https://classroom.github.com/a/bxyDH5Uq">Accept the exercise</a></p>
-<p>Although we’re working with R code for this exercise, the procedure for tagging and submitting it is exactly the same as with the previous exercises. I recommend you work with R notebooks (.Rmd) files inside R studio. They notebooks will run in VSCode with some additonal extensions, but it’s not as nice.</p>
+<p><a class="reference external" href="https://classroom.github.com/a/-WCbPg2O">Accept the exercise</a></p>
+<p>Because we’ll be putting together a continuous notebook (rather than developing a program) for this exercise, there’s no need to have multiple tags. I encourage you though to make regular commits as you’re working on the assignment. The final commit should be tagged <code class="docutils literal notranslate"><span class="pre">Exercise_6_done</span></code> and have a single notebook called exercise_6.Rmd that has clearly titled chunks (see starter code). Insert additional chunks as you see fit. Make sure you push <em>all</em> the files in your working directory to the repository, not just the Rmd file. This will help us run your code.</p>
 <p>Recall that the aim of this experiment was to measure the strength of this tilt illusion. We want to know whether people are mis-estimating the tilt of the numbers and whether this mis-estimation is different for left-leaning and right-leaning numbers, and also whether it changes when the numbers are mirror-reversed so they don’t really look like numbers anymore.</p>
 <a class="reference internal image-reference" href="../_images/digitalclocks.png"><img alt="Digital Clock" class="align-center" src="../_images/digitalclocks.png" style="width: 460px;" /></a>
 <hr class="docutils" />
@@ -582,16 +608,45 @@ title="Print to PDF"
           2           left          -2
 </pre></div>
 </div>
-<p>Next, create a <code class="docutils literal notranslate"><span class="pre">exclude</span></code> column which is set to 1 if RT&lt;600 or if we’re on a practice trial, i.e., if practice_or_real==”practice”</p>
+<p>Next, create a <code class="docutils literal notranslate"><span class="pre">exclude</span></code> column which is set to 1 if RT&lt;600 <strong>or</strong> if we’re on a practice trial, i.e., if <code class="docutils literal notranslate"><span class="pre">practice_or_real</span></code>==”practice”</p>
 <p>Your <code class="docutils literal notranslate"><span class="pre">dat</span></code> dataframe should contain both of these new columns when you submit.</p>
 </section>
 <section id="part-3">
 <h2>Part 3<a class="headerlink" href="#part-3" title="Permalink to this headline">#</a></h2>
-<p>From now on exclude all trials for which <code class="docutils literal notranslate"><span class="pre">exclude==1</span></code>. Please add a code block your notebook which:</p>
+<p>From now on exclude all trials for which <code class="docutils literal notranslate"><span class="pre">exclude==1</span></code> <strong>in all calculations/graphs</strong>. Please add code blocks to your notebook to accomplish the following 4 things:</p>
 <ol class="simple">
-<li><p>returns the number of rows for which <code class="docutils literal notranslate"><span class="pre">exclude==0</span></code></p></li>
-<li><p>computes the mean <code class="docutils literal notranslate"><span class="pre">absolute_error</span></code> for trials with true_angle&lt;=8 and trials for which true_angle&gt;8. Which is bigger (include this as plain text, outside of the code block in your notebook)</p></li>
+<li><p>Compute the number of rows for which <code class="docutils literal notranslate"><span class="pre">exclude==0</span></code></p></li>
+<li><p>Compute the mean <code class="docutils literal notranslate"><span class="pre">absolute_error</span></code> for trials with true_angle&lt;=8 and trials for which true_angle&gt;8. Which is the bigger error? (include this as plain text, outside of the code block in your notebook)</p></li>
+<li><p>Output the mean absolute errors for each subj_code. Which subj_code has the smallest absolute_error? Largest absolute_error (you may want to use <code class="docutils literal notranslate"><span class="pre">arrange</span></code> to sort by absolute_error).</p></li>
+<li><p>What’s the correlation between the total number of mouse wheel turns and absolute error? (you can use <code class="docutils literal notranslate"><span class="pre">cor()</span></code> to compute the correlation between two variables).</p></li>
 </ol>
+</section>
+<section id="part-4">
+<h2>Part 4<a class="headerlink" href="#part-4" title="Permalink to this headline">#</a></h2>
+<p>For this part we’ll just look at a subset of data: <code class="docutils literal notranslate"><span class="pre">orientation</span> <span class="pre">==</span> <span class="pre">&quot;upright&quot;</span> <span class="pre">&amp;</span> <span class="pre">displayed_string</span> <span class="pre">==</span> <span class="pre">&quot;7-44&quot;</span></code> (as mentioned above, make sure to only include trials for which exclude==0)</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">pivot_wider</span></code> to compute the mean difference for each subject between the <code class="docutils literal notranslate"><span class="pre">signed_error</span></code> for left vs. right tilting stimuli? Do this by creating a new column calld <code class="docutils literal notranslate"><span class="pre">left_minus_right</span></code> whose value is just that: the left error minus the right error.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Begin by filtering for the desired orientation and displayed string. Then group by subj_code and tilt_direciton, and compute the mean signed_error for each subj_code and tilt_direction combination. Prior to running pivot_wider, the summarized data-frame should have 16 rows (8 subjects * two conditions per subject)</p>
+</div>
+</section>
+<section id="part-5">
+<h2>Part 5<a class="headerlink" href="#part-5" title="Permalink to this headline">#</a></h2>
+<p>Generate some graphs using ggplot that help you answer the following questions:</p>
+<ol class="simple">
+<li><p>Are people reporting the tilt more accurately for 7-44 when it’s tilting leftward or rightward?</p></li>
+<li><p>Are people’s tilt estimates biased differently for leftward vs. rightward tilting numbers?</p></li>
+<li><p>Are these biases different for 7-44 shown upright vs. inverted? (coded in the <code class="docutils literal notranslate"><span class="pre">orientation</span></code> column).</p></li>
+</ol>
+<p>Don’t worry about plotting error bars or computing any inferential statistics. Just make some beautiful graphs! If you have an idea for the kind of graph you want, but are having trouble getting ggplot to cooperate, send a sketch of what you’re trying to do on Slack and we’ll help.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You’ll probably want to generate something that has <code class="docutils literal notranslate"><span class="pre">true_angle</span></code> on the x-axis</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You’ll probably want to average the data by subject/conditions/angles rather than feeding in raw data to ggplot</p>
+</div>
 </section>
 </section>
 
