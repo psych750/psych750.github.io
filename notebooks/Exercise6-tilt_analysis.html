@@ -642,11 +642,15 @@ title="Print to PDF"
 <p>Don’t worry about plotting error bars or computing any inferential statistics. Just make some beautiful graphs! If you have an idea for the kind of graph you want, but are having trouble getting ggplot to cooperate, send a sketch of what you’re trying to do on Slack and we’ll help.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>You’ll probably want to generate something that has <code class="docutils literal notranslate"><span class="pre">true_angle</span></code> on the x-axis</p>
+<p>You’ll want to average the data by subject/conditions/angles rather than feeding in raw data to ggplot</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>You’ll probably want to average the data by subject/conditions/angles rather than feeding in raw data to ggplot</p>
+<p>You’ll probably want to generate some graphs that have <code class="docutils literal notranslate"><span class="pre">true_angle</span></code> and/or <code class="docutils literal notranslate"><span class="pre">signed_tilt</span></code> on the x-axis</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You may find it useful to add <a class="reference external" href="https://ggplot2.tidyverse.org/reference/geom_abline.html">reference lines</a> to your plot (<code class="docutils literal notranslate"><span class="pre">geom_abline</span></code> for diagonal, <code class="docutils literal notranslate"><span class="pre">geom_hline</span></code> for horizontal, <code class="docutils literal notranslate"><span class="pre">geom_vline</span></code> for vertical).</p>
 </div>
 </section>
 </section>
