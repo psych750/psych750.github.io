@@ -1,9 +1,17 @@
 # TODO
 
 
-[ ] Concatenation  tail -n +2 *csv
+[ ] Useful R patterns:
+    [ ] %in% and negation (e.g., choosing which columns NOT to select)
+    [ ] summarize_if
+    [ ] if_else/case_when
+    [ ] coalesce - the thing that gives you the non-na value of a set of columns
+    [ ] here
+    [ ] rowwse and across
+    [ ] sjmisc:: rec, dicho, recode_to, split_var (what's group_var?)
+    [ ] grepl string matching --> regexps
 
-[ ] R tidyverse demo notebook necessary?
+[x] Concatenation  tail -n +2 *csv
 
 [ ] Exercise 6 - GSS data-wrangling and plotting.
 
