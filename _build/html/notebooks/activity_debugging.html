@@ -226,6 +226,21 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="activity_basic_pandas_operations.html">
+   Using Pandas to read/write CSV files.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="globbing_files.html">
+   File access-Globbing and preloading
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="activity_reference_vs_value.html">
+   Mutable and immutable types
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="classes.html">
    Classes
   </a>
@@ -288,8 +303,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="activity_basic_pandas_operations.html">
-   Basic Pandas operations
+  <a class="reference external" href="https://psych750.github.io/knitted_Rmd/playing_around_gss_solutions.html">
+   Basic Examples of GSS data wrangling
   </a>
  </li>
 </ul>
@@ -327,6 +342,16 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="Exercise5-interactive.html">
    Exercise 5-Getting interactive
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise6-tilt_analysis.html">
+   Exercise 6-Analyzing the tilt adjustment data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise7-gss-wrangling.html">
+   Exercise 7-Exploring the general social survey
   </a>
  </li>
 </ul>
@@ -495,22 +520,46 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="debugging-practice">
 <h1>Debugging practice<a class="headerlink" href="#debugging-practice" title="Permalink to this headline">#</a></h1>
 <p>Debugging your code is an inescapable part of coding just like revising your writing is an inescapable part of writing. These exercises are designd to help you practice your debugging skills while demonstrating a few common pitfalls.</p>
-<p>This bit of code is supposed to iterate through a shuffled list. Why is it not working?</p>
+<ol class="simple">
+<li><p>This bit of code is supposed to iterate through a shuffled list. Why is it not working?</p></li>
+</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vowels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">,</span><span class="s1">&#39;i&#39;</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="s1">&#39;u&#39;</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">cur_vowel</span> <span class="ow">in</span> <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">vowels</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">vowels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">,</span><span class="s1">&#39;i&#39;</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="s1">&#39;u&#39;</span><span class="p">]</span>
+<span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">vowels</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vowels</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">cur_vowel</span> <span class="ow">in</span> <span class="n">vowels</span><span class="p">:</span>
 	<span class="nb">print</span><span class="p">(</span><span class="n">cur_vowel</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;o&#39;, &#39;u&#39;, &#39;e&#39;, &#39;a&#39;, &#39;i&#39;]
+o
+u
+e
+a
+i
+</pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">Sets</span></code> are like lists except they allow us to perform set operations like union, intersection, difference etc. Unlike lists which have no restrictions on duplicated elements, a set – by definition – only contains unique elements. Because sets are implemented in a very efficient way, we can use them to remove duplicates from a list. For example:</p>
+</div>
+</div>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Sets</span></code> are like lists except they allow us to perform set operations like union, intersection, difference etc. Unlike lists which have no restrictions on duplicated elements, a set – by definition – only contains unique elements. Because sets are implemented in a very efficient way, we can use them to remove duplicates from a list. For example:</p></li>
+</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list_with_duplicates</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;wolf&#39;</span><span class="p">,</span> <span class="s1">&#39;dog&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list_with_duplicates</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;wolf&#39;</span><span class="p">,</span> <span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;dog&#39;</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">list_with_duplicates</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">list_with_duplicates</span><span class="p">)))</span> <span class="c1">#voila, duplicates gone!</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;dog&#39;, &#39;cat&#39;, &#39;wolf&#39;, &#39;dog&#39;, &#39;dog&#39;]
+[&#39;cat&#39;, &#39;dog&#39;, &#39;wolf&#39;]
 </pre></div>
 </div>
 </div>
@@ -518,13 +567,21 @@ title="Print to PDF"
 <p>I’m trying to do something similar here, but running into a problem. Help!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;violin&#39;</span><span class="p">,</span> <span class="s1">&#39;guitar&#39;</span><span class="p">,</span> <span class="s1">&#39;guitar&#39;</span><span class="p">,</span> <span class="s1">&#39;piano&#39;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="nb">list</span><span class="p">)))</span> <span class="c1">#voila, duplicates gone?</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">duplicated_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;violin&#39;</span><span class="p">,</span> <span class="s1">&#39;guitar&#39;</span><span class="p">,</span> <span class="s1">&#39;guitar&#39;</span><span class="p">,</span> <span class="s1">&#39;piano&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">duplicated_list</span><span class="p">)))</span> <span class="c1">#voila, duplicates gone?</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;type&#39;&gt;
+[&#39;violin&#39;, &#39;piano&#39;, &#39;guitar&#39;]
 </pre></div>
 </div>
 </div>
 </div>
-<p>I’m trying to iterate through a list, check if each element is a palindrom (reads the same backwards and forwards), and if it’s not, remove it from the list so that I only have palindromes at the end. The palindrome checker is working… but something else is not..</p>
+<ol class="simple">
+<li><p>I’m trying to iterate through a list, check if each element is a palindrome (reads the same backwards and forwards), and if it’s not, remove it from the list so that I only have palindromes at the end. The palindrome checker is working… but something else is not..</p></li>
+</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_palindrome</span><span class="p">(</span><span class="nb">str</span><span class="p">):</span>
@@ -539,8 +596,19 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dog
+dod
+cat
+malyalam
+[&#39;rotator&#39;, &#39;dod&#39;, &#39;kayak&#39;, &#39;a man a plan a canal panama&#39;]
+</pre></div>
 </div>
-<p>I’m trying to iterate through a list, but something is wrong. What happened?</p>
+</div>
+</div>
+<ol class="simple">
+<li><p>I’m trying to iterate through a list, but something is wrong. What happened?</p></li>
+</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myList</span> <span class="o">=</span> <span class="p">[]</span>
@@ -553,8 +621,24 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></div>
 </div>
-<p>Now instead of a list, I’m trying to iterate through a dictionary and print out the various car models stored inside it. Why isn’t it working?</p>
+</div>
+</div>
+<ol class="simple">
+<li><p>Now instead of a list, I’m trying to iterate through a dictionary and print out the various car models stored inside it. Why isn’t it working?</p></li>
+</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">thisDict</span> <span class="o">=</span> <span class="p">{</span>
@@ -565,13 +649,23 @@ title="Print to PDF"
     <span class="s1">&#39;horsepower&#39;</span><span class="p">:[</span><span class="mi">280</span><span class="p">,</span><span class="mi">473</span><span class="p">,</span><span class="mi">345</span><span class="p">,</span><span class="mi">425</span><span class="p">]</span>
 <span class="p">}</span>
 
-<span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">thisDict</span><span class="p">)):</span>
+<span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">thisDict</span><span class="p">[</span><span class="s1">&#39;model&#39;</span><span class="p">])):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">thisDict</span><span class="p">[</span><span class="s1">&#39;model&#39;</span><span class="p">][</span><span class="n">index</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Stelvio
+M3
+Corvette
+Challenger
+</pre></div>
 </div>
-<p>The function I defined is doing two addition operations. I’m trying to access the result of one of the additions, but Python keeps throwing an error at me. What is going on?</p>
+</div>
+</div>
+<ol class="simple">
+<li><p>The function I defined is doing two addition operations. I’m trying to access the result of one of the additions, but Python keeps throwing an error at me. What is going on?</p></li>
+</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myFunction</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -579,23 +673,48 @@ title="Print to PDF"
     <span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">5</span>
     <span class="k">return</span> <span class="n">y</span>
 
-<span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">myFunction</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">myFunction</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
 </pre></div>
 </div>
 </div>
 </div>
-<p>I’m trying to create a function that multiplies the number I input by 3, but why does it result in <code class="docutils literal notranslate"><span class="pre">None</span></code>? And why can’t I print x??</p>
+<ol class="simple">
+<li><p>I’m trying to create a function that multiplies the number I input by 3, but why does it result in <code class="docutils literal notranslate"><span class="pre">None</span></code>? And why can’t I print x??</p></li>
+</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">multiplyByThree</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="n">x</span> <span class="o">*=</span> <span class="mi">3</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">x</span>
 
 <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">multiplyByThree</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15
+15
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">/Users/glupyan/gitRepos/psych750.github.io/notebooks/activity_debugging.ipynb Cell 17</span> in <span class="ni">&lt;cell line: 9&gt;</span><span class="nt">()</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750.github.io/notebooks/activity_debugging.ipynb#X22sZmlsZQ%3D%3D?line=6&#39;</span><span class="o">&gt;</span><span class="mi">7</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">multiplyByThree</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750.github.io/notebooks/activity_debugging.ipynb#X22sZmlsZQ%3D%3D?line=7&#39;</span><span class="o">&gt;</span><span class="mi">8</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="o">----&gt;</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750.github.io/notebooks/activity_debugging.ipynb#X22sZmlsZQ%3D%3D?line=8&#39;</span><span class="o">&gt;</span><span class="mi">9</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;x&#39; is not defined
 </pre></div>
 </div>
 </div>

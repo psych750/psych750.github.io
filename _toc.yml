@@ -48,6 +48,12 @@ parts:
       title: Randomization and Iteration
     - url: https://docs.python.org/3.7/tutorial/errors.html
       title: Handling Exceptions
+    - file: notebooks/activity_basic_pandas_operations
+      title: Using Pandas to read/write CSV files.
+    - file: notebooks/globbing_files
+      title: File access-Globbing and preloading 
+    - file: notebooks/activity_reference_vs_value
+      title: Mutable and immutable types
     - file: notebooks/classes
       title: Object Oriented Programming
     - file: notebooks/review_of_fundamentals_b
@@ -72,8 +78,8 @@ parts:
       title: Debugging practice 1
     - file: notebooks/activity_debugging_experiments
       title: Debugging practice 2
-    - file: notebooks/activity_basic_pandas_operations
-      title: Basic Pandas operations
+    - url: https://psych750.github.io/knitted_Rmd/playing_around_gss_solutions.html
+      title: Basic Examples of GSS data wrangling
   - caption: Exercises
     chapters:
     - file: notebooks/Exercise0-test
@@ -88,3 +94,7 @@ parts:
       title: Exercise 4-Modularization and error checking
     - file: notebooks/Exercise5-interactive
       title: Exercise 5-Getting interactive
+    - file: notebooks/Exercise6-tilt_analysis
+      title: Exercise 6-Analyzing the tilt adjustment data
+    - file: notebooks/Exercise7-gss-wrangling.ipynb
+      title: Exercise 7-Exploring the general social survey 

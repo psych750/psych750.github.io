@@ -224,6 +224,21 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/activity_basic_pandas_operations.html">
+   Using Pandas to read/write CSV files.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/globbing_files.html">
+   File access-Globbing and preloading
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/activity_reference_vs_value.html">
+   Mutable and immutable types
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="notebooks/classes.html">
    Classes
   </a>
@@ -286,8 +301,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="notebooks/activity_basic_pandas_operations.html">
-   Basic Pandas operations
+  <a class="reference external" href="https://psych750.github.io/knitted_Rmd/playing_around_gss_solutions.html">
+   Basic Examples of GSS data wrangling
   </a>
  </li>
 </ul>
@@ -325,6 +340,16 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="notebooks/Exercise5-interactive.html">
    Exercise 5-Getting interactive
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/Exercise6-tilt_analysis.html">
+   Exercise 6-Analyzing the tilt adjustment data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/Exercise7-gss-wrangling.html">
+   Exercise 7-Exploring the general social survey
   </a>
  </li>
 </ul>
@@ -463,12 +488,17 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="todo">
 <h1>TODO<a class="headerlink" href="#todo" title="Permalink to this headline">#</a></h1>
-<p>[x] Finish demo of Exercise 5</p>
-<p>[x] pickling</p>
-<p>[x] solution to exercise 4</p>
+<p>[ ] <a class="reference external" href="https://bookdown.org/yihui/rmarkdown-cookbook/working-directory.html">https://bookdown.org/yihui/rmarkdown-cookbook/working-directory.html</a>  and use of here; opening Rmd vs. Proj
+[ ] Useful R patterns:
+[ ] %in% and negation (e.g., choosing which columns NOT to select)
+[ ] summarize_if
+[ ] if_else/case_when
+[ ] coalesce - the thing that gives you the non-na value of a set of columns
+[ ] here
+[ ] rowwse and across
+[ ] sjmisc:: rec, dicho, recode_to, split_var (what’s group_var?)
+[ ] grepl string matching –&gt; regexps</p>
 <p>[o] CHallenge exercise: max(set(a),key=a.count) to find mode. Have students explain why it works.</p>
-<p>[ ] R tidyverse demo notebook necessary?</p>
-<p>[ ] Exercise 6 - GSS data-wrangling and plotting.</p>
 <p>[ ] Add recursive fibonacci to function notebook?
 - efficient one line- fib = lambda n,a=0,b=1: a if n&lt;=0 else fib(n-1,b,a+b)
 - fib = lambda n,x=(0,1):[x := (x[1], sum(x)) for i in range(n+1)][-1][0]</p>

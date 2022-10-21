@@ -226,6 +226,21 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="activity_basic_pandas_operations.html">
+   Using Pandas to read/write CSV files.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="globbing_files.html">
+   File access-Globbing and preloading
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="activity_reference_vs_value.html">
+   Mutable and immutable types
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="classes.html">
    Classes
   </a>
@@ -288,8 +303,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="activity_basic_pandas_operations.html">
-   Basic Pandas operations
+  <a class="reference external" href="https://psych750.github.io/knitted_Rmd/playing_around_gss_solutions.html">
+   Basic Examples of GSS data wrangling
   </a>
  </li>
 </ul>
@@ -327,6 +342,16 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="Exercise5-interactive.html">
    Exercise 5-Getting interactive
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise6-tilt_analysis.html">
+   Exercise 6-Analyzing the tilt adjustment data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise7-gss-wrangling.html">
+   Exercise 7-Exploring the general social survey
   </a>
  </li>
 </ul>
@@ -519,6 +544,41 @@ title="Print to PDF"
     <a class="reference internal nav-link" href="#combine-concatenate-two-or-more-files-and-write-the-output-to-another-file">
      Combine (concatenate) two or more files and write the output to another file
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#combine-two-files-and-print-the-results-to-the-screen">
+       Combine two files and print the results to the screen
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#combine-all-files-with-the-word-data-in-the-filename-and-which-end-on-txt">
+       Combine all files with the word ‘data’ in the filename and which end on txt.
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#do-the-same-and-write-the-output-to-a-new-file">
+       Do the same and write the output to a new file
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#append-the-output-to-a-file-i-e-add-to-the-end-of-the-file">
+       <strong>
+        Append
+       </strong>
+       the output to a file (i.e., add to the end of the file)
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#concatenate-files-while-getting-rid-of-the-first-line">
+       Concatenate files while getting rid of the first line
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#use-cat-and-tail-together">
+       Use cat and tail together:
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -614,6 +674,41 @@ title="Print to PDF"
     <a class="reference internal nav-link" href="#combine-concatenate-two-or-more-files-and-write-the-output-to-another-file">
      Combine (concatenate) two or more files and write the output to another file
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#combine-two-files-and-print-the-results-to-the-screen">
+       Combine two files and print the results to the screen
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#combine-all-files-with-the-word-data-in-the-filename-and-which-end-on-txt">
+       Combine all files with the word ‘data’ in the filename and which end on txt.
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#do-the-same-and-write-the-output-to-a-new-file">
+       Do the same and write the output to a new file
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#append-the-output-to-a-file-i-e-add-to-the-end-of-the-file">
+       <strong>
+        Append
+       </strong>
+       the output to a file (i.e., add to the end of the file)
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#concatenate-files-while-getting-rid-of-the-first-line">
+       Concatenate files while getting rid of the first line
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#use-cat-and-tail-together">
+       Use cat and tail together:
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -783,25 +878,59 @@ prefixing “mask_” to each one</p>
 </section>
 <section id="combine-concatenate-two-or-more-files-and-write-the-output-to-another-file">
 <h2>Combine (concatenate) two or more files and write the output to another file<a class="headerlink" href="#combine-concatenate-two-or-more-files-and-write-the-output-to-another-file" title="Permalink to this headline">#</a></h2>
-<p>Combine two files and print the results to the screen</p>
+<section id="combine-two-files-and-print-the-results-to-the-screen">
+<h3>Combine two files and print the results to the screen<a class="headerlink" href="#combine-two-files-and-print-the-results-to-the-screen" title="Permalink to this headline">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat file1.txt file2.txt
 </pre></div>
 </div>
 <p>(conCATenate, get it?)</p>
-<p>Combine all files with the word ‘data’ in the filename</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat *data*
+</section>
+<section id="combine-all-files-with-the-word-data-in-the-filename-and-which-end-on-txt">
+<h3>Combine all files with the word ‘data’ in the filename and which end on txt.<a class="headerlink" href="#combine-all-files-with-the-word-data-in-the-filename-and-which-end-on-txt" title="Permalink to this headline">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat *data*txt
 </pre></div>
 </div>
-<p>Do the same and write the output to a new file</p>
+</section>
+<section id="do-the-same-and-write-the-output-to-a-new-file">
+<h3>Do the same and write the output to a new file<a class="headerlink" href="#do-the-same-and-write-the-output-to-a-new-file" title="Permalink to this headline">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat *data* &gt; allDat.txt
 </pre></div>
 </div>
 <p>(if allDat.txt already exists, it will be overwritten) Caveat: what
 happens if you try <code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">*data*</span> <span class="pre">&gt;</span> <span class="pre">alldata.txt</span></code></p>
-<p><em>Append</em> the output to a file (i.e., add to the end of the file)</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat *data* &gt;&gt; allDat.txt
+</section>
+<section id="append-the-output-to-a-file-i-e-add-to-the-end-of-the-file">
+<h3><strong>Append</strong> the output to a file (i.e., add to the end of the file)<a class="headerlink" href="#append-the-output-to-a-file-i-e-add-to-the-end-of-the-file" title="Permalink to this headline">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat *data* &gt;&gt; allData.txt
 </pre></div>
 </div>
+</section>
+<section id="concatenate-files-while-getting-rid-of-the-first-line">
+<h3>Concatenate files while getting rid of the first line<a class="headerlink" href="#concatenate-files-while-getting-rid-of-the-first-line" title="Permalink to this headline">#</a></h3>
+<p>If you want to concatenate files that contain a column header, combining them using <code class="docutils literal notranslate"><span class="pre">cat</span></code> will cause your resulting file to have lots of headers instead of just 1, at the top. There’s an easy (though unintuitive) solution for it: use <code class="docutils literal notranslate"><span class="pre">tail</span></code> with some options to print all but the first line.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tail -n +2 file1.txt
+</pre></div>
+</div>
+<p>You can direct it to output using <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> as with cat (or any bash command). To combine multiple files, add them as above, e.g.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tail -n +2 *data*txt &gt; allDat.txt
+</pre></div>
+</div>
+<p>You’ll notice that if you pass multiple files to <code class="docutils literal notranslate"><span class="pre">tail</span></code>, it will print the filename at the start of every file. This will mess up your neatly formatted file. To suppress the filename add <code class="docutils literal notranslate"><span class="pre">-q</span></code>, i.e.,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tail -q -n +2 *data*txt &gt; allDat.txt
+</pre></div>
+</div>
+</section>
+<section id="use-cat-and-tail-together">
+<h3>Use cat and tail together:<a class="headerlink" href="#use-cat-and-tail-together" title="Permalink to this headline">#</a></h3>
+<p>Let’s say you want to concatenate all of one file and all but the first line of other files. You can chain <code class="docutils literal notranslate"><span class="pre">cat</span></code> and <code class="docutils literal notranslate"><span class="pre">tail</span></code> like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat files_whose_header_you_want_to_keep*txt <span class="o">&amp;&amp;</span> tail -q -n +2 files_whose_header_you_want_to_omit*txt &gt; allDat.txt
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Make sure all your files end with a newline or the first line of the next file will continue from the last line of the previous file.</p>
+</div>
+</section>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="some-miscellanous-tips">
