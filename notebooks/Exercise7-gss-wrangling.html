@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Exercise 6 - Exploring the General Social Survey &#8212; Psych 750</title>
+    <title>Exercise 7 - Exploring the General Social Survey &#8212; Psych 750</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -553,7 +553,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Exercise 6 - Exploring the General Social Survey</h1>
+                <h1>Exercise 7 - Exploring the General Social Survey</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -608,11 +608,12 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="exercise-6-exploring-the-general-social-survey">
-<h1>Exercise 6 - Exploring the General Social Survey<a class="headerlink" href="#exercise-6-exploring-the-general-social-survey" title="Permalink to this headline">#</a></h1>
-<p>[Accept the exercise](link coming soon)</p>
-<p>Due date is Wednesday at 11 for this one again.</p>
-<p>This exercise will give you practice wrangling and analyzing the general social survey. The goals are to cement the <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> skills we’ve been working on and to give you practice going from a description of a problem to figuring out how to get the data to give you answer – a critical skill for social science and data science.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="exercise-7-exploring-the-general-social-survey">
+<h1>Exercise 7 - Exploring the General Social Survey<a class="headerlink" href="#exercise-7-exploring-the-general-social-survey" title="Permalink to this headline">#</a></h1>
+<p>[Accept the exercise](<a class="reference external" href="https://classroom.github.com/a/-_Q2eUbC">link coming soon</a>)</p>
+<p>**Due date is Wednesday at 11 for this one again. You can work in groups of 2 or individually. If you’re looking for a partner, start a group whose name ends with <code class="docutils literal notranslate"><span class="pre">_team</span></code>.
+**
+This exercise will give you practice wrangling and analyzing the general social survey. The goals are to cement the <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> skills we’ve been working on and to give you practice going from a description of a problem to figuring out how to get the data to give you answer – a critical skill for social science and data science.</p>
 <p>Please <a class="reference external" href="https://kjhealy.github.io/gssr/">follow these instructions</a> directions to download all the gss data and load it inro R. I recommend the installation using <code class="docutils literal notranslate"><span class="pre">drat</span></code> option.  Notice that importing the data this way fixes the earlier issue we saw with numeric variables like <code class="docutils literal notranslate"><span class="pre">age</span></code> and <code class="docutils literal notranslate"><span class="pre">income</span></code> being imported as factors. So no need to do the <code class="docutils literal notranslate"><span class="pre">as.character</span> <span class="pre">%&gt;%</span> <span class="pre">as.numeric</span></code> conversion. The factor levels remain the same, so a variable called <code class="docutils literal notranslate"><span class="pre">happy</span></code> has its largest level corresponding to a <em>least</em> happy response. Rename your variables or use <code class="docutils literal notranslate"><span class="pre">fct_rev</span></code> as necessary so that the variable name matches its values.</p>
 <p>Load in all the year into a dataframe called <code class="docutils literal notranslate"><span class="pre">gss_all</span></code>. You can complete the entire exercise using this dataframe, but one of the extra credit problems asks you to also use the “panel” dataset   dataset You can complete all the parts using the gss_all data</p>
 <section id="part-1-human-evolution-vs-elephant-evolution">
