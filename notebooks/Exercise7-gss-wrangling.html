@@ -619,8 +619,14 @@ title="Print to PDF"
 </pre></div>
 </div>
 <p>If you want to create factors that preserve the original order (you probably do):</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">gss</span><span class="o">$</span><span class="n">sex_l</span> <span class="o">&lt;-</span> <span class="nf">to_factor</span><span class="p">(</span><span class="n">gss</span><span class="o">$</span><span class="n">sex</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="s">&quot;p&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 <p><code class="docutils literal notranslate"><span class="pre">sex_l</span></code> is now a factor.</p>
-<p>If you want to create an <strong>ordinal</strong> factor use <code class="docutils literal notranslate"><span class="pre">ordered</span></code> like so:</p>
+<p>If you want to create an <strong>ordinal</strong> factor (you probably don’t), use <code class="docutils literal notranslate"><span class="pre">ordered</span></code>:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">gss</span><span class="o">$</span><span class="n">sex_l</span> <span class="o">&lt;-</span> <span class="nf">to_factor</span><span class="p">(</span><span class="n">gss</span><span class="o">$</span><span class="n">sex</span><span class="p">,</span> <span class="n">ordered</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+</pre></div>
+</div>
 <p>Please load in all the years into a dataframe called <code class="docutils literal notranslate"><span class="pre">gss_all</span></code>. You can complete the entire exercise using this dataframe, but one of the extra credit problems asks you to also use the longitututinal “panel” dataset.</p>
 <section id="part-1-human-evolution-vs-elephant-evolution">
 <h2>Part 1: Human evolution vs. elephant evolution<a class="headerlink" href="#part-1-human-evolution-vs-elephant-evolution" title="Permalink to this headline">#</a></h2>
