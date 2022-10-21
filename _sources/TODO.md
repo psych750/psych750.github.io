@@ -1,6 +1,7 @@
 # TODO
 
 
+[ ] https://bookdown.org/yihui/rmarkdown-cookbook/working-directory.html  and use of here; opening Rmd vs. Proj
 [ ] Useful R patterns:
     [ ] %in% and negation (e.g., choosing which columns NOT to select)
     [ ] summarize_if
@@ -10,10 +11,6 @@
     [ ] rowwse and across
     [ ] sjmisc:: rec, dicho, recode_to, split_var (what's group_var?)
     [ ] grepl string matching --> regexps
-
-[x] Concatenation  tail -n +2 *csv
-
-[ ] Exercise 6 - GSS data-wrangling and plotting.
 
 [o] CHallenge exercise: max(set(a),key=a.count) to find mode. Have students explain why it works. 
 
