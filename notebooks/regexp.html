@@ -531,8 +531,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bath-file-renaming">
-   Bath file renaming
+  <a class="reference internal nav-link" href="#bach-file-renaming">
+   Bach file renaming
   </a>
  </li>
 </ul>
@@ -570,8 +570,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bath-file-renaming">
-   Bath file renaming
+  <a class="reference internal nav-link" href="#bach-file-renaming">
+   Bach file renaming
   </a>
  </li>
 </ul>
@@ -588,7 +588,7 @@ title="Print to PDF"
 <h1>Regular expressions<a class="headerlink" href="#regular-expressions" title="Permalink to this headline">#</a></h1>
 <p>Regular expressions are an immensely powerful tool built into most modern computer languages. They are a type of formal grammar that allow you to match strings that match or mismatch a particular rule. [<a class="reference external" href="http://www.rexegg.com/regex-uses.html">http://www.rexegg.com/regex-uses.html</a>](Common uses) include checking if user input conforms to a desired pattern (e.g., 3 numbers followed by two numbers, followed by 3 numbers), do all sorts of complicated search-replace operations both in text-files and, e.g., renaming files.</p>
 <p>There are [<a class="reference external" href="https://www.amazon.com/Mastering-Regular-Expressions-Jeffrey-Friedl/dp/0596528124">https://www.amazon.com/Mastering-Regular-Expressions-Jeffrey-Friedl/dp/0596528124</a>](entire books) written on regular expressions as well as <a class="reference external" href="https://www.regular-expressions.info/">comprehensive online references</a>. We’ll only concern ourselves with a few basics here.</p>
-<p>Start by looking over the <a class="reference external" href="https://regexone.com/">first couple lessons of this tutorial</a>, paying special attention to the sidebar on right, which I reproduce below.</p>
+<p><strong>Start by looking over the <a class="reference external" href="https://regexone.com/">first 10 lessons of this tutorial</a></strong> (they’re very quick), paying special attention to the sidebar on right, which I reproduce below.</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Syntax</p></th>
@@ -668,7 +668,9 @@ is	be	VBZ	192975
 <p>Just to illustrate an alternate way of dealing with csv file, let’s use the <code class="docutils literal notranslate"><span class="pre">csv</span></code> module:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://example.com/passkey=wedsmdjsjmdd&#39;</span><span class="p">)</span>
 
 <span class="n">csvfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;datasets/ANC-written-count_over9.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictReader</span><span class="p">(</span><span class="n">csvfile</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -937,7 +939,7 @@ is	be	VBZ	192975
 </div>
 </div>
 <p>Grab all words begin with an <em>a</em> and end with an <em>i</em></p>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">curWord</span> <span class="k">for</span> <span class="n">curWord</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;^a\w+i$&#39;</span><span class="p">,</span><span class="n">curWord</span><span class="p">)]</span>
 </pre></div>
@@ -1016,7 +1018,7 @@ is	be	VBZ	192975
 </div>
 </div>
 <p>Grab words that start with a <em>l</em>, end on an <em>t</em>, and contain a <em>t</em> somewhere in the middle</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">curWord</span> <span class="k">for</span> <span class="n">curWord</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;^b\w+t\w+t$&#39;</span><span class="p">,</span><span class="n">curWord</span><span class="p">)]</span>
 </pre></div>
@@ -1042,7 +1044,7 @@ is	be	VBZ	192975
 </div>
 </div>
 <p>Let’s say we want to exclude words that end on two <em>t</em>s.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">curWord</span> <span class="k">for</span> <span class="n">curWord</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;^b\w+t\w+[^tt]t$&#39;</span><span class="p">,</span><span class="n">curWord</span><span class="p">)]</span>
 </pre></div>
@@ -1067,7 +1069,7 @@ is	be	VBZ	192975
 </div>
 </div>
 <p>Let’s get all the words containing the vowels a, e, i, o, in that order</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">curWord</span> <span class="k">for</span> <span class="n">curWord</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;\w+a+\w+e+\w+i+\w+o+&#39;</span><span class="p">,</span><span class="n">curWord</span><span class="p">)]</span>
 </pre></div>
@@ -1122,7 +1124,7 @@ cei words: 33
 </div>
 <p>There are actually <em>more</em> words that violate the mnemonic than those that obey it!
 What are these words?</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">curWord</span> <span class="k">for</span> <span class="n">curWord</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;cie&#39;</span><span class="p">,</span><span class="n">curWord</span><span class="p">)]</span>
 </pre></div>
@@ -1400,8 +1402,8 @@ and replacing with
 <code class="docutils literal notranslate"><span class="pre">\n</span></code>
 To get rid of multiple newlines that the first search/replace may have created.</p>
 </section>
-<section id="bath-file-renaming">
-<h2>Bath file renaming<a class="headerlink" href="#bath-file-renaming" title="Permalink to this headline">#</a></h2>
+<section id="bach-file-renaming">
+<h2>Bach file renaming<a class="headerlink" href="#bach-file-renaming" title="Permalink to this headline">#</a></h2>
 <p>You can use what you’ve learned about regular expressions for manipulating not just actual text, but text used in file names. You can do this in straight-up Python using the <code class="docutils literal notranslate"><span class="pre">os</span></code> library, or by using GUI programs like <a class="reference external" href="https://mrrsoftware.com/namechanger/">NameChanger</a> (Mac),  or <a class="reference external" href="http://www.bulkrenameutility.co.uk/Main_Intro.php">Bulk Rename</a> (PC). These programs allow you to do batch renaming of files using simple search/replace (e.g., replace <code class="docutils literal notranslate"><span class="pre">_</span></code> with <code class="docutils literal notranslate"><span class="pre">-</span></code> as well as by using regular expressions for more complex changes!</p>
 </section>
 </section>
