@@ -307,6 +307,11 @@ const thebe_selector_output = ".output, .cell_output"
    Basic Examples of GSS data wrangling
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="activity_google_this.html">
+   Google this!
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -352,6 +357,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="Exercise7-gss-wrangling.html">
    Exercise 7-Exploring the general social survey
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise8-regexps.html">
+   Exercise 8-Practice with regular expressions
   </a>
  </li>
 </ul>
@@ -531,8 +541,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bath-file-renaming">
-   Bath file renaming
+  <a class="reference internal nav-link" href="#batch-file-renaming">
+   Batch file renaming
   </a>
  </li>
 </ul>
@@ -570,8 +580,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bath-file-renaming">
-   Bath file renaming
+  <a class="reference internal nav-link" href="#batch-file-renaming">
+   Batch file renaming
   </a>
  </li>
 </ul>
@@ -586,9 +596,11 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="regular-expressions">
 <h1>Regular expressions<a class="headerlink" href="#regular-expressions" title="Permalink to this headline">#</a></h1>
-<p>Regular expressions are an immensely powerful tool built into most modern computer languages. They are a type of formal grammar that allow you to match strings that match or mismatch a particular rule. [<a class="reference external" href="http://www.rexegg.com/regex-uses.html">http://www.rexegg.com/regex-uses.html</a>](Common uses) include checking if user input conforms to a desired pattern (e.g., 3 numbers followed by two numbers, followed by 3 numbers), do all sorts of complicated search-replace operations both in text-files and, e.g., renaming files.</p>
-<p>There are [<a class="reference external" href="https://www.amazon.com/Mastering-Regular-Expressions-Jeffrey-Friedl/dp/0596528124">https://www.amazon.com/Mastering-Regular-Expressions-Jeffrey-Friedl/dp/0596528124</a>](entire books) written on regular expressions as well as <a class="reference external" href="https://www.regular-expressions.info/">comprehensive online references</a>. We’ll only concern ourselves with a few basics here.</p>
-<p>Start by looking over the <a class="reference external" href="https://regexone.com/">first couple lessons of this tutorial</a>, paying special attention to the sidebar on right, which I reproduce below.</p>
+<p>Regular expressions are an immensely powerful tool built into most modern computer languages. They are a type of formal grammar that allow you to match strings that match or mismatch a particular rule. <a class="reference external" href="http://www.rexegg.com/regex-uses.html">Common uses</a> include checking if user input conforms to a desired pattern (e.g., 3 numbers followed by two numbers, followed by 3 numbers), to all sorts of complicated search-replace operations both in text-files and, e.g., renaming files.</p>
+<p>There are <a class="reference external" href="https://www.amazon.com/Mastering-Regular-Expressions-Jeffrey-Friedl/dp/0596528124">entire books</a> written on regular expressions as well as <a class="reference external" href="https://www.regular-expressions.info/">comprehensive online references</a>. We’ll only concern ourselves with a few basics here.</p>
+<p><strong>Start by looking over the <a class="reference external" href="https://regexone.com/">first 10 lessons of this tutorial</a></strong> (they’re very quick), paying special attention to the sidebar on right, which I reproduce below.</p>
+<p>Now go to this snazzy <a class="reference external" href="https://regexr.com/">interactive regexp matcher</a> and play around with it to get a feel for the syntax.</p>
+<p>Then go through the rest of this notebook and make sure you understand why each regexp works in the way it does.</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Syntax</p></th>
@@ -665,330 +677,323 @@ is	be	VBZ	192975
 </pre></div>
 </div>
 <p>For those unfamiliar with language lingo, English lemmas are basically the word-stems, e.g., the lemma of <em>cars</em> is <em>car</em>; the lemma of <em>walking</em> is <em>walk</em>. pos stands for <a class="reference external" href="https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html"><em>part of speech</em></a>.</p>
-<p>Just to illustrate an alternate way of dealing with csv file, let’s use the <code class="docutils literal notranslate"><span class="pre">csv</span></code> module:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span> <span class="c1">#import the python regexp module</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="n">csvfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;datasets/ANC-written-count_over9.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictReader</span><span class="p">(</span><span class="n">csvfile</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://psych750.github.io/data/ANC-written-count_over9.txt&#39;</span><span class="p">,</span><span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;ISO-8859-1&quot;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">data</span></code> is a <a class="reference external" href="https://docs.python.org/2/library/csv.html#csv.DictReader">DictReader</a> object which is kind of like a list of dictionaries of the kind we made when reading in trial files, except unlike a list we can’t access a particular element, but have to iterate through it. The advantage of this is that we don’t need to hold the entire dataset in memory at the same time (important for very large datasets, but not an issue in the present case).</p>
-<p>Since memory is not an issue here, let’s put all the unique words. We don’t care about frequencies for this exercise.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span> <span class="c1">#import the python regexp module</span>
-
-<span class="n">words</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;word&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">data</span><span class="p">])</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;We have&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">words</span><span class="p">),</span> <span class="s2">&quot;words&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">words</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;word&#39;</span><span class="p">]))[</span><span class="mi">1</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;We have </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">words</span><span class="p">)</span><span class="si">}</span><span class="s2"> unique words&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>We have 48318 words
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>We have 48316 unique words
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;iguana&#39;,
+ &#39;pri&#39;,
+ &#39;il&#39;,
+ &#39;opportunistic&#39;,
+ &#39;bucket&#39;,
+ &#39;bypassing&#39;,
+ &#39;altavista&#39;,
+ &#39;stereotyped&#39;,
+ &#39;subpopulation&#39;,
+ &#39;ubiquitination&#39;]
 </pre></div>
 </div>
 </div>
 </div>
 <p>Now let’s use some regular expressions starting with simple ones, and moving on to every slightly more complicated ones.</p>
 <p>Grab words beginning with <em>q</em></p>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">curWord</span> <span class="k">for</span> <span class="n">curWord</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;^q&#39;</span><span class="p">,</span><span class="n">curWord</span><span class="p">)]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;quickedit&#39;,
- &#39;qualifications&#39;,
- &#39;queue&#39;,
- &#39;quadrant&#39;,
- &#39;quarter&#39;,
- &#39;quartet&#39;,
- &#39;qol&#39;,
- &#39;queues&#39;,
- &#39;qida&#39;,
- &#39;quicker&#39;,
- &#39;quixtar&#39;,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;qualitatively&#39;,
+ &#39;quarterly&#39;,
  &#39;quadrupled&#39;,
- &#39;quaint&#39;,
- &#39;quarterfinal&#39;,
- &#39;quixote&#39;,
- &#39;quarry&#39;,
- &#39;quickened&#39;,
- &#39;quintiles&#39;,
- &#39;quarries&#39;,
- &#39;qur&#39;,
- &#39;qua&#39;,
- &#39;quivering&#39;,
- &#39;quenched&#39;,
- &#39;quentin&#39;,
- &#39;quilts&#39;,
- &#39;qualifying&#39;,
- &#39;queensland&#39;,
- &#39;quartets&#39;,
- &#39;quantitation&#39;,
- &#39;questioner&#39;,
- &#39;questioned&#39;,
- &#39;quartiles&#39;,
- &#39;quarrels&#39;,
- &#39;quibble&#39;,
- &#39;quinones&#39;,
+ &#39;quotes&#39;,
  &#39;qaida&#39;,
- &#39;quine&#39;,
- &#39;quick-edit&#39;,
- &#39;quoting&#39;,
- &#39;qrna&#39;,
- &#39;queens&#39;,
- &#39;quarterbacks&#39;,
- &#39;questioning&#39;,
- &#39;qiagen&#39;,
- &#39;quiche&#39;,
- &#39;qiaquick&#39;,
- &#39;qrs&#39;,
- &#39;qus&#39;,
- &#39;que&#39;,
- &#39;qui&#39;,
- &#39;quo&#39;,
- &#39;quadrangle&#39;,
- &#39;quintet&#39;,
- &#39;qingdao&#39;,
- &#39;qualifies&#39;,
- &#39;qualifier&#39;,
- &#39;qualified&#39;,
- &#39;quiet&#39;,
- &#39;quantiles&#39;,
- &#39;qtls&#39;,
- &#39;qualcomm&#39;,
- &#39;quetzalcoatl&#39;,
- &#39;questions&#39;,
- &#39;quips&#39;,
- &#39;quso&#39;,
- &#39;qualifiers&#39;,
  &#39;questionnaires&#39;,
- &#39;quiver&#39;,
- &#39;quark&#39;,
- &#39;quart&#39;,
- &#39;qassam&#39;,
- &#39;quickness&#39;,
- &#39;quote&#39;,
- &#39;quota&#39;,
- &#39;qadir&#39;,
- &#39;quarters&#39;,
- &#39;qatar&#39;,
- &#39;q\xe9\xe5\xfc\xe5\xe7\xe4\xe7\xf6\xf3&#39;,
- &#39;qios&#39;,
- &#39;quantified&#39;,
- &#39;quarter-century&#39;,
- &#39;qaddafi&#39;,
- &#39;quantities&#39;,
- &#39;quantitate&#39;,
- &#39;question&#39;,
- &#39;qutb&#39;,
- &#39;quotient&#39;,
- &#39;quarterfinals&#39;,
- &#39;quintanilla&#39;,
- &#39;query&#39;,
- &#39;quakes&#39;,
- &#39;quaker&#39;,
- &#39;quarrel&#39;,
- &#39;quitting&#39;,
- &#39;quds&#39;,
- &#39;quaid&#39;,
- &#39;quail&#39;,
- &#39;quenching&#39;,
- &#39;quantification&#39;,
- &#39;qp&#39;,
- &#39;qu&#39;,
- &#39;qa&#39;,
- &#39;qb&#39;,
+ &#39;qtls&#39;,
+ &#39;quibble&#39;,
+ &#39;quintana&#39;,
+ &#39;qin&#39;,
+ &#39;quilts&#39;,
+ &#39;quetzalcoatl&#39;,
+ &#39;qçí&#39;,
+ &#39;quadratic&#39;,
+ &#39;quartop&#39;,
+ &#39;quit&#39;,
+ &#39;querying&#39;,
+ &#39;qing&#39;,
+ &#39;qualities&#39;,
+ &#39;quartet&#39;,
  &#39;qd&#39;,
  &#39;quadruple&#39;,
- &#39;quashed&#39;,
- &#39;quantitative&#39;,
- &#39;quirk&#39;,
- &#39;quickie&#39;,
- &#39;quiescent&#39;,
- &#39;queasy&#39;,
- &#39;qpak&#39;,
+ &#39;quoting&#39;,
+ &#39;quso&#39;,
  &#39;quixotic&#39;,
- &#39;quantitated&#39;,
- &#39;quagmire&#39;,
- &#39;qualify&#39;,
- &#39;quizzes&#39;,
- &#39;qu\xe9bec&#39;,
- &#39;quests&#39;,
- &#39;quartops&#39;,
- &#39;q\xe7\xed&#39;,
- &#39;quecreek&#39;,
- &#39;quantitatively&#39;,
- &#39;quantile&#39;,
- &#39;quieter&#39;,
- &#39;quantifying&#39;,
- &#39;quintessential&#39;,
- &#39;qrt-pcr&#39;,
- &#39;quay&#39;,
- &#39;quai&#39;,
- &#39;quartz&#39;,
- &#39;quality-of-life&#39;,
- &#39;qspline&#39;,
- &#39;quayle&#39;,
- &#39;quell&#39;,
- &#39;quotations&#39;,
- &#39;qualms&#39;,
- &#39;quit&#39;,
- &#39;quip&#39;,
  &#39;quiz&#39;,
- &#39;quid&#39;,
- &#39;quotation&#39;,
- &#39;quibbles&#39;,
- &#39;quindlen&#39;,
- &#39;quantify&#39;,
- &#39;quench&#39;,
- &#39;quadrants&#39;,
- &#39;quran&#39;,
- &#39;quintana&#39;,
- &#39;queen&#39;,
- &#39;quad&#39;,
- &#39;qwest&#39;,
- &#39;quinta&#39;,
- &#39;quickly&#39;,
- &#39;questionable&#39;,
- &#39;quasi&#39;,
- &#39;quash&#39;,
- &#39;quigley&#39;,
- &#39;quarreling&#39;,
- &#39;quartop&#39;,
- &#39;qing&#39;,
- &#39;quake&#39;,
- &#39;queried&#39;,
- &#39;queries&#39;,
- &#39;quadratic&#39;,
- &#39;qaeda&#39;,
- &#39;quays&#39;,
- &#39;qio&#39;,
- &#39;qin&#39;,
- &#39;quandary&#39;,
- &#39;quite&#39;,
- &#39;quits&#39;,
- &#39;quack&#39;,
- &#39;quest&#39;,
- &#39;quarterback&#39;,
- &#39;quayside&#39;,
+ &#39;quests&#39;,
+ &#39;queue&#39;,
+ &#39;qingdao&#39;,
  &#39;qtc&#39;,
- &#39;qtl&#39;,
- &#39;quickest&#39;,
+ &#39;queried&#39;,
+ &#39;quai&#39;,
+ &#39;quantiles&#39;,
+ &#39;qassam&#39;,
+ &#39;quiescent&#39;,
+ &#39;quiche&#39;,
+ &#39;quietly&#39;,
+ &#39;quirky&#39;,
+ &#39;quarrel&#39;,
+ &#39;quincy&#39;,
+ &#39;quell&#39;,
+ &#39;quarter-century&#39;,
+ &#39;quadrants&#39;,
+ &#39;quick&#39;,
+ &#39;qspline&#39;,
+ &#39;quintessential&#39;,
+ &#39;quashed&#39;,
+ &#39;qaddafi&#39;,
+ &#39;quintanilla&#39;,
+ &#39;quiver&#39;,
+ &#39;queen&#39;,
+ &#39;quilting&#39;,
+ &#39;quantum&#39;,
+ &#39;quipped&#39;,
+ &#39;q-pna&#39;,
+ &#39;quill&#39;,
+ &#39;qualifying&#39;,
+ &#39;quick-edit&#39;,
+ &#39;quart&#39;,
+ &#39;qios&#39;,
+ &#39;quay&#39;,
+ &#39;quitting&#39;,
+ &#39;quagmire&#39;,
+ &#39;quickly&#39;,
  &#39;qe&#39;,
+ &#39;quarterfinals&#39;,
+ &#39;quilt&#39;,
+ &#39;quenched&#39;,
+ &#39;quantities&#39;,
+ &#39;quartiles&#39;,
+ &#39;quantitate&#39;,
+ &#39;qtl&#39;,
+ &#39;quantitatively&#39;,
+ &#39;quran&#39;,
+ &#39;quarterfinal&#39;,
+ &#39;quickening&#39;,
+ &#39;quantitative&#39;,
+ &#39;quickness&#39;,
+ &#39;quine&#39;,
+ &#39;quaint&#39;,
+ &#39;qianlong&#39;,
+ &#39;quebec&#39;,
+ &#39;qualifications&#39;,
+ &#39;quickest&#39;,
+ &#39;quantified&#39;,
+ &#39;q&#39;,
+ &#39;quandary&#39;,
+ &#39;qutb&#39;,
+ &#39;quot&#39;,
+ &#39;qadir&#39;,
+ &#39;quote&#39;,
+ &#39;quarterback&#39;,
+ &#39;queasy&#39;,
+ &#39;quarterbacks&#39;,
+ &#39;qualified&#39;,
+ &#39;qt&#39;,
+ &#39;queries&#39;,
+ &#39;quintile&#39;,
+ &#39;quark&#39;,
+ &#39;qualifier&#39;,
+ &#39;quayle&#39;,
+ &#39;qeis&#39;,
+ &#39;qsp&#39;,
+ &#39;quail&#39;,
+ &#39;qida&#39;,
+ &#39;quad&#39;,
+ &#39;qpak&#39;,
+ &#39;quo&#39;,
+ &#39;qualms&#39;,
+ &#39;questionable&#39;,
+ &#39;quickie&#39;,
+ &#39;quartz&#39;,
+ &#39;quantify&#39;,
+ &#39;quotations&#39;,
+ &#39;quinone&#39;,
+ &#39;quarry&#39;,
+ &#39;quantity&#39;,
+ &#39;quindlen&#39;,
+ &#39;quantifying&#39;,
+ &#39;qur&#39;,
+ &#39;questioning&#39;,
+ &#39;qb&#39;,
+ &#39;quds&#39;,
+ &#39;quirks&#39;,
+ &#39;quarters&#39;,
+ &#39;quality&#39;,
+ &#39;qéåüåçäçöó&#39;,
+ &#39;québécois&#39;,
+ &#39;qureshi&#39;,
+ &#39;quadrangle&#39;,
+ &#39;quotable&#39;,
+ &#39;quadrant&#39;,
+ &#39;queues&#39;,
+ &#39;qu&#39;,
+ &#39;questions&#39;,
+ &#39;quickedit&#39;,
+ &#39;quenk&#39;,
+ &#39;qualcomm&#39;,
+ &#39;quasispecies&#39;,
+ &#39;quotation&#39;,
+ &#39;quixote&#39;,
+ &#39;quips&#39;,
+ &#39;quake&#39;,
+ &#39;quentin&#39;,
+ &#39;quid&#39;,
+ &#39;qa&#39;,
+ &#39;quaternary&#39;,
+ &#39;que&#39;,
+ &#39;quilted&#39;,
+ &#39;quantitated&#39;,
+ &#39;quackery&#39;,
+ &#39;quoted&#39;,
+ &#39;quantile&#39;,
+ &#39;qualifiers&#39;,
+ &#39;question&#39;,
+ &#39;quip&#39;,
+ &#39;qui&#39;,
+ &#39;qiaquick&#39;,
+ &#39;quite&#39;,
+ &#39;quasi&#39;,
+ &#39;quinta&#39;,
+ &#39;qus&#39;,
+ &#39;qrs&#39;,
+ &#39;qrna&#39;,
+ &#39;quality-of-life&#39;,
+ &#39;quizzes&#39;,
+ &#39;quakes&#39;,
+ &#39;queer&#39;,
+ &#39;qualitative&#39;,
+ &#39;québec&#39;,
+ &#39;quaker&#39;,
+ &#39;quixtar&#39;,
+ &#39;quirk&#39;,
+ &#39;quartops&#39;,
+ &#39;qua&#39;,
+ &#39;quack&#39;,
+ &#39;quintas&#39;,
+ &#39;quigley&#39;,
+ &#39;questioned&#39;,
+ &#39;quiet&#39;,
+ &#39;qualify&#39;,
+ &#39;quarreling&#39;,
+ &#39;quintiles&#39;,
+ &#39;quotas&#39;,
+ &#39;queensland&#39;,
+ &#39;question-and-answer&#39;,
+ &#39;quest&#39;,
+ &#39;quantitation&#39;,
+ &#39;qiagen&#39;,
+ &#39;quench&#39;,
+ &#39;qualifies&#39;,
+ &#39;quotient&#39;,
+ &#39;qio&#39;,
+ &#39;questionnaire&#39;,
+ &#39;quash&#39;,
+ &#39;quayside&#39;,
+ &#39;quibbles&#39;,
+ &#39;quieter&#39;,
+ &#39;questioner&#39;,
+ &#39;qaeda&#39;,
+ &#39;query&#39;,
+ &#39;quantifiable&#39;,
+ &#39;qol&#39;,
+ &#39;quits&#39;,
  &#39;quinn&#39;,
  &#39;quick-line&#39;,
- &#39;q-pna&#39;,
- &#39;quoted&#39;,
- &#39;quotes&#39;,
- &#39;qsp&#39;,
- &#39;quinean&#39;,
- &#39;questionnaire&#39;,
- &#39;quotas&#39;,
- &#39;quantum&#39;,
- &#39;querying&#39;,
- &#39;qureshi&#39;,
- &#39;quality&#39;,
- &#39;quartile&#39;,
- &#39;quenk&#39;,
- &#39;quilt&#39;,
- &#39;qualitatively&#39;,
- &#39;quill&#39;,
- &#39;quot&#39;,
- &#39;qu\xe9b\xe9cois&#39;,
- &#39;qualities&#39;,
- &#39;quasispecies&#39;,
- &#39;quintile&#39;,
- &#39;q&#39;,
- &#39;quantifiable&#39;,
- &#39;quackery&#39;,
- &#39;quinone&#39;,
- &#39;quietly&#39;,
- &#39;quickening&#39;,
- &#39;quebec&#39;,
- &#39;qianlong&#39;,
- &#39;quincy&#39;,
- &#39;quarterly&#39;,
- &#39;qualification&#39;,
- &#39;quilted&#39;,
- &#39;qualitative&#39;,
- &#39;quilting&#39;,
- &#39;quotable&#39;,
- &#39;queer&#39;,
- &#39;quick&#39;,
- &#39;qt&#39;,
- &#39;quirks&#39;,
- &#39;question-and-answer&#39;,
- &#39;quirky&#39;,
- &#39;quantity&#39;,
- &#39;quintas&#39;,
- &#39;quipped&#39;,
- &#39;qeis&#39;,
+ &#39;quintet&#39;,
+ &#39;quarter&#39;,
+ &#39;quickened&#39;,
+ &#39;qatar&#39;,
+ &#39;quantification&#39;,
+ &#39;quarrels&#39;,
+ &#39;queens&#39;,
+ &#39;quota&#39;,
  &#39;quidditch&#39;,
- &#39;quaternary&#39;]
+ &#39;quicker&#39;,
+ &#39;quenching&#39;,
+ &#39;quecreek&#39;,
+ &#39;quarries&#39;,
+ &#39;qualification&#39;,
+ &#39;quinones&#39;,
+ &#39;quartets&#39;,
+ &#39;qwest&#39;,
+ &#39;quivering&#39;,
+ &#39;qp&#39;,
+ &#39;quaid&#39;,
+ &#39;qrt-pcr&#39;,
+ &#39;quays&#39;,
+ &#39;quinean&#39;,
+ &#39;quartile&#39;]
 </pre></div>
 </div>
 </div>
 </div>
 <p>Grab all words begin with an <em>a</em> and end with an <em>i</em></p>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">curWord</span> <span class="k">for</span> <span class="n">curWord</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;^a\w+i$&#39;</span><span class="p">,</span><span class="n">curWord</span><span class="p">)]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;agassi&#39;,
- &#39;asci&#39;,
- &#39;adlai&#39;,
- &#39;antoni&#39;,
- &#39;assisi&#39;,
- &#39;armani&#39;,
- &#39;andrei&#39;,
- &#39;anti&#39;,
- &#39;audi&#39;,
- &#39;alexei&#39;,
- &#39;ascii&#39;,
- &#39;alibi&#39;,
- &#39;api&#39;,
- &#39;ajami&#39;,
- &#39;aulaqi&#39;,
- &#39;agnelli&#39;,
- &#39;abdelghani&#39;,
- &#39;acini&#39;,
- &#39;ami&#39;,
- &#39;afi&#39;,
- &#39;alumni&#39;,
- &#39;alveoli&#39;,
- &#39;arabi&#39;,
- &#39;agouti&#39;,
- &#39;arundhati&#39;,
- &#39;asahi&#39;,
- &#39;aci&#39;,
- &#39;ashkenazi&#39;,
- &#39;adi&#39;,
- &#39;amalfi&#39;,
- &#39;ali&#39;,
- &#39;accompli&#39;,
- &#39;ambani&#39;,
- &#39;afghani&#39;,
- &#39;abi&#39;,
- &#39;avi&#39;,
- &#39;ani&#39;,
- &#39;ari&#39;,
- &#39;abyssi&#39;]
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">/Users/glupyan/gitRepos/psych750.github.io/notebooks/regexp.ipynb Cell 12</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="o">----&gt;</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750.github.io/notebooks/regexp.ipynb#X14sZmlsZQ%3D%3D?line=0&#39;</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">curWord</span> <span class="k">for</span> <span class="n">curWord</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;^a\w+i$&#39;</span><span class="p">,</span><span class="n">curWord</span><span class="p">)]</span>
+
+<span class="nn">/Users/glupyan/gitRepos/psych750.github.io/notebooks/regexp.ipynb Cell 12</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="o">----&gt;</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750.github.io/notebooks/regexp.ipynb#X14sZmlsZQ%3D%3D?line=0&#39;</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">curWord</span> <span class="k">for</span> <span class="n">curWord</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;^a\w+i$&#39;</span><span class="p">,</span><span class="n">curWord</span><span class="p">)]</span>
+
+<span class="nn">File ~/anaconda3/envs/psych750/lib/python3.8/re.py:241,</span> in <span class="ni">findall</span><span class="nt">(pattern, string, flags)</span>
+<span class="g g-Whitespace">    </span><span class="mi">233</span> <span class="k">def</span> <span class="nf">findall</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">string</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">234</span>     <span class="sd">&quot;&quot;&quot;Return a list of all non-overlapping matches in the string.</span>
+<span class="g g-Whitespace">    </span><span class="mi">235</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">236</span><span class="sd">     If one or more capturing groups are present in the pattern, return</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">239</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">240</span><span class="sd">     Empty matches are included in the result.&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">241</span>     <span class="k">return</span> <span class="n">_compile</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">flags</span><span class="p">)</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: expected string or bytes-like object
 </pre></div>
 </div>
 </div>
 </div>
 <p>Grab all words that begin with an <em>a</em>, followed by 4-6 letters and and on an <em>i</em></p>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">curWord</span> <span class="k">for</span> <span class="n">curWord</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;^a\w{4,6}i$&#39;</span><span class="p">,</span><span class="n">curWord</span><span class="p">)]</span>
 </pre></div>
@@ -1015,8 +1020,8 @@ is	be	VBZ	192975
 </div>
 </div>
 </div>
-<p>Grab words that start with a <em>l</em>, end on an <em>t</em>, and contain a <em>t</em> somewhere in the middle</p>
-<div class="cell docutils container">
+<p>Grab words that start with a <em>b</em>, end on an <em>t</em>, and contain a <em>t</em> somewhere in the middle</p>
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">curWord</span> <span class="k">for</span> <span class="n">curWord</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;^b\w+t\w+t$&#39;</span><span class="p">,</span><span class="n">curWord</span><span class="p">)]</span>
 </pre></div>
@@ -1042,7 +1047,7 @@ is	be	VBZ	192975
 </div>
 </div>
 <p>Let’s say we want to exclude words that end on two <em>t</em>s.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">curWord</span> <span class="k">for</span> <span class="n">curWord</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;^b\w+t\w+[^tt]t$&#39;</span><span class="p">,</span><span class="n">curWord</span><span class="p">)]</span>
 </pre></div>
@@ -1067,19 +1072,25 @@ is	be	VBZ	192975
 </div>
 </div>
 <p>Let’s get all the words containing the vowels a, e, i, o, in that order</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">curWord</span> <span class="k">for</span> <span class="n">curWord</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;\w+a+\w+e+\w+i+\w+o+&#39;</span><span class="p">,</span><span class="n">curWord</span><span class="p">)]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">/Users/glupyan/gitRepos/psych750.github.io/notebooks/regexp.ipynb Cell 20</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="o">----&gt;</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750.github.io/notebooks/regexp.ipynb#X25sZmlsZQ%3D%3D?line=0&#39;</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">curWord</span> <span class="k">for</span> <span class="n">curWord</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;\w+a+\w+e+\w+i+\w+o+&#39;</span><span class="p">,</span><span class="n">curWord</span><span class="p">)]</span>
-
-<span class="ne">NameError</span>: name &#39;words&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;characterization&#39;,
+ &#39;catheterization&#39;,
+ &#39;carvedilol&#39;,
+ &#39;cardiorespiratory&#39;,
+ &#39;compartmentalization&#39;,
+ &#39;categorization&#39;,
+ &#39;characterizations&#39;,
+ &#39;parameterization&#39;,
+ &#39;intraperitoneal&#39;,
+ &#39;chloramphenicol&#39;,
+ &#39;campesino&#39;,
+ &#39;intraperitoneally&#39;]
 </pre></div>
 </div>
 </div>
@@ -1122,7 +1133,7 @@ cei words: 33
 </div>
 <p>There are actually <em>more</em> words that violate the mnemonic than those that obey it!
 What are these words?</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">curWord</span> <span class="k">for</span> <span class="n">curWord</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;cie&#39;</span><span class="p">,</span><span class="n">curWord</span><span class="p">)]</span>
 </pre></div>
@@ -1400,8 +1411,8 @@ and replacing with
 <code class="docutils literal notranslate"><span class="pre">\n</span></code>
 To get rid of multiple newlines that the first search/replace may have created.</p>
 </section>
-<section id="bath-file-renaming">
-<h2>Bath file renaming<a class="headerlink" href="#bath-file-renaming" title="Permalink to this headline">#</a></h2>
+<section id="batch-file-renaming">
+<h2>Batch file renaming<a class="headerlink" href="#batch-file-renaming" title="Permalink to this headline">#</a></h2>
 <p>You can use what you’ve learned about regular expressions for manipulating not just actual text, but text used in file names. You can do this in straight-up Python using the <code class="docutils literal notranslate"><span class="pre">os</span></code> library, or by using GUI programs like <a class="reference external" href="https://mrrsoftware.com/namechanger/">NameChanger</a> (Mac),  or <a class="reference external" href="http://www.bulkrenameutility.co.uk/Main_Intro.php">Bulk Rename</a> (PC). These programs allow you to do batch renaming of files using simple search/replace (e.g., replace <code class="docutils literal notranslate"><span class="pre">_</span></code> with <code class="docutils literal notranslate"><span class="pre">-</span></code> as well as by using regular expressions for more complex changes!</p>
 </section>
 </section>
