@@ -530,6 +530,16 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-2-all-vowels">
+   Part 2: All vowels
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-2-rhymes">
+   Part 2: Rhymes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#part-2-hyphenated-words">
    Part 2: Hyphenated Words
   </a>
@@ -564,6 +574,16 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-2-all-vowels">
+   Part 2: All vowels
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-2-rhymes">
+   Part 2: Rhymes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#part-2-hyphenated-words">
    Part 2: Hyphenated Words
   </a>
@@ -590,6 +610,21 @@ title="Print to PDF"
 <p>You can complete this assignment using python’s <code class="docutils literal notranslate"><span class="pre">re</span></code> library or using R’s regular expressions. My suggestion is to use Python, but as they say: your mileage may vary. I will publish solutions in Python.</p>
 <section id="part-1-word-matching">
 <h2>Part 1: Word matching<a class="headerlink" href="#part-1-word-matching" title="Permalink to this headline">#</a></h2>
+<p>Write a regexp to match (and return) all words in <code class="docutils literal notranslate"><span class="pre">words</span></code> that begin and end with a vowel. To read in the word list, use the code below.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://psych750.github.io/data/ANC-written-count_over9.txt&#39;</span><span class="p">,</span><span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;ISO-8859-1&quot;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">words</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;word&#39;</span><span class="p">]))</span>
+</pre></div>
+</div>
+<p><strong>Bonus</strong> (1 pt):</p>
+<p>The regexp notebook includes an example of finding words that contain the vowels aeiou, in that order. A more difficult version is to find words that contain all the letters in <em>any</em> order. Write a regexp to find words that contain all the vowels, but in <em>any</em> order.</p>
+</section>
+<section id="part-2-all-vowels">
+<h2>Part 2: All vowels<a class="headerlink" href="#part-2-all-vowels" title="Permalink to this headline">#</a></h2>
+<p>The regexp notebook includes an example of finding words that contain the vowels aeiou, in that order. A more difficult version is to find words that contain all the letters in <em>any</em> order. Write a regexp to find words that contain all the vowels, but in <em>an</em> order</p>
+</section>
+<section id="part-2-rhymes">
+<h2>Part 2: Rhymes<a class="headerlink" href="#part-2-rhymes" title="Permalink to this headline">#</a></h2>
 <p>Write a regexp to match (and return) all words in <code class="docutils literal notranslate"><span class="pre">words</span></code> that begin and end with a vowel. To read in the word list, use the code below.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://psych750.github.io/data/ANC-written-count_over9.txt&#39;</span><span class="p">,</span><span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;ISO-8859-1&quot;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
