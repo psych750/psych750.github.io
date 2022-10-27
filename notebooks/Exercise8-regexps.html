@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>&lt;no title&gt; &#8212; Psych 750</title>
+    <title>Exercise 8 - Practice with regular expressions &#8212; Psych 750</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -51,10 +51,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://psych750.github.io/notebooks/Exercise10-FiniteState.html" />
+    <link rel="canonical" href="https://psych750.github.io/notebooks/Exercise8-regexps.html" />
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Exercise 7 - Exploring the General Social Survey" href="Exercise7-gss-wrangling.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -316,7 +317,7 @@ const thebe_selector_output = ".output, .cell_output"
   Exercises
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Exercise0-test.html">
    Exercise 0-Test assignment
@@ -357,8 +358,8 @@ const thebe_selector_output = ".output, .cell_output"
    Exercise 7-Exploring the general social survey
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Exercise8-regexps.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Exercise 8-Practice with regular expressions
   </a>
  </li>
@@ -413,6 +414,35 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/psych750/psych750.github.io/main?urlpath=tree/notebooks/Exercise8-regexps.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -435,7 +465,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/notebooks/Exercise10-FiniteState.ipynb"
+        <a href="../_sources/notebooks/Exercise8-regexps.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -493,7 +523,22 @@ title="Print to PDF"
         <i class="fas fa-list"></i> Contents
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="simple visible nav section-nav flex-column">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-1-word-matching">
+   Part 1: Word matching
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-2-hyphenated-words">
+   Part 2: Hyphenated Words
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-3-email-validation">
+   Part 3: Email validation
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -503,7 +548,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1><no title></h1>
+                <h1>Exercise 8 - Practice with regular expressions</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -512,7 +557,22 @@ title="Print to PDF"
                             <h2> Contents </h2>
                         </div>
                         <nav aria-label="Page">
-                            <ul class="simple visible nav section-nav flex-column">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-1-word-matching">
+   Part 1: Word matching
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-2-hyphenated-words">
+   Part 2: Hyphenated Words
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-3-email-validation">
+   Part 3: Email validation
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -523,42 +583,31 @@ title="Print to PDF"
                 
               <div>
                 
-  <sidebar>
-Psych711
-</sidebar>
-This is a finite-state machine (automaton).\
-![](Fsm.png "fig:Fsm.png")
-<p>Some examples of legal strings that it can generate:<br />
-VXXXVPXXXXVPS<br />
-VXXXVPS<br />
-TPPTS<br />
-XXXVS<br />
-VXXVPS<br />
-<br />
-<br />
-For the first part of this exercise, please write some pseudocode for
-generating sequences of events (letters) that obey the grammar of the
-automaton and for checking whether a particular sequence obeys the
-grammar or not. Once fully implemented (as we will do in the next
-class), we will be able to use it for programming a variety of
-artificial-grammar learning tasks. Here is a <a class="reference external" href="http://sapir.psych.wisc.edu/classMaterials/psych711/grammaticalStates.txt">sample list of legal
-sequences.</a><br />
-<br />
-Here is one example of an artificial grammar learning task.<br />
-<br />
-<img alt="" src="notebooks/automatonFrames.png" /><br />
-Participants see letters in boxes around a central point. The letters
-change colors (from white to yellow) in the order specified by the
-string generated by the automaton. The participant’s task is to click
-on the letter currently appearing in yellow, as quickly as possible. At
-the end of the string, (after the letter S in the case of this grammar),
-the central fixation point should turn yellow. Clicking on it begins the
-next letter sequence. Learning the grammar shows up as speeding up in
-processing of legal sequences and slowing down in the processing of
-illegal ones.<br />
-<br />
-\</p>
-<p><span class="xref myst">Category:Exercise</span></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="exercise-8-practice-with-regular-expressions">
+<h1>Exercise 8 - Practice with regular expressions<a class="headerlink" href="#exercise-8-practice-with-regular-expressions" title="Permalink to this headline">#</a></h1>
+<p><span class="xref myst">Accept the exercise</span></p>
+<p><strong>Due date is Wednesday at 11 for this one again. You can work in groups of 2 or individually. If you’re looking for a partner, start a group whose name ends with <code class="docutils literal notranslate"><span class="pre">_team</span></code>.</strong>  <em>If you’d like some extra time to submit extra credit, let me know.</em></p>
+<p>You can complete this assignment using python’s <code class="docutils literal notranslate"><span class="pre">re</span></code> library or using R’s regular expressions. My suggestion is to use Python, but as they say: your mileage may vary. I will publish solutions in Python.</p>
+<section id="part-1-word-matching">
+<h2>Part 1: Word matching<a class="headerlink" href="#part-1-word-matching" title="Permalink to this headline">#</a></h2>
+<p>Write a regexp to match (and return) all words in <code class="docutils literal notranslate"><span class="pre">words</span></code> that begin and end with a vowel. To read in the word list, use the code below.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://psych750.github.io/data/ANC-written-count_over9.txt&#39;</span><span class="p">,</span><span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;ISO-8859-1&quot;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">words</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;word&#39;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="part-2-hyphenated-words">
+<h2>Part 2: Hyphenated Words<a class="headerlink" href="#part-2-hyphenated-words" title="Permalink to this headline">#</a></h2>
+<p>Write a function that takes a string as an argument and returns a list of all hyphenated words it contains. If the string contains no hyphenated words, the function should return <code class="docutils literal notranslate"><span class="pre">False</span></code>. A hyphenated word is of the form <code class="docutils literal notranslate"><span class="pre">someword-otherword</span></code>. The words should be composed of only letters, but your function should work regardless of whether the words are in upper- or lowercase.</p>
+</section>
+<section id="part-3-email-validation">
+<h2>Part 3: Email validation<a class="headerlink" href="#part-3-email-validation" title="Permalink to this headline">#</a></h2>
+<p>Write a function that takes a string as an argument and returns a list of all valid emails addresses contained in the string. If the string contains no valid emails, the function should return <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>A valid email address has the form: some_alphanumeric_string&#64;something.something (there can be multiple dots at the end e.g., <code class="docutils literal notranslate"><span class="pre">uk_education&#64;edinburgh.ac.uk</span></code> is a valid address.</p>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
