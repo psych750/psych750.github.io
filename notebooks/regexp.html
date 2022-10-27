@@ -709,7 +709,7 @@ is	be	VBZ	192975
 </div>
 <p>Now let’s use some regular expressions starting with simple ones, and moving on to every slightly more complicated ones.</p>
 <p>Grab words beginning with <em>q</em></p>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">curWord</span> <span class="k">for</span> <span class="n">curWord</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;^q&#39;</span><span class="p">,</span><span class="n">curWord</span><span class="p">)]</span>
 </pre></div>
@@ -1029,7 +1029,7 @@ is	be	VBZ	192975
 </div>
 </div>
 </div>
-<p>Grab words that start with a <em>l</em>, end on an <em>t</em>, and contain a <em>t</em> somewhere in the middle</p>
+<p>Grab words that start with a <em>b</em>, end on an <em>t</em>, and contain a <em>t</em> somewhere in the middle</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">curWord</span> <span class="k">for</span> <span class="n">curWord</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;^b\w+t\w+t$&#39;</span><span class="p">,</span><span class="n">curWord</span><span class="p">)]</span>
