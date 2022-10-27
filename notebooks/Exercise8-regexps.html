@@ -530,23 +530,33 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-2-all-vowels">
-   Part 2: All vowels
+  <a class="reference internal nav-link" href="#part-2-match-lmno-words">
+   Part 2: Match
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     lmno
+    </span>
+   </code>
+   words
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-2-rhymes">
-   Part 2: Rhymes
+  <a class="reference internal nav-link" href="#part-3-hyphenated-words">
+   Part 3: Hyphenated Words
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-2-hyphenated-words">
-   Part 2: Hyphenated Words
+  <a class="reference internal nav-link" href="#part-4-email-validation">
+   Part 4: Email validation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-3-email-validation">
-   Part 3: Email validation
+  <a class="reference internal nav-link" href="#part-5-bonus-fix-weird-spacing">
+   Part 5 -
+   <strong>
+    Bonus
+   </strong>
+   - Fix weird spacing
   </a>
  </li>
 </ul>
@@ -574,23 +584,33 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-2-all-vowels">
-   Part 2: All vowels
+  <a class="reference internal nav-link" href="#part-2-match-lmno-words">
+   Part 2: Match
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     lmno
+    </span>
+   </code>
+   words
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-2-rhymes">
-   Part 2: Rhymes
+  <a class="reference internal nav-link" href="#part-3-hyphenated-words">
+   Part 3: Hyphenated Words
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-2-hyphenated-words">
-   Part 2: Hyphenated Words
+  <a class="reference internal nav-link" href="#part-4-email-validation">
+   Part 4: Email validation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-3-email-validation">
-   Part 3: Email validation
+  <a class="reference internal nav-link" href="#part-5-bonus-fix-weird-spacing">
+   Part 5 -
+   <strong>
+    Bonus
+   </strong>
+   - Fix weird spacing
   </a>
  </li>
 </ul>
@@ -605,7 +625,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="exercise-8-practice-with-regular-expressions">
 <h1>Exercise 8 - Practice with regular expressions<a class="headerlink" href="#exercise-8-practice-with-regular-expressions" title="Permalink to this headline">#</a></h1>
-<p><span class="xref myst">Accept the exercise</span></p>
+<p>[Accept the exercise](coming soon)</p>
 <p><strong>Due date is Wednesday at 11 for this one again. You can work in groups of 2 or individually. If you’re looking for a partner, start a group whose name ends with <code class="docutils literal notranslate"><span class="pre">_team</span></code>.</strong>  <em>If you’d like some extra time to submit extra credit, let me know.</em></p>
 <p>You can complete this assignment using python’s <code class="docutils literal notranslate"><span class="pre">re</span></code> library or using R’s regular expressions. My suggestion is to use Python, but as they say: your mileage may vary. I will publish solutions in Python.</p>
 <section id="part-1-word-matching">
@@ -616,31 +636,31 @@ title="Print to PDF"
 <span class="n">words</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;word&#39;</span><span class="p">]))</span>
 </pre></div>
 </div>
-<p><strong>Bonus</strong> (1 pt):</p>
+<p><strong>Bonus</strong> (2 pts):</p>
 <p>The regexp notebook includes an example of finding words that contain the vowels aeiou, in that order. A more difficult version is to find words that contain all the letters in <em>any</em> order. Write a regexp to find words that contain all the vowels, but in <em>any</em> order.</p>
 </section>
-<section id="part-2-all-vowels">
-<h2>Part 2: All vowels<a class="headerlink" href="#part-2-all-vowels" title="Permalink to this headline">#</a></h2>
-<p>The regexp notebook includes an example of finding words that contain the vowels aeiou, in that order. A more difficult version is to find words that contain all the letters in <em>any</em> order. Write a regexp to find words that contain all the vowels, but in <em>an</em> order</p>
+<section id="part-2-match-lmno-words">
+<h2>Part 2: Match <code class="docutils literal notranslate"><span class="pre">lmno</span></code> words<a class="headerlink" href="#part-2-match-lmno-words" title="Permalink to this headline">#</a></h2>
+<p>Write a regexp to match (and return) all words in <code class="docutils literal notranslate"><span class="pre">words</span></code> that contain the letters l, m, n, and o – in that order, but not necessarily consecutively.  <code class="docutils literal notranslate"><span class="pre">flamingo</span></code> should match, but so should <code class="docutils literal notranslate"><span class="pre">self-monitoring</span></code> because even though the order is disrupted, it still passes the test: se<code class="docutils literal notranslate"><span class="pre">L</span></code>f-<code class="docutils literal notranslate"><span class="pre">M</span></code>o<code class="docutils literal notranslate"><span class="pre">N</span></code>it<code class="docutils literal notranslate"><span class="pre">O</span></code>ring</p>
 </section>
-<section id="part-2-rhymes">
-<h2>Part 2: Rhymes<a class="headerlink" href="#part-2-rhymes" title="Permalink to this headline">#</a></h2>
-<p>Write a regexp to match (and return) all words in <code class="docutils literal notranslate"><span class="pre">words</span></code> that begin and end with a vowel. To read in the word list, use the code below.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://psych750.github.io/data/ANC-written-count_over9.txt&#39;</span><span class="p">,</span><span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;ISO-8859-1&quot;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="n">words</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;word&#39;</span><span class="p">]))</span>
-</pre></div>
-</div>
+<section id="part-3-hyphenated-words">
+<h2>Part 3: Hyphenated Words<a class="headerlink" href="#part-3-hyphenated-words" title="Permalink to this headline">#</a></h2>
+<p>Write a function that takes a string as an argument and returns a list of all hyphenated words it contains. If the string contains no hyphenated words, the function should return <code class="docutils literal notranslate"><span class="pre">False</span></code>. A hyphenated word is of the form <code class="docutils literal notranslate"><span class="pre">someword-otherword</span></code>. Your function should work regardless of whether the words are in uppercase or lowercase.</p>
 </section>
-<hr class="docutils" />
-<section id="part-2-hyphenated-words">
-<h2>Part 2: Hyphenated Words<a class="headerlink" href="#part-2-hyphenated-words" title="Permalink to this headline">#</a></h2>
-<p>Write a function that takes a string as an argument and returns a list of all hyphenated words it contains. If the string contains no hyphenated words, the function should return <code class="docutils literal notranslate"><span class="pre">False</span></code>. A hyphenated word is of the form <code class="docutils literal notranslate"><span class="pre">someword-otherword</span></code>. The words should be composed of only letters, but your function should work regardless of whether the words are in upper- or lowercase.</p>
-</section>
-<section id="part-3-email-validation">
-<h2>Part 3: Email validation<a class="headerlink" href="#part-3-email-validation" title="Permalink to this headline">#</a></h2>
+<section id="part-4-email-validation">
+<h2>Part 4: Email validation<a class="headerlink" href="#part-4-email-validation" title="Permalink to this headline">#</a></h2>
 <p>Write a function that takes a string as an argument and returns a list of all valid emails addresses contained in the string. If the string contains no valid emails, the function should return <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
 <p>A valid email address has the form: some_alphanumeric_string&#64;something.something (there can be multiple dots at the end e.g., <code class="docutils literal notranslate"><span class="pre">uk_education&#64;edinburgh.ac.uk</span></code> is a valid address.</p>
+</section>
+<section id="part-5-bonus-fix-weird-spacing">
+<h2>Part 5 - <strong>Bonus</strong> - Fix weird spacing<a class="headerlink" href="#part-5-bonus-fix-weird-spacing" title="Permalink to this headline">#</a></h2>
+<p>+3 pts</p>
+<p>Write a function <code class="docutils literal notranslate"><span class="pre">fix_spaces()</span></code> that takes a string (of arbitrary length) as an argument and returns the string with weird spacing issues all fixed up. Some examples:</p>
+<p><code class="docutils literal notranslate"><span class="pre">fix_spaces(&quot;The</span>&#160; <span class="pre">quick</span>&#160;&#160;&#160; <span class="pre">brown</span> <span class="pre">fox&quot;)</span> <span class="pre">--&gt;</span> <span class="pre">&quot;The</span> <span class="pre">quick</span> <span class="pre">brown</span> <span class="pre">fox&quot;</span></code> &lt;– multiple spaces to single spaces</p>
+<p><code class="docutils literal notranslate"><span class="pre">fix_spaces(&quot;Once\t\tupon</span> <span class="pre">a</span> <span class="pre">time\n\n&quot;)</span> <span class="pre">--&gt;</span> <span class="pre">&quot;Once</span> <span class="pre">upon</span> <span class="pre">a</span> <span class="pre">time\n&quot;</span></code> &lt;– tabs should be changed to (single) spaces. Multiple newlines to a signle newline</p>
+<p><code class="docutils literal notranslate"><span class="pre">fix_spaces(&quot;This</span> <span class="pre">sentence</span> <span class="pre">has</span> <span class="pre">a</span> <span class="pre">misplaced</span> <span class="pre">space</span> <span class="pre">before</span> <span class="pre">the</span> <span class="pre">period</span> <span class="pre">.</span> <span class="pre">Beginning</span> <span class="pre">of</span> <span class="pre">next</span> <span class="pre">sentence.&quot;)</span> <span class="pre">--&gt;</span> <span class="pre">&quot;This</span> <span class="pre">sentence</span> <span class="pre">has</span> <span class="pre">a</span> <span class="pre">misplaced</span> <span class="pre">space</span> <span class="pre">before</span> <span class="pre">the</span> <span class="pre">period.</span> <span class="pre">Beginning</span> <span class="pre">of</span> <span class="pre">next</span> <span class="pre">sentence&quot;</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">fix_spaces(&quot;Version</span>&#160;&#160;&#160; <span class="pre">3.2&quot;)</span> <span class="pre">--&gt;</span> <span class="pre">&quot;Version</span> <span class="pre">3.2&quot;</span></code> &lt;– don’t get tripped up by non alphanumeric characters like the dot in 3.2</p>
+<p>(it’s not necessary to accommoate all cases in a single regexp, but if you can, that’s preferable).</p>
 </section>
 </section>
 
