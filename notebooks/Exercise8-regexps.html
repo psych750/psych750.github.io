@@ -625,7 +625,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="exercise-8-practice-with-regular-expressions">
 <h1>Exercise 8 - Practice with regular expressions<a class="headerlink" href="#exercise-8-practice-with-regular-expressions" title="Permalink to this headline">#</a></h1>
-<p>[Accept the exercise](coming soon)</p>
+<p><a class="reference external" href="https://classroom.github.com/a/0sca7Fqb">Accept the exercise</a></p>
 <p><strong>Due date is Wednesday at 11 for this one again. You can work in groups of 2 or individually. If you’re looking for a partner, start a group whose name ends with <code class="docutils literal notranslate"><span class="pre">_team</span></code>.</strong>  <em>If you’d like some extra time to submit extra credit, let me know.</em></p>
 <p>You can complete this assignment using python’s <code class="docutils literal notranslate"><span class="pre">re</span></code> library or using R’s regular expressions. My suggestion is to use Python, but as they say: your mileage may vary. I will publish solutions in Python.</p>
 <section id="part-1-word-matching">
@@ -638,14 +638,26 @@ title="Print to PDF"
 </div>
 <p><strong>Bonus</strong> (2 pts):</p>
 <p>The regexp notebook includes an example of finding words that contain the vowels aeiou, in that order. A more difficult version is to find words that contain all the letters in <em>any</em> order. Write a regexp to find words that contain all the vowels, but in <em>any</em> order.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The solution should be a single regexp. There should be no loops or if statements in your code</p>
+</div>
 </section>
 <section id="part-2-match-lmno-words">
 <h2>Part 2: Match <code class="docutils literal notranslate"><span class="pre">lmno</span></code> words<a class="headerlink" href="#part-2-match-lmno-words" title="Permalink to this headline">#</a></h2>
 <p>Write a regexp to match (and return) all words in <code class="docutils literal notranslate"><span class="pre">words</span></code> that contain the letters l, m, n, and o – in that order, but not necessarily consecutively.  <code class="docutils literal notranslate"><span class="pre">flamingo</span></code> should match, but so should <code class="docutils literal notranslate"><span class="pre">self-monitoring</span></code> because even though the order is disrupted, it still passes the test: se<code class="docutils literal notranslate"><span class="pre">L</span></code>f-<code class="docutils literal notranslate"><span class="pre">M</span></code>o<code class="docutils literal notranslate"><span class="pre">N</span></code>it<code class="docutils literal notranslate"><span class="pre">O</span></code>ring</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The solution should be a single regexp. There should be no loops or if statements in your code</p>
+</div>
 </section>
 <section id="part-3-hyphenated-words">
 <h2>Part 3: Hyphenated Words<a class="headerlink" href="#part-3-hyphenated-words" title="Permalink to this headline">#</a></h2>
 <p>Write a function that takes a string as an argument and returns a list of all hyphenated words it contains. If the string contains no hyphenated words, the function should return <code class="docutils literal notranslate"><span class="pre">False</span></code>. A hyphenated word is of the form <code class="docutils literal notranslate"><span class="pre">someword-otherword</span></code>. Your function should work regardless of whether the words are in uppercase or lowercase.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The solution should be a single regexp. There should be no loops or if statements in your code</p>
+</div>
 </section>
 <section id="part-4-email-validation">
 <h2>Part 4: Email validation<a class="headerlink" href="#part-4-email-validation" title="Permalink to this headline">#</a></h2>
@@ -660,7 +672,10 @@ title="Print to PDF"
 <p><code class="docutils literal notranslate"><span class="pre">fix_spaces(&quot;Once\t\tupon</span> <span class="pre">a</span> <span class="pre">time\n\n&quot;)</span> <span class="pre">--&gt;</span> <span class="pre">&quot;Once</span> <span class="pre">upon</span> <span class="pre">a</span> <span class="pre">time\n&quot;</span></code> &lt;– tabs should be changed to (single) spaces. Multiple newlines to a signle newline</p>
 <p><code class="docutils literal notranslate"><span class="pre">fix_spaces(&quot;This</span> <span class="pre">sentence</span> <span class="pre">has</span> <span class="pre">a</span> <span class="pre">misplaced</span> <span class="pre">space</span> <span class="pre">before</span> <span class="pre">the</span> <span class="pre">period</span> <span class="pre">.</span> <span class="pre">Beginning</span> <span class="pre">of</span> <span class="pre">next</span> <span class="pre">sentence.&quot;)</span> <span class="pre">--&gt;</span> <span class="pre">&quot;This</span> <span class="pre">sentence</span> <span class="pre">has</span> <span class="pre">a</span> <span class="pre">misplaced</span> <span class="pre">space</span> <span class="pre">before</span> <span class="pre">the</span> <span class="pre">period.</span> <span class="pre">Beginning</span> <span class="pre">of</span> <span class="pre">next</span> <span class="pre">sentence&quot;</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">fix_spaces(&quot;Version</span>&#160;&#160;&#160; <span class="pre">3.2&quot;)</span> <span class="pre">--&gt;</span> <span class="pre">&quot;Version</span> <span class="pre">3.2&quot;</span></code> &lt;– don’t get tripped up by non alphanumeric characters like the dot in 3.2</p>
-<p>(it’s not necessary to accommoate all cases in a single regexp, but if you can, that’s preferable).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Solutions involving several regexps are acceptable, but there should be no loops or if statements in your code</p>
+</div>
 </section>
 </section>
 
