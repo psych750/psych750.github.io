@@ -656,19 +656,35 @@ title="Print to PDF"
 <tr class="row-odd"><td><p>?</p></td>
 <td class="text-align:left"><p>Optional character (0 or 1)</p></td>
 </tr>
+<tr class="row-even"><td><p>+</p></td>
+<td class="text-align:left"><p>One or more repetitions</p></td>
+</tr>
+<tr class="row-odd"><td><p>\s</p></td>
+<td class="text-align:left"><p>Any Whitespace</p></td>
+</tr>
+<tr class="row-even"><td><p>\S</p></td>
+<td class="text-align:left"><p>Any Non-whitespace character</p></td>
+</tr>
+<tr class="row-odd"><td><p>^</p></td>
+<td class="text-align:left"><p>Start of string (or line for multiline matching)</p></td>
+</tr>
+<tr class="row-even"><td><p>$</p></td>
+<td class="text-align:left"><p>End of string (or line for multiline matching)</p></td>
+</tr>
+<tr class="row-odd"><td><p>(…)</p></td>
+<td class="text-align:left"><p>Capture Group (for capturing matches and backreference)</p></td>
+</tr>
+<tr class="row-even"><td><p>(a(bc))</p></td>
+<td class="text-align:left"><p>Capture Sub-group</p></td>
+</tr>
+<tr class="row-odd"><td><p>(.*)</p></td>
+<td class="text-align:left"><p>Capture all</p></td>
+</tr>
+<tr class="row-even"><td><p>(abc|def)</p></td>
+<td class="text-align:left"><p>Matches abc or def</p></td>
+</tr>
 </tbody>
 </table>
-<ul class="simple">
-<li><p>| 	One or more repetitions
-\s	 | 	Any Whitespace
-\S	 | 	Any Non-whitespace character
-^	 | 	Start of string (or line for multiline matching)
-$	 | 	End of string (or line for multiline matching)
-(…)	 | 	Capture Group (for capturing matches and backreference)
-(a(bc))	 | 	Capture Sub-group
-(.*)	 | 	Capture all
-(abc|def)	 | 	Matches abc or def</p></li>
-</ul>
 <section id="use-as-a-filter">
 <h2>Use as a filter<a class="headerlink" href="#use-as-a-filter" title="Permalink to this headline">#</a></h2>
 <p>Let’s begin by reading in a file containing a bunch of words from the <a class="reference external" href="http://www.anc.org/">American National Corpus</a> that have a frequency of at least 9. Here’s a sample of what this file looks like.</p>
