@@ -657,11 +657,15 @@ title="Print to PDF"
 <p>Write a function that takes a string as an argument and returns a list of all hyphenated words it contains. If the string contains no hyphenated words, the function should return <code class="docutils literal notranslate"><span class="pre">False</span></code>. A hyphenated word is of the form <code class="docutils literal notranslate"><span class="pre">someword-otherword</span></code>. Your function should work regardless of whether the words are in uppercase or lowercase.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The solution should be a single regexp. There should be no loops or if statements in your code</p>
+<p>The solution should be a single regexp. There should be no loops or if statements in your code. You can use syntax like</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="n">match</span> <span class="ow">or</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">match</span></code> is the list containing your matches. If it’s empty, the function will return False</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>It may be helpful to use \b to find word boundaries. See <a class="reference external" href="https://developmentality.wordpress.com/2011/09/22/python-gotcha-word-boundaries-in-regular-expressions/">more info here</a>. If you do, you need to prepend your regular expression with ‘r’ so that the string is interpreted as a “raw” string</p>
+<p>It may be helpful to use \b to find word boundaries (though it’s not necessary). See <a class="reference external" href="https://developmentality.wordpress.com/2011/09/22/python-gotcha-word-boundaries-in-regular-expressions/">more info here</a>. If you do, you need to prepend your regular expression with ‘r’ so that the string is interpreted as a “raw” string</p>
 </div>
 </section>
 <section id="part-4-email-validation">
