@@ -241,18 +241,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="classes.html">
-   Classes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="review_of_fundamentals_b.html">
-   Review of Fundamentals B
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="regexp.html">
    Regular Expressions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="classes.html">
+   Classes
   </a>
  </li>
 </ul>
@@ -357,6 +352,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="Exercise7-gss-wrangling.html">
    Exercise 7-Exploring the general social survey
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise8-regexps.html">
+   Exercise 8-Practice with regular expressions
   </a>
  </li>
 </ul>
@@ -1205,11 +1205,18 @@ title="Print to PDF"
 <ol class="simple">
 <li><p>Go through <a class="reference external" href="https://psych750.github.io/notebooks/regexp.html">regular expressions notebook</a> (there’s a linked additional tutorial)</p></li>
 <li><p>Finish Exercise 8</p></li>
+<li><p>Make sure the NLTK library is installed in your environment. If not, install using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">nltk</span></code>. Then in an interactive python window in the psych750 environment, execute the following</p></li>
 </ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nltk</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">([</span><span class="s2">&quot;names&quot;</span><span class="p">,</span> <span class="s2">&quot;stopwords&quot;</span><span class="p">,</span> <span class="s2">&quot;state_union&quot;</span><span class="p">,</span> <span class="s2">&quot;twitter_samples&quot;</span><span class="p">,</span> <span class="s2">&quot;movie_reviews&quot;</span><span class="p">,</span> <span class="s2">&quot;averaged_perceptron_tagger&quot;</span><span class="p">,</span> <span class="s2">&quot;vader_lexicon&quot;</span><span class="p">,</span> <span class="s2">&quot;punkt&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
 </section>
 <section id="id15">
 <h3>In class<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
+<li><p>Review Exercise 8.</p></li>
+<li><p>Quick demo of regexp lookaheads and lookbehinds.</p></li>
 <li><p>Introduction to Python’s Natural Language ToolKit (NLTK)</p></li>
 <li><p>Begin Exercise 9 in class</p></li>
 </ol>
@@ -1220,7 +1227,9 @@ title="Print to PDF"
 <section id="id16">
 <h3>At home<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
-<li><p>TBA</p></li>
+<li><p>Go through the <a class="reference external" href="https://realpython.com/nltk-nlp-python/">intro to NLTK tutorial</a>.</p></li>
+<li><p>Go through the <a class="reference external" href="https://realpython.com/python-nltk-sentiment-analysis/">sentiment analysis with NLTK tutorial</a></p></li>
+<li><p>Finish Exercise 9</p></li>
 </ol>
 </section>
 <section id="id17">
