@@ -161,16 +161,24 @@
 # ### At home
 # 1. Go through [regular expressions notebook](https://psych750.github.io/notebooks/regexp.html) (there's a linked additional tutorial)
 # 2. Finish Exercise 8
-# 
+# 3. Make sure the NLTK library is installed in your environment. If not, install using `pip install nltk`. Then in an interactive python window in the psych750 environment, execute the following
+# ```python
+# import nltk
+# nltk.download(["names", "stopwords", "state_union", "twitter_samples", "movie_reviews", "averaged_perceptron_tagger", "vader_lexicon", "punkt"])
+# ```   
 # 
 # ### In class
-# 1. Introduction to Python's Natural Language ToolKit (NLTK)
-# 1. Begin Exercise 9 in class
+# 1. Review Exercise 8.
+# 2. Quick demo of regexp lookaheads and lookbehinds.
+# 3. Introduction to Python's Natural Language ToolKit (NLTK)
+# 4. Begin Exercise 9 in class
 
 # ## Week 10 (Nov 10th)
 # 
 # ### At home
-# 1. TBA
+# 1. Go through the [intro to NLTK tutorial](https://realpython.com/nltk-nlp-python/).
+# 2. Go through the [sentiment analysis with NLTK tutorial](https://realpython.com/python-nltk-sentiment-analysis/)
+# 3. Finish Exercise 9
 # 
 # ### In class
 # 1. Review Exercise 9
