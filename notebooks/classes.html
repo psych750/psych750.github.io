@@ -1063,7 +1063,7 @@ Rocket altitude: 0
 </div>
 </div>
 </div>
-<p>The syntax for classes may not be very clear at this point, but consider for a moment how you might create a rocket without using classes. You might store the x and y values in a dictionary, but you would have to write a lot of ugly, hard-to-maintain code to manage even a small set of rockets. As more features become incorporated into the Rocket class, you will see how much more efficiently real-world objects can be modeled with classes than they could be using just lists and dictionaries.</p>
+<p>At this point it might seem like this is a lot of work for not much gain. But consider how you might create a rocket without using classes. You might store the x and y values in a dictionary. But what if you also want to score their current acceleration? Remaining fuel? More dictionaries? And let’s say a person wants to call up all the information about a particular rocket? Do they need to remember what each of the dictionaries is called? What a mess! All of this messiness goes away once we use object oriented programming.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="object-oriented-terminology">
 <h1>Object-Oriented terminology<a class="headerlink" href="#object-oriented-terminology" title="Permalink to this headline">#</a></h1>
@@ -1071,10 +1071,10 @@ Rocket altitude: 0
 <section id="general-terminology">
 <h2>General terminology<a class="headerlink" href="#general-terminology" title="Permalink to this headline">#</a></h2>
 <p>A <strong>class</strong> is a body of code that defines the <strong>attributes</strong> and <strong>behaviors</strong> required to accurately model something you need for your program. You can model something from the real world, such as a rocket ship or a guitar string, or you can model something from a virtual world such as a rocket in a game, or a set of physical laws for a game engine.</p>
+<p>An <strong>object</strong> is a particular <em>instance</em> (a specific realization) of a class. An object has a certain set of values for all of the attributes (variables) in the class. You can have as many objects as you want for any one class. For example, Rect() is a class in PsychoPy. When you create a new rectangle by assigning Rect() to a variable, you are creating a new instance of the class – the specific Rectangle object that is assigned to your variable.</p>
 <p>An <strong>attribute</strong> is a piece of information. In code, an attribute is just a variable that is part of a class.</p>
-<p>A <strong>behavior</strong> is an action that is defined within a class. These are made up of <strong>methods</strong>, which are just functions that are defined for the class.</p>
-<p>An <strong>object</strong> is a particular instance of a class. An object has a certain set of values for all of the attributes (variables) in the class. You can have as many objects as you want for any one class.</p>
-<p>There is much more to know, but these words will help you get started. They will make more sense as you see more examples, and start to use classes on your own.</p>
+<p>A <strong>behavior</strong> is an action that is defined within a class. These are made up of <strong>methods</strong>. A method is just a function that is defined within a particular class.</p>
+<p>There is more to know, but this terminology is enough to get you started. It will make more sense as you see more examples, and start to use classes on your own.</p>
 </section>
 <section id="a-closer-look-at-the-rocket-class">
 <h2>A closer look at the Rocket class<a class="headerlink" href="#a-closer-look-at-the-rocket-class" title="Permalink to this headline">#</a></h2>
@@ -1124,7 +1124,7 @@ Rocket altitude: 0
 </div>
 </div>
 </div>
-<p>A method is just a function that is part of a class. Since it is just a function, you can do anything with a method that you learned about with functions. You can accept <a class="reference external" href="more_functions.html#positional_arguments">positional</a> arguments, <a class="reference external" href="more_functions.html#keyword_arguments">keyword</a> arguments, an arbitrary <a class="reference external" href="more_functions.html#arbitrary_sequence">list of argument values</a>, an arbitrary <a class="reference external" href="more_functions.html#arbitrary_keyword_arguments">dictionary of arguments</a>, or any combination of these. Your arguments can return a value or a set of values if you want, or they can just do some work without returning any values.</p>
+<p>Here we have 2 methods – a default initialization method (what’s called when you create a new instance of <code class="docutils literal notranslate"><span class="pre">Rocket()</span></code>) and a <code class="docutils literal notranslate"><span class="pre">move_up</span></code> method. A method is just a function that is part of a class. Since it is just a function, you can do anything with a method that you learned about with functions. You can accept <a class="reference external" href="more_functions.html#positional_arguments">positional</a> arguments, <a class="reference external" href="more_functions.html#keyword_arguments">keyword</a> arguments, an arbitrary <a class="reference external" href="more_functions.html#arbitrary_sequence">list of argument values</a>, an arbitrary <a class="reference external" href="more_functions.html#arbitrary_keyword_arguments">dictionary of arguments</a>, or any combination of these. Your arguments can return a value or a set of values if you want, or they can just do some work without returning any values.</p>
 <p>Each method has to accept one argument by default, the value <strong>self</strong>. This is a reference to the particular object that is calling the method. This <em>self</em> argument gives you access to the calling object’s attributes. In this example, the self argument is used to access a Rocket object’s y-value. That value is increased by 1, every time the method move_up() is called by a particular Rocket object. This is probably still somewhat confusing, but it should start to make sense as you work through your own examples.</p>
 <p>If you take a second look at what happens when a method is called, things might make a little more sense:</p>
 <div class="cell docutils container">
