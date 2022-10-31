@@ -547,7 +547,13 @@ title="Print to PDF"
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-init-method">
-     The __init__() method
+     The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       __init__()
+      </span>
+     </code>
+     method
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
@@ -722,7 +728,13 @@ title="Print to PDF"
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-init-method">
-     The __init__() method
+     The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       __init__()
+      </span>
+     </code>
+     method
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
@@ -933,7 +945,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>To actually use a class, you create a variable such as <em>my_rocket</em>. Then you set that equal to the name of the class, with an empty set of parentheses. Python creates an <strong>object</strong> from the class. An object is a single <em>instance</em> of the Rocket class; it has a copy of each of the class’s variables, and it can do any action that is defined for the class. In this case, you can see that the variable my_rocket is a Rocket object from the __main__ program file, which is stored at a particular location in memory. Each instance is independent of another. Normally, changes you make to one will not affect other instances you’ve created.</p>
+<p>To actually use a class, you create a variable such as <em><code class="docutils literal notranslate"><span class="pre">my_rocket</span></code></em>. Then you set that equal to the name of the class, with an empty set of parentheses. Python creates an <strong>object</strong> from the class. An object is a single <em>instance</em> of the Rocket class; it has a copy of each of the class’s variables, and it can do any action that is defined for the class. In this case, you can see that the variable <code class="docutils literal notranslate"><span class="pre">my_rocket</span></code> is a Rocket object from the <code class="docutils literal notranslate"><span class="pre">__main__</span></code> program file, which is stored at a particular location in memory. Each instance is independent of another. Normally, changes you make to one will not affect other instances you’ve created.</p>
 <p>Once you have a class, you can define an object and use its methods. Here is how you might define a rocket and have it start to move up:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -971,8 +983,9 @@ Rocket altitude: 2
 </div>
 </div>
 <p>To access an object’s variables or methods, you give the name of the object and then use <em>dot notation</em> to access the variables and methods. So to get the y-value of <code class="docutils literal notranslate"><span class="pre">my_rocket*</span></code> you use <code class="docutils literal notranslate"><span class="pre">my_rocket.y</span></code>. To use the move_up() method on my_rocket, you write <code class="docutils literal notranslate"><span class="pre">my_rocket.move_up()</span></code>.</p>
-<div class="alert alert-block alert-info">
-You'll recognize this dot notation from things like random.shuffle() (shuffle is one of the methods possessed by objects instantiated by the Random class inside the random module contained in random.py). Whew..
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You’ll recognize this dot notation from things like random.shuffle() (shuffle is one of the methods possessed by objects instantiated by the Random class inside the random module contained in <a class="reference external" href="http://random.py">random.py</a>). Whew..</p>
 </div>
 <p>Once you have a class defined, you can create as many objects from that class as you want. Each object is its own instance of that class, with its own separate variables. All of the objects are capable of the same behavior, but each object’s particular actions do not affect any of the other objects. Here is how you might make a simple fleet of rockets:</p>
 <div class="cell docutils container">
@@ -1068,7 +1081,7 @@ Rocket altitude: 0
 <p>Now that you have seen a simple example of a class, and have learned some basic OOP terminology, it will be helpful to take a closer look at the Rocket class.</p>
 </section>
 <section id="the-init-method">
-<h2>The __init__() method<a class="headerlink" href="#the-init-method" title="Permalink to this headline">#</a></h2>
+<h2>The <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> method<a class="headerlink" href="#the-init-method" title="Permalink to this headline">#</a></h2>
 <p>Here is the initial code block that defined the Rocket class:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1151,8 +1164,9 @@ Rocket altitude: 2
 </div>
 <p>In this example, a Rocket object is created and stored in the variable my_rocket. After this object is created, its y value is printed. The value of the attribute <em>y</em> is accessed using dot notation. The phrase <em>my_rocket.y</em> asks Python to return “the value of the variable y attached to the object my_rocket”.</p>
 <p>After the object my_rocket is created and its initial y-value is printed, the method move_up() is called. This tells Python to apply the method move_up() to the object my_rocket. Python finds the y-value associated with my_rocket and adds 1 to that value. This process is repeated several times, and you can see from the output that the y-value is in fact increasing.</p>
-<div class="alert alert-block alert-info">
-Want to remind yourself what methods are defined/available for use with an object? Use `help(your_object)`
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Want to remind yourself what methods are defined/available for use with an object? Use <code class="docutils literal notranslate"><span class="pre">help(your_object)</span></code></p>
 </div>
 </section>
 <section id="making-multiple-objects-from-a-class">
@@ -1234,7 +1248,7 @@ Want to remind yourself what methods are defined/available for use with an objec
 </div>
 </div>
 </div>
-<p>What exactly happens in this for loop? The line <em>my_rockets.append(Rocket())</em> is executed 5 times. Each time, a new Rocket object is created and then added to the list my_rockets. The __init__() method is executed once for each of these objects, so each object gets its own x and y value. When a method is called on one of these objects, the <em>self</em> variable allows access to just that object’s attributes, and ensures that modifying one object does not affect any of the other objecs that have been created from the class.</p>
+<p>What exactly happens in this for loop? The line <em><code class="docutils literal notranslate"><span class="pre">my_rockets.append(Rocket())</span></code></em> is executed 5 times. Each time, a new Rocket object is created and then added to the list <code class="docutils literal notranslate"><span class="pre">my_rockets</span></code>. The <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> method is executed once for each of these objects, so each object gets its own x and y value. When a method is called on one of these objects, the <em>self</em> variable allows access to just that object’s attributes, and ensures that modifying one object does not affect any of the other objecs that have been created from the class.</p>
 <p>Each of these objects can be worked with individually. At this point we are ready to move on and see how to add more functionality to the Rocket class. We will work slowly, and give you the chance to start writing your own simple classes.</p>
 </section>
 <section id="a-quick-check-in">
