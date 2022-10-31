@@ -992,7 +992,7 @@ You'll recognize this dot notation from things like random.shuffle() (shuffle is
         
 <span class="c1"># Create a fleet of 5 rockets, and store them in a list.</span>
 <span class="n">my_rockets</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
     <span class="n">new_rocket</span> <span class="o">=</span> <span class="n">Rocket</span><span class="p">()</span>
     <span class="n">my_rockets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_rocket</span><span class="p">)</span>
 
@@ -1002,50 +1002,13 @@ You'll recognize this dot notation from things like random.shuffle() (shuffle is
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Rocket object at 0x7fedd45e8820&gt;
-&lt;__main__.Rocket object at 0x7fedd3b038e0&gt;
-&lt;__main__.Rocket object at 0x7fedd3b03f40&gt;
-&lt;__main__.Rocket object at 0x7fedd3b03c70&gt;
-&lt;__main__.Rocket object at 0x7fedd3b03b20&gt;
+</div>
+<p>You can see that each rocket is at a separate place in memory.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can use <a class="reference external" href="https://psych750.github.io/notebooks/list_comprehension.html">list comprehension</a> to create your rocket fleet in one line:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_rockets</span> <span class="o">=</span> <span class="p">[</span><span class="n">Rocket</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
 </pre></div>
-</div>
-</div>
-</div>
-<p>You can see that each rocket is at a separate place in memory. By the way, if you understand <a class="reference external" href="http://introtopython.org/lists_tuples.html#comprehensions">list comprehensions</a>, you can make the fleet of rockets in one line:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">###highlight=[16]</span>
-<span class="k">class</span> <span class="nc">Rocket</span><span class="p">():</span>
-    <span class="c1"># Rocket simulates a rocket ship for a game,</span>
-    <span class="c1">#  or a physics simulation.</span>
-    
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="c1"># Each rocket has an (x,y) position.</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>
-        
-    <span class="k">def</span> <span class="nf">move_up</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="c1"># Increment the y-position of the rocket.</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="mi">1</span>
-        
-<span class="c1"># Create a fleet of 5 rockets, and store them in a list.</span>
-<span class="n">my_rockets</span> <span class="o">=</span> <span class="p">[</span><span class="n">Rocket</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">)]</span>
-
-<span class="c1"># Show that each rocket is a separate object.</span>
-<span class="k">for</span> <span class="n">rocket</span> <span class="ow">in</span> <span class="n">my_rockets</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">rocket</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Rocket object at 0x7fedd45e8f70&gt;
-&lt;__main__.Rocket object at 0x7fedd45e8d30&gt;
-&lt;__main__.Rocket object at 0x7fedd45e8430&gt;
-&lt;__main__.Rocket object at 0x7fedd45e8dc0&gt;
-&lt;__main__.Rocket object at 0x7fedd45e8d90&gt;
-</pre></div>
-</div>
 </div>
 </div>
 <p>You can prove that each rocket has its own x and y values by moving just one of the rockets:</p>
