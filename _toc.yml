@@ -54,12 +54,10 @@ parts:
       title: File access-Globbing and preloading 
     - file: notebooks/activity_reference_vs_value
       title: Mutable and immutable types
-    - file: notebooks/classes
-      title: Object Oriented Programming
-    - file: notebooks/review_of_fundamentals_b
-      title: Review of Fundamentals B
     - file: notebooks/regexp.ipynb
       title: Regular Expressions
+    - file: notebooks/classes
+      title: Object Oriented Programming
   - caption: In class activities
     chapters:
     - file: notebooks/python_basics

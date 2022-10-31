@@ -13,30 +13,33 @@
 # 
 # Then go through the rest of this notebook and make sure you understand why each regexp works in the way it does.
 
+# 
 # Syntax | Meaning
 # ------------- |:-------------
 # abc…	 |  Literal letters
 # \d	 | 	Any Digit
 # \D	 | 	Any Non-digit character
-# .	 | 	Any Character
+# .	 | 	Any single character
 # \.	 | 	Period (slash is an escape character)
 # [abc]	 | 	Only a, b, or c
 # [^abc]	 | 	Not a, b, nor c
 # [a-z]	 | 	Characters a to z
+# [A-Z]	 | 	Characters A to Z
 # [0-9]	 | 	Numbers 0 to 9
 # \w	 | 	Any Alphanumeric character
 # \W	 | 	Any Non-alphanumeric character
 # {m}	 | 	m Repetitions
 # {m,n}	 | 	m to n Repetitions
-# *	 | 	Zero or more repetitions
-# +	 | 	One or more repetitions
-# ?	 | 	Optional character
+# &#42;	 | 	Zero or more repetitions
+# &#63;	 | 	Optional character (0 or 1)
+# &plus;	 | 	One or more repetitions
 # \s	 | 	Any Whitespace
 # \S	 | 	Any Non-whitespace character
-# ^…$	 | 	Starts and ends
-# (…)	 | 	Capture Group
+# ^	 | 	Start of string (or line for multiline matching)
+# $	 | 	End of string (or line for multiline matching)
+# (...)	 | 	Capture Group (for capturing matches and backreference)
 # (a(bc))	 | 	Capture Sub-group
-# (.*)	 | 	Capture all
+# (.&#42;)	 | 	Capture all
 # (abc&#124;def)	 | 	Matches abc or def
 # 
 
@@ -56,7 +59,7 @@
 # For those unfamiliar with language lingo, English lemmas are basically the word-stems, e.g., the lemma of *cars* is *car*; the lemma of *walking* is *walk*. pos stands for [*part of speech*](https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html).
 # 
 
-# In[20]:
+# In[42]:
 
 
 import re #import the python regexp module
@@ -65,13 +68,13 @@ import pandas as pd
 data = pd.read_csv('https://psych750.github.io/data/ANC-written-count_over9.txt',encoding = "ISO-8859-1",sep="\t")
 
 
-# In[38]:
+# In[43]:
 
 
 words = list(set(data['word']))[1:]
 
 
-# In[40]:
+# In[44]:
 
 
 print (f"We have {len(words)} unique words")
@@ -81,15 +84,21 @@ print (f"We have {len(words)} unique words")
 
 # Grab words beginning with *q*
 
-# In[30]:
+# In[45]:
 
 
 [curWord for curWord in words if re.findall('^q',curWord)]
 
 
+# In[68]:
+
+
+[curWord for curWord in words if re.findall('l{1}.+m{1}.+n{1}.+o{1}',curWord)]
+
+
 # Grab all words begin with an *a* and end with an *i*
 
-# In[24]:
+# In[46]:
 
 
 [curWord for curWord in words if re.findall('^a\w+i$',curWord)]
@@ -97,7 +106,7 @@ print (f"We have {len(words)} unique words")
 
 # Grab all words that begin with an *a*, followed by 4-6 letters and and on an *i*
 
-# In[ ]:
+# In[47]:
 
 
 [curWord for curWord in words if re.findall('^a\w{4,6}i$',curWord)]
@@ -105,7 +114,7 @@ print (f"We have {len(words)} unique words")
 
 # Grab words that start with a *b*, end on an *t*, and contain a *t* somewhere in the middle
 
-# In[ ]:
+# In[48]:
 
 
 [curWord for curWord in words if re.findall('^b\w+t\w+t$',curWord)]
@@ -113,7 +122,7 @@ print (f"We have {len(words)} unique words")
 
 # Let's say we want to exclude words that end on two *t*s. 
 
-# In[ ]:
+# In[49]:
 
 
 [curWord for curWord in words if re.findall('^b\w+t\w+[^tt]t$',curWord)]
@@ -121,7 +130,7 @@ print (f"We have {len(words)} unique words")
 
 # Let's get all the words containing the vowels a, e, i, o, in that order
 
-# In[31]:
+# In[50]:
 
 
 [curWord for curWord in words if re.findall('\w+a+\w+e+\w+i+\w+o+',curWord)]
@@ -132,7 +141,7 @@ print (f"We have {len(words)} unique words")
 # Let's find out how many words there are that have *ie* vs. *ei* in them.
 # 
 
-# In[ ]:
+# In[51]:
 
 
 print ("ie words:", len([curWord for curWord in words if re.findall('ie',curWord)]))
@@ -141,7 +150,7 @@ print ("ei words:", len([curWord for curWord in words if re.findall('ei',curWord
 
 # Now let's check what happens when we check for a 'c' preceding ie/ei
 
-# In[ ]:
+# In[52]:
 
 
 print ("cie words:", len([curWord for curWord in words if re.findall('cie',curWord)]))
@@ -151,7 +160,7 @@ print ("cei words:", len([curWord for curWord in words if re.findall('cei',curWo
 # There are actually *more* words that violate the mnemonic than those that obey it!
 # What are these words?
 
-# In[ ]:
+# In[53]:
 
 
 [curWord for curWord in words if re.findall('cie',curWord)]
@@ -159,7 +168,7 @@ print ("cei words:", len([curWord for curWord in words if re.findall('cei',curWo
 
 # Here's a tricky one. Let's find words containing 4 *r*s (interspersed among other letters). One way to do this is to explicitly specify it... any character, r, any character, r.. etc. Like so..
 
-# In[ ]:
+# In[54]:
 
 
 [curWord for curWord in words if re.findall('\w*r+\w*r+\w*r+\w*r+\w*',curWord)]
@@ -167,7 +176,7 @@ print ("cei words:", len([curWord for curWord in words if re.findall('cei',curWo
 
 # There are two shortcomings to this approach. The first is that if we want 3 or 5 matches, we need to explicitly remove or add code rather than changing a single number-of-matches parameter. Another shortcoming is that hyphenated words are excluded. We can add hyphens by replacing `\w` with `[a-z\-]`, but that makes the expression even longer. Here's a better solution:
 
-# In[ ]:
+# In[55]:
 
 
 [curWord for curWord in words if re.findall('([^r]*r[^r]*){4}$',curWord)]
@@ -179,7 +188,7 @@ print ("cei words:", len([curWord for curWord in words if re.findall('cei',curWo
 # 
 # Let's say we want to check whether an entered word is *color* or the British *colour*. We can do this with a conditional (`if "color" or "colour"`), but we can also use regular expressions (which scale much better than conditionals). For example:
 
-# In[ ]:
+# In[56]:
 
 
 re.findall('colou?r','The British like to colour their colors')
@@ -187,7 +196,7 @@ re.findall('colou?r','The British like to colour their colors')
 
 # Play around with this:
 
-# In[ ]:
+# In[57]:
 
 
 variousWords = re.compile('[d|c][a|o][g|t]')
@@ -197,7 +206,7 @@ variousWords.match('cag').group()
 
 # Here are some more examples.
 
-# In[ ]:
+# In[58]:
 
 
 import re

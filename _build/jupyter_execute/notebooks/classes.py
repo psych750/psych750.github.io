@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# <h1>Table of Contents<span class="tocSkip"></span></h1>
-# <div class="toc" style="margin-top: 1em;"><ul class="toc-item"><li><span><a href="#Classes" data-toc-modified-id="Classes-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Classes</a></span></li><li><span><a href="#What-are-classes?" data-toc-modified-id="What-are-classes?-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>What are classes?</a></span><ul class="toc-item"><li><span><a href="#Classes-in-Python-2.7" data-toc-modified-id="Classes-in-Python-2.7-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Classes in Python 2.7</a></span></li></ul></li><li><span><a href="#Object-Oriented-terminology" data-toc-modified-id="Object-Oriented-terminology-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Object-Oriented terminology</a></span><ul class="toc-item"><li><span><a href="#General-terminology" data-toc-modified-id="General-terminology-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>General terminology</a></span></li><li><span><a href="#A-closer-look-at-the-Rocket-class" data-toc-modified-id="A-closer-look-at-the-Rocket-class-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>A closer look at the Rocket class</a></span></li><li><span><a href="#The-__init__()-method" data-toc-modified-id="The-__init__()-method-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>The __init__() method</a></span></li><li><span><a href="#A-simple-method" data-toc-modified-id="A-simple-method-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>A simple method</a></span></li><li><span><a href="#Making-multiple-objects-from-a-class" data-toc-modified-id="Making-multiple-objects-from-a-class-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>Making multiple objects from a class</a></span></li><li><span><a href="#A-quick-check-in" data-toc-modified-id="A-quick-check-in-3.6"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>A quick check-in</a></span></li></ul></li><li><span><a href="#Refining-the-Rocket-class" data-toc-modified-id="Refining-the-Rocket-class-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Refining the Rocket class</a></span><ul class="toc-item"><li><span><a href="#Accepting-parameters-for-the-__init__()-method" data-toc-modified-id="Accepting-parameters-for-the-__init__()-method-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Accepting parameters for the __init__() method</a></span></li><li><span><a href="#Accepting-parameters-in-a-method" data-toc-modified-id="Accepting-parameters-in-a-method-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Accepting parameters in a method</a></span></li><li><span><a href="#Adding-a-new-method" data-toc-modified-id="Adding-a-new-method-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>Adding a new method</a></span></li></ul></li><li><span><a href="#Inheritance" data-toc-modified-id="Inheritance-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Inheritance</a></span><ul class="toc-item"><li><span><a href="#The-SpaceShuttle-class" data-toc-modified-id="The-SpaceShuttle-class-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>The SpaceShuttle class</a></span></li><li><span><a href="#Inheritance-in-Python-2.7" data-toc-modified-id="Inheritance-in-Python-2.7-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>Inheritance in Python 2.7</a></span></li></ul></li><li><span><a href="#Example-of-using-a-class-in-a-Psychopy-experiment" data-toc-modified-id="Example-of-using-a-class-in-a-Psychopy-experiment-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Example of using a class in a Psychopy experiment</a></span><ul class="toc-item"><li><span><a href="#A-single-moving-circle" data-toc-modified-id="A-single-moving-circle-6.1"><span class="toc-item-num">6.1&nbsp;&nbsp;</span>A single moving circle</a></span></li></ul></li><li><span><a href="#Modules-and-classes" data-toc-modified-id="Modules-and-classes-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>Modules and classes</a></span><ul class="toc-item"><li><span><a href="#Storing-a-single-class-in-a-module" data-toc-modified-id="Storing-a-single-class-in-a-module-7.1"><span class="toc-item-num">7.1&nbsp;&nbsp;</span>Storing a single class in a module</a></span></li><li><span><a href="#Storing-multiple-classes-in-a-module" data-toc-modified-id="Storing-multiple-classes-in-a-module-7.2"><span class="toc-item-num">7.2&nbsp;&nbsp;</span>Storing multiple classes in a module</a></span></li><li><span><a href="#A-number-of-ways-to-import-modules-and-classes" data-toc-modified-id="A-number-of-ways-to-import-modules-and-classes-7.3"><span class="toc-item-num">7.3&nbsp;&nbsp;</span>A number of ways to import modules and classes</a></span><ul class="toc-item"><li><span><a href="#import-module_name" data-toc-modified-id="import-module_name-7.3.1"><span class="toc-item-num">7.3.1&nbsp;&nbsp;</span>import <em>module_name</em></a></span></li><li><span><a href="#import-module_name-as-local_module_name" data-toc-modified-id="import-module_name-as-local_module_name-7.3.2"><span class="toc-item-num">7.3.2&nbsp;&nbsp;</span>import <em>module_name</em> as <em>local_module_name</em></a></span></li><li><span><a href="#from-module_name-import-*" data-toc-modified-id="from-module_name-import-*-7.3.3"><span class="toc-item-num">7.3.3&nbsp;&nbsp;</span>from <em>module_name</em> import *</a></span></li></ul></li><li><span><a href="#A-module-of-functions" data-toc-modified-id="A-module-of-functions-7.4"><span class="toc-item-num">7.4&nbsp;&nbsp;</span>A module of functions</a></span></li></ul></li></ul></div>
-
 # Classes
 # ===
 # So far you've learned about Python's core data types: strings, numbers, lists, tuples, and dictionaries. In this section you will learn about the last major data structure, classes. Classes are unlike other data types, in that they are much more flexible. Classes allow you to define the information and behavior that characterize anything you want to model in your program. This notebook is a short introduction to classes. The first part gives soem generic examples. The second part give some examples of using classes in a context of a psych experiment.
@@ -14,7 +11,7 @@
 # ===
 # Classes are a way of combining information and behavior. For example, think about what you'd need to do if you were creating a rocket ship in a game, or in a physics simulation. One of the first things you'd want to track are the x and y coordinates of the rocket. Here is what a simple rocket ship class looks like in code:
 
-# In[11]:
+# In[1]:
 
 
 class Rocket():
@@ -31,7 +28,7 @@ class Rocket():
 # 
 # The Rocket class stores two pieces of information so far, but it can't do anything. The first behavior to define is a core behavior of a rocket: moving up. Here is what that might look like in code:
 
-# In[10]:
+# In[2]:
 
 
 ###highlight=[11,12,13]
@@ -51,7 +48,7 @@ class Rocket():
 
 # The Rocket class can now store some information, and it can do something. But this code has not actually created a rocket yet. Here is how you actually make a rocket:
 
-# In[4]:
+# In[3]:
 
 
 ###highlight=[15,16, 17]
@@ -77,7 +74,7 @@ print(my_rocket)
 # 
 # Once you have a class, you can define an object and use its methods. Here is how you might define a rocket and have it start to move up:
 
-# In[7]:
+# In[4]:
 
 
 class Rocket():
@@ -114,7 +111,7 @@ print("Rocket altitude:", my_rocket.y)
 # 
 # Once you have a class defined, you can create as many objects from that class as you want. Each object is its own instance of that class, with its own separate variables. All of the objects are capable of the same behavior, but each object's particular actions do not affect any of the other objects. Here is how you might make a simple fleet of rockets:
 
-# In[11]:
+# In[5]:
 
 
 class Rocket():
@@ -143,7 +140,7 @@ for rocket in my_rockets:
 
 # You can see that each rocket is at a separate place in memory. By the way, if you understand [list comprehensions](http://introtopython.org/lists_tuples.html#comprehensions), you can make the fleet of rockets in one line:
 
-# In[12]:
+# In[6]:
 
 
 ###highlight=[16]
@@ -170,7 +167,7 @@ for rocket in my_rockets:
 
 # You can prove that each rocket has its own x and y values by moving just one of the rockets:
 
-# In[15]:
+# In[7]:
 
 
 ###highlight=[18,19,20,21,22,23]
@@ -200,28 +197,6 @@ for rocket in my_rockets:
 
 # The syntax for classes may not be very clear at this point, but consider for a moment how you might create a rocket without using classes. You might store the x and y values in a dictionary, but you would have to write a lot of ugly, hard-to-maintain code to manage even a small set of rockets. As more features become incorporated into the Rocket class, you will see how much more efficiently real-world objects can be modeled with classes than they could be using just lists and dictionaries.
 
-# Classes in Python 2.7
-# ---
-# When you write a class in Python 2.7, you should always include the word `object` in parentheses when you define the class. This makes sure your Python 2.7 classes act like Python 3 classes, which will be helpful as your projects grow more complicated.
-# 
-# The simple version of the rocket class would look like this in Python 2.7:
-
-# In[2]:
-
-
-###highlight=[2]
-class Rocket(object):
-    # Rocket simulates a rocket ship for a game,
-    #  or a physics simulation.
-    
-    def __init__(self):
-        # Each rocket has an (x,y) position.
-        self.x = 0
-        self.y = 0
-
-
-# This syntax will work in Python 3 as well.
-
 # Object-Oriented terminology
 # ===
 # Classes are part of a programming paradigm called **object-oriented programming**. Object-oriented programming, or OOP for short, focuses on building reusable blocks of code called classes. When you want to use a class in one of your programs, you make an **object** from that class, which is where the phrase "object-oriented" comes from. Python itself is not tied to object-oriented programming, but you will be using objects in most or all of your Python projects. In order to understand classes, you have to understand some of the language that is used in OOP.
@@ -246,7 +221,7 @@ class Rocket(object):
 # ---
 # Here is the initial code block that defined the Rocket class:
 
-# In[16]:
+# In[9]:
 
 
 class Rocket():
@@ -273,7 +248,7 @@ class Rocket():
 # ---
 # Here is the method that was defined for the Rocket class:
 
-# In[17]:
+# In[10]:
 
 
 class Rocket():
@@ -296,7 +271,7 @@ class Rocket():
 # 
 # If you take a second look at what happens when a method is called, things might make a little more sense:
 
-# In[18]:
+# In[11]:
 
 
 class Rocket():
@@ -338,7 +313,7 @@ print("Rocket altitude:", my_rocket.y)
 # 
 # You can see this "code reusability" already when the Rocket class is used to make more than one Rocket object. Here is the code that made a fleet of Rocket objects:
 
-# In[19]:
+# In[12]:
 
 
 ###highlight=[15,16,17,18,19,20,21,22,23]
@@ -368,7 +343,7 @@ for rocket in my_rockets:
 
 # If you are comfortable using list comprehensions, go ahead and use those as much as you can. I'd rather not assume at this point that everyone is comfortable with comprehensions, so I will use the slightly longer approach of declaring an empty list, and then using a for loop to fill that list. That can be done slightly more efficiently than the previous example, by eliminating the temporary variable *new\_rocket*:
 
-# In[20]:
+# In[13]:
 
 
 class Rocket():
@@ -417,7 +392,7 @@ for rocket in my_rockets:
 # ---
 # The \_\_init\_\_() method is run automatically one time when you create a new object from a class. The \_\_init\_\_() method for the Rocket class so far is pretty simple:
 
-# In[ ]:
+# In[14]:
 
 
 class Rocket():
@@ -436,7 +411,7 @@ class Rocket():
 
 # All the \_\_init\_\_() method does so far is set the x and y values for the rocket to 0. We can easily add a couple keyword arguments so that new rockets can be initialized at any position:
 
-# In[ ]:
+# In[15]:
 
 
 class Rocket():
@@ -455,7 +430,7 @@ class Rocket():
 
 # Now when you create a new Rocket object you have the choice of passing in arbitrary initial values for x and y:
 
-# In[22]:
+# In[16]:
 
 
 class Rocket():
@@ -486,7 +461,7 @@ for index, rocket in enumerate(rockets):
 # ---
 # The \_\_init\_\_ method is just a special method that serves a particular purpose, which is to help create new objects from a class. Any method in a class can accept parameters of any kind. With this in mind, the move_up() method can be made much more flexible. By accepting keyword arguments, the move_up() method can be rewritten as a more general move_rocket() method. This new method will allow the rocket to be moved any amount, in any direction:
 
-# In[23]:
+# In[17]:
 
 
 ###highlight=[11,12,13,14,15]
@@ -508,46 +483,13 @@ class Rocket():
 
 # The paremeters for the move() method are named x_increment and y_increment rather than x and y. It's good to emphasize that these are changes in the x and y position, not new values for the actual position of the rocket. By carefully choosing the right default values, we can define a meaningful default behavior. If someone calls the method move_rocket() with no parameters, the rocket will simply move up one unit in the y-direciton. Note that this method can be given negative values to move the rocket left or right:
 
-# In[25]:
-
-
-class Rocket():
-    # Rocket simulates a rocket ship for a game,
-    #  or a physics simulation.
-    
-    def __init__(self, x=0, y=0):
-        # Each rocket has an (x,y) position.
-        self.x = x
-        self.y = y
-        
-    def move_rocket(self, x_increment=0, y_increment=1):
-        # Move the rocket according to the paremeters given.
-        #  Default behavior is to move the rocket up one unit.
-        self.x += x_increment
-        self.y += y_increment
-        
-# Create three rockets.
-rockets = [Rocket() for x in range(0,3)]
-
-# Move each rocket a different amount.
-rockets[0].move_rocket()
-rockets[1].move_rocket(10,10)
-rockets[2].move_rocket(-10,0)
-          
-# Show where each rocket is.
-for index, rocket in enumerate(rockets):
-    print("Rocket %d is at (%d, %d)." % (index, rocket.x, rocket.y))
-
-
-# [top](#)
-
 # Adding a new method
 # ---
 # One of the strengths of object-oriented programming is the ability to closely model real-world phenomena by adding appropriate attributes and behaviors to classes. One of the jobs of a team piloting a rocket is to make sure the rocket does not get too close to any other rockets. Let's add a method that will report the distance from one rocket to any other rocket.
 # 
 # If you are not familiar with distance calculations, there is a fairly simple formula to tell the distance between two points if you know the x and y values of each point. This new method performs that calculation, and then returns the resulting distance.
 
-# In[36]:
+# In[22]:
 
 
 from math import sqrt
@@ -586,10 +528,6 @@ print("The rockets are %f units apart." % distance)
 # 
 # At this point you should try your hand at writing some classes of your own. After trying some exercises, we will look at object inheritance, and then you will be ready to move on for now.
 
-# [top](#)
-
-# [top](#)
-
 # Inheritance
 # ===
 # One of the most important goals of the object-oriented approach to programming is the creation of stable, reliable, reusable code. If you had to create a new class for every kind of object you wanted to model, you would hardly have any reusable code. In Python and any other language that supports OOP, one class can **inherit** from another class. This means you can base a new class on an existing class; the new class *inherits* all of the attributes and behavior of the class it is based on. A new class can override any undesirable attributes or behavior of the class it inherits from, and it can add any new attributes or behavior that are appropriate. The original class is called the **parent** class, and the new class is a **child** of the parent class. The parent class is also called a **superclass**, and the child class is also called a **subclass**.
@@ -606,7 +544,7 @@ print("The rockets are %f units apart." % distance)
 # 
 # Here is what the Shuttle class looks like:
 
-# In[11]:
+# In[20]:
 
 
 from math import sqrt
@@ -648,18 +586,16 @@ print(shuttle)
 # 
 #     
 
-# In[ ]:
-
-
-class NewClass(ParentClass):
-
+# ```python
+# class NewClass(ParentClass):
+#     pass
+# ```
 
 # The \_\_init\_\_() function of the new class needs to call the \_\_init\_\_() function of the parent class. The \_\_init\_\_() function of the new class needs to accept all of the parameters required to build an object from the parent class, and these parameters need to be passed to the \_\_init\_\_() function of the parent class. The *super().\_\_init\_\_()* function takes care of this:
 
 # In[ ]:
 
 
-###highlight=[5]
 class NewClass(ParentClass):
     
     def __init__(self, arguments_new_class, arguments_parent_class):
@@ -685,7 +621,7 @@ class Shuttle(Rocket):
 
 # The output above shows that a new Shuttle object was created. This new Shuttle object can store the number of flights completed, but it also has all of the functionality of the Rocket class: it has a position that can be changed, and it can calculate the distance between itself and other rockets or shuttles. This can be demonstrated by creating several rockets and shuttles, and then finding the distance between one shuttle and all the other shuttles and rockets. This example uses a simple function called [randint](http://docs.python.org/2/library/random.html#random.randint), which generates a random integer between a lower and upper bound, to determine the position of each rocket and shuttle:
 
-# In[13]:
+# In[ ]:
 
 
 from math import sqrt
@@ -755,66 +691,6 @@ for index, rocket in enumerate(rockets):
 
 
 # Inheritance is a powerful feature of object-oriented programming. Using just what you have seen so far about classes, you can model an incredible variety of real-world and virtual phenomena with a high degree of accuracy. The code you write has the potential to be stable and reusable in a variety of applications.
-
-# [top](#)
-
-# Inheritance in Python 2.7
-# ---
-# The *super()* method has a slightly different syntax in Python 2.7:
-
-# In[ ]:
-
-
-###highlight=[5]
-class NewClass(ParentClass):
-    
-    def __init__(self, arguments_new_class, arguments_parent_class):
-        super(NewClass, self).__init__(arguments_parent_class)
-        # Code for initializing an object of the new class.
-
-
-# Notice that you have to explicitly pass the arguments *NewClass* and *self* when you call *super()* in Python 2.7. The SpaceShuttle class would look like this:
-
-# In[12]:
-
-
-from math import sqrt
-
-class Rocket(object):
-    # Rocket simulates a rocket ship for a game,
-    #  or a physics simulation.
-    
-    def __init__(self, x=0, y=0):
-        # Each rocket has an (x,y) position.
-        self.x = x
-        self.y = y
-        
-    def move_rocket(self, x_increment=0, y_increment=1):
-        # Move the rocket according to the paremeters given.
-        #  Default behavior is to move the rocket up one unit.
-        self.x += x_increment
-        self.y += y_increment
-        
-    def get_distance(self, other_rocket):
-        # Calculates the distance from this rocket to another rocket,
-        #  and returns that value.
-        distance = sqrt((self.x-other_rocket.x)**2+(self.y-other_rocket.y)**2)
-        return distance
-    
-class Shuttle(Rocket):
-    # Shuttle simulates a space shuttle, which is really
-    #  just a reusable rocket.
-    
-    def __init__(self, x=0, y=0, flights_completed=0):
-        super(Shuttle, self).__init__(x, y)
-        self.flights_completed = flights_completed
-        
-shuttle1 = Shuttle(10,0,3)
-shuttle2 = Shuttle(0,10,1)
-print 'distance between shuttle1 and shuttle2 is', shuttle1.get_distance(shuttle2)
-
-
-# This syntax works in Python 3 as well.
 
 # # Example of using a class in a Psychopy experiment
 # 
@@ -919,7 +795,7 @@ while True:
 		prevAngleToDeviate %= 360
 
 	if event.getKeys(['space']):
-		break
+		sys.exit()
 
 
 # ## More circles!
@@ -927,7 +803,7 @@ while True:
 # 
 # The code below implements a `movingCircle` class. We then use it to make a bunch of individual circles and allow the user to click on them individually. Notice that it's not much longer than the code above. And if we want 10 circles, we just need to change `numCircles = 4` to `numCircles = 5`. Wizardry!
 
-# In[ ]:
+# In[26]:
 
 
 import time
@@ -990,7 +866,7 @@ while True:
 	for curCircle in circles:
 		curCircle.target.draw()
 		if myMouse.isPressedIn(curCircle.target):
-			print 'clicked on a circle!' 
+			print('clicked on a circle!' )
 			curCircle.change_speed(.8)
 			curCircle.make_dimmer(.9)
 
@@ -1015,11 +891,9 @@ while True:
 # 
 # Start out by saving just the Rocket class into a file called *rocket.py*. Notice the naming convention being used here: the module is saved with a lowercase name, and the class starts with an uppercase letter. This convention is pretty important for a number of reasons, and it is a really good idea to follow the convention.
 
-# In[48]:
+# In[ ]:
 
 
-###highlight=[2]
-# Save as rocket.py
 from math import sqrt
 
 class Rocket():
@@ -1046,7 +920,7 @@ class Rocket():
 
 # Make a separate file called *rocket_game.py*. If you are more interested in science than games, feel free to call this file something like *rocket_simulation.py*. Again, to use standard naming conventions, make sure you are using a lowercase_underscore name for this file.
 
-# In[55]:
+# In[ ]:
 
 
 # Save as rocket_game.py
@@ -1061,8 +935,6 @@ print("The rocket is at (%d, %d)." % (rocket.x, rocket.y))
 # The first line tells Python to look for a file called *rocket.py*. It looks for that file in the same directory as your current program. You can put your classes in other directories, but we will get to that convention a bit later. Notice that you do not
 # 
 # When Python finds the file *rocket.py*, it looks for a class called *Rocket*. When it finds that class, it imports that code into the current file, without you ever seeing that code. You are then free to use the class Rocket as you have seen it used in previous examples.
-
-# [top](#)
 
 # Storing multiple classes in a module
 # ---
@@ -1108,7 +980,7 @@ class Shuttle(Rocket):
 
 # Now you can import the Rocket and the Shuttle class, and use them both in a clean uncluttered program file:
 
-# In[14]:
+# In[ ]:
 
 
 ###highlight=[3,8,9,10]
@@ -1141,7 +1013,7 @@ from module_name import ClassName
 
 # is straightforward, and is used quite commonly. It allows you to use the class names directly in your program, so you have very clean and readable code. This can be a problem, however, if the names of the classes you are importing conflict with names that have already been used in the program you are working on. This is unlikely to happen in the short programs you have been seeing here, but if you were working on a larger program it is quite possible that the class you want to import from someone else's work would happen to have a name you have already used in your program. In this case, you can use simply import the module itself:
 
-# In[3]:
+# In[ ]:
 
 
 # Save as rocket_game.py
@@ -1157,37 +1029,29 @@ print("The shuttle has completed %d flights." % shuttle_0.flights_completed)
 
 # The general syntax for this kind of import is:
 # 
-#     
-
-# In[ ]:
-
-
-import module_name
-
-
+# ```python
+# import module_name
+# ```
+# 
 # After this, classes are accessed using dot notation:
-
-# In[ ]:
-
-
-module_name.ClassName
-
-
+# 
+# ```python
+# module_name.ClassName
+# ```
+#     
 # This prevents some name conflicts. If you were reading carefully however, you might have noticed that the variable name *rocket* in the previous example had to be changed because it has the same name as the module itself. This is not good, because in a longer program that could mean a lot of renaming.
 
 # ### import *module_name* as *local_module_name*
 # 
 # There is another syntax for imports that is quite useful:
-
-# In[ ]:
-
-
-import module_name as local_module_name
-
-
+# 
+# ```python
+# import module_name as local_module_name
+# ```
+# 
 # When you are importing a module into one of your projects, you are free to choose any name you want for the module in your project. So the last example could be rewritten in a way that the variable name *rocket* would not need to be changed:
 
-# In[5]:
+# In[ ]:
 
 
 # Save as rocket_game.py
@@ -1232,13 +1096,11 @@ from module_name import *
 
 # You will get a sense of how to write your imports as you read more Python code, and as you write and share some of your own code.
 
-# [top](#)
-
 # A module of functions
 # ---
 # You can use modules to store a set of functions you want available in different programs as well, even if those functions are not attached to any one class. To do this, you save the functions into a file, and then import that file just as you saw in the last section. Here is a really simple example; save this is *multiplying.py*:
 
-# In[2]:
+# In[ ]:
 
 
 # Save as multiplying.py
@@ -1254,7 +1116,7 @@ def quadruple(x):
 
 # Now you can import the file *multiplying.py*, and use these functions. Using the `from module_name import function_name` syntax:
 
-# In[3]:
+# In[ ]:
 
 
 from multiplying import double, triple, quadruple
@@ -1266,7 +1128,7 @@ print(quadruple(5))
 
 # Using the `import module_name` syntax:
 
-# In[4]:
+# In[ ]:
 
 
 import multiplying
@@ -1278,7 +1140,7 @@ print(multiplying.quadruple(5))
 
 # Using the `import module_name as local_module_name` syntax:
 
-# In[5]:
+# In[ ]:
 
 
 import multiplying as m
@@ -1290,7 +1152,7 @@ print(m.quadruple(5))
 
 # Using the `from module_name import *` syntax:
 
-# In[7]:
+# In[ ]:
 
 
 from multiplying import *
