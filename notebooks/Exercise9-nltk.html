@@ -616,8 +616,12 @@ title="Print to PDF"
 <section id="part-3">
 <h2>Part 3<a class="headerlink" href="#part-3" title="Permalink to this headline">#</a></h2>
 <p>Let’s now compare verbs in <code class="docutils literal notranslate"><span class="pre">austen</span></code> and <code class="docutils literal notranslate"><span class="pre">shakespeare</span></code>.</p>
-<p>a. Print out the 15 most frequent verbs in each corpus .
-b. <strong>Lemmatize</strong> the corpus and print out the 15 most frequent lemmas.</p>
+<p>a. Print out the 15 most frequent verbs in each corpus.</p>
+<p>b. <strong>Lemmatize</strong> the corpus and print out the 15 most frequent verb lemmas. You will need to tag parts of speech first, and then feed them into the lemmatizer to lemmatize correctly.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>There are many lemmatizers. The basic one in NLTK is <code class="docutils literal notranslate"><span class="pre">WordNetLemmatizer</span></code>. Notice that its parts of speech tags are not the same as what’s outputted by the part of speech tagger, so you’ll need to map between them. There are some examples of other lemmatizers in action <a class="reference external" href="https://www.machinelearningplus.com/nlp/lemmatization-examples-python/">here</a></p>
+</div>
 </section>
 </section>
 
