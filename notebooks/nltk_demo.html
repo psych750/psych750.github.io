@@ -526,13 +526,13 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#removing-stop-words">
-   Removing stop words
+  <a class="reference internal nav-link" href="#frequency-distributions">
+   Frequency Distributions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#frequency-distributions">
-   Frequency distributions
+  <a class="reference internal nav-link" href="#removing-stop-words">
+   Removing stop words
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -553,6 +553,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#collocations">
    Collocations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lemmatization">
+   Lemmatization
   </a>
  </li>
 </ul>
@@ -575,13 +580,13 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#removing-stop-words">
-   Removing stop words
+  <a class="reference internal nav-link" href="#frequency-distributions">
+   Frequency Distributions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#frequency-distributions">
-   Frequency distributions
+  <a class="reference internal nav-link" href="#removing-stop-words">
+   Removing stop words
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -604,6 +609,11 @@ title="Print to PDF"
    Collocations
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lemmatization">
+   Lemmatization
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -616,76 +626,38 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="intro-to-nltk">
 <h1>Intro to NLTK<a class="headerlink" href="#intro-to-nltk" title="Permalink to this headline">#</a></h1>
-<p>A whirlwind tour of Python’s natural language toolkit (NLTK)</p>
+<p>A whirlwind tour of Python’s natural language toolkit (NLTK).</p>
+<p>We’ll start by importing a few libraries and opening up a sample text file: Jane Austen’s Pride and Prejudice.</p>
+<p>If you get import errors, use <code class="docutils literal notranslate"><span class="pre">pip</span></code> to install the missing package (<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">package_name</span></code>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nltk</span>
+<span class="kn">import</span> <span class="nn">urllib</span>
 <span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">gutenberg</span>
 <span class="kn">from</span> <span class="nn">nltk.text</span> <span class="kn">import</span> <span class="n">Text</span>
 
-<span class="n">pride_prejudice</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data/pride_prejudice.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;rU&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/by/n8_x_dgd65b19fkp_2zx6nf40000gn/T/ipykernel_92652/4149878454.py:5: DeprecationWarning: &#39;U&#39; mode is deprecated
-  pride_prejudice = open(&quot;data/pride_prejudice.txt&quot;, &#39;rU&#39;).read()
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">OSError</span><span class="g g-Whitespace">                                   </span>Traceback (most recent call last)
-<span class="nn">/Users/glupyan/gitRepos/psych750_resources/solutions_in_class/class_9/nltk_demo.ipynb Cell 2</span> in <span class="ni">&lt;cell line: 7&gt;</span><span class="nt">()</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750_resources/solutions_in_class/class_9/nltk_demo.ipynb#W1sZmlsZQ%3D%3D?line=2&#39;</span><span class="o">&gt;</span><span class="mi">3</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="kn">from</span> <span class="nn">nltk.text</span> <span class="kn">import</span> <span class="n">Text</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750_resources/solutions_in_class/class_9/nltk_demo.ipynb#W1sZmlsZQ%3D%3D?line=4&#39;</span><span class="o">&gt;</span><span class="mi">5</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">pride_prejudice</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data/pride_prejudice.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;rU&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-<span class="o">----&gt;</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750_resources/solutions_in_class/class_9/nltk_demo.ipynb#W1sZmlsZQ%3D%3D?line=6&#39;</span><span class="o">&gt;</span><span class="mi">7</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">pride_prejudice</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">corpus</span><span class="o">.</span><span class="n">gutenberg</span><span class="o">.</span><span class="n">raw</span><span class="p">(</span><span class="s1">&#39;austen-pride.txt&#39;</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/envs/psych750/lib/python3.8/site-packages/nltk/corpus/reader/api.py:218,</span> in <span class="ni">CorpusReader.raw</span><span class="nt">(self, fileids)</span>
-<span class="g g-Whitespace">    </span><span class="mi">216</span> <span class="n">contents</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="g g-Whitespace">    </span><span class="mi">217</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">fileids</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">218</span>     <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">219</span>         <span class="n">contents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fp</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
-<span class="g g-Whitespace">    </span><span class="mi">220</span> <span class="k">return</span> <span class="n">concat</span><span class="p">(</span><span class="n">contents</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/envs/psych750/lib/python3.8/site-packages/nltk/corpus/reader/api.py:231,</span> in <span class="ni">CorpusReader.open</span><span class="nt">(self, file)</span>
-<span class="g g-Whitespace">    </span><span class="mi">223</span> <span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">224</span><span class="sd"> Return an open stream that can be used to read the given file.</span>
-<span class="g g-Whitespace">    </span><span class="mi">225</span><span class="sd"> If the file&#39;s encoding is not None, then the stream will</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">228</span><span class="sd"> :param file: The file identifier of the file to read.</span>
-<span class="g g-Whitespace">    </span><span class="mi">229</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">230</span> <span class="n">encoding</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">encoding</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">231</span> <span class="n">stream</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_root</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">file</span><span class="p">)</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">encoding</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">232</span> <span class="k">return</span> <span class="n">stream</span>
-
-<span class="nn">File ~/anaconda3/envs/psych750/lib/python3.8/site-packages/nltk/data.py:334,</span> in <span class="ni">FileSystemPathPointer.join</span><span class="nt">(self, fileid)</span>
-<span class="g g-Whitespace">    </span><span class="mi">332</span> <span class="k">def</span> <span class="nf">join</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fileid</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">333</span>     <span class="n">_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_path</span><span class="p">,</span> <span class="n">fileid</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">334</span>     <span class="k">return</span> <span class="n">FileSystemPathPointer</span><span class="p">(</span><span class="n">_path</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/envs/psych750/lib/python3.8/site-packages/nltk/compat.py:41,</span> in <span class="ni">py3_data.&lt;locals&gt;._decorator</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">39</span> <span class="k">def</span> <span class="nf">_decorator</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">40</span>     <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">add_py3_data</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span> <span class="o">+</span> <span class="n">args</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>
-<span class="ne">---&gt; </span><span class="mi">41</span>     <span class="k">return</span> <span class="n">init_func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/envs/psych750/lib/python3.8/site-packages/nltk/data.py:312,</span> in <span class="ni">FileSystemPathPointer.__init__</span><span class="nt">(self, _path)</span>
-<span class="g g-Whitespace">    </span><span class="mi">310</span> <span class="n">_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">_path</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">311</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">_path</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">312</span>     <span class="k">raise</span> <span class="ne">OSError</span><span class="p">(</span><span class="s2">&quot;No such file or directory: </span><span class="si">%r</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">_path</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">313</span> <span class="bp">self</span><span class="o">.</span><span class="n">_path</span> <span class="o">=</span> <span class="n">_path</span>
-
-<span class="ne">OSError</span>: No such file or directory: &#39;/Users/glupyan/nltk_data/corpora/gutenberg/austen-pride.txt&#39;
+<span class="n">pride_prejudice</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s2">&quot;https://psych750.github.io/data/pride_prejudice.txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">pride_prejudice</span><span class="p">[:</span><span class="mi">100</span><span class="p">]))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">pride_prejudice</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">100</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;PRIDE AND PREJUDICE\n\nBy Jane Austen\n\n\n\nChapter 1\n\n&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PRIDE AND PREJUDICE
+
+By Jane Austen
+
+
+
+Chapter 1
+
+
+It is a truth universally acknowledged, 
 </pre></div>
 </div>
 </div>
@@ -723,17 +695,31 @@ Lowercased tokens (first 100):
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Alphabetic tokens (first 100). Now without punctuation:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Clean yokens (first 100). Now without punctuation:
 [&#39;pride&#39;, &#39;and&#39;, &#39;prejudice&#39;, &#39;by&#39;, &#39;jane&#39;, &#39;austen&#39;, &#39;chapter&#39;, &#39;it&#39;, &#39;is&#39;, &#39;a&#39;, &#39;truth&#39;, &#39;universally&#39;, &#39;acknowledged&#39;, &#39;that&#39;, &#39;a&#39;, &#39;single&#39;, &#39;man&#39;, &#39;in&#39;, &#39;possession&#39;, &#39;of&#39;, &#39;a&#39;, &#39;good&#39;, &#39;fortune&#39;, &#39;must&#39;, &#39;be&#39;, &#39;in&#39;, &#39;want&#39;, &#39;of&#39;, &#39;a&#39;, &#39;wife&#39;, &#39;however&#39;, &#39;little&#39;, &#39;known&#39;, &#39;the&#39;, &#39;feelings&#39;, &#39;or&#39;, &#39;views&#39;, &#39;of&#39;, &#39;such&#39;, &#39;a&#39;, &#39;man&#39;, &#39;may&#39;, &#39;be&#39;, &#39;on&#39;, &#39;his&#39;, &#39;first&#39;, &#39;entering&#39;, &#39;a&#39;, &#39;neighbourhood&#39;, &#39;this&#39;, &#39;truth&#39;, &#39;is&#39;, &#39;so&#39;, &#39;well&#39;, &#39;fixed&#39;, &#39;in&#39;, &#39;the&#39;, &#39;minds&#39;, &#39;of&#39;, &#39;the&#39;, &#39;surrounding&#39;, &#39;families&#39;, &#39;that&#39;, &#39;he&#39;, &#39;is&#39;, &#39;considered&#39;, &#39;the&#39;, &#39;rightful&#39;, &#39;property&#39;, &#39;of&#39;, &#39;some&#39;, &#39;one&#39;, &#39;or&#39;, &#39;other&#39;, &#39;of&#39;, &#39;their&#39;, &#39;daughters&#39;, &#39;my&#39;, &#39;dear&#39;, &#39;bennet&#39;, &#39;said&#39;, &#39;his&#39;, &#39;lady&#39;, &#39;to&#39;, &#39;him&#39;, &#39;one&#39;, &#39;day&#39;, &#39;have&#39;, &#39;you&#39;, &#39;heard&#39;, &#39;that&#39;, &#39;netherfield&#39;, &#39;park&#39;, &#39;is&#39;, &#39;let&#39;, &#39;at&#39;, &#39;last&#39;, &#39;bennet&#39;, &#39;replied&#39;, &#39;that&#39;]
 </pre></div>
 </div>
 </div>
 </div>
-<p>Now let’s compute some statistics</p>
-<p>Build a frequency distribution from the clean tokens</p>
+<section id="frequency-distributions">
+<h2>Frequency Distributions<a class="headerlink" href="#frequency-distributions" title="Permalink to this headline">#</a></h2>
+<p>The first thing we’ll do is build a frequency distribution using <code class="docutils literal notranslate"><span class="pre">nltk.FreqDist()</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pride_prejudice_freq_dist</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">FreqDist</span><span class="p">(</span><span class="n">pride_prejudice_clean_tokens</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">pride_prejudice_freq_dist</span></code> is formatted as a Python dictionary – nothing special here, but the nice thing is that FreqDist implements various methods we can use to compute and quickly plot various properties of the text.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pride_prejudice_freq_dist</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FreqDist({&#39;the&#39;: 4331, &#39;to&#39;: 4137, &#39;of&#39;: 3608, &#39;and&#39;: 3578, &#39;her&#39;: 2203, &#39;i&#39;: 2065, &#39;a&#39;: 1947, &#39;in&#39;: 1865, &#39;was&#39;: 1844, &#39;she&#39;: 1695, ...})
 </pre></div>
 </div>
 </div>
@@ -772,35 +758,6 @@ Tokens that end in -ed: 4947
 Types that end in -ed: 860
 </pre></div>
 </div>
-<img alt="../_images/nltk_demo_10_1.png" src="../_images/nltk_demo_10_1.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Samples&#39;, ylabel=&#39;Counts&#39;&gt;
-</pre></div>
-</div>
-</div>
-</div>
-<section id="removing-stop-words">
-<h2>Removing stop words<a class="headerlink" href="#removing-stop-words" title="Permalink to this headline">#</a></h2>
-<p>Stop words is just jargon for very frequent words that tend to be not very informative as to the meaning of the text. For example, we can’t learn much about an English text from knowing that it has the words “a”, “the”, and “to” in it…  These frequent words dominate frequency distributions and so are often removed as part of pre-processing. NLTK has a collection of stop-words for English (other languages too!)</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;english&#39;</span><span class="p">))</span>
-
-
-<span class="n">pride_prejudice_clean_tokens_no_stop_words</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">pride_prejudice_clean_tokens</span> <span class="k">if</span> <span class="n">word</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;english&#39;</span><span class="p">)]</span>
-
-<span class="c1">#let&#39;s get the distribution:</span>
-<span class="n">pride_prejudice_clean_tokens_no_stop_words_fd</span> <span class="o">=</span>  <span class="n">nltk</span><span class="o">.</span><span class="n">FreqDist</span><span class="p">(</span><span class="n">pride_prejudice_clean_tokens_no_stop_words</span><span class="p">)</span>
-
-<span class="c1">#let&#39;s look at teh frequency distribution now</span>
-<span class="n">pride_prejudice_clean_tokens_no_stop_words_fd</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;i&#39;, &#39;me&#39;, &#39;my&#39;, &#39;myself&#39;, &#39;we&#39;, &#39;our&#39;, &#39;ours&#39;, &#39;ourselves&#39;, &#39;you&#39;, &quot;you&#39;re&quot;, &quot;you&#39;ve&quot;, &quot;you&#39;ll&quot;, &quot;you&#39;d&quot;, &#39;your&#39;, &#39;yours&#39;, &#39;yourself&#39;, &#39;yourselves&#39;, &#39;he&#39;, &#39;him&#39;, &#39;his&#39;, &#39;himself&#39;, &#39;she&#39;, &quot;she&#39;s&quot;, &#39;her&#39;, &#39;hers&#39;, &#39;herself&#39;, &#39;it&#39;, &quot;it&#39;s&quot;, &#39;its&#39;, &#39;itself&#39;, &#39;they&#39;, &#39;them&#39;, &#39;their&#39;, &#39;theirs&#39;, &#39;themselves&#39;, &#39;what&#39;, &#39;which&#39;, &#39;who&#39;, &#39;whom&#39;, &#39;this&#39;, &#39;that&#39;, &quot;that&#39;ll&quot;, &#39;these&#39;, &#39;those&#39;, &#39;am&#39;, &#39;is&#39;, &#39;are&#39;, &#39;was&#39;, &#39;were&#39;, &#39;be&#39;, &#39;been&#39;, &#39;being&#39;, &#39;have&#39;, &#39;has&#39;, &#39;had&#39;, &#39;having&#39;, &#39;do&#39;, &#39;does&#39;, &#39;did&#39;, &#39;doing&#39;, &#39;a&#39;, &#39;an&#39;, &#39;the&#39;, &#39;and&#39;, &#39;but&#39;, &#39;if&#39;, &#39;or&#39;, &#39;because&#39;, &#39;as&#39;, &#39;until&#39;, &#39;while&#39;, &#39;of&#39;, &#39;at&#39;, &#39;by&#39;, &#39;for&#39;, &#39;with&#39;, &#39;about&#39;, &#39;against&#39;, &#39;between&#39;, &#39;into&#39;, &#39;through&#39;, &#39;during&#39;, &#39;before&#39;, &#39;after&#39;, &#39;above&#39;, &#39;below&#39;, &#39;to&#39;, &#39;from&#39;, &#39;up&#39;, &#39;down&#39;, &#39;in&#39;, &#39;out&#39;, &#39;on&#39;, &#39;off&#39;, &#39;over&#39;, &#39;under&#39;, &#39;again&#39;, &#39;further&#39;, &#39;then&#39;, &#39;once&#39;, &#39;here&#39;, &#39;there&#39;, &#39;when&#39;, &#39;where&#39;, &#39;why&#39;, &#39;how&#39;, &#39;all&#39;, &#39;any&#39;, &#39;both&#39;, &#39;each&#39;, &#39;few&#39;, &#39;more&#39;, &#39;most&#39;, &#39;other&#39;, &#39;some&#39;, &#39;such&#39;, &#39;no&#39;, &#39;nor&#39;, &#39;not&#39;, &#39;only&#39;, &#39;own&#39;, &#39;same&#39;, &#39;so&#39;, &#39;than&#39;, &#39;too&#39;, &#39;very&#39;, &#39;s&#39;, &#39;t&#39;, &#39;can&#39;, &#39;will&#39;, &#39;just&#39;, &#39;don&#39;, &quot;don&#39;t&quot;, &#39;should&#39;, &quot;should&#39;ve&quot;, &#39;now&#39;, &#39;d&#39;, &#39;ll&#39;, &#39;m&#39;, &#39;o&#39;, &#39;re&#39;, &#39;ve&#39;, &#39;y&#39;, &#39;ain&#39;, &#39;aren&#39;, &quot;aren&#39;t&quot;, &#39;couldn&#39;, &quot;couldn&#39;t&quot;, &#39;didn&#39;, &quot;didn&#39;t&quot;, &#39;doesn&#39;, &quot;doesn&#39;t&quot;, &#39;hadn&#39;, &quot;hadn&#39;t&quot;, &#39;hasn&#39;, &quot;hasn&#39;t&quot;, &#39;haven&#39;, &quot;haven&#39;t&quot;, &#39;isn&#39;, &quot;isn&#39;t&quot;, &#39;ma&#39;, &#39;mightn&#39;, &quot;mightn&#39;t&quot;, &#39;mustn&#39;, &quot;mustn&#39;t&quot;, &#39;needn&#39;, &quot;needn&#39;t&quot;, &#39;shan&#39;, &quot;shan&#39;t&quot;, &#39;shouldn&#39;, &quot;shouldn&#39;t&quot;, &#39;wasn&#39;, &quot;wasn&#39;t&quot;, &#39;weren&#39;, &quot;weren&#39;t&quot;, &#39;won&#39;, &quot;won&#39;t&quot;, &#39;wouldn&#39;, &quot;wouldn&#39;t&quot;]
-</pre></div>
-</div>
 <img alt="../_images/nltk_demo_12_1.png" src="../_images/nltk_demo_12_1.png" />
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Samples&#39;, ylabel=&#39;Counts&#39;&gt;
 </pre></div>
@@ -808,24 +765,58 @@ Types that end in -ed: 860
 </div>
 </div>
 </section>
-<section id="frequency-distributions">
-<h2>Frequency distributions<a class="headerlink" href="#frequency-distributions" title="Permalink to this headline">#</a></h2>
-<p>Let’s plot the frequency distribution of the 50 most frequent words</p>
+<section id="removing-stop-words">
+<h2>Removing stop words<a class="headerlink" href="#removing-stop-words" title="Permalink to this headline">#</a></h2>
+<p>Stop words is jargon for very frequent words that tend to be not very informative as to the meaning of the text. For example, we can’t learn much about an English text from knowing that it has the words “a”, “the”, and “to” in it…  These frequent words dominate frequency distributions and so are often removed as part of pre-processing. NLTK has a collection of stop-words for English (other languages too!)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pride_prejudice_freq_dist</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pride_prejudice_freq_dist</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;english&#39;</span><span class="p">))</span>
+
+<span class="c1">#remove them</span>
+<span class="n">pride_prejudice_clean_tokens_no_stop_words</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">pride_prejudice_clean_tokens</span> <span class="k">if</span> <span class="n">word</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;english&#39;</span><span class="p">)]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FreqDist({&#39;the&#39;: 4331, &#39;to&#39;: 4137, &#39;of&#39;: 3608, &#39;and&#39;: 3578, &#39;her&#39;: 2203, &#39;i&#39;: 2065, &#39;a&#39;: 1947, &#39;in&#39;: 1865, &#39;was&#39;: 1844, &#39;she&#39;: 1695, ...})
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;i&#39;, &#39;me&#39;, &#39;my&#39;, &#39;myself&#39;, &#39;we&#39;, &#39;our&#39;, &#39;ours&#39;, &#39;ourselves&#39;, &#39;you&#39;, &quot;you&#39;re&quot;, &quot;you&#39;ve&quot;, &quot;you&#39;ll&quot;, &quot;you&#39;d&quot;, &#39;your&#39;, &#39;yours&#39;, &#39;yourself&#39;, &#39;yourselves&#39;, &#39;he&#39;, &#39;him&#39;, &#39;his&#39;, &#39;himself&#39;, &#39;she&#39;, &quot;she&#39;s&quot;, &#39;her&#39;, &#39;hers&#39;, &#39;herself&#39;, &#39;it&#39;, &quot;it&#39;s&quot;, &#39;its&#39;, &#39;itself&#39;, &#39;they&#39;, &#39;them&#39;, &#39;their&#39;, &#39;theirs&#39;, &#39;themselves&#39;, &#39;what&#39;, &#39;which&#39;, &#39;who&#39;, &#39;whom&#39;, &#39;this&#39;, &#39;that&#39;, &quot;that&#39;ll&quot;, &#39;these&#39;, &#39;those&#39;, &#39;am&#39;, &#39;is&#39;, &#39;are&#39;, &#39;was&#39;, &#39;were&#39;, &#39;be&#39;, &#39;been&#39;, &#39;being&#39;, &#39;have&#39;, &#39;has&#39;, &#39;had&#39;, &#39;having&#39;, &#39;do&#39;, &#39;does&#39;, &#39;did&#39;, &#39;doing&#39;, &#39;a&#39;, &#39;an&#39;, &#39;the&#39;, &#39;and&#39;, &#39;but&#39;, &#39;if&#39;, &#39;or&#39;, &#39;because&#39;, &#39;as&#39;, &#39;until&#39;, &#39;while&#39;, &#39;of&#39;, &#39;at&#39;, &#39;by&#39;, &#39;for&#39;, &#39;with&#39;, &#39;about&#39;, &#39;against&#39;, &#39;between&#39;, &#39;into&#39;, &#39;through&#39;, &#39;during&#39;, &#39;before&#39;, &#39;after&#39;, &#39;above&#39;, &#39;below&#39;, &#39;to&#39;, &#39;from&#39;, &#39;up&#39;, &#39;down&#39;, &#39;in&#39;, &#39;out&#39;, &#39;on&#39;, &#39;off&#39;, &#39;over&#39;, &#39;under&#39;, &#39;again&#39;, &#39;further&#39;, &#39;then&#39;, &#39;once&#39;, &#39;here&#39;, &#39;there&#39;, &#39;when&#39;, &#39;where&#39;, &#39;why&#39;, &#39;how&#39;, &#39;all&#39;, &#39;any&#39;, &#39;both&#39;, &#39;each&#39;, &#39;few&#39;, &#39;more&#39;, &#39;most&#39;, &#39;other&#39;, &#39;some&#39;, &#39;such&#39;, &#39;no&#39;, &#39;nor&#39;, &#39;not&#39;, &#39;only&#39;, &#39;own&#39;, &#39;same&#39;, &#39;so&#39;, &#39;than&#39;, &#39;too&#39;, &#39;very&#39;, &#39;s&#39;, &#39;t&#39;, &#39;can&#39;, &#39;will&#39;, &#39;just&#39;, &#39;don&#39;, &quot;don&#39;t&quot;, &#39;should&#39;, &quot;should&#39;ve&quot;, &#39;now&#39;, &#39;d&#39;, &#39;ll&#39;, &#39;m&#39;, &#39;o&#39;, &#39;re&#39;, &#39;ve&#39;, &#39;y&#39;, &#39;ain&#39;, &#39;aren&#39;, &quot;aren&#39;t&quot;, &#39;couldn&#39;, &quot;couldn&#39;t&quot;, &#39;didn&#39;, &quot;didn&#39;t&quot;, &#39;doesn&#39;, &quot;doesn&#39;t&quot;, &#39;hadn&#39;, &quot;hadn&#39;t&quot;, &#39;hasn&#39;, &quot;hasn&#39;t&quot;, &#39;haven&#39;, &quot;haven&#39;t&quot;, &#39;isn&#39;, &quot;isn&#39;t&quot;, &#39;ma&#39;, &#39;mightn&#39;, &quot;mightn&#39;t&quot;, &#39;mustn&#39;, &quot;mustn&#39;t&quot;, &#39;needn&#39;, &quot;needn&#39;t&quot;, &#39;shan&#39;, &quot;shan&#39;t&quot;, &#39;shouldn&#39;, &quot;shouldn&#39;t&quot;, &#39;wasn&#39;, &quot;wasn&#39;t&quot;, &#39;weren&#39;, &quot;weren&#39;t&quot;, &#39;won&#39;, &quot;won&#39;t&quot;, &#39;wouldn&#39;, &quot;wouldn&#39;t&quot;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s get the frequency distribution of the text without the stop words:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pride_prejudice_clean_tokens_no_stop_words_fd</span> <span class="o">=</span>  <span class="n">nltk</span><span class="o">.</span><span class="n">FreqDist</span><span class="p">(</span><span class="n">pride_prejudice_clean_tokens_no_stop_words</span><span class="p">)</span>
+<span class="n">pride_prejudice_clean_tokens_no_stop_words_fd</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/nltk_demo_16_0.png" src="../_images/nltk_demo_16_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Samples&#39;, ylabel=&#39;Counts&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>A handy method inside FreqDist is <code class="docutils literal notranslate"><span class="pre">most_common</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pride_prejudice_clean_tokens_no_stop_words_fd</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;elizabeth&#39;, 632),
+ (&#39;could&#39;, 525),
+ (&#39;would&#39;, 468),
+ (&#39;darcy&#39;, 408),
+ (&#39;said&#39;, 401),
+ (&#39;much&#39;, 326),
+ (&#39;bennet&#39;, 321),
+ (&#39;must&#39;, 305),
+ (&#39;bingley&#39;, 302),
+ (&#39;jane&#39;, 290)]
 </pre></div>
 </div>
 </div>
@@ -833,7 +824,7 @@ Types that end in -ed: 860
 </section>
 <section id="concordances">
 <h2>Concordances<a class="headerlink" href="#concordances" title="Permalink to this headline">#</a></h2>
-<p>To calculate concordances – the context in which a word is used –  we can use NLTK’s <a class="reference external" href="https://www.nltk.org/api/nltk.text.html">Text module</a></p>
+<p>Concordnces are the context in which a word is used. To calculate these, we can use NLTK’s <a class="reference external" href="https://www.nltk.org/api/nltk.text.html">Text module</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">Text</span><span class="p">(</span><span class="n">pride_prejudice_raw_tokens</span><span class="p">)</span><span class="o">.</span><span class="n">concordance</span><span class="p">(</span><span class="s2">&quot;picture&quot;</span><span class="p">))</span>
@@ -862,7 +853,7 @@ None
 </section>
 <section id="dispersion-plots">
 <h2>Dispersion plots<a class="headerlink" href="#dispersion-plots" title="Permalink to this headline">#</a></h2>
-<p>One neat method inside the <code class="docutils literal notranslate"><span class="pre">Text</span></code> class is a dispersion plot.</p>
+<p>Another neat method inside the <code class="docutils literal notranslate"><span class="pre">Text</span></code> class is a dispersion plot.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pride_prejudice_Text</span><span class="o">.</span><span class="n">dispersion_plot</span><span class="p">([</span><span class="s1">&#39;love&#39;</span><span class="p">,</span> <span class="s1">&#39;money&#39;</span><span class="p">,</span> <span class="s1">&#39;marriage&#39;</span><span class="p">])</span>
@@ -870,21 +861,22 @@ None
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/nltk_demo_19_0.png" src="../_images/nltk_demo_19_0.png" />
+<img alt="../_images/nltk_demo_22_0.png" src="../_images/nltk_demo_22_0.png" />
 </div>
 </div>
 </section>
 <section id="n-grams-and-their-frequencies">
 <h2>N-grams and their frequencies<a class="headerlink" href="#n-grams-and-their-frequencies" title="Permalink to this headline">#</a></h2>
-<p>We can use nltk’s <code class="docutils literal notranslate"><span class="pre">FreqDist()</span></code> to compute frequencies of n-grams. Here’s an example using bigrams</p>
-<div class="cell docutils container">
+<p>N-grams are word sequences on n-length. For example, 2-grams (typically called bigrams) are all the combinations of 2 words that occur sequentially in a text. 3-grams (trigrams) are all the 3-word combinations. To compute them, use nltk’s bigram and trigram modules</p>
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nltk.collocations</span> <span class="k">as</span> <span class="nn">collocations</span>
 <span class="kn">from</span> <span class="nn">nltk</span> <span class="kn">import</span> <span class="n">FreqDist</span><span class="p">,</span> <span class="n">bigrams</span><span class="p">,</span> <span class="n">trigrams</span>
 
+<span class="c1">#compute bigrams and their frequencies</span>
 <span class="n">bigram_freqs</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">FreqDist</span><span class="p">(</span><span class="n">nltk</span><span class="o">.</span><span class="n">bigrams</span><span class="p">(</span><span class="n">pride_prejudice_clean_tokens_no_stop_words</span><span class="p">))</span>
 
-<span class="n">bigram_freqs</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">bigram_freqs</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -924,16 +916,38 @@ None
 </div>
 </div>
 <p>We can also look at trigrams, but with just a single book this is not going to be very effective. Notice that even the most frequent trigrams aren’t observed very often!</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To compute n-grams beyond 3, you can use nltk.ngrams, but for small corpora like those of a book (or even a 100 books), you’ll find that the vast majority will only occur once, and so there’s nothing to work with…</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trigram_freqs</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">FreqDist</span><span class="p">(</span><span class="n">nltk</span><span class="o">.</span><span class="n">trigrams</span><span class="p">(</span><span class="n">pride_prejudice_clean_tokens_no_stop_words</span><span class="p">))</span>
-<span class="n">trigram_freqs</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">trigram_freqs</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Let’s look at the most frequent trigrams in the NLTK’s bundled set of books from project Gutenberg. Any idea what they might be?</p>
-<p>For more examples of using NLTK’s corpora, see <a class="reference external" href="https://www.nltk.org/book/ch02.html">here</a>.</p>
+<p>Let’s look at the most frequent trigrams in a slightly larger corpus: NLTK’s Project Gutenberg. Project Gutenberg contains the text of many out-of-copyright books and you can download all of them. NLTK bundles a handful:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;gutenberg&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nltk</span><span class="o">.</span><span class="n">corpus</span><span class="o">.</span><span class="n">gutenberg</span><span class="o">.</span><span class="n">fileids</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;austen-emma.txt&#39;, &#39;austen-persuasion.txt&#39;, &#39;austen-sense.txt&#39;, &#39;bible-kjv.txt&#39;, &#39;blake-poems.txt&#39;, &#39;bryant-stories.txt&#39;, &#39;burgess-busterbrown.txt&#39;, &#39;carroll-alice.txt&#39;, &#39;chesterton-ball.txt&#39;, &#39;chesterton-brown.txt&#39;, &#39;chesterton-thursday.txt&#39;, &#39;edgeworth-parents.txt&#39;, &#39;melville-moby_dick.txt&#39;, &#39;milton-paradise.txt&#39;, &#39;shakespeare-caesar.txt&#39;, &#39;shakespeare-hamlet.txt&#39;, &#39;shakespeare-macbeth.txt&#39;, &#39;whitman-leaves.txt&#39;]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading package gutenberg to
+[nltk_data]     /Users/glupyan/nltk_data...
+[nltk_data]   Package gutenberg is already up-to-date!
+</pre></div>
+</div>
+</div>
+</div>
+<p>Any idea what the most common trigrams are if we combine all of these books into a single corpus?</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">some_books</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">corpus</span><span class="o">.</span><span class="n">gutenberg</span><span class="o">.</span><span class="n">words</span><span class="p">()</span>
@@ -941,40 +955,6 @@ None
 <span class="n">some_books_clean</span> <span class="o">=</span> <span class="p">[</span><span class="n">token</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">some_books</span> <span class="k">if</span> <span class="n">token</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()]</span>
 <span class="n">trigram_freqs</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">FreqDist</span><span class="p">(</span><span class="n">nltk</span><span class="o">.</span><span class="n">trigrams</span><span class="p">(</span><span class="n">some_books_clean</span><span class="p">))</span>
 <span class="n">trigram_freqs</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[((&#39;of&#39;, &#39;the&#39;, &#39;lord&#39;), 1780),
- ((&#39;the&#39;, &#39;son&#39;, &#39;of&#39;), 1466),
- ((&#39;the&#39;, &#39;children&#39;, &#39;of&#39;), 1368),
- ((&#39;out&#39;, &#39;of&#39;, &#39;the&#39;), 1202),
- ((&#39;the&#39;, &#39;house&#39;, &#39;of&#39;), 917),
- ((&#39;saith&#39;, &#39;the&#39;, &#39;lord&#39;), 854),
- ((&#39;the&#39;, &#39;lord&#39;, &#39;and&#39;), 818),
- ((&#39;and&#39;, &#39;i&#39;, &#39;will&#39;), 764),
- ((&#39;and&#39;, &#39;all&#39;, &#39;the&#39;), 697),
- ((&#39;children&#39;, &#39;of&#39;, &#39;israel&#39;), 647),
- ((&#39;the&#39;, &#39;land&#39;, &#39;of&#39;), 626),
- ((&#39;the&#39;, &#39;sons&#39;, &#39;of&#39;), 574),
- ((&#39;and&#39;, &#39;the&#39;, &#39;lord&#39;), 572),
- ((&#39;and&#39;, &#39;he&#39;, &#39;said&#39;), 526),
- ((&#39;unto&#39;, &#39;the&#39;, &#39;lord&#39;), 510),
- ((&#39;the&#39;, &#39;king&#39;, &#39;of&#39;), 500),
- ((&#39;the&#39;, &#39;lord&#39;, &#39;god&#39;), 481),
- ((&#39;it&#39;, &#39;came&#39;, &#39;to&#39;), 474),
- ((&#39;came&#39;, &#39;to&#39;, &#39;pass&#39;), 461),
- ((&#39;said&#39;, &#39;unto&#39;, &#39;him&#39;), 454),
- ((&#39;of&#39;, &#39;the&#39;, &#39;house&#39;), 435),
- ((&#39;thus&#39;, &#39;saith&#39;, &#39;the&#39;), 430),
- ((&#39;and&#39;, &#39;they&#39;, &#39;shall&#39;), 427),
- ((&#39;and&#39;, &#39;thou&#39;, &#39;shalt&#39;), 422),
- ((&#39;one&#39;, &#39;of&#39;, &#39;the&#39;), 419),
- ((&#39;the&#39;, &#39;hand&#39;, &#39;of&#39;), 409),
- ((&#39;the&#39;, &#39;name&#39;, &#39;of&#39;), 407),
- ((&#39;of&#39;, &#39;the&#39;, &#39;earth&#39;), 404),
- ((&#39;and&#39;, &#39;it&#39;, &#39;came&#39;), 400),
- ((&#39;and&#39;, &#39;in&#39;, &#39;the&#39;), 397)]
 </pre></div>
 </div>
 </div>
@@ -1056,7 +1036,7 @@ None
 </div>
 </div>
 </div>
-<p>If we compare the collocations to the most common bigrams, we see that they are more “useful”</p>
+<p>If we compare the collocations to the most common bigrams, we see that the collocations are more informative.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nltk</span><span class="o">.</span><span class="n">FreqDist</span><span class="p">(</span><span class="n">nltk</span><span class="o">.</span><span class="n">bigrams</span><span class="p">(</span><span class="n">alice_clean</span><span class="p">))</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
@@ -1098,6 +1078,56 @@ None
 </div>
 </div>
 </div>
+</section>
+<section id="lemmatization">
+<h2>Lemmatization<a class="headerlink" href="#lemmatization" title="Permalink to this headline">#</a></h2>
+<p>A lemma is the base form of a word. It is what would typically be used as an entry in an English dictionary. Lemmatization refers to grouping together words that are inflectional variants of the same lemma: (go,went), (read, reading, reads), (cat, cats), etc..</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nltk</span> <span class="kn">import</span> <span class="n">WordNetLemmatizer</span>
+
+<span class="n">lemmatizer</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">WordNetLemmatizer</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;cats :&quot;</span><span class="p">,</span> <span class="n">lemmatizer</span><span class="o">.</span><span class="n">lemmatize</span><span class="p">(</span><span class="s2">&quot;cats&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;corpora :&quot;</span><span class="p">,</span> <span class="n">lemmatizer</span><span class="o">.</span><span class="n">lemmatize</span><span class="p">(</span><span class="s2">&quot;corpora&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;says :&quot;</span><span class="p">,</span> <span class="n">lemmatizer</span><span class="o">.</span><span class="n">lemmatize</span><span class="p">(</span><span class="s2">&quot;says&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;went :&quot;</span><span class="p">,</span> <span class="n">lemmatizer</span><span class="o">.</span><span class="n">lemmatize</span><span class="p">(</span><span class="s2">&quot;went&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;leaves :&quot;</span><span class="p">,</span> <span class="n">lemmatizer</span><span class="o">.</span><span class="n">lemmatize</span><span class="p">(</span><span class="s2">&quot;leaves&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cats : cat
+corpora : corpus
+says : say
+went : went
+leaves : leaf
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ok, so we can see a few problems here. First, went stayed as went. And “leaves” was matched to “leaf” whereas I was thinking of “leaves” as in a person leaves the room. The reason is that the WordNetLemmatizer is stupid. It defaults to treating words as nouns (with some exceptions). We can, however, pass it a part of speech as an argument:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For the wordnet lemmatizer, the possible parts of speech are: n for noun, v for verb, a for adjective, r for adverb, s for satellite adjective</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;went :&quot;</span><span class="p">,</span> <span class="n">lemmatizer</span><span class="o">.</span><span class="n">lemmatize</span><span class="p">(</span><span class="s2">&quot;went&quot;</span><span class="p">,</span><span class="n">pos</span><span class="o">=</span><span class="s2">&quot;v&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;leaves :&quot;</span><span class="p">,</span> <span class="n">lemmatizer</span><span class="o">.</span><span class="n">lemmatize</span><span class="p">(</span><span class="s2">&quot;leaves&quot;</span><span class="p">,</span><span class="n">pos</span><span class="o">=</span><span class="s2">&quot;v&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;redder :&quot;</span><span class="p">,</span> <span class="n">lemmatizer</span><span class="o">.</span><span class="n">lemmatize</span><span class="p">(</span><span class="s2">&quot;redder&quot;</span><span class="p">,</span><span class="n">pos</span><span class="o">=</span><span class="s2">&quot;a&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>went : go
+leaves : leave
+redder : red
+</pre></div>
+</div>
+</div>
+</div>
+<p>What use is lemmatization if we have to manually tell it what part of speech something is? Well, we don’t have to do it <em>manually</em>. If we’re processing words in context, we can use NLTK’s <a class="reference external" href="https://www.nltk.org/book/ch05.html">automatic Part of Speech Tagging</a> instead!</p>
 </section>
 </section>
 
