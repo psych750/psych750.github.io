@@ -750,6 +750,8 @@ Lowercased tokens (first 100):
 <span class="c1"># If we want the number of types, we can use the keys of the</span>
 <span class="c1"># FreqDist</span>
 <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Types that end in -ed:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">([</span><span class="n">word_type</span> <span class="k">for</span> <span class="n">word_type</span> <span class="ow">in</span> <span class="n">pride_prejudice_freq_dist</span> <span class="k">if</span> <span class="n">word_type</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;ed&#39;</span><span class="p">)]))</span>
+
+<span class="n">pride_prejudice_freq_dist</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -763,7 +765,7 @@ Tokens that end in -ed: 4947
 Types that end in -ed: 860
 </pre></div>
 </div>
-<img alt="_build/jupyter_execute/notebooks/nltk_demo_12_1.png" src="_build/jupyter_execute/notebooks/nltk_demo_12_1.png" />
+<img alt="../_images/nltk_demo_12_1.png" src="../_images/nltk_demo_12_1.png" />
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Samples&#39;, ylabel=&#39;Counts&#39;&gt;
 </pre></div>
 </div>
@@ -793,12 +795,12 @@ Types that end in -ed: 860
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pride_prejudice_clean_tokens_no_stop_words_fd</span> <span class="o">=</span>  <span class="n">nltk</span><span class="o">.</span><span class="n">FreqDist</span><span class="p">(</span><span class="n">pride_prejudice_clean_tokens_no_stop_words</span><span class="p">)</span>
-<span class="n">pride_prejudice_clean_tokens_no_stop_words_fd</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">pride_prejudice_clean_tokens_no_stop_words_fd</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_build/jupyter_execute/notebooks/nltk_demo_16_0.png" src="_build/jupyter_execute/notebooks/nltk_demo_16_0.png" />
+<img alt="../_images/nltk_demo_16_0.png" src="../_images/nltk_demo_16_0.png" />
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Samples&#39;, ylabel=&#39;Counts&#39;&gt;
 </pre></div>
 </div>
@@ -829,7 +831,7 @@ Types that end in -ed: 860
 </section>
 <section id="concordances">
 <h2>Concordances<a class="headerlink" href="#concordances" title="Permalink to this headline">#</a></h2>
-<p>Concordnces are the context in which a word is used. To calculate these, we can use NLTK’s <a class="reference external" href="https://www.nltk.org/api/nltk.text.html">Text module</a></p>
+<p>Concordances are the context in which a word is used. To calculate these, we can use NLTK’s <a class="reference external" href="https://www.nltk.org/api/nltk.text.html">Text module</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">Text</span><span class="p">(</span><span class="n">pride_prejudice_raw_tokens</span><span class="p">)</span><span class="o">.</span><span class="n">concordance</span><span class="p">(</span><span class="s2">&quot;picture&quot;</span><span class="p">))</span>
@@ -866,7 +868,7 @@ None
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_build/jupyter_execute/notebooks/nltk_demo_22_0.png" src="_build/jupyter_execute/notebooks/nltk_demo_22_0.png" />
+<img alt="../_images/nltk_demo_22_0.png" src="../_images/nltk_demo_22_0.png" />
 </div>
 </div>
 </section>
