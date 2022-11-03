@@ -544,6 +544,11 @@ title="Print to PDF"
    Part 3 - Comparing verb lemmas
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bonus-problems">
+   Bonus problems!
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -578,6 +583,11 @@ title="Print to PDF"
    Part 3 - Comparing verb lemmas
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bonus-problems">
+   Bonus problems!
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -598,7 +608,11 @@ title="Print to PDF"
 <p>Let’s compare the adjectives used in Jane Austen’s Emma to those used in Shakespeare’s Hamlet.</p>
 <p>Retrieve the two texts from <code class="docutils literal notranslate"><span class="pre">nltk.corpus.gutenberg</span></code> (‘austen-emma.txt’, ‘shakespeare-hamlet’), tokenize the text. Do not lowercase or remove punctuations until <strong>after</strong> you get the part of speech tags.</p>
 <p>You’ll want to keep the two books in separate variables – <code class="docutils literal notranslate"><span class="pre">emma</span></code> and <code class="docutils literal notranslate"><span class="pre">hamlet</span></code>.</p>
-<p>Now use <code class="docutils literal notranslate"><span class="pre">nltk.pos_tag</span></code> to infer the part of speech of each word.  This will allow you to pull out all the adjectives. Print the list of the 15 most common adjectives for Emma and the 15 most common for Hamlet.</p>
+<p>Now use <a class="reference external" href="https://www.nltk.org/_modules/nltk/tag.html"><code class="docutils literal notranslate"><span class="pre">nltk.pos_tag</span></code></a> to infer the part of speech of each word.  This will allow you to pull out all the adjectives. Print the list of the 15 most common adjectives for Emma and the 15 most common for Hamlet.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>nltk’s pos_tag tagger is trained on Penn’s treebank. There are more sophisticated neural-net based taggers available such as <a class="reference external" href="https://github.com/flairNLP/flair">FLAIR</a></p>
+</div>
 </section>
 <section id="part-2-increasing-robustness">
 <h2>Part 2: Increasing robustness<a class="headerlink" href="#part-2-increasing-robustness" title="Permalink to this headline">#</a></h2>
@@ -624,8 +638,12 @@ title="Print to PDF"
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>There are many lemmatizers. The basic one in NLTK is <code class="docutils literal notranslate"><span class="pre">WordNetLemmatizer</span></code>. Notice that its parts of speech tags are not the same as what’s outputted by the part of speech tagger, so you’ll need to map between them. There are some examples of other lemmatizers in action <a class="reference external" href="https://www.machinelearningplus.com/nlp/lemmatization-examples-python/">here</a></p>
+<p>There are many lemmatizers. The basic one in NLTK is <code class="docutils literal notranslate"><span class="pre">WordNetLemmatizer</span></code>. Notice that its parts of speech tags are not the same as what’s outputted by the part of speech tagger, so you’ll need to map between them. There are some examples of other lemmatizers in action <a class="reference external" href="https://www.machinelearningplus.com/nlp/lemmatization-examples-python/">here</a>.</p>
 </div>
+</section>
+<section id="bonus-problems">
+<h2>Bonus problems!<a class="headerlink" href="#bonus-problems" title="Permalink to this headline">#</a></h2>
+<p>Coming shortly!</p>
 </section>
 </section>
 
