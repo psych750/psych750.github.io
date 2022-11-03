@@ -596,7 +596,8 @@ title="Print to PDF"
 <h2>Part 1: Who likes which adjectives?<a class="headerlink" href="#part-1-who-likes-which-adjectives" title="Permalink to this headline">#</a></h2>
 <p>Begin by looking over <a class="reference external" href="https://realpython.com/nltk-nlp-python/#tagging-parts-of-speech">this example</a> of part of speech tagging.</p>
 <p>Let’s compare the adjectives used in Jane Austen’s Emma to those used in Shakespeare’s Hamlet.</p>
-<p>Retrieve the two texts from <code class="docutils literal notranslate"><span class="pre">nltk.corpus.gutenberg</span></code> (‘austen-emma.txt’, ‘shakespeare-hamlet’), tokenize and lowercase the text.  You’ll want to keep them in separate variables.</p>
+<p>Retrieve the two texts from <code class="docutils literal notranslate"><span class="pre">nltk.corpus.gutenberg</span></code> (‘austen-emma.txt’, ‘shakespeare-hamlet’), tokenize the text. Do not lowercase or remove punctuations until <strong>after</strong> you get the part of speech tags.</p>
+<p>You’ll want to keep the two books in separate variables – <code class="docutils literal notranslate"><span class="pre">emma</span></code> and <code class="docutils literal notranslate"><span class="pre">hamlet</span></code>.</p>
 <p>Now use <code class="docutils literal notranslate"><span class="pre">nltk.pos_tag</span></code> to infer the part of speech of each word.  This will allow you to pull out all the adjectives. Print the list of the 15 most common adjectives for Emma and the 15 most common for Hamlet.</p>
 </section>
 <section id="part-2-increasing-robustness">
