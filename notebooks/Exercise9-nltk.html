@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Testing &#8212; Psych 750</title>
+    <title>Exercise 9 - Natural Language Processing with NLTK &#8212; Psych 750</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -51,10 +51,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://psych750.github.io/notebooks/testing.html" />
+    <link rel="canonical" href="https://psych750.github.io/notebooks/Exercise9-nltk.html" />
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Exercise 8 - Practice with regular expressions" href="Exercise8-regexps.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -316,7 +317,7 @@ const thebe_selector_output = ".output, .cell_output"
   Exercises
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Exercise0-test.html">
    Exercise 0-Test assignment
@@ -362,8 +363,8 @@ const thebe_selector_output = ".output, .cell_output"
    Exercise 8-Practice with regular expressions
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Exercise9-nltk.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Exercise 9-Practice with NLTK
   </a>
  </li>
@@ -418,6 +419,35 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/psych750/psych750.github.io/main?urlpath=tree/notebooks/Exercise9-nltk.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -440,7 +470,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/notebooks/testing.ipynb"
+        <a href="../_sources/notebooks/Exercise9-nltk.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -499,14 +529,19 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Testing
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-1-who-likes-which-adjectives">
+   Part 1: Who likes which adjectives?
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#contents">
-   Contents
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-2-increasing-robustness">
+   Part 2: Increasing robustness
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-3">
+   Part 3
   </a>
  </li>
 </ul>
@@ -518,7 +553,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Testing</h1>
+                <h1>Exercise 9 - Natural Language Processing with NLTK</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -528,14 +563,19 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Testing
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-1-who-likes-which-adjectives">
+   Part 1: Who likes which adjectives?
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#contents">
-   Contents
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-2-increasing-robustness">
+   Part 2: Increasing robustness
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-3">
+   Part 3
   </a>
  </li>
 </ul>
@@ -548,18 +588,37 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="testing">
-<h1>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">#</a></h1>
-<p>The programs that we write can quickly become complicated, and with complexity comes bugs. Programmers have long accepted that every program will have its share of bugs. To deal with this, we have come up with many ways to defend against avoidable bugs. Learning to write tests is one of the best things you can do to guard against avoidable bugs creeping into your own programs. Basically, you write a set of tests that you then run against your program every time you or someone else changes the program. These tests, if written correctly, prove that changes to the code do not break anything that was working previously.</p>
-<p><a class="reference external" href="http://nbviewer.ipython.org/urls/raw.github.com/ehmatthes/intro_programming/master/notebooks/exceptions.ipynb">Previous: Exceptions</a> |
-<a class="reference external" href="http://nbviewer.ipython.org/urls/raw.github.com/ehmatthes/intro_programming/master/notebooks/index.ipynb">Home</a></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="exercise-9-natural-language-processing-with-nltk">
+<h1>Exercise 9 - Natural Language Processing with NLTK<a class="headerlink" href="#exercise-9-natural-language-processing-with-nltk" title="Permalink to this headline">#</a></h1>
+<p>[Accept the exercise](link coming soon)</p>
+<p>We’re using python’s <a class="reference external" href="https://docs.python.org/3/library/re.html"><code class="docutils literal notranslate"><span class="pre">re</span></code></a> package for regular expressions.</p>
+<p><strong>I’ll keep the due date Wednesday at 11. Don’t wait until Tuesday to start though! This is a shorter assignment and you’ll need to work individually on this one. There will be few bonus problems as well</strong></p>
+<section id="part-1-who-likes-which-adjectives">
+<h2>Part 1: Who likes which adjectives?<a class="headerlink" href="#part-1-who-likes-which-adjectives" title="Permalink to this headline">#</a></h2>
+<p>Begin by looking over <a class="reference external" href="https://realpython.com/nltk-nlp-python/#tagging-parts-of-speech">this example</a> of part of speech tagging.</p>
+<p>Let’s compare the adjectives used in Jane Austen’s Emma to those used in Shakespeare’s Hamlet.</p>
+<p>Retrieve the two texts from <code class="docutils literal notranslate"><span class="pre">nltk.corpus.gutenberg</span></code> (‘austen-emma.txt’, ‘shakespeare-hamlet’), tokenize and lowercase the text.  You’ll want to keep them in separate variables.</p>
+<p>Now use <code class="docutils literal notranslate"><span class="pre">nltk.pos_tag</span></code> to infer the part of speech of each word.  This will allow you to pull out all the adjectives. Print the list of the 15 most common adjectives for Emma and the 15 most common for Hamlet.</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="contents">
-<h1>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">#</a></h1>
-<p><span class="xref myst">top</span></p>
-<hr class="docutils" />
-<p><a class="reference external" href="http://nbviewer.ipython.org/urls/raw.github.com/ehmatthes/intro_programming/master/notebooks/exceptions.ipynb">Previous: Exceptions</a> |
-<a class="reference external" href="http://nbviewer.ipython.org/urls/raw.github.com/ehmatthes/intro_programming/master/notebooks/index.ipynb">Home</a></p>
+<section id="part-2-increasing-robustness">
+<h2>Part 2: Increasing robustness<a class="headerlink" href="#part-2-increasing-robustness" title="Permalink to this headline">#</a></h2>
+<p>Let’s see if the analysis for part 1 holds up when we add some additional books for these authors. Repeat what you did for part 1, but now add 2 more books to the <code class="docutils literal notranslate"><span class="pre">austen</span></code> corpus and 2 additional plays to the <code class="docutils literal notranslate"><span class="pre">shakespeare</span></code> corpus:</p>
+<p>The first corpus – <code class="docutils literal notranslate"><span class="pre">austen</span></code>– should contain three Jane Austen books:</p>
+<div class="highlight-csv notranslate"><div class="highlight"><pre><span></span>[&#39;austen-emma.txt&#39;, &#39;austen-persuasion.txt&#39;, &#39;austen-sense.txt&#39;]
+</pre></div>
+</div>
+<p>The second corpus – <code class="docutils literal notranslate"><span class="pre">shakespeare</span></code> – should contain three Shakespeare plays:</p>
+<div class="highlight-csv notranslate"><div class="highlight"><pre><span></span>[&#39;shakespeare-caesar.txt&#39;, &#39;shakespeare-hamlet.txt&#39;, &#39;shakespeare-macbeth.txt&#39;]
+</pre></div>
+</div>
+<p>How do the 15 most popular adjecives look now?</p>
+</section>
+<section id="part-3">
+<h2>Part 3<a class="headerlink" href="#part-3" title="Permalink to this headline">#</a></h2>
+<p>Let’s now compare verbs in <code class="docutils literal notranslate"><span class="pre">austen</span></code> and <code class="docutils literal notranslate"><span class="pre">shakespeare</span></code>.</p>
+<p>a. Print out the 15 most frequent verbs in each corpus .
+b. <strong>Lemmatize</strong> the corpus and print out the 15 most frequent lemmas.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
