@@ -863,7 +863,7 @@ None
 <p>Another neat method inside the <code class="docutils literal notranslate"><span class="pre">Text</span></code> class is a dispersion plot.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pride_prejudice_Text</span><span class="o">.</span><span class="n">dispersion_plot</span><span class="p">([</span><span class="s1">&#39;love&#39;</span><span class="p">,</span> <span class="s1">&#39;money&#39;</span><span class="p">,</span> <span class="s1">&#39;marriage&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Text</span><span class="p">(</span><span class="n">pride_prejudice_raw_tokens</span><span class="p">)</span><span class="o">.</span><span class="n">dispersion_plot</span><span class="p">([</span><span class="s1">&#39;love&#39;</span><span class="p">,</span> <span class="s1">&#39;money&#39;</span><span class="p">,</span> <span class="s1">&#39;marriage&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -930,7 +930,12 @@ None
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trigram_freqs</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">FreqDist</span><span class="p">(</span><span class="n">nltk</span><span class="o">.</span><span class="n">trigrams</span><span class="p">(</span><span class="n">pride_prejudice_clean_tokens_no_stop_words</span><span class="p">))</span>
-<span class="n">trigram_freqs</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">trigram_freqs</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[((&#39;miss&#39;, &#39;de&#39;, &#39;bourgh&#39;), 20), ((&#39;lady&#39;, &#39;catherine&#39;, &#39;de&#39;), 14), ((&#39;catherine&#39;, &#39;de&#39;, &#39;bourgh&#39;), 14), ((&#39;sir&#39;, &#39;william&#39;, &#39;lucas&#39;), 10), ((&#39;said&#39;, &#39;miss&#39;, &#39;bingley&#39;), 10), ((&#39;hurst&#39;, &#39;miss&#39;, &#39;bingley&#39;), 9), ((&#39;lady&#39;, &#39;catherine&#39;, &#39;daughter&#39;), 8), ((&#39;ten&#39;, &#39;thousand&#39;, &#39;pounds&#39;), 6), ((&#39;miss&#39;, &#39;elizabeth&#39;, &#39;bennet&#39;), 5), ((&#39;ten&#39;, &#39;thousand&#39;, &#39;year&#39;), 4), ((&#39;dear&#39;, &#39;said&#39;, &#39;bennet&#39;), 4), ((&#39;miss&#39;, &#39;bennet&#39;, &#39;came&#39;), 4), ((&#39;may&#39;, &#39;depend&#39;, &#39;upon&#39;), 4), ((&#39;could&#39;, &#39;think&#39;, &#39;nothing&#39;), 4), ((&#39;elizabeth&#39;, &#39;could&#39;, &#39;help&#39;), 4), ((&#39;elizabeth&#39;, &#39;made&#39;, &#39;answer&#39;), 4), ((&#39;could&#39;, &#39;think&#39;, &#39;without&#39;), 4), ((&#39;without&#39;, &#39;saying&#39;, &#39;word&#39;), 4), ((&#39;lady&#39;, &#39;catherine&#39;, &#39;seemed&#39;), 4), ((&#39;since&#39;, &#39;went&#39;, &#39;away&#39;), 4)]
 </pre></div>
 </div>
 </div>
@@ -961,7 +966,12 @@ None
 
 <span class="n">some_books_clean</span> <span class="o">=</span> <span class="p">[</span><span class="n">token</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">some_books</span> <span class="k">if</span> <span class="n">token</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()]</span>
 <span class="n">trigram_freqs</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">FreqDist</span><span class="p">(</span><span class="n">nltk</span><span class="o">.</span><span class="n">trigrams</span><span class="p">(</span><span class="n">some_books_clean</span><span class="p">))</span>
-<span class="n">trigram_freqs</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">trigram_freqs</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">30</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[((&#39;of&#39;, &#39;the&#39;, &#39;lord&#39;), 1780), ((&#39;the&#39;, &#39;son&#39;, &#39;of&#39;), 1466), ((&#39;the&#39;, &#39;children&#39;, &#39;of&#39;), 1368), ((&#39;out&#39;, &#39;of&#39;, &#39;the&#39;), 1202), ((&#39;the&#39;, &#39;house&#39;, &#39;of&#39;), 917), ((&#39;saith&#39;, &#39;the&#39;, &#39;lord&#39;), 854), ((&#39;the&#39;, &#39;lord&#39;, &#39;and&#39;), 818), ((&#39;and&#39;, &#39;i&#39;, &#39;will&#39;), 764), ((&#39;and&#39;, &#39;all&#39;, &#39;the&#39;), 697), ((&#39;children&#39;, &#39;of&#39;, &#39;israel&#39;), 647), ((&#39;the&#39;, &#39;land&#39;, &#39;of&#39;), 626), ((&#39;the&#39;, &#39;sons&#39;, &#39;of&#39;), 574), ((&#39;and&#39;, &#39;the&#39;, &#39;lord&#39;), 572), ((&#39;and&#39;, &#39;he&#39;, &#39;said&#39;), 526), ((&#39;unto&#39;, &#39;the&#39;, &#39;lord&#39;), 510), ((&#39;the&#39;, &#39;king&#39;, &#39;of&#39;), 500), ((&#39;the&#39;, &#39;lord&#39;, &#39;god&#39;), 481), ((&#39;it&#39;, &#39;came&#39;, &#39;to&#39;), 474), ((&#39;came&#39;, &#39;to&#39;, &#39;pass&#39;), 461), ((&#39;said&#39;, &#39;unto&#39;, &#39;him&#39;), 454), ((&#39;of&#39;, &#39;the&#39;, &#39;house&#39;), 435), ((&#39;thus&#39;, &#39;saith&#39;, &#39;the&#39;), 430), ((&#39;and&#39;, &#39;they&#39;, &#39;shall&#39;), 427), ((&#39;and&#39;, &#39;thou&#39;, &#39;shalt&#39;), 422), ((&#39;one&#39;, &#39;of&#39;, &#39;the&#39;), 419), ((&#39;the&#39;, &#39;hand&#39;, &#39;of&#39;), 409), ((&#39;the&#39;, &#39;name&#39;, &#39;of&#39;), 407), ((&#39;of&#39;, &#39;the&#39;, &#39;earth&#39;), 404), ((&#39;and&#39;, &#39;it&#39;, &#39;came&#39;), 400), ((&#39;and&#39;, &#39;in&#39;, &#39;the&#39;), 397)]
 </pre></div>
 </div>
 </div>
