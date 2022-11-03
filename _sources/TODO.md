@@ -1,5 +1,12 @@
 # TODO
 
+[x] word counts, most_common, least_common
+[x] remove stopwords
+[x] concordance example https://www.nltk.org/howto/concordance.html
+[ ] lemmatization https://www.analyticsvidhya.com/blog/2021/07/nltk-a-beginners-hands-on-guide-to-natural-language-processing/
+[ ] collocation wordclouds - https://towardsdatascience.com/advanced-visualisations-for-text-data-analysis-fc8add8796e2
+[ ] POS tagging - Exercise - compare several books on frequency of adjectives  
+[ ] wordnet interface
 
 [ ] check out https://jupytext.readthedocs.io/en/latest/
 [ ] Useful R patterns:
