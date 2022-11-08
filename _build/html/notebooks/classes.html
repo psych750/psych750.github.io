@@ -307,6 +307,11 @@ const thebe_selector_output = ".output, .cell_output"
    Google this!
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="nltk_demo.html">
+   NLTK demo
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -357,6 +362,16 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="Exercise8-regexps.html">
    Exercise 8-Practice with regular expressions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise9-nltk.html">
+   Exercise 9-Practice with NLTK
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise10-oop_circles.html">
+   Exercise 10-Circle drop OOP practce
   </a>
  </li>
 </ul>
@@ -1600,7 +1615,7 @@ The first shuttle is 35.468296 units away from rocket 2.
 <p>This section goes through a more practical example of using a class in an experiment. Let’s say we want to make a moving circle that wiggles its way across a window. Here’s some basic code to make this happen.</p>
 <section id="a-single-moving-circle">
 <h2>A single moving circle<a class="headerlink" href="#a-single-moving-circle" title="Permalink to this headline">#</a></h2>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">random</span>
@@ -1617,7 +1632,7 @@ The first shuttle is 35.468296 units away from rocket 2.
 <span class="n">max_angle</span><span class="o">=</span><span class="mi">30</span>
 <span class="n">prev_angle_to_deviate</span><span class="o">=</span><span class="mi">0</span>
 <span class="n">new_cur_angle</span><span class="o">=</span><span class="mf">0.0</span>
-<span class="n">inter_step_interval</span> <span class="o">=</span> <span class="mf">4.0</span>
+<span class="n">inter_step_interval</span> <span class="o">=</span> <span class="mf">3.0</span>
 
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
 	<span class="n">core</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mf">.02</span><span class="p">)</span>
@@ -1643,7 +1658,7 @@ The first shuttle is 35.468296 units away from rocket 2.
 		<span class="n">prev_angle_to_deviate</span> <span class="o">%=</span> <span class="mi">360</span>
 
 	<span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">getKeys</span><span class="p">([</span><span class="s1">&#39;space&#39;</span><span class="p">]):</span>
-		<span class="k">break</span>
+		<span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1652,13 +1667,28 @@ The first shuttle is 35.468296 units away from rocket 2.
 Hello from the pygame community. https://www.pygame.org/contribute.html
 </pre></div>
 </div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fontconfig warning: ignoring UTF-8: not a valid region tag
+2022-11-01 09:52:01.525 python[34424:3526118] Warning: Expected min height of view: (&lt;NSPopoverTouchBarItemButton: 0x7fb7a8c1c420&gt;) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+2022-11-01 09:52:01.526 python[34424:3526118] Warning: Expected min height of view: (&lt;NSButton: 0x7fb7ab8e70e0&gt;) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+2022-11-01 09:52:01.530 python[34424:3526118] Warning: Expected min height of view: (&lt;NSPopoverTouchBarItemButton: 0x7fb7acd6ffe0&gt;) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+2022-11-01 09:52:01.532 python[34424:3526118] Warning: Expected min height of view: (&lt;NSPopoverTouchBarItemButton: 0x7fb7ad06b130&gt;) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+Exception ignored on calling ctypes callback function: &lt;function DeallocationObserver_Implementation.initWithObject_ at 0x7fb7a8da5790&gt;
+Traceback (most recent call last):
+  File &quot;/Users/glupyan/anaconda3/envs/psych750/lib/python3.8/site-packages/pyglet/libs/darwin/cocoapy/runtime.py&quot;, line 1197, in initWithObject_
+    self = self.value
+KeyboardInterrupt: 
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Canceled</span> <span class="n">future</span> <span class="k">for</span> <span class="n">execute_request</span> <span class="n">message</span> <span class="n">before</span> <span class="n">replies</span> <span class="n">were</span> <span class="n">done</span>
+</pre></div>
+</div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">Kernel</span> <span class="n">crashed</span> <span class="k">while</span> <span class="n">executing</span> <span class="n">code</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">the</span> <span class="n">current</span> <span class="n">cell</span> <span class="ow">or</span> <span class="n">a</span> <span class="n">previous</span> <span class="n">cell</span><span class="o">.</span> <span class="n">Please</span> <span class="n">review</span> <span class="n">the</span> <span class="n">code</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">cell</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">to</span> <span class="n">identify</span> <span class="n">a</span> <span class="n">possible</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">failure</span><span class="o">.</span> <span class="n">Click</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;https://aka.ms/vscodeJupyterKernelCrash&#39;</span><span class="o">&gt;</span><span class="n">here</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="k">for</span> <span class="n">more</span> <span class="n">info</span><span class="o">.</span> <span class="n">View</span> <span class="n">Jupyter</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;command:jupyter.viewOutput&#39;</span><span class="o">&gt;</span><span class="n">log</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="k">for</span> <span class="n">further</span> <span class="n">details</span><span class="o">.</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>Let’s extend this code so that when we click on the circle, it gets dimmer and moves slower.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">random</span>
@@ -1675,7 +1705,7 @@ Hello from the pygame community. https://www.pygame.org/contribute.html
 <span class="n">max_angle</span><span class="o">=</span><span class="mi">30</span>
 <span class="n">prev_angle_to_deviate</span><span class="o">=</span><span class="mi">0</span>
 <span class="n">new_cur_angle</span><span class="o">=</span><span class="mf">0.0</span>
-<span class="n">inter_step_interval</span> <span class="o">=</span> <span class="mf">4.0</span>
+<span class="n">inter_step_interval</span> <span class="o">=</span> <span class="mf">3.0</span>
 
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
 	<span class="n">core</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mf">.02</span><span class="p">)</span>
@@ -1714,12 +1744,19 @@ Hello from the pygame community. https://www.pygame.org/contribute.html
 Hello from the pygame community. https://www.pygame.org/contribute.html
 </pre></div>
 </div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fontconfig warning: ignoring UTF-8: not a valid region tag
+2022-11-01 09:56:45.420 python[34622:3531869] Warning: Expected min height of view: (&lt;NSPopoverTouchBarItemButton: 0x7fdbbf239e70&gt;) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+2022-11-01 09:56:45.421 python[34622:3531869] Warning: Expected min height of view: (&lt;NSButton: 0x7fdbc23fd9b0&gt;) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+2022-11-01 09:56:45.423 python[34622:3531869] Warning: Expected min height of view: (&lt;NSPopoverTouchBarItemButton: 0x7fdbc4d04860&gt;) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+2022-11-01 09:56:45.425 python[34622:3531869] Warning: Expected min height of view: (&lt;NSPopoverTouchBarItemButton: 0x7fdbc15c9aa0&gt;) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+</pre></div>
+</div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">An</span> <span class="n">exception</span> <span class="n">has</span> <span class="n">occurred</span><span class="p">,</span> <span class="n">use</span> <span class="o">%</span><span class="k">tb</span> to see the full traceback.
 
 <span class="ne">SystemExit</span>
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/mohanji/miniconda3/envs/psych750/lib/python3.8/site-packages/IPython/core/interactiveshell.py:3406: UserWarning: To exit: use &#39;exit&#39;, &#39;quit&#39;, or Ctrl-D.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/glupyan/anaconda3/envs/psych750/lib/python3.8/site-packages/IPython/core/interactiveshell.py:3406: UserWarning: To exit: use &#39;exit&#39;, &#39;quit&#39;, or Ctrl-D.
   warn(&quot;To exit: use &#39;exit&#39;, &#39;quit&#39;, or Ctrl-D.&quot;, stacklevel=1)
 </pre></div>
 </div>
@@ -1733,7 +1770,7 @@ Hello from the pygame community. https://www.pygame.org/contribute.html
 <h2>More circles!<a class="headerlink" href="#more-circles" title="Permalink to this headline">#</a></h2>
 <p>But now suppose we want to have lots of moving circles that move independently of one another such that we can set some to move faster, have them be different colors, allow people to click on them independently, etc. This is the kind of situation where classes shine.</p>
 <p>The code below implements a <code class="docutils literal notranslate"><span class="pre">movingCircle</span></code> class. We then use it to make a bunch of individual circles and allow the user to click on them individually. Notice that it’s not much longer than the code above. And if we want 10 circles, we just need to change <code class="docutils literal notranslate"><span class="pre">numCircles</span> <span class="pre">=</span> <span class="pre">4</span></code> to <code class="docutils literal notranslate"><span class="pre">numCircles</span> <span class="pre">=</span> <span class="pre">5</span></code>. Wizardry!</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">random</span>
@@ -1804,7 +1841,7 @@ Hello from the pygame community. https://www.pygame.org/contribute.html
 	<span class="n">win</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
 
 	<span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">getKeys</span><span class="p">([</span><span class="s1">&#39;space&#39;</span><span class="p">]):</span>
-		<span class="k">break</span>
+		<span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1935,7 +1972,7 @@ clicked on a circle!
 </div>
 </div>
 </div>
-<p>Make a separate file called <em>rocket_game.py</em>. If you are more interested in science than games, feel free to call this file something like <em>rocket_simulation.py</em>. Again, to use standard naming conventions, make sure you are using a lowercase_underscore name for this file.</p>
+<p>Make a separate file called <em>rocket_game.py</em>. Or, if you want it to sound more scienc-ey, call it <em>rocket_simulation.py</em>. The exact name doesn’t matter, but the convention does. Follow the convention by using a lowercase_underscore name for this file.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Save as rocket_game.py</span>
@@ -2000,8 +2037,7 @@ clicked on a circle!
 <p>Now you can import the Rocket and the Shuttle class, and use them both in a clean uncluttered program file:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">###highlight=[3,8,9,10]</span>
-<span class="c1"># Save as rocket_game.py</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Save as rocket_game.py</span>
 <span class="kn">from</span> <span class="nn">rocket</span> <span class="kn">import</span> <span class="n">Rocket</span><span class="p">,</span> <span class="n">Shuttle</span>
 
 <span class="n">rocket</span> <span class="o">=</span> <span class="n">Rocket</span><span class="p">()</span>
@@ -2030,14 +2066,10 @@ The shuttle has completed 0 flights.
 <section id="import-module-name">
 <h3>import <em>module_name</em><a class="headerlink" href="#import-module-name" title="Permalink to this headline">#</a></h3>
 <p>The syntax for importing classes that was just shown:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">module_name</span> <span class="kn">import</span> <span class="n">ClassName</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">module_name</span> <span class="kn">import</span> <span class="n">ClassName</span>
 </pre></div>
 </div>
-</div>
-</div>
-<p>is straightforward, and is used quite commonly. It allows you to use the class names directly in your program, so you have very clean and readable code. This can be a problem, however, if the names of the classes you are importing conflict with names that have already been used in the program you are working on. This is unlikely to happen in the short programs you have been seeing here, but if you were working on a larger program it is quite possible that the class you want to import from someone else’s work would happen to have a name you have already used in your program. In this case, you can use simply import the module itself:</p>
+<p>is straightforward, and is commonly used. It allows you to use the class names directly in your program, so you have very clean and readable code. This can be a problem, however, if the names of the classes you are importing conflict with names that have already been used in your program This is unlikely to happen in short programs like those in the examples, but becomes increasingly likely as your codebase grows. It’s also an issue if you are sharing your code. Maybe you take pains to ensure that a class name doesn’t conflict with names used in <em>your</em> code, but can you guarantee that it won’t happen when others use your code? So, you can also import the module itself:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Save as rocket_game.py</span>
@@ -2061,11 +2093,11 @@ The shuttle has completed 0 flights.
 </div>
 </div>
 </div>
-<p>The general syntax for this kind of import is:</p>
+<p>The general syntax for import is:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">module_name</span>
 </pre></div>
 </div>
-<p>After this, classes are accessed using dot notation:</p>
+<p>After this, classes are accessed using the dot notation:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">module_name</span><span class="o">.</span><span class="n">ClassName</span>
 </pre></div>
 </div>
@@ -2102,35 +2134,23 @@ The shuttle has completed 0 flights.
 </div>
 </div>
 <p>This approach is often used to shorten the name of the module, so you don’t have to type a long module name before each class name that you want to use. But it is easy to shorten a name so much that you force people reading your code to scroll to the top of your file and see what the shortened name stands for. In this example,</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">rocket</span> <span class="k">as</span> <span class="nn">rocket_module</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">rocket</span> <span class="k">as</span> <span class="nn">rocket_module</span>
 </pre></div>
-</div>
-</div>
 </div>
 <p>leads to much more readable code than something like:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">rocket</span> <span class="k">as</span> <span class="nn">r</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">rocket</span> <span class="k">as</span> <span class="nn">r</span>
 </pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="from-module-name-import">
 <h3>from <em>module_name</em> import *<a class="headerlink" href="#from-module-name-import" title="Permalink to this headline">#</a></h3>
-<p>There is one more import syntax that you should be aware of, but you should probably avoid using. This syntax imports all of the available classes and functions in a module:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">module_name</span> <span class="kn">import</span> <span class="o">*</span>
+<p>There is one more import syntax that you should be aware of, but Python gurus advise against using. This syntax imports all of the available classes and functions in a module:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">module_name</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
-</div>
-</div>
-<p>This is not recommended, for a couple reasons. First of all, you may have no idea what all the names of the classes and functions in a module are. If you accidentally give one of your variables the same name as a name from the module, you will have naming conflicts. Also, you may be importing way more code into your program than you need.</p>
+<p>This isn’t recommended for a couple reasons. First, you don’t know what all the names of the classes and functions in a module are. If you accidentally give one of your variables the same name as a name from the module, you will have naming conflicts. Second, you may be importing way more code into your program than you need.</p>
 <p>If you really need all the functions and classes from a module, just import the module and use the <code class="docutils literal notranslate"><span class="pre">module_name.ClassName</span></code> syntax in your program.</p>
-<p>You will get a sense of how to write your imports as you read more Python code, and as you write and share some of your own code.</p>
+<p>You will get a better sense of how to write imports as you read more Python code and as you write and share some of your own code.</p>
 </section>
 </section>
 <section id="a-module-of-functions">

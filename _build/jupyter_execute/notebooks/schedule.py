@@ -168,10 +168,15 @@
 # ```   
 # 
 # ### In class
-# 1. Review Exercise 8.
-# 2. Quick demo of regexp lookaheads and lookbehinds.
-# 3. Introduction to Python's Natural Language ToolKit (NLTK)
-# 4. Begin Exercise 9 in class
+# 1. Install pytest 
+#     ```python
+#     pip install pytest
+#     ```
+# 2. Review Exercise 8 with attention to unit testing.
+# 3. Quick demo of more advanced regular expressions (lookaheads and lookbehinds).
+# 4. Example of regular expressions on the command line
+# 5. Introduction to Python's Natural Language ToolKit (NLTK)
+# 6. Begin Exercise 9 in class
 
 # ## Week 10 (Nov 10th)
 # 
@@ -181,19 +186,28 @@
 # 3. Finish Exercise 9
 # 
 # ### In class
-# 1. Review Exercise 9
-# 2. Text processing with [spaCy](https://spacy.io/).
-# 3. Introduction to classes and object-oriented design
+# 1. Review some past bonus problems
+# 2. Review Exercise 9
+# 3. Runtime and memory considerations (intro to the [Big *O*](https://en.wikipedia.org/wiki/Big_O_notation))
+# 4. Introduction to [classes and object-oriented design](https://psych750.github.io/notebooks/classes.html)
+# 5. Discussion of class projects
 
 # ## Week 12 (Nov 17th)
 # 
 # ### At home
-# 1. Finish Exercise 10 (PsychoPy experiment using Python classes)
+# 1. Finish going through the classes notebook
+# 2. Finish Exercise 10 (a quick one!)
+# 3. [Complete project proposal form](https://uwmadison.co1.qualtrics.com/jfe/form/SV_3rwC6AwmISpQibk) (by Nov 14th)
+# 4. [Schedule brief zoom meeting with me](https://calendly.com/glupyan/project-pitch-meeting?month=2022-11) to discuss your project ideas ()
 # 
 # ### In class
-# 1. Review Exercise 10
+# 1. Some data-wrangling tricks that slipped through the cracks
+#     * Merges
+#     * Split-apply-combine
+#     * Column name gotchas
 # 2. Intro to webscraping
-# 3. Using APIs (Case study: [PRAW](https://praw.readthedocs.io/en/stable/))
+# 3. Webcraping in-class activity
+# 4. Using APIs (Case study: [PRAW](https://praw.readthedocs.io/en/stable/))
 
 # ## Week 13 (Dec 1st)
 # 

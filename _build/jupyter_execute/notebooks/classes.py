@@ -698,7 +698,7 @@ min_angle=-30
 max_angle=30
 prev_angle_to_deviate=0
 new_cur_angle=0.0
-inter_step_interval = 4.0
+inter_step_interval = 3.0
 
 while True:
 	core.wait(.02)
@@ -724,7 +724,7 @@ while True:
 		prev_angle_to_deviate %= 360
 
 	if event.getKeys(['space']):
-		break
+		sys.exit()
 
 
 # Let's extend this code so that when we click on the circle, it gets dimmer and moves slower.
@@ -747,7 +747,7 @@ min_angle=-30
 max_angle=30
 prev_angle_to_deviate=0
 new_cur_angle=0.0
-inter_step_interval = 4.0
+inter_step_interval = 3.0
 
 while True:
 	core.wait(.02)
@@ -857,7 +857,7 @@ while True:
 	win.flip()
 
 	if event.getKeys(['space']):
-		break
+		sys.exit()
 
 
 # Make sure you understand what's happening here. Play around with the code. If you're confused, message on Slack.
@@ -900,7 +900,7 @@ class Rocket():
         return distance
 
 
-# Make a separate file called *rocket_game.py*. If you are more interested in science than games, feel free to call this file something like *rocket_simulation.py*. Again, to use standard naming conventions, make sure you are using a lowercase_underscore name for this file.
+# Make a separate file called *rocket_game.py*. Or, if you want it to sound more scienc-ey, call it *rocket_simulation.py*. The exact name doesn't matter, but the convention does. Follow the convention by using a lowercase_underscore name for this file.
 
 # In[ ]:
 
@@ -965,7 +965,6 @@ class Shuttle(Rocket):
 # In[ ]:
 
 
-###highlight=[3,8,9,10]
 # Save as rocket_game.py
 from rocket import Rocket, Shuttle
 
@@ -986,14 +985,12 @@ print("The shuttle has completed %d flights." % shuttle.flights_completed)
 # ### import *module_name*
 # 
 # The syntax for importing classes that was just shown:
-
-# In[ ]:
-
-
-from module_name import ClassName
-
-
-# is straightforward, and is used quite commonly. It allows you to use the class names directly in your program, so you have very clean and readable code. This can be a problem, however, if the names of the classes you are importing conflict with names that have already been used in the program you are working on. This is unlikely to happen in the short programs you have been seeing here, but if you were working on a larger program it is quite possible that the class you want to import from someone else's work would happen to have a name you have already used in your program. In this case, you can use simply import the module itself:
+# 
+# ```python
+# from module_name import ClassName
+# ```
+# 
+# is straightforward, and is commonly used. It allows you to use the class names directly in your program, so you have very clean and readable code. This can be a problem, however, if the names of the classes you are importing conflict with names that have already been used in your program This is unlikely to happen in short programs like those in the examples, but becomes increasingly likely as your codebase grows. It's also an issue if you are sharing your code. Maybe you take pains to ensure that a class name doesn't conflict with names used in *your* code, but can you guarantee that it won't happen when others use your code? So, you can also import the module itself:
 
 # In[ ]:
 
@@ -1009,13 +1006,13 @@ print("\nThe shuttle is at (%d, %d)." % (shuttle_0.x, shuttle_0.y))
 print("The shuttle has completed %d flights." % shuttle_0.flights_completed)
 
 
-# The general syntax for this kind of import is:
+# The general syntax for import is:
 # 
 # ```python
 # import module_name
 # ```
 # 
-# After this, classes are accessed using dot notation:
+# After this, classes are accessed using the dot notation:
 # 
 # ```python
 # module_name.ClassName
@@ -1048,35 +1045,30 @@ print("The shuttle has completed %d flights." % shuttle.flights_completed)
 
 
 # This approach is often used to shorten the name of the module, so you don't have to type a long module name before each class name that you want to use. But it is easy to shorten a name so much that you force people reading your code to scroll to the top of your file and see what the shortened name stands for. In this example,
-
-# In[ ]:
-
-
-import rocket as rocket_module
-
-
+# 
+# ```python
+# import rocket as rocket_module
+# ```
+# 
 # leads to much more readable code than something like:
-
-# In[ ]:
-
-
-import rocket as r
-
+# 
+# ```python
+# import rocket as r
+# ```
+# 
 
 # ### from *module_name* import *
-# There is one more import syntax that you should be aware of, but you should probably avoid using. This syntax imports all of the available classes and functions in a module:
-
-# In[ ]:
-
-
-from module_name import *
-
-
-# This is not recommended, for a couple reasons. First of all, you may have no idea what all the names of the classes and functions in a module are. If you accidentally give one of your variables the same name as a name from the module, you will have naming conflicts. Also, you may be importing way more code into your program than you need.
+# There is one more import syntax that you should be aware of, but Python gurus advise against using. This syntax imports all of the available classes and functions in a module:
+# 
+# ```python
+# from module_name import *
+# ```
+# 
+# This isn't recommended for a couple reasons. First, you don't know what all the names of the classes and functions in a module are. If you accidentally give one of your variables the same name as a name from the module, you will have naming conflicts. Second, you may be importing way more code into your program than you need.
 # 
 # If you really need all the functions and classes from a module, just import the module and use the `module_name.ClassName` syntax in your program.
-
-# You will get a sense of how to write your imports as you read more Python code, and as you write and share some of your own code.
+# 
+# You will get a better sense of how to write imports as you read more Python code and as you write and share some of your own code.
 
 # A module of functions
 # ---

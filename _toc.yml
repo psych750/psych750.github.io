@@ -80,6 +80,8 @@ parts:
       title: Basic Examples of GSS data wrangling
     - file: notebooks/activity_google_this
       title: Google this!
+    - file: notebooks/nltk_demo
+      title: NLTK demo
   - caption: Exercises
     chapters:
     - file: notebooks/Exercise0-test
@@ -100,3 +102,7 @@ parts:
       title: Exercise 7-Exploring the general social survey 
     - file: notebooks/Exercise8-regexps.ipynb
       title: Exercise 8-Practice with regular expressions 
+    - file: notebooks/Exercise9-nltk.ipynb
+      title: Exercise 9-Practice with NLTK 
+    - file: notebooks/Exercise10-oop_circles.ipynb
+      title: Exercise 10-Circle drop OOP practce 
