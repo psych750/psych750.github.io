@@ -987,7 +987,7 @@ Rocket altitude: 2
 </div>
 </div>
 </div>
-<p>To access an object’s variables or methods, you give the name of the object and then use <em>dot notation</em> to access the variables and methods. So to get the y-value of <code class="docutils literal notranslate"><span class="pre">my_rocket*</span></code> you use <code class="docutils literal notranslate"><span class="pre">my_rocket.y</span></code>. To use the move_up() method on my_rocket, you write <code class="docutils literal notranslate"><span class="pre">my_rocket.move_up()</span></code>.</p>
+<p>To access an object’s variables or methods, you give the name of the object and then use <em>dot notation</em> to access the variables and methods. So to get the y-value of <code class="docutils literal notranslate"><span class="pre">my_rocket</span></code> you use <code class="docutils literal notranslate"><span class="pre">my_rocket.y</span></code>. To use the move_up() method on my_rocket, you write <code class="docutils literal notranslate"><span class="pre">my_rocket.move_up()</span></code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You’ll recognize this dot notation from things like random.shuffle() (shuffle is one of the methods possessed by objects instantiated by the Random class inside the random module contained in <a class="reference external" href="http://random.py">random.py</a>). Whew..</p>
@@ -1009,6 +1009,7 @@ Rocket altitude: 2
         <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="mi">1</span>
         
 <span class="c1"># Create a fleet of 5 rockets, and store them in a list.</span>
+
 <span class="n">my_rockets</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
     <span class="n">new_rocket</span> <span class="o">=</span> <span class="n">Rocket</span><span class="p">()</span>
@@ -1017,6 +1018,29 @@ Rocket altitude: 2
 <span class="c1"># Show that each rocket is a separate object.</span>
 <span class="k">for</span> <span class="n">rocket</span> <span class="ow">in</span> <span class="n">my_rockets</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">rocket</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_rockets</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">my_rockets</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_rockets</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">move_up</span><span class="p">()</span>
+<span class="n">my_rockets</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">move_up</span><span class="p">()</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">my_rockets</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_rockets</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_rockets</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">my_rockets</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">my_rockets</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">my_rockets</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1452,12 +1476,12 @@ Rocket 2 is at 100, 0
         <span class="bp">self</span><span class="o">.</span><span class="n">flights_completed</span> <span class="o">=</span> <span class="n">flights_completed</span>
         
 <span class="n">shuttle</span> <span class="o">=</span> <span class="n">Shuttle</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">shuttle</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">shuttle</span><span class="o">.</span><span class="n">flights_completed</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Shuttle object at 0x7fedd3da60d0&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
 </pre></div>
 </div>
 </div>
@@ -1672,7 +1696,7 @@ KeyboardInterrupt:
 <span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">psychopy</span> <span class="kn">import</span> <span class="n">visual</span><span class="p">,</span> <span class="n">core</span><span class="p">,</span> <span class="n">event</span>
 
-<span class="n">win</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Window</span><span class="p">([</span><span class="mi">300</span><span class="p">,</span><span class="mi">300</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s1">&#39;pix&#39;</span><span class="p">,</span><span class="n">allowGUI</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">win</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Window</span><span class="p">([</span><span class="mi">350</span><span class="p">,</span><span class="mi">350</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s1">&#39;pix&#39;</span><span class="p">,</span><span class="n">allowGUI</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">my_mouse</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">Mouse</span><span class="p">(</span><span class="n">win</span><span class="o">=</span><span class="n">win</span><span class="p">)</span>
 
 <span class="n">target</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Circle</span><span class="p">(</span><span class="n">win</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">lineColor</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span><span class="n">fillColor</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
@@ -1680,7 +1704,7 @@ KeyboardInterrupt:
 <span class="n">max_angle</span><span class="o">=</span><span class="mi">30</span>
 <span class="n">prev_angle_to_deviate</span><span class="o">=</span><span class="mi">0</span>
 <span class="n">new_cur_angle</span><span class="o">=</span><span class="mf">0.0</span>
-<span class="n">inter_step_interval</span> <span class="o">=</span> <span class="mf">3.0</span>
+<span class="n">inter_step_interval</span> <span class="o">=</span> <span class="mf">2.0</span>
 
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
 	<span class="n">core</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mf">.02</span><span class="p">)</span>
@@ -1715,24 +1739,15 @@ KeyboardInterrupt:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pygame 2.1.2 (SDL 2.0.18, Python 3.8.13)
-Hello from the pygame community. https://www.pygame.org/contribute.html
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fontconfig warning: ignoring UTF-8: not a valid region tag
-2022-11-01 09:56:45.420 python[34622:3531869] Warning: Expected min height of view: (&lt;NSPopoverTouchBarItemButton: 0x7fdbbf239e70&gt;) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
-2022-11-01 09:56:45.421 python[34622:3531869] Warning: Expected min height of view: (&lt;NSButton: 0x7fdbc23fd9b0&gt;) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
-2022-11-01 09:56:45.423 python[34622:3531869] Warning: Expected min height of view: (&lt;NSPopoverTouchBarItemButton: 0x7fdbc4d04860&gt;) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
-2022-11-01 09:56:45.425 python[34622:3531869] Warning: Expected min height of view: (&lt;NSPopoverTouchBarItemButton: 0x7fdbc15c9aa0&gt;) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-11-10 11:12:50.651 python[46595:170072] Warning: Expected min height of view: (&lt;NSPopoverTouchBarItemButton: 0x7fd3c8cfd200&gt;) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+2022-11-10 11:12:50.652 python[46595:170072] Warning: Expected min height of view: (&lt;NSButton: 0x7fd3d394ad60&gt;) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+2022-11-10 11:12:50.654 python[46595:170072] Warning: Expected min height of view: (&lt;NSPopoverTouchBarItemButton: 0x7fd3d394ccf0&gt;) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+2022-11-10 11:12:50.656 python[46595:170072] Warning: Expected min height of view: (&lt;NSPopoverTouchBarItemButton: 0x7fd3d3951f50&gt;) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">An</span> <span class="n">exception</span> <span class="n">has</span> <span class="n">occurred</span><span class="p">,</span> <span class="n">use</span> <span class="o">%</span><span class="k">tb</span> to see the full traceback.
 
 <span class="ne">SystemExit</span>
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/glupyan/anaconda3/envs/psych750/lib/python3.8/site-packages/IPython/core/interactiveshell.py:3406: UserWarning: To exit: use &#39;exit&#39;, &#39;quit&#39;, or Ctrl-D.
-  warn(&quot;To exit: use &#39;exit&#39;, &#39;quit&#39;, or Ctrl-D.&quot;, stacklevel=1)
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">Kernel</span> <span class="n">crashed</span> <span class="k">while</span> <span class="n">executing</span> <span class="n">code</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">the</span> <span class="n">current</span> <span class="n">cell</span> <span class="ow">or</span> <span class="n">a</span> <span class="n">previous</span> <span class="n">cell</span><span class="o">.</span> <span class="n">Please</span> <span class="n">review</span> <span class="n">the</span> <span class="n">code</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">cell</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">to</span> <span class="n">identify</span> <span class="n">a</span> <span class="n">possible</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">failure</span><span class="o">.</span> <span class="n">Click</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;https://aka.ms/vscodeJupyterKernelCrash&#39;</span><span class="o">&gt;</span><span class="n">here</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="k">for</span> <span class="n">more</span> <span class="n">info</span><span class="o">.</span> <span class="n">View</span> <span class="n">Jupyter</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;command:jupyter.viewOutput&#39;</span><span class="o">&gt;</span><span class="n">log</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="k">for</span> <span class="n">further</span> <span class="n">details</span><span class="o">.</span>
