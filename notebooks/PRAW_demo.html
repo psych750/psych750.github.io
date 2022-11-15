@@ -551,13 +551,13 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#authenticating-praw-to-access-reddit">
-   Authenticating PRAW to access Reddit
+  <a class="reference internal nav-link" href="#working-with-praw">
+   Working with PRAW
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#working-with-praw">
-   Working with PRAW
+  <a class="reference internal nav-link" href="#authenticating-praw-to-access-reddit">
+   Authenticating PRAW to access Reddit
   </a>
  </li>
 </ul>
@@ -590,13 +590,13 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#authenticating-praw-to-access-reddit">
-   Authenticating PRAW to access Reddit
+  <a class="reference internal nav-link" href="#working-with-praw">
+   Working with PRAW
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#working-with-praw">
-   Working with PRAW
+  <a class="reference internal nav-link" href="#authenticating-praw-to-access-reddit">
+   Authenticating PRAW to access Reddit
   </a>
  </li>
 </ul>
@@ -622,13 +622,9 @@ title="Print to PDF"
 </pre></div>
 </div>
 </section>
-<section id="authenticating-praw-to-access-reddit">
-<h2>Authenticating PRAW to access Reddit<a class="headerlink" href="#authenticating-praw-to-access-reddit" title="Permalink to this headline">#</a></h2>
-<p>Before using PRAW, you need to authenticate with your Reddit account. Go <a class="reference external" href="https://www.reddit.com/prefs/apps/">here</a> and click on the <code class="docutils literal notranslate"><span class="pre">are</span> <span class="pre">you</span> <span class="pre">a</span> <span class="pre">developer?</span> <span class="pre">create</span> <span class="pre">an</span> <span class="pre">app...</span></code> button to create an application. Name it <code class="docutils literal notranslate"><span class="pre">psych750</span></code> and choose <code class="docutils literal notranslate"><span class="pre">script</span></code>. Add in a short description and use <code class="docutils literal notranslate"><span class="pre">http://localhost:8080</span></code> as the redirect uri.</p>
-</section>
 <section id="working-with-praw">
 <h2>Working with PRAW<a class="headerlink" href="#working-with-praw" title="Permalink to this headline">#</a></h2>
-<p>Now that everything is ready to go, we need to create an instance first:</p>
+<p>Now that everything is ready to go, we need to create an instance. Here we’re creating an instance with a test account we’ve set up.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">praw</span>
@@ -650,6 +646,10 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+</section>
+<section id="authenticating-praw-to-access-reddit">
+<h2>Authenticating PRAW to access Reddit<a class="headerlink" href="#authenticating-praw-to-access-reddit" title="Permalink to this headline">#</a></h2>
+<p>To use PRAW, you need to authenticate with your Reddit account. We’ve created a user for you to use with the credentials below. For the exercise, you’ll want to use your own account (or create a new one). To do so, first create a Reddit account. Then go <a class="reference external" href="https://www.reddit.com/prefs/apps/">here</a> and click on the <code class="docutils literal notranslate"><span class="pre">are</span> <span class="pre">you</span> <span class="pre">a</span> <span class="pre">developer?</span> <span class="pre">create</span> <span class="pre">an</span> <span class="pre">app...</span></code> button to create an application. Name it <code class="docutils literal notranslate"><span class="pre">psych750</span></code> and choose <code class="docutils literal notranslate"><span class="pre">script</span></code>. Add in a short description and use <code class="docutils literal notranslate"><span class="pre">http://localhost:8080</span></code> as the redirect uri. The usename is your regular username and the password is that user’s password. The client_id string is the code in the upper-left by user_script</p>
 <p>Now we can look at things that are potentially interesting. Let’s take a look at the hottest 10 posts on Reddit (as of the time of writing this tutorial).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -675,7 +675,8 @@ How to impress a girl by hiding a card behind your hand
 </div>
 </div>
 </div>
-<p>Let’s look at one of them. <a class="reference external" href="https://www.reddit.com/r/todayilearned/comments/ysm4ys/til_blacking_out_from_alcohol_doesnt_cause_you_to/">This submission</a> talks about how your brain temporarily loses the ability to create new memories when you experience a blackout from alcohol. It has more than 1000 comments and we can use PRAW to extract all the comments and see what people’s opinions are. We can first take a look at the top 5 comments</p>
+<p>Let’s look at one of them. <a class="reference external" href="https://www.reddit.com/r/todayilearned/comments/ysm4ys/til_blacking_out_from_alcohol_doesnt_cause_you_to/">This submission</a> talks about how your brain temporarily loses the ability to create new memories when you experience a blackout from alcohol. It has more than 1000 comments and we can use PRAW to extract all the comments and see what people’s opinions are. See <a class="reference external" href="https://praw.readthedocs.io/en/stable/tutorials/comments.html#extracting-comments-with-praw">here</a> for info on extracting comments.</p>
+<p>Let’s take a look at the top 5 comments.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://www.reddit.com/r/todayilearned/comments/ysm4ys/til_blacking_out_from_alcohol_doesnt_cause_you_to/&#39;</span>
@@ -697,26 +698,35 @@ Some drugs which have the same effect are sometimes used for potentially mentall
 </div>
 </div>
 </div>
-<p>With these comments, we can use things like <code class="docutils literal notranslate"><span class="pre">nltk</span></code> to extract information that we are interested in.</p>
+<p>Let’s use <code class="docutils literal notranslate"><span class="pre">nltk</span></code> to extract some information from these comments. It will take a little while because we’re interacting in real time with the Reddit site for pulling these data.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>See <a class="reference external" href="https://praw.readthedocs.io/en/stable/tutorials/comments.html#the-replace-more-method">here</a> for info on the replace_more method.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nltk</span>
 
 <span class="n">all_comments</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-<span class="n">submission</span><span class="o">.</span><span class="n">comments</span><span class="o">.</span><span class="n">replace_more</span><span class="p">(</span><span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">submission</span><span class="o">.</span><span class="n">comments</span><span class="o">.</span><span class="n">replace_more</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">top_level_comment</span> <span class="ow">in</span> <span class="n">submission</span><span class="o">.</span><span class="n">comments</span><span class="p">:</span>
     <span class="n">all_comments</span> <span class="o">+=</span> <span class="n">top_level_comment</span><span class="o">.</span><span class="n">body</span>
 
 <span class="n">all_comments_tokens</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">all_comments</span><span class="p">)</span>
 <span class="n">all_comments_pos</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">pos_tag</span><span class="p">(</span><span class="n">all_comments_tokens</span><span class="p">)</span>
-<span class="n">all_comments_nouns</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">all_comments_pos</span> <span class="k">if</span> <span class="n">word</span><span class="p">[</span><span class="mi">1</span><span class="p">][:</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;NN&#39;</span><span class="p">]</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">nltk</span><span class="o">.</span><span class="n">FreqDist</span><span class="p">(</span><span class="n">all_comments_nouns</span><span class="p">)</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">15</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">all_comments_nouns</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">all_comments_pos</span> <span class="k">if</span> <span class="n">word</span><span class="p">[</span><span class="mi">1</span><span class="p">][:</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;NN&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nltk</span><span class="o">.</span><span class="n">FreqDist</span><span class="p">(</span><span class="n">all_comments_nouns</span><span class="p">)</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;memories&#39;, 61), (&#39;memory&#39;, 39), (&#39;time&#39;, 33), (&#39;night&#39;, 32), (&#39;drunk&#39;, 32), (&#39;*&#39;, 25), (&#39;brain&#39;, 24), (&#39;someone&#39;, 22), (&#39;people&#39;, 21), (&#39;’&#39;, 21), (&#39;day&#39;, 21), (&#39;alcohol&#39;, 17), (&#39;thing&#39;, 16), (&#39;times&#39;, 16), (&#39;t&#39;, 16)]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;memories&#39;, 71), (&#39;memory&#39;, 50), (&#39;drunk&#39;, 45), (&#39;time&#39;, 39), (&#39;night&#39;, 39), (&#39;brain&#39;, 35), (&#39;’&#39;, 33), (&#39;*&#39;, 29), (&#39;people&#39;, 27), (&#39;alcohol&#39;, 26), (&#39;someone&#39;, 24), (&#39;t&#39;, 24), (&#39;day&#39;, 24), (&#39;term&#39;, 22), (&#39;thing&#39;, 20), (&#39;blackout&#39;, 18), (&#39;years&#39;, 16), (&#39;times&#39;, 15), (&#39;things&#39;, 15), (&#39;way&#39;, 15)]
 </pre></div>
 </div>
 </div>
@@ -729,8 +739,7 @@ Some drugs which have the same effect are sometimes used for potentially mentall
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This submission has: 53529 upvotes!
-This submission has: 3747 downvotes!
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This submission has: 53938 upvotes!
 </pre></div>
 </div>
 </div>
@@ -739,6 +748,11 @@ This submission has: 3747 downvotes!
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;This submission has: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">submission</span><span class="o">.</span><span class="n">score</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">submission</span><span class="o">.</span><span class="n">upvote_ratio</span><span class="p">)))</span><span class="si">}</span><span class="s1"> downvotes!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This submission has: 3776 downvotes!
 </pre></div>
 </div>
 </div>
@@ -760,12 +774,12 @@ This submission has: 3747 downvotes!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;wisconsin&#39;, 26), (&#39;county&#39;, 8), (&#39;election&#39;, 7), (&#39;johnson&#39;, 6), (&#39;milwaukee&#39;, 5), (&#39;’&#39;, 4), (&#39;voters&#39;, 4), (&#39;ballot&#39;, 4), (&#39;state&#39;, 4), (&#39;wi&#39;, 4), (&#39;michels&#39;, 4), (&#39;%&#39;, 4), (&#39;ron&#39;, 4), (&#39;department&#39;, 3), (&#39;food&#39;, 3)]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;wisconsin&#39;, 23), (&#39;’&#39;, 13), (&#39;milwaukee&#39;, 5), (&#39;johnson&#39;, 5), (&#39;county&#39;, 5), (&#39;deer&#39;, 4), (&#39;state&#39;, 4), (&#39;abortion&#39;, 4), (&#39;%&#39;, 3), (&#39;wi&#39;, 3), (&#39;green&#39;, 3), (&#39;bay&#39;, 3), (&#39;voters&#39;, 3), (&#39;mandela&#39;, 2), (&#39;loss&#39;, 2)]
 </pre></div>
 </div>
 </div>
 </div>
-<p>Not a big surprise, since election is coming up, people are mostly talking about voting and Ron Johnson.</p>
+<p>Not a big surprise, people are mostly talking about the recent election.</p>
 <p>Now let’s find out who actually has the hottest post in <code class="docutils literal notranslate"><span class="pre">wisconsin</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
