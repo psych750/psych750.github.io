@@ -1031,16 +1031,15 @@ The death discrepancy is real, it swinging an election does not seem to be.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>this user has 73472 karmas!
-This user has posted in MkeBucks in the past month.
-This user has posted in milwaukee in the past month.
-This user has posted in RealTwitterAccounts in the past month.
-This user has posted in wisconsin in the past month.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>this user has 46036 karma!
+This user has posted in TibiaMMO in the past month.
+This user has posted in madisonwi in the past month.
+This user has posted in blurrypicturesofdogs in the past month.
 </pre></div>
 </div>
 </div>
 </div>
-<p>We can tell from the data that this user is probably a very active reddit user. probably an active Twitter user. They likely live in Milwaukee, and probably a Bucks fan.</p>
+<p>We can tell that this user is a very active reddit user, probably from Madison and like dogs.</p>
 <section id="again-with-additional-commentary">
 <h3>Again with additional commentary<a class="headerlink" href="#again-with-additional-commentary" title="Permalink to this headline">#</a></h3>
 <p>Let’s unpack the above code a bit.</p>
@@ -1050,14 +1049,37 @@ This user has posted in wisconsin in the past month.
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 
-<span class="k">for</span> <span class="n">cur_submission</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">subreddit</span><span class="p">(</span><span class="s2">&quot;MadisonWI&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">hot</span><span class="p">(</span><span class="n">limit</span> <span class="o">=</span> <span class="mi">2</span><span class="p">):</span> 
-    <span class="n">hottest_submission_in_wisconsin</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">submission</span><span class="p">(</span><span class="n">cur_submission</span><span class="p">)</span> <span class="c1">#we assign the submission to a new variable</span>
+<span class="k">for</span> <span class="n">cur_submission</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">subreddit</span><span class="p">(</span><span class="s2">&quot;MadisonWI&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">top</span><span class="p">(</span><span class="n">limit</span> <span class="o">=</span> <span class="mi">2</span><span class="p">):</span> 
+    <span class="n">top_submission_in_madison</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">submission</span><span class="p">(</span><span class="n">cur_submission</span><span class="p">)</span> <span class="c1">#we assign the submission to a new variable</span>
 
-<span class="n">user_instance</span> <span class="o">=</span> <span class="n">hottest_submission_in_wisconsin</span><span class="o">.</span><span class="n">author</span> <span class="c1">#now create a user instance from this submission</span>
+<span class="n">user_instance</span> <span class="o">=</span> <span class="n">top_submission_in_madison</span><span class="o">.</span><span class="n">author</span> <span class="c1">#now create a user instance from this submission</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">top_submission_in_madison</span><span class="o">.</span><span class="n">title</span><span class="p">,</span><span class="s1">&#39;||&#39;</span><span class="p">,</span><span class="n">top_submission_in_madison</span><span class="o">.</span><span class="n">author</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>My immunocompromised partner never got her absentee ballot. She voted anyway. #WisconsinPandemicPrimary number61971
 </pre></div>
 </div>
 </div>
 </div>
+<p>There is something a little peculiar here. If we print <code class="docutils literal notranslate"><span class="pre">top_submission_in_madison.author</span></code>, it prints as a string. But if we look at it, we see it’s not a string at all:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">top_submission_in_madison</span><span class="o">.</span><span class="n">author</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>praw.models.reddit.redditor.Redditor
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can see that it’s an object in the Redditor class. We can find out which precise methods it has by using <code class="docutils literal notranslate"><span class="pre">help(top_submission_in_madison.author)</span></code>
+but the eaier way to go is just to look at the documentation. Searching google for <code class="docutils literal notranslate"><span class="pre">praw.models.reddit.redditor.Redditor</span></code> got me <a class="reference external" href="https://praw.readthedocs.io/en/stable/code_overview/models/redditor.html">here</a></p>
+<p>Now let’s find this user’s previous 15 posts:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">num_submission</span><span class="p">,</span><span class="n">cur_submission</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">user_instance</span><span class="o">.</span><span class="n">submissions</span><span class="o">.</span><span class="n">new</span><span class="p">()):</span> <span class="c1">#now iterate through the user&#39;s submissions</span>
@@ -1069,11 +1091,39 @@ This user has posted in wisconsin in the past month.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-11-15 17:06:53 madisonwi || 241 || AMC Fitchburg 18 failed their inspection again. Mice, flies, and ants in the concessions - yum! 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-10-31 12:02:55 politics || 9 || Well, America, You Were a Nice Idea While You Lasted 
 
-2022-11-08 11:26:20 blurrypicturesofdogs || 84 || Blurry picture of a dog 
+2022-10-28 15:25:13 politics || 9 || Senator Tom Cotton brags about ignoring Trump impeachment evidence 
 
-2022-10-21 19:23:29 TibiaMMO || 5 || 7.1-7.6 era player returning on Gladera - Looking for friends/people to play with! 
+2022-10-27 14:00:40 politics || 1 || The Federal Courts Are Out of Control Right Now 
+
+2022-10-24 19:23:57 EDH || 10 || What commander do you use for the precon 40K decks? 
+
+2022-10-14 15:45:49 politics || 0 || Ending the Jan. 6 Hearings With a Trump Subpoena Was a Mistake 
+
+2022-09-20 10:56:48 LateStageCapitalism || 10 || Small-Town Sewers Are Getting Tech-Like Premiums 
+
+2022-09-19 14:28:04 politics || 2 || Ruling the US supreme court isn’t enough. The right wants to amend the constitution 
+
+2022-09-15 16:16:15 politics || 148 || Mary Trump on How Her Uncle Keeps Getting Away With It 
+
+2022-09-13 15:07:40 LateStageCapitalism || 53 || Johnson &amp; Johnson Is Trying the &#39;Texas Two-Step&#39; to Avoid Accountability 
+
+2022-09-12 15:01:23 politics || 491 || Herschel Walker Is the Reductio ad Absurdum of Every &quot;Not a Politician&quot; Campaign 
+
+2022-09-12 14:32:37 MarchAgainstNazis || 35 || The 1776 Cosplayers Are Playing with Fire and It&#39;s Headed Nowhere Good 
+
+2022-09-12 14:14:30 politics || 375 || The 1776 Cosplayers Are Playing with Fire and It&#39;s Headed Nowhere Good 
+
+2022-08-24 09:05:13 politics || 52 || Is the Public Ready to Think About &#39;Public Health&#39; Again If the Bird Flu Gets Bad? 
+
+2022-08-19 15:54:14 politics || 557 || We Don’t Need a Trump-Inspired Civil War for Things to Get Real Bad, Real Fast 
+
+2022-08-13 13:46:43 Michigan || 77 || Au Train sunset, Aug 12 
+
+2022-07-29 20:38:47 politics || 1142 || Alito’s Speech Mocking Foreign Leaders Has a Deeper, Darker Message 
+
+2022-07-15 13:23:44 politics || 1 || What Does It Take to End a Political Career Nowadays, Anyway? 
 </pre></div>
 </div>
 </div>
