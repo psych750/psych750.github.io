@@ -721,7 +721,7 @@ title="Print to PDF"
 <h1>PRAW<a class="headerlink" href="#praw" title="Permalink to this headline">#</a></h1>
 <section id="introduction-to-praw">
 <h2>Introduction to PRAW<a class="headerlink" href="#introduction-to-praw" title="Permalink to this headline">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">PRAW</span></code> is an API wrapper for Reddit. It lets you access Reddit content without worrying about violating Reddit’s API rules.</p>
+<p><code class="docutils literal notranslate"><span class="pre">PRAW</span></code> is an API wrapper for Reddit. It lets you access Reddit content without worrying about violating Reddit’s data access rules. This notebook is designed to get you going with the basics. See <a class="reference external" href="https://praw.readthedocs.io/en/stable/">here</a> for full documentation.</p>
 </section>
 <section id="installing-praw">
 <h2>Installing PRAW<a class="headerlink" href="#installing-praw" title="Permalink to this headline">#</a></h2>
@@ -732,7 +732,7 @@ title="Print to PDF"
 </section>
 <section id="working-with-praw">
 <h2>Working with PRAW<a class="headerlink" href="#working-with-praw" title="Permalink to this headline">#</a></h2>
-<p>Now that everything is ready to go, we need to create an instance. Here we’re creating an instance with a test account we’ve set up.</p>
+<p>We first need to create an instance of the Reddig class using an existing Reddit account. We created an account for testing purposes:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">praw</span>
@@ -757,7 +757,7 @@ title="Print to PDF"
 </section>
 <section id="authenticating-praw-to-access-reddit">
 <h2>Authenticating PRAW to access Reddit<a class="headerlink" href="#authenticating-praw-to-access-reddit" title="Permalink to this headline">#</a></h2>
-<p>To use PRAW, you need to authenticate with your Reddit account. We’ve created a user for you to use with the credentials above. For your own code, you’ll want to use your own account (or create a new one). First create a new Reddit account or use one you already have. Then go <a class="reference external" href="https://www.reddit.com/prefs/apps/">here</a> and click on the <code class="docutils literal notranslate"><span class="pre">are</span> <span class="pre">you</span> <span class="pre">a</span> <span class="pre">developer?</span> <span class="pre">create</span> <span class="pre">an</span> <span class="pre">app...</span></code> button to create an application. Name it <code class="docutils literal notranslate"><span class="pre">psych750</span></code> and choose <code class="docutils literal notranslate"><span class="pre">script</span></code>. Add in a short description and use <code class="docutils literal notranslate"><span class="pre">http://localhost:8080</span></code> as the redirect uri. The usename is your regular username and the password is that user’s password. The client_id string is the code in the upper-left by user_script</p>
+<p>To use PRAW, you need to authenticate with your Reddit account. For your own code, you’ll want to use your own account (or create a new one). First create a new Reddit account or use one you already have. Then go <a class="reference external" href="https://www.reddit.com/prefs/apps/">here</a> and click on the <code class="docutils literal notranslate"><span class="pre">are</span> <span class="pre">you</span> <span class="pre">a</span> <span class="pre">developer?</span> <span class="pre">create</span> <span class="pre">an</span> <span class="pre">app...</span></code> button to create an application. Name it <code class="docutils literal notranslate"><span class="pre">psych750</span></code> and choose <code class="docutils literal notranslate"><span class="pre">script</span></code>. Add in a short description and use <code class="docutils literal notranslate"><span class="pre">http://localhost:8080</span></code> as the redirect uri. The usename is your regular username and the password is that user’s password. The client_id string is the code in the upper-left by user_script</p>
 </section>
 <section id="accessing-top-posts">
 <h2>Accessing top posts<a class="headerlink" href="#accessing-top-posts" title="Permalink to this headline">#</a></h2>
