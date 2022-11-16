@@ -556,8 +556,62 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-note-on-authenticating-praw-to-access-reddit">
-   A note on authenticating PRAW to access Reddit
+  <a class="reference internal nav-link" href="#authenticating-praw-to-access-reddit">
+   Authenticating PRAW to access Reddit
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accessing-top-posts">
+   Accessing top posts
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accessing-comments">
+   Accessing comments
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#access-comments-via-the-submission-s-url">
+     Access comments via the submission’s URL
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#access-comments-via-the-submission-s-id">
+     Access comments via the submission’s ID
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-nltk-to-extract-info-from-comments">
+   Using NLTK to extract info from comments
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accessing-upvotes">
+   Accessing upvotes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#demo-of-accessing-most-frequent-nouns-used-in-a-subreddit-s-posts">
+   Demo of accessing most frequent nouns used in a subreddit’s posts
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accessing-user-info-of-hottest-post">
+   Accessing user info of hottest post
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#again-with-additional-commentary">
+     Again with additional commentary
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-joke">
+   A joke
   </a>
  </li>
 </ul>
@@ -595,8 +649,62 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-note-on-authenticating-praw-to-access-reddit">
-   A note on authenticating PRAW to access Reddit
+  <a class="reference internal nav-link" href="#authenticating-praw-to-access-reddit">
+   Authenticating PRAW to access Reddit
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accessing-top-posts">
+   Accessing top posts
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accessing-comments">
+   Accessing comments
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#access-comments-via-the-submission-s-url">
+     Access comments via the submission’s URL
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#access-comments-via-the-submission-s-id">
+     Access comments via the submission’s ID
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-nltk-to-extract-info-from-comments">
+   Using NLTK to extract info from comments
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accessing-upvotes">
+   Accessing upvotes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#demo-of-accessing-most-frequent-nouns-used-in-a-subreddit-s-posts">
+   Demo of accessing most frequent nouns used in a subreddit’s posts
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accessing-user-info-of-hottest-post">
+   Accessing user info of hottest post
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#again-with-additional-commentary">
+     Again with additional commentary
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-joke">
+   A joke
   </a>
  </li>
 </ul>
@@ -647,10 +755,13 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-<section id="a-note-on-authenticating-praw-to-access-reddit">
-<h2>A note on authenticating PRAW to access Reddit<a class="headerlink" href="#a-note-on-authenticating-praw-to-access-reddit" title="Permalink to this headline">#</a></h2>
+<section id="authenticating-praw-to-access-reddit">
+<h2>Authenticating PRAW to access Reddit<a class="headerlink" href="#authenticating-praw-to-access-reddit" title="Permalink to this headline">#</a></h2>
 <p>To use PRAW, you need to authenticate with your Reddit account. We’ve created a user for you to use with the credentials above. For your own code, you’ll want to use your own account (or create a new one). First create a new Reddit account or use one you already have. Then go <a class="reference external" href="https://www.reddit.com/prefs/apps/">here</a> and click on the <code class="docutils literal notranslate"><span class="pre">are</span> <span class="pre">you</span> <span class="pre">a</span> <span class="pre">developer?</span> <span class="pre">create</span> <span class="pre">an</span> <span class="pre">app...</span></code> button to create an application. Name it <code class="docutils literal notranslate"><span class="pre">psych750</span></code> and choose <code class="docutils literal notranslate"><span class="pre">script</span></code>. Add in a short description and use <code class="docutils literal notranslate"><span class="pre">http://localhost:8080</span></code> as the redirect uri. The usename is your regular username and the password is that user’s password. The client_id string is the code in the upper-left by user_script</p>
-<p>Now we can look at things that are potentially interesting. Let’s take a look at the hottest 10 posts on Reddit (as of the time of writing this tutorial).</p>
+</section>
+<section id="accessing-top-posts">
+<h2>Accessing top posts<a class="headerlink" href="#accessing-top-posts" title="Permalink to this headline">#</a></h2>
+<p>Hottest 10 posts on Reddit (as of the time of writing this tutorial).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">cur_submission</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">front</span><span class="o">.</span><span class="n">hot</span><span class="p">(</span><span class="n">limit</span> <span class="o">=</span> <span class="mi">10</span><span class="p">):</span>
@@ -677,6 +788,12 @@ How to impress a girl by hiding a card behind your hand
 </div>
 <p>Let’s look at one of them. <a class="reference external" href="https://www.reddit.com/r/todayilearned/comments/ysm4ys/til_blacking_out_from_alcohol_doesnt_cause_you_to/">This submission</a> talks about how your brain temporarily loses the ability to create new memories when you experience a blackout from alcohol. It has more than 1000 comments and we can use PRAW to extract all the comments and see what people’s opinions are. See <a class="reference external" href="https://praw.readthedocs.io/en/stable/tutorials/comments.html#extracting-comments-with-praw">here</a> for info on extracting comments.</p>
 <p>Let’s take a look at the top 5 comments.</p>
+</section>
+<section id="accessing-comments">
+<h2>Accessing comments<a class="headerlink" href="#accessing-comments" title="Permalink to this headline">#</a></h2>
+<section id="access-comments-via-the-submission-s-url">
+<h3>Access comments via the submission’s URL<a class="headerlink" href="#access-comments-via-the-submission-s-url" title="Permalink to this headline">#</a></h3>
+<p>Let’s acces top 5 comments of a particular submission. We can access the submission using its URL:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://www.reddit.com/r/todayilearned/comments/ysm4ys/til_blacking_out_from_alcohol_doesnt_cause_you_to/&#39;</span>
@@ -698,6 +815,94 @@ Some drugs which have the same effect are sometimes used for potentially mentall
 </div>
 </div>
 </div>
+</section>
+<section id="access-comments-via-the-submission-s-id">
+<h3>Access comments via the submission’s ID<a class="headerlink" href="#access-comments-via-the-submission-s-id" title="Permalink to this headline">#</a></h3>
+<p>Or we can access it using its unique id (let’s grab the hottest comments again – different day than the ones listed above, so they’ll be different.
+This time we’ll output their titles along with their IDs and their poster’s username.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">cur_submission</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">front</span><span class="o">.</span><span class="n">hot</span><span class="p">(</span><span class="n">limit</span> <span class="o">=</span> <span class="mi">10</span><span class="p">):</span>
+    <span class="c1"># print(cur_submission)</span>
+    <span class="n">submission</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">submission</span><span class="p">(</span><span class="n">cur_submission</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">submission</span><span class="o">.</span><span class="n">title</span><span class="p">,</span><span class="n">submission</span><span class="o">.</span><span class="n">id</span><span class="p">,</span><span class="n">submission</span><span class="o">.</span><span class="n">author</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Almost Twice as Many Republicans Died From COVID Before the Midterms Than Democrats | The authors of a new study can’t say if this impacted the midterms, but say that it’s “plausible given just how stark the differences in vaccination rates have been, among Democrats and Republicans.” ywvvpv chrisdh79 
+
+
+Came back from the bathroom to find my seat had been double stolen. ywq0vq lewisisbrown 
+
+
+Biden said Ukraine air defence missile responsible for Poland blast - NATO source ywp9wt flyingcatwithhorns 
+
+
+Twitter chaos spills into public view as Musk clashes with and fires employees on the platform | CNN Business ywoieq Khalifa_Nomi 
+
+
+They sell Swiss Army knives in the Zurich airport…after security. ywu2od YouMayDissagree 
+
+
+TIL peanuts have more protein than any other nut. ywryol colorsnshapes888 
+
+
+Artemis has launched ywmd17 grees_g0 
+
+
+Arizona ywrzzu But_a_Jape 
+
+
+PsBattle: Abandoned Japanese Hotel ywpgj8 rizlahh 
+
+
+These companies ran an experiment: Pay workers their full salary to work fewer days. ywukjk Sariel007 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">submission</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">submission</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;ywvvpv&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">top_level_comment</span> <span class="ow">in</span> <span class="n">submission</span><span class="o">.</span><span class="n">comments</span><span class="p">[:</span><span class="mi">5</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">top_level_comment</span><span class="o">.</span><span class="n">body</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Welcome to r/science! This is a heavily moderated subreddit in order to keep the discussion on science. However, we recognize that many people want to discuss how they feel the research relates to their own personal lives, so to give people a space to do that, **personal anecdotes are allowed as responses to this comment**. Any anecdotal comments elsewhere in the discussion will be removed and our [normal comment rules]( https://www.reddit.com/r/science/wiki/rules#wiki_comment_rules) apply to all other comments.
+
+*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/science) if you have any questions or concerns.*
+From the article: COVID-19 is killing more Republicans than Democrats, according to a [new study](https://www.nber.org/system/files/working_papers/w30512/w30512.pdf) from the National Bureau of Economic Research. The study, titled Excess Death Rates for Republicans and Democrats During the COVID-19 Pandemic, used voter registration and death records to answer a question: is there a link between political affiliation and rates of COVID related death in the U.S.?
+
+The short answer is yes. “In 2018 and the early parts of 2020, excess death rates for Republicans and Democrats are similar, and centered around zero,” the study said. “Both groups experienced a similar large spike in excess deaths in the winter of 2020-2021. However, in the summer of 2021—after vaccines were widely available—the Republican excess death rate rose to nearly double that of Democrats, and this gap widened further in the winter of 2021.”
+
+The study attributes this to the vaccine uptake disparity between Republicans and Democrats, which has been widely documented as more Republicans refused to take the vaccine; the most vocal anti-vax voices were Republican politicians and some conservative news outlets: “The gap in excess death rates between Republicans and Democrats is concentrated in counties with low vaccination rates and only materializes after vaccines became widely available,” the study notes.
+It seems obvious in retrospect but remember how many of us didn&#39;t believe Hillary in the pizza basement meetings when she said Republicans would rather die than accept medicine from us.
+The math is pretty simple - 1.1 million dead, with a difference of roughly one third of that between the two parties (or 1100000/3 = 366,000). There are 435 districts. Assuming the deaths are relatively evenly spread between the districts that would mean about 840 deaths per district.  
+
+
+So far I dont think any races have been that close this year. Even so, it is likely that most of the GOP deaths were in heavy GOP districts and most of the Dem deaths in heavy Dem districts (both for practical math reasons and also the reality of where people died).  
+
+
+So that would mean that the differential in swing districts is even smaller - maybe a few hundred votes, which again, is a threshold which hasnt been met in any House race this year, yet.  
+
+
+So now, it didnt make a difference in the election at the House level. Maybe some statewide races though.
+Looks like everyone in the comments here is too busy jerking themselves off to have read the article and didn&#39;t see that it specifically linked to analysis debunking the idea that covid death discrepancies had an affect on the midterm results ([https://www.washingtonpost.com/politics/2022/11/14/coronavirus-midterm-elections-republicans/](https://www.washingtonpost.com/politics/2022/11/14/coronavirus-midterm-elections-republicans/)).
+
+This is Vice. It&#39;s not a scientific publication. The headline is based on an interviewer asking one of the study&#39;s scientists a question about the effect on elections and he answered with &quot;I dunno maybe.&quot;
+
+The death discrepancy is real, it swinging an election does not seem to be.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="using-nltk-to-extract-info-from-comments">
+<h2>Using NLTK to extract info from comments<a class="headerlink" href="#using-nltk-to-extract-info-from-comments" title="Permalink to this headline">#</a></h2>
 <p>Let’s use <code class="docutils literal notranslate"><span class="pre">nltk</span></code> to extract some information from these comments. It will take a little while because we’re interacting in real time with the Reddit site for pulling these data.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -731,6 +936,9 @@ Some drugs which have the same effect are sometimes used for potentially mentall
 </div>
 </div>
 </div>
+</section>
+<section id="accessing-upvotes">
+<h2>Accessing upvotes<a class="headerlink" href="#accessing-upvotes" title="Permalink to this headline">#</a></h2>
 <p>Let’s find out how many upvotes it received:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -757,6 +965,9 @@ Some drugs which have the same effect are sometimes used for potentially mentall
 </div>
 </div>
 </div>
+</section>
+<section id="demo-of-accessing-most-frequent-nouns-used-in-a-subreddit-s-posts">
+<h2>Demo of accessing most frequent nouns used in a subreddit’s posts<a class="headerlink" href="#demo-of-accessing-most-frequent-nouns-used-in-a-subreddit-s-posts" title="Permalink to this headline">#</a></h2>
 <p>Let’s try something else. Let’s take a look at what people in Wisconsin are discussing these days.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -780,7 +991,9 @@ Some drugs which have the same effect are sometimes used for potentially mentall
 </div>
 </div>
 <p>Not a big surprise, people are mostly talking about the recent election.</p>
-<p>Now let’s find out who actually has the hottest post in <code class="docutils literal notranslate"><span class="pre">wisconsin</span></code>.</p>
+</section>
+<section id="accessing-user-info-of-hottest-post">
+<h2>Accessing user info of hottest post<a class="headerlink" href="#accessing-user-info-of-hottest-post" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">cur_submission</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">subreddit</span><span class="p">(</span><span class="s2">&quot;wisconsin&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">hot</span><span class="p">(</span><span class="n">limit</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
@@ -802,13 +1015,13 @@ Some drugs which have the same effect are sometimes used for potentially mentall
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 
 <span class="n">user_instance</span> <span class="o">=</span> <span class="n">hottest_submission_in_wisconsin</span><span class="o">.</span><span class="n">author</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;this user has &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">user_instance</span><span class="o">.</span><span class="n">comment_karma</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; karmas!&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;this user has &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">user_instance</span><span class="o">.</span><span class="n">comment_karma</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; karma!&#39;</span><span class="p">)</span>
 
 <span class="n">all_subreddits_user_posted</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">cur_submission</span> <span class="ow">in</span> <span class="n">user_instance</span><span class="o">.</span><span class="n">submissions</span><span class="o">.</span><span class="n">new</span><span class="p">():</span>
     <span class="n">submission</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">submission</span><span class="p">(</span><span class="n">cur_submission</span><span class="p">)</span>
     <span class="n">all_subreddits_user_posted</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">submission</span><span class="o">.</span><span class="n">subreddit</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">submission</span><span class="o">.</span><span class="n">created_utc</span> <span class="o">&gt;</span> <span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">24</span><span class="o">*</span><span class="mi">30</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">submission</span><span class="o">.</span><span class="n">created_utc</span> <span class="o">&gt;</span> <span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">24</span><span class="o">*</span><span class="mi">30</span><span class="p">:</span> <span class="c1">#we&#39;ll walk through what&#39;s going on here in class</span>
         <span class="k">break</span>
 
 <span class="n">unique_subreddits</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">all_subreddits_user_posted</span><span class="p">)</span>
@@ -827,11 +1040,51 @@ This user has posted in wisconsin in the past month.
 </div>
 </div>
 </div>
-<p>We can tell from the data that this user is probably a very active reddit user. They live in Milwaukee, is a Bucks fan, and probably is also very active on Twitter.</p>
-<p>And a joke to end the activity:</p>
+<p>We can tell from the data that this user is probably a very active reddit user. probably an active Twitter user. They likely live in Milwaukee, and probably a Bucks fan.</p>
+<section id="again-with-additional-commentary">
+<h3>Again with additional commentary<a class="headerlink" href="#again-with-additional-commentary" title="Permalink to this headline">#</a></h3>
+<p>Let’s unpack the above code a bit.</p>
+<p>Let’s grab the top posts from MadisonWI (the top post here tends to be from the moderator, so we’ll go with the second highest)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">submission</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">submission</span><span class="p">(</span><span class="s1">&#39;yshook&#39;</span><span class="p">)</span> <span class="c1"># You can also use the submission&#39;s ID which comes after comments/ in the URL</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="k">for</span> <span class="n">cur_submission</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">subreddit</span><span class="p">(</span><span class="s2">&quot;MadisonWI&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">hot</span><span class="p">(</span><span class="n">limit</span> <span class="o">=</span> <span class="mi">2</span><span class="p">):</span> 
+    <span class="n">hottest_submission_in_wisconsin</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">submission</span><span class="p">(</span><span class="n">cur_submission</span><span class="p">)</span> <span class="c1">#we assign the submission to a new variable</span>
+
+<span class="n">user_instance</span> <span class="o">=</span> <span class="n">hottest_submission_in_wisconsin</span><span class="o">.</span><span class="n">author</span> <span class="c1">#now create a user instance from this submission</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">num_submission</span><span class="p">,</span><span class="n">cur_submission</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">user_instance</span><span class="o">.</span><span class="n">submissions</span><span class="o">.</span><span class="n">new</span><span class="p">()):</span> <span class="c1">#now iterate through the user&#39;s submissions</span>
+    <span class="n">submission</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">submission</span><span class="p">(</span><span class="n">cur_submission</span><span class="p">)</span> <span class="c1"># create a submission instance</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="n">submission</span><span class="o">.</span><span class="n">created_utc</span><span class="p">),</span> <span class="n">submission</span><span class="o">.</span><span class="n">subreddit</span><span class="p">,</span> <span class="s1">&#39;||&#39;</span><span class="p">,</span> <span class="n">submission</span><span class="o">.</span><span class="n">score</span><span class="p">,</span> <span class="s1">&#39;||&#39;</span><span class="p">,</span> <span class="n">submission</span><span class="o">.</span><span class="n">title</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span> <span class="c1">#access the submission&#39;s attributes: </span>
+    <span class="k">if</span> <span class="n">num_submission</span> <span class="o">&gt;</span> <span class="mi">15</span><span class="p">:</span> <span class="c1">#stop after 15 submissions </span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-11-15 17:06:53 madisonwi || 241 || AMC Fitchburg 18 failed their inspection again. Mice, flies, and ants in the concessions - yum! 
+
+2022-11-08 11:26:20 blurrypicturesofdogs || 84 || Blurry picture of a dog 
+
+2022-10-21 19:23:29 TibiaMMO || 5 || 7.1-7.6 era player returning on Gladera - Looking for friends/people to play with! 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="a-joke">
+<h2>A joke<a class="headerlink" href="#a-joke" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">submission</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">submission</span><span class="p">(</span><span class="s1">&#39;yshook&#39;</span><span class="p">)</span> <span class="c1">#the argument is the submission&#39;s id</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">submission</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">submission</span><span class="o">.</span><span class="n">selftext</span><span class="p">)</span>
 </pre></div>
