@@ -55,6 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="PRAW" href="PRAW_demo.html" />
+    <link rel="prev" title="Intro to NLTK" href="nltk_demo.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -254,7 +256,7 @@ const thebe_selector_output = ".output, .cell_output"
   In class activities
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="python_basics.html">
    Python basics
@@ -308,6 +310,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="nltk_demo.html">
    NLTK demo
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Merging and flexible grouping in R
   </a>
  </li>
  <li class="toctree-l1">
@@ -553,6 +560,11 @@ title="Print to PDF"
    Applying something to multiple columns
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#running-a-linear-model-on-each-grouping-factor">
+   Running a linear model on each grouping factor
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -585,6 +597,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#applying-something-to-multiple-columns">
    Applying something to multiple columns
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#running-a-linear-model-on-each-grouping-factor">
+   Running a linear model on each grouping factor
   </a>
  </li>
 </ul>
@@ -873,13 +890,10 @@ title="Print to PDF"
 </table>
 </div></div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span>Let&#39;s run separate regression models (lm) on each species preicting Sepal.Length from Petal.Length
-</pre></div>
-</div>
-</div>
-</div>
+</section>
+<section id="running-a-linear-model-on-each-grouping-factor">
+<h2>Running a linear model on each grouping factor<a class="headerlink" href="#running-a-linear-model-on-each-grouping-factor" title="Permalink to this headline">#</a></h2>
+<p>Let’s run separate regression models (lm) on each species preicting Sepal.Length from Petal.Length</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span> <span class="o">%&gt;%</span> <span class="nf">select_if</span><span class="p">(</span><span class="n">is.numeric</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="n">cor</span>
@@ -928,13 +942,7 @@ title="Print to PDF"
 </table>
 </div></div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span>Let&#39;s try this with something more meaningful. 
-</pre></div>
-</div>
-</div>
-</div>
+<p>Let’s try this with something more meaningful.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">gapminder</span><span class="p">)</span>
