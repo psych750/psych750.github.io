@@ -970,35 +970,36 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">gapminder</span> <span class="o">%&gt;%</span> <span class="nf">group_by</span><span class="p">(</span><span class="n">country</span><span class="p">,</span><span class="n">year</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">summarize</span><span class="p">(</span><span class="n">lifeExp</span><span class="o">=</span><span class="nf">mean</span><span class="p">(</span><span class="n">lifeExp</span><span class="p">))</span> <span class="o">%&gt;%</span> <span class="nf">filter</span><span class="p">(</span><span class="n">country</span><span class="o">==</span><span class="s">&quot;Oman&quot;</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">filter</span><span class="p">(</span><span class="n">year</span><span class="o">==</span><span class="nf">min</span><span class="p">(</span><span class="n">year</span><span class="p">)</span> <span class="o">|</span> <span class="n">year</span><span class="o">==</span><span class="nf">max</span><span class="p">(</span><span class="n">year</span><span class="p">))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">gapminder</span> <span class="o">%&gt;%</span> <span class="nf">group_by </span><span class="p">(</span><span class="n">year</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+    <span class="nf">summarize</span><span class="p">(</span><span class="n">lifeExp</span><span class="o">=</span><span class="nf">mean</span><span class="p">(</span><span class="n">lifeExp</span><span class="p">))</span> <span class="o">%&gt;%</span> 
+    <span class="nf">filter</span><span class="p">(</span><span class="n">year</span><span class="o">==</span><span class="nf">min</span><span class="p">(</span><span class="n">year</span><span class="p">)</span> <span class="o">|</span> <span class="n">year</span><span class="o">==</span><span class="nf">max</span><span class="p">(</span><span class="n">year</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>`summarise()` has grouped output by &#39;country&#39;. You can override using the
-`.groups` argument.
-</pre></div>
-</div>
 <div class="output text_html"><table class="dataframe">
-<caption>A grouped_df: 2 × 3</caption>
+<caption>A tibble: 2 × 2</caption>
 <thead>
-	<tr><th scope=col>country</th><th scope=col>year</th><th scope=col>lifeExp</th></tr>
-	<tr><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+	<tr><th scope=col>year</th><th scope=col>lifeExp</th></tr>
+	<tr><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>Oman</td><td>1952</td><td>37.578</td></tr>
-	<tr><td>Oman</td><td>2007</td><td>75.640</td></tr>
+	<tr><td>1952</td><td>49.05762</td></tr>
+	<tr><td>2007</td><td>67.00742</td></tr>
 </tbody>
 </table>
 </div></div>
 </div>
-<p>We can ee that on average there’s been a 19 (!!) year increase in life expectancy between 1952 and 2007. Remarkable progress.
-Which countries showed the largest vs. smallest trends in life expectancy in this time? To answer, let’s run a separate linear model for each country, predicting life expectancy from year and sort by the coefficient. A large coefficient means a large increae. A small coefficient means a small increase (a negative coefficient means a decrease in life expectancy).</p>
+<p>We can see that on average there’s been a 19 (!!) year increase in life expectancy between 1952 and 2007. Remarkable progress.
+Which countries showed the largest vs. smallest trends in life expectancy in this time? To answer, let’s run a separate linear model for each country, predicting life expectancy from year and sort by the coefficient. A large coefficient means a large increase. A small coefficient means a small increase (a negative coefficient means a decrease in life expectancy).</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">gapminder</span> <span class="o">%&gt;%</span> <span class="nf">group_by</span><span class="p">(</span><span class="n">country</span><span class="p">)</span> <span class="o">%&gt;%</span> 
     <span class="nf">do</span><span class="p">(</span><span class="nf">tidy</span><span class="p">(</span> 
-      <span class="nf">lm</span><span class="p">(</span><span class="n">lifeExp</span> <span class="o">~</span> <span class="n">year</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">.</span><span class="p">)))</span> <span class="o">%&gt;%</span> <span class="nf">filter</span><span class="p">(</span><span class="n">term</span><span class="o">==</span><span class="s">&quot;year&quot;</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">select</span><span class="p">(</span><span class="n">country</span><span class="p">,</span><span class="n">estimate</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">arrange</span><span class="p">(</span><span class="o">-</span><span class="n">estimate</span><span class="p">)</span>
+      <span class="nf">lm</span><span class="p">(</span><span class="n">lifeExp</span> <span class="o">~</span> <span class="n">year</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">.</span><span class="p">)))</span> <span class="o">%&gt;%</span> 
+      <span class="nf">filter</span><span class="p">(</span><span class="n">term</span><span class="o">==</span><span class="s">&quot;year&quot;</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+      <span class="nf">select</span><span class="p">(</span><span class="n">country</span><span class="p">,</span><span class="n">estimate</span><span class="p">)</span> <span class="o">%&gt;%</span>
+      <span class="nf">arrange</span><span class="p">(</span><span class="o">-</span><span class="n">estimate</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1075,12 +1076,18 @@ Which countries showed the largest vs. smallest trends in life expectancy in thi
 </table>
 </div></div>
 </div>
-<p>Just as a sanity check, wlet’s look at the differences between the minimum and maximum year for the two extremes: Oman and Zimbambe</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Whenever we compare slopes (and that’s what this coefficient is), we need to be mindful that a shallow slope <em>could</em> just mean that life expectancy was already very high at the start. Conversely, a steep slope could come from a having an especially low life expectancy at the start of the timeseries, <em>or</em> an especially high life expectancy at the end.</p>
+</div>
+<p>The largest increases are in places that had massive industrialization. Smallest increases are places with civil unrest and poor medical care.
+Just as a sanity check, let’s look at the differences between the minimum and maximum year for the two extremes: Oman and Zimbambe</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">gapminder</span> <span class="o">%&gt;%</span> <span class="nf">group_by</span><span class="p">(</span><span class="n">country</span><span class="p">,</span><span class="n">year</span><span class="p">)</span> <span class="o">%&gt;%</span> 
-<span class="nf">summarize</span><span class="p">(</span><span class="n">lifeExp</span><span class="o">=</span><span class="nf">mean</span><span class="p">(</span><span class="n">lifeExp</span><span class="p">))</span> <span class="o">%&gt;%</span> 
-<span class="nf">filter</span><span class="p">(</span><span class="n">country</span><span class="o">==</span><span class="s">&quot;Oman&quot;</span> <span class="o">|</span> <span class="n">country</span><span class="o">==</span><span class="s">&quot;Zimbabwe&quot;</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">filter</span><span class="p">(</span><span class="n">year</span><span class="o">==</span><span class="nf">min</span><span class="p">(</span><span class="n">year</span><span class="p">)</span> <span class="o">|</span> <span class="n">year</span><span class="o">==</span><span class="nf">max</span><span class="p">(</span><span class="n">year</span><span class="p">))</span>
+    <span class="nf">summarize</span><span class="p">(</span><span class="n">lifeExp</span><span class="o">=</span><span class="nf">mean</span><span class="p">(</span><span class="n">lifeExp</span><span class="p">))</span> <span class="o">%&gt;%</span> 
+    <span class="nf">filter</span><span class="p">(</span><span class="n">country</span><span class="o">==</span><span class="s">&quot;Oman&quot;</span> <span class="o">|</span> <span class="n">country</span><span class="o">==</span><span class="s">&quot;Zimbabwe&quot;</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+    <span class="nf">filter</span><span class="p">(</span><span class="n">year</span><span class="o">==</span><span class="nf">min</span><span class="p">(</span><span class="n">year</span><span class="p">)</span> <span class="o">|</span> <span class="n">year</span><span class="o">==</span><span class="nf">max</span><span class="p">(</span><span class="n">year</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
