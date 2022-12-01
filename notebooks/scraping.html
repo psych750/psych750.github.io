@@ -561,16 +561,14 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-of-using-the-newspaper-package">
+   Example of using the newspaper package
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#lots-of-examples-and-pre-written-code-out-there">
    Lots of examples and pre-written code out there!
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-of-using-the-newspaper-package">
-     Example of using the newspaper package
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#now-it-s-your-turn">
@@ -607,16 +605,14 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-of-using-the-newspaper-package">
+   Example of using the newspaper package
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#lots-of-examples-and-pre-written-code-out-there">
    Lots of examples and pre-written code out there!
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-of-using-the-newspaper-package">
-     Example of using the newspaper package
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#now-it-s-your-turn">
@@ -640,7 +636,7 @@ title="Print to PDF"
 <section id="get-heading-names-in-a-wikipedia-article">
 <h2>Get heading names in a Wikipedia article<a class="headerlink" href="#get-heading-names-in-a-wikipedia-article" title="Permalink to this headline">#</a></h2>
 <p>Let’s begin by automatically grabbing The Simpsons character names from the <em>Simpson Family</em> <a class="reference external" href="https://en.wikipedia.org/wiki/Simpson_family">Wikipedia page</a>. Looking at the wiki article, we see that the character names are part of a bulleted list (produced by the html <code class="docutils literal notranslate"><span class="pre">&lt;ul&gt;</span></code> tag. Furthermore, they’re bolded. Using this we can do the following:</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
 <span class="kn">import</span> <span class="nn">requests</span>
@@ -650,7 +646,6 @@ title="Print to PDF"
 <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">headline</span> <span class="ow">in</span> <span class="n">soup</span><span class="p">(</span><span class="s1">&#39;span&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span> <span class="p">:</span> <span class="s1">&#39;mw-headline&#39;</span><span class="p">}):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">headline</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
     <span class="n">topics</span> <span class="o">=</span> <span class="n">headline</span><span class="o">.</span><span class="n">find_next</span><span class="p">(</span><span class="s1">&#39;ul&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span> <span class="c1">#ul is bulletpoints; b is bold</span>
     <span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="p">:</span>
         <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">topic</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>     
@@ -658,7 +653,31 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Concept and origins
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* Herbert &#39;Herb&#39; Powell
+* Abbey
+* Chet Simpson
+* Dr. Simpson
+* Stanley Simpson
+*  Uncle Tyrone Simpson 
+* Great-Aunt Hortense Simpson
+* Hugo Simpson
+* Mabel Simpson
+* Hiram Simpson
+* Virgil
+* Virgil Simpson
+* Eliza Simpson
+* Milford Van Houten
+* Van Houten
+* Abraham Simpson
+* Grampa&#39;s parents
+* Orville J. Simpson
+* Yuma Hickman
+* Cyrus Simpson
+* Rita LaFleur
+* Amber Simpson
+* Bill Simpson
+* Great Uncle Boris
+* Mother Shabubu/Cousin Frank/Francine
 * Herbert &#39;Herb&#39; Powell
 * Abbey
 * Chet Simpson
@@ -684,7 +703,6 @@ title="Print to PDF"
 * Bill Simpson
 * Great Uncle Boris
 * Mother Shabubu/Cousin Frank/Francine
-Creation
 * Herbert &#39;Herb&#39; Powell
 * Abbey
 * Chet Simpson
@@ -710,7 +728,6 @@ Creation
 * Bill Simpson
 * Great Uncle Boris
 * Mother Shabubu/Cousin Frank/Francine
-Casting
 * Herbert &#39;Herb&#39; Powell
 * Abbey
 * Chet Simpson
@@ -736,7 +753,6 @@ Casting
 * Bill Simpson
 * Great Uncle Boris
 * Mother Shabubu/Cousin Frank/Francine
-The Simpson family
 * Herbert &#39;Herb&#39; Powell
 * Abbey
 * Chet Simpson
@@ -762,7 +778,6 @@ The Simpson family
 * Bill Simpson
 * Great Uncle Boris
 * Mother Shabubu/Cousin Frank/Francine
-Homer Simpson
 * Herbert &#39;Herb&#39; Powell
 * Abbey
 * Chet Simpson
@@ -788,7 +803,6 @@ Homer Simpson
 * Bill Simpson
 * Great Uncle Boris
 * Mother Shabubu/Cousin Frank/Francine
-Marge Simpson
 * Herbert &#39;Herb&#39; Powell
 * Abbey
 * Chet Simpson
@@ -814,7 +828,6 @@ Marge Simpson
 * Bill Simpson
 * Great Uncle Boris
 * Mother Shabubu/Cousin Frank/Francine
-Bart Simpson
 * Herbert &#39;Herb&#39; Powell
 * Abbey
 * Chet Simpson
@@ -840,7 +853,6 @@ Bart Simpson
 * Bill Simpson
 * Great Uncle Boris
 * Mother Shabubu/Cousin Frank/Francine
-Lisa Simpson
 * Herbert &#39;Herb&#39; Powell
 * Abbey
 * Chet Simpson
@@ -866,7 +878,6 @@ Lisa Simpson
 * Bill Simpson
 * Great Uncle Boris
 * Mother Shabubu/Cousin Frank/Francine
-Maggie Simpson
 * Herbert &#39;Herb&#39; Powell
 * Abbey
 * Chet Simpson
@@ -892,7 +903,6 @@ Maggie Simpson
 * Bill Simpson
 * Great Uncle Boris
 * Mother Shabubu/Cousin Frank/Francine
-Abe Simpson
 * Herbert &#39;Herb&#39; Powell
 * Abbey
 * Chet Simpson
@@ -918,7 +928,6 @@ Abe Simpson
 * Bill Simpson
 * Great Uncle Boris
 * Mother Shabubu/Cousin Frank/Francine
-Mona Simpson
 * Herbert &#39;Herb&#39; Powell
 * Abbey
 * Chet Simpson
@@ -944,96 +953,58 @@ Mona Simpson
 * Bill Simpson
 * Great Uncle Boris
 * Mother Shabubu/Cousin Frank/Francine
-Extended Simpson family
-* Herbert &#39;Herb&#39; Powell
-* Abbey
-* Chet Simpson
-* Dr. Simpson
-* Stanley Simpson
-*  Uncle Tyrone Simpson 
-* Great-Aunt Hortense Simpson
-* Hugo Simpson
-* Mabel Simpson
-* Hiram Simpson
-* Virgil
-* Virgil Simpson
-* Eliza Simpson
-* Milford Van Houten
-* Van Houten
-* Abraham Simpson
-* Grampa&#39;s parents
-* Orville J. Simpson
-* Yuma Hickman
-* Cyrus Simpson
-* Rita LaFleur
-* Amber Simpson
-* Bill Simpson
-* Great Uncle Boris
-* Mother Shabubu/Cousin Frank/Francine
-The Bouvier family
 * &quot;Sideshow Bob&quot; Terwilliger
 * Lionel Hutz
 * Troy McClure
 * Disco Stu
 * Grampa Simpson
 * &quot;Fat Tony&quot; D&#39;Amico
-Patty and Selma Bouvier
 * &quot;Sideshow Bob&quot; Terwilliger
 * Lionel Hutz
 * Troy McClure
 * Disco Stu
 * Grampa Simpson
 * &quot;Fat Tony&quot; D&#39;Amico
-Jacqueline Bouvier
 * &quot;Sideshow Bob&quot; Terwilliger
 * Lionel Hutz
 * Troy McClure
 * Disco Stu
 * Grampa Simpson
 * &quot;Fat Tony&quot; D&#39;Amico
-Clancy Bouvier
 * &quot;Sideshow Bob&quot; Terwilliger
 * Lionel Hutz
 * Troy McClure
 * Disco Stu
 * Grampa Simpson
 * &quot;Fat Tony&quot; D&#39;Amico
-Ling Bouvier
 * &quot;Sideshow Bob&quot; Terwilliger
 * Lionel Hutz
 * Troy McClure
 * Disco Stu
 * Grampa Simpson
 * &quot;Fat Tony&quot; D&#39;Amico
-Meaux and Genevieve Bouvier
 * &quot;Sideshow Bob&quot; Terwilliger
 * Lionel Hutz
 * Troy McClure
 * Disco Stu
 * Grampa Simpson
 * &quot;Fat Tony&quot; D&#39;Amico
-Selma&#39;s husbands
 * &quot;Sideshow Bob&quot; Terwilliger
 * Lionel Hutz
 * Troy McClure
 * Disco Stu
 * Grampa Simpson
 * &quot;Fat Tony&quot; D&#39;Amico
-Extended Bouvier family
 * Gladys Gurney
 * Great-Uncle Hubert
 * Dot
 * Lou Gurney
 * Uncle Arthur Bouvier
-Pets
 * Santa&#39;s Little Helper
-Dogs
 * Santa&#39;s Little Helper
-Cats
 * Snowball
 * Snowball I
 * Snowball II
-Other pets
 * Plopper
 * Mojo
 * Chirpy Boy
@@ -1043,14 +1014,11 @@ Other pets
 * Pokey
 * Princess
 * Pinchy
-See also
-References
-Bibliography
 </pre></div>
 </div>
 </div>
 </div>
-<p>There are some false alarms, but this generally works! You might wonder whether this is too much trouble to go through just to get the Simpsons characters. But of course the identical code will work on pretty much <em>any</em> wiki article. …an the approach can be used on any webpage. And that’s really the point.</p>
+<p>There are some false alarms, but it works pretty well! You might wonder whether this is too much trouble to go through just to get the Simpsons characters. But of course the identical code will work on pretty much <em>any</em> wiki article. …an the approach can be used on any webpage. And that’s really the point.</p>
 </section>
 <section id="get-current-temperature-in-madison">
 <h2>Get current temperature in Madison<a class="headerlink" href="#get-current-temperature-in-madison" title="Permalink to this headline">#</a></h2>
@@ -1071,13 +1039,9 @@ Bibliography
 </div>
 <p>(This is about as simple as it gets). This approach scales (and that’s the point!). If we want to get the temperature of a 100 different cities, just load the appropriate URLs and iterate through them.</p>
 </section>
-<section id="lots-of-examples-and-pre-written-code-out-there">
-<h2>Lots of examples and pre-written code out there!<a class="headerlink" href="#lots-of-examples-and-pre-written-code-out-there" title="Permalink to this headline">#</a></h2>
-<p>There’s an enormous infrastructure for web scraping with lots of codebases for common tasks, e.g., scraping <a class="reference external" href="https://newspaper.readthedocs.io/en/latest/">newspapers3k</a> for scraping online news. We’ll do a quick demo of this one.</p>
-<p>Here’s a nice step by step tutorial  example of a script that uses BeautifulSoup to <a class="reference external" href="https://proxiesapi-com.medium.com/scraping-google-scholar-with-python-and-beautifulsoup-850cbdfedbcf">scrape data from google scholar</a>.</p>
-<p>For an especially creative example of scraping, check out <a class="reference external" href="https://erikbern.com/2017/02/01/language-pitch.html">this blog post by Erik Bern</a> which bulk downloads pronunciations of words in various languages to examine whether there are consistent differences in pitch (fundamental frequency) between languages (Sounds like Finnish is Lowwww).</p>
 <section id="example-of-using-the-newspaper-package">
-<h3>Example of using the newspaper package<a class="headerlink" href="#example-of-using-the-newspaper-package" title="Permalink to this headline">#</a></h3>
+<h2>Example of using the newspaper package<a class="headerlink" href="#example-of-using-the-newspaper-package" title="Permalink to this headline">#</a></h2>
+<p>There’s an enormous infrastructure for web scraping with lots of codebases for common tasks, e.g., scraping <a class="reference external" href="https://newspaper.readthedocs.io/en/latest/">newspapers3k</a> for scraping online news. Let’s do a quick demo of this one.</p>
 <p>First install the package using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">newspaper3k</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1123,7 +1087,7 @@ When a star is torn apart by a black hole’s gravitational tidal forces, it’s
 
 <span class="nb">print</span><span class="p">(</span><span class="n">article</span><span class="o">.</span><span class="n">top_image</span><span class="p">)</span>
 <span class="n">raw_img</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">article</span><span class="o">.</span><span class="n">top_image</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-<span class="n">display</span><span class="o">.</span><span class="n">Image</span><span class="p">(</span><span class="n">raw_img</span><span class="p">)</span>
+<span class="c1">#display.Image(raw_img) # this will work when you render the notebook locally, but not when it&#39;s uploaded to github as we do here</span>
 </pre></div>
 </div>
 </div>
@@ -1131,10 +1095,14 @@ When a star is torn apart by a black hole’s gravitational tidal forces, it’s
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://media.cnn.com/api/v1/images/stellar/prod/221130121224-01-black-hole-tidal-disruption-event.jpg?c=16x9&amp;q=w_800,c_fill
 </pre></div>
 </div>
-<img alt="_build/jupyter_execute/notebooks/scraping_11_1.jpg" src="_build/jupyter_execute/notebooks/scraping_11_1.jpg" />
 </div>
 </div>
+<p><img alt="top_image" src="https://media.cnn.com/api/v1/images/stellar/prod/221130121224-01-black-hole-tidal-disruption-event.jpg" /></p>
 </section>
+<section id="lots-of-examples-and-pre-written-code-out-there">
+<h2>Lots of examples and pre-written code out there!<a class="headerlink" href="#lots-of-examples-and-pre-written-code-out-there" title="Permalink to this headline">#</a></h2>
+<p>Here’s a nice step by step tutorial  example of a script that uses BeautifulSoup to <a class="reference external" href="https://proxiesapi-com.medium.com/scraping-google-scholar-with-python-and-beautifulsoup-850cbdfedbcf">scrape data from google scholar</a>.</p>
+<p>For an especially creative example of scraping, check out <a class="reference external" href="https://erikbern.com/2017/02/01/language-pitch.html">this blog post by Erik Bern</a> which bulk downloads pronunciations of words in various languages to examine whether there are consistent differences in pitch (fundamental frequency) between languages (Sounds like Finnish is Lowwww).</p>
 </section>
 <section id="now-it-s-your-turn">
 <h2>Now it’s your turn<a class="headerlink" href="#now-it-s-your-turn" title="Permalink to this headline">#</a></h2>
