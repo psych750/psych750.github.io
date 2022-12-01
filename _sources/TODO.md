@@ -15,8 +15,8 @@
     [ ] use of here
     [ ] %in% and negation (e.g., choosing which columns NOT to select)
     [ ] summarize_if, summarize_all
-    [ ] if_else/case_when
-    [ ] coalesce - the thing that gives you the non-na value of a set of columns
+    [x] if_else/case_when
+    [x] coalesce - the thing that gives you the non-na value of a set of columns
     [ ] rowwse and across
     [ ] sjmisc::  dicho, recode_to, split_var
     [ ] grepl string matching --> regexps
