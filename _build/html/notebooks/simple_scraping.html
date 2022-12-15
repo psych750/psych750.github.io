@@ -591,12 +591,12 @@ title="Print to PDF"
 <a class="reference external" href="http://bdewilde.github.io/blog/blogger/2012/11/14/web-scraping-and-html-parsing-1/">here</a>). I’ll start you off</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
 <span class="kn">import</span> <span class="nn">re</span>
 <span class="kn">import</span> <span class="nn">urllib2</span><span class="o">,</span><span class="nn">sys</span>
 <span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span><span class="p">,</span> <span class="n">NavigableString</span>
 
-<span class="n">weather_channel</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s2">&quot;https://weather.com/weather/today/l/USWI0411:1:US&quot;</span><span class="p">)</span>
+<span class="n">weather_channel</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://weather.com/weather/today/l/USWI0411:1:US&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
 <span class="n">soup_weather_channel</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">weather_channel</span><span class="p">)</span>
 
 <span class="n">temp</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="c1">#something something</span>
@@ -616,22 +616,22 @@ title="Print to PDF"
 <p>Going along with the temperature theme, here’s a slightly more complex exercise. Let’s get the current water and air temperature from Lake Mendota and compute their difference.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
 <span class="kn">import</span> <span class="nn">re</span>
-<span class="kn">import</span> <span class="nn">urllib2</span><span class="o">,</span><span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span><span class="p">,</span> <span class="n">NavigableString</span>
 
-<span class="n">mendota</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s2">&quot;https://lter.limnology.wisc.edu/researchsite/lake-mendota&quot;</span><span class="p">)</span>
+<span class="n">mendota</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://lter.limnology.wisc.edu/researchsite/lake-mendota&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
 <span class="n">soup_mendota</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">mendota</span><span class="p">)</span>
 
 <span class="n">water_temp</span> <span class="o">=</span> <span class="n">air_temp</span> <span class="o">=</span> <span class="mi">0</span>
 
-<span class="nb">print</span> <span class="n">water_temp</span><span class="p">,</span> <span class="n">air_temp</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">air_temp</span><span class="o">-</span><span class="n">water_temp</span><span class="p">)</span> <span class="c1">#should print out the temperatures (in F), and the difference</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">water_temp</span><span class="p">,</span> <span class="n">air_temp</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">air_temp</span><span class="o">-</span><span class="n">water_temp</span><span class="p">))</span> <span class="c1">#should print out the temperatures (in F), and the difference</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 0 0 0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 0 0
 </pre></div>
 </div>
 </div>
@@ -651,13 +651,13 @@ title="Print to PDF"
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python2",
+            kernelName: "python3",
             path: "./notebooks"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python2'</script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               

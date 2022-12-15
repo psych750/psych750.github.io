@@ -9,7 +9,7 @@
 # 
 # If you get import errors, use `pip` to install the missing package (`pip install package_name`).
 
-# In[18]:
+# In[10]:
 
 
 import nltk
@@ -29,7 +29,6 @@ print(pride_prejudice[0:100])
 # Now let's tokenize and lowercase the text.
 
 # In[20]:
-
 
 
 pride_prejudice_raw_tokens = nltk.word_tokenize(pride_prejudice)
@@ -172,6 +171,7 @@ bigram_freqs.most_common(20)
 
 
 
+
 # We can also look at trigrams, but with just a single book this is not going to be very effective. Notice that even the most frequent trigrams aren't observed very often!
 # 
 # ```{note}
@@ -181,9 +181,9 @@ bigram_freqs.most_common(20)
 # In[63]:
 
 
-
 trigram_freqs = nltk.FreqDist(nltk.trigrams(pride_prejudice_clean_tokens_no_stop_words))
 print(trigram_freqs.most_common(20))
+
 
 
 
@@ -201,12 +201,12 @@ print(nltk.corpus.gutenberg.fileids())
 # In[64]:
 
 
-
 some_books = nltk.corpus.gutenberg.words()
 
 some_books_clean = [token.lower() for token in some_books if token.isalpha()]
 trigram_freqs = nltk.FreqDist(nltk.trigrams(some_books_clean))
 print(trigram_freqs.most_common(30))
+
 
 
 # ## Collocations
@@ -250,7 +250,7 @@ nltk.FreqDist(nltk.bigrams(alice_clean)).most_common(30)
 # 
 # A lemma is the base form of a word. It is what would typically be used as an entry in an English dictionary. Lemmatization refers to grouping together words that are inflectional variants of the same lemma: (go,went), (read, reading, reads), (cat, cats), etc..  
 
-# In[55]:
+# In[13]:
 
 
 from nltk import WordNetLemmatizer
@@ -264,6 +264,7 @@ print("went :", lemmatizer.lemmatize("went"))
 print("leaves :", lemmatizer.lemmatize("leaves"))
 
 
+
 # Ok, so we can see a few problems here. First, went stayed as went. And "leaves" was matched to "leaf" whereas I was thinking of "leaves" as in a person leaves the room. The reason is that the WordNetLemmatizer is stupid. It defaults to treating words as nouns (with some exceptions). We can, however, pass it a part of speech as an argument:
 # 
 # ```{note}
@@ -273,10 +274,156 @@ print("leaves :", lemmatizer.lemmatize("leaves"))
 # In[56]:
 
 
-
 print("went :", lemmatizer.lemmatize("went",pos="v"))
 print("leaves :", lemmatizer.lemmatize("leaves",pos="v"))
 print("redder :", lemmatizer.lemmatize("redder",pos="a"))
 
 
+
 # What use is lemmatization if we have to manually tell it what part of speech something is? Well, we don't have to do it *manually*. If we're processing words in context, we can use NLTK's [automatic Part of Speech Tagging](https://www.nltk.org/book/ch05.html) instead!  
+
+# ## WordNet
+# 
+# NLTK has a handy [interface to WordNet](https://www.nltk.org/howto/wordnet.html). Here's an example of using it to automatically classify some animals into classe (mammals, birds, etc.). See [more examples here](https://www.nltk.org/howto/wordnet.html).
+# 
+# 
+# Let's import the wordnet module and look up some words.
+
+# In[1]:
+
+
+from nltk.corpus import wordnet as wn
+
+print(wn.synsets('table'))
+print('\n')
+print(wn.synsets('horse'))
+print('\n')
+print(wn.synsets('pressure'))
+print('\n')
+print(wn.synsets('take'))
+
+
+# What is all this stuff? Each entry (synset) is a different sense of the word. We can look up specific synsets to see what they're about, e.g. let's iterate over the synsets for "table"
+
+# In[2]:
+
+
+for cur_synset in wn.synsets('table'):
+    print(cur_synset,cur_synset.definition())
+
+
+
+# The "syn" part of "synset" stands for synonym. A key part of WordNet's organization is how it links word meanings (synsets) to word forms (lemmas).
+
+# In[21]:
+
+
+for cur_synset in wn.synsets('alligator'):
+    print(cur_synset,cur_synset.definition())
+
+
+# Notice that the second entry is not paper, but composition. What this means is that the second noun sense of "paper" has several lemmas. Let's confirm:   
+
+# In[4]:
+
+
+print(wn.synset('paper.n.02').lemmas())
+
+
+# These meanings are the same, but are parts of different synsets:
+
+# In[5]:
+
+
+print(wn.synset('paper.n.02').definition())
+print(wn.synset('composition.n.08').definition())
+
+
+
+# ### Antonyms and entailments
+
+# In[179]:
+
+
+print(wn.synset('high.a.01').lemmas()[0].antonyms())
+print(wn.synset('rich.a.01').lemmas()[0].antonyms())
+
+print(wn.synset('walk.v.01').entailments())
+print(wn.synset('eat.v.01').entailments())
+
+
+# ### Looking up the class of an animal -- quick case study
+
+# In[15]:
+
+
+#from nltk.stem import WordNetLemmatize
+#lemmatiser = WordNetLemmatizer()
+
+def make_singular_and_lemmatize(response,pos="n"): #lemmatize nouns. If the repsonse has multiple words, lemmatize just the last word
+    if '(' in response:
+        response = response.split('(')[0:-1]
+        response = ' '.join(response)
+        response = response.rstrip()
+    response = response.split(' ')
+    singular = lemmatiser.lemmatize(response[-1], pos=pos)
+    if len(response)==1:
+        return str(singular).replace(' ','_')
+    else:
+        response = ' '.join((' '.join(response[0:-1]),singular)).replace(' ','_')
+        return response
+
+
+def make_synset(word, category='n', number='01'):
+    """Make a synset"""
+    number = int(number)
+    try:
+        return wn.synset('%s.%s.%02i' % (word, category, number))
+    except:
+        return word
+           
+def _recurse_all_hypernyms(synset, all_hypernyms):
+    synset_hypernyms = synset.hypernyms()
+    if synset_hypernyms:
+        all_hypernyms += synset_hypernyms
+        for hypernym in synset_hypernyms:
+            _recurse_all_hypernyms(hypernym, all_hypernyms)
+
+def all_hypernyms(synset,return_what='synset'):
+    """Get the set of hypernyms of the hypernym of the synset etc.
+       Nouns can have multiple hypernyms, so we can't just create a depth-sorted
+       list. If return_what is set to lemmas (or something other than synset), return the lemmas instead of a list of synset,
+    return. Else return a list of synsets """
+    hypernyms = []
+    if type(synset)==str:
+        return set(())
+    _recurse_all_hypernyms(synset, hypernyms)
+    if return_what!='synset':
+        hypernyms = [cur_synset.lemma_names()[0] for cur_synset in hypernyms]
+    return list(set(hypernyms))
+
+
+
+
+# In[28]:
+
+
+all_hypernyms(make_synset('alligator',number=2),return_what="lemmas")
+
+
+# In[25]:
+
+
+classes = set(['mammal','bird','reptile','insect','amphibian','arthropod'])
+
+print(classes.intersection(all_hypernyms(make_synset('dog'),return_what="lemmas")))
+print(classes.intersection(all_hypernyms(make_synset('sparrow'),return_what="lemmas")))
+print(classes.intersection(all_hypernyms(make_synset('dinosaur'),return_what="lemmas")))
+print(classes.intersection(all_hypernyms(make_synset('alligator',number=2),return_what="lemmas")))
+
+
+# In[20]:
+
+
+make_synset('alligator')
+

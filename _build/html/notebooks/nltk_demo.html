@@ -570,6 +570,23 @@ title="Print to PDF"
    Lemmatization
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wordnet">
+   WordNet
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#antonyms-and-entailments">
+     Antonyms and entailments
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#looking-up-the-class-of-an-animal-quick-case-study">
+     Looking up the class of an animal – quick case study
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </nav>
@@ -623,6 +640,23 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#lemmatization">
    Lemmatization
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wordnet">
+   WordNet
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#antonyms-and-entailments">
+     Antonyms and entailments
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#looking-up-the-class-of-an-animal-quick-case-study">
+     Looking up the class of an animal – quick case study
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -1150,6 +1184,235 @@ redder : red
 </div>
 </div>
 <p>What use is lemmatization if we have to manually tell it what part of speech something is? Well, we don’t have to do it <em>manually</em>. If we’re processing words in context, we can use NLTK’s <a class="reference external" href="https://www.nltk.org/book/ch05.html">automatic Part of Speech Tagging</a> instead!</p>
+</section>
+<section id="wordnet">
+<h2>WordNet<a class="headerlink" href="#wordnet" title="Permalink to this headline">#</a></h2>
+<p>NLTK has a handy <a class="reference external" href="https://www.nltk.org/howto/wordnet.html">interface to WordNet</a>. Here’s an example of using it to automatically classify some animals into classe (mammals, birds, etc.). See <a class="reference external" href="https://www.nltk.org/howto/wordnet.html">more examples here</a>.</p>
+<p>Let’s import the wordnet module and look up some words.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">wordnet</span> <span class="k">as</span> <span class="n">wn</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">wn</span><span class="o">.</span><span class="n">synsets</span><span class="p">(</span><span class="s1">&#39;table&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">wn</span><span class="o">.</span><span class="n">synsets</span><span class="p">(</span><span class="s1">&#39;horse&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">wn</span><span class="o">.</span><span class="n">synsets</span><span class="p">(</span><span class="s1">&#39;pressure&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">wn</span><span class="o">.</span><span class="n">synsets</span><span class="p">(</span><span class="s1">&#39;take&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Synset(&#39;table.n.01&#39;), Synset(&#39;table.n.02&#39;), Synset(&#39;table.n.03&#39;), Synset(&#39;mesa.n.01&#39;), Synset(&#39;table.n.05&#39;), Synset(&#39;board.n.04&#39;), Synset(&#39;postpone.v.01&#39;), Synset(&#39;table.v.02&#39;)]
+
+
+[Synset(&#39;horse.n.01&#39;), Synset(&#39;horse.n.02&#39;), Synset(&#39;cavalry.n.01&#39;), Synset(&#39;sawhorse.n.01&#39;), Synset(&#39;knight.n.02&#39;), Synset(&#39;horse.v.01&#39;)]
+
+
+[Synset(&#39;pressure.n.01&#39;), Synset(&#39;pressure.n.02&#39;), Synset(&#39;press.n.09&#39;), Synset(&#39;imperativeness.n.01&#39;), Synset(&#39;pressure.n.05&#39;), Synset(&#39;pressure.n.06&#39;), Synset(&#39;atmospheric_pressure.n.01&#39;), Synset(&#39;coerce.v.01&#39;), Synset(&#39;blackmail.v.01&#39;)]
+
+
+[Synset(&#39;return.n.06&#39;), Synset(&#39;take.n.02&#39;), Synset(&#39;take.v.01&#39;), Synset(&#39;take.v.02&#39;), Synset(&#39;lead.v.01&#39;), Synset(&#39;take.v.04&#39;), Synset(&#39;assume.v.03&#39;), Synset(&#39;take.v.06&#39;), Synset(&#39;bring.v.01&#39;), Synset(&#39;take.v.08&#39;), Synset(&#39;take.v.09&#39;), Synset(&#39;choose.v.01&#39;), Synset(&#39;accept.v.02&#39;), Synset(&#39;fill.v.04&#39;), Synset(&#39;consider.v.03&#39;), Synset(&#39;necessitate.v.01&#39;), Synset(&#39;take.v.15&#39;), Synset(&#39;film.v.01&#39;), Synset(&#39;remove.v.01&#39;), Synset(&#39;consume.v.02&#39;), Synset(&#39;take.v.19&#39;), Synset(&#39;take.v.20&#39;), Synset(&#39;take.v.21&#39;), Synset(&#39;assume.v.05&#39;), Synset(&#39;accept.v.05&#39;), Synset(&#39;take.v.24&#39;), Synset(&#39;learn.v.04&#39;), Synset(&#39;claim.v.05&#39;), Synset(&#39;take.v.27&#39;), Synset(&#39;aim.v.01&#39;), Synset(&#39;take.v.29&#39;), Synset(&#39;carry.v.02&#39;), Synset(&#39;lease.v.04&#39;), Synset(&#39;subscribe.v.05&#39;), Synset(&#39;take.v.33&#39;), Synset(&#39;take.v.34&#39;), Synset(&#39;take.v.35&#39;), Synset(&#39;claim.v.04&#39;), Synset(&#39;accept.v.08&#39;), Synset(&#39;contain.v.05&#39;), Synset(&#39;take.v.39&#39;), Synset(&#39;drive.v.16&#39;), Synset(&#39;take.v.41&#39;), Synset(&#39;contract.v.04&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>What is all this stuff? Each entry (synset) is a different sense of the word. We can look up specific synsets to see what they’re about, e.g. let’s iterate over the synsets for “table”</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">cur_synset</span> <span class="ow">in</span> <span class="n">wn</span><span class="o">.</span><span class="n">synsets</span><span class="p">(</span><span class="s1">&#39;table&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">cur_synset</span><span class="p">,</span><span class="n">cur_synset</span><span class="o">.</span><span class="n">definition</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Synset(&#39;table.n.01&#39;) a set of data arranged in rows and columns
+Synset(&#39;table.n.02&#39;) a piece of furniture having a smooth flat top that is usually supported by one or more vertical legs
+Synset(&#39;table.n.03&#39;) a piece of furniture with tableware for a meal laid out on it
+Synset(&#39;mesa.n.01&#39;) flat tableland with steep edges
+Synset(&#39;table.n.05&#39;) a company of people assembled at a table for a meal or game
+Synset(&#39;board.n.04&#39;) food or meals in general
+Synset(&#39;postpone.v.01&#39;) hold back to a later time
+Synset(&#39;table.v.02&#39;) arrange or enter in tabular form
+</pre></div>
+</div>
+</div>
+</div>
+<p>The “syn” part of “synset” stands for synonym. A key part of WordNet’s organization is how it links word meanings (synsets) to word forms (lemmas).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">cur_synset</span> <span class="ow">in</span> <span class="n">wn</span><span class="o">.</span><span class="n">synsets</span><span class="p">(</span><span class="s1">&#39;alligator&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">cur_synset</span><span class="p">,</span><span class="n">cur_synset</span><span class="o">.</span><span class="n">definition</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Synset(&#39;alligator.n.01&#39;) leather made from alligator&#39;s hide
+Synset(&#39;alligator.n.02&#39;) either of two amphibious reptiles related to crocodiles but with shorter broader snouts
+Synset(&#39;alligator.v.01&#39;) crack and acquire the appearance of alligator hide, as from weathering or improper application; of paint and varnishes
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that the second entry is not paper, but composition. What this means is that the second noun sense of “paper” has several lemmas. Let’s confirm:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">wn</span><span class="o">.</span><span class="n">synset</span><span class="p">(</span><span class="s1">&#39;paper.n.02&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">lemmas</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Lemma(&#39;composition.n.08.composition&#39;), Lemma(&#39;composition.n.08.paper&#39;), Lemma(&#39;composition.n.08.report&#39;), Lemma(&#39;composition.n.08.theme&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>These meanings are the same, but are parts of different synsets:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">wn</span><span class="o">.</span><span class="n">synset</span><span class="p">(</span><span class="s1">&#39;paper.n.02&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">definition</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">wn</span><span class="o">.</span><span class="n">synset</span><span class="p">(</span><span class="s1">&#39;composition.n.08&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">definition</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>an essay (especially one written as an assignment)
+an essay (especially one written as an assignment)
+</pre></div>
+</div>
+</div>
+</div>
+<section id="antonyms-and-entailments">
+<h3>Antonyms and entailments<a class="headerlink" href="#antonyms-and-entailments" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">wn</span><span class="o">.</span><span class="n">synset</span><span class="p">(</span><span class="s1">&#39;high.a.01&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">lemmas</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">antonyms</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">wn</span><span class="o">.</span><span class="n">synset</span><span class="p">(</span><span class="s1">&#39;rich.a.01&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">lemmas</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">antonyms</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">wn</span><span class="o">.</span><span class="n">synset</span><span class="p">(</span><span class="s1">&#39;walk.v.01&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">entailments</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">wn</span><span class="o">.</span><span class="n">synset</span><span class="p">(</span><span class="s1">&#39;eat.v.01&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">entailments</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Lemma(&#39;low.a.01.low&#39;)]
+[Lemma(&#39;poor.a.02.poor&#39;)]
+[Synset(&#39;step.v.01&#39;)]
+[Synset(&#39;chew.v.01&#39;), Synset(&#39;swallow.v.01&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="looking-up-the-class-of-an-animal-quick-case-study">
+<h3>Looking up the class of an animal – quick case study<a class="headerlink" href="#looking-up-the-class-of-an-animal-quick-case-study" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#from nltk.stem import WordNetLemmatize</span>
+<span class="c1">#lemmatiser = WordNetLemmatizer()</span>
+
+<span class="k">def</span> <span class="nf">make_singular_and_lemmatize</span><span class="p">(</span><span class="n">response</span><span class="p">,</span><span class="n">pos</span><span class="o">=</span><span class="s2">&quot;n&quot;</span><span class="p">):</span> <span class="c1">#lemmatize nouns. If the repsonse has multiple words, lemmatize just the last word</span>
+    <span class="k">if</span> <span class="s1">&#39;(&#39;</span> <span class="ow">in</span> <span class="n">response</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;(&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+    <span class="n">singular</span> <span class="o">=</span> <span class="n">lemmatiser</span><span class="o">.</span><span class="n">lemmatize</span><span class="p">(</span><span class="n">response</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">pos</span><span class="o">=</span><span class="n">pos</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">response</span><span class="p">)</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">singular</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="s1">&#39;_&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">((</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">response</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]),</span><span class="n">singular</span><span class="p">))</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="s1">&#39;_&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">response</span>
+
+
+<span class="k">def</span> <span class="nf">make_synset</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="n">number</span><span class="o">=</span><span class="s1">&#39;01&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Make a synset&quot;&quot;&quot;</span>
+    <span class="n">number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">wn</span><span class="o">.</span><span class="n">synset</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">.</span><span class="si">%s</span><span class="s1">.</span><span class="si">%02i</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">category</span><span class="p">,</span> <span class="n">number</span><span class="p">))</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">word</span>
+           
+<span class="k">def</span> <span class="nf">_recurse_all_hypernyms</span><span class="p">(</span><span class="n">synset</span><span class="p">,</span> <span class="n">all_hypernyms</span><span class="p">):</span>
+    <span class="n">synset_hypernyms</span> <span class="o">=</span> <span class="n">synset</span><span class="o">.</span><span class="n">hypernyms</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">synset_hypernyms</span><span class="p">:</span>
+        <span class="n">all_hypernyms</span> <span class="o">+=</span> <span class="n">synset_hypernyms</span>
+        <span class="k">for</span> <span class="n">hypernym</span> <span class="ow">in</span> <span class="n">synset_hypernyms</span><span class="p">:</span>
+            <span class="n">_recurse_all_hypernyms</span><span class="p">(</span><span class="n">hypernym</span><span class="p">,</span> <span class="n">all_hypernyms</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">all_hypernyms</span><span class="p">(</span><span class="n">synset</span><span class="p">,</span><span class="n">return_what</span><span class="o">=</span><span class="s1">&#39;synset&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Get the set of hypernyms of the hypernym of the synset etc.</span>
+<span class="sd">       Nouns can have multiple hypernyms, so we can&#39;t just create a depth-sorted</span>
+<span class="sd">       list. If return_what is set to lemmas (or something other than synset), return the lemmas instead of a list of synset,</span>
+<span class="sd">    return. Else return a list of synsets &quot;&quot;&quot;</span>
+    <span class="n">hypernyms</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">synset</span><span class="p">)</span><span class="o">==</span><span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">set</span><span class="p">(())</span>
+    <span class="n">_recurse_all_hypernyms</span><span class="p">(</span><span class="n">synset</span><span class="p">,</span> <span class="n">hypernyms</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">return_what</span><span class="o">!=</span><span class="s1">&#39;synset&#39;</span><span class="p">:</span>
+        <span class="n">hypernyms</span> <span class="o">=</span> <span class="p">[</span><span class="n">cur_synset</span><span class="o">.</span><span class="n">lemma_names</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">cur_synset</span> <span class="ow">in</span> <span class="n">hypernyms</span><span class="p">]</span>
+    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">hypernyms</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">all_hypernyms</span><span class="p">(</span><span class="n">make_synset</span><span class="p">(</span><span class="s1">&#39;alligator&#39;</span><span class="p">,</span><span class="n">number</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span><span class="n">return_what</span><span class="o">=</span><span class="s2">&quot;lemmas&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;physical_entity&#39;,
+ &#39;whole&#39;,
+ &#39;crocodilian_reptile&#39;,
+ &#39;chordate&#39;,
+ &#39;diapsid&#39;,
+ &#39;organism&#39;,
+ &#39;entity&#39;,
+ &#39;vertebrate&#39;,
+ &#39;animal&#39;,
+ &#39;object&#39;,
+ &#39;reptile&#39;,
+ &#39;living_thing&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">classes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s1">&#39;mammal&#39;</span><span class="p">,</span><span class="s1">&#39;bird&#39;</span><span class="p">,</span><span class="s1">&#39;reptile&#39;</span><span class="p">,</span><span class="s1">&#39;insect&#39;</span><span class="p">,</span><span class="s1">&#39;amphibian&#39;</span><span class="p">,</span><span class="s1">&#39;arthropod&#39;</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">classes</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">all_hypernyms</span><span class="p">(</span><span class="n">make_synset</span><span class="p">(</span><span class="s1">&#39;dog&#39;</span><span class="p">),</span><span class="n">return_what</span><span class="o">=</span><span class="s2">&quot;lemmas&quot;</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">classes</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">all_hypernyms</span><span class="p">(</span><span class="n">make_synset</span><span class="p">(</span><span class="s1">&#39;sparrow&#39;</span><span class="p">),</span><span class="n">return_what</span><span class="o">=</span><span class="s2">&quot;lemmas&quot;</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">classes</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">all_hypernyms</span><span class="p">(</span><span class="n">make_synset</span><span class="p">(</span><span class="s1">&#39;dinosaur&#39;</span><span class="p">),</span><span class="n">return_what</span><span class="o">=</span><span class="s2">&quot;lemmas&quot;</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">classes</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">all_hypernyms</span><span class="p">(</span><span class="n">make_synset</span><span class="p">(</span><span class="s1">&#39;alligator&#39;</span><span class="p">,</span><span class="n">number</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span><span class="n">return_what</span><span class="o">=</span><span class="s2">&quot;lemmas&quot;</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;mammal&#39;}
+{&#39;bird&#39;}
+{&#39;reptile&#39;}
+{&#39;reptile&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">make_synset</span><span class="p">(</span><span class="s1">&#39;alligator&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Synset(&#39;alligator.n.01&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 

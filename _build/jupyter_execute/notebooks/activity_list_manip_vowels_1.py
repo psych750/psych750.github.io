@@ -70,6 +70,7 @@ vowels = ['a','e','i','o','u']
 words = ['', 'rhythms', 'abracadabra', '12324', 'trysts','a','zebra', 'refrigerator']
 
 
+
 # 1. Figure out which word in `words` has the most vowels. Your code should print out the element of the `words` list that contains the most vowels.
 # 2. If you didn't use a function for part 1, define a function `count_vowels_in_string()` that takes in a string and outputs the number of vowels it has. Then use this function to compute which word has the most vowels. 
 # 3. Update your code so that it now outputs  the word containing the most vowels *and* the number of vowels it contains.

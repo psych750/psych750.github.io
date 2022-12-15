@@ -110,3 +110,4 @@ responses = 'ccctcctttttcc'
 responsesMapping = {'c':'chair','t':'table'}
 [responsesMapping[curResp] for curResp in responses]
 
+

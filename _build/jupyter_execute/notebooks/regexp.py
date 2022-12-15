@@ -68,6 +68,7 @@ import pandas as pd
 data = pd.read_csv('https://psych750.github.io/data/ANC-written-count_over9.txt',encoding = "ISO-8859-1",sep="\t")
 
 
+
 # In[43]:
 
 

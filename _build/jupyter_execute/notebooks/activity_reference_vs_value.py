@@ -28,8 +28,6 @@
 # In[1]:
 
 
-
-
 a_fruit = 'apple'
 another_fruit = 'mango'
 
@@ -41,8 +39,6 @@ print(another_fruit)
 
 
 # In[2]:
-
-
 
 
 fruits = ['apple', 'pear']

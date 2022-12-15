@@ -1,16 +1,18 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Exercise 9 - Object oriented programming practice
+# # Exercise 10 - Object oriented programming practice
 # 
-# Accept the exercise (link coming soon)
+# [Accept the exercise](https://classroom.github.com/a/b4J2-QYV)
 # 
+# **Exercise is due Tuesday, 9pm** You can work in a team of at most 2 people. Put in _team in the team name after accepting the assignment if you are looking for a partner.
 # 
+# You can complete parts 1-4 either by directly editing the MovingCircles class (*not* preferred) OR creating a subclass of MovingCircles that inherit from the SuperClass and adds in your additional functionality (preferred). **If** you go with the first solution, your commits will need to include new movingcircles.py files. If you go with the second solution, then that file won't change from what's in the starting code so it doesn't need to be updated..5 be   
 
 # 
 # ## Part 1: Make it red!
 # 
-# Add a method `turn_it_red()` such that when you click on a moving circle, it turns red. All the circles should continue moving. There should not be any pauses.
+# Add a method `make_it_red()` such that when you click on a moving circle, it turns red. All the circles should continue moving. There should not be any pauses.
 # 
 
 # ## Part 2: Make them stop
@@ -19,10 +21,10 @@
 
 # ## Part 3 Make it drop!
 # 
-# Add a method `make_it_drop()` such that when you click on a moving circle, it drops to the bottom and remains there. The drop should be gradual -- the circle should smoothly descend down. The other circles should keep moving while the one you clicked on is dropping to the ground.
+# Add a method `make_it_drop()` such that when you click on a moving circle, it drops to the bottom and remains there (it's ok if it's not completely visible, but it should be a small tweak to make it visible, i.e., not go totally off-screen) The drop should be gradual -- the circle should smoothly descend down. The other circles should keep moving while the one you clicked on is dropping to the ground.
 # 
 # ```{tip}
-# Decrease the y position gradually until the bottom of the screen.
+# Have make_it_drop() change an attribute in the clicked-on circle so that it moves downwards.
 # ```
 # 
 
@@ -45,4 +47,12 @@
 
 # ## Bonus 
 # 
-# Coming soon.
+# a. (2 pts) Right now the circles are wiggling around and when they hit the wall they kind of stick around there until, by chance, they reverse course. Change the code so that the circles move in straight lines, but when they hit a wall, they bounce in a geometrically appropriate way (like [Pong](https://www.youtube.com/watch?v=fiShX2pTz9A)).
+# 
+# 
+# b. (3 pts) Extend your code to make a little game. Position little rectangles along the bottom. These will represent enemy buildings. Now, clicking on a circle should cause it to stop moving horizontally and accelerate downwards (just like in part 4). If it hits a building, the building should turn red. When you run out of circles to click on, the game is over. If you want, put a little score in the corner that increases by 1 every time you hit a building.
+# 
+# ```{tip}
+# You can check if a rectangle contains a point (like the position of a current circle.. hint hint) by using [Rect.contains()](https://psychopy.org/api/visual/rect.html#psychopy.visual.rect.Rect.contains)
+# ```
+# 

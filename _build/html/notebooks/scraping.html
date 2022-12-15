@@ -539,25 +539,23 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#scrape-images-from-a-google-image-search">
-   Scrape images from a Google Image Search
+  <a class="reference internal nav-link" href="#get-current-temperature-in-madison">
+   Get current temperature in Madison
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#barebones-version-of-google-image-scraping">
-     Barebones version of Google image scraping
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#google-image-scraping-with-some-bells-and-whistles">
-     Google image scraping with some bells and whistles
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#other-useful-resources-scraping-reddit-online-news">
-   Other useful resources: Scraping Reddit, Online News
+  <a class="reference internal nav-link" href="#example-of-using-the-newspaper-package">
+   Example of using the newspaper package
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lots-of-examples-and-pre-written-code-out-there">
+   Lots of examples and pre-written code out there!
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#now-it-s-your-turn">
+   Now it’s your turn
   </a>
  </li>
 </ul>
@@ -585,25 +583,23 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#scrape-images-from-a-google-image-search">
-   Scrape images from a Google Image Search
+  <a class="reference internal nav-link" href="#get-current-temperature-in-madison">
+   Get current temperature in Madison
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#barebones-version-of-google-image-scraping">
-     Barebones version of Google image scraping
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#google-image-scraping-with-some-bells-and-whistles">
-     Google image scraping with some bells and whistles
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#other-useful-resources-scraping-reddit-online-news">
-   Other useful resources: Scraping Reddit, Online News
+  <a class="reference internal nav-link" href="#example-of-using-the-newspaper-package">
+   Example of using the newspaper package
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lots-of-examples-and-pre-written-code-out-there">
+   Lots of examples and pre-written code out there!
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#now-it-s-your-turn">
+   Now it’s your turn
   </a>
  </li>
 </ul>
@@ -618,309 +614,380 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="webscraping-with-beautiful-soup">
 <h1>Webscraping with Beautiful Soup<a class="headerlink" href="#webscraping-with-beautiful-soup" title="Permalink to this headline">#</a></h1>
-<p>In this notebook, we’ll see how to use the <a class="reference external" href="https://www.youtube.com/watch?v=FWxFsJUlBbw">Beautiful Soup</a> library for some psychology-relevant webscraping tasks.</p>
+<p>This notebook shows off some basic capabilities. of the <a class="reference external" href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">BeautifulSoup</a> webscraping package. And here’s a handy <a class="reference external" href="https://whatacold.io/blog/2021-12-05-beautifulsoup4-cheatsheet/">cheat sheet</a>.</p>
+<p>Why Beautiful Soup? If you <a class="reference external" href="https://groups.google.com/g/beautifulsoup/c/nCOB_U4HqRc?pli=1">google it</a>, you’ll be told that it’s because of “tag soup” or some such nonsense. But here’s a <a class="reference external" href="https://www.crummy.com/software/BeautifulSoup/">hint</a>. See that picture? That’s your <a class="reference external" href="https://www.youtube.com/watch?v=FWxFsJUlBbw">answer</a>.</p>
 <section id="get-heading-names-in-a-wikipedia-article">
 <h2>Get heading names in a Wikipedia article<a class="headerlink" href="#get-heading-names-in-a-wikipedia-article" title="Permalink to this headline">#</a></h2>
-<p>Let’s begin by automatically grabbing The Simpsons character names from the <em>Simpson Family</em> <a class="reference external" href="https://en.wikipedia.org/wiki/Simpson_family">Wikipedia page</a>. Looking at the wiki article, we see that the character names are part of a bulleted list (produced by the html <code class="docutils literal notranslate"><span class="pre">&lt;ul&gt;</span></code> tag. Furthermore, they’re bolded. Let’s give that a try.</p>
-<div class="cell docutils container">
+<p>Let’s begin by automatically grabbing The Simpsons character names from the <em>Simpson Family</em> <a class="reference external" href="https://en.wikipedia.org/wiki/Simpson_family">Wikipedia page</a>. Looking at the wiki article, we see that the character names are part of a bulleted list (produced by the html <code class="docutils literal notranslate"><span class="pre">&lt;ul&gt;</span></code> tag. Furthermore, they’re bolded. Using this we can do the following:</p>
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
 <span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://en.wikipedia.org/wiki/Simpson_family&quot;</span>
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">headline</span> <span class="ow">in</span> <span class="n">soup</span><span class="p">(</span><span class="s1">&#39;span&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span> <span class="p">:</span> <span class="s1">&#39;mw-headline&#39;</span><span class="p">}):</span>
-    <span class="nb">print</span> <span class="n">headline</span><span class="o">.</span><span class="n">text</span>
+<span class="k">for</span> <span class="n">headline</span> <span class="ow">in</span> <span class="n">soup</span><span class="p">(</span><span class="s1">&#39;span&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;class&#39;</span> <span class="p">:</span> <span class="s1">&#39;mw-headline&#39;</span><span class="p">}):</span>
     <span class="n">topics</span> <span class="o">=</span> <span class="n">headline</span><span class="o">.</span><span class="n">find_next</span><span class="p">(</span><span class="s1">&#39;ul&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span> <span class="c1">#ul is bulletpoints; b is bold</span>
     <span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="p">:</span>
-        <span class="nb">print</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">topic</span><span class="o">.</span><span class="n">text</span>       
+        <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">topic</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Concept and origins
-* Herbert &quot;Herb&quot; Powell
-* Abbie
-* Chet
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* Herbert &#39;Herb&#39; Powell
+* Abbey
+* Chet Simpson
 * Dr. Simpson
-* Stanley
-* Uncle Tyrone
-* Great-Aunt Hortense
+* Stanley Simpson
+*  Uncle Tyrone Simpson 
+* Great-Aunt Hortense Simpson
 * Hugo Simpson
 * Mabel Simpson
 * Hiram Simpson
 * Virgil
 * Virgil Simpson
 * Eliza Simpson
+* Milford Van Houten
+* Van Houten
 * Abraham Simpson
 * Grampa&#39;s parents
-* Cyrus
+* Orville J. Simpson
+* Yuma Hickman
+* Cyrus Simpson
 * Rita LaFleur
 * Amber Simpson
-Creation
-* Herbert &quot;Herb&quot; Powell
-* Abbie
-* Chet
+* Bill Simpson
+* Great Uncle Boris
+* Mother Shabubu/Cousin Frank/Francine
+* Herbert &#39;Herb&#39; Powell
+* Abbey
+* Chet Simpson
 * Dr. Simpson
-* Stanley
-* Uncle Tyrone
-* Great-Aunt Hortense
+* Stanley Simpson
+*  Uncle Tyrone Simpson 
+* Great-Aunt Hortense Simpson
 * Hugo Simpson
 * Mabel Simpson
 * Hiram Simpson
 * Virgil
 * Virgil Simpson
 * Eliza Simpson
+* Milford Van Houten
+* Van Houten
 * Abraham Simpson
 * Grampa&#39;s parents
-* Cyrus
+* Orville J. Simpson
+* Yuma Hickman
+* Cyrus Simpson
 * Rita LaFleur
 * Amber Simpson
-Casting
-* Herbert &quot;Herb&quot; Powell
-* Abbie
-* Chet
+* Bill Simpson
+* Great Uncle Boris
+* Mother Shabubu/Cousin Frank/Francine
+* Herbert &#39;Herb&#39; Powell
+* Abbey
+* Chet Simpson
 * Dr. Simpson
-* Stanley
-* Uncle Tyrone
-* Great-Aunt Hortense
+* Stanley Simpson
+*  Uncle Tyrone Simpson 
+* Great-Aunt Hortense Simpson
 * Hugo Simpson
 * Mabel Simpson
 * Hiram Simpson
 * Virgil
 * Virgil Simpson
 * Eliza Simpson
+* Milford Van Houten
+* Van Houten
 * Abraham Simpson
 * Grampa&#39;s parents
-* Cyrus
+* Orville J. Simpson
+* Yuma Hickman
+* Cyrus Simpson
 * Rita LaFleur
 * Amber Simpson
-The Simpson family
-* Herbert &quot;Herb&quot; Powell
-* Abbie
-* Chet
+* Bill Simpson
+* Great Uncle Boris
+* Mother Shabubu/Cousin Frank/Francine
+* Herbert &#39;Herb&#39; Powell
+* Abbey
+* Chet Simpson
 * Dr. Simpson
-* Stanley
-* Uncle Tyrone
-* Great-Aunt Hortense
+* Stanley Simpson
+*  Uncle Tyrone Simpson 
+* Great-Aunt Hortense Simpson
 * Hugo Simpson
 * Mabel Simpson
 * Hiram Simpson
 * Virgil
 * Virgil Simpson
 * Eliza Simpson
+* Milford Van Houten
+* Van Houten
 * Abraham Simpson
 * Grampa&#39;s parents
-* Cyrus
+* Orville J. Simpson
+* Yuma Hickman
+* Cyrus Simpson
 * Rita LaFleur
 * Amber Simpson
-Homer Simpson
-* Herbert &quot;Herb&quot; Powell
-* Abbie
-* Chet
+* Bill Simpson
+* Great Uncle Boris
+* Mother Shabubu/Cousin Frank/Francine
+* Herbert &#39;Herb&#39; Powell
+* Abbey
+* Chet Simpson
 * Dr. Simpson
-* Stanley
-* Uncle Tyrone
-* Great-Aunt Hortense
+* Stanley Simpson
+*  Uncle Tyrone Simpson 
+* Great-Aunt Hortense Simpson
 * Hugo Simpson
 * Mabel Simpson
 * Hiram Simpson
 * Virgil
 * Virgil Simpson
 * Eliza Simpson
+* Milford Van Houten
+* Van Houten
 * Abraham Simpson
 * Grampa&#39;s parents
-* Cyrus
+* Orville J. Simpson
+* Yuma Hickman
+* Cyrus Simpson
 * Rita LaFleur
 * Amber Simpson
-Marge Simpson
-* Herbert &quot;Herb&quot; Powell
-* Abbie
-* Chet
+* Bill Simpson
+* Great Uncle Boris
+* Mother Shabubu/Cousin Frank/Francine
+* Herbert &#39;Herb&#39; Powell
+* Abbey
+* Chet Simpson
 * Dr. Simpson
-* Stanley
-* Uncle Tyrone
-* Great-Aunt Hortense
+* Stanley Simpson
+*  Uncle Tyrone Simpson 
+* Great-Aunt Hortense Simpson
 * Hugo Simpson
 * Mabel Simpson
 * Hiram Simpson
 * Virgil
 * Virgil Simpson
 * Eliza Simpson
+* Milford Van Houten
+* Van Houten
 * Abraham Simpson
 * Grampa&#39;s parents
-* Cyrus
+* Orville J. Simpson
+* Yuma Hickman
+* Cyrus Simpson
 * Rita LaFleur
 * Amber Simpson
-Bart Simpson
-* Herbert &quot;Herb&quot; Powell
-* Abbie
-* Chet
+* Bill Simpson
+* Great Uncle Boris
+* Mother Shabubu/Cousin Frank/Francine
+* Herbert &#39;Herb&#39; Powell
+* Abbey
+* Chet Simpson
 * Dr. Simpson
-* Stanley
-* Uncle Tyrone
-* Great-Aunt Hortense
+* Stanley Simpson
+*  Uncle Tyrone Simpson 
+* Great-Aunt Hortense Simpson
 * Hugo Simpson
 * Mabel Simpson
 * Hiram Simpson
 * Virgil
 * Virgil Simpson
 * Eliza Simpson
+* Milford Van Houten
+* Van Houten
 * Abraham Simpson
 * Grampa&#39;s parents
-* Cyrus
+* Orville J. Simpson
+* Yuma Hickman
+* Cyrus Simpson
 * Rita LaFleur
 * Amber Simpson
-Lisa Simpson
-* Herbert &quot;Herb&quot; Powell
-* Abbie
-* Chet
+* Bill Simpson
+* Great Uncle Boris
+* Mother Shabubu/Cousin Frank/Francine
+* Herbert &#39;Herb&#39; Powell
+* Abbey
+* Chet Simpson
 * Dr. Simpson
-* Stanley
-* Uncle Tyrone
-* Great-Aunt Hortense
+* Stanley Simpson
+*  Uncle Tyrone Simpson 
+* Great-Aunt Hortense Simpson
 * Hugo Simpson
 * Mabel Simpson
 * Hiram Simpson
 * Virgil
 * Virgil Simpson
 * Eliza Simpson
+* Milford Van Houten
+* Van Houten
 * Abraham Simpson
 * Grampa&#39;s parents
-* Cyrus
+* Orville J. Simpson
+* Yuma Hickman
+* Cyrus Simpson
 * Rita LaFleur
 * Amber Simpson
-Maggie Simpson
-* Herbert &quot;Herb&quot; Powell
-* Abbie
-* Chet
+* Bill Simpson
+* Great Uncle Boris
+* Mother Shabubu/Cousin Frank/Francine
+* Herbert &#39;Herb&#39; Powell
+* Abbey
+* Chet Simpson
 * Dr. Simpson
-* Stanley
-* Uncle Tyrone
-* Great-Aunt Hortense
+* Stanley Simpson
+*  Uncle Tyrone Simpson 
+* Great-Aunt Hortense Simpson
 * Hugo Simpson
 * Mabel Simpson
 * Hiram Simpson
 * Virgil
 * Virgil Simpson
 * Eliza Simpson
+* Milford Van Houten
+* Van Houten
 * Abraham Simpson
 * Grampa&#39;s parents
-* Cyrus
+* Orville J. Simpson
+* Yuma Hickman
+* Cyrus Simpson
 * Rita LaFleur
 * Amber Simpson
-Abe Simpson
-* Herbert &quot;Herb&quot; Powell
-* Abbie
-* Chet
+* Bill Simpson
+* Great Uncle Boris
+* Mother Shabubu/Cousin Frank/Francine
+* Herbert &#39;Herb&#39; Powell
+* Abbey
+* Chet Simpson
 * Dr. Simpson
-* Stanley
-* Uncle Tyrone
-* Great-Aunt Hortense
+* Stanley Simpson
+*  Uncle Tyrone Simpson 
+* Great-Aunt Hortense Simpson
 * Hugo Simpson
 * Mabel Simpson
 * Hiram Simpson
 * Virgil
 * Virgil Simpson
 * Eliza Simpson
+* Milford Van Houten
+* Van Houten
 * Abraham Simpson
 * Grampa&#39;s parents
-* Cyrus
+* Orville J. Simpson
+* Yuma Hickman
+* Cyrus Simpson
 * Rita LaFleur
 * Amber Simpson
-Mona Simpson
-* Herbert &quot;Herb&quot; Powell
-* Abbie
-* Chet
+* Bill Simpson
+* Great Uncle Boris
+* Mother Shabubu/Cousin Frank/Francine
+* Herbert &#39;Herb&#39; Powell
+* Abbey
+* Chet Simpson
 * Dr. Simpson
-* Stanley
-* Uncle Tyrone
-* Great-Aunt Hortense
+* Stanley Simpson
+*  Uncle Tyrone Simpson 
+* Great-Aunt Hortense Simpson
 * Hugo Simpson
 * Mabel Simpson
 * Hiram Simpson
 * Virgil
 * Virgil Simpson
 * Eliza Simpson
+* Milford Van Houten
+* Van Houten
 * Abraham Simpson
 * Grampa&#39;s parents
-* Cyrus
+* Orville J. Simpson
+* Yuma Hickman
+* Cyrus Simpson
 * Rita LaFleur
 * Amber Simpson
-Extended Simpson family
-* Herbert &quot;Herb&quot; Powell
-* Abbie
-* Chet
+* Bill Simpson
+* Great Uncle Boris
+* Mother Shabubu/Cousin Frank/Francine
+* Herbert &#39;Herb&#39; Powell
+* Abbey
+* Chet Simpson
 * Dr. Simpson
-* Stanley
-* Uncle Tyrone
-* Great-Aunt Hortense
+* Stanley Simpson
+*  Uncle Tyrone Simpson 
+* Great-Aunt Hortense Simpson
 * Hugo Simpson
 * Mabel Simpson
 * Hiram Simpson
 * Virgil
 * Virgil Simpson
 * Eliza Simpson
+* Milford Van Houten
+* Van Houten
 * Abraham Simpson
 * Grampa&#39;s parents
-* Cyrus
+* Orville J. Simpson
+* Yuma Hickman
+* Cyrus Simpson
 * Rita LaFleur
 * Amber Simpson
-The Bouvier family
-* Sideshow Bob
+* Bill Simpson
+* Great Uncle Boris
+* Mother Shabubu/Cousin Frank/Francine
+* &quot;Sideshow Bob&quot; Terwilliger
 * Lionel Hutz
 * Troy McClure
 * Disco Stu
 * Grampa Simpson
-Jacqueline Bouvier
-* Sideshow Bob
+* &quot;Fat Tony&quot; D&#39;Amico
+* &quot;Sideshow Bob&quot; Terwilliger
 * Lionel Hutz
 * Troy McClure
 * Disco Stu
 * Grampa Simpson
-Clancy Bouvier
-* Sideshow Bob
+* &quot;Fat Tony&quot; D&#39;Amico
+* &quot;Sideshow Bob&quot; Terwilliger
 * Lionel Hutz
 * Troy McClure
 * Disco Stu
 * Grampa Simpson
-Patty and Selma Bouvier
-* Sideshow Bob
+* &quot;Fat Tony&quot; D&#39;Amico
+* &quot;Sideshow Bob&quot; Terwilliger
 * Lionel Hutz
 * Troy McClure
 * Disco Stu
 * Grampa Simpson
-Ling Bouvier
-* Sideshow Bob
+* &quot;Fat Tony&quot; D&#39;Amico
+* &quot;Sideshow Bob&quot; Terwilliger
 * Lionel Hutz
 * Troy McClure
 * Disco Stu
 * Grampa Simpson
-Selma&#39;s husbands
-* Sideshow Bob
+* &quot;Fat Tony&quot; D&#39;Amico
+* &quot;Sideshow Bob&quot; Terwilliger
 * Lionel Hutz
 * Troy McClure
 * Disco Stu
 * Grampa Simpson
-Extended Bouvier family
+* &quot;Fat Tony&quot; D&#39;Amico
+* &quot;Sideshow Bob&quot; Terwilliger
+* Lionel Hutz
+* Troy McClure
+* Disco Stu
+* Grampa Simpson
+* &quot;Fat Tony&quot; D&#39;Amico
 * Gladys Gurney
-* Great Uncle Hubert
+* Great-Uncle Hubert
 * Dot
 * Lou Gurney
-* Uncle Arthur
-Pets
+* Uncle Arthur Bouvier
 * Santa&#39;s Little Helper
-* Laddie
-Dogs
 * Santa&#39;s Little Helper
-* Laddie
-Cats
 * Snowball
 * Snowball I
 * Snowball II
-Other pets
 * Plopper
 * Mojo
 * Chirpy Boy
@@ -930,180 +997,485 @@ Other pets
 * Pokey
 * Princess
 * Pinchy
-References
-Bibliography
 </pre></div>
 </div>
 </div>
 </div>
-<p>There are some false alarms, but this generally works! You might wonder whether this is too much trouble to go through just to get the Simpsons headings. But of course the identical code will work on pretty much <em>any</em> wiki article. And that’s really the point.</p>
+<p>There are some false alarms, but it works pretty well! You might wonder whether this is too much trouble to go through just to get the Simpsons characters. But of course the identical code will work on pretty much <em>any</em> wiki article. …an the approach can be used on any webpage. And that’s really the point.</p>
 </section>
-<section id="scrape-images-from-a-google-image-search">
-<h2>Scrape images from a Google Image Search<a class="headerlink" href="#scrape-images-from-a-google-image-search" title="Permalink to this headline">#</a></h2>
-<p>Wouldn’t it be neat if we could automatically download the images returned from a <a class="reference external" href="https://www.google.com/search?tbm=isch&amp;sa=1&amp;ei=4x3hWtaILpCJjwTKy7xA&amp;q=biggest+dog&amp;oq=biggest+dog">Google Image Query</a>.
-Here’s one way to do it (<a class="reference external" href="https://gist.github.com/genekogan/ebd77196e4bf0705db51f86431099e57">props to this repo</a>).</p>
-<section id="barebones-version-of-google-image-scraping">
-<h3>Barebones version of Google image scraping<a class="headerlink" href="#barebones-version-of-google-image-scraping" title="Permalink to this headline">#</a></h3>
+<section id="get-current-temperature-in-madison">
+<h2>Get current temperature in Madison<a class="headerlink" href="#get-current-temperature-in-madison" title="Permalink to this headline">#</a></h2>
+<p>Let’s look at another example showing how we can grab a particular piece of information from a webpage: the current temperature. I’ll walk you through what’s going on here in class.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
-<span class="kn">import</span> <span class="nn">requests</span>
-<span class="c1">#import re</span>
-<span class="kn">import</span> <span class="nn">urllib2</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="c1">#import sys</span>
-<span class="kn">import</span> <span class="nn">json</span>
-
-<span class="k">def</span> <span class="nf">get_soup</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">header</span><span class="p">):</span>
-	<span class="k">return</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">urllib2</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">headers</span><span class="o">=</span><span class="n">header</span><span class="p">)),</span><span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
-
-<span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;cats&quot;</span>
-<span class="n">save_directory</span> <span class="o">=</span> <span class="n">query</span>
-<span class="n">max_images</span> <span class="o">=</span> <span class="mi">12</span>
-
-<span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://www.google.com/search?q=&quot;</span><span class="o">+</span><span class="n">query</span><span class="o">+</span><span class="s2">&quot;&amp;source=lnms&amp;tbm=isch&quot;</span>
-<span class="n">header</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span><span class="s2">&quot;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36&quot;</span><span class="p">}</span>
-<span class="n">soup</span> <span class="o">=</span> <span class="n">get_soup</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">header</span><span class="p">)</span>
-
-<span class="k">try</span><span class="p">:</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">stat</span><span class="p">(</span><span class="n">save_directory</span><span class="p">)</span>
-<span class="k">except</span><span class="p">:</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">save_directory</span><span class="p">)</span>
-
-
-<span class="n">ActualImages</span><span class="o">=</span><span class="p">[]</span><span class="c1"># contains the link for Large original images, type of  image</span>
-<span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,{</span><span class="s2">&quot;class&quot;</span><span class="p">:</span><span class="s2">&quot;rg_meta&quot;</span><span class="p">}):</span>
-    <span class="n">link</span> <span class="p">,</span> <span class="n">Type</span> <span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">text</span><span class="p">)[</span><span class="s2">&quot;ou&quot;</span><span class="p">]</span>  <span class="p">,</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">text</span><span class="p">)[</span><span class="s2">&quot;ity&quot;</span><span class="p">]</span>
-    <span class="n">ActualImages</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">link</span><span class="p">,</span><span class="n">Type</span><span class="p">))</span>
-<span class="k">for</span> <span class="n">i</span> <span class="p">,</span> <span class="p">(</span><span class="n">img</span> <span class="p">,</span> <span class="n">Type</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span> <span class="n">ActualImages</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">max_images</span><span class="p">]):</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="nb">print</span> <span class="s1">&#39;retrieving image&#39;</span><span class="p">,</span> <span class="n">i</span>
-        <span class="n">req</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;User-Agent&#39;</span> <span class="p">:</span> <span class="n">header</span><span class="p">})</span>
-        <span class="n">raw_img</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">req</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">Type</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
-            <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">save_directory</span> <span class="p">,</span> <span class="s2">&quot;img&quot;</span> <span class="o">+</span> <span class="s2">&quot;_&quot;</span><span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;.jpg&quot;</span><span class="p">),</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span>
-        <span class="k">else</span> <span class="p">:</span>
-            <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">save_directory</span> <span class="p">,</span> <span class="s2">&quot;img&quot;</span> <span class="o">+</span> <span class="s2">&quot;_&quot;</span><span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;.&quot;</span><span class="o">+</span><span class="n">Type</span><span class="p">),</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">raw_img</span><span class="p">)</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span> <span class="s2">&quot;could not load : &quot;</span><span class="o">+</span><span class="n">img</span>
-        <span class="nb">print</span> <span class="n">e</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://weather.com/weather/today/l/USWI0411:1:US&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="n">results</span><span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;span&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;CurrentConditions--tempValue--MHmYY&#39;</span><span class="p">})</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">getText</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19°
 </pre></div>
 </div>
 </div>
 </div>
+<p>(This is about as simple as it gets). This approach scales (and that’s the point!). If we want to get the temperature of a 100 different cities, just load the appropriate URLs and iterate through them.</p>
 </section>
-<section id="google-image-scraping-with-some-bells-and-whistles">
-<h3>Google image scraping with some bells and whistles<a class="headerlink" href="#google-image-scraping-with-some-bells-and-whistles" title="Permalink to this headline">#</a></h3>
-<p>The code above does the job, but can be improved considerably. First, we can refactor it, dividing up the various calls into separate functions. Second, we can make the query, directory, and number of images desired be command-line arguments. The code below (slightly adapted from a post by <a class="reference external" href="https://gist.github.com/hadsed"><em>hadsed</em></a> <a class="reference external" href="https://gist.github.com/genekogan/ebd77196e4bf0705db51f86431099e57">here</a>.</p>
-<p>Among other things, the code demonstrates the use of the argument-parsing <a class="reference external" href="https://docs.python.org/2.7/library/argparse.html"><code class="docutils literal notranslate"><span class="pre">argparse</span></code></a> package which allows you to specify options at the terminal that your python program can see (e.g., the query string, number of images, etc). This code also demonstrates logging.</p>
+<section id="example-of-using-the-newspaper-package">
+<h2>Example of using the newspaper package<a class="headerlink" href="#example-of-using-the-newspaper-package" title="Permalink to this headline">#</a></h2>
+<p>There’s an enormous infrastructure for web scraping with lots of codebases for common tasks, e.g., scraping <a class="reference external" href="https://newspaper.readthedocs.io/en/latest/">newspapers3k</a> for scraping online news. Let’s do a quick demo of this one.</p>
+<p>First install the package using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">newspaper3k</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
-<span class="kn">import</span> <span class="nn">json</span>
-<span class="kn">import</span> <span class="nn">itertools</span>
-<span class="kn">import</span> <span class="nn">logging</span>
-<span class="kn">import</span> <span class="nn">re</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">from</span> <span class="nn">urllib2</span> <span class="kn">import</span> <span class="n">urlopen</span><span class="p">,</span> <span class="n">Request</span>
-<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">newspaper</span> <span class="kn">import</span> <span class="n">Article</span>
 
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.cnn.com/2022/11/30/world/black-hole-devours-star-scn/index.html&quot;</span>
+<span class="n">article</span> <span class="o">=</span> <span class="n">Article</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">article</span><span class="o">.</span><span class="n">download</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">article</span><span class="p">)</span>
+<span class="n">article</span><span class="o">.</span><span class="n">parse</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">article</span><span class="o">.</span><span class="n">authors</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">article</span><span class="o">.</span><span class="n">publish_date</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">article</span><span class="o">.</span><span class="n">text</span><span class="p">[:</span><span class="mi">1000</span><span class="p">])</span> <span class="c1">#first 1000 chars</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;newspaper.article.Article object at 0x7fe84af9c8b0&gt;
+[&#39;Ashley Strickland&#39;]
+2022-11-30 00:00:00
+Sign up for CNN’s Wonder Theory science newsletter. Explore the universe with news on fascinating discoveries, scientific advancements and more.
 
-<span class="k">def</span> <span class="nf">configure_logging</span><span class="p">():</span>
-	<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span>
-	<span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
-	<span class="n">handler</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">()</span>
-	<span class="n">handler</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span>
-		<span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span><span class="s1">&#39;[</span><span class="si">%(asctime)s</span><span class="s1"> </span><span class="si">%(levelname)s</span><span class="s1"> </span><span class="si">%(module)s</span><span class="s1">]: </span><span class="si">%(message)s</span><span class="s1">&#39;</span><span class="p">))</span>
-	<span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">handler</span><span class="p">)</span>
-	<span class="k">return</span> <span class="n">logger</span>
+CNN —
 
-<span class="n">logger</span> <span class="o">=</span> <span class="n">configure_logging</span><span class="p">()</span>
+An incredibly bright flash that appeared in the night sky in February was the result of a star straying too close to a supermassive black hole, meeting its untimely end there as it was ripped to shreds.
 
-<span class="n">REQUEST_HEADER</span> <span class="o">=</span> <span class="p">{</span> <span class="c1">#this can be changed to simulate different types of browsers</span>
-	<span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s2">&quot;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36&quot;</span><span class="p">}</span>
+But the rare cosmic event actually occurred 8.5 billion light years away from Earth, when the universe was just a third of its current age — and it has created more questions than answers.
 
+The signal from the luminous explosion, known as AT 2022cmc, was first picked up by the Zwicky Transient Facility at the California Institute of Technology’s Palomar Observatory on February 11.
 
-<span class="k">def</span> <span class="nf">get_soup</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">header</span><span class="p">):</span>
-	<span class="n">response</span> <span class="o">=</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">Request</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">header</span><span class="p">))</span>
-	<span class="k">return</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+This graphic shows how a tidal disruption event might look in space. Carl Knox/OzGrav/Swinburne University of Technology
 
-<span class="k">def</span> <span class="nf">get_query_url</span><span class="p">(</span><span class="n">query</span><span class="p">):</span>
-	<span class="k">return</span> <span class="s2">&quot;https://www.google.com/search?q=</span><span class="si">%s</span><span class="s2">&amp;source=lnms&amp;tbm=isch&quot;</span> <span class="o">%</span> <span class="n">query</span>
-
-<span class="k">def</span> <span class="nf">extract_images_from_soup</span><span class="p">(</span><span class="n">soup</span><span class="p">):</span>
-	<span class="n">image_elements</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;rg_meta&quot;</span><span class="p">})</span>
-	<span class="n">metadata_dicts</span> <span class="o">=</span> <span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">text</span><span class="p">)</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">image_elements</span><span class="p">)</span>
-	<span class="n">link_type_records</span> <span class="o">=</span> <span class="p">((</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;ou&quot;</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;ity&quot;</span><span class="p">])</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">metadata_dicts</span><span class="p">)</span>
-	<span class="k">return</span> <span class="n">link_type_records</span>
-
-<span class="k">def</span> <span class="nf">extract_images</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">num_images</span><span class="p">):</span>
-	<span class="n">url</span> <span class="o">=</span> <span class="n">get_query_url</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
-	<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Souping&quot;</span><span class="p">)</span>
-	<span class="n">soup</span> <span class="o">=</span> <span class="n">get_soup</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">REQUEST_HEADER</span><span class="p">)</span>
-	<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Extracting image urls&quot;</span><span class="p">)</span>
-	<span class="n">link_type_records</span> <span class="o">=</span> <span class="n">extract_images_from_soup</span><span class="p">(</span><span class="n">soup</span><span class="p">)</span>
-	<span class="k">return</span> <span class="n">itertools</span><span class="o">.</span><span class="n">islice</span><span class="p">(</span><span class="n">link_type_records</span><span class="p">,</span> <span class="n">num_images</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">get_raw_image</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
-	<span class="n">req</span> <span class="o">=</span> <span class="n">Request</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">REQUEST_HEADER</span><span class="p">)</span>
-	<span class="n">resp</span> <span class="o">=</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
-	<span class="k">return</span> <span class="n">resp</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-
-<span class="k">def</span> <span class="nf">save_image</span><span class="p">(</span><span class="n">raw_image</span><span class="p">,</span> <span class="n">image_type</span><span class="p">,</span> <span class="n">file_name</span><span class="p">,</span> <span class="n">save_directory</span><span class="p">):</span>
-	<span class="n">extension</span> <span class="o">=</span> <span class="n">image_type</span> <span class="k">if</span> <span class="n">image_type</span> <span class="k">else</span> <span class="s1">&#39;jpg&#39;</span>
-	<span class="n">save_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">save_directory</span><span class="p">,</span> <span class="n">file_name</span><span class="o">+</span> <span class="s2">&quot;.&quot;</span> <span class="o">+</span> <span class="n">extension</span><span class="p">)</span>
-	<span class="nb">print</span> <span class="s1">&#39;image_type is&#39;</span><span class="p">,</span> <span class="n">image_type</span><span class="p">,</span> <span class="s1">&#39;path is&#39;</span><span class="p">,</span> <span class="n">save_path</span>
-	<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">save_path</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">image_file</span><span class="p">:</span>
-		<span class="n">image_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">raw_image</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">download_images_to_dir</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">images</span><span class="p">,</span> <span class="n">save_directory</span><span class="p">,</span> <span class="n">num_images</span><span class="p">):</span>
-	<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">image_type</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">images</span><span class="p">):</span>
-		<span class="k">try</span><span class="p">:</span>
-			<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Making request (</span><span class="si">%d</span><span class="s2">/</span><span class="si">%d</span><span class="s2">): </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">num_images</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>
-			<span class="n">raw_image</span> <span class="o">=</span> <span class="n">get_raw_image</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-			<span class="n">file_name</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;+&#39;</span><span class="p">,</span><span class="s1">&#39;_&#39;</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;_&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-			<span class="n">save_image</span><span class="p">(</span><span class="n">raw_image</span><span class="p">,</span> <span class="n">image_type</span><span class="p">,</span> <span class="n">file_name</span><span class="p">,</span> <span class="n">save_directory</span><span class="p">)</span>
-		<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-			<span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">save_directory</span><span class="p">,</span> <span class="n">num_images</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
-	<span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;+&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">query</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
-	<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Extracting image links&quot;</span><span class="p">)</span>
-	<span class="n">images</span> <span class="o">=</span> <span class="n">extract_images</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">num_images</span><span class="p">)</span>
-	<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Downloading images&quot;</span><span class="p">)</span>
-	<span class="k">try</span><span class="p">:</span>
-		<span class="n">os</span><span class="o">.</span><span class="n">stat</span><span class="p">(</span><span class="n">save_directory</span><span class="p">)</span>
-	<span class="k">except</span><span class="p">:</span>
-		<span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">save_directory</span><span class="p">)</span>
-	<span class="n">download_images_to_dir</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">images</span><span class="p">,</span> <span class="n">save_directory</span><span class="p">,</span> <span class="n">num_images</span><span class="p">)</span>
-	<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Finished&quot;</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-	<span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;Scrape Google images&#39;</span><span class="p">)</span>
-	<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-s&#39;</span><span class="p">,</span> <span class="s1">&#39;--search&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;bananas&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;search term or phrase&#39;</span><span class="p">)</span>
-	<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-n&#39;</span><span class="p">,</span> <span class="s1">&#39;--num_images&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;num images to save&#39;</span><span class="p">)</span>
-	<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-d&#39;</span><span class="p">,</span> <span class="s1">&#39;--directory&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;save directory&#39;</span><span class="p">)</span>
-	<span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
-	<span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">directory</span><span class="o">==</span><span class="s1">&#39;.&#39;</span><span class="p">:</span>
-		<span class="n">args</span><span class="o">.</span><span class="n">directory</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">search</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="s1">&#39;_&#39;</span><span class="p">)</span> <span class="c1">#use query string as directory</span>
-	<span class="nb">print</span> <span class="n">args</span><span class="o">.</span><span class="n">search</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">directory</span>
-	<span class="n">run</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">search</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">directory</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">num_images</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-	<span class="n">main</span><span class="p">()</span>
+When a star is torn apart by a black hole’s gravitational tidal forces, it’s known as a tidal disruption event. Astronomers have observe
 </pre></div>
 </div>
 </div>
 </div>
-<p>Downloading more than 100 images requires simulating a scrolling action with a web-browser. This can be done by using Selenium. You’ll need to <a class="reference external" href="https://www.seleniumhq.org/">download it</a>, and also download <a class="reference external" href="https://sites.google.com/a/chromium.org/chromedriver/downloads">Chromedriver</a>. Then incorporate the code provided by <a class="reference external" href="https://gist.github.com/genekogan/ebd77196e4bf0705db51f86431099e57"><em>aaronsherwood</em></a> into the code above.</p>
+<p>We can also grab images associated with it. Let’s grab the URL of the head image and then download it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">urllib</span>
+<span class="kn">from</span> <span class="nn">IPython</span> <span class="kn">import</span> <span class="n">display</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">article</span><span class="o">.</span><span class="n">top_image</span><span class="p">)</span>
+<span class="n">raw_img</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">article</span><span class="o">.</span><span class="n">top_image</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="c1">#display.Image(raw_img) # this will work when you render the notebook locally, but not when it&#39;s uploaded to github as we do here</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://media.cnn.com/api/v1/images/stellar/prod/221130121224-01-black-hole-tidal-disruption-event.jpg?c=16x9&amp;q=w_800,c_fill
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="top_image" src="https://media.cnn.com/api/v1/images/stellar/prod/221130121224-01-black-hole-tidal-disruption-event.jpg" /></p>
 </section>
+<section id="lots-of-examples-and-pre-written-code-out-there">
+<h2>Lots of examples and pre-written code out there!<a class="headerlink" href="#lots-of-examples-and-pre-written-code-out-there" title="Permalink to this headline">#</a></h2>
+<p>Here’s a nice step by step tutorial  example of a script that uses BeautifulSoup to <a class="reference external" href="https://proxiesapi-com.medium.com/scraping-google-scholar-with-python-and-beautifulsoup-850cbdfedbcf">scrape data from google scholar</a>.</p>
+<p>For an especially creative example of scraping, check out <a class="reference external" href="https://erikbern.com/2017/02/01/language-pitch.html">this blog post by Erik Bern</a> which bulk downloads pronunciations of words in various languages to examine whether there are consistent differences in pitch (fundamental frequency) between languages (Sounds like Finnish is Lowwww).</p>
 </section>
-<section id="other-useful-resources-scraping-reddit-online-news">
-<h2>Other useful resources: Scraping Reddit, Online News<a class="headerlink" href="#other-useful-resources-scraping-reddit-online-news" title="Permalink to this headline">#</a></h2>
-<p>There’s really enormous infrastructure for web scraping, e.g., <a class="reference external" href="http://www.storybench.org/how-to-scrape-reddit-with-python/">PRAW</a> for scraping reddit, <a class="reference external" href="https://github.com/codelucas/newspaper">newspaper</a> for scraping online news. See <a class="reference external" href="http://bdewilde.github.io/blog/blogger/2012/11/26/web-scraping-and-html-parsing-2/">here</a> and <a class="reference external" href="https://opensourceforu.com/2016/07/22843/">here</a> for more examples. A really creative example of scraping is <a class="reference external" href="https://erikbern.com/2017/02/01/language-pitch.html">this blog post by Erik Bern</a> which bulk downloads pronunciations of words in various languages to examine whether there are consistent differences in pitch (fundamental frequency) between languages (Hint, yes. Finnish is Lowwww).</p>
+<section id="now-it-s-your-turn">
+<h2>Now it’s your turn<a class="headerlink" href="#now-it-s-your-turn" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Get the current water temperature in Malta, displayed here:
+<code class="docutils literal notranslate"><span class="pre">https://seatemperature.net/current/malta/valletta-il-belt-valletta-malta-sea-temperature</span></code></p></li>
+</ul>
+<ul class="simple">
+<li><p>Now a trickier one – get the displayed temperature from a week ago, displayed just to the right of the current temperature.</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">children</span></code> method to iterate through the “children” of the id containing the info you need.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://seatemperature.net/current/malta/valletta-il-belt-valletta-malta-sea-temperature&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;temp2&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">cur_result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="n">para</span> <span class="o">=</span> <span class="n">cur_result</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">cur_para</span> <span class="ow">in</span> <span class="n">para</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">cur_para</span><span class="o">.</span><span class="n">getText</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>yesterday: 68°F
+a week ago: 72°F
+Trend: slow drop
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;temp2&#39;</span><span class="p">)</span>
+
+<span class="n">children</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">children</span><span class="p">)</span>
+<span class="c1">#print(children)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">children</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">getText</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>72°F
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Let’s do another one.</p></li>
+</ul>
+<p>Here’s an example of scraping the Billboard 100 site</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">page</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://www.billboard.com/charts/year-end/hot-100-songs/&#39;</span><span class="p">)</span>
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;h3&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;c-title&#39;</span><span class="p">})</span>
+<span class="k">for</span> <span class="n">placement</span><span class="p">,</span> <span class="n">result</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">results</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">placement</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">result</span><span class="o">.</span><span class="n">getText</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+    <span class="k">if</span> <span class="n">placement</span><span class="o">+</span><span class="mi">1</span><span class="o">&gt;=</span><span class="mi">100</span><span class="p">:</span> <span class="c1">#avoids some junk at the end</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 Heat Waves
+2 As It Was
+3 Stay
+4 Easy On Me
+5 Shivers
+6 First Class
+7 Big Energy
+8 Ghost
+9 Super Gremlin
+10 Cold Heart (PNAU Remix)
+11 Wait For U
+12 About Damn Time
+13 Bad Habits
+14 Thats What I Want
+15 Enemy
+16 Industry Baby
+17 abcdefu
+18 Need To Know
+19 Wasted On You
+20 Me Porto Bonito
+21 Woman
+22 Titi Me Pregunto
+23 Running Up That Hill (A Deal With God)
+24 We Don&#39;t Talk About Bruno
+25 Late Night Talking
+26 I Like You (A Happier Song)
+27 You Proof
+28 Bad Habit
+29 Sunroof
+30 One Right Now
+31 Good 4 U
+32 Numb Little Bug
+33 Jimmy Cooks
+34 &#39;Til You Can&#39;t
+35 Fancy Like
+36 The Kind Of Love We Make
+37 I Ain&#39;t Worried
+38 Break My Soul
+39 Something In The Orange
+40 Save Your Tears
+41 Smokin Out The Window
+42 Levitating
+43 In A Minute
+44 Moscow Mule
+45 You Right
+46 She Had Me At Heads Carolina
+47 Vegas
+48 Pushin P
+49 Buy Dirt
+50 I Hate U
+51 Boyfriend
+52 Glimpse Of Us
+53 Surface Pressure
+54 Fall In Love
+55 Love Nwantiti (Ah Ah Ah)
+56 Super Freaky Girl
+57 Hrs And Hrs
+58 Sand In My Boots
+59 MAMIII
+60 Knife Talk
+61 AA
+62 Sweetest Pie
+63 Provenza
+64 Essence
+65 All I Want For Christmas Is You
+66 Bam Bam
+67 5 Foot 9
+68 Get Into It (Yuh)
+69 Efecto
+70 Rock And A Hard Place
+71 Doin&#39; This
+72 Oh My God
+73 Better Days
+74 Meet Me At Our Spot
+75 Fingers Crossed
+76 All Too Well (Taylor&#39;s Version)
+77 Party
+78 Despues de La Playa
+79 You Should Probably Leave
+80 Rockin&#39; Around The Christmas Tree
+81 Broadway Girls
+82 Take My Name
+83 What Happened To Virgil
+84 Puffin On Zootiez
+85 Like I Love Country Music
+86 Jingle Bell Rock
+87 Ojitos Lindos
+88 Trouble With A Heartbreak
+89 A Holly Jolly Christmas
+90 Kiss Me More
+91 She Likes It
+92 Never Say Never
+93 Damn Strait
+94 She&#39;s All I Wanna Be
+95 Last Night Lonely
+96 Flower Shops
+97 To The Moon!
+98 Unholy
+99 One Mississippi
+100 Circles Around This Town
+</pre></div>
+</div>
+</div>
+</div>
+<p>Can you figure out how to get the <strong>artists</strong> instead?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">page</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://www.billboard.com/charts/year-end/hot-100-songs/&#39;</span><span class="p">)</span>
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;span&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;class&#39;</span> <span class="p">:</span> <span class="s1">&#39;c-label&#39;</span><span class="p">})</span>
+<span class="k">for</span> <span class="n">cur_result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="n">sub_result</span> <span class="o">=</span> <span class="n">cur_result</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;span&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;a-font-primary-s&#39;</span><span class="p">})</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">sub_result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">getText</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -1119,13 +1491,13 @@ Here’s one way to do it (<a class="reference external" href="https://gist.gith
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python2",
+            kernelName: "python3",
             path: "./notebooks"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python2'</script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               

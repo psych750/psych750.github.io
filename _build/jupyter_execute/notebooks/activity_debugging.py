@@ -102,6 +102,7 @@ b = myFunction(y)
 print(b)
 
 
+
 # 8. I'm trying to create a function that multiplies the number I input by 3, but why does it result in `None`? And why can't I print x??
 
 # In[34]:

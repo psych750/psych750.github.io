@@ -269,7 +269,6 @@ print("\nThat's just how I feel about dogs.")
 # In[ ]:
 
 
-
 # Create an empty list to hold our users.
 names = []
 
@@ -584,7 +583,6 @@ print(str[::-1])
 # Why does this work? Let's walk through a few variants of this syntax to better understand the notation.
 
 # In[ ]:
-
 
 
 students = ['bernice', 'aaron', 'cody', 'matt']

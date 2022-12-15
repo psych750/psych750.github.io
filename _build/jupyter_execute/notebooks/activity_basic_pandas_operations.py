@@ -44,6 +44,7 @@ df = pd.read_csv('ClassList.csv')
 df.columns
 
 
+
 # Pandas implements its own data types, but you can convert them to familiar things like lists (Basically, if it looks like it's a list, you can convert it to a list. You'll lose some functionality when you do it, but often it's functionality you don't need.).
 
 # In[30]:

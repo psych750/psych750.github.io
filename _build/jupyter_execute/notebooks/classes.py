@@ -14,10 +14,8 @@
 # In[1]:
 
 
-class Rocket():
-    # Rocket simulates a rocket ship for a game,
-    #  or a physics simulation.
-    
+class Rocket():   
+     
     def __init__(self):
         # Each rocket has an (x,y) position.
         self.x = 0
@@ -31,11 +29,8 @@ class Rocket():
 # In[2]:
 
 
-###highlight=[11,12,13]
 class Rocket():
-    # Rocket simulates a rocket ship for a game,
-    #  or a physics simulation.
-    
+
     def __init__(self):
         # Each rocket has an (x,y) position.
         self.x = 0
@@ -51,10 +46,7 @@ class Rocket():
 # In[3]:
 
 
-###highlight=[15,16, 17]
 class Rocket():
-    # Rocket simulates a rocket ship for a game,
-    #  or a physics simulation.
     
     def __init__(self):
         # Each rocket has an (x,y) position.
@@ -65,21 +57,23 @@ class Rocket():
         # Increment the y-position of the rocket.
         self.y += 1
 
-# Create a Rocket object.
-my_rocket = Rocket()
-print(my_rocket)
 
 
-# To actually use a class, you create a variable such as *`my_rocket`*. Then you set that equal to the name of the class, with an empty set of parentheses. Python creates an **object** from the class. An object is a single *instance* of the Rocket class; it has a copy of each of the class's variables, and it can do any action that is defined for the class. In this case, you can see that the variable `my_rocket` is a Rocket object from the `__main__` program file, which is stored at a particular location in memory. Each instance is independent of another. Normally, changes you make to one will not affect other instances you've created. 
+# To actually *use* a class, you create a variable such as *`my_rocket`* like so:
 # 
-# Once you have a class, you can define an object and use its methods. Here is how you might define a rocket and have it start to move up:
+# ```python
+# my_rocket = Rocket()
+# ```
+# 
+# `my_rocket` is now an instance of the Rocket class. It has a copy of each of the class's variables and it can do any action that is defined for the class. In this case, you can see that the variable `my_rocket` is a Rocket object from the `__main__` program file, which is stored at a particular location in memory. Each instance is independent of another. Normally, changes you make to one will not affect other instances you've created. 
+# 
+# 
 
-# In[4]:
+# In[1]:
 
 
 class Rocket():
-    # Rocket simulates a rocket ship for a game,
-    #  or a physics simulation.
+    # Rocket simulates a rocket ship for a game (or a physics simulation!).
     
     def __init__(self):
         # Each rocket has an (x,y) position.
@@ -101,7 +95,7 @@ my_rocket.move_up()
 print("Rocket altitude:", my_rocket.y)
 
 
-# To access an object's variables or methods, you give the name of the object and then use *dot notation* to access the variables and methods. So to get the y-value of `my_rocket*` you use `my_rocket.y`. To use the move_up() method on my_rocket, you write `my_rocket.move_up()`.
+# To access an object's variables or methods, you give the name of the object and then use *dot notation* to access the variables and methods. So to get the y-value of `my_rocket` you use `my_rocket.y`. To use the move_up() method on my_rocket, you write `my_rocket.move_up()`.
 # 
 # 
 # ```{note}
@@ -127,6 +121,7 @@ class Rocket():
         self.y += 1
         
 # Create a fleet of 5 rockets, and store them in a list.
+
 my_rockets = []
 for _ in range(5):
     new_rocket = Rocket()
@@ -135,6 +130,30 @@ for _ in range(5):
 # Show that each rocket is a separate object.
 for rocket in my_rockets:
     print(rocket)
+
+
+
+
+# In[ ]:
+
+
+my_rockets[1]=my_rockets[2]
+
+
+
+# In[ ]:
+
+
+my_rockets[0].move_up()
+my_rockets[2].move_up()
+
+
+print(my_rockets[0].y)
+print(my_rockets[1].y)
+print(my_rockets[2].y)
+
+
+print(my_rockets[0],my_rockets[1],my_rockets[2])
 
 
 # You can see that each rocket is at a separate place in memory. 
@@ -149,10 +168,9 @@ for rocket in my_rockets:
 
 # You can prove that each rocket has its own x and y values by moving just one of the rockets:
 
-# In[7]:
+# In[3]:
 
 
-###highlight=[18,19,20,21,22,23]
 class Rocket():
     # Rocket simulates a rocket ship for a game,
     #  or a physics simulation.
@@ -208,8 +226,6 @@ for rocket in my_rockets:
 
 
 class Rocket():
-    # Rocket simulates a rocket ship for a game,
-    #  or a physics simulation.
     
     def __init__(self):
         # Each rocket has an (x,y) position.
@@ -258,8 +274,6 @@ class Rocket():
 
 
 class Rocket():
-    # Rocket simulates a rocket ship for a game,
-    #  or a physics simulation.
     
     def __init__(self):
         # Each rocket has an (x,y) position.
@@ -298,7 +312,6 @@ print("Rocket altitude:", my_rocket.y)
 # In[12]:
 
 
-###highlight=[15,16,17,18,19,20,21,22,23]
 class Rocket():
     # Rocket simulates a rocket ship for a game,
     #  or a physics simulation.
@@ -329,8 +342,6 @@ for rocket in my_rockets:
 
 
 class Rocket():
-    # Rocket simulates a rocket ship for a game,
-    #  or a physics simulation.
     
     def __init__(self):
         # Each rocket has an (x,y) position.
@@ -397,8 +408,6 @@ class Rocket():
 
 
 class Rocket():
-    # Rocket simulates a rocket ship for a game,
-    #  or a physics simulation.
     
     def __init__(self, x=0, y=0):
         # Each rocket has an (x,y) position.
@@ -412,7 +421,7 @@ class Rocket():
 
 # Now when you create a new Rocket object you have the choice of passing in arbitrary initial values for x and y:
 
-# In[16]:
+# In[7]:
 
 
 class Rocket():
@@ -436,7 +445,7 @@ rockets.append(Rocket(100,0))
 
 # Show where each rocket is.
 for index, rocket in enumerate(rockets):
-    print("Rocket %d is at (%d, %d)." % (index, rocket.x, rocket.y))
+    print(f"Rocket {index} is at {rocket.x}, {rocket.y}")
 
 
 # Accepting parameters in a method
@@ -446,10 +455,7 @@ for index, rocket in enumerate(rockets):
 # In[17]:
 
 
-###highlight=[11,12,13,14,15]
 class Rocket():
-    # Rocket simulates a rocket ship for a game,
-    #  or a physics simulation.
     
     def __init__(self, x=0, y=0):
         # Each rocket has an (x,y) position.
@@ -471,7 +477,7 @@ class Rocket():
 # 
 # If you are not familiar with distance calculations, there is a fairly simple formula to tell the distance between two points if you know the x and y values of each point. This new method performs that calculation, and then returns the resulting distance.
 
-# In[22]:
+# In[13]:
 
 
 from math import sqrt
@@ -526,14 +532,12 @@ print("The rockets are %f units apart." % distance)
 # 
 # Here is what the Shuttle class looks like:
 
-# In[20]:
+# In[14]:
 
 
 from math import sqrt
 
 class Rocket():
-    # Rocket simulates a rocket ship for a game,
-    #  or a physics simulation.
     
     def __init__(self, x=0, y=0):
         # Each rocket has an (x,y) position.
@@ -561,7 +565,7 @@ class Shuttle(Rocket):
         self.flights_completed = flights_completed
         
 shuttle = Shuttle(10,0,3)
-print(shuttle)
+print(shuttle.flights_completed)
 
 
 # When a new class is based on an existing class, you write the name of the parent class in parentheses when you define the new class:
@@ -603,7 +607,7 @@ class Shuttle(Rocket):
 
 # The output above shows that a new Shuttle object was created. This new Shuttle object can store the number of flights completed, but it also has all of the functionality of the Rocket class: it has a position that can be changed, and it can calculate the distance between itself and other rockets or shuttles. This can be demonstrated by creating several rockets and shuttles, and then finding the distance between one shuttle and all the other shuttles and rockets. This example uses a simple function called [randint](http://docs.python.org/2/library/random.html#random.randint), which generates a random integer between a lower and upper bound, to determine the position of each rocket and shuttle:
 
-# In[ ]:
+# In[5]:
 
 
 from math import sqrt
@@ -656,20 +660,20 @@ for x in range(0,3):
     
 # Show the number of flights completed for each shuttle.
 for index, shuttle in enumerate(shuttles):
-    print("Shuttle %d has completed %d flights." % (index, shuttle.flights_completed))
+    print(f"Shuttle {index} has completed {shuttle.flights_completed} flights.")
     
 print("\n")    
 # Show the distance from the first shuttle to all other shuttles.
 first_shuttle = shuttles[0]
 for index, shuttle in enumerate(shuttles):
     distance = first_shuttle.get_distance(shuttle)
-    print("The first shuttle is %f units away from shuttle %d." % (distance, index))
+    print(f"The first shuttle is {distance} units away from shuttle {index}.")
 
 print("\n")
 # Show the distance from the first shuttle to all other rockets.
 for index, rocket in enumerate(rockets):
     distance = first_shuttle.get_distance(rocket)
-    print("The first shuttle is %f units away from rocket %d." % (distance, index))
+    print(f"The first shuttle is {distance} units away from rocket {index}.")
 
 
 # Inheritance is a powerful feature of object-oriented programming. Using just what you have seen so far about classes, you can model an incredible variety of real-world and virtual phenomena with a high degree of accuracy. The code you write has the potential to be stable and reusable in a variety of applications.
@@ -729,7 +733,7 @@ while True:
 
 # Let's extend this code so that when we click on the circle, it gets dimmer and moves slower.
 
-# In[1]:
+# In[16]:
 
 
 import time
@@ -739,7 +743,7 @@ import os
 from math import *
 from psychopy import visual, core, event
 
-win = visual.Window([300,300],color="black", units='pix',allowGUI=True)
+win = visual.Window([350,350],color="black", units='pix',allowGUI=True)
 my_mouse = event.Mouse(win=win)
 
 target = visual.Circle(win,size=20,lineColor="black",fillColor=[1,1,1])
@@ -747,7 +751,7 @@ min_angle=-30
 max_angle=30
 prev_angle_to_deviate=0
 new_cur_angle=0.0
-inter_step_interval = 3.0
+inter_step_interval = 2.0
 
 while True:
 	core.wait(.02)
@@ -823,7 +827,7 @@ class MovingCircle():
 		return self.target
 
 	def move_it(self):
-		"gets new position and set target to that position"
+		"gets new position and sets target to that position"
 		cur_angle_to_deviate = self.prev_angle_to_deviate + random.randint(self.min_angle,self.max_angle); #calculate new angle
 		cur_angle = cur_angle_to_deviate*pi/180.0; #convert to radians
 		
@@ -879,8 +883,6 @@ while True:
 from math import sqrt
 
 class Rocket():
-    # Rocket simulates a rocket ship for a game,
-    #  or a physics simulation.
     
     def __init__(self, x=0, y=0):
         # Each rocket has an (x,y) position.
@@ -900,21 +902,21 @@ class Rocket():
         return distance
 
 
-# Make a separate file called *rocket_game.py*. Or, if you want it to sound more scienc-ey, call it *rocket_simulation.py*. The exact name doesn't matter, but the convention does. Follow the convention by using a lowercase_underscore name for this file.
+# Make a separate file called *rocket_game.py*. Or, if you want it to sound more scienc-ey, call it *rocket_simulation.py*. The exact name doesn't matter, but the convention does. Follow the convention by using a lowercase_underscore name for this file. This file will *use* the rocket class to do something.
 
-# In[ ]:
+# In[10]:
 
 
 # Save as rocket_game.py
 from rocket import Rocket
 
 rocket = Rocket()
-print("The rocket is at (%d, %d)." % (rocket.x, rocket.y))
+print(f"The rocket is at {rocket.x}, {rocket.y}")
 
 
 # This is a really clean and uncluttered file. A rocket is now something you can define in your programs, without the details of the rocket's implementation cluttering up your file. You don't have to include all the class code for a rocket in each of your files that deals with rockets; the code defining rocket attributes and behavior lives in one file, and can be used anywhere.
 # 
-# The first line tells Python to look for a file called *rocket.py*. It looks for that file in the same directory as your current program. You can put your classes in other directories, but we will get to that convention a bit later. Notice that you do not
+# The first line tells Python to look for a file called *rocket.py*. It looks for that file in the same directory as your current program. (You *can* put your classes in other directories, but it requires having it in the PYTHONPATH)
 # 
 # When Python finds the file *rocket.py*, it looks for a class called *Rocket*. When it finds that class, it imports that code into the current file, without you ever seeing that code. You are then free to use the class Rocket as you have seen it used in previous examples.
 
@@ -962,18 +964,19 @@ class Shuttle(Rocket):
 
 # Now you can import the Rocket and the Shuttle class, and use them both in a clean uncluttered program file:
 
-# In[ ]:
+# In[11]:
 
 
 # Save as rocket_game.py
 from rocket import Rocket, Shuttle
 
 rocket = Rocket()
-print("The rocket is at (%d, %d)." % (rocket.x, rocket.y))
+print(f"The rocket is at {rocket.x}, {rocket.y}")
 
 shuttle = Shuttle()
-print("\nThe shuttle is at (%d, %d)." % (shuttle.x, shuttle.y))
-print("The shuttle has completed %d flights." % shuttle.flights_completed)
+print(f"\nThe shuttle is at {shuttle.x}, {shuttle.y}")
+
+print(f"\nThe shuttle has completed {shuttle.flights_completed} flights.")
 
 
 # The first line tells Python to import both the *Rocket* and the *Shuttle* classes from the *rocket* module. You don't have to import every class in a module; you can pick and choose the classes you care to use, and Python will only spend time processing those particular classes.
@@ -999,11 +1002,12 @@ print("The shuttle has completed %d flights." % shuttle.flights_completed)
 import rocket
 
 rocket_0 = rocket.Rocket()
-print("The rocket is at (%d, %d)." % (rocket_0.x, rocket_0.y))
+print(f"The rocket is at {rocket_0.x}, {rocket_0.y}")
+print(f"Shuttle {index} has completed {shuttle.flights_completed} flights.")
 
 shuttle_0 = rocket.Shuttle()
-print("\nThe shuttle is at (%d, %d)." % (shuttle_0.x, shuttle_0.y))
-print("The shuttle has completed %d flights." % shuttle_0.flights_completed)
+print(f"The shuttle is at {shuttle_0.x}, {shuttle_0.y}")
+print(f"Shuttle has completed {shuttle_0.flights_completed} flights.")
 
 
 # The general syntax for import is:
@@ -1030,18 +1034,19 @@ print("The shuttle has completed %d flights." % shuttle_0.flights_completed)
 # 
 # When you are importing a module into one of your projects, you are free to choose any name you want for the module in your project. So the last example could be rewritten in a way that the variable name *rocket* would not need to be changed:
 
-# In[ ]:
+# In[12]:
 
 
 # Save as rocket_game.py
 import rocket as rocket_module
 
-rocket = rocket_module.Rocket()
-print("The rocket is at (%d, %d)." % (rocket.x, rocket.y))
+rocket_0 = rocket_module.Rocket()
+print(f"The rocket is at {rocket_0.x}, {rocket_0.y}")
+print(f"Shuttle {index} has completed {shuttle.flights_completed} flights.")
 
-shuttle = rocket_module.Shuttle()
-print("\nThe shuttle is at (%d, %d)." % (shuttle.x, shuttle.y))
-print("The shuttle has completed %d flights." % shuttle.flights_completed)
+shuttle_0 = rocket_module.Shuttle()
+print(f"The shuttle is at {shuttle_0.x}, {shuttle_0.y}")
+print(f"Shuttle has completed {shuttle_0.flights_completed} flights.")
 
 
 # This approach is often used to shorten the name of the module, so you don't have to type a long module name before each class name that you want to use. But it is easy to shorten a name so much that you force people reading your code to scroll to the top of your file and see what the shortened name stands for. In this example,

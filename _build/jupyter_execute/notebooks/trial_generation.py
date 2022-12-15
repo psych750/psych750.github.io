@@ -122,8 +122,12 @@ conditions.count('congruent')
 
 
 numTrials = 100
-conditions = ['congruent']*int(numTrials*.45) +     ['incongruent']*int(numTrials*.45) +     ['catch']*int(numTrials*.1)
-print(conditions.count('congruent'),     conditions.count('incongruent'),     conditions.count('catch'))
+conditions = ['congruent']*int(numTrials*.45) + \
+    ['incongruent']*int(numTrials*.45) + \
+    ['catch']*int(numTrials*.1)
+print(conditions.count('congruent'), \
+    conditions.count('incongruent'), \
+    conditions.count('catch'))
 
 
 #  ```{note}
@@ -229,6 +233,7 @@ trials = combinations(cues,2)
 print(list(trials))
 
 
+
 # Suppose you want *permutations* instead. Easy.
 
 # In[15]:
@@ -258,7 +263,8 @@ propMatch = 0.1
 propMismatch = 1-propMatch
 numTrials = 42
 
-trials = ['mismatch']*int(round(numTrials*propMismatch)) +         ['match']*int(round(numTrials*propMatch))
+trials = ['mismatch']*int(round(numTrials*propMismatch)) + \
+        ['match']*int(round(numTrials*propMatch))
     
 print(f"there are {len(trials)/trials.count('match')} match trials out of {len(trials)} total trials")
 
