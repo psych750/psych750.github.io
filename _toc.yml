@@ -90,19 +90,19 @@ parts:
       title: Exercise 1-Show a square and do stuff with it
     - file: notebooks/Exercise2-stroop
       title: Exercise 2-A Stroop task
-    - file: notebooks/Exercise3-extended-stroop
-      title: Exercise 3-Extending the Stroop
-    - file: notebooks/Exercise4-more_modularized_stroop
-      title: Exercise 4-Modularization and error checking
-    - file: notebooks/Exercise5-interactive
-      title: Exercise 5-Getting interactive
-    - file: notebooks/Exercise6-tilt_analysis
-      title: Exercise 6-Analyzing the tilt adjustment data
-    - file: notebooks/Exercise7-gss-wrangling.ipynb
-      title: Exercise 7-Exploring the general social survey 
-    - file: notebooks/Exercise8-regexps.ipynb
-      title: Exercise 8-Practice with regular expressions 
-    - file: notebooks/Exercise9-nltk.ipynb
-      title: Exercise 9-Practice with NLTK 
-    - file: notebooks/Exercise10-oop_circles.ipynb
-      title: Exercise 10-Circle drop OOP practce 
+    # - file: notebooks/Exercise3-extended-stroop
+    #   title: Exercise 3-Extending the Stroop
+    # - file: notebooks/Exercise4-more_modularized_stroop
+    #   title: Exercise 4-Modularization and error checking
+    # - file: notebooks/Exercise5-interactive
+    #   title: Exercise 5-Getting interactive
+    # - file: notebooks/Exercise6-tilt_analysis
+    #   title: Exercise 6-Analyzing the tilt adjustment data
+    # - file: notebooks/Exercise7-gss-wrangling.ipynb
+    #   title: Exercise 7-Exploring the general social survey 
+    # - file: notebooks/Exercise8-regexps.ipynb
+    #   title: Exercise 8-Practice with regular expressions 
+    # - file: notebooks/Exercise9-nltk.ipynb
+    #   title: Exercise 9-Practice with NLTK 
+    # - file: notebooks/Exercise10-oop_circles.ipynb
+    #   title: Exercise 10-Circle drop OOP practce 
