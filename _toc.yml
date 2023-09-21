@@ -90,8 +90,8 @@ parts:
       title: Exercise 1-Show a square and do stuff with it
     - file: notebooks/Exercise2-stroop
       title: Exercise 2-A Stroop task
-    # - file: notebooks/Exercise3-extended-stroop
-    #   title: Exercise 3-Extending the Stroop
+    - file: notebooks/Exercise3-extended-stroop
+      title: Exercise 3-Extending the Stroop
     # - file: notebooks/Exercise4-more_modularized_stroop
     #   title: Exercise 4-Modularization and error checking
     # - file: notebooks/Exercise5-interactive
