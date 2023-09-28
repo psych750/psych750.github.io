@@ -8,7 +8,7 @@ parts:
     chapters:
     - file: notebooks/schedule
       title: Week by week schedule
-    - url: https://github.com/psych750/resources/blob/main/syllabus/programming_dataScience_fa22.pdf
+    - url: https://github.com/psych750/resources/blob/main/syllabus/programming_dataScience_fa23.pdf
       title: Syllabus
     - file: notebooks/submitting_assignments
       title: Instructions for submitting assignments
@@ -48,6 +48,8 @@ parts:
       title: Randomization and Iteration
     - url: https://docs.python.org/3.7/tutorial/errors.html
       title: Handling Exceptions
+    - file: notebooks/review_of_fundamentals_b
+      title: Review of Fundamentals B
     - file: notebooks/activity_basic_pandas_operations
       title: Using Pandas to read/write CSV files.
     - file: notebooks/globbing_files
@@ -92,8 +94,8 @@ parts:
       title: Exercise 2-A Stroop task
     - file: notebooks/Exercise3-extended-stroop
       title: Exercise 3-Extending the Stroop
-    # - file: notebooks/Exercise4-more_modularized_stroop
-    #   title: Exercise 4-Modularization and error checking
+    - file: notebooks/Exercise4-more_modularized_stroop
+      title: Exercise 4-Modularization and speech recognition
     # - file: notebooks/Exercise5-interactive
     #   title: Exercise 5-Getting interactive
     # - file: notebooks/Exercise6-tilt_analysis
