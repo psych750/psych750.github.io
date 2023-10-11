@@ -12,6 +12,8 @@ parts:
       title: Syllabus
     - file: notebooks/submitting_assignments
       title: Instructions for submitting assignments
+    - file: notebooks/viewing_solutions
+      title: How to get solutions
   - caption: Installation instructions
     chapters:
     - file: notebooks/programming_environment_osx

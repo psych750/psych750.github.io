@@ -8,13 +8,11 @@
 
 # 1. This bit of code is supposed to iterate through a shuffled list. Why is it not working?
 
-# In[7]:
+# In[53]:
 
 
 import random
-vowels = ['a','e','i','o','u']
-random.shuffle(vowels)
-print(vowels)
+vowels = random.shuffle(['a','e','i','o','u'])
 
 for cur_vowel in vowels:
 	print(cur_vowel)
@@ -22,7 +20,7 @@ for cur_vowel in vowels:
 
 # 2. `Sets` are like lists except they allow us to perform set operations like union, intersection, difference etc. Unlike lists which have no restrictions on duplicated elements, a set -- by definition -- only contains unique elements. Because sets are implemented in a very efficient way, we can use them to remove duplicates from a list. For example:
 
-# In[9]:
+# In[6]:
 
 
 list_with_duplicates = ['dog', 'cat', 'wolf', 'dog', 'dog']
@@ -32,16 +30,16 @@ print(list(set(list_with_duplicates))) #voila, duplicates gone!
 
 # I'm trying to do something similar here, but running into a problem. Help!
 
-# In[16]:
+# In[58]:
 
 
-duplicated_list = ['violin', 'guitar', 'guitar', 'piano']
+duplicated_list = (violin, 'guitar', 'guitar', '3',3)
 print(list(set(duplicated_list))) #voila, duplicates gone?
 
 
-# 4. I'm trying to iterate through a list, check if each element is a palindrome (reads the same backwards and forwards), and if it's not, remove it from the list so that I only have palindromes at the end. The palindrome checker is working... but something else is not..
+# 1. I'm trying to iterate through a list, check if each element is a palindrome (reads the same backwards and forwards), and remove all the non-palindromes so that so that at the end I only have palindromes. The palindrome checker is working... but something else is not. Fix it! Also what is ths .replace(' ','') doing?
 
-# In[39]:
+# In[37]:
 
 
 def is_palindrome(str):
@@ -50,15 +48,16 @@ def is_palindrome(str):
 
 list_of_strings = ['dog', 'rotator', 'dod', 'cat', 'kayak', 'malyalam', 'a man a plan a canal panama']
 
-for cur_elt,cur_string in enumerate(list_of_strings):
-    if not is_palindrome(cur_string):
-        list_of_strings.remove(cur_elt)
+for i,j in enumerate(list_of_strings):
+    if not is_palindrome(j.replace(' ','')):
+        list_of_strings.remove(i)
+print(list_of_strings)
 
 
 # 5. I'm trying to iterate through a list, but something is wrong. What happened?
 # 
 
-# In[26]:
+# In[12]:
 
 
 myList = []
@@ -70,9 +69,9 @@ for index in range(listSize+1):
     print(myList[index])
 
 
-# 6. Now instead of a list, I'm trying to iterate through a dictionary and print out the various car models stored inside it. Why isn't it working?
+# 1. Now instead of a list, I'm trying to iterate through a dictionary and print out just the car *models* stored inside it. (Stelvio, M3, etc.) Why isn't it working?
 
-# In[28]:
+# In[16]:
 
 
 thisDict = {
@@ -83,37 +82,32 @@ thisDict = {
     'horsepower':[280,473,345,425]
 }
 
-for index in range(len(thisDict['model'])):
-    print(thisDict['model'][index])
+for key in thisDict):
+    print(thisDict[key])
 
 
-# 7. The function I defined is doing two addition operations. I'm trying to access the result of one of the additions, but Python keeps throwing an error at me. What is going on?
+# 1. The function I defined is supposed to compute the factorial of the number (y!), but it's not working. 
 
-# In[31]:
+# In[49]:
 
 
-def myFunction(x):
-    y = x + 3
-    z = x + 5
+def compute_factorial(y):
+    for i in range(y,-1):
+        y*=i
     return y
 
-y = 5
-b = myFunction(y)
-print(b)
+print(compute_factorial(5)) #should return 120 (5*4*3*2*1)... 
 
 
-# 8. I'm trying to create a function that multiplies the number I input by 3, but why does it result in `None`? And why can't I print x??
+# 1. I'm trying to create a function that multiplies the number I input by 3, but why do I get `None`?
 
-# In[34]:
+# In[22]:
 
 
-def multiplyByThree(x):
-    x *= 3
-    print(x)
-    return x
+def multiply_by_three(x):
+    x*=3
 
 a = 5
-b = multiplyByThree(a)
-print(b)
+x = multiply_by_three(a)
 print(x)
 

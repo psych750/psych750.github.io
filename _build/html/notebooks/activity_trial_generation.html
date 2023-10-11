@@ -129,6 +129,11 @@ const thebe_selector_output = ".output, .cell_output"
    Submitting assignments
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="viewing_solutions.html">
+   How to get solutions
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -525,6 +530,11 @@ title="Print to PDF"
    Exercise 2
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extra-credit-3-extra-pts-on-exercise-5">
+   Extra credit (3 extra pts on Exercise 5)
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -554,6 +564,11 @@ title="Print to PDF"
    Exercise 2
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extra-credit-3-extra-pts-on-exercise-5">
+   Extra credit (3 extra pts on Exercise 5)
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -569,25 +584,37 @@ title="Print to PDF"
 <p>Before you type anything, think about how to go about solving these. Try to think of two ways. Which one is easier? Do the easy one!</p>
 <section id="exercise-1">
 <h2>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h2>
-<p>Write code to create a <strong>qusi-random</strong> sequence of these animals</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">animals</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span><span class="s1">&#39;cow&#39;</span><span class="p">,</span><span class="s1">&#39;pig&#39;</span><span class="p">,</span><span class="s1">&#39;mouse&#39;</span><span class="p">]</span>
+<p>Write a function to create a <strong>qusi-random</strong> sequence of these animals</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">animals</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span><span class="s1">&#39;cow&#39;</span><span class="p">,</span><span class="s1">&#39;pig&#39;</span><span class="p">,</span><span class="s1">&#39;mouse&#39;</span><span class="p">,</span><span class="s1">&#39;hamster&#39;</span><span class="p">,</span><span class="s1">&#39;elephant&#39;</span><span class="p">,</span><span class="s1">&#39;zebra&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Your code should accept a variable specifying how long the sequence should be (<code class="docutils literal notranslate"><span class="pre">min</span> <span class="pre">=</span> <span class="pre">len(animals)</span></code>, <code class="docutils literal notranslate"><span class="pre">max</span> <span class="pre">=</span> <span class="pre">50</span></code>)</p>
+<p>Your function should accept the list as an argument and also a length parameter which indicates how long a list to create. Check to make sure that the length is at minimum the length of the list. If it’s less than that, throw an error. You might find <code class="docutils literal notranslate"><span class="pre">random.sample()</span></code> useful.</p>
 <p>Now comes the tricky part. The sequence you generate should be randomized, but not have any animal repeating back to back.</p>
 <p>So:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span><span class="s1">&#39;pig&#39;</span><span class="p">,</span><span class="s1">&#39;cow&#39;</span><span class="p">,</span><span class="s1">&#39;mouse&#39;</span><span class="p">,</span><span class="s1">&#39;mouse&#39;</span><span class="p">,</span><span class="s1">&#39;dog&#39;</span><span class="p">]</span> 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span><span class="s1">&#39;elephant&#39;</span><span class="p">,</span><span class="s1">&#39;zebra&#39;</span><span class="p">,</span><span class="s1">&#39;pig&#39;</span><span class="p">,</span><span class="s1">&#39;cow&#39;</span><span class="p">,</span><span class="s1">&#39;hamster&#39;</span><span class="p">,</span><span class="s1">&#39;mouse&#39;</span><span class="p">,</span><span class="s1">&#39;mouse&#39;</span><span class="p">,</span><span class="s1">&#39;dog&#39;</span><span class="p">]</span> 
 </pre></div>
 </div>
 <p>is not ok because mouse repeated twice in a row, but</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span><span class="s1">&#39;cow&#39;</span><span class="p">,</span><span class="s1">&#39;pig&#39;</span><span class="p">,</span><span class="s1">&#39;mouse&#39;</span><span class="p">,</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span><span class="s1">&#39;mouse&#39;</span><span class="p">]</span> 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span><span class="s1">&#39;elephant&#39;</span><span class="p">,</span><span class="s1">&#39;zebra&#39;</span><span class="p">,</span><span class="s1">&#39;pig&#39;</span><span class="p">,</span><span class="s1">&#39;cow&#39;</span><span class="p">,</span><span class="s1">&#39;hamster&#39;</span><span class="p">,</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span><span class="s1">&#39;mouse&#39;</span><span class="p">,</span><span class="s1">&#39;dog&#39;</span><span class="p">]</span> 
 </pre></div>
 </div>
 <p>is ok.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can use list comprehension with random.choice to generate sequences of arbitrary length with replacement, e.g.,
+<code class="docutils literal notranslate"><span class="pre">random_list</span> <span class="pre">=</span> <span class="pre">[random.choice(animals)</span> <span class="pre">for</span> <span class="pre">_</span> <span class="pre">in</span> <span class="pre">range(num_items)]</span></code></p>
+</div>
 </section>
 <section id="exercise-2">
 <h2>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h2>
-<p>Now let’s try the opposite. Ensure that in your sequence, 20% of items (give or take a percent or so) is a back to back repeat.</p>
+<p>Now let’s try something a little different. Generate a sequence of animals such that, on average, there is a some chance of a back-to-back repeat. You’ll want to define a function:</p>
+<p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">sequence_with_repeats(lst,length,prop_back_to_back)</span></code></p>
+<p>If prop_back_to_back is .2 then the function will generate a random sample from <code class="docutils literal notranslate"><span class="pre">lst</span></code> that is <code class="docutils literal notranslate"><span class="pre">length</span></code> long and in which (about) 20% of the elements are back-to-back repeats.</p>
+</section>
+<section id="extra-credit-3-extra-pts-on-exercise-5">
+<h2>Extra credit (3 extra pts on Exercise 5)<a class="headerlink" href="#extra-credit-3-extra-pts-on-exercise-5" title="Permalink to this headline">#</a></h2>
+<p>You can start in class if there is time and finish at home (Slack me your solution)</p>
+<p>Now let’s try the opposite. Ensure that in your sequence, the repeats are at least <code class="docutils literal notranslate"><span class="pre">min_lag</span></code> elements apart and at most <code class="docutils literal notranslate"><span class="pre">max_lag</span></code> elments apart. For example, if <code class="docutils literal notranslate"><span class="pre">min_lag</span></code> is 3 and <code class="docutils literal notranslate"><span class="pre">max_lag</span></code> is 5, then there should be a repeat every 3-5 trials. This is not a back-to-back repeat! So if you have a sequence <code class="docutils literal notranslate"><span class="pre">a,</span> <span class="pre">b,</span> <span class="pre">c,</span> <span class="pre">d</span></code> and there’s a <code class="docutils literal notranslate"><span class="pre">min_lag</span></code> of 3 and a <code class="docutils literal notranslate"><span class="pre">max_lag</span></code> of 3, then the next element must be <code class="docutils literal notranslate"><span class="pre">a</span></code>. If <code class="docutils literal notranslate"><span class="pre">min_lag</span></code> is 3 and <code class="docutils literal notranslate"><span class="pre">max_lag</span></code> is 4, then the next element could be <code class="docutils literal notranslate"><span class="pre">a</span></code> or it could be a new element <code class="docutils literal notranslate"><span class="pre">e</span></code> in which case the following element must be <code class="docutils literal notranslate"><span class="pre">a</span></code>.</p>
 </section>
 </section>
 

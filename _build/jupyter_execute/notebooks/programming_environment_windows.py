@@ -201,7 +201,7 @@
 # At the RStudio prompt, type
 # 
 # ```r
-# install.packages(c("tidyverse", "ggplot2", "lme4", "psych", "psychTools"))
+# install.packages(c("tidyverse", "ggplot2", "lme4", "psych", "psychTools", "broom"))
 # ```
 # 
 

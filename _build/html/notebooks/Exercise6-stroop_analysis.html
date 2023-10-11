@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Exercise 5 - How well do you know everyone’s names? &#8212; Psych 750</title>
+    <title>Exercise 6 - Exploring the tilt adjustment data &#8212; Psych 750</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -51,11 +51,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://psych750.github.io/notebooks/Exercise5-face-search.html" />
+    <link rel="canonical" href="https://psych750.github.io/notebooks/Exercise6-stroop_analysis.html" />
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Exercise 4: Modularizing your code + speech recognition!" href="Exercise4-more_modularized_stroop.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -327,7 +326,7 @@ const thebe_selector_output = ".output, .cell_output"
   Exercises
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Exercise0-test.html">
    Exercise 0-Test assignment
@@ -353,8 +352,8 @@ const thebe_selector_output = ".output, .cell_output"
    Exercise 4-Modularization and speech recognition
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise5-face-search.html">
    Exercise 5-Loading external files and mouse action!
   </a>
  </li>
@@ -417,7 +416,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/psych750/psych750.github.io/main?urlpath=tree/notebooks/Exercise5-face-search.ipynb"
+        <a href="https://mybinder.org/v2/gh/psych750/psych750.github.io/main?urlpath=tree/notebooks/Exercise6-stroop_analysis.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -460,7 +459,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/notebooks/Exercise5-face-search.ipynb"
+        <a href="../_sources/notebooks/Exercise6-stroop_analysis.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -539,6 +538,16 @@ title="Print to PDF"
    Part 4
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-5">
+   Part 5
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-6-extra-credit">
+   Part 6 - extra credit
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -548,7 +557,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Exercise 5 - How well do you know everyone’s names?</h1>
+                <h1>Exercise 6 - Exploring the tilt adjustment data</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -578,6 +587,16 @@ title="Print to PDF"
    Part 4
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-5">
+   Part 5
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-6-extra-credit">
+   Part 6 - extra credit
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -588,90 +607,84 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="exercise-5-how-well-do-you-know-everyone-s-names">
-<h1>Exercise 5 - How well do you know everyone’s names?<a class="headerlink" href="#exercise-5-how-well-do-you-know-everyone-s-names" title="Permalink to this headline">#</a></h1>
-<p><a class="reference external" href="https://classroom.github.com/a/p5G-KQFA">Accept the exercise</a></p>
-<p>This exercise will introduce you to some new features: We’ll look at how we go about loading external files, we’ll see how we deal with mouse clicks. Finally, we’ll be continuing our quest to further modularize code by offloading common tasks – those tasks not specific to this experiment – to a separate function library. As a result our main code file will be much smaller and cleaner, containing only the code necessary for this specific experiment.</p>
-<p>Oh, and after you run yourself on this task, you’ll be an expert in recognizing everyone in this class! (You may already be, but let’s see how fast you are!).</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The names are being pulled from the official roster. If you’d like to use a different name for this exercise, send me a message on Slack and I’ll update it. Since the names file is being automatically pulled from github, it will magically update in your code! If you’d like to use a different image, send me an image with the same dimensions as the ones in the stimuli folder and I’ll update that too (those will <em>not</em> be automatically updated for everyone unless they re-pull the code from the exercise 5 starter repository)</p>
-</div>
-<p>On each trial, you will see a printed name of one of the students in the class. After a short delay you will then see a grid of your pictures (the ones from the course roster). You will then need to click on the picture of the named person as quickly as possible. You’ll need to do some string manipulation to get the names in the right order and to figure out how to match the images to the name so that you can record whether the subject clicked on the correct image.</p>
-<p>Notice the function library we’ve placed in your starter code repository (<code class="docutils literal notranslate"><span class="pre">my_first_function_library.py</span></code>). Use it! Import functions by typing <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">my_first_function_library</span> <span class="pre">import</span> <span class="pre">X</span></code> where X is the function you’d like to import. Separate multiple functions with a comma just like we do when importing the various parts of psychopy. You can import all of them with  <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">my_first_function_library</span> <span class="pre">import</span> <span class="pre">*</span></code></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="exercise-6-exploring-the-tilt-adjustment-data">
+<h1>Exercise 6 - Exploring the tilt adjustment data<a class="headerlink" href="#exercise-6-exploring-the-tilt-adjustment-data" title="Permalink to this headline">#</a></h1>
+<p><a class="reference external" href="https://classroom.github.com/a/-WCbPg2O">Accept the exercise</a></p>
+<p>Due date is Wednesday at 11 for this one since it was posted late.</p>
+<p>Because we’ll be putting together a continuous notebook (rather than developing a program) for this exercise, there’s no need to have multiple tags. I encourage you though to make regular commits as you’re working on the assignment. The final commit should be tagged <code class="docutils literal notranslate"><span class="pre">Exercise_6_done</span></code> and have a single notebook called exercise_6.Rmd that has clearly titled chunks (see starter code). Insert additional chunks as you see fit. Make sure you push <em>all</em> the files in your working directory to the repository, not just the Rmd file. This will help us run your code.</p>
+<p>Recall that the aim of this experiment was to measure the strength of this tilt illusion. We want to know whether people are mis-estimating the tilt of the numbers and whether this mis-estimation is different for left-leaning and right-leaning numbers, and also whether it changes when the numbers are mirror-reversed so they don’t really look like numbers anymore.</p>
+<a class="reference internal image-reference" href="../_images/digitalclocks.png"><img alt="Digital Clock" class="align-center" src="../_images/digitalclocks.png" style="width: 460px;" /></a>
+<hr class="docutils" />
+<a class="reference internal image-reference" href="../_images/digitalclocks_reversed.png"><img alt="Digital Clock Reversed" class="align-center" src="../_images/digitalclocks_reversed.png" style="width: 460px;" /></a>
 <section id="part-1">
 <h2>Part 1<a class="headerlink" href="#part-1" title="Permalink to this headline">#</a></h2>
-<p>Use <code class="docutils literal notranslate"><span class="pre">get_runtime_vars()</span></code> in the function library to get the runtime variables using a GUI box. Open the data file using <code class="docutils literal notranslate"><span class="pre">open_data_file()</span></code> which already has an error check built-in so you don’t overwrite an existing data file. Also use the saving state trick I showed you to load in the previous values you used, so if you ran subject face_names_103, that’s the value that should come up in the GUI box the next time you run the experiment.</p>
-<p>For the runtime variables, just use these:</p>
-<ul class="simple">
-<li><p>Subject code (subj_code)</p></li>
-<li><p>Number of blocks (num_blocks – an integer determining how many times we go through all the names. E.g., if num_blocks is 2, we go through all the names twice.</p></li>
-</ul>
+<p>Inside the raw_data subfolder are individual data files. Each file has a column header and is tab-delimitted. We need to read them into a single R dataframe (<code class="docutils literal notranslate"><span class="pre">dat</span></code>).  Here are two solutions; pic one. The <strong>first solution</strong> uses R to read in individual files and concatenate them into a common dataframe. If you want to do that, look <a class="reference external" href="https://sparkbyexamples.com/r-programming/r-read-multiple-csv-files/">here</a>. The <strong>second solution</strong> is to concatenate them in your shell environment (i.e., terminal) and then just read in that single file using <code class="docutils literal notranslate"><span class="pre">read.csv()</span></code>. See <a class="reference external" href="https://psych750.github.io/notebooks/Shell_reference.html#combine-concatenate-two-or-more-files-and-write-the-output-to-another-file">here</a> for how to concatenate multiple files into one (the only very slightly tricky part is what to do about the column headers).</p>
+<p>For this part, submit an R notebook containing code that reads in your data file into a dataframe called <code class="docutils literal notranslate"><span class="pre">dat</span></code> <strong>and</strong> the data file(s) that are being read in.</p>
 </section>
 <section id="part-2">
 <h2>Part 2<a class="headerlink" href="#part-2" title="Permalink to this headline">#</a></h2>
-<p>Pass the runtime variables to generate_trials() so that it generates a subjCode_trials.csv trial file with the correct properties. This one’s very simple – just iterate through all the image files number of blocks times, in pseudo-random order (determined by the seed). The starter code for <code class="docutils literal notranslate"><span class="pre">generate_trials()</span></code> uses <code class="docutils literal notranslate"><span class="pre">os.glob()</span></code> to get a list of filenames inside the <code class="docutils literal notranslate"><span class="pre">stimuli</span></code> directory. Notice that the starter code for <code class="docutils literal notranslate"><span class="pre">generate_trials()</span></code> breaks up the fiename into its fields. Write these into appropriate columns in your trials file so that you can read them in and use them in your main script.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Add the following code to the bottom of <code class="docutils literal notranslate"><span class="pre">generate_trials.py</span></code></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">generate_trials</span><span class="p">({</span><span class="s1">&#39;subj_code&#39;</span><span class="p">:</span><span class="s1">&#39;test_subj1&#39;</span><span class="p">,</span> <span class="s1">&#39;number_of_blocks&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="n">order</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;subj_code&#39;</span><span class="p">,</span> <span class="s1">&#39;number_of_blocks&#39;</span><span class="p">])</span>
-    <span class="n">generate_trials</span><span class="p">({</span><span class="s1">&#39;subj_code&#39;</span><span class="p">:</span><span class="s1">&#39;test_subj2&#39;</span><span class="p">,</span> <span class="s1">&#39;number_of_blocks&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">},</span> <span class="n">order</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;subj_code&#39;</span><span class="p">,</span> <span class="s1">&#39;number_of_blocks&#39;</span><span class="p">])</span>
-    <span class="n">generate_trials</span><span class="p">({</span><span class="s1">&#39;subj_code&#39;</span><span class="p">:</span><span class="s1">&#39;test_subj3&#39;</span><span class="p">,</span> <span class="s1">&#39;number_of_blocks&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">},</span> <span class="n">order</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;subj_code&#39;</span><span class="p">,</span> <span class="s1">&#39;number_of_blocks&#39;</span><span class="p">])</span>
+<p>Add a new column to <code class="docutils literal notranslate"><span class="pre">dat</span></code> called <code class="docutils literal notranslate"><span class="pre">signed_tilt</span></code>. It should be the negative of <code class="docutils literal notranslate"><span class="pre">true_angle</span></code> if <code class="docutils literal notranslate"><span class="pre">tilt_direction</span></code> is “left”, and just <code class="docutils literal notranslate"><span class="pre">true_angle</span></code> if <code class="docutils literal notranslate"><span class="pre">tilt_direction</span></code> is “right”, e.g.,</p>
+<div class="highlight-csv notranslate"><div class="highlight"><pre><span></span>     true_angle tilt_direction signed_tilt
+          8          right           8
+         10          right          10
+         16           left         -16
+          7          right           7
+          4           left          -4
+          2           left          -2
 </pre></div>
 </div>
-<p>This should generate 3 test files. Look at them to make sure that they have 1, 2, and 3 blocks, respectively.</p>
-</div>
-<div class="admonition-extra-credit-1pt admonition">
-<p class="admonition-title">Extra credit! (1pt)</p>
-<p>Add a <code class="docutils literal notranslate"><span class="pre">seed</span></code> runtime variable which controls the order of trials using <code class="docutils literal notranslate"><span class="pre">random.seed(seed)</span></code>. You know it’s working if several trial lists generated with the same random seed have the very same random order of trials. Tag it as <code class="docutils literal notranslate"><span class="pre">Exercise_5_seed</span></code></p>
-</div>
-<p>You trials .csv file should have the runtime variables and the trial variables (name you’re being asked about, name of the image file corresponding to the correct answer). Make sure your trial file has column headers.</p>
+<p>Next, create a <code class="docutils literal notranslate"><span class="pre">exclude</span></code> column which is set to 1 if RT&lt;600 <strong>or</strong> if we’re on a practice trial, i.e., if <code class="docutils literal notranslate"><span class="pre">practice_or_real</span></code>==”practice”</p>
+<p>Your <code class="docutils literal notranslate"><span class="pre">dat</span></code> dataframe should contain both of these new columns when you submit.</p>
 </section>
 <section id="part-3">
 <h2>Part 3<a class="headerlink" href="#part-3" title="Permalink to this headline">#</a></h2>
-<p>Read in the trial file – use column headers! –  show the appropriate trial, and implement <code class="docutils literal notranslate"><span class="pre">compute_accuracy()</span></code> and <code class="docutils literal notranslate"><span class="pre">present_feedback()</span></code> functions. These are currently placeholders.</p>
-<p>compute_accuracy should return a 1 if the subject clicked on the correct name and a 0 otherwise.
-Note that the hard work is already done by this function-call</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">which_image_clicked</span><span class="p">(</span><span class="n">coord</span><span class="p">,</span><span class="n">pics</span><span class="p">):</span>
-    <span class="n">clicked_images</span> <span class="o">=</span><span class="p">[]</span>
-    <span class="k">for</span> <span class="n">pic_name</span><span class="p">,</span><span class="n">image</span> <span class="ow">in</span> <span class="n">pics</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-        <span class="k">if</span> <span class="n">image</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">coord</span><span class="p">):</span>
-            <span class="n">clicked_images</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pic_name</span><span class="p">)</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">clicked_images</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Looks like you have overlapping images and you clicked on an overlap! Boo! Returning 1st one&quot;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">clicked_images</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-
-<span class="n">image_clicked</span> <span class="o">=</span> <span class="n">which_image_clicked</span><span class="p">(</span><span class="n">coord</span><span class="p">,</span><span class="n">pics</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>…all you need to do when implementing <code class="docutils literal notranslate"><span class="pre">compute_accuracy()</span></code> is to check if the name string matches the filename</p>
-<p>For present_feedback(), use the output of compute_accuracy to show a red X or green check-mark depending on whether the subject responded correctly or not.</p>
-<div class="admonition-extra-credit-1pt admonition">
-<p class="admonition-title">Extra credit! (1pt)</p>
-<p>Read in buzz.wav and bleep.wav inside the /sounds directory and play a bleep after a correct response and a buzz after an incorrect response. Tag it as <code class="docutils literal notranslate"><span class="pre">Exercise_5_sounds</span></code></p>
-</div>
+<p>From now on exclude all trials for which <code class="docutils literal notranslate"><span class="pre">exclude==1</span></code> <strong>in all calculations/graphs</strong>. Please add code blocks to your notebook to accomplish the following 4 things:</p>
+<ol class="simple">
+<li><p>Compute the number of rows for which <code class="docutils literal notranslate"><span class="pre">exclude==0</span></code></p></li>
+<li><p>Compute the mean <code class="docutils literal notranslate"><span class="pre">absolute_error</span></code> for trials with true_angle&lt;=8 and trials for which true_angle&gt;8. Which is the bigger error? (include this as plain text, outside of the code block in your notebook)</p></li>
+<li><p>Output the mean absolute errors for each subj_code. Which subj_code has the smallest absolute_error? Largest absolute_error (you may want to use <code class="docutils literal notranslate"><span class="pre">arrange</span></code> to sort by absolute_error).</p></li>
+<li><p>What’s the correlation between the total number of mouse wheel turns and absolute error? (you can use <code class="docutils literal notranslate"><span class="pre">cor()</span></code> to compute the correlation between two variables).</p></li>
+</ol>
 </section>
 <section id="part-4">
 <h2>Part 4<a class="headerlink" href="#part-4" title="Permalink to this headline">#</a></h2>
-<p>Write the trial information and response to a data-file: subj_code_data.csv placed inside a data subfolder. The data-file should be in the following format. <em>Please make sure your format is exactly this – these columns in this order, separated by commas</em> Make sure your output file has at least one full block of trials.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Col</span> <span class="mi">1</span><span class="p">:</span> <span class="n">subject_code</span>
-<span class="n">Col</span> <span class="mi">2</span><span class="p">:</span> <span class="n">trial_number</span> <span class="p">(</span><span class="n">beginning</span> <span class="k">with</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">Col</span> <span class="mi">3</span><span class="p">:</span> <span class="n">number_of_blocks</span>
-<span class="n">Col</span> <span class="mi">4</span><span class="p">:</span> <span class="n">current</span> <span class="n">block</span> <span class="n">number</span> <span class="n">beginning</span> <span class="k">with</span> <span class="mi">1</span>
-<span class="n">Col</span> <span class="mi">5</span><span class="p">:</span> <span class="n">prompted</span> <span class="n">name</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span><span class="p">,</span> <span class="n">Gary</span> <span class="n">Lupyan</span><span class="p">)</span>
-<span class="n">Col</span> <span class="mi">6</span><span class="p">:</span> <span class="n">filename</span> <span class="n">of</span> <span class="n">the</span> <span class="n">shown</span> <span class="n">image</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span><span class="p">,</span> <span class="n">gary_lupyan</span><span class="o">.</span><span class="n">png</span>
-<span class="n">Col</span> <span class="mi">7</span><span class="p">:</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">person</span> <span class="n">whose</span> <span class="n">image</span> <span class="n">was</span> <span class="n">clicked</span> <span class="n">on</span>
-<span class="n">Col</span> <span class="mi">8</span><span class="p">:</span> <span class="n">the</span> <span class="n">x</span> <span class="n">coordinate</span> <span class="n">of</span> <span class="n">the</span> <span class="n">click</span>
-<span class="n">Col</span> <span class="mi">9</span><span class="p">:</span> <span class="n">the</span> <span class="n">y</span> <span class="n">coordinate</span> <span class="n">of</span> <span class="n">the</span> <span class="n">click</span>
-<span class="n">Col</span> <span class="mi">10</span><span class="p">:</span> <span class="n">is_correct</span> <span class="o">-</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">the</span> <span class="n">subject</span> <span class="n">clicked</span> <span class="n">on</span> <span class="n">the</span> <span class="n">correct</span> <span class="n">image</span> <span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">e</span><span class="o">.</span><span class="p">,</span> <span class="n">of</span> <span class="n">the</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">col</span> <span class="mi">7</span><span class="p">),</span> <span class="mi">0</span> <span class="n">otherwise</span>
-<span class="n">Col</span> <span class="mi">11</span><span class="p">:</span> <span class="n">RT</span> <span class="o">-</span> <span class="n">reaction</span> <span class="n">time</span> <span class="kn">from</span> <span class="nn">onset</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">images</span><span class="p">,</span> <span class="n">to</span> <span class="n">subject</span><span class="s1">&#39;s response, in milliseconds, rounded to the nearest millisecond</span>
-</pre></div>
+<p>For this part we’ll just look at a subset of data: <code class="docutils literal notranslate"><span class="pre">orientation</span> <span class="pre">==</span> <span class="pre">&quot;upright&quot;</span> <span class="pre">&amp;</span> <span class="pre">displayed_string</span> <span class="pre">==</span> <span class="pre">&quot;7-44&quot;</span></code> (as mentioned above, make sure to only include trials for which exclude==0)</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">pivot_wider</span></code> to compute the mean difference for each subject between the <code class="docutils literal notranslate"><span class="pre">signed_error</span></code> for left vs. right tilting stimuli? Do this by creating a new column calld <code class="docutils literal notranslate"><span class="pre">left_minus_right</span></code> whose value is just that: the left error minus the right error.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Begin by filtering for the desired orientation and displayed string. Then group by subj_code and tilt_direciton, and compute the mean signed_error for each subj_code and tilt_direction combination. Prior to running pivot_wider, the summarized data-frame should have 16 rows (8 subjects * two conditions per subject)</p>
 </div>
-<p>The first line of your file should be the column names, i.e,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">subj_code</span><span class="p">,</span><span class="n">trial_num</span><span class="p">,</span><span class="n">number_of_blocks</span><span class="p">,</span><span class="n">current_block_num</span><span class="p">,</span><span class="n">name_prompt</span><span class="p">,</span><span class="n">photo_filename</span><span class="p">,</span><span class="n">clicked_image</span><span class="p">,</span><span class="n">click_x</span><span class="p">,</span><span class="n">click_y</span><span class="p">,</span><span class="n">is_correct</span><span class="p">,</span><span class="n">RT</span>
-</pre></div>
+</section>
+<section id="part-5">
+<h2>Part 5<a class="headerlink" href="#part-5" title="Permalink to this headline">#</a></h2>
+<p>Generate some graphs using ggplot that help you answer the following questions:</p>
+<ol class="simple">
+<li><p>Are people reporting the tilt more accurately for 7-44 when it’s tilting leftward or rightward?</p></li>
+<li><p>Are people’s tilt estimates biased differently for leftward vs. rightward tilting numbers?</p></li>
+<li><p>Are these biases different for 7-44 shown upright vs. inverted? (coded in the <code class="docutils literal notranslate"><span class="pre">orientation</span></code> column).</p></li>
+</ol>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>Please knit your analysis Rmd file to HTML</strong> when you submit. It makes it much easier for us to grade. Click on <code class="docutils literal notranslate"><span class="pre">knit</span></code> and choose Knit to HTML. It will then create a new .html file in your working directory.</p>
 </div>
+<p>Don’t worry about plotting error bars or computing any inferential statistics. Just make some beautiful graphs! If you have an idea for the kind of graph you want, but are having trouble getting ggplot to cooperate, send a sketch of what you’re trying to do on Slack and we’ll help.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You’ll want to average the data by subject/conditions/angles rather than feeding in raw data to ggplot</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You’ll probably want to generate some graphs that have <code class="docutils literal notranslate"><span class="pre">true_angle</span></code> and/or <code class="docutils literal notranslate"><span class="pre">signed_tilt</span></code> on the x-axis</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You may find it useful to add <a class="reference external" href="https://ggplot2.tidyverse.org/reference/geom_abline.html">reference lines</a> to your plot (<code class="docutils literal notranslate"><span class="pre">geom_abline</span></code> for diagonal, <code class="docutils literal notranslate"><span class="pre">geom_hline</span></code> for horizontal, <code class="docutils literal notranslate"><span class="pre">geom_vline</span></code> for vertical).</p>
+</div>
+</section>
+<section id="part-6-extra-credit">
+<h2>Part 6 - extra credit<a class="headerlink" href="#part-6-extra-credit" title="Permalink to this headline">#</a></h2>
+<p>For 2 points of extra credit, add a text file to your repository explaining what’s funny about this post on <code class="docutils literal notranslate"><span class="pre">r/ProgrammerHumor</span></code></p>
+<img alt="Newline in name reddit post" class="align-center" src="../_images/first_name_newline.png" />
 </section>
 </section>
 

@@ -29,7 +29,7 @@ random.shuffle(my_list)
 my_list[0:5]
 
 
-# In[6]:
+# In[2]:
 
 
 import random

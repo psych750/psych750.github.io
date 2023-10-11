@@ -9,6 +9,9 @@
 # 
 # Oh, and after you run yourself on this task, you'll be an expert in recognizing everyone in this class! (You may already be, but let's see how fast you are!).
 # 
+# ```{note}
+# The names are being pulled from the official roster. If you'd like to use a different name for this exercise, send me a message on Slack and I'll update it. Since the names file is being automatically pulled from github, it will magically update in your code! If you'd like to use a different image, send me an image with the same dimensions as the ones in the stimuli folder and I'll update that too (those will *not* be automatically updated for everyone unless they re-pull the code from the exercise 5 starter repository)
+# ```
 
 # 
 # On each trial, you will see a printed name of one of the students in the class. After a short delay you will then see a grid of your pictures (the ones from the course roster). You will then need to click on the picture of the named person as quickly as possible. You'll need to do some string manipulation to get the names in the right order and to figure out how to match the images to the name so that you can record whether the subject clicked on the correct image.
@@ -18,12 +21,12 @@
 
 # ## Part 1
 # 
-# Grab the runtime variables using a GUI box as we did previously. You should have an error check built-in so you don't overwrite an existing data file. Also use the saving state trick I showed you to load in the previous values you used, so if you ran subject face_names_103, that's the value that should come up in the GUI box the next time you run the experiment.  make sure you can't over-write an existing file (this error check is already implemented in `my_first_function_library`, but check to make sure the code work for you!)
+# Use `get_runtime_vars()` in the function library to get the runtime variables using a GUI box. Open the data file using `open_data_file()` which already has an error check built-in so you don't overwrite an existing data file. Also use the saving state trick I showed you to load in the previous values you used, so if you ran subject face_names_103, that's the value that should come up in the GUI box the next time you run the experiment. 
 # 
 # For the runtime variables, just use these:
 # 
-# * Subject code
-# * Number of blocks (an integer -- this controls how many times we go through all the names)
+# * Subject code (subj_code)
+# * Number of blocks (num_blocks -- an integer determining how many times we go through all the names. E.g., if num_blocks is 2, we go through all the names twice.
 # 
 
 # ## Part 2
@@ -101,6 +104,6 @@
 # The first line of your file should be the column names, i.e,
 # 
 # ```
-# subj_code,trial_num,number_of_blocks,block_num,photo_filename,name_prompt,click_x,click_y,is_correct,RT
+# subj_code,trial_num,number_of_blocks,current_block_num,name_prompt,photo_filename,clicked_image,click_x,click_y,is_correct,RT
 # ```
 # 
