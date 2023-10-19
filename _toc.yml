@@ -78,12 +78,12 @@ parts:
       title: Some more trial generation practice
     - file: notebooks/activity_debugging
       title: Debugging practice 1
-    - file: notebooks/activity_debugging_experiments
-      title: Debugging practice 2
-    - url: https://psych750.github.io/knitted_Rmd/playing_around_gss_solutions.html
+    # - file: notebooks/activity_debugging_experiments
+    #   title: Debugging practice 2
+    - url: https://psych750.github.io/knitted_Rmd/playing_around_gss.html
       title: Basic Examples of GSS data wrangling
-    - file: notebooks/activity_google_this
-      title: Google this!
+    # - file: notebooks/activity_google_this
+    #   title: Google this!
     - file: notebooks/nltk_demo
       title: NLTK demo
   - caption: Exercises
@@ -100,10 +100,10 @@ parts:
       title: Exercise 4-Modularization and speech recognition
     - file: notebooks/Exercise5-face-search
       title: Exercise 5-Loading external files and mouse action!
-    # - file: notebooks/Exercise6-tilt_analysis
-    #   title: Exercise 6-Analyzing the tilt adjustment data
-    # - file: notebooks/Exercise7-gss-wrangling.ipynb
-    #   title: Exercise 7-Exploring the general social survey 
+    - file: notebooks/Exercise6-stroop_analysis
+      title: Exercise 6-Analyzing the Stroop data
+    - file: notebooks/Exercise7-gss-wrangling.ipynb
+      title: Exercise 7-Exploring the general social survey 
     # - file: notebooks/Exercise8-regexps.ipynb
     #   title: Exercise 8-Practice with regular expressions 
     # - file: notebooks/Exercise9-nltk.ipynb
