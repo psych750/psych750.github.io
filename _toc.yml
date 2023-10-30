@@ -14,6 +14,8 @@ parts:
       title: Instructions for submitting assignments
     - file: notebooks/viewing_solutions
       title: How to get solutions
+    - file: notebooks/project_info
+      title: Project info
   - caption: Installation instructions
     chapters:
     - file: notebooks/programming_environment_osx
@@ -82,6 +84,8 @@ parts:
     #   title: Debugging practice 2
     - url: https://psych750.github.io/knitted_Rmd/playing_around_gss.html
       title: Basic Examples of GSS data wrangling
+    - file: notebooks/more_gss_practice
+      title: More dataviz practice with GSS
     # - file: notebooks/activity_google_this
     #   title: Google this!
     - file: notebooks/nltk_demo
@@ -104,8 +108,10 @@ parts:
       title: Exercise 6-Analyzing the Stroop data
     - file: notebooks/Exercise7-gss-wrangling.ipynb
       title: Exercise 7-Exploring the general social survey 
-    # - file: notebooks/Exercise8-regexps.ipynb
-    #   title: Exercise 8-Practice with regular expressions 
+    - file: notebooks/Exercise8-more-gss-wrangling
+      title: Exercise 8-More practice with GSS data wrangling 
+    # - file: notebooks/Exercise9-regexps.ipynb
+    #   title: Exercise 9-Practice with regular expressions 
     # - file: notebooks/Exercise9-nltk.ipynb
     #   title: Exercise 9-Practice with NLTK 
     # - file: notebooks/Exercise10-oop_circles.ipynb
