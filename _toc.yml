@@ -12,9 +12,9 @@ parts:
       title: Syllabus
     - file: notebooks/submitting_assignments
       title: Instructions for submitting assignments
-    - file: notebooks/viewing_solutions
-      title: How to get solutions
-    - file: notebooks/project_info
+    # - file: notebooks/viewing_solutions
+    #   title: How to get solutions
+    - file: notebooks/project_2023
       title: Project info
   - caption: Installation instructions
     chapters:
@@ -106,13 +106,13 @@ parts:
       title: Exercise 5-Loading external files and mouse action!
     - file: notebooks/Exercise6-stroop_analysis
       title: Exercise 6-Analyzing the Stroop data
-    - file: notebooks/Exercise7-gss-wrangling.ipynb
+    - file: notebooks/Exercise7-gss-wrangling
       title: Exercise 7-Exploring the general social survey 
     - file: notebooks/Exercise8-more-gss-wrangling
       title: Exercise 8-More practice with GSS data wrangling 
-    # - file: notebooks/Exercise9-regexps.ipynb
-    #   title: Exercise 9-Practice with regular expressions 
-    # - file: notebooks/Exercise9-nltk.ipynb
-    #   title: Exercise 9-Practice with NLTK 
-    # - file: notebooks/Exercise10-oop_circles.ipynb
-    #   title: Exercise 10-Circle drop OOP practce 
+    - file: notebooks/Exercise9-regexps
+      title: Exercise 9-Regular expressions 
+    - file: notebooks/Exercise10-nltk.ipynb
+      title: Exercise 10-Practice with NLTK 
+    - file: notebooks/Exercise11-oop_circles.ipynb
+      title: Exercise 11-Circle drop Obj Oriented Programming (optional) 
