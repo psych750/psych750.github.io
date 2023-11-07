@@ -113,6 +113,6 @@ parts:
     - file: notebooks/Exercise9-regexps
       title: Exercise 9-Regular expressions 
     - file: notebooks/Exercise10-nltk.ipynb
-      title: Exercise 10-Practice with NLTK 
+      title: Exercise 10-Natural language processing with NLTK 
     - file: notebooks/Exercise11-oop_circles.ipynb
-      title: Exercise 11-Circle drop Obj Oriented Programming (optional) 
+      title: Exercise 11-Practice with object oriented programming (optional)
