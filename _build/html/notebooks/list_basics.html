@@ -1,49 +1,60 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Lists - the basics &#8212; Psych 750</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/book.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -51,882 +62,430 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/list_basics';</script>
     <link rel="canonical" href="https://psych750.github.io/notebooks/list_basics.html" />
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="If Statements" href="if_statements.html" />
     <link rel="prev" title="Variables, Strings, and Numbers" href="var_string_num.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/favicon.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Psych 750</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search..." aria-label="Search..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Schedule
- </span>
-</p>
+    
+    
+    <img src="../_static/favicon.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/favicon.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Schedule</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="schedule.html">
-   Week by week schedule
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://github.com/psych750/resources/blob/main/syllabus/programming_dataScience_fa23.pdf">
-   Syllabus
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="submitting_assignments.html">
-   Submitting assignments
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="schedule.html">Week by week schedule</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/psych750/resources/blob/main/syllabus/programming_dataScience_fa23.pdf">Syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="submitting_assignments.html">Submitting assignments</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="project_2023.html">Project info</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Installation instructions
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Installation instructions</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="programming_environment_osx.html">
-   Instructions for MacOS
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="programming_environment_windows.html">
-   Installation and setup for Windows
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="programming_environment_osx.html">Instructions for MacOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programming_environment_windows.html">Installation and setup for Windows</a></li>
+
+
+
+
+
+
+
+
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  References
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="Shell_reference.html">
-   Basic Linux commands
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Python_reference.html">
-   Python reference
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Psychopy_reference.html">
-   PsychoPy reference
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ImageMagick.html">
-   ImageMagick/GraphicsMagick reference
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="Shell_reference.html">Basic Linux commands</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Python_reference.html">Python reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Psychopy_reference.html">PsychoPy reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ImageMagick.html">ImageMagick/GraphicsMagick reference</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Self Study Guides
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Self Study Guides</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="var_string_num.html">
-   Variables, Strings, and Numbers
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Lists - the basics
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="if_statements.html">
-   If Statements
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="dictionaries.html">
-   Dictionaries
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="introducing_functions.html">
-   Introducing Functions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="list_comprehension.html">
-   List Comprehension
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="review_of_fundamentals_a.html">
-   Review of Fundamentals A
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="trial_generation.html">
-   Randomization and Iteration
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://docs.python.org/3.7/tutorial/errors.html">
-   Handling Exceptions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="review_of_fundamentals_b.html">
-   Review of Fundamentals B
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="activity_basic_pandas_operations.html">
-   Using Pandas to read/write CSV files.
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="globbing_files.html">
-   File access-Globbing and preloading
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="activity_reference_vs_value.html">
-   Mutable and immutable types
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="regexp.html">
-   Regular Expressions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="classes.html">
-   Classes
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="var_string_num.html">Variables, Strings, and Numbers</a></li>
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lists - the basics</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="if_statements.html">If Statements</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="dictionaries.html">Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introducing_functions.html">Introducing Functions</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="list_comprehension.html">List Comprehension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="review_of_fundamentals_a.html">Review of Fundamentals A</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trial_generation.html">Randomization and Iteration</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://docs.python.org/3.7/tutorial/errors.html">Handling Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="review_of_fundamentals_b.html">Review of Fundamentals B</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activity_basic_pandas_operations.html">Using Pandas to read/write CSV files.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="globbing_files.html">File access-Globbing and preloading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activity_reference_vs_value.html">Mutable and immutable types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regexp.html">Regular Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes.html">Classes</a></li>
+
+
+
+
+
+
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  In class activities
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">In class activities</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="python_basics.html">
-   Python basics
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="activity_print_pyramids.html">
-   The first thinking exercise
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="activity_file_writing.html">
-   Primer on writing files
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="activity_list_manip_vowels_1.html">
-   Working with strings in lists
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="activity_dictionaries.html">
-   A few dictionary activities
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="activity_trial_generation.html">
-   Some more trial generation practice
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="activity_debugging.html">
-   Debugging practice 1
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="activity_debugging_experiments.html">
-   Debugging practice 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://psych750.github.io/knitted_Rmd/playing_around_gss_solutions.html">
-   Basic Examples of GSS data wrangling
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="activity_google_this.html">
-   Google this!
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="nltk_demo.html">
-   NLTK demo
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="python_basics.html">Python basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activity_print_pyramids.html">The first thinking exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activity_file_writing.html">Primer on writing files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activity_list_manip_vowels_1.html">Working with strings in lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activity_dictionaries.html">A few dictionary activities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activity_trial_generation.html">Some more trial generation practice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activity_debugging.html">Debugging practice 1</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://psych750.github.io/knitted_Rmd/playing_around_gss.html">Basic Examples of GSS data wrangling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more_gss_practice.html">More dataviz practice with GSS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nltk_demo.html">NLTK demo</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Exercises
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="Exercise0-test.html">
-   Exercise 0-Test assignment
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Exercise1-square.html">
-   Exercise 1-Show a square and do stuff with it
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Exercise2-stroop.html">
-   Exercise 2-A Stroop task
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Exercise3-extended-stroop.html">
-   Exercise 3-Extending the Stroop
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Exercise4-more_modularized_stroop.html">
-   Exercise 4-Modularization and speech recognition
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Exercise5-face-search.html">
-   Exercise 5-Loading external files and mouse action!
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="Exercise0-test.html">Exercise 0-Test assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Exercise1-square.html">Exercise 1-Show a square and do stuff with it</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Exercise2-stroop.html">Exercise 2-A Stroop task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Exercise3-extended-stroop.html">Exercise 3-Extending the Stroop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Exercise4-more_modularized_stroop.html">Exercise 4-Modularization and speech recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Exercise5-face-search.html">Exercise 5-Loading external files and mouse action!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Exercise6-stroop_analysis.html">Exercise 6-Analyzing the Stroop data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Exercise7-gss-wrangling.html">Exercise 7-Exploring the general social survey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Exercise8-more-gss-wrangling.html">Exercise 8-More practice with GSS data wrangling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Exercise9-regexps.html">Exercise 9 - Practice with regular expressions</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="Exercise10-nltk.html">Exercise 10-Natural language processing with NLTK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Exercise11-oop_circles.html">Exercise 11-Practice with object oriented programming (optional)</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/psych750/psych750.github.io/main?urlpath=tree/notebooks/list_basics.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/psych750/psych750.github.io/main?urlpath=tree/notebooks/list_basics.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/list_basics.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/notebooks/list_basics.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Lists - the basics
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-s-a-list">
-     What’s a list?
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#naming-and-defining-a-list">
-     Naming and defining a list
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#accessing-one-item-in-a-list">
-     Accessing one item in a list
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#accessing-the-last-items-in-a-list">
-       Accessing the last items in a list
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#accessing-multiple-list-elements-using-slices">
-       Accessing multiple list elements using slices
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#lists-and-looping">
-     Lists and Looping
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#accessing-all-elements-in-a-list">
-       Accessing all elements in a list
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#doing-more-with-each-item">
-       Doing more with each item
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#inside-and-outside-the-loop">
-       Inside and outside the loop
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-lists-dynamically">
-     Creating lists dynamically
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#enumerating-a-list">
-     Enumerating a list
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#a-common-looping-error">
-       A common looping error
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#common-list-operations">
-   Common List Operations
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#modifying-elements-in-a-list">
-     Modifying elements in a list
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#finding-an-element-in-a-list">
-     Finding an element in a list
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#testing-whether-an-item-is-in-a-list">
-     Testing whether an item is in a list
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-items-to-a-list">
-     Adding items to a list
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#appending-items-to-the-end-of-a-list">
-       Appending items to the end of a list
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inserting-items-into-a-list">
-     Inserting items into a list
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#splitting-a-string-to-make-a-list">
-     Splitting a string to make a list
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#joining-a-list-to-make-a-string">
-     Joining a list to make a string
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#converting-all-the-elements-of-the-list-to-a-certain-type">
-     Converting all the elements of the list to a certain type
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sorting-a-list">
-     Sorting a List
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#sorted-vs-sort">
-       <em>
-        sorted()
-       </em>
-       vs.
-       <em>
-        sort()
-       </em>
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#reversing-a-list">
-     Reversing a list
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#reversing-a-list-using-slices">
-       Reversing a list using slices
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sorting-a-numerical-list">
-     Sorting a numerical list
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#finding-the-length-of-a-list">
-     Finding the length of a list
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#removing-items-from-a-list">
-     Removing Items from a List
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#removing-items-by-position">
-       Removing items by position
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#removing-items-by-value">
-       Removing items by value
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#popping-items-from-a-list">
-       Popping items from a list
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Lists - the basics</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Lists - the basics
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-s-a-list">
-     What’s a list?
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#naming-and-defining-a-list">
-     Naming and defining a list
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#accessing-one-item-in-a-list">
-     Accessing one item in a list
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#accessing-the-last-items-in-a-list">
-       Accessing the last items in a list
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#accessing-multiple-list-elements-using-slices">
-       Accessing multiple list elements using slices
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#lists-and-looping">
-     Lists and Looping
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#accessing-all-elements-in-a-list">
-       Accessing all elements in a list
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#doing-more-with-each-item">
-       Doing more with each item
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#inside-and-outside-the-loop">
-       Inside and outside the loop
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-lists-dynamically">
-     Creating lists dynamically
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#enumerating-a-list">
-     Enumerating a list
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#a-common-looping-error">
-       A common looping error
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#common-list-operations">
-   Common List Operations
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#modifying-elements-in-a-list">
-     Modifying elements in a list
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#finding-an-element-in-a-list">
-     Finding an element in a list
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#testing-whether-an-item-is-in-a-list">
-     Testing whether an item is in a list
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-items-to-a-list">
-     Adding items to a list
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#appending-items-to-the-end-of-a-list">
-       Appending items to the end of a list
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inserting-items-into-a-list">
-     Inserting items into a list
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#splitting-a-string-to-make-a-list">
-     Splitting a string to make a list
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#joining-a-list-to-make-a-string">
-     Joining a list to make a string
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#converting-all-the-elements-of-the-list-to-a-certain-type">
-     Converting all the elements of the list to a certain type
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sorting-a-list">
-     Sorting a List
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#sorted-vs-sort">
-       <em>
-        sorted()
-       </em>
-       vs.
-       <em>
-        sort()
-       </em>
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#reversing-a-list">
-     Reversing a list
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#reversing-a-list-using-slices">
-       Reversing a list using slices
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sorting-a-numerical-list">
-     Sorting a numerical list
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#finding-the-length-of-a-list">
-     Finding the length of a list
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#removing-items-from-a-list">
-     Removing Items from a List
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#removing-items-by-position">
-       Removing items by position
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#removing-items-by-value">
-       Removing items by value
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#popping-items-from-a-list">
-       Popping items from a list
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lists - the basics</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Lists - the basics</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-s-a-list">What’s a list?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naming-and-defining-a-list">Naming and defining a list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-one-item-in-a-list">Accessing one item in a list</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-the-last-items-in-a-list">Accessing the last items in a list</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-multiple-list-elements-using-slices">Accessing multiple list elements using slices</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists-and-looping">Lists and Looping</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-all-elements-in-a-list">Accessing all elements in a list</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#doing-more-with-each-item">Doing more with each item</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inside-and-outside-the-loop">Inside and outside the loop</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-lists-dynamically">Creating lists dynamically</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enumerating-a-list">Enumerating a list</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-common-looping-error">A common looping error</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#common-list-operations">Common List Operations</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modifying-elements-in-a-list">Modifying elements in a list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-an-element-in-a-list">Finding an element in a list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-whether-an-item-is-in-a-list">Testing whether an item is in a list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-items-to-a-list">Adding items to a list</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#appending-items-to-the-end-of-a-list">Appending items to the end of a list</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inserting-items-into-a-list">Inserting items into a list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#splitting-a-string-to-make-a-list">Splitting a string to make a list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#joining-a-list-to-make-a-string">Joining a list to make a string</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-all-the-elements-of-the-list-to-a-certain-type">Converting all the elements of the list to a certain type</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting-a-list">Sorting a List</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sorted-vs-sort"><em>sorted()</em> vs. <em>sort()</em></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reversing-a-list">Reversing a list</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reversing-a-list-using-slices">Reversing a list using slices</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting-a-numerical-list">Sorting a numerical list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-length-of-a-list">Finding the length of a list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#removing-items-from-a-list">Removing Items from a List</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#removing-items-by-position">Removing items by position</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#removing-items-by-value">Removing items by value</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#popping-items-from-a-list">Popping items from a list</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="lists-the-basics">
-<h1>Lists - the basics<a class="headerlink" href="#lists-the-basics" title="Permalink to this headline">#</a></h1>
+<h1>Lists - the basics<a class="headerlink" href="#lists-the-basics" title="Permalink to this heading">#</a></h1>
 <p>In this notebook, you will learn about lists, a very important data structure, that allows you to store more than one value in a single variable. Lists (and arrays as they are also sometimes called) are one of the most powerful ideas in programming.</p>
 <section id="what-s-a-list">
-<h2>What’s a list?<a class="headerlink" href="#what-s-a-list" title="Permalink to this headline">#</a></h2>
+<h2>What’s a list?<a class="headerlink" href="#what-s-a-list" title="Permalink to this heading">#</a></h2>
 <p>A list is a collection of items that is stored in a variable. The items should be related in some way, but there are no restrictions on what can be stored in a list. Here is a simple example of a list, and how we can quickly access each item in the list.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -934,7 +493,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="naming-and-defining-a-list">
-<h2>Naming and defining a list<a class="headerlink" href="#naming-and-defining-a-list" title="Permalink to this headline">#</a></h2>
+<h2>Naming and defining a list<a class="headerlink" href="#naming-and-defining-a-list" title="Permalink to this heading">#</a></h2>
 <hr class="docutils" />
 <p>Since lists are collection of objects, it is good practice to give them a plural name. If each item in your list is an image, call the list <code class="docutils literal notranslate"><span class="pre">images</span></code>. If each item is a trial, call it <code class="docutils literal notranslate"><span class="pre">trials</span></code>. This gives you a straightforward way to refer to the entire list (‘images’), and to a single item in the list (‘image’).</p>
 <p>In Python, lists are designated by square brackets. You can define an empty list like this:</p>
@@ -955,7 +514,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="accessing-one-item-in-a-list">
-<h2>Accessing one item in a list<a class="headerlink" href="#accessing-one-item-in-a-list" title="Permalink to this headline">#</a></h2>
+<h2>Accessing one item in a list<a class="headerlink" href="#accessing-one-item-in-a-list" title="Permalink to this heading">#</a></h2>
 <p>Items in a list are identified by their position in the list, starting with zero. This sometimes trips people up.</p>
 <p>To access the first element in a list, you give the name of the list, followed by a zero in parentheses.</p>
 <div class="cell docutils container">
@@ -988,7 +547,7 @@ title="Print to PDF"
 </div>
 </div>
 <section id="accessing-the-last-items-in-a-list">
-<h3>Accessing the last items in a list<a class="headerlink" href="#accessing-the-last-items-in-a-list" title="Permalink to this headline">#</a></h3>
+<h3>Accessing the last items in a list<a class="headerlink" href="#accessing-the-last-items-in-a-list" title="Permalink to this heading">#</a></h3>
 <p>You can probably see that to get the last item in this list, we would use an index of 2. This works, but it would only work because our list has exactly three items. Because it is so common for us to need the <em>last</em> value of the list, Python provides a simple way of doing it without needing to know how long the list is. To get the last item of the list, we use -1.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1056,7 +615,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="accessing-multiple-list-elements-using-slices">
-<h3>Accessing multiple list elements using slices<a class="headerlink" href="#accessing-multiple-list-elements-using-slices" title="Permalink to this headline">#</a></h3>
+<h3>Accessing multiple list elements using slices<a class="headerlink" href="#accessing-multiple-list-elements-using-slices" title="Permalink to this heading">#</a></h3>
 <p>Because a list is a collection of items, we should be able to get any subset of those items. For example, if we want to get just the first three items from the list, we should be able to do so easily. The same should be true for any three items in the middle of the list, or the last three items, or any x items from anywhere in the list. These subsets of a list are called <em>slices</em>.</p>
 <p>To get a subset of a list, we give the position of the first item we want, and the position of the first item we do <em>not</em> want to include in the subset. So the slice <em>list[0:3]</em> will return a list containing items 0, 1, and 2, but not item 3. Here is how you get a batch containing the first three items.</p>
 <div class="cell docutils container">
@@ -1089,9 +648,9 @@ title="Print to PDF"
 </section>
 </section>
 <section id="lists-and-looping">
-<h2>Lists and Looping<a class="headerlink" href="#lists-and-looping" title="Permalink to this headline">#</a></h2>
+<h2>Lists and Looping<a class="headerlink" href="#lists-and-looping" title="Permalink to this heading">#</a></h2>
 <section id="accessing-all-elements-in-a-list">
-<h3>Accessing all elements in a list<a class="headerlink" href="#accessing-all-elements-in-a-list" title="Permalink to this headline">#</a></h3>
+<h3>Accessing all elements in a list<a class="headerlink" href="#accessing-all-elements-in-a-list" title="Permalink to this heading">#</a></h3>
 <p>This is one of the most important concepts related to lists. If you want to become a competent programmer, make sure you take the time to understand this section.</p>
 <p>We use a loop to access all the elements in a list. A loop is a block of code that repeats itself until it runs out of items to work with, or until certain conditions are met. In this case, our loop will run once for every item in our list. With a list that is three items long, our loop will run three times.</p>
 <p>Let’s take a look at how we access all the items in a list, and then try to understand how it works.</p>
@@ -1142,7 +701,7 @@ title="Print to PDF"
 <p>The site <a href="http://pythontutor.com/visualize.html#code=dogs+%3D+%5B'border+collie',+'australian+cattle+dog',+'labrador+retriever'%5D%0A%0Afor+dog+in+dogs%3A%0A++++print(dog)&mode=display&cumulative=false&heapPrimitives=false&drawParentPointers=false&textReferences=false&showOnlyOutputs=false&py=3&curInstr=0">pythontutor.com</a> allows you to run Python code one line at a time. As you run the code, there is also a visualization on the screen that shows you how the variable “dog” holds different values as the loop progresses. There is also an arrow that moves around your code, showing you how some lines are run just once, while other lines are run multiple tiimes. If you would like to see this in action, click the Forward button and watch the visualization, and the output as it is printed to the screen. Tools like this are incredibly valuable for seeing what Python is doing with your code.</p>
 </section>
 <section id="doing-more-with-each-item">
-<h3>Doing more with each item<a class="headerlink" href="#doing-more-with-each-item" title="Permalink to this headline">#</a></h3>
+<h3>Doing more with each item<a class="headerlink" href="#doing-more-with-each-item" title="Permalink to this heading">#</a></h3>
 <p>We can do whatever we want with the value of “dog” inside the loop. In this case, we just print the name of the dog.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">dog</span><span class="p">)</span>
 </pre></div>
@@ -1167,7 +726,7 @@ I like labrador retrievers
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Visualize this on <a class="reference external" href="https://pythontutor.com/render.html#code=dogs%20%3D%20%5B%27border%20collie%27,%20%27australian%20cattle%20dog%27,%20%27labrador%20retriever%27%5D%0A%0Afor%20dog%20in%20dogs%3A%0A%20%20%20%20print%28f%27I%20like%20%7Bdog%7Ds%27%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=false&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">python tutor</a></p>
+<p>Visualize this on <a class="reference external" href="https://pythontutor.com/render.html#code=dogs%20%3D%20%5B'border%20collie',%20'australian%20cattle%20dog',%20'labrador%20retriever'%5D%0A%0Afor%20dog%20in%20dogs%3A%0A%20%20%20%20print%28f'I%20like%20%7Bdog%7Ds'%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=false&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">python tutor</a></p>
 </div>
 <p>Or how about we capitalize each dog breed?</p>
 <div class="cell docutils container">
@@ -1221,7 +780,7 @@ Labrador Retriever
 </div>
 </section>
 <section id="inside-and-outside-the-loop">
-<h3>Inside and outside the loop<a class="headerlink" href="#inside-and-outside-the-loop" title="Permalink to this headline">#</a></h3>
+<h3>Inside and outside the loop<a class="headerlink" href="#inside-and-outside-the-loop" title="Permalink to this heading">#</a></h3>
 <p>Python uses indentation to decide what is inside the loop and what is outside the loop. Code that is inside the loop will be run for every item in the list. Code that is not indented, which comes after the loop, will be run once just like regular code.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1256,7 +815,7 @@ That&#39;s just how I feel about dogs.
 </section>
 </section>
 <section id="creating-lists-dynamically">
-<h2>Creating lists dynamically<a class="headerlink" href="#creating-lists-dynamically" title="Permalink to this headline">#</a></h2>
+<h2>Creating lists dynamically<a class="headerlink" href="#creating-lists-dynamically" title="Permalink to this heading">#</a></h2>
 <p>Now that we know how to add items to a list after it is created, we can use lists more dynamically. We are no longer stuck defining our entire list at once.</p>
 <p>A common approach with lists is to define an empty list, and then let your program add items to the list as necessary. This approach works, for example, when starting to build an interactive web site. Your list of users might start out empty, and then as people register for the site it will grow. This is a simplified approach to how web sites actually work, but the idea is realistic.</p>
 <p>Here is a brief example of how to start with an empty list, start to fill it up, and work with the items in the list. The only new thing here is the way we define an empty list, which is just an empty set of square brackets.</p>
@@ -1279,7 +838,7 @@ That&#39;s just how I feel about dogs.
 </div>
 </section>
 <section id="enumerating-a-list">
-<h2>Enumerating a list<a class="headerlink" href="#enumerating-a-list" title="Permalink to this headline">#</a></h2>
+<h2>Enumerating a list<a class="headerlink" href="#enumerating-a-list" title="Permalink to this heading">#</a></h2>
 <p>When you are looping through a list, you may sometimes not only want to access the current list element, but also want to know the index of the current item. The preferred (<em>Pythonic</em>) way of doing this is to use the <code class="docutils literal notranslate"><span class="pre">enumerate()</span></code> function which conveniently tracks the index of each item for you, as you loop through the list.</p>
 <p>To enumerate a list, you need to add an <em>index</em> variable to hold the current index. So instead of</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">for</span> <span class="n">dog</span> <span class="ow">in</span> <span class="n">dogs</span><span class="p">:</span>
@@ -1334,7 +893,7 @@ Person number 19 in the class is Zhuolu
 </div>
 </div>
 <section id="a-common-looping-error">
-<h3>A common looping error<a class="headerlink" href="#a-common-looping-error" title="Permalink to this headline">#</a></h3>
+<h3>A common looping error<a class="headerlink" href="#a-common-looping-error" title="Permalink to this heading">#</a></h3>
 <p>One common looping error occurs when instead of using the single variable <em>dog</em> inside the loop, we accidentally use the variable that holds the entire list:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1375,9 +934,9 @@ I like [&#39;border collie&#39;, &#39;australian cattle dog&#39;, &#39;labrador 
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="common-list-operations">
-<h1>Common List Operations<a class="headerlink" href="#common-list-operations" title="Permalink to this headline">#</a></h1>
+<h1>Common List Operations<a class="headerlink" href="#common-list-operations" title="Permalink to this heading">#</a></h1>
 <section id="modifying-elements-in-a-list">
-<h2>Modifying elements in a list<a class="headerlink" href="#modifying-elements-in-a-list" title="Permalink to this headline">#</a></h2>
+<h2>Modifying elements in a list<a class="headerlink" href="#modifying-elements-in-a-list" title="Permalink to this heading">#</a></h2>
 <p>You can change the value of any element in a list if you know the position of that item.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1396,7 +955,7 @@ I like [&#39;border collie&#39;, &#39;australian cattle dog&#39;, &#39;labrador 
 </div>
 </section>
 <section id="finding-an-element-in-a-list">
-<h2>Finding an element in a list<a class="headerlink" href="#finding-an-element-in-a-list" title="Permalink to this headline">#</a></h2>
+<h2>Finding an element in a list<a class="headerlink" href="#finding-an-element-in-a-list" title="Permalink to this heading">#</a></h2>
 <p>If you want to find out the position of an element in a list, you can use the index() function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1419,7 +978,7 @@ I like [&#39;border collie&#39;, &#39;australian cattle dog&#39;, &#39;labrador 
 </div>
 </section>
 <section id="testing-whether-an-item-is-in-a-list">
-<h2>Testing whether an item is in a list<a class="headerlink" href="#testing-whether-an-item-is-in-a-list" title="Permalink to this headline">#</a></h2>
+<h2>Testing whether an item is in a list<a class="headerlink" href="#testing-whether-an-item-is-in-a-list" title="Permalink to this heading">#</a></h2>
 <p>You can test whether an item is in a list using the “in” keyword. This will become more useful after learning how to use if-else statements.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1433,9 +992,9 @@ I like [&#39;border collie&#39;, &#39;australian cattle dog&#39;, &#39;labrador 
 </div>
 </section>
 <section id="adding-items-to-a-list">
-<h2>Adding items to a list<a class="headerlink" href="#adding-items-to-a-list" title="Permalink to this headline">#</a></h2>
+<h2>Adding items to a list<a class="headerlink" href="#adding-items-to-a-list" title="Permalink to this heading">#</a></h2>
 <section id="appending-items-to-the-end-of-a-list">
-<h3>Appending items to the end of a list<a class="headerlink" href="#appending-items-to-the-end-of-a-list" title="Permalink to this headline">#</a></h3>
+<h3>Appending items to the end of a list<a class="headerlink" href="#appending-items-to-the-end-of-a-list" title="Permalink to this heading">#</a></h3>
 <p>We can add an item to a list using the append() method. This method adds the new item to the end of the list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1459,7 +1018,7 @@ Poodles are cool.
 </section>
 </section>
 <section id="inserting-items-into-a-list">
-<h2>Inserting items into a list<a class="headerlink" href="#inserting-items-into-a-list" title="Permalink to this headline">#</a></h2>
+<h2>Inserting items into a list<a class="headerlink" href="#inserting-items-into-a-list" title="Permalink to this heading">#</a></h2>
 <p>We can also insert items anywhere we want in a list, using the <strong>insert()</strong> function. We specify the position we want the item to have, and everything from that point on is shifted one position to the right. In other words, the index of every item after the new item is increased by one.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1502,7 +1061,7 @@ Poodles are cool.
 <p>Note that the code welcoming our newest user will always work, because we have used the index -1. If we had used the index 2 we would always get the third user, even as our list of users grows and grows.</p>
 </section>
 <section id="splitting-a-string-to-make-a-list">
-<h2>Splitting a string to make a list<a class="headerlink" href="#splitting-a-string-to-make-a-list" title="Permalink to this headline">#</a></h2>
+<h2>Splitting a string to make a list<a class="headerlink" href="#splitting-a-string-to-make-a-list" title="Permalink to this heading">#</a></h2>
 <p>Suppose we have a string containing multiple elements that would be better stored as a list. We can do this by <code class="docutils literal notranslate"><span class="pre">split</span></code>ting it, like so:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1521,7 +1080,7 @@ Poodles are cool.
 <p>This is often useful when we read in structured data from a file or when it’s useful to handle a variable as a string in one part of the code (e.g., to do global search/replace through it), but then it becomes easier to handle it as a list in another part of your code.</p>
 </section>
 <section id="joining-a-list-to-make-a-string">
-<h2>Joining a list to make a string<a class="headerlink" href="#joining-a-list-to-make-a-string" title="Permalink to this headline">#</a></h2>
+<h2>Joining a list to make a string<a class="headerlink" href="#joining-a-list-to-make-a-string" title="Permalink to this heading">#</a></h2>
 <p>The opposite of <code class="docutils literal notranslate"><span class="pre">split</span></code> is <code class="docutils literal notranslate"><span class="pre">join</span></code>. Joining is taking a list and turning it into a string, separating each element with some character (the separator). This is a very common operation. For example, we might want to build a list of variables that we want to then write to a file. If we’re just using base Python functions to write, we have to write a string, not a list. What to do? Join it into a string like so:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1539,7 +1098,7 @@ Poodles are cool.
 <p>Notice the quirky syntax. That first part <code class="docutils literal notranslate"><span class="pre">','</span></code> is the separater string. You might think that <code class="docutils literal notranslate"><span class="pre">split</span></code> is something you do to a string and join is something you do to a list. But in fact, both are string operations. There’s a long discussion of why that you can read about <a class="reference external" href="https://stackoverflow.com/questions/493819/why-is-it-string-joinlist-instead-of-list-joinstring">here</a> if you’re interested. Suffice to say that it has to do with joining being something you can do to other things than lists, but its output is always a string, so it made sense to implement it as part of the <code class="docutils literal notranslate"><span class="pre">String</span></code> class.</p>
 </section>
 <section id="converting-all-the-elements-of-the-list-to-a-certain-type">
-<h2>Converting all the elements of the list to a certain type<a class="headerlink" href="#converting-all-the-elements-of-the-list-to-a-certain-type" title="Permalink to this headline">#</a></h2>
+<h2>Converting all the elements of the list to a certain type<a class="headerlink" href="#converting-all-the-elements-of-the-list-to-a-certain-type" title="Permalink to this heading">#</a></h2>
 <p>If you try to join a list whose elements are not all strings you will get a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>. You’ll be told that a <code class="docutils literal notranslate"><span class="pre">str</span></code> was expected, but something else (like an <code class="docutils literal notranslate"><span class="pre">int</span></code>eger) was found. We can do this by looping through all the list elements and replacing each one with its string version by doing <code class="docutils literal notranslate"><span class="pre">str(element)</span></code>. But we can also just use <code class="docutils literal notranslate"><span class="pre">map</span></code>, that is, applying a function to every element in the list.</p>
 <p>Like so:</p>
 <div class="cell docutils container">
@@ -1562,7 +1121,7 @@ Poodles are cool.
 </div>
 </section>
 <section id="sorting-a-list">
-<h2>Sorting a List<a class="headerlink" href="#sorting-a-list" title="Permalink to this headline">#</a></h2>
+<h2>Sorting a List<a class="headerlink" href="#sorting-a-list" title="Permalink to this heading">#</a></h2>
 <p>We can sort a list alphabetically, in either order.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1601,7 +1160,7 @@ Aaron
 </div>
 </div>
 <section id="sorted-vs-sort">
-<h3><em>sorted()</em> vs. <em>sort()</em><a class="headerlink" href="#sorted-vs-sort" title="Permalink to this headline">#</a></h3>
+<h3><em>sorted()</em> vs. <em>sort()</em><a class="headerlink" href="#sorted-vs-sort" title="Permalink to this heading">#</a></h3>
 <p>Whenever you consider sorting a list, keep in mind that you can not recover the original order. If you want to display a list in sorted order, but preserve the original order, you can use the <em>sorted()</em> function. The <em>sorted()</em> function also accepts the optional <em>reverse=True</em> argument.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1628,7 +1187,7 @@ Aaron
 </section>
 </section>
 <section id="reversing-a-list">
-<h2>Reversing a list<a class="headerlink" href="#reversing-a-list" title="Permalink to this headline">#</a></h2>
+<h2>Reversing a list<a class="headerlink" href="#reversing-a-list" title="Permalink to this heading">#</a></h2>
 <p>We have seen three possible orders for a list:</p>
 <ul class="simple">
 <li><p>The original order in which the list was created</p></li>
@@ -1656,7 +1215,7 @@ Aaron
 <p><code class="docutils literal notranslate"><span class="pre">reverse()</span></code> is permanent, although you could follow it up with another call to <code class="docutils literal notranslate"><span class="pre">reverse()</span></code> and get back the original order of the list.</p>
 </div>
 <section id="reversing-a-list-using-slices">
-<h3>Reversing a list using slices<a class="headerlink" href="#reversing-a-list-using-slices" title="Permalink to this headline">#</a></h3>
+<h3>Reversing a list using slices<a class="headerlink" href="#reversing-a-list-using-slices" title="Permalink to this heading">#</a></h3>
 <p>Another way of reversing a list is to use slicing. The syntax is a bit funky:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1710,7 +1269,7 @@ Aaron
 </section>
 </section>
 <section id="sorting-a-numerical-list">
-<h2>Sorting a numerical list<a class="headerlink" href="#sorting-a-numerical-list" title="Permalink to this headline">#</a></h2>
+<h2>Sorting a numerical list<a class="headerlink" href="#sorting-a-numerical-list" title="Permalink to this heading">#</a></h2>
 <p>All of the sorting functions work for numerical lists as well.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1768,7 +1327,7 @@ Aaron
 </div>
 </section>
 <section id="finding-the-length-of-a-list">
-<h2>Finding the length of a list<a class="headerlink" href="#finding-the-length-of-a-list" title="Permalink to this headline">#</a></h2>
+<h2>Finding the length of a list<a class="headerlink" href="#finding-the-length-of-a-list" title="Permalink to this heading">#</a></h2>
 <p>You can find the length of a list using the <em>len()</em> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1809,10 +1368,10 @@ We have 3 users!
 </div>
 </section>
 <section id="removing-items-from-a-list">
-<h2>Removing Items from a List<a class="headerlink" href="#removing-items-from-a-list" title="Permalink to this headline">#</a></h2>
+<h2>Removing Items from a List<a class="headerlink" href="#removing-items-from-a-list" title="Permalink to this heading">#</a></h2>
 <p>Hopefully you can see by now that lists are a dynamic structure. We can define an empty list and then fill it up as information comes into our program. To become really dynamic, we need some ways to remove items from a list when we no longer need them. You can remove items from a list through their position, or through their value.</p>
 <section id="removing-items-by-position">
-<h3>Removing items by position<a class="headerlink" href="#removing-items-by-position" title="Permalink to this headline">#</a></h3>
+<h3>Removing items by position<a class="headerlink" href="#removing-items-by-position" title="Permalink to this heading">#</a></h3>
 <p>If you know the position of an item in a list, you can remove that item using the <em>del</em> command. To use this approach, give the command <em>del</em> and the name of your list, with the index of the item you want to move in square brackets:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1827,7 +1386,7 @@ We have 3 users!
 </div>
 </section>
 <section id="removing-items-by-value">
-<h3>Removing items by value<a class="headerlink" href="#removing-items-by-value" title="Permalink to this headline">#</a></h3>
+<h3>Removing items by value<a class="headerlink" href="#removing-items-by-value" title="Permalink to this heading">#</a></h3>
 <p>You can also remove an item from a list if you know its value. To do this, we use the <em>remove()</em> function. Give the name of the list, followed by the word remove with the value of the item you want to remove in parentheses. Python looks through your list, finds the first item with this value, and removes it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1858,7 +1417,7 @@ We have 3 users!
 </div>
 </section>
 <section id="popping-items-from-a-list">
-<h3>Popping items from a list<a class="headerlink" href="#popping-items-from-a-list" title="Permalink to this headline">#</a></h3>
+<h3>Popping items from a list<a class="headerlink" href="#popping-items-from-a-list" title="Permalink to this heading">#</a></h3>
 <p>There is a cool concept in programming called “popping”. Every programming language has some sort of data structure similar to Python’s lists. All of these structures can be used as queues, and there are various ways of processing the items in a queue.</p>
 <p>One simple approach is to start with an empty list, and then add items to that list. When you want to work with the items in the list, you always take the last item from the list, do something with it, and then remove that item. The <em>pop()</em> function makes this easy. It removes the last item from the list, and gives it to us so we can work with it. This is easier to show with an example:</p>
 <div class="cell docutils container">
@@ -1913,7 +1472,7 @@ We have 3 users!
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./notebooks"
         },
         predefinedOutput: true
@@ -1921,33 +1480,126 @@ We have 3 users!
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+
+              
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Lists - the basics</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-s-a-list">What’s a list?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naming-and-defining-a-list">Naming and defining a list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-one-item-in-a-list">Accessing one item in a list</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-the-last-items-in-a-list">Accessing the last items in a list</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-multiple-list-elements-using-slices">Accessing multiple list elements using slices</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists-and-looping">Lists and Looping</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-all-elements-in-a-list">Accessing all elements in a list</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#doing-more-with-each-item">Doing more with each item</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inside-and-outside-the-loop">Inside and outside the loop</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-lists-dynamically">Creating lists dynamically</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enumerating-a-list">Enumerating a list</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-common-looping-error">A common looping error</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#common-list-operations">Common List Operations</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modifying-elements-in-a-list">Modifying elements in a list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-an-element-in-a-list">Finding an element in a list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-whether-an-item-is-in-a-list">Testing whether an item is in a list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-items-to-a-list">Adding items to a list</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#appending-items-to-the-end-of-a-list">Appending items to the end of a list</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inserting-items-into-a-list">Inserting items into a list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#splitting-a-string-to-make-a-list">Splitting a string to make a list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#joining-a-list-to-make-a-string">Joining a list to make a string</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-all-the-elements-of-the-list-to-a-certain-type">Converting all the elements of the list to a certain type</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting-a-list">Sorting a List</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sorted-vs-sort"><em>sorted()</em> vs. <em>sort()</em></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reversing-a-list">Reversing a list</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reversing-a-list-using-slices">Reversing a list using slices</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting-a-numerical-list">Sorting a numerical list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-length-of-a-list">Finding the length of a list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#removing-items-from-a-list">Removing Items from a List</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#removing-items-by-position">Removing items by position</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#removing-items-by-value">Removing items by value</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#popping-items-from-a-list">Popping items from a list</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Gary Lupyan<br/>
-  
-      &copy; Copyright 2022. Some examples adapted from http://introtopython.org/.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By Gary Lupyan
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022. Some examples adapted from http://introtopython.org/.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
