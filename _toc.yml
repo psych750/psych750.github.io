@@ -80,16 +80,14 @@ parts:
       title: Some more trial generation practice
     - file: notebooks/activity_debugging
       title: Debugging practice 1
-    # - file: notebooks/activity_debugging_experiments
-    #   title: Debugging practice 2
     - url: https://psych750.github.io/knitted_Rmd/playing_around_gss.html
       title: Basic Examples of GSS data wrangling
     - file: notebooks/more_gss_practice
       title: More dataviz practice with GSS
-    # - file: notebooks/activity_google_this
-    #   title: Google this!
     - file: notebooks/nltk_demo
       title: NLTK demo
+    - file: notebooks/scraping
+      title: Webscraping demo and practice
   - caption: Exercises
     chapters:
     - file: notebooks/Exercise0-test
