@@ -786,15 +786,16 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">/Users/glupyan/gitRepos/psych750.github.io/notebooks/PRAW_demo.ipynb Cell 5</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750.github.io/notebooks/PRAW_demo.ipynb#W4sZmlsZQ%3D%3D?line=0&#39;</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="k">for</span> <span class="n">cur_submission</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">front</span><span class="o">.</span><span class="n">hot</span><span class="p">(</span><span class="n">limit</span> <span class="o">=</span> <span class="mi">10</span><span class="p">):</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750.github.io/notebooks/PRAW_demo.ipynb#W4sZmlsZQ%3D%3D?line=1&#39;</span><span class="o">&gt;</span><span class="mi">2</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>     <span class="n">submission</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">submission</span><span class="p">(</span><span class="n">cur_submission</span><span class="p">)</span>
-<span class="o">----&gt;</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750.github.io/notebooks/PRAW_demo.ipynb#W4sZmlsZQ%3D%3D?line=2&#39;</span><span class="o">&gt;</span><span class="mi">3</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>     <span class="nb">print</span><span class="p">(</span><span class="n">submission</span><span class="p">)</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/glupyan/gitRepos/psych750.github.io/notebooks/PRAW_demo.ipynb#W4sZmlsZQ%3D%3D?line=3&#39;</span><span class="o">&gt;</span><span class="mi">4</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>     <span class="nb">print</span><span class="p">(</span><span class="n">submission</span><span class="o">.</span><span class="n">title</span><span class="p">,</span> <span class="n">submission</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
-
-<span class="ne">TypeError</span>: __str__ returned non-string (type Submission)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Henry Kissinger, secretary of state to Richard Nixon, dies at 100 https://www.theguardian.com/us-news/2023/nov/29/henry-kissinger-dies-secretary-of-state-richard-nixon?CMP=Share_AndroidApp_Other
+3 killed, at least 11 injured in shooting attack near entrance to Jerusalem https://www.ynetnews.com/article/hylzfssh6
+“For gamers. By gamers.” https://i.redd.it/n3hczyqwpf3c1.jpg
+Look out! https://v.redd.it/b0t4xvho3e3c1
+What is something in recent times that has gone too far but no one will admit? https://www.reddit.com/r/AskReddit/comments/18797lo/what_is_something_in_recent_times_that_has_gone/
+These were found in my wife’s grandfathers stuff after he passed on. https://i.redd.it/m17ozsaroe3c1.jpg
+Gus 100% believes Grammy’s visits are for him. He’s not wrong https://www.reddit.com/gallery/1872hv4
+My wife. Early 80s. https://i.redd.it/bddshnhhke3c1.jpeg
+A six-planet solar system in perfect synchrony has been found in the Milky Way https://apnews.com/article/six-planets-solar-system-nasa-esa-3d67e5a1ba7cbea101d756fc6e47f33d
+Mysterious woman tells school board that Scholastic book sparked porn addiction https://popular.info/p/mysterious-woman-tells-school-board
 </pre></div>
 </div>
 </div>
@@ -803,7 +804,7 @@ title="Print to PDF"
 </section>
 <section id="accessing-comments">
 <h2>Accessing comments<a class="headerlink" href="#accessing-comments" title="Permalink to this headline">#</a></h2>
-<p>Let’s now see how we can access comments on a post. <a class="reference external" href="https://www.reddit.com/r/todayilearned/comments/ysm4ys/til_blacking_out_from_alcohol_doesnt_cause_you_to/">This post</a> talks about how your brain temporarily loses the ability to create new memories when you experience a blackout from alcohol. It has more than 1000 comments and we can use PRAW to extract all the comments and see what people’s opinions are. See <a class="reference external" href="https://praw.readthedocs.io/en/stable/tutorials/comments.html#extracting-comments-with-praw">here</a> for info on extracting comments.</p>
+<p>Let’s now see how we can access comments on a post. <a class="reference external" href="https://www.reddit.com/r/todayilearned/comments/ysm4ys/til_blacking_out_from_alcohol_doesnt_cause_you_to/">This post</a> talks about how your brain temporarily loses the ability to create new memories when you experience a blackout from alcohol. It has more than 54000 comments and we can use PRAW to extract all the comments and see what people’s opinions are. See <a class="reference external" href="https://praw.readthedocs.io/en/stable/tutorials/comments.html#extracting-comments-with-praw">here</a> for info on extracting comments.</p>
 <p>Let’s take a look at the top 5 comments.</p>
 <section id="access-comments-via-the-submission-s-url">
 <h3>Access comments via the submission’s URL<a class="headerlink" href="#access-comments-via-the-submission-s-url" title="Permalink to this headline">#</a></h3>
@@ -832,7 +833,7 @@ Some drugs which have the same effect are sometimes used for potentially mentall
 </section>
 <section id="access-comments-via-the-submission-s-id">
 <h3>Access comments via the submission’s ID<a class="headerlink" href="#access-comments-via-the-submission-s-id" title="Permalink to this headline">#</a></h3>
-<p>Or we can access comments using a submission’s unique id (let’s look at the currently top submissions again, but this time output its id as well as the poster’s username.</p>
+<p>Or we can access comments using a submission’s unique id. Let’s look at the currently top submissions again, but this time output its id as well as the poster’s username.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">cur_submission</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">front</span><span class="o">.</span><span class="n">hot</span><span class="p">(</span><span class="n">limit</span> <span class="o">=</span> <span class="mi">10</span><span class="p">):</span>
