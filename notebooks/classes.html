@@ -1,60 +1,49 @@
 
-
 <!DOCTYPE html>
 
-
-<html lang="en" >
-
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Classes &#8212; Psych 750</title>
-  
-  
-  
-  <script data-cfasync="false">
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
-  </script>
-  
+    
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
-  
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/book.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -62,425 +51,885 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/classes';</script>
     <link rel="canonical" href="https://psych750.github.io/notebooks/classes.html" />
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Python essentials to get you started" href="python_basics.html" />
     <link rel="prev" title="Regular expressions" href="regexp.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
 
-  
-  
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
-<form class="bd-search d-flex align-items-center"
-      action="../search.html"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         id="search-input"
-         placeholder="Search..."
-         aria-label="Search..."
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
-  
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
-  
-  <div class="bd-container">
-    <div class="bd-container__inner bd-page-width">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
-
-  
-  <div class="sidebar-header-items sidebar-primary__section">
-    
-    
-    
-    
-  </div>
-  
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item">
-  
-
-<a class="navbar-brand logo" href="../index.html">
-  
-  
-  
-  
-    
-    
       
-    
-    
-    <img src="../_static/favicon.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/favicon.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
-  
-  
-</a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Schedule</span></p>
+      
+      <img src="../_static/favicon.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Psych 750</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search..." aria-label="Search..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Schedule
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="schedule.html">Week by week schedule</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://github.com/psych750/resources/blob/main/syllabus/programming_dataScience_fa23.pdf">Syllabus</a></li>
-<li class="toctree-l1"><a class="reference internal" href="submitting_assignments.html">Submitting assignments</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="project_2023.html">Project info</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="schedule.html">
+   Week by week schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/psych750/resources/blob/main/syllabus/programming_dataScience_fa23.pdf">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="submitting_assignments.html">
+   Submitting assignments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="project_2023.html">
+   Project info
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Installation instructions</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Installation instructions
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="programming_environment_osx.html">Instructions for MacOS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="programming_environment_windows.html">Installation and setup for Windows</a></li>
-
-
-
-
-
-
-
-
+ <li class="toctree-l1">
+  <a class="reference internal" href="programming_environment_osx.html">
+   Instructions for MacOS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="programming_environment_windows.html">
+   Installation and setup for Windows
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  References
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Shell_reference.html">Basic Linux commands</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="Python_reference.html">Python reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Psychopy_reference.html">PsychoPy reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ImageMagick.html">ImageMagick/GraphicsMagick reference</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Shell_reference.html">
+   Basic Linux commands
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Python_reference.html">
+   Python reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Psychopy_reference.html">
+   PsychoPy reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="PRAW_demo.html">
+   PRAW Reddit API
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ImageMagick.html">
+   ImageMagick/GraphicsMagick reference
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Self Study Guides</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Self Study Guides
+ </span>
+</p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="var_string_num.html">Variables, Strings, and Numbers</a></li>
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="list_basics.html">Lists - the basics</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="if_statements.html">If Statements</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="dictionaries.html">Dictionaries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introducing_functions.html">Introducing Functions</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="list_comprehension.html">List Comprehension</a></li>
-<li class="toctree-l1"><a class="reference internal" href="review_of_fundamentals_a.html">Review of Fundamentals A</a></li>
-<li class="toctree-l1"><a class="reference internal" href="trial_generation.html">Randomization and Iteration</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://docs.python.org/3.7/tutorial/errors.html">Handling Exceptions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="review_of_fundamentals_b.html">Review of Fundamentals B</a></li>
-<li class="toctree-l1"><a class="reference internal" href="activity_basic_pandas_operations.html">Using Pandas to read/write CSV files.</a></li>
-<li class="toctree-l1"><a class="reference internal" href="globbing_files.html">File access-Globbing and preloading</a></li>
-<li class="toctree-l1"><a class="reference internal" href="activity_reference_vs_value.html">Mutable and immutable types</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regexp.html">Regular Expressions</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Classes</a></li>
-
-
-
-
-
-
-
+ <li class="toctree-l1">
+  <a class="reference internal" href="var_string_num.html">
+   Variables, Strings, and Numbers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="list_basics.html">
+   Lists - the basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="if_statements.html">
+   If Statements
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dictionaries.html">
+   Dictionaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="introducing_functions.html">
+   Introducing Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="list_comprehension.html">
+   List Comprehension
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="review_of_fundamentals_a.html">
+   Review of Fundamentals A
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="trial_generation.html">
+   Randomization and Iteration
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://docs.python.org/3.7/tutorial/errors.html">
+   Handling Exceptions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="review_of_fundamentals_b.html">
+   Review of Fundamentals B
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="activity_basic_pandas_operations.html">
+   Using Pandas to read/write CSV files.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="globbing_files.html">
+   File access-Globbing and preloading
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="activity_reference_vs_value.html">
+   Mutable and immutable types
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regexp.html">
+   Regular Expressions
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Classes
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">In class activities</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  In class activities
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="python_basics.html">Python basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="activity_print_pyramids.html">The first thinking exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="activity_file_writing.html">Primer on writing files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="activity_list_manip_vowels_1.html">Working with strings in lists</a></li>
-<li class="toctree-l1"><a class="reference internal" href="activity_dictionaries.html">A few dictionary activities</a></li>
-<li class="toctree-l1"><a class="reference internal" href="activity_trial_generation.html">Some more trial generation practice</a></li>
-<li class="toctree-l1"><a class="reference internal" href="activity_debugging.html">Debugging practice 1</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://psych750.github.io/knitted_Rmd/playing_around_gss.html">Basic Examples of GSS data wrangling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="more_gss_practice.html">More dataviz practice with GSS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nltk_demo.html">NLTK demo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="scraping.html">Webscraping demo and practice</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_basics.html">
+   Python basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="activity_print_pyramids.html">
+   The first thinking exercise
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="activity_file_writing.html">
+   Primer on writing files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="activity_list_manip_vowels_1.html">
+   Working with strings in lists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="activity_dictionaries.html">
+   A few dictionary activities
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="activity_trial_generation.html">
+   Some more trial generation practice
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="activity_debugging.html">
+   Debugging practice 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://psych750.github.io/knitted_Rmd/playing_around_gss.html">
+   Basic Examples of GSS data wrangling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="more_gss_practice.html">
+   More dataviz practice with GSS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="nltk_demo.html">
+   NLTK demo
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="scraping.html">
+   Webscraping demo and practice
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Exercises
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Exercise0-test.html">Exercise 0-Test assignment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Exercise1-square.html">Exercise 1-Show a square and do stuff with it</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Exercise2-stroop.html">Exercise 2-A Stroop task</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Exercise3-extended-stroop.html">Exercise 3-Extending the Stroop</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Exercise4-more_modularized_stroop.html">Exercise 4-Modularization and speech recognition</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Exercise5-face-search.html">Exercise 5-Loading external files and mouse action!</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Exercise6-stroop_analysis.html">Exercise 6-Analyzing the Stroop data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Exercise7-gss-wrangling.html">Exercise 7-Exploring the general social survey</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Exercise8-more-gss-wrangling.html">Exercise 8-More practice with GSS data wrangling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Exercise9-regexps.html">Exercise 9 - Practice with regular expressions</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="Exercise10-nltk.html">Exercise 10-Natural language processing with NLTK</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Exercise11-oop_circles.html">Exercise 11-Practice with object oriented programming</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise0-test.html">
+   Exercise 0-Test assignment
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise1-square.html">
+   Exercise 1-Show a square and do stuff with it
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise2-stroop.html">
+   Exercise 2-A Stroop task
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise3-extended-stroop.html">
+   Exercise 3-Extending the Stroop
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise4-more_modularized_stroop.html">
+   Exercise 4-Modularization and speech recognition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise5-face-search.html">
+   Exercise 5-Loading external files and mouse action!
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise6-stroop_analysis.html">
+   Exercise 6-Analyzing the Stroop data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise7-gss-wrangling.html">
+   Exercise 7-Exploring the general social survey
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise8-more-gss-wrangling.html">
+   Exercise 8-More practice with GSS data wrangling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise9-regexps.html">
+   Exercise 9 - Practice with regular expressions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise10-nltk.html">
+   Exercise 10-Natural language processing with NLTK
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exercise11-oop_circles.html">
+   Exercise 11-Practice with object oriented programming
+  </a>
+ </li>
 </ul>
 
     </div>
 </nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
     </div>
-  
-  
-  <div class="sidebar-primary-items__end sidebar-primary__section">
-  </div>
-  
-  <div id="rtd-footer-container"></div>
+    <div id="rtd-footer-container"></div>
+</div>
 
 
-      </div>
-      
-      <main id="main-content" class="bd-main">
-        
-        
+          
 
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-
-          <div class="bd-content">
-            <div class="bd-article-container">
-              
-              <div class="bd-header-article">
-<div class="header-article-items header-article__inner">
-  
-    <div class="header-article-items__start">
-      
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <span class="fa-solid fa-bars"></span>
-</label></div>
-      
-    </div>
-  
-  
-    <div class="header-article-items__end">
-      
-        <div class="header-article-item">
-
-<div class="article-header-buttons">
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
 
 
 
-
-
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://mybinder.org/v2/gh/psych750/psych750.github.io/main?urlpath=tree/notebooks/classes.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
-   data-bs-placement="left" data-bs-toggle="tooltip"
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
 >
   
 
-<span class="btn__icon-container">
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/psych750/psych750.github.io/main?urlpath=tree/notebooks/classes.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
   
     <img src="../_static/images/logo_binder.svg">
   </span>
-<span class="btn__text-container">Binder</span>
+<span class="headerbtn__text-container">Binder</span>
 </a>
-</li>
+
+      </li>
       
-  </ul>
+    </ul>
+  </div>
 </div>
-
-
-
-
-
-
-<div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
-    <i class="fas fa-download"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="../_sources/notebooks/classes.ipynb" target="_blank"
-   class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="btn__text-container">.ipynb</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li>
-<button onclick="window.print()"
-  class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
-  data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="btn__text-container">.pdf</span>
-</button>
-</li>
-      
-  </ul>
-</div>
-
-
-
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
-  data-bs-placement="bottom" data-bs-toggle="tooltip"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
 >
   
 
-<span class="btn__icon-container">
+<span class="headerbtn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-
-<script>
-document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
   </button>
-`);
-</script>
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
-</div></div>
-      
-    </div>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/notebooks/classes.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
   
-</div>
-</div>
-              
-              
 
-<div id="jb-print-docs-body" class="onlyprint">
-    <h1>Classes</h1>
-    <!-- Table of contents -->
-    <div id="print-main-content">
-        <div id="jb-print-toc">
-            
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Classes</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#why-classes">Why classes?</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-terminology">General terminology</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-init-method">The <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> method</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#review-object-oriented-terminology">Review: Object-Oriented terminology</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-closer-look-at-the-rocket-class">A closer look at the Rocket class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-method">A simple method</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-multiple-objects-from-a-class">Making multiple objects from a class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-quick-check-in">A quick check-in</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#refining-the-rocket-class">Refining the Rocket class</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accepting-parameters-for-the-init-method">Accepting parameters for the __init__() method</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accepting-parameters-in-a-method">Accepting parameters in a method</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-new-method">Adding a new method</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#inheritance">Inheritance</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-spaceshuttle-class">The SpaceShuttle class</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#modules-and-classes">Modules and classes</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#storing-a-single-class-in-a-module">Storing a single class in a module</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#storing-multiple-classes-in-a-module">Storing multiple classes in a module</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-the-power-of-classes-in-python">Conclusion: The Power of Classes in Python</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-using-a-class-in-a-psychopy-experiment">Example of using a class in a Psychopy experiment</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-single-moving-circle">A single moving circle</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-circles">More circles!</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-number-of-ways-to-import-modules-and-classes">A number of ways to import modules and classes</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-module-name">import <em>module_name</em></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-module-name-as-local-module-name">import <em>module_name</em> as <em>local_module_name</em></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-module-name-import">from <em>module_name</em> import *</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-module-of-functions">A module of functions</a></li>
-</ul>
-</li>
-</ul>
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
 
-            </nav>
-        </div>
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-              
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Classes
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-classes">
+   Why classes?
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#general-terminology">
+     General terminology
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-init-method">
+     The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       __init__()
+      </span>
+     </code>
+     method
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#review-object-oriented-terminology">
+   Review: Object-Oriented terminology
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-closer-look-at-the-rocket-class">
+     A closer look at the Rocket class
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-simple-method">
+     A simple method
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#making-multiple-objects-from-a-class">
+     Making multiple objects from a class
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-quick-check-in">
+     A quick check-in
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#refining-the-rocket-class">
+   Refining the Rocket class
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#accepting-parameters-for-the-init-method">
+     Accepting parameters for the __init__() method
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#accepting-parameters-in-a-method">
+     Accepting parameters in a method
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-a-new-method">
+     Adding a new method
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inheritance">
+   Inheritance
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-spaceshuttle-class">
+     The SpaceShuttle class
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modules-and-classes">
+   Modules and classes
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#storing-a-single-class-in-a-module">
+     Storing a single class in a module
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#storing-multiple-classes-in-a-module">
+     Storing multiple classes in a module
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion-the-power-of-classes-in-python">
+   Conclusion: The Power of Classes in Python
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-of-using-a-class-in-a-psychopy-experiment">
+   Example of using a class in a Psychopy experiment
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-single-moving-circle">
+     A single moving circle
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#more-circles">
+     More circles!
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-number-of-ways-to-import-modules-and-classes">
+     A number of ways to import modules and classes
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#import-module-name">
+       import
+       <em>
+        module_name
+       </em>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#import-module-name-as-local-module-name">
+       import
+       <em>
+        module_name
+       </em>
+       as
+       <em>
+        local_module_name
+       </em>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#from-module-name-import">
+       from
+       <em>
+        module_name
+       </em>
+       import *
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-module-of-functions">
+     A module of functions
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Classes</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Classes
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-classes">
+   Why classes?
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#general-terminology">
+     General terminology
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-init-method">
+     The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       __init__()
+      </span>
+     </code>
+     method
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#review-object-oriented-terminology">
+   Review: Object-Oriented terminology
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-closer-look-at-the-rocket-class">
+     A closer look at the Rocket class
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-simple-method">
+     A simple method
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#making-multiple-objects-from-a-class">
+     Making multiple objects from a class
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-quick-check-in">
+     A quick check-in
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#refining-the-rocket-class">
+   Refining the Rocket class
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#accepting-parameters-for-the-init-method">
+     Accepting parameters for the __init__() method
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#accepting-parameters-in-a-method">
+     Accepting parameters in a method
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-a-new-method">
+     Adding a new method
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inheritance">
+   Inheritance
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-spaceshuttle-class">
+     The SpaceShuttle class
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modules-and-classes">
+   Modules and classes
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#storing-a-single-class-in-a-module">
+     Storing a single class in a module
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#storing-multiple-classes-in-a-module">
+     Storing multiple classes in a module
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion-the-power-of-classes-in-python">
+   Conclusion: The Power of Classes in Python
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-of-using-a-class-in-a-psychopy-experiment">
+   Example of using a class in a Psychopy experiment
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-single-moving-circle">
+     A single moving circle
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#more-circles">
+     More circles!
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-number-of-ways-to-import-modules-and-classes">
+     A number of ways to import modules and classes
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#import-module-name">
+       import
+       <em>
+        module_name
+       </em>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#import-module-name-as-local-module-name">
+       import
+       <em>
+        module_name
+       </em>
+       as
+       <em>
+        local_module_name
+       </em>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#from-module-name-import">
+       from
+       <em>
+        module_name
+       </em>
+       import *
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-module-of-functions">
+     A module of functions
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
                 
-<div id="searchbox"></div>
-                <article class="bd-article" role="main">
-                  
+              <div>
+                
   <section class="tex2jax_ignore mathjax_ignore" id="classes">
-<h1>Classes<a class="headerlink" href="#classes" title="Permalink to this heading">#</a></h1>
+<h1>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">#</a></h1>
 <p>So far, you’ve learned about Python’s core data types: strings, numbers, lists, tuples, and dictionaries. In this section, you will delve into the last major data structure: classes.</p>
 <p>Unlike the data types you’ve encountered so far, classes are more flexible. They enable you to define both the information and the behavior that characterize any entity you want to model in your program. This notebook serves as a brief introduction to classes. The first part presents some generic examples, while the second part illustrates how classes can be applied in the context of a psychological experiment.</p>
 <p>There’s a lot of new terminology associated with learning about classes. If you’re already familiar with object-oriented programming (OOP) from another language, this will be a concise overview of Python’s approach to OOP. If you’re new to programming, you’ll encounter many novel concepts. Start by reading through, experimenting with the examples on your own machine, and trust that the ideas will become clearer as you progress.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="why-classes">
-<h1>Why classes?<a class="headerlink" href="#why-classes" title="Permalink to this heading">#</a></h1>
+<h1>Why classes?<a class="headerlink" href="#why-classes" title="Permalink to this headline">#</a></h1>
 <p>You might be wondering if learning about classes is worth the effort. To understand their value, let’s imagine you’re approaching a coding problem and thinking about what solutions to use. For example, creating a rocket ship in a video game.</p>
 <p>How might you approach this problem? One way you could create a rocketship is to create a list of variables, each representing its x or y coordingates and it’s possible behavior like moving up or down. However, managing these all of these variables separately can become inefficient and complex. Especially if you have multiple rockets!</p>
 <p>Now suppose you used a more sophisticated data type like dictionaries. Now you can store each rocket’s x and y coordinates, acceleration, and remaining fuel. But here you’d still end up juggling several dictionaries for each rocket, and it would quickly become confusing. How would you track which dictionary corresponds to which rocket? What if you want to access all the data for a specific rocket? This approach can also lead to a tangled web of variables and a lot of headaches.</p>
@@ -500,7 +949,7 @@ document.write(`
 </div>
 <p>Now, we have defined a class named ‘Rocket’ and equipped it with two pieces of information (known as attributes) which are the x and y coordinates. Before we continue, let’s cover some basic terminology:</p>
 <section id="general-terminology">
-<h2>General terminology<a class="headerlink" href="#general-terminology" title="Permalink to this heading">#</a></h2>
+<h2>General terminology<a class="headerlink" href="#general-terminology" title="Permalink to this headline">#</a></h2>
 <p>A <strong>class</strong> is a body of code that defines the <strong>attributes</strong> and <strong>behaviors</strong> required to accurately model something you need for your program. You can model something from the real world, such as a rocket ship, or you can model something from a virtual world such as a rocket in a game, or a set of physical laws for a game engine.</p>
 <p>An <strong>object</strong> is a particular <em>instance</em> (a specific realization) of a class. An object has a certain set of values for all of the attributes (variables) in the class. You can have as many objects as you want for any one class. For example, Rect() is a class in PsychoPy. When you create a new rectangle by assigning Rect() to a variable, you are creating a new instance of the class – the specific Rectangle object that is assigned to your variable.</p>
 <p>An <strong>attribute</strong> is a piece of information. In code, an attribute is just a variable that is part of a class. In our rocket example, the x and y coordinates are attributes.</p>
@@ -508,7 +957,7 @@ document.write(`
 <p>There is more to know, but this terminology is enough to get you started. It will make more sense as you see more examples, and start to use classes on your own. For now, let’s focus on the methods we can see in this example:</p>
 </section>
 <section id="the-init-method">
-<h2>The <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> method<a class="headerlink" href="#the-init-method" title="Permalink to this heading">#</a></h2>
+<h2>The <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> method<a class="headerlink" href="#the-init-method" title="Permalink to this headline">#</a></h2>
 <p>The first line of a class definition in Python starts with the keyword <strong>class</strong>. This signals to Python that you’re defining a class. The naming convention for classes follows the same basic rules as for naming variables, but with an important convention: classes should use <strong>CamelCase</strong>. CamelCase means starting each word with a capital letter without using underscores. For example, MyClass or RocketShip. The class name is followed by parentheses, which are empty for now but can later include a base class from which your new class inherits.</p>
 <p>It’s a good practice to document your classes. Initially, a simple comment at the beginning of your class, summarizing its purpose, is sufficient. Though Python provides a more formal syntax for documentation, you can start with basic comments and evolve to more formal documentation as you become more comfortable.</p>
 <p>The first step in creating a class is defining the <strong><strong>init</strong>()</strong> method, where __ is a double underscore. This method (known as the constructor) initializes the state of an object when it is first created. The term “self” in the method signature is essential; it’s a reference to the instance of the class itself, allowing you to access and modify the object’s attributes and call its methods from within the class. In our Rocket example, this method sets the initial x and y coordinates of the rocket to 0.</p>
@@ -671,16 +1120,16 @@ Rocket altitude: 0
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="review-object-oriented-terminology">
-<h1>Review: Object-Oriented terminology<a class="headerlink" href="#review-object-oriented-terminology" title="Permalink to this heading">#</a></h1>
+<h1>Review: Object-Oriented terminology<a class="headerlink" href="#review-object-oriented-terminology" title="Permalink to this headline">#</a></h1>
 <p>Classes are a fundamental part of a programming paradigm known as <strong>object-oriented programming</strong> (OOP). OOP emphasizes creating reusable blocks of code, known as classes, which form the basis for building applications.</p>
 <p>In OOP, when you want to use the functionality defined in a class, you create an <strong>object</strong> from that class – this is the essence of the ‘object-oriented’ approach. While Python is a versatile language that supports multiple programming paradigms, object-oriented programming plays a significant role in Python development.</p>
 <p>You’ll likely use objects in most, if not all, of your Python projects. To fully grasp how classes work in Python, it’s important to understand the language and concepts specific to OOP, such as encapsulation, inheritance, and polymorphism. These concepts form the backbone of object-oriented programming and will be crucial as we delve deeper into Python classes.</p>
 <section id="a-closer-look-at-the-rocket-class">
-<h2>A closer look at the Rocket class<a class="headerlink" href="#a-closer-look-at-the-rocket-class" title="Permalink to this heading">#</a></h2>
+<h2>A closer look at the Rocket class<a class="headerlink" href="#a-closer-look-at-the-rocket-class" title="Permalink to this headline">#</a></h2>
 <p>Now that you have seen a simple example of a class, and have learned some basic OOP terminology, it will be helpful to take a closer look at the Rocket class that we started with.</p>
 </section>
 <section id="a-simple-method">
-<h2>A simple method<a class="headerlink" href="#a-simple-method" title="Permalink to this heading">#</a></h2>
+<h2>A simple method<a class="headerlink" href="#a-simple-method" title="Permalink to this headline">#</a></h2>
 <p>Here is the method that was defined for the Rocket class:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -743,7 +1192,7 @@ Rocket altitude: 2
 </div>
 </section>
 <section id="making-multiple-objects-from-a-class">
-<h2>Making multiple objects from a class<a class="headerlink" href="#making-multiple-objects-from-a-class" title="Permalink to this heading">#</a></h2>
+<h2>Making multiple objects from a class<a class="headerlink" href="#making-multiple-objects-from-a-class" title="Permalink to this headline">#</a></h2>
 <p>One of the main purposes and strengths of object oriented programming (OOP) is the ability to foster reusable code. Once you’ve crafted a class, like our Rocket class, you can create numerous objects from it as needed.</p>
 <p>This brings us to an important practice in programming: often, classes are defined in separate files and then imported into the main program. This approach enables you to build a library of classes that can be used repeatedly across various programs. When you have a well-tested class, you can rely on it to function consistently in new projects, ensuring that the objects you create will behave as expected.</p>
 <p>Think back to our section “Why Classes” and consider how complicated a video game would be if every action, enemy, location and object were created and stored seperately</p>
@@ -826,7 +1275,7 @@ Rocket altitude: 2
 <p>Each of these objects can be worked with individually. At this point we are ready to move on and see how to add more functionality to the Rocket class. We will work slowly, and give you the chance to start writing your own simple classes.</p>
 </section>
 <section id="a-quick-check-in">
-<h2>A quick check-in<a class="headerlink" href="#a-quick-check-in" title="Permalink to this heading">#</a></h2>
+<h2>A quick check-in<a class="headerlink" href="#a-quick-check-in" title="Permalink to this headline">#</a></h2>
 <p>Congratulations on reaching this point! Understanding classes is a significant milestone in your programming journey. As you progress, you’ll learn how classes can be used in flexible and powerful ways to improve your code. If everything so far makes sense, you’re well on your way. If not, don’t worry—this is a complex topic, and it’s normal for it to take some time to fully grasp. Here are a few strategies that might help:</p>
 <ul class="simple">
 <li><p>Revisit Previous Sections: Sometimes, concepts become clearer upon a second or third reading. Go back through the previous sections and see if things start to click.</p></li>
@@ -838,10 +1287,10 @@ Rocket altitude: 2
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="refining-the-rocket-class">
-<h1>Refining the Rocket class<a class="headerlink" href="#refining-the-rocket-class" title="Permalink to this heading">#</a></h1>
+<h1>Refining the Rocket class<a class="headerlink" href="#refining-the-rocket-class" title="Permalink to this headline">#</a></h1>
 <p>The Rocket class so far does what a rocket is supposed to do. But, it is arguably still very boring is very simple. Let’s explore some of the capabilities of classes by making our rockets a little more interesting. We can do this by making some refinements to the __init__() method, and by the addition of some new methods.</p>
 <section id="accepting-parameters-for-the-init-method">
-<h2>Accepting parameters for the __init__() method<a class="headerlink" href="#accepting-parameters-for-the-init-method" title="Permalink to this heading">#</a></h2>
+<h2>Accepting parameters for the __init__() method<a class="headerlink" href="#accepting-parameters-for-the-init-method" title="Permalink to this headline">#</a></h2>
 <p>The __init__() method is run automatically one time when you create a new object from a class. The __init__() method for the Rocket class so far is pretty simple:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -916,7 +1365,7 @@ Rocket 2 is at 100, 0
 </div>
 </section>
 <section id="accepting-parameters-in-a-method">
-<h2>Accepting parameters in a method<a class="headerlink" href="#accepting-parameters-in-a-method" title="Permalink to this heading">#</a></h2>
+<h2>Accepting parameters in a method<a class="headerlink" href="#accepting-parameters-in-a-method" title="Permalink to this headline">#</a></h2>
 <p>Remember, the <strong><strong>init</strong></strong> method in a class has a special role: it’s specifically designed to initialize new objects created from the class. However, it’s important to remember that this is just one of many methods a class can have, and like any method, it can accept many different parameters.</p>
 <p>Let’s consider enhancing the functionality of our Rocket class. Up to this point, we’ve had a <strong>move_up()</strong> method. However, methods in a class are not limited to fixed behaviors like moving in one specific direction. By accepting parameters, methods can be made much more versatile. For instance, we can transform the <strong>move_up()</strong> method for our rocket into a more general <strong>move_rocket()</strong> method. This improved method accepts parameters that specify not just how much to move, but also in which direction. Our <strong>move_rocket</strong> method would allow us to move the rocket in any direction by any desired amount.</p>
 <p>Here’s a look at how the move_rocket() method can be implemented to provide this enhanced flexibility:</p>
@@ -943,7 +1392,7 @@ Rocket 2 is at 100, 0
 <p>Additionally, this method’s design allows for a lot of flexibility in our code and by extension, to our rocket class. By passing negative values to x_increment or y_increment, the rocket can be moved left, right, or downward. This flexibility showcases the power of parameterized methods in classes, enabling complex and dynamic behavior with simple method calls.</p>
 </section>
 <section id="adding-a-new-method">
-<h2>Adding a new method<a class="headerlink" href="#adding-a-new-method" title="Permalink to this heading">#</a></h2>
+<h2>Adding a new method<a class="headerlink" href="#adding-a-new-method" title="Permalink to this headline">#</a></h2>
 <p>One of the strenghts of object-oriented programming (OOP) is its ability to closely mimic real-world situations by adding attributes and behaviors to classes.</p>
 <p>Consider a team piloting a fleet of rockets: one of their most important jobs would be to maintain safe distances between each rocket so they don’t crash into each other. If we want to model this scenario in our Rocket class, we can introduce a new method that calculates and reports the distance from one rocket to another.</p>
 <p>For those who might be new to the concept of distance calculation in a two-dimensional space, there’s a straightforward formula used to determine the distance between two points, given their x and y coordinates. Our new method will incorporate this formula to calculate the distance. This not only adds a practical functionality to our Rocket class but also demonstrates how mathematical concepts can be integrated into programming to solve real-world problems.</p>
@@ -996,13 +1445,13 @@ Rocket 2 is at 100, 0
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="inheritance">
-<h1>Inheritance<a class="headerlink" href="#inheritance" title="Permalink to this heading">#</a></h1>
+<h1>Inheritance<a class="headerlink" href="#inheritance" title="Permalink to this headline">#</a></h1>
 <p>One of the fundamental objectives in object-oriented programming (OOP) is to foster the creation of stable, reliable, and reusable code. In Python, as in other OOP-supportive languages, this is often done through the concept of inheritance, where one class (known as the child or subclass) can inherit from another class (referred to as the parent or superclass).</p>
 <p>Inheritance allows a new class to adopt all the attributes and behaviors of an existing class. This means when you create a subclass, it automatically possesses the properties and methods of its superclass. However, the beauty of inheritance lies in its flexibility: a subclass can modify or override any aspects of the superclass that don’t fit its purpose. It can also introduce new attributes and behaviors that are specific to itself. While the subclass inherits everything from the parent class, it’s important to note that the reverse isn’t true: attributes and methods defined in the child class are exclusive to it and not accessible to the parent.</p>
 <p>To illustrate this concept, let’s use the example of a Vehicle class. This class can have general attributes like a position in space, a weight, a color etc, and a method like move().</p>
 <p>Our example of the Rocket class might easily fit into the parent class of Vehicle. But we might also have other subclasses like Car. The Car class will have all the attributes and methods of the superclass “Vehicle” like position and ability to move, but it can also have additional features like airbags and a unique method like park() or horn() that we wouldnt expect our rocket to have. Here, the Car class and our rocket class are the child or subclasses, while Vehicle is the parent or superclass. Notice that Car and Rocket share some properties that make them both vehicles. But they do not share all the same properties.</p>
 <section id="the-spaceshuttle-class">
-<h2>The SpaceShuttle class<a class="headerlink" href="#the-spaceshuttle-class" title="Permalink to this heading">#</a></h2>
+<h2>The SpaceShuttle class<a class="headerlink" href="#the-spaceshuttle-class" title="Permalink to this headline">#</a></h2>
 <p>Let’s expand our space fleet with another Vehicle. We have a Rocket class, now let’s add a SpaceShuttle class.</p>
 <p>When modeling a space shuttle in our program, we might be tempted to start from scratch and create an entirely new class. However, a space shuttle shares many characteristics with a generic rocket; it’s essentially a specialized type of rocket. This is a perfect scenario to leverage the power of inheritance in object-oriented programming.</p>
 <p>Instead of writing a new class from scratch, we can inherit all the attributes and behaviors of the existing Rocket class and then extend it with specific features unique to a space shuttle. This approach not only saves time but also helps in maintaining consistency and reducing code redundancy.</p>
@@ -1188,7 +1637,7 @@ The first shuttle is 62.008 units away from rocket 2.
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="modules-and-classes">
-<h1>Modules and classes<a class="headerlink" href="#modules-and-classes" title="Permalink to this heading">#</a></h1>
+<h1>Modules and classes<a class="headerlink" href="#modules-and-classes" title="Permalink to this headline">#</a></h1>
 <p>As you continue working with classes, you’ll notice that your program files are becoming longer. Not surprising given that you are now able to add so much more! On the one hand, this is a positive sign, indicating that your programs are becoming more robust and capable of handling complex tasks. On the other hand, larger files can be difficult to keep organized</p>
 <p>In Python, a common strategy to manage growing codebases is to modularize your code. This involves organizing related functions and classes into separate modules. Just like we previously modularized the Stroop experiment code by separating commonly used functions into a different file, the same principle applies to classes in object-oriented programming (OOP).</p>
 <p>By placing a class and its various methods into a separate file, you create a module that can be easily reused across different programs. This modular approach has several advantages:</p>
@@ -1201,7 +1650,7 @@ The first shuttle is 62.008 units away from rocket 2.
 <p>However, effective and organizaed modulatization requires some planning. You’ll need to stop and consider how to logically group classes and functions into modules, ensuring that each module has a clear and distinct responsibility.</p>
 <p>To put this into practice, let’s start by moving some of our existing classes into their own files. This will not only help in organizing our code but also give us a firsthand experience of working with modules in Python.</p>
 <section id="storing-a-single-class-in-a-module">
-<h2>Storing a single class in a module<a class="headerlink" href="#storing-a-single-class-in-a-module" title="Permalink to this heading">#</a></h2>
+<h2>Storing a single class in a module<a class="headerlink" href="#storing-a-single-class-in-a-module" title="Permalink to this headline">#</a></h2>
 <p>When you save a class into a separate file, that file is called a <strong>module</strong>. You can have any number of classes in a single module. There are a number of ways you can then import the class you are interested in.</p>
 <p>Start out by saving just the Rocket class into a file called <em><a class="reference external" href="http://rocket.py">rocket.py</a></em>. Notice the naming convention being used here: the module is saved with a lowercase name, and the class starts with an uppercase letter. This convention is pretty important for a number of reasons, and it is a really good idea to follow the convention.</p>
 <div class="cell docutils container">
@@ -1232,7 +1681,7 @@ The first shuttle is 62.008 units away from rocket 2.
 </div>
 <p>Make a separate file called <em>rocket_game.py</em>. Or, if you want it to sound more scienc-ey, call it <em>rocket_simulation.py</em>. The exact name doesn’t matter, but the convention does. Follow the convention by using a lowercase_underscore name for this file. This file will <em>use</em> the rocket class to do something.</p>
 <div class="cell tag_hide-output docutils container">
-<div class="cell_input above-output-prompt docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Save as rocket_game.py</span>
 <span class="kn">from</span> <span class="nn">rocket</span> <span class="kn">import</span> <span class="n">Rocket</span>
 
@@ -1241,17 +1690,11 @@ The first shuttle is 62.008 units away from rocket 2.
 </pre></div>
 </div>
 </div>
-<details class="hide below-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell output</span>
-<span class="expanded">Hide code cell output</span>
-</summary>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The rocket is at 0, 0
 </pre></div>
 </div>
 </div>
-</details>
 </div>
 <p>By moving our Rocket class into its own file, we’ve created a cleaner and more focused main program file. This approach offers several advantages:</p>
 <ul class="simple">
@@ -1263,7 +1706,7 @@ The first shuttle is 62.008 units away from rocket 2.
 <p>When Python locates and reads <a class="reference external" href="http://rocket.py">rocket.py</a>, it imports the Rocket class into your main file. This process is done behind the scenes; you won’t see the code from <a class="reference external" href="http://rocket.py">rocket.py</a> in your main file, but you can use the Rocket class as if it were defined there. This is the essence of Python’s import system - it keeps your codebase organized and modular, allowing you to focus on building your application with well-structured and reusable components.</p>
 </section>
 <section id="storing-multiple-classes-in-a-module">
-<h2>Storing multiple classes in a module<a class="headerlink" href="#storing-multiple-classes-in-a-module" title="Permalink to this heading">#</a></h2>
+<h2>Storing multiple classes in a module<a class="headerlink" href="#storing-multiple-classes-in-a-module" title="Permalink to this headline">#</a></h2>
 <p>A module is simply a file that contains one or more classes or functions, so the Shuttle class actually belongs in the rocket module as well:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1337,7 +1780,7 @@ The first shuttle is 62.008 units away from rocket 2.
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="conclusion-the-power-of-classes-in-python">
-<h1>Conclusion: The Power of Classes in Python<a class="headerlink" href="#conclusion-the-power-of-classes-in-python" title="Permalink to this heading">#</a></h1>
+<h1>Conclusion: The Power of Classes in Python<a class="headerlink" href="#conclusion-the-power-of-classes-in-python" title="Permalink to this headline">#</a></h1>
 <p>Classes are a fundamental tool for programming. In addition to lists, variables and dictonaries, classes are a datatype that when used correctly, will save you time and effort in programming complex objects. To conclude our exploration of classes in Python, let’s review some the key concepts and terminology for understanding classes</p>
 <p>Understanding Classes and Objects:</p>
 <ul class="simple">
@@ -1352,10 +1795,10 @@ The first shuttle is 62.008 units away from rocket 2.
 <p>To extend the use of classes, the next section shows an example of using classes in Psychopy.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="example-of-using-a-class-in-a-psychopy-experiment">
-<h1>Example of using a class in a Psychopy experiment<a class="headerlink" href="#example-of-using-a-class-in-a-psychopy-experiment" title="Permalink to this heading">#</a></h1>
+<h1>Example of using a class in a Psychopy experiment<a class="headerlink" href="#example-of-using-a-class-in-a-psychopy-experiment" title="Permalink to this headline">#</a></h1>
 <p>This section goes through a more practical example of using a class in an experiment. Let’s say we want to make a moving circle that wiggles its way across a window. Here’s some basic code to make this happen.</p>
 <section id="a-single-moving-circle">
-<h2>A single moving circle<a class="headerlink" href="#a-single-moving-circle" title="Permalink to this heading">#</a></h2>
+<h2>A single moving circle<a class="headerlink" href="#a-single-moving-circle" title="Permalink to this headline">#</a></h2>
 <div class="cell tag_remove_output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
@@ -1459,7 +1902,7 @@ The first shuttle is 62.008 units away from rocket 2.
 </div>
 </section>
 <section id="more-circles">
-<h2>More circles!<a class="headerlink" href="#more-circles" title="Permalink to this heading">#</a></h2>
+<h2>More circles!<a class="headerlink" href="#more-circles" title="Permalink to this headline">#</a></h2>
 <p>But now suppose we want to have lots of moving circles that move independently of one another such that we can set some to move faster, have them be different colors, allow people to click on them independently, etc. This is the kind of situation where classes shine.</p>
 <p>The code below implements a <code class="docutils literal notranslate"><span class="pre">movingCircle</span></code> class. We then use it to make a bunch of individual circles and allow the user to click on them individually. Notice that it’s not much longer than the code above. And if we want 10 circles, we just need to change <code class="docutils literal notranslate"><span class="pre">numCircles</span> <span class="pre">=</span> <span class="pre">4</span></code> to <code class="docutils literal notranslate"><span class="pre">numCircles</span> <span class="pre">=</span> <span class="pre">5</span></code>. Wizardry!</p>
 <div class="cell tag_remove_output docutils container">
@@ -1541,10 +1984,10 @@ The first shuttle is 62.008 units away from rocket 2.
 <p>Make sure you understand what’s happening here. Play around with the code. If you’re confused, message on Slack.</p>
 </section>
 <section id="a-number-of-ways-to-import-modules-and-classes">
-<h2>A number of ways to import modules and classes<a class="headerlink" href="#a-number-of-ways-to-import-modules-and-classes" title="Permalink to this heading">#</a></h2>
+<h2>A number of ways to import modules and classes<a class="headerlink" href="#a-number-of-ways-to-import-modules-and-classes" title="Permalink to this headline">#</a></h2>
 <p>We’ve covered imports already, but just as a review: Recall that there are several ways to import modules and classes, and each has its own merits.</p>
 <section id="import-module-name">
-<h3>import <em>module_name</em><a class="headerlink" href="#import-module-name" title="Permalink to this heading">#</a></h3>
+<h3>import <em>module_name</em><a class="headerlink" href="#import-module-name" title="Permalink to this headline">#</a></h3>
 <p>The syntax for importing classes that was just shown:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">module_name</span> <span class="kn">import</span> <span class="n">ClassName</span>
 </pre></div>
@@ -1585,14 +2028,14 @@ The shuttle has completed 0 flights.
 <p>This prevents some name conflicts. If you were reading carefully however, you might have noticed that the variable name <em>rocket</em> in the previous example had to be changed because it has the same name as the module itself. This is not good, because in a longer program that could mean a lot of renaming.</p>
 </section>
 <section id="import-module-name-as-local-module-name">
-<h3>import <em>module_name</em> as <em>local_module_name</em><a class="headerlink" href="#import-module-name-as-local-module-name" title="Permalink to this heading">#</a></h3>
+<h3>import <em>module_name</em> as <em>local_module_name</em><a class="headerlink" href="#import-module-name-as-local-module-name" title="Permalink to this headline">#</a></h3>
 <p>There is another syntax for imports that is quite useful:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">module_name</span> <span class="k">as</span> <span class="nn">local_module_name</span>
 </pre></div>
 </div>
 <p>When you are importing a module into one of your projects, you are free to choose any name you want for the module in your project. So the last example could be rewritten in a way that the variable name <em>rocket</em> would not need to be changed:</p>
 <div class="cell tag_hide-output docutils container">
-<div class="cell_input above-output-prompt docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Save as rocket_game.py</span>
 <span class="kn">import</span> <span class="nn">rocket</span> <span class="k">as</span> <span class="nn">rocket_module</span>
 
@@ -1606,11 +2049,6 @@ The shuttle has completed 0 flights.
 </pre></div>
 </div>
 </div>
-<details class="hide below-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell output</span>
-<span class="expanded">Hide code cell output</span>
-</summary>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The rocket is at 0, 0
 Shuttle 2 has completed 7 flights.
@@ -1629,7 +2067,6 @@ Shuttle 2 has completed 7 flights.
 </pre></div>
 </div>
 </div>
-</details>
 </div>
 <p>This approach is often used to shorten the name of the module, so you don’t have to type a long module name before each class name that you want to use. But it is easy to shorten a name so much that you force people reading your code to scroll to the top of your file and see what the shortened name stands for. In this example,</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">rocket</span> <span class="k">as</span> <span class="nn">rocket_module</span>
@@ -1641,7 +2078,7 @@ Shuttle 2 has completed 7 flights.
 </div>
 </section>
 <section id="from-module-name-import">
-<h3>from <em>module_name</em> import *<a class="headerlink" href="#from-module-name-import" title="Permalink to this heading">#</a></h3>
+<h3>from <em>module_name</em> import *<a class="headerlink" href="#from-module-name-import" title="Permalink to this headline">#</a></h3>
 <p>There is one more import syntax that you should be aware of, but Python gurus advise against using. This syntax imports all of the available classes and functions in a module:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">module_name</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
@@ -1652,7 +2089,7 @@ Shuttle 2 has completed 7 flights.
 </section>
 </section>
 <section id="a-module-of-functions">
-<h2>A module of functions<a class="headerlink" href="#a-module-of-functions" title="Permalink to this heading">#</a></h2>
+<h2>A module of functions<a class="headerlink" href="#a-module-of-functions" title="Permalink to this headline">#</a></h2>
 <p>You can use modules to store a set of functions you want available in different programs as well, even if those functions are not attached to any one class. To do this, you save the functions into a file, and then import that file just as you saw in the last section. Here is a really simple example; save this is <em><a class="reference external" href="http://multiplying.py">multiplying.py</a></em>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1760,7 +2197,7 @@ Shuttle 2 has completed 7 flights.
             mode: "python"
         },
         kernelOptions: {
-            name: "python3",
+            kernelName: "python3",
             path: "./notebooks"
         },
         predefinedOutput: true
@@ -1768,116 +2205,33 @@ Shuttle 2 has completed 7 flights.
     </script>
     <script>kernelName = 'python3'</script>
 
-                </article>
+              </div>
               
-
-              
-              
-            </div>
-            
-            
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Classes</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#why-classes">Why classes?</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-terminology">General terminology</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-init-method">The <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> method</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#review-object-oriented-terminology">Review: Object-Oriented terminology</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-closer-look-at-the-rocket-class">A closer look at the Rocket class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-method">A simple method</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-multiple-objects-from-a-class">Making multiple objects from a class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-quick-check-in">A quick check-in</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#refining-the-rocket-class">Refining the Rocket class</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accepting-parameters-for-the-init-method">Accepting parameters for the __init__() method</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accepting-parameters-in-a-method">Accepting parameters in a method</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-new-method">Adding a new method</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#inheritance">Inheritance</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-spaceshuttle-class">The SpaceShuttle class</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#modules-and-classes">Modules and classes</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#storing-a-single-class-in-a-module">Storing a single class in a module</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#storing-multiple-classes-in-a-module">Storing multiple classes in a module</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-the-power-of-classes-in-python">Conclusion: The Power of Classes in Python</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-using-a-class-in-a-psychopy-experiment">Example of using a class in a Psychopy experiment</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-single-moving-circle">A single moving circle</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-circles">More circles!</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-number-of-ways-to-import-modules-and-classes">A number of ways to import modules and classes</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-module-name">import <em>module_name</em></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-module-name-as-local-module-name">import <em>module_name</em> as <em>local_module_name</em></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-module-name-import">from <em>module_name</em> import *</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-module-of-functions">A module of functions</a></li>
-</ul>
-</li>
-</ul>
-
-  </nav></div>
-
-</div></div>
-              
-            
-          </div>
-          <footer class="bd-footer-content">
-            
-<div class="bd-footer-content__inner container">
-  
-  <div class="footer-item">
-    
-<p class="component-author">
-By Gary Lupyan
-</p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  <p class="copyright">
-    
-      © Copyright 2022. Some examples adapted from http://introtopython.org/.
-      <br/>
-    
-  </p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-</div>
-          </footer>
-        
-
-      </main>
+            </main>
+            <footer class="footer-article noprint">
+                
+            </footer>
+        </div>
     </div>
-  </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Gary Lupyan<br/>
+  
+      &copy; Copyright 2022. Some examples adapted from http://introtopython.org/.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-  <footer class="bd-footer">
-  </footer>
+
   </body>
 </html>
